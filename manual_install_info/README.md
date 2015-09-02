@@ -2,7 +2,7 @@
 
 ```
 git init
-git submodule add git@github.com:salesforce-ux/designsystem-ios.git
+git submodule add git@github.com:salesforce-ux/design-system-ios.git
 ```
 
 Step 1. in your App target Build Settings:
@@ -25,8 +25,3 @@ Step 4. drag SalesforceDesignSystem.bundle from SalesforceDesignSystem.xcodeproj
 [![browser support](/readmeAssets/readme-image-drag-bundle.png)](/readmeAssets/readme-image-drag-bundle.png)
 
 
-
-
-## Contact #
-
-* ibogdanov@salesforce.com
