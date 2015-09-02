@@ -31,7 +31,7 @@ See [more info](/manual_install_info)
 
 ```objc
 
-#import <SalesforceDesignSystem/SalesforceDesignSystem.h> 
+#import <DesignSystem/DesignSystem.h> 
 
 ...
 
@@ -48,7 +48,7 @@ UIColor* c = [UIColor sldsColorText:SLDSColorTextInverse];
 
 ```objc
 
-#import <SalesforceDesignSystem/SalesforceDesignSystem.h> 
+#import <DesignSystem/DesignSystem.h> 
 
 ...
 
@@ -67,7 +67,7 @@ UIFont* f = [UIFont sldsFontLightWithSize:SLDSFontSizeXLarge];
 
 ```objc
 
-#import <SalesforceDesignSystem/SalesforceDesignSystem.h> 
+#import <DesignSystem/DesignSystem.h> 
 
 ...
 
@@ -81,7 +81,7 @@ UIImage *icon = [UIImage sldsIconAction:SLDSIconActionNewCustom98 withSize:20.0f
 
 ```objc
 
-#import <SalesforceDesignSystem/SalesforceDesignSystem.h> 
+#import <DesignSystem/DesignSystem.h> 
 
 ...
 
@@ -96,7 +96,7 @@ UIImage *icon = [UIImage sldsIconCustom:SLDSIconCustom1 withSize:20.0f];
 
 ```objc
 
-#import <SalesforceDesignSystem/SalesforceDesignSystem.h> 
+#import <DesignSystem/DesignSystem.h> 
 
 ...
 
@@ -111,7 +111,7 @@ UIImage *icon = [UIImage sldsIconStandard:SLDSIconStandardAccount withSize:20.0f
 
 ```objc
 
-#import <SalesforceDesignSystem/SalesforceDesignSystem.h> 
+#import <DesignSystem/DesignSystem.h> 
 
 ...
 
