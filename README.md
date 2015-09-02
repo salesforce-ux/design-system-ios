@@ -9,7 +9,7 @@ Add to your Podfile:
 
 ```ruby
 
-pod 'DesignSystem', :git => 'https://github.com/salesforce-ux/design-system-ios.git'
+pod 'DesignSystem'
 
 ```
 
