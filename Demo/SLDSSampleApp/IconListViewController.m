@@ -59,7 +59,7 @@
     
     
     NSMutableArray *uIcons = [[NSMutableArray alloc] init];
-    for(int i=SLDSIconUtility3dots; i<=SLDSIconUtilityZoomout; i++) {
+    for(int i=SLDSIconUtilityAdd; i<=SLDSIconUtilityZoomout; i++) {
         [uIcons addObject:[NSNumber numberWithInt:i]];
     }
     utilityIcons = [uIcons copy];
