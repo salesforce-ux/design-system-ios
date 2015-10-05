@@ -1,6 +1,6 @@
 {
   "name": "DesignSystem-iOS",
-  "version": "0.0.1",
+  "version": "0.1.5",
   "description": "Salesforce Lightning Design System iOS Static Library",
   "author": "Ivan Bogdanov",
   "scripts": {
@@ -9,7 +9,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@salesforce-ux/design-system": "^0.9.1",
     "fs-extra": "^0.18.2",
     "gdm": "0.0.9",
     "gulp-clean": "^0.3.1",
