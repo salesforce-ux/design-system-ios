@@ -15,10 +15,15 @@ var fontplugin = require('./build/icon-fonts/fontplugin');
 var clean = require('gulp-clean');
 var gulpFilter = require('gulp-filter');
 
+var path = require('path');
+
+
+var ICONS_DIR = path.join(__dirname,'node_modules','@salesforce-ux','icons','dist','salesforce-lightning-design-system-icons');
 
 gulp.task('makeIconFontUtility', function () {
     var ttfFilter = gulpFilter('**/*.ttf');
-    return gulp.src(['git_modules/icons/dist/salesforce_landmark_icons/utility/*.svg'])
+//    return gulp.src(['git_modules/icons/dist/salesforce_landmark_icons/utility/*.svg'])
+    return gulp.src([ICONS_DIR+'/utility/*.svg'])
         .pipe(svgmin({
             plugins: [
             {
@@ -59,7 +64,7 @@ gulp.task('makeIconFontUtility', function () {
 
 gulp.task('makeIconFontAction', function () {
     var ttfFilter = gulpFilter('**/*.ttf');
-    return gulp.src(['git_modules/icons/dist/salesforce_landmark_icons/action/*.svg'])
+    return gulp.src([ICONS_DIR+'/action/*.svg'])
         .pipe(svgmin({
             plugins: [
             {
@@ -100,7 +105,7 @@ gulp.task('makeIconFontAction', function () {
 
 gulp.task('makeIconFontCustom', function () {
     var ttfFilter = gulpFilter('**/*.ttf');
-    return gulp.src(['git_modules/icons/dist/salesforce_landmark_icons/custom/*.svg'])
+    return gulp.src([ICONS_DIR+'/custom/*.svg'])
         .pipe(svgmin({
             plugins: [
             {
@@ -141,7 +146,7 @@ gulp.task('makeIconFontCustom', function () {
 
 gulp.task('makeIconFontStandard', function () {
     var ttfFilter = gulpFilter('**/*.ttf');
-    return gulp.src(['git_modules/icons/dist/salesforce_landmark_icons/standard/*.svg'])
+    return gulp.src([ICONS_DIR+'/standard/*.svg'])
         .pipe(svgmin({
             plugins: [
             {

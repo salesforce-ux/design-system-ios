@@ -9,7 +9,6 @@
 #import "SLDSIconLabelUtility.h"
 
 #define iconName(enum) [@[\
-@"SLDSIconUtility3dots",\
 @"SLDSIconUtilityAdd",\
 @"SLDSIconUtilityAdduser",\
 @"SLDSIconUtilityAnnouncement",\
@@ -19,6 +18,7 @@
 @"SLDSIconUtilityAttach",\
 @"SLDSIconUtilityBack",\
 @"SLDSIconUtilityBan",\
+@"SLDSIconUtilityBold",\
 @"SLDSIconUtilityBookmark",\
 @"SLDSIconUtilityBrush",\
 @"SLDSIconUtilityBucket",\
@@ -36,6 +36,7 @@
 @"SLDSIconUtilityChevronright",\
 @"SLDSIconUtilityChevronup",\
 @"SLDSIconUtilityClear",\
+@"SLDSIconUtilityClock",\
 @"SLDSIconUtilityClose",\
 @"SLDSIconUtilityComments",\
 @"SLDSIconUtilityCompany",\
@@ -48,6 +49,7 @@
 @"SLDSIconUtilityDash",\
 @"SLDSIconUtilityDayview",\
 @"SLDSIconUtilityDelete",\
+@"SLDSIconUtilityDeprecate",\
 @"SLDSIconUtilityDesktop",\
 @"SLDSIconUtilityDown",\
 @"SLDSIconUtilityDownload",\
@@ -59,6 +61,7 @@
 @"SLDSIconUtilityFavorite",\
 @"SLDSIconUtilityFilter",\
 @"SLDSIconUtilityFilterlist",\
+@"SLDSIconUtilityForward",\
 @"SLDSIconUtilityFrozen",\
 @"SLDSIconUtilityGroups",\
 @"SLDSIconUtilityHelp",\
@@ -69,9 +72,11 @@
 @"SLDSIconUtilityInfo",\
 @"SLDSIconUtilityInsertTagField",\
 @"SLDSIconUtilityInsertTemplate",\
+@"SLDSIconUtilityItalic",\
 @"SLDSIconUtilityJustifyText",\
 @"SLDSIconUtilityKanban",\
 @"SLDSIconUtilityKnowledgeBase",\
+@"SLDSIconUtilityLayout",\
 @"SLDSIconUtilityLeft",\
 @"SLDSIconUtilityLeftAlignText",\
 @"SLDSIconUtilityLike",\
@@ -131,6 +136,7 @@
 @"SLDSIconUtilitySalesforce1",\
 @"SLDSIconUtilitySearch",\
 @"SLDSIconUtilitySettings",\
+@"SLDSIconUtilitySetup",\
 @"SLDSIconUtilitySetupAssistantGuide",\
 @"SLDSIconUtilityShare",\
 @"SLDSIconUtilityShield",\
@@ -152,8 +158,13 @@
 @"SLDSIconUtilityTabletPortrait",\
 @"SLDSIconUtilityTextBackgroundColor",\
 @"SLDSIconUtilityTextColor",\
+@"SLDSIconUtilityThreedots",\
 @"SLDSIconUtilityTileCardList",\
 @"SLDSIconUtilityTopic",\
+@"SLDSIconUtilityTrail",\
+@"SLDSIconUtilityUndelete",\
+@"SLDSIconUtilityUndeprecate",\
+@"SLDSIconUtilityUnderline",\
 @"SLDSIconUtilityUndo",\
 @"SLDSIconUtilityUnlock",\
 @"SLDSIconUtilityUp",\

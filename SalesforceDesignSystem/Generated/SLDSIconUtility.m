@@ -162,7 +162,18 @@
 @"\uEA97",\
 @"\uEA98",\
 @"\uEA99",\
-@"\uEA9A" \
+@"\uEA9A",\
+@"\uEA9B",\
+@"\uEA9C",\
+@"\uEA9D",\
+@"\uEA9E",\
+@"\uEA9F",\
+@"\uEAA0",\
+@"\uEAA1",\
+@"\uEAA2",\
+@"\uEAA3",\
+@"\uEAA4",\
+@"\uEAA5" \
 ] objectAtIndex:enum]
 
 
