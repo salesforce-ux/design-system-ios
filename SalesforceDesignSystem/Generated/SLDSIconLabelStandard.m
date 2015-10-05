@@ -32,6 +32,7 @@
 @"SLDSIconStandardCaseEmail",\
 @"SLDSIconStandardCaseLogACall",\
 @"SLDSIconStandardCaseTranscript",\
+@"SLDSIconStandardClient",\
 @"SLDSIconStandardCoaching",\
 @"SLDSIconStandardConnectedApps",\
 @"SLDSIconStandardContact",\
@@ -45,6 +46,7 @@
 @"SLDSIconStandardEmailChatter",\
 @"SLDSIconStandardEmpty",\
 @"SLDSIconStandardEndorsement",\
+@"SLDSIconStandardEnvironmentHub",\
 @"SLDSIconStandardEvent",\
 @"SLDSIconStandardFeed",\
 @"SLDSIconStandardFeedback",\
@@ -55,7 +57,9 @@
 @"SLDSIconStandardGroupLoading",\
 @"SLDSIconStandardGroups",\
 @"SLDSIconStandardHome",\
+@"SLDSIconStandardHousehold",\
 @"SLDSIconStandardInsights",\
+@"SLDSIconStandardInvestmentAccount",\
 @"SLDSIconStandardLead",\
 @"SLDSIconStandardLink",\
 @"SLDSIconStandardLogACall",\

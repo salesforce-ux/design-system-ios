@@ -42,6 +42,7 @@
 @"SLDSIconUtilityCompany",\
 @"SLDSIconUtilityConnectedApps",\
 @"SLDSIconUtilityContract",\
+@"SLDSIconUtilityContractAlt",\
 @"SLDSIconUtilityCopy",\
 @"SLDSIconUtilityCrossfilter",\
 @"SLDSIconUtilityCustomApps",\
@@ -55,9 +56,12 @@
 @"SLDSIconUtilityDownload",\
 @"SLDSIconUtilityEdit",\
 @"SLDSIconUtilityEmail",\
+@"SLDSIconUtilityEndCall",\
+@"SLDSIconUtilityErectWindow",\
 @"SLDSIconUtilityError",\
 @"SLDSIconUtilityEvent",\
 @"SLDSIconUtilityExpand",\
+@"SLDSIconUtilityExpandAlt",\
 @"SLDSIconUtilityFavorite",\
 @"SLDSIconUtilityFilter",\
 @"SLDSIconUtilityFilterlist",\
@@ -87,8 +91,10 @@
 @"SLDSIconUtilityLogout",\
 @"SLDSIconUtilityMagicwand",\
 @"SLDSIconUtilityMatrix",\
+@"SLDSIconUtilityMinimizeWindow",\
 @"SLDSIconUtilityMonthlyview",\
 @"SLDSIconUtilityMove",\
+@"SLDSIconUtilityMuted",\
 @"SLDSIconUtilityNew",\
 @"SLDSIconUtilityNewWindow",\
 @"SLDSIconUtilityNews",\
@@ -117,6 +123,7 @@
 @"SLDSIconUtilityPuzzle",\
 @"SLDSIconUtilityQuestion",\
 @"SLDSIconUtilityQuestionsAndAnswers",\
+@"SLDSIconUtilityRecord",\
 @"SLDSIconUtilityRedo",\
 @"SLDSIconUtilityRefresh",\
 @"SLDSIconUtilityRelate",\
@@ -124,6 +131,7 @@
 @"SLDSIconUtilityRemoveLink",\
 @"SLDSIconUtilityReplace",\
 @"SLDSIconUtilityReply",\
+@"SLDSIconUtilityResetPassword",\
 @"SLDSIconUtilityRetweet",\
 @"SLDSIconUtilityRichtextbulletedlist",\
 @"SLDSIconUtilityRichtextindent",\
@@ -148,6 +156,7 @@
 @"SLDSIconUtilitySort",\
 @"SLDSIconUtilitySpinner",\
 @"SLDSIconUtilityStandardObjects",\
+@"SLDSIconUtilityStop",\
 @"SLDSIconUtilityStrikethrough",\
 @"SLDSIconUtilitySuccess",\
 @"SLDSIconUtilitySummary",\
@@ -167,11 +176,16 @@
 @"SLDSIconUtilityUnderline",\
 @"SLDSIconUtilityUndo",\
 @"SLDSIconUtilityUnlock",\
+@"SLDSIconUtilityUnmuted",\
 @"SLDSIconUtilityUp",\
 @"SLDSIconUtilityUpload",\
 @"SLDSIconUtilityUser",\
+@"SLDSIconUtilityVolumeHigh",\
+@"SLDSIconUtilityVolumeLow",\
+@"SLDSIconUtilityVolumeOff",\
 @"SLDSIconUtilityWarning",\
 @"SLDSIconUtilityWeeklyview",\
+@"SLDSIconUtilityWorld",\
 @"SLDSIconUtilityZoomin",\
 @"SLDSIconUtilityZoomout" \
 ] objectAtIndex:enum]

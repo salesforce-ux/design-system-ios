@@ -9,12 +9,15 @@
 #import "SLDSIconLabelAction.h"
 
 #define iconName(enum) [@[\
+@"SLDSIconActionAddContact",\
 @"SLDSIconActionAnnouncement",\
 @"SLDSIconActionApex",\
 @"SLDSIconActionApproval",\
 @"SLDSIconActionBack",\
 @"SLDSIconActionCall",\
 @"SLDSIconActionCanvas",\
+@"SLDSIconActionChangeOwner",\
+@"SLDSIconActionChangeRecordType",\
 @"SLDSIconActionCheck",\
 @"SLDSIconActionClone",\
 @"SLDSIconActionClose",\
@@ -25,6 +28,7 @@
 @"SLDSIconActionDownload",\
 @"SLDSIconActionEdit",\
 @"SLDSIconActionEditGroups",\
+@"SLDSIconActionEditRelationship",\
 @"SLDSIconActionEmail",\
 @"SLDSIconActionFallback",\
 @"SLDSIconActionFilter",\
@@ -161,7 +165,9 @@
 @"SLDSIconActionQuestionPostAction",\
 @"SLDSIconActionQuote",\
 @"SLDSIconActionRecord",\
+@"SLDSIconActionRefresh",\
 @"SLDSIconActionReject",\
+@"SLDSIconActionRemove",\
 @"SLDSIconActionResetPassword",\
 @"SLDSIconActionShareFile",\
 @"SLDSIconActionShareLink",\

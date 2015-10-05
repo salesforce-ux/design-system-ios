@@ -18,7 +18,6 @@ var Q = require('q');
 var CONFIG = {
   DESIGN_TOKENS_DIR:path.join(__dirname,'git_modules','design-tokens','tokens'),
   FORCE_BASE_TOKENS_DIR:path.join(__dirname,'git_modules','design-tokens','tokens','force-base'),
-  ICONS_DIR:path.join(__dirname,'git_modules','icon-font-utility','dist'),
   OUTPUT_DIR:path.join(__dirname,'SalesforceDesignSystem','Generated'),
   IOS_TEMPLATE_DIR:path.join(__dirname,'SalesforceDesignSystem','Templates'),
   FONT_FILE_NAME:'SalesforceDesignSystemIconsUtility.ttf',

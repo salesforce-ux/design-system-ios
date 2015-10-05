@@ -173,7 +173,21 @@
 @"\uEAA2",\
 @"\uEAA3",\
 @"\uEAA4",\
-@"\uEAA5" \
+@"\uEAA5",\
+@"\uEAA6",\
+@"\uEAA7",\
+@"\uEAA8",\
+@"\uEAA9",\
+@"\uEAAA",\
+@"\uEAAB",\
+@"\uEAAC",\
+@"\uEAAD",\
+@"\uEAAE",\
+@"\uEAAF",\
+@"\uEAB0",\
+@"\uEAB1",\
+@"\uEAB2",\
+@"\uEAB3" \
 ] objectAtIndex:enum]
 
 
