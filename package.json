@@ -29,7 +29,6 @@
     "@salesforce-ux/icons": "3.0.3"
   },
   "gitDependencies": {
-    "design-tokens": "git@github.com:salesforce-ux/design-tokens.git#winter-16",
-    "icons": "git@github.com:salesforce-ux/icons.git#release"
+    "design-tokens": "git@github.com:salesforce-ux/design-tokens.git#winter-16"
   }
 }
