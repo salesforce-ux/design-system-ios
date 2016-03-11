@@ -11,9 +11,16 @@
 
 typedef NS_ENUM(NSInteger, SLDSColorMsgType) {
     
-    SLDSColorMsgBackgroundError,
+    SLDSColorMsgBackgroundDestructive,
+	SLDSColorMsgBackgroundDestructiveHover,
+	SLDSColorMsgBackgroundDestructiveActive,
+	SLDSColorMsgBackgroundInfo,
+	SLDSColorMsgBackgroundError,
+	SLDSColorMsgBackgroundErrorDark,
 	SLDSColorMsgBackgroundErrorAlt,
+	SLDSColorMsgBackgroundOffline,
 	SLDSColorMsgBackgroundSuccess,
+	SLDSColorMsgBackgroundSuccessDark,
 	SLDSColorMsgBackgroundToast,
 	SLDSColorMsgBackgroundToastSuccess,
 	SLDSColorMsgBackgroundToastError,

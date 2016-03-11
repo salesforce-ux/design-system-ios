@@ -1,3 +1,4 @@
+static const int SLDSSpacingNone = 0;
 static const int SLDSSpacingXxxSmall = 2;
 static const int SLDSSpacingXxSmall = 4;
 static const int SLDSSpacingXSmall = 7;

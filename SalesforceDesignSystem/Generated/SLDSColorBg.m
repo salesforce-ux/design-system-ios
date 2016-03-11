@@ -36,6 +36,7 @@
 @"SLDSColorBackgroundOrgSwitcherArrow",\
 @"SLDSColorBackgroundPayload",\
 @"SLDSColorBackgroundShade",\
+@"SLDSColorBackgroundShadeDark",\
 @"SLDSColorBackgroundStencil",\
 @"SLDSColorBackgroundStencilAlt",\
 @"SLDSColorBackgroundTempModal",\
@@ -44,7 +45,8 @@
 @"SLDSColorBackgroundScrollbar",\
 @"SLDSColorBackgroundScrollbarTrack",\
 @"SLDSColorBrand",\
-@"SLDSColorBrandDark" \
+@"SLDSColorBrandDark",\
+@"SLDSColorBrandDarker" \
 ] objectAtIndex:enum]
 
 
@@ -58,7 +60,7 @@ SFDS_ALIAS_BISCAY,
 SFDS_ALIAS_LINK_WATER,
 SFDS_ALIAS_WHITE_LILAC,
 SFDS_ALIAS_FOAM,
-SFDS_ALIAS_LEMON_CHIFFON,
+SFDS_ALIAS_SNOWY_MINT,
 SFDS_ALIAS_DEEP_COVE,
 SFDS_ALIAS_LINK_WATER,
 SFDS_ALIAS_KASHMIR_BLUE,
@@ -78,6 +80,7 @@ SFDS_ALIAS_FOAM,
 SFDS_ALIAS_DEEP_COVE,
 SFDS_ALIAS_LINK_WATER,
 SFDS_ALIAS_STEAM,
+SFDS_ALIAS_GEYSER,
 SFDS_ALIAS_WHITE_LILAC,
 SFDS_ALIAS_STEAM,
 SFDS_ALIAS_REGENT_GREY_TRANSPARENT_80,
@@ -86,7 +89,8 @@ SFDS_ALIAS_WHITE_TRANSPARENT_75,
 SFDS_ALIAS_STEAM,
 SFDS_ALIAS_CADET_BLUE,
 SFDS_ALIAS_AZURE,
-SFDS_ALIAS_SCIENCE_BLUE
+SFDS_ALIAS_SCIENCE_BLUE,
+SFDS_ALIAS_ENDEAVOUR
 };
 
 + (UIColor *)sldsColor:(SLDSColorBgType)lmColor{

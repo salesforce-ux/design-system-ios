@@ -38,6 +38,7 @@
 @"SLDSIconActionFreezeUser",\
 @"SLDSIconActionGoal",\
 @"SLDSIconActionGoogleNews",\
+@"SLDSIconActionInfo",\
 @"SLDSIconActionJoinGroup",\
 @"SLDSIconActionLeadConvert",\
 @"SLDSIconActionLeaveGroup",\
@@ -158,6 +159,7 @@
 @"SLDSIconActionNewNote",\
 @"SLDSIconActionNewNotebook",\
 @"SLDSIconActionNewOpportunity",\
+@"SLDSIconActionNewPersonAccount",\
 @"SLDSIconActionNewTask",\
 @"SLDSIconActionPasswordUnlock",\
 @"SLDSIconActionPreview",\
@@ -169,6 +171,7 @@
 @"SLDSIconActionReject",\
 @"SLDSIconActionRemove",\
 @"SLDSIconActionResetPassword",\
+@"SLDSIconActionShare",\
 @"SLDSIconActionShareFile",\
 @"SLDSIconActionShareLink",\
 @"SLDSIconActionSharePoll",\
@@ -178,6 +181,8 @@
 @"SLDSIconActionSubmitForApproval",\
 @"SLDSIconActionUpdate",\
 @"SLDSIconActionUpdateStatus",\
+@"SLDSIconActionUpload",\
+@"SLDSIconActionUser",\
 @"SLDSIconActionUserActivation",\
 @"SLDSIconActionWebLink" \
 ] objectAtIndex:enum]

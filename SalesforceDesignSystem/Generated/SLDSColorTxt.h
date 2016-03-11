@@ -13,6 +13,7 @@ typedef NS_ENUM(NSInteger, SLDSColorTextType) {
     
     SLDSColorTextActionLabel,
 	SLDSColorTextActionLabelActive,
+	SLDSColorTextBrand,
 	SLDSColorTextBrowser,
 	SLDSColorTextBrowserActive,
 	SLDSColorTextCustomer,

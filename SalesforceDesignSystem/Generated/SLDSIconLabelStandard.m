@@ -43,6 +43,7 @@
 @"SLDSIconStandardDocument",\
 @"SLDSIconStandardDrafts",\
 @"SLDSIconStandardEmail",\
+@"SLDSIconStandardEmailIq",\
 @"SLDSIconStandardEmailChatter",\
 @"SLDSIconStandardEmpty",\
 @"SLDSIconStandardEndorsement",\
@@ -52,10 +53,12 @@
 @"SLDSIconStandardFeedback",\
 @"SLDSIconStandardFile",\
 @"SLDSIconStandardFlow",\
+@"SLDSIconStandardFolder",\
 @"SLDSIconStandardGenericLoading",\
 @"SLDSIconStandardGoals",\
 @"SLDSIconStandardGroupLoading",\
 @"SLDSIconStandardGroups",\
+@"SLDSIconStandardHierarchy",\
 @"SLDSIconStandardHome",\
 @"SLDSIconStandardHousehold",\
 @"SLDSIconStandardInsights",\
@@ -64,7 +67,6 @@
 @"SLDSIconStandardLink",\
 @"SLDSIconStandardLogACall",\
 @"SLDSIconStandardMarketingActions",\
-@"SLDSIconStandardMarketingResources",\
 @"SLDSIconStandardMetrics",\
 @"SLDSIconStandardNews",\
 @"SLDSIconStandardNote",\
@@ -72,6 +74,7 @@
 @"SLDSIconStandardOrders",\
 @"SLDSIconStandardPeople",\
 @"SLDSIconStandardPerformance",\
+@"SLDSIconStandardPersonAccount",\
 @"SLDSIconStandardPhoto",\
 @"SLDSIconStandardPoll",\
 @"SLDSIconStandardPortal",\
@@ -100,7 +103,9 @@
 @"SLDSIconStandardToday",\
 @"SLDSIconStandardTopic",\
 @"SLDSIconStandardUnmatched",\
-@"SLDSIconStandardUser" \
+@"SLDSIconStandardUser",\
+@"SLDSIconStandardWorkOrder",\
+@"SLDSIconStandardWorkOrderItem" \
 ] objectAtIndex:enum]
 
 @implementation SLDSIconLabelStandard

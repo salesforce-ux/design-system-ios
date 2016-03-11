@@ -39,6 +39,7 @@ typedef NS_ENUM(NSInteger, SLDSIconActionType) {
 	SLDSIconActionFreezeUser,
 	SLDSIconActionGoal,
 	SLDSIconActionGoogleNews,
+	SLDSIconActionInfo,
 	SLDSIconActionJoinGroup,
 	SLDSIconActionLeadConvert,
 	SLDSIconActionLeaveGroup,
@@ -159,6 +160,7 @@ typedef NS_ENUM(NSInteger, SLDSIconActionType) {
 	SLDSIconActionNewNote,
 	SLDSIconActionNewNotebook,
 	SLDSIconActionNewOpportunity,
+	SLDSIconActionNewPersonAccount,
 	SLDSIconActionNewTask,
 	SLDSIconActionPasswordUnlock,
 	SLDSIconActionPreview,
@@ -170,6 +172,7 @@ typedef NS_ENUM(NSInteger, SLDSIconActionType) {
 	SLDSIconActionReject,
 	SLDSIconActionRemove,
 	SLDSIconActionResetPassword,
+	SLDSIconActionShare,
 	SLDSIconActionShareFile,
 	SLDSIconActionShareLink,
 	SLDSIconActionSharePoll,
@@ -179,6 +182,8 @@ typedef NS_ENUM(NSInteger, SLDSIconActionType) {
 	SLDSIconActionSubmitForApproval,
 	SLDSIconActionUpdate,
 	SLDSIconActionUpdateStatus,
+	SLDSIconActionUpload,
+	SLDSIconActionUser,
 	SLDSIconActionUserActivation,
 	SLDSIconActionWebLink
 };

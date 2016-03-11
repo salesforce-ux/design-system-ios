@@ -9,9 +9,16 @@
 #import "SLDSColorMsg.h"
 
 #define colorName(enum) [@[\
+@"SLDSColorMsgBackgroundDestructive",\
+@"SLDSColorMsgBackgroundDestructiveHover",\
+@"SLDSColorMsgBackgroundDestructiveActive",\
+@"SLDSColorMsgBackgroundInfo",\
 @"SLDSColorMsgBackgroundError",\
+@"SLDSColorMsgBackgroundErrorDark",\
 @"SLDSColorMsgBackgroundErrorAlt",\
+@"SLDSColorMsgBackgroundOffline",\
 @"SLDSColorMsgBackgroundSuccess",\
+@"SLDSColorMsgBackgroundSuccessDark",\
 @"SLDSColorMsgBackgroundToast",\
 @"SLDSColorMsgBackgroundToastSuccess",\
 @"SLDSColorMsgBackgroundToastError",\
@@ -22,9 +29,16 @@
 @implementation SLDSColorMsg
 
 static int const colorAls[] = {
-    SFDS_ALIAS_VALENCIA,
+    SFDS_ALIAS_FLUSH_MAHOGANY,
+SFDS_ALIAS_TABASCO,
+SFDS_ALIAS_MAROON,
+SFDS_ALIAS_KASHMIR_BLUE,
+SFDS_ALIAS_VALENCIA,
+SFDS_ALIAS_FLUSH_MAHOGANY,
 SFDS_ALIAS_DEEP_BLUSH,
+SFDS_ALIAS_TUNDORA,
 SFDS_ALIAS_EMERALD,
+SFDS_ALIAS_SALEM,
 SFDS_ALIAS_KASHMIR_BLUE_TRANSPARENT_95,
 SFDS_ALIAS_SALEM_TRANSPARENT_95,
 SFDS_ALIAS_FLUSH_MAHOGANY_TRANSPARENT_95,

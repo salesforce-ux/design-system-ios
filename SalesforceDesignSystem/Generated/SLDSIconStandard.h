@@ -44,6 +44,7 @@ typedef NS_ENUM(NSInteger, SLDSIconStandardType) {
 	SLDSIconStandardDocument,
 	SLDSIconStandardDrafts,
 	SLDSIconStandardEmail,
+	SLDSIconStandardEmailIq,
 	SLDSIconStandardEmailChatter,
 	SLDSIconStandardEmpty,
 	SLDSIconStandardEndorsement,
@@ -53,10 +54,12 @@ typedef NS_ENUM(NSInteger, SLDSIconStandardType) {
 	SLDSIconStandardFeedback,
 	SLDSIconStandardFile,
 	SLDSIconStandardFlow,
+	SLDSIconStandardFolder,
 	SLDSIconStandardGenericLoading,
 	SLDSIconStandardGoals,
 	SLDSIconStandardGroupLoading,
 	SLDSIconStandardGroups,
+	SLDSIconStandardHierarchy,
 	SLDSIconStandardHome,
 	SLDSIconStandardHousehold,
 	SLDSIconStandardInsights,
@@ -65,7 +68,6 @@ typedef NS_ENUM(NSInteger, SLDSIconStandardType) {
 	SLDSIconStandardLink,
 	SLDSIconStandardLogACall,
 	SLDSIconStandardMarketingActions,
-	SLDSIconStandardMarketingResources,
 	SLDSIconStandardMetrics,
 	SLDSIconStandardNews,
 	SLDSIconStandardNote,
@@ -73,6 +75,7 @@ typedef NS_ENUM(NSInteger, SLDSIconStandardType) {
 	SLDSIconStandardOrders,
 	SLDSIconStandardPeople,
 	SLDSIconStandardPerformance,
+	SLDSIconStandardPersonAccount,
 	SLDSIconStandardPhoto,
 	SLDSIconStandardPoll,
 	SLDSIconStandardPortal,
@@ -101,7 +104,9 @@ typedef NS_ENUM(NSInteger, SLDSIconStandardType) {
 	SLDSIconStandardToday,
 	SLDSIconStandardTopic,
 	SLDSIconStandardUnmatched,
-	SLDSIconStandardUser
+	SLDSIconStandardUser,
+	SLDSIconStandardWorkOrder,
+	SLDSIconStandardWorkOrderItem
 };
 
 

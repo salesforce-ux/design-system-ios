@@ -38,6 +38,7 @@ typedef NS_ENUM(NSInteger, SLDSColorBgType) {
 	SLDSColorBackgroundOrgSwitcherArrow,
 	SLDSColorBackgroundPayload,
 	SLDSColorBackgroundShade,
+	SLDSColorBackgroundShadeDark,
 	SLDSColorBackgroundStencil,
 	SLDSColorBackgroundStencilAlt,
 	SLDSColorBackgroundTempModal,
@@ -46,7 +47,8 @@ typedef NS_ENUM(NSInteger, SLDSColorBgType) {
 	SLDSColorBackgroundScrollbar,
 	SLDSColorBackgroundScrollbarTrack,
 	SLDSColorBrand,
-	SLDSColorBrandDark
+	SLDSColorBrandDark,
+	SLDSColorBrandDarker
 };
 
 @interface SLDSColorBg : NSObject

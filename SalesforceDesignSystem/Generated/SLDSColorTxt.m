@@ -11,6 +11,7 @@
 #define colorName(enum) [@[\
 @"SLDSColorTextActionLabel",\
 @"SLDSColorTextActionLabelActive",\
+@"SLDSColorTextBrand",\
 @"SLDSColorTextBrowser",\
 @"SLDSColorTextBrowserActive",\
 @"SLDSColorTextCustomer",\
@@ -53,6 +54,7 @@
 static int const colorAls[] = {
 SFDS_ALIAS_KASHMIR_BLUE,
 SFDS_ALIAS_BISCAY,
+SFDS_ALIAS_AZURE,
 SFDS_ALIAS_WHITE,
 SFDS_ALIAS_BLACK_TRANSPARENT_40,
 SFDS_ALIAS_TANGERINE,

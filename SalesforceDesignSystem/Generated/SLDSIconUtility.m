@@ -187,7 +187,25 @@
 @"\uEAB0",\
 @"\uEAB1",\
 @"\uEAB2",\
-@"\uEAB3" \
+@"\uEAB3",\
+@"\uEAB4",\
+@"\uEAB5",\
+@"\uEAB6",\
+@"\uEAB7",\
+@"\uEAB8",\
+@"\uEAB9",\
+@"\uEABA",\
+@"\uEABB",\
+@"\uEABC",\
+@"\uEABD",\
+@"\uEABE",\
+@"\uEABF",\
+@"\uEAC0",\
+@"\uEAC1",\
+@"\uEAC2",\
+@"\uEAC3",\
+@"\uEAC4",\
+@"\uEAC5" \
 ] objectAtIndex:enum]
 
 

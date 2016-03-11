@@ -22,6 +22,7 @@
 @"SLDSColorBtnTextButtonInverseDisabled",\
 @"SLDSColorBtnTextIconDefault",\
 @"SLDSColorBtnTextIconDefaultHint",\
+@"SLDSColorBtnTextIconDefaultHintBorderless",\
 @"SLDSColorBtnTextIconDefaultHover",\
 @"SLDSColorBtnTextIconDefaultActive",\
 @"SLDSColorBtnTextIconDefaultDisabled",\
@@ -71,6 +72,7 @@ SFDS_ALIAS_STEAM,
 SFDS_ALIAS_WHITE_TRANSPARENT_15,
 SFDS_ALIAS_KASHMIR_BLUE,
 SFDS_ALIAS_CASPER,
+SFDS_ALIAS_STEAM,
 SFDS_ALIAS_SCIENCE_BLUE,
 SFDS_ALIAS_MIDNIGHT_BLUE,
 SFDS_ALIAS_GEYSER,

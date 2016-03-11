@@ -24,6 +24,7 @@ typedef NS_ENUM(NSInteger, SLDSColorBtnType) {
 	SLDSColorBtnTextButtonInverseDisabled,
 	SLDSColorBtnTextIconDefault,
 	SLDSColorBtnTextIconDefaultHint,
+	SLDSColorBtnTextIconDefaultHintBorderless,
 	SLDSColorBtnTextIconDefaultHover,
 	SLDSColorBtnTextIconDefaultActive,
 	SLDSColorBtnTextIconDefaultDisabled,

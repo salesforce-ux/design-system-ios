@@ -11,9 +11,20 @@
 #define colorName(enum) [@[\
 @"SLDSColorBorder",\
 @"SLDSColorBorderBrand",\
+@"SLDSColorBorderBrandDark",\
+@"SLDSColorBorderCustomer",\
+@"SLDSColorBorderDestructive",\
+@"SLDSColorBorderDestructiveHover",\
+@"SLDSColorBorderDestructiveActive",\
+@"SLDSColorBorderInfo",\
 @"SLDSColorBorderError",\
+@"SLDSColorBorderErrorAlt",\
+@"SLDSColorBorderErrorDark",\
+@"SLDSColorBorderOffline",\
 @"SLDSColorBorderSuccess",\
+@"SLDSColorBorderSuccessDark",\
 @"SLDSColorBorderWarning",\
+@"SLDSColorBorderInverse",\
 @"SLDSColorBorderTabSelected",\
 @"SLDSColorBorderSeparator",\
 @"SLDSColorBorderSeparatorAlt",\
@@ -34,10 +45,21 @@
 
 static int const colorAls[] = {
     SFDS_ALIAS_GEYSER,
+SFDS_ALIAS_AZURE,
 SFDS_ALIAS_SCIENCE_BLUE,
+SFDS_ALIAS_TANGERINE,
 SFDS_ALIAS_FLUSH_MAHOGANY,
+SFDS_ALIAS_TABASCO,
+SFDS_ALIAS_MAROON,
+SFDS_ALIAS_KASHMIR_BLUE,
+SFDS_ALIAS_FLUSH_MAHOGANY,
+SFDS_ALIAS_DEEP_BLUSH,
+SFDS_ALIAS_DEEP_BLUSH,
+SFDS_ALIAS_TUNDORA,
 SFDS_ALIAS_EMERALD,
+SFDS_ALIAS_SALEM,
 SFDS_ALIAS_KOROMIKO,
+SFDS_ALIAS_DEEP_COVE,
 SFDS_ALIAS_SCIENCE_BLUE,
 SFDS_ALIAS_LINK_WATER,
 SFDS_ALIAS_GEYSER,
