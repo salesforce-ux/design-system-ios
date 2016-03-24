@@ -16,6 +16,7 @@
 #import "UIFont+SLDSFont.h"
 #import "SLDSSpacing.h"
 #import "SLDSSizing.h"
+#import "SLDSLineHeight.h"
 #import "UIImage+SLDSIconUtility.h"
 #import "UIImage+SLDSIconAction.h"
 #import "UIImage+SLDSIconCustom.h"

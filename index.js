@@ -36,6 +36,7 @@ var forceBaseMessaging = require('./build/force-base/messaging')(CONFIG);
 
 var forceBaseSpacing = require('./build/force-base/spacing')(CONFIG);
 var forceBaseSizing = require('./build/force-base/sizing')(CONFIG);
+var forceBaseLineHeight = require('./build/force-base/lineHeight')(CONFIG);
 
 
 var fonts = require('./build/force-base/fonts')(CONFIG);
@@ -89,6 +90,7 @@ cleanup({})
   .then(forceBaseMessaging.run)
   .then(forceBaseSpacing.run)
   .then(forceBaseSizing.run)
+  .then(forceBaseLineHeight.run)
 
   //ICONS BUILD
   .then(iconsUtility.run)

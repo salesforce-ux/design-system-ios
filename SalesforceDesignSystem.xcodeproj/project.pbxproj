@@ -96,6 +96,9 @@
 		05A7B0631B2A53E900B5FB86 /* UIColor+SLDSBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A7B0611B2A53E900B5FB86 /* UIColor+SLDSBorder.m */; };
 		05A7B0661B2A53F800B5FB86 /* UIFont+SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 05A7B0641B2A53F800B5FB86 /* UIFont+SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05A7B0671B2A53F800B5FB86 /* UIFont+SLDSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A7B0651B2A53F800B5FB86 /* UIFont+SLDSFont.m */; };
+		05B79B2E1CA47D2C00C3DE06 /* SLDSLineHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 05B79B2D1CA47D2C00C3DE06 /* SLDSLineHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		05B79B2F1CA47D2C00C3DE06 /* SLDSLineHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 05B79B2D1CA47D2C00C3DE06 /* SLDSLineHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		05B79B301CA47D2C00C3DE06 /* SLDSLineHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 05B79B2D1CA47D2C00C3DE06 /* SLDSLineHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05E945491B91AE1D0018D3F3 /* SLDSIconUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 05E945471B91AE1D0018D3F3 /* SLDSIconUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05E9454A1B91AE1D0018D3F3 /* SLDSIconUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 05E945471B91AE1D0018D3F3 /* SLDSIconUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05E9454B1B91AE1D0018D3F3 /* SLDSIconUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 05E945471B91AE1D0018D3F3 /* SLDSIconUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -296,6 +299,7 @@
 		05A7B0611B2A53E900B5FB86 /* UIColor+SLDSBorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SLDSBorder.m"; sourceTree = "<group>"; };
 		05A7B0641B2A53F800B5FB86 /* UIFont+SLDSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+SLDSFont.h"; sourceTree = "<group>"; };
 		05A7B0651B2A53F800B5FB86 /* UIFont+SLDSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+SLDSFont.m"; sourceTree = "<group>"; };
+		05B79B2D1CA47D2C00C3DE06 /* SLDSLineHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSLineHeight.h; path = Generated/SLDSLineHeight.h; sourceTree = "<group>"; };
 		05E945471B91AE1D0018D3F3 /* SLDSIconUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIconUtility.h; path = Generated/SLDSIconUtility.h; sourceTree = "<group>"; };
 		05E945481B91AE1D0018D3F3 /* SLDSIconUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSIconUtility.m; path = Generated/SLDSIconUtility.m; sourceTree = "<group>"; };
 		05E9454F1B91B0C30018D3F3 /* SLDSIconAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIconAction.h; path = Generated/SLDSIconAction.h; sourceTree = "<group>"; };
@@ -498,6 +502,7 @@
 		05A7B03B1B2A4F3F00B5FB86 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				05B79B2D1CA47D2C00C3DE06 /* SLDSLineHeight.h */,
 				05E945CB1B929E0D0018D3F3 /* SLDSSpacing.h */,
 				05E945C71B929D2F0018D3F3 /* SLDSSizing.h */,
 				05E945BF1B929AAB0018D3F3 /* SLDSColorTxt.h */,
@@ -571,6 +576,7 @@
 				05E945C81B929D2F0018D3F3 /* SLDSSizing.h in Headers */,
 				05E945CC1B929E0D0018D3F3 /* SLDSSpacing.h in Headers */,
 				05E945991B922FFC0018D3F3 /* SLDSColorBg.h in Headers */,
+				05B79B2E1CA47D2C00C3DE06 /* SLDSLineHeight.h in Headers */,
 				052B1F2A1B9686A5003CCCCC /* DesignSystem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,6 +611,7 @@
 				05E945C21B929AAB0018D3F3 /* SLDSColorTxt.h in Headers */,
 				05E945C91B929D2F0018D3F3 /* SLDSSizing.h in Headers */,
 				05E945CD1B929E0D0018D3F3 /* SLDSSpacing.h in Headers */,
+				05B79B2F1CA47D2C00C3DE06 /* SLDSLineHeight.h in Headers */,
 				05E9459A1B922FFC0018D3F3 /* SLDSColorBg.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -654,6 +661,7 @@
 				05E945C31B929AAB0018D3F3 /* SLDSColorTxt.h in Headers */,
 				05E945CA1B929D2F0018D3F3 /* SLDSSizing.h in Headers */,
 				05E945CE1B929E0D0018D3F3 /* SLDSSpacing.h in Headers */,
+				05B79B301CA47D2C00C3DE06 /* SLDSLineHeight.h in Headers */,
 				05E9458B1B9227F70018D3F3 /* SLDSFont.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
