@@ -25,7 +25,8 @@
     "svg2ttf": "^2.0.0",
     "svgo": "^0.5.3",
     "temp": "^0.8.1",
-    "@salesforce-ux/icons": "3.4.0"
+    "@salesforce-ux/icons": "3.4.0",
+    "css-parse": "^2.0.0"
   },
   "gitDependencies": {
     "design-tokens": "git@github.com:salesforce-ux/design-tokens.git#v2.0.5"
