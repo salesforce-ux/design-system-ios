@@ -21,6 +21,7 @@
 @"SLDSIconUtilityBan",\
 @"SLDSIconUtilityBold",\
 @"SLDSIconUtilityBookmark",\
+@"SLDSIconUtilityBroadcast",\
 @"SLDSIconUtilityBrush",\
 @"SLDSIconUtilityBucket",\
 @"SLDSIconUtilityBuilder",\
@@ -55,6 +56,7 @@
 @"SLDSIconUtilityDeprecate",\
 @"SLDSIconUtilityDescription",\
 @"SLDSIconUtilityDesktop",\
+@"SLDSIconUtilityDockPanel",\
 @"SLDSIconUtilityDown",\
 @"SLDSIconUtilityDownload",\
 @"SLDSIconUtilityEdit",\
@@ -85,6 +87,7 @@
 @"SLDSIconUtilityItalic",\
 @"SLDSIconUtilityJustifyText",\
 @"SLDSIconUtilityKanban",\
+@"SLDSIconUtilityKeyboardDismiss",\
 @"SLDSIconUtilityKnowledgeBase",\
 @"SLDSIconUtilityLayers",\
 @"SLDSIconUtilityLayout",\

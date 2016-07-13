@@ -47,7 +47,12 @@ typedef NS_ENUM(NSInteger, SLDSColorTextType) {
 	SLDSColorTextToast,
 	SLDSColorTextWarning,
 	SLDSColorTextWeak,
-	SLDSColorTextIconBrand
+	SLDSColorTextIconBrand,
+	SLDSColorTextIconUtility,
+	SLDSColorTextToggleDisabled,
+	SLDSColorTextContextBar,
+	SLDSColorTextContextBarInverse,
+	SLDSColorTextContextBarActionTrigger
 };
 
 @interface SLDSColorTxt : NSObject

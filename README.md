@@ -1,8 +1,8 @@
-#Lightning Design System Tokens + iOS
+# Lightning Design System Tokens + iOS
 
-Spring 2016 tokens
+Summer ’16 tokens
 
-iOS static library for [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/) [Tokens](https://www.lightningdesignsystem.com/resources/tokens/)
+iOS static library for [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/) [Tokens](https://www.lightningdesignsystem.com/tokens/)
 
 
 ## Simple Install

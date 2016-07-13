@@ -45,7 +45,12 @@
 @"SLDSColorTextToast",\
 @"SLDSColorTextWarning",\
 @"SLDSColorTextWeak",\
-@"SLDSColorTextIconBrand" \
+@"SLDSColorTextIconBrand",\
+@"SLDSColorTextIconUtility",\
+@"SLDSColorTextToggleDisabled",\
+@"SLDSColorTextContextBar",\
+@"SLDSColorTextContextBarInverse",\
+@"SLDSColorTextContextBarActionTrigger" \
 ] objectAtIndex:enum]
 
 
@@ -88,7 +93,12 @@ SFDS_ALIAS_STEAM,
 SFDS_ALIAS_STEAM,
 SFDS_ALIAS_KOROMIKO,
 SFDS_ALIAS_KASHMIR_BLUE,
-SFDS_ALIAS_SCIENCE_BLUE
+SFDS_ALIAS_SCIENCE_BLUE,
+SFDS_ALIAS_HIT_GREY,
+SFDS_ALIAS_GEYSER,
+SFDS_ALIAS_WHITE,
+SFDS_ALIAS_WHITE,
+SFDS_ALIAS_WHITE_TRANSPARENT_40
 };
 
 + (UIColor *)sldsColor:(SLDSColorTextType)lmColor{

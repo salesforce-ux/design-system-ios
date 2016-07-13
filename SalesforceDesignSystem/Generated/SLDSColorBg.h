@@ -34,6 +34,7 @@ typedef NS_ENUM(NSInteger, SLDSColorBgType) {
 	SLDSColorBackgroundNotificationBadgeHover,
 	SLDSColorBackgroundNotificationBadgeFocus,
 	SLDSColorBackgroundNotificationBadgeActive,
+	SLDSColorBackgroundNotification,
 	SLDSColorBackgroundNotificationNew,
 	SLDSColorBackgroundOrgSwitcherArrow,
 	SLDSColorBackgroundPayload,
@@ -48,7 +49,20 @@ typedef NS_ENUM(NSInteger, SLDSColorBgType) {
 	SLDSColorBackgroundScrollbarTrack,
 	SLDSColorBrand,
 	SLDSColorBrandDark,
-	SLDSColorBrandDarker
+	SLDSColorBrandDarker,
+	SLDSColorBackgroundToggle,
+	SLDSColorBackgroundToggleDisabled,
+	SLDSColorBackgroundToggleHover,
+	SLDSColorBackgroundToggleActive,
+	SLDSColorBackgroundToggleActiveHover,
+	SLDSColorBackgroundContextBar,
+	SLDSColorBackgroundContextBarItemHover,
+	SLDSColorBackgroundContextBarItemActive,
+	SLDSColorBackgroundContextBarInverseItemHover,
+	SLDSColorBackgroundContextBarInverseItemActive,
+	SLDSColorBackgroundContextBarShadow,
+	SLDSColorBackgroundContextBarActionHighlight,
+	SLDSColorBackgroundPageHeader
 };
 
 @interface SLDSColorBg : NSObject

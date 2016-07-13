@@ -205,7 +205,10 @@
 @"\uEAC2",\
 @"\uEAC3",\
 @"\uEAC4",\
-@"\uEAC5" \
+@"\uEAC5",\
+@"\uEAC6",\
+@"\uEAC7",\
+@"\uEAC8" \
 ] objectAtIndex:enum]
 
 

@@ -37,7 +37,12 @@
 @"SLDSColorBorderSelectionHover",\
 @"SLDSColorBorderSelectionActive",\
 @"SLDSColorBorderCanvasElementSelection",\
-@"SLDSColorBorderCanvasElementSelectionHover" \
+@"SLDSColorBorderCanvasElementSelectionHover",\
+@"SLDSColorBorderContextBarDivider",\
+@"SLDSColorBorderContextBarItem",\
+@"SLDSColorBorderContextBarInverseItem",\
+@"SLDSColorBorderIconInverseHint",\
+@"SLDSColorBorderIconInverseHintHover" \
 ] objectAtIndex:enum]
 
 
@@ -72,7 +77,12 @@ SFDS_ALIAS_SCIENCE_BLUE,
 SFDS_ALIAS_AZURE,
 SFDS_ALIAS_LINK_WATER,
 SFDS_ALIAS_MALIBU,
-SFDS_ALIAS_ENDEAVOUR
+SFDS_ALIAS_ENDEAVOUR,
+SFDS_ALIAS_WHITE_TRANSPARENT_20,
+SFDS_ALIAS_BLACK_TRANSPARENT_20,
+SFDS_ALIAS_WHITE_TRANSPARENT_20,
+SFDS_ALIAS_WHITE_TRANSPARENT_50,
+SFDS_ALIAS_WHITE_TRANSPARENT_75
 };
 
 + (UIColor *)sldsColor:(SLDSColorBorderType)lmColor{

@@ -22,6 +22,7 @@
 @"SLDSColorBtnTextButtonInverseDisabled",\
 @"SLDSColorBtnTextIconDefault",\
 @"SLDSColorBtnTextIconDefaultHint",\
+@"SLDSColorBtnTextIconInverseHint",\
 @"SLDSColorBtnTextIconDefaultHintBorderless",\
 @"SLDSColorBtnTextIconDefaultHover",\
 @"SLDSColorBtnTextIconDefaultActive",\
@@ -30,6 +31,7 @@
 @"SLDSColorBtnTextIconInverseHover",\
 @"SLDSColorBtnTextIconInverseActive",\
 @"SLDSColorBtnTextIconInverseDisabled",\
+@"SLDSColorBtnTextIconInverseHintHover",\
 @"SLDSColorBtnBackgroundButtonBrand",\
 @"SLDSColorBtnBackgroundButtonBrandActive",\
 @"SLDSColorBtnBackgroundButtonBrandHover",\
@@ -72,6 +74,7 @@ SFDS_ALIAS_STEAM,
 SFDS_ALIAS_WHITE_TRANSPARENT_15,
 SFDS_ALIAS_KASHMIR_BLUE,
 SFDS_ALIAS_CASPER,
+SFDS_ALIAS_WHITE_TRANSPARENT_50,
 SFDS_ALIAS_STEAM,
 SFDS_ALIAS_SCIENCE_BLUE,
 SFDS_ALIAS_MIDNIGHT_BLUE,
@@ -80,6 +83,7 @@ SFDS_ALIAS_WHITE,
 SFDS_ALIAS_WHITE,
 SFDS_ALIAS_WHITE,
 SFDS_ALIAS_WHITE_TRANSPARENT_15,
+SFDS_ALIAS_WHITE_TRANSPARENT_75,
 SFDS_ALIAS_SCIENCE_BLUE,
 SFDS_ALIAS_MIDNIGHT_BLUE,
 SFDS_ALIAS_ENDEAVOUR,
