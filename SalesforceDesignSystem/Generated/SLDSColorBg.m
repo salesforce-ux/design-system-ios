@@ -32,6 +32,7 @@
 @"SLDSColorBackgroundNotificationBadgeHover",\
 @"SLDSColorBackgroundNotificationBadgeFocus",\
 @"SLDSColorBackgroundNotificationBadgeActive",\
+@"SLDSColorBackgroundNotification",\
 @"SLDSColorBackgroundNotificationNew",\
 @"SLDSColorBackgroundOrgSwitcherArrow",\
 @"SLDSColorBackgroundPayload",\
@@ -46,7 +47,20 @@
 @"SLDSColorBackgroundScrollbarTrack",\
 @"SLDSColorBrand",\
 @"SLDSColorBrandDark",\
-@"SLDSColorBrandDarker" \
+@"SLDSColorBrandDarker",\
+@"SLDSColorBackgroundToggle",\
+@"SLDSColorBackgroundToggleDisabled",\
+@"SLDSColorBackgroundToggleHover",\
+@"SLDSColorBackgroundToggleActive",\
+@"SLDSColorBackgroundToggleActiveHover",\
+@"SLDSColorBackgroundContextBar",\
+@"SLDSColorBackgroundContextBarItemHover",\
+@"SLDSColorBackgroundContextBarItemActive",\
+@"SLDSColorBackgroundContextBarInverseItemHover",\
+@"SLDSColorBackgroundContextBarInverseItemActive",\
+@"SLDSColorBackgroundContextBarShadow",\
+@"SLDSColorBackgroundContextBarActionHighlight",\
+@"SLDSColorBackgroundPageHeader" \
 ] objectAtIndex:enum]
 
 
@@ -76,6 +90,7 @@ SFDS_ALIAS_FLUSH_MAHOGANY,
 SFDS_ALIAS_ENDEAVOUR,
 SFDS_ALIAS_ENDEAVOUR,
 SFDS_ALIAS_MIDNIGHT_BLUE,
+SFDS_ALIAS_WHITE,
 SFDS_ALIAS_FOAM,
 SFDS_ALIAS_DEEP_COVE,
 SFDS_ALIAS_LINK_WATER,
@@ -90,7 +105,19 @@ SFDS_ALIAS_STEAM,
 SFDS_ALIAS_CADET_BLUE,
 SFDS_ALIAS_AZURE,
 SFDS_ALIAS_SCIENCE_BLUE,
-SFDS_ALIAS_ENDEAVOUR
+SFDS_ALIAS_ENDEAVOUR,
+SFDS_ALIAS_CASPER,
+SFDS_ALIAS_CASPER,
+SFDS_ALIAS_REGENT_GREY,
+SFDS_ALIAS_SCIENCE_BLUE,
+SFDS_ALIAS_BISCAY,
+SFDS_ALIAS_BLACK_TRANSPARENT_20,
+SFDS_ALIAS_BLACK_TRANSPARENT_40,
+SFDS_ALIAS_WHITE_TRANSPARENT_20,
+SFDS_ALIAS_WHITE_TRANSPARENT_40,
+SFDS_ALIAS_GRADIENT_SHADOW_BOTTOM,
+SFDS_ALIAS_WHITE_TRANSPARENT_20,
+SFDS_ALIAS_CATSKILL_WHITE
 };
 
 + (UIColor *)sldsColor:(SLDSColorBgType)lmColor{

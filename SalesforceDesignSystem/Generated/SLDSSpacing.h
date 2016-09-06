@@ -6,3 +6,4 @@ static const int SLDSSpacingSmall = 11;
 static const int SLDSSpacingMedium = 14;
 static const int SLDSSpacingLarge = 21;
 static const int SLDSSpacingXLarge = 28;
+static const int SLDSSpacingXxLarge = 42;

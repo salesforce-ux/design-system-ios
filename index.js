@@ -16,14 +16,13 @@ var svgPathParser = require('svg-path-parser');
 var Q = require('q');
 
 var CONFIG = {
-  DESIGN_TOKENS_DIR:path.join(__dirname,'git_modules','design-tokens','tokens'),
-  FORCE_BASE_TOKENS_DIR:path.join(__dirname,'git_modules','design-tokens','tokens','force-base'),
+  DESIGN_TOKENS_DIR:path.join(__dirname,'node_modules','@salesforce-ux','design-tokens','tokens'),
+  FORCE_BASE_TOKENS_DIR:path.join(__dirname,'node_modules','@salesforce-ux','design-tokens','tokens','force-base'),
   OUTPUT_DIR:path.join(__dirname,'SalesforceDesignSystem','Generated'),
   IOS_TEMPLATE_DIR:path.join(__dirname,'SalesforceDesignSystem','Templates'),
   FONT_FILE_NAME:'SalesforceDesignSystemIconsUtility.ttf',
   BUNDLE_FOLDER:path.join(__dirname,'SalesforceDesignSystemResources'),
   DIST_CSS:path.join(__dirname,'_dist_css')
-
 };
 
 var forceBaseAliases = require('./build/force-base/aliases')(CONFIG);

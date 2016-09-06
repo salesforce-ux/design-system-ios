@@ -13,6 +13,7 @@ typedef NS_ENUM(NSInteger, SLDSFontSizeType) {
     SLDSFontSizeXSmall,
 	SLDSFontSizeSmall,
 	SLDSFontSizeMedium,
+	SLDSFontSizeMediumA,
 	SLDSFontSizeLarge,
 	SLDSFontSizeXLarge,
 	SLDSFontSizeXxLarge

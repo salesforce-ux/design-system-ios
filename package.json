@@ -2,15 +2,20 @@
   "name": "DesignSystem-iOS",
   "version": "2.0.6",
   "description": "Salesforce Lightning Design System iOS Static Library",
-  "author": "Ivan Bogdanov",
+  "author": "Salesforce.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/salesforce-ux/design-system-ios.git"
+  },
   "scripts": {
-    "postinstall": "node postinstall.js",
     "prestart": "gulp",
     "start": "node index.js"
   },
+  "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
+    "@salesforce-ux/design-tokens": "3.1.2",
+    "@salesforce-ux/icons": "3.5.1",
     "fs-extra": "^0.18.2",
-    "gdm": "0.0.9",
     "gulp-clean": "^0.3.1",
     "gulp-consolidate": "^0.1.2",
     "gulp-filter": "^3.0.1",
@@ -25,10 +30,6 @@
     "svg2ttf": "^2.0.0",
     "svgo": "^0.5.3",
     "temp": "^0.8.1",
-    "@salesforce-ux/icons": "3.4.0",
     "css-parse": "^2.0.0"
-  },
-  "gitDependencies": {
-    "design-tokens": "git@github.com:salesforce-ux/design-tokens.git#v2.0.5"
   }
 }

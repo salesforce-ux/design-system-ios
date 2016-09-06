@@ -39,7 +39,12 @@ typedef NS_ENUM(NSInteger, SLDSColorBorderType) {
 	SLDSColorBorderSelectionHover,
 	SLDSColorBorderSelectionActive,
 	SLDSColorBorderCanvasElementSelection,
-	SLDSColorBorderCanvasElementSelectionHover
+	SLDSColorBorderCanvasElementSelectionHover,
+	SLDSColorBorderContextBarDivider,
+	SLDSColorBorderContextBarItem,
+	SLDSColorBorderContextBarInverseItem,
+	SLDSColorBorderIconInverseHint,
+	SLDSColorBorderIconInverseHintHover
 };
 
 @interface SLDSColorBrdr : NSObject
