@@ -20,11 +20,13 @@
 	case SLDSFontSizeMedium:
 			return 16;
 	case SLDSFontSizeMediumA:
-			return 14;
+			return 18;
 	case SLDSFontSizeLarge:
 			return 20;
 	case SLDSFontSizeXLarge:
 			return 24;
+	case SLDSFontSizeXLargeA:
+			return 25.12;
 	case SLDSFontSizeXxLarge:
 			return 32;
         default:

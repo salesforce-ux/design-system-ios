@@ -10,6 +10,7 @@
 
 #define iconName(enum) [@[\
 @"SLDSIconActionAddContact",\
+@"SLDSIconActionAddRelationship",\
 @"SLDSIconActionAnnouncement",\
 @"SLDSIconActionApex",\
 @"SLDSIconActionApproval",\
@@ -170,6 +171,7 @@
 @"SLDSIconActionRefresh",\
 @"SLDSIconActionReject",\
 @"SLDSIconActionRemove",\
+@"SLDSIconActionRemoveRelationship",\
 @"SLDSIconActionResetPassword",\
 @"SLDSIconActionShare",\
 @"SLDSIconActionShareFile",\
@@ -184,6 +186,7 @@
 @"SLDSIconActionUpload",\
 @"SLDSIconActionUser",\
 @"SLDSIconActionUserActivation",\
+@"SLDSIconActionViewRelationship",\
 @"SLDSIconActionWebLink" \
 ] objectAtIndex:enum]
 

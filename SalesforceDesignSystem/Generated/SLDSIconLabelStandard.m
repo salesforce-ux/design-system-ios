@@ -43,7 +43,6 @@
 @"SLDSIconStandardDocument",\
 @"SLDSIconStandardDrafts",\
 @"SLDSIconStandardEmail",\
-@"SLDSIconStandardEmailIq",\
 @"SLDSIconStandardEmailChatter",\
 @"SLDSIconStandardEmpty",\
 @"SLDSIconStandardEndorsement",\
@@ -54,6 +53,7 @@
 @"SLDSIconStandardFile",\
 @"SLDSIconStandardFlow",\
 @"SLDSIconStandardFolder",\
+@"SLDSIconStandardForecasts",\
 @"SLDSIconStandardGenericLoading",\
 @"SLDSIconStandardGoals",\
 @"SLDSIconStandardGroupLoading",\
@@ -67,6 +67,7 @@
 @"SLDSIconStandardLink",\
 @"SLDSIconStandardLogACall",\
 @"SLDSIconStandardMarketingActions",\
+@"SLDSIconStandardMerge",\
 @"SLDSIconStandardMetrics",\
 @"SLDSIconStandardNews",\
 @"SLDSIconStandardNote",\
@@ -88,9 +89,12 @@
 @"SLDSIconStandardRecent",\
 @"SLDSIconStandardRecord",\
 @"SLDSIconStandardRelatedList",\
+@"SLDSIconStandardRelationship",\
 @"SLDSIconStandardReport",\
 @"SLDSIconStandardReward",\
+@"SLDSIconStandardSalesPath",\
 @"SLDSIconStandardScanCard",\
+@"SLDSIconStandardServiceContract",\
 @"SLDSIconStandardSkillEntity",\
 @"SLDSIconStandardSocial",\
 @"SLDSIconStandardSolution",\

@@ -11,40 +11,7 @@
 
 typedef NS_ENUM(NSInteger, SLDSColorBorderType) {
     
-    SLDSColorBorder,
-	SLDSColorBorderBrand,
-	SLDSColorBorderBrandDark,
-	SLDSColorBorderCustomer,
-	SLDSColorBorderDestructive,
-	SLDSColorBorderDestructiveHover,
-	SLDSColorBorderDestructiveActive,
-	SLDSColorBorderInfo,
-	SLDSColorBorderError,
-	SLDSColorBorderErrorAlt,
-	SLDSColorBorderErrorDark,
-	SLDSColorBorderOffline,
-	SLDSColorBorderSuccess,
-	SLDSColorBorderSuccessDark,
-	SLDSColorBorderWarning,
-	SLDSColorBorderInverse,
-	SLDSColorBorderTabSelected,
-	SLDSColorBorderSeparator,
-	SLDSColorBorderSeparatorAlt,
-	SLDSColorBorderSeparatorAlt2,
-	SLDSColorBorderSeparatorInverse,
-	SLDSColorBorderRowSelected,
-	SLDSColorBorderRowSelectedHover,
-	SLDSColorBorderHint,
-	SLDSColorBorderSelection,
-	SLDSColorBorderSelectionHover,
-	SLDSColorBorderSelectionActive,
-	SLDSColorBorderCanvasElementSelection,
-	SLDSColorBorderCanvasElementSelectionHover,
-	SLDSColorBorderContextBarDivider,
-	SLDSColorBorderContextBarItem,
-	SLDSColorBorderContextBarInverseItem,
-	SLDSColorBorderIconInverseHint,
-	SLDSColorBorderIconInverseHintHover
+    
 };
 
 @interface SLDSColorBrdr : NSObject

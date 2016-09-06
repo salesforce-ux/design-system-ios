@@ -44,13 +44,43 @@
 @"SLDSColorTextTabLabelDisabled",\
 @"SLDSColorTextToast",\
 @"SLDSColorTextWarning",\
+@"SLDSColorTextWarningAlt",\
 @"SLDSColorTextWeak",\
 @"SLDSColorTextIconBrand",\
 @"SLDSColorTextIconUtility",\
 @"SLDSColorTextToggleDisabled",\
 @"SLDSColorTextContextBar",\
 @"SLDSColorTextContextBarInverse",\
-@"SLDSColorTextContextBarActionTrigger" \
+@"SLDSColorTextContextBarActionTrigger",\
+@"SLDSColorTextButtonBrand",\
+@"SLDSColorTextButtonBrandHover",\
+@"SLDSColorTextButtonBrandActive",\
+@"SLDSColorTextButtonBrandDisabled",\
+@"SLDSColorTextButtonDefault",\
+@"SLDSColorTextButtonDefaultHover",\
+@"SLDSColorTextButtonDefaultActive",\
+@"SLDSColorTextButtonDefaultDisabled",\
+@"SLDSColorTextButtonDefaultHint",\
+@"SLDSColorTextButtonInverse",\
+@"SLDSColorTextButtonInverseDisabled",\
+@"SLDSColorTextIconDefault",\
+@"SLDSColorTextIconDefaultHint",\
+@"SLDSColorTextIconInverseHint",\
+@"SLDSColorTextIconDefaultHintBorderless",\
+@"SLDSColorTextIconDefaultHover",\
+@"SLDSColorTextIconDefaultActive",\
+@"SLDSColorTextIconDefaultDisabled",\
+@"SLDSColorTextIconInverse",\
+@"SLDSColorTextIconInverseHover",\
+@"SLDSColorTextIconInverseActive",\
+@"SLDSColorTextIconInverseDisabled",\
+@"SLDSColorTextIconInverseHintHover",\
+@"SLDSColorTextLabel",\
+@"SLDSColorTextPlaceholder",\
+@"SLDSColorTextPlaceholderInverse",\
+@"SLDSColorTextRequired",\
+@"SLDSColorTextPill",\
+@"SLDSColorTextSuccess" \
 ] objectAtIndex:enum]
 
 
@@ -92,13 +122,43 @@ SFDS_ALIAS_MIDNIGHT_BLUE,
 SFDS_ALIAS_STEAM,
 SFDS_ALIAS_STEAM,
 SFDS_ALIAS_KOROMIKO,
+SFDS_ALIAS_CINNAMON,
 SFDS_ALIAS_KASHMIR_BLUE,
 SFDS_ALIAS_SCIENCE_BLUE,
 SFDS_ALIAS_HIT_GREY,
 SFDS_ALIAS_GEYSER,
+SFDS_ALIAS_KASHMIR_BLUE,
+SFDS_ALIAS_WHITE,
+SFDS_ALIAS_WHITE_TRANSPARENT_40,
 SFDS_ALIAS_WHITE,
 SFDS_ALIAS_WHITE,
-SFDS_ALIAS_WHITE_TRANSPARENT_40
+SFDS_ALIAS_WHITE,
+SFDS_ALIAS_WHITE,
+SFDS_ALIAS_SCIENCE_BLUE,
+SFDS_ALIAS_SCIENCE_BLUE,
+SFDS_ALIAS_SCIENCE_BLUE,
+SFDS_ALIAS_GEYSER,
+SFDS_ALIAS_CASPER,
+SFDS_ALIAS_STEAM,
+SFDS_ALIAS_WHITE_TRANSPARENT_15,
+SFDS_ALIAS_KASHMIR_BLUE,
+SFDS_ALIAS_CASPER,
+SFDS_ALIAS_WHITE_TRANSPARENT_50,
+SFDS_ALIAS_STEAM,
+SFDS_ALIAS_SCIENCE_BLUE,
+SFDS_ALIAS_MIDNIGHT_BLUE,
+SFDS_ALIAS_GEYSER,
+SFDS_ALIAS_WHITE,
+SFDS_ALIAS_WHITE,
+SFDS_ALIAS_WHITE,
+SFDS_ALIAS_WHITE_TRANSPARENT_15,
+SFDS_ALIAS_WHITE_TRANSPARENT_75,
+SFDS_ALIAS_KASHMIR_BLUE,
+SFDS_ALIAS_KASHMIR_BLUE,
+SFDS_ALIAS_STEAM,
+SFDS_ALIAS_FLUSH_MAHOGANY,
+SFDS_ALIAS_SCIENCE_BLUE,
+SFDS_ALIAS_FUN_GREEN
 };
 
 + (UIColor *)sldsColor:(SLDSColorTextType)lmColor{

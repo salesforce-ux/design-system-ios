@@ -208,7 +208,36 @@
 @"\uEAC5",\
 @"\uEAC6",\
 @"\uEAC7",\
-@"\uEAC8" \
+@"\uEAC8",\
+@"\uEAC9",\
+@"\uEACA",\
+@"\uEACB",\
+@"\uEACC",\
+@"\uEACD",\
+@"\uEACE",\
+@"\uEACF",\
+@"\uEAD0",\
+@"\uEAD1",\
+@"\uEAD2",\
+@"\uEAD3",\
+@"\uEAD4",\
+@"\uEAD5",\
+@"\uEAD6",\
+@"\uEAD7",\
+@"\uEAD8",\
+@"\uEAD9",\
+@"\uEADA",\
+@"\uEADB",\
+@"\uEADC",\
+@"\uEADD",\
+@"\uEADE",\
+@"\uEADF",\
+@"\uEAE0",\
+@"\uEAE1",\
+@"\uEAE2",\
+@"\uEAE3",\
+@"\uEAE4",\
+@"\uEAE5" \
 ] objectAtIndex:enum]
 
 

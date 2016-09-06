@@ -81,13 +81,17 @@ cleanup({})
   .then(createTempDir)
 
   .then(forceBaseAliases.run)
+
   .then(forceBaseBackgrounds.run)
   .then(forceBaseText.run)
   .then(forceBaseBorder.run)
+/*
   .then(forceBaseButton.run)
   .then(forceBaseInput.run)
   .then(forceBaseMessaging.run)
+*/
   .then(forceBaseSpacing.run)
+
   .then(forceBaseSizing.run)
   .then(forceBaseLineHeight.run)
 
@@ -104,6 +108,7 @@ cleanup({})
   .then(fonts.run)
 
   .then(copyGeneratedFiles)
+
   .then(function(opts){
     console.log('#### @@@@@ ####');
   });

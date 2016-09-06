@@ -1,6 +1,6 @@
 {
   "name": "DesignSystem-iOS",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "Salesforce Lightning Design System iOS Static Library",
   "author": "Salesforce.com",
   "repository": {
@@ -13,8 +13,8 @@
   },
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "@salesforce-ux/design-tokens": "3.1.2",
-    "@salesforce-ux/icons": "3.5.1",
+    "@salesforce-ux/design-tokens": "3.6.1",
+    "@salesforce-ux/icons": "5.1.0",
     "fs-extra": "^0.18.2",
     "gulp-clean": "^0.3.1",
     "gulp-consolidate": "^0.1.2",

@@ -13,6 +13,8 @@
 @"SLDSIconUtilityAdduser",\
 @"SLDSIconUtilityAnnouncement",\
 @"SLDSIconUtilityAnswer",\
+@"SLDSIconUtilityApex",\
+@"SLDSIconUtilityApproval",\
 @"SLDSIconUtilityApps",\
 @"SLDSIconUtilityArrowdown",\
 @"SLDSIconUtilityArrowup",\
@@ -21,6 +23,7 @@
 @"SLDSIconUtilityBan",\
 @"SLDSIconUtilityBold",\
 @"SLDSIconUtilityBookmark",\
+@"SLDSIconUtilityBreadcrumbs",\
 @"SLDSIconUtilityBroadcast",\
 @"SLDSIconUtilityBrush",\
 @"SLDSIconUtilityBucket",\
@@ -29,6 +32,8 @@
 @"SLDSIconUtilityCapslock",\
 @"SLDSIconUtilityCases",\
 @"SLDSIconUtilityCenterAlignText",\
+@"SLDSIconUtilityChangeOwner",\
+@"SLDSIconUtilityChangeRecordType",\
 @"SLDSIconUtilityChart",\
 @"SLDSIconUtilityChat",\
 @"SLDSIconUtilityCheck",\
@@ -50,12 +55,14 @@
 @"SLDSIconUtilityCustomApps",\
 @"SLDSIconUtilityCut",\
 @"SLDSIconUtilityDash",\
+@"SLDSIconUtilityDatabase",\
 @"SLDSIconUtilityDatadotcom",\
 @"SLDSIconUtilityDayview",\
 @"SLDSIconUtilityDelete",\
 @"SLDSIconUtilityDeprecate",\
 @"SLDSIconUtilityDescription",\
 @"SLDSIconUtilityDesktop",\
+@"SLDSIconUtilityDislike",\
 @"SLDSIconUtilityDockPanel",\
 @"SLDSIconUtilityDown",\
 @"SLDSIconUtilityDownload",\
@@ -68,13 +75,16 @@
 @"SLDSIconUtilityEvent",\
 @"SLDSIconUtilityExpand",\
 @"SLDSIconUtilityExpandAlt",\
+@"SLDSIconUtilityFallback",\
 @"SLDSIconUtilityFavorite",\
 @"SLDSIconUtilityFeed",\
 @"SLDSIconUtilityFile",\
 @"SLDSIconUtilityFilter",\
 @"SLDSIconUtilityFilterlist",\
+@"SLDSIconUtilityFlow",\
 @"SLDSIconUtilityForward",\
 @"SLDSIconUtilityFrozen",\
+@"SLDSIconUtilityFullWidthView",\
 @"SLDSIconUtilityGroups",\
 @"SLDSIconUtilityHelp",\
 @"SLDSIconUtilityHome",\
@@ -82,9 +92,12 @@
 @"SLDSIconUtilityImage",\
 @"SLDSIconUtilityInbox",\
 @"SLDSIconUtilityInfo",\
+@"SLDSIconUtilityInfoAlt",\
 @"SLDSIconUtilityInsertTagField",\
 @"SLDSIconUtilityInsertTemplate",\
 @"SLDSIconUtilityItalic",\
+@"SLDSIconUtilityJumpToBottom",\
+@"SLDSIconUtilityJumpToTop",\
 @"SLDSIconUtilityJustifyText",\
 @"SLDSIconUtilityKanban",\
 @"SLDSIconUtilityKeyboardDismiss",\
@@ -93,6 +106,7 @@
 @"SLDSIconUtilityLayout",\
 @"SLDSIconUtilityLeft",\
 @"SLDSIconUtilityLeftAlignText",\
+@"SLDSIconUtilityLevelUp",\
 @"SLDSIconUtilityLike",\
 @"SLDSIconUtilityLink",\
 @"SLDSIconUtilityList",\
@@ -101,7 +115,9 @@
 @"SLDSIconUtilityLogACall",\
 @"SLDSIconUtilityLogout",\
 @"SLDSIconUtilityMagicwand",\
+@"SLDSIconUtilityMarkAllAsRead",\
 @"SLDSIconUtilityMatrix",\
+@"SLDSIconUtilityMerge",\
 @"SLDSIconUtilityMetrics",\
 @"SLDSIconUtilityMinimizeWindow",\
 @"SLDSIconUtilityMoneybag",\
@@ -140,6 +156,7 @@
 @"SLDSIconUtilityQuestion",\
 @"SLDSIconUtilityQuestionsAndAnswers",\
 @"SLDSIconUtilityRecord",\
+@"SLDSIconUtilityRecordCreate",\
 @"SLDSIconUtilityRedo",\
 @"SLDSIconUtilityRefresh",\
 @"SLDSIconUtilityRelate",\
@@ -147,7 +164,11 @@
 @"SLDSIconUtilityRemoveLink",\
 @"SLDSIconUtilityReplace",\
 @"SLDSIconUtilityReply",\
+@"SLDSIconUtilityReplyAll",\
 @"SLDSIconUtilityResetPassword",\
+@"SLDSIconUtilityResourceAbsence",\
+@"SLDSIconUtilityResourceCapacity",\
+@"SLDSIconUtilityResourceTerritory",\
 @"SLDSIconUtilityRetweet",\
 @"SLDSIconUtilityRichtextbulletedlist",\
 @"SLDSIconUtilityRichtextindent",\
@@ -163,6 +184,7 @@
 @"SLDSIconUtilitySetup",\
 @"SLDSIconUtilitySetupAssistantGuide",\
 @"SLDSIconUtilityShare",\
+@"SLDSIconUtilityShareMobile",\
 @"SLDSIconUtilitySharePost",\
 @"SLDSIconUtilityShield",\
 @"SLDSIconUtilitySideList",\
@@ -179,6 +201,7 @@
 @"SLDSIconUtilitySummary",\
 @"SLDSIconUtilitySummarydetail",\
 @"SLDSIconUtilitySwitch",\
+@"SLDSIconUtilitySync",\
 @"SLDSIconUtilityTable",\
 @"SLDSIconUtilityTabletLandscape",\
 @"SLDSIconUtilityTabletPortrait",\
@@ -187,10 +210,13 @@
 @"SLDSIconUtilityTextBackgroundColor",\
 @"SLDSIconUtilityTextColor",\
 @"SLDSIconUtilityThreedots",\
+@"SLDSIconUtilityThreedotsVertical",\
+@"SLDSIconUtilityThunder",\
 @"SLDSIconUtilityTileCardList",\
 @"SLDSIconUtilityTopic",\
 @"SLDSIconUtilityTouchAction",\
 @"SLDSIconUtilityTrail",\
+@"SLDSIconUtilityTurnOffNotifications",\
 @"SLDSIconUtilityUndelete",\
 @"SLDSIconUtilityUndeprecate",\
 @"SLDSIconUtilityUnderline",\
@@ -206,7 +232,10 @@
 @"SLDSIconUtilityVolumeOff",\
 @"SLDSIconUtilityWarning",\
 @"SLDSIconUtilityWeeklyview",\
+@"SLDSIconUtilityWifi",\
+@"SLDSIconUtilityWorkOrderType",\
 @"SLDSIconUtilityWorld",\
+@"SLDSIconUtilityYubiKey",\
 @"SLDSIconUtilityZoomin",\
 @"SLDSIconUtilityZoomout" \
 ] objectAtIndex:enum]

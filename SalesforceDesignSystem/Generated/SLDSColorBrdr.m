@@ -9,80 +9,14 @@
 #import "SLDSColorBrdr.h"
 
 #define colorName(enum) [@[\
-@"SLDSColorBorder",\
-@"SLDSColorBorderBrand",\
-@"SLDSColorBorderBrandDark",\
-@"SLDSColorBorderCustomer",\
-@"SLDSColorBorderDestructive",\
-@"SLDSColorBorderDestructiveHover",\
-@"SLDSColorBorderDestructiveActive",\
-@"SLDSColorBorderInfo",\
-@"SLDSColorBorderError",\
-@"SLDSColorBorderErrorAlt",\
-@"SLDSColorBorderErrorDark",\
-@"SLDSColorBorderOffline",\
-@"SLDSColorBorderSuccess",\
-@"SLDSColorBorderSuccessDark",\
-@"SLDSColorBorderWarning",\
-@"SLDSColorBorderInverse",\
-@"SLDSColorBorderTabSelected",\
-@"SLDSColorBorderSeparator",\
-@"SLDSColorBorderSeparatorAlt",\
-@"SLDSColorBorderSeparatorAlt2",\
-@"SLDSColorBorderSeparatorInverse",\
-@"SLDSColorBorderRowSelected",\
-@"SLDSColorBorderRowSelectedHover",\
-@"SLDSColorBorderHint",\
-@"SLDSColorBorderSelection",\
-@"SLDSColorBorderSelectionHover",\
-@"SLDSColorBorderSelectionActive",\
-@"SLDSColorBorderCanvasElementSelection",\
-@"SLDSColorBorderCanvasElementSelectionHover",\
-@"SLDSColorBorderContextBarDivider",\
-@"SLDSColorBorderContextBarItem",\
-@"SLDSColorBorderContextBarInverseItem",\
-@"SLDSColorBorderIconInverseHint",\
-@"SLDSColorBorderIconInverseHintHover" \
+ \
 ] objectAtIndex:enum]
 
 
 @implementation SLDSColorBrdr
 
 static int const colorAls[] = {
-    SFDS_ALIAS_GEYSER,
-SFDS_ALIAS_AZURE,
-SFDS_ALIAS_SCIENCE_BLUE,
-SFDS_ALIAS_TANGERINE,
-SFDS_ALIAS_FLUSH_MAHOGANY,
-SFDS_ALIAS_TABASCO,
-SFDS_ALIAS_MAROON,
-SFDS_ALIAS_KASHMIR_BLUE,
-SFDS_ALIAS_FLUSH_MAHOGANY,
-SFDS_ALIAS_DEEP_BLUSH,
-SFDS_ALIAS_DEEP_BLUSH,
-SFDS_ALIAS_TUNDORA,
-SFDS_ALIAS_EMERALD,
-SFDS_ALIAS_SALEM,
-SFDS_ALIAS_KOROMIKO,
-SFDS_ALIAS_DEEP_COVE,
-SFDS_ALIAS_SCIENCE_BLUE,
-SFDS_ALIAS_LINK_WATER,
-SFDS_ALIAS_GEYSER,
-SFDS_ALIAS_CADET_BLUE,
-SFDS_ALIAS_SAN_JUAN,
-SFDS_ALIAS_SCIENCE_BLUE,
-SFDS_ALIAS_AZURE,
-SFDS_ALIAS_SAN_JUAN,
-SFDS_ALIAS_SCIENCE_BLUE,
-SFDS_ALIAS_AZURE,
-SFDS_ALIAS_LINK_WATER,
-SFDS_ALIAS_MALIBU,
-SFDS_ALIAS_ENDEAVOUR,
-SFDS_ALIAS_WHITE_TRANSPARENT_20,
-SFDS_ALIAS_BLACK_TRANSPARENT_20,
-SFDS_ALIAS_WHITE_TRANSPARENT_20,
-SFDS_ALIAS_WHITE_TRANSPARENT_50,
-SFDS_ALIAS_WHITE_TRANSPARENT_75
+    
 };
 
 + (UIColor *)sldsColor:(SLDSColorBorderType)lmColor{
