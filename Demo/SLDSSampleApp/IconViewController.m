@@ -86,7 +86,7 @@
 }
 
 - (NSString *) getImportLine{
-    return @"#import <SalesforceDesignSystem/SalesforceDesignSystem.h>";
+    return @"#import <DesignSystem/DesignSystem.h>";
 }
 
 - (NSString *) getMethodName{
