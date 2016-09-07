@@ -74,8 +74,9 @@ var readColorAliases = function(opts){
           console.log('!!! FORMAT ALIAS: ',value);
           rgb = {r:0,g:0,b:0,a:0};
         }
-        colors['SFDS_ALIAS_'+name] = rgb;
-        colorEnum.push('SFDS_ALIAS_'+name);
+        const safeName = name.replace(/ /g,"_");
+        colors['SFDS_ALIAS_'+safeName] = rgb;
+        colorEnum.push('SFDS_ALIAS_'+safeName);
       });
 
       opts.colors = colors;

@@ -11,12 +11,9 @@
 #import "SWRevealViewController.h"
 #import "FrontViewController.h"
 #import "ColorListViewController.h"
-#import "ColorButtonListViewController.h"
-#import "ColorInputListViewController.h"
 
 #import "IconListViewController.h"
 
-#import "ColorMessagingListViewController.h"
 #import "TextListViewController.h"
 
 #import <SalesforceDesignSystem/SalesforceDesignSystem.h>
@@ -56,12 +53,9 @@
     
     switch(indexPath.row){
         case 0: text = @"Layout Colors"; break;
-        case 1: text = @"Button Colors"; break;
-        case 2: text = @"Input Colors"; break;
-        case 3: text = @"Messaging Colors"; break;
-        case 4: text = @"Fonts and Sizes"; break;
-        case 5: text = @"Icons"; break;
-        case 6: text = @"About"; break;
+        case 1: text = @"Fonts and Sizes"; break;
+        case 2: text = @"Icons"; break;
+        case 3: text = @"About"; break;
     }
 
     cell.textLabel.text = text;
@@ -101,21 +95,12 @@
             frontController = [[ColorListViewController alloc] init];
             break;
         case 1:
-            frontController = [[ColorButtonListViewController alloc] init];
-            break;
-        case 2:
-            frontController = [[ColorInputListViewController alloc] init];
-            break;
-        case 3:
-            frontController = [[ColorMessagingListViewController alloc] init];
-            break;
-        case 4:
             frontController = [[TextListViewController alloc] init];
             break;
-        case 5:
+        case 2:
             frontController = [[IconListViewController alloc] init];
             break;
-        case 6:
+        case 3:
             frontController = [[FrontViewController alloc] init];
             break;
     }

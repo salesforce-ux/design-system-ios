@@ -97,9 +97,7 @@
     return [NSString stringWithFormat:@"%@ %@",[self getWeightLabel:indexPath],[self getSizeLabel:indexPath] ];
 }
 
-- (UIColor *) getColor:(NSIndexPath *)indexPath{
-    return [UIColor sldsButtonColor:[[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] intValue]];
-}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 3;

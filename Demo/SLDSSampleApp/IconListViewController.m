@@ -69,7 +69,7 @@
     
     
     
-    
+/*
     NSMutableArray *tColors = [[NSMutableArray alloc] init];
     for(int i=SLDSColorBtnTextButtonBrand; i<=SLDSColorBtnTextIconInverseHover; i++) {
         [tColors addObject:[NSNumber numberWithInt:i]];
@@ -89,7 +89,7 @@
     }
     borderBtnColors = [brdrColors copy];
     
-    
+*/    
     SWRevealViewController *revealController = self.revealViewController;
     
     [self.view addGestureRecognizer:revealController.panGestureRecognizer];
