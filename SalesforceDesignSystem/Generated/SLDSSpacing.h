@@ -1,3 +1,5 @@
+static const int SLDSBorderWidthThin = 14;
+static const int SLDSBorderWidthThick = 28;
 static const int SLDSSpacingNone = 0;
 static const int SLDSSpacingXxxSmall = 2;
 static const int SLDSSpacingXxSmall = 4;

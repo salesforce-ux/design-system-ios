@@ -37,6 +37,7 @@
 [UIColor colorWithRed:1 green:1 blue:1 alpha:0.75],
 [UIColor colorWithRed:1 green:1 blue:1 alpha:0.97],
 [UIColor colorWithRed:1 green:1 blue:1 alpha:1],
+[UIColor colorWithRed:0 green:0 blue:0 alpha:1],
 [UIColor colorWithRed:0.165 green:0.58 blue:0.839 alpha:1],
 [UIColor colorWithRed:0 green:0.431 blue:0.702 alpha:1],
 [UIColor colorWithRed:0.71 green:0.212 blue:0.176 alpha:1],
@@ -63,7 +64,9 @@
 [UIColor colorWithRed:0.145 green:0.212 blue:0.278 alpha:0.3],
 [UIColor colorWithRed:0.145 green:0.212 blue:0.278 alpha:0.8],
 [UIColor colorWithRed:0.941 green:0.973 blue:0.988 alpha:1],
+[UIColor colorWithRed:0.941 green:0.973 blue:0.988 alpha:0.75],
 [UIColor colorWithRed:0 green:0.361 blue:0.58 alpha:1],
+[UIColor colorWithRed:1 green:0.941 blue:0.247 alpha:1],
 [UIColor colorWithRed:0.98 green:1 blue:0.741 alpha:1],
 [UIColor colorWithRed:0.753 green:0.376 blue:0.341 alpha:1],
 [UIColor colorWithRed:0.263 green:0.714 blue:0.416 alpha:1],
@@ -102,6 +105,7 @@
 [UIColor colorWithRed:0 green:0.224 blue:0.42 alpha:1],
 [UIColor colorWithRed:0.933 green:0.945 blue:0.965 alpha:1],
 [UIColor colorWithRed:0.267 green:0.267 blue:0.267 alpha:1],
+[UIColor colorWithRed:0.847 green:0.929 blue:1 alpha:1],
 [UIColor colorWithRed:0.31 green:0.208 blue:0.831 alpha:1],
 [UIColor colorWithRed:0.278 green:0.18 blue:0.761 alpha:1],
 [UIColor colorWithRed:0.239 green:0.153 blue:0.671 alpha:1],
@@ -126,7 +130,12 @@
 [UIColor colorWithRed:0.486 green:0.251 blue:0.498 alpha:1],
 [UIColor colorWithRed:0.384 green:0.161 blue:0.4 alpha:1],
 [UIColor colorWithRed:0.286 green:0.09 blue:0.302 alpha:1],
-[UIColor colorWithRed:0.192 green:0.039 blue:0.2 alpha:1]
+[UIColor colorWithRed:0.192 green:0.039 blue:0.2 alpha:1],
+[UIColor colorWithRed:0.518 green:0.282 blue:0 alpha:1],
+[UIColor colorWithRed:0.008 green:0.502 blue:0.282 alpha:1],
+[UIColor colorWithRed:0 green:0.631 blue:0.875 alpha:1],
+[UIColor colorWithRed:0.875 green:0.894 blue:0.933 alpha:1],
+[UIColor colorWithRed:0.043 green:0.137 blue:0.6 alpha:1]
         ];
     });
     

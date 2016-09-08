@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		051C4CDE1B2F557B001CDF18 /* ColorInputListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 051C4CDD1B2F557B001CDF18 /* ColorInputListViewController.m */; };
-		051C4CE11B2F55F6001CDF18 /* ColorInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 051C4CE01B2F55F6001CDF18 /* ColorInputViewController.m */; };
 		051C4CE41B2F6A00001CDF18 /* bg-landing.png in Resources */ = {isa = PBXBuildFile; fileRef = 051C4CE31B2F6A00001CDF18 /* bg-landing.png */; };
 		051C4CE71B2F78C9001CDF18 /* LaunchScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 051C4CE61B2F78C9001CDF18 /* LaunchScreenView.m */; };
 		051C4D181B3005DA001CDF18 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051C4D171B3005DA001CDF18 /* SpriteKit.framework */; };
@@ -26,12 +24,8 @@
 		05C49E231B2D5D92006B6B28 /* RearTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05C49E221B2D5D92006B6B28 /* RearTableViewController.m */; };
 		05C49E281B2EA4A3006B6B28 /* ColorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05C49E251B2EA4A3006B6B28 /* ColorListViewController.m */; };
 		05C49E291B2EA4A3006B6B28 /* ColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05C49E271B2EA4A3006B6B28 /* ColorViewController.m */; };
-		05C49E2C1B2F1C21006B6B28 /* ColorButtonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05C49E2B1B2F1C21006B6B28 /* ColorButtonListViewController.m */; };
-		05C49E301B2F257C006B6B28 /* ColorButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05C49E2F1B2F257C006B6B28 /* ColorButtonViewController.m */; };
 		05DCE66A1B7A702D009C6563 /* libSalesforceDesignSystem-Extended.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DCE6671B7A701B009C6563 /* libSalesforceDesignSystem-Extended.a */; };
 		05DCE66E1B7A74C4009C6563 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 05DCE66B1B7A7046009C6563 /* SalesforceDesignSystem.bundle */; };
-		05F681491B31D94C00BFE41B /* ColorMessagingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F681481B31D94C00BFE41B /* ColorMessagingListViewController.m */; };
-		05F681541B31DEC800BFE41B /* ColorMessagingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F681531B31DEC800BFE41B /* ColorMessagingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		051C4CDC1B2F557B001CDF18 /* ColorInputListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorInputListViewController.h; sourceTree = "<group>"; };
-		051C4CDD1B2F557B001CDF18 /* ColorInputListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorInputListViewController.m; sourceTree = "<group>"; };
-		051C4CDF1B2F55F6001CDF18 /* ColorInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorInputViewController.h; sourceTree = "<group>"; };
-		051C4CE01B2F55F6001CDF18 /* ColorInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorInputViewController.m; sourceTree = "<group>"; };
 		051C4CE31B2F6A00001CDF18 /* bg-landing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-landing.png"; path = "Resources/Images/bg-landing.png"; sourceTree = "<group>"; };
 		051C4CE51B2F78C9001CDF18 /* LaunchScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenView.h; sourceTree = "<group>"; };
 		051C4CE61B2F78C9001CDF18 /* LaunchScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenView.m; sourceTree = "<group>"; };
@@ -101,16 +91,8 @@
 		05C49E251B2EA4A3006B6B28 /* ColorListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorListViewController.m; sourceTree = "<group>"; };
 		05C49E261B2EA4A3006B6B28 /* ColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorViewController.h; sourceTree = "<group>"; };
 		05C49E271B2EA4A3006B6B28 /* ColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorViewController.m; sourceTree = "<group>"; };
-		05C49E2A1B2F1C21006B6B28 /* ColorButtonListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorButtonListViewController.h; sourceTree = "<group>"; };
-		05C49E2B1B2F1C21006B6B28 /* ColorButtonListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorButtonListViewController.m; sourceTree = "<group>"; };
-		05C49E2E1B2F257C006B6B28 /* ColorButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorButtonViewController.h; sourceTree = "<group>"; };
-		05C49E2F1B2F257C006B6B28 /* ColorButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorButtonViewController.m; sourceTree = "<group>"; };
 		05DCE65C1B7A701B009C6563 /* SalesforceDesignSystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SalesforceDesignSystem.xcodeproj; path = ../SalesforceDesignSystem.xcodeproj; sourceTree = "<group>"; };
 		05DCE66B1B7A7046009C6563 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceDesignSystem.bundle; path = ../SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
-		05F681471B31D94C00BFE41B /* ColorMessagingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorMessagingListViewController.h; sourceTree = "<group>"; };
-		05F681481B31D94C00BFE41B /* ColorMessagingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorMessagingListViewController.m; sourceTree = "<group>"; };
-		05F681521B31DEC800BFE41B /* ColorMessagingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorMessagingViewController.h; sourceTree = "<group>"; };
-		05F681531B31DEC800BFE41B /* ColorMessagingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorMessagingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,24 +155,12 @@
 				05C49E1F1B2C741A006B6B28 /* FrontViewController.m */,
 				05C49E211B2D5D92006B6B28 /* RearTableViewController.h */,
 				05C49E221B2D5D92006B6B28 /* RearTableViewController.m */,
-				05C49E2A1B2F1C21006B6B28 /* ColorButtonListViewController.h */,
-				05C49E2B1B2F1C21006B6B28 /* ColorButtonListViewController.m */,
-				05C49E2E1B2F257C006B6B28 /* ColorButtonViewController.h */,
-				05C49E2F1B2F257C006B6B28 /* ColorButtonViewController.m */,
-				051C4CDC1B2F557B001CDF18 /* ColorInputListViewController.h */,
-				051C4CDD1B2F557B001CDF18 /* ColorInputListViewController.m */,
-				051C4CDF1B2F55F6001CDF18 /* ColorInputViewController.h */,
-				051C4CE01B2F55F6001CDF18 /* ColorInputViewController.m */,
 				051C4CE51B2F78C9001CDF18 /* LaunchScreenView.h */,
 				051C4CE61B2F78C9001CDF18 /* LaunchScreenView.m */,
 				051C4D1F1B30AF29001CDF18 /* TextListViewController.h */,
 				051C4D201B30AF29001CDF18 /* TextListViewController.m */,
 				051C4D221B30AFA1001CDF18 /* TextViewController.h */,
 				051C4D231B30AFA1001CDF18 /* TextViewController.m */,
-				05F681471B31D94C00BFE41B /* ColorMessagingListViewController.h */,
-				05F681481B31D94C00BFE41B /* ColorMessagingListViewController.m */,
-				05F681521B31DEC800BFE41B /* ColorMessagingViewController.h */,
-				05F681531B31DEC800BFE41B /* ColorMessagingViewController.m */,
 				0539D1961B684A0000A7DFD2 /* IconListViewController.h */,
 				0539D1971B684A0000A7DFD2 /* IconListViewController.m */,
 				0539D1A21B68556D00A7DFD2 /* IconViewController.h */,
@@ -345,22 +315,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05F681491B31D94C00BFE41B /* ColorMessagingListViewController.m in Sources */,
 				051C4D211B30AF29001CDF18 /* TextListViewController.m in Sources */,
-				051C4CDE1B2F557B001CDF18 /* ColorInputListViewController.m in Sources */,
 				051C4D241B30AFA1001CDF18 /* TextViewController.m in Sources */,
 				05C49E201B2C741A006B6B28 /* FrontViewController.m in Sources */,
-				05F681541B31DEC800BFE41B /* ColorMessagingViewController.m in Sources */,
 				0539D1981B684A0000A7DFD2 /* IconListViewController.m in Sources */,
 				05A7B0921B2A5EAC00B5FB86 /* AppDelegate.m in Sources */,
 				05A7B08F1B2A5EAC00B5FB86 /* main.m in Sources */,
 				05C49E231B2D5D92006B6B28 /* RearTableViewController.m in Sources */,
 				0539D1A41B68556D00A7DFD2 /* IconViewController.m in Sources */,
-				05C49E301B2F257C006B6B28 /* ColorButtonViewController.m in Sources */,
 				05C49E281B2EA4A3006B6B28 /* ColorListViewController.m in Sources */,
-				051C4CE11B2F55F6001CDF18 /* ColorInputViewController.m in Sources */,
 				05C49E1D1B2C6A9E006B6B28 /* RearMasterTableViewController.m in Sources */,
-				05C49E2C1B2F1C21006B6B28 /* ColorButtonListViewController.m in Sources */,
 				051C4CE71B2F78C9001CDF18 /* LaunchScreenView.m in Sources */,
 				05C49E291B2EA4A3006B6B28 /* ColorViewController.m in Sources */,
 				05C49E1A1B2C691C006B6B28 /* SWRevealViewController.m in Sources */,

@@ -41,8 +41,20 @@
 @"SLDSColorBorderContextBarDivider",\
 @"SLDSColorBorderContextBarItem",\
 @"SLDSColorBorderContextBarInverseItem",\
+@"SLDSColorBorderContextBarThemeDefault",\
+@"SLDSColorBorderContextBarThemeDefaultAlt",\
+@"SLDSColorBorderContextBarThemeDefaultHover",\
+@"SLDSColorBorderContextBarThemeDefaultActive",\
 @"SLDSColorBorderIconInverseHint",\
-@"SLDSColorBorderIconInverseHintHover" \
+@"SLDSColorBorderIconInverseHintHover",\
+@"SLDSColorBorderButtonBrand",\
+@"SLDSColorBorderButtonBrandDisabled",\
+@"SLDSColorBorderButtonDefault",\
+@"SLDSColorBorderButtonInverseDisabled",\
+@"SLDSColorBorderInput",\
+@"SLDSColorBorderInputActive",\
+@"SLDSColorBorderInputDisabled",\
+@"SLDSColorBorderInputCheckboxSelectedCheckmark" \
 ] objectAtIndex:enum]
 
 
@@ -81,8 +93,20 @@ SFDS_ALIAS_ENDEAVOUR,
 SFDS_ALIAS_WHITE_TRANSPARENT_20,
 SFDS_ALIAS_BLACK_TRANSPARENT_20,
 SFDS_ALIAS_WHITE_TRANSPARENT_20,
+SFDS_ALIAS_CERULEAN,
+SFDS_ALIAS_MYSTIC,
+SFDS_ALIAS_TOREA_BAY,
+SFDS_ALIAS_MYSTIC,
 SFDS_ALIAS_WHITE_TRANSPARENT_50,
-SFDS_ALIAS_WHITE_TRANSPARENT_75
+SFDS_ALIAS_WHITE_TRANSPARENT_75,
+SFDS_ALIAS_SCIENCE_BLUE,
+SFDS_ALIAS_TRANSPARENT,
+SFDS_ALIAS_GEYSER,
+SFDS_ALIAS_WHITE_TRANSPARENT_15,
+SFDS_ALIAS_GEYSER,
+SFDS_ALIAS_AZURE,
+SFDS_ALIAS_CADET_BLUE,
+SFDS_ALIAS_WHITE
 };
 
 + (UIColor *)sldsColor:(SLDSColorBorderType)lmColor{

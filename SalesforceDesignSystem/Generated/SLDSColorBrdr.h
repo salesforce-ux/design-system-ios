@@ -43,8 +43,20 @@ typedef NS_ENUM(NSInteger, SLDSColorBorderType) {
 	SLDSColorBorderContextBarDivider,
 	SLDSColorBorderContextBarItem,
 	SLDSColorBorderContextBarInverseItem,
+	SLDSColorBorderContextBarThemeDefault,
+	SLDSColorBorderContextBarThemeDefaultAlt,
+	SLDSColorBorderContextBarThemeDefaultHover,
+	SLDSColorBorderContextBarThemeDefaultActive,
 	SLDSColorBorderIconInverseHint,
-	SLDSColorBorderIconInverseHintHover
+	SLDSColorBorderIconInverseHintHover,
+	SLDSColorBorderButtonBrand,
+	SLDSColorBorderButtonBrandDisabled,
+	SLDSColorBorderButtonDefault,
+	SLDSColorBorderButtonInverseDisabled,
+	SLDSColorBorderInput,
+	SLDSColorBorderInputActive,
+	SLDSColorBorderInputDisabled,
+	SLDSColorBorderInputCheckboxSelectedCheckmark
 };
 
 @interface SLDSColorBrdr : NSObject

@@ -11,6 +11,7 @@
 typedef NS_ENUM(NSInteger, SLDSIconActionType) {
     
     SLDSIconActionAddContact,
+	SLDSIconActionAddRelationship,
 	SLDSIconActionAnnouncement,
 	SLDSIconActionApex,
 	SLDSIconActionApproval,
@@ -171,6 +172,7 @@ typedef NS_ENUM(NSInteger, SLDSIconActionType) {
 	SLDSIconActionRefresh,
 	SLDSIconActionReject,
 	SLDSIconActionRemove,
+	SLDSIconActionRemoveRelationship,
 	SLDSIconActionResetPassword,
 	SLDSIconActionShare,
 	SLDSIconActionShareFile,
@@ -185,6 +187,7 @@ typedef NS_ENUM(NSInteger, SLDSIconActionType) {
 	SLDSIconActionUpload,
 	SLDSIconActionUser,
 	SLDSIconActionUserActivation,
+	SLDSIconActionViewRelationship,
 	SLDSIconActionWebLink
 };
 

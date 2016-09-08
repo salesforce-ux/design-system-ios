@@ -26,4 +26,5 @@ static const int  SLDSSquareIconLarge = 44;
 static const int  SLDSSquareToggleSlider = 18;
 static const int  SLDSWidthToggle = 47;
 static const int  SLDSHeightToggle = 21;
-static const int  SLDSHeightContextBar = 32;
+static const int  SLDSHeightContextBar = 35;
+static const int  SLDSHeightPill = 23;

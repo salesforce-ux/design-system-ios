@@ -36,12 +36,14 @@ var readColors = function(opts){
     } else {
       var colors = JSON.parse(src).props;
       Object.keys(colors).map(function(name){
+        console.log('>>> Name: '+name);
         var color = colors[name];
-        if(color.type && color.type === 'color'){
+        console.log('>>> Color: ', color);
+        if(!color.type){
           var rgb = {};
           var alias;
           if(color.value.indexOf('{!')===0){
-            alias = 'SFDS_ALIAS_'+color.value.replace('{!','').replace('}','');
+            alias = 'SFDS_ALIAS_'+color.value.replace('{!','').replace('}','').replace('}','').replace(/ /g,'_');
           }
           else{
             console.log('!!! BRDR COLOR FORMAT ISSUE: ',color.value);
