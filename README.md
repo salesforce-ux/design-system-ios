@@ -2,7 +2,7 @@
 
 Winter ’17 tokens
 
-iOS static library for [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/) [Tokens](https://www.lightningdesignsystem.com/tokens/)
+iOS static library for [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/) [Tokens](https://www.lightningdesignsystem.com/design-tokens/)
 
 
 ## Simple Install
