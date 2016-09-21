@@ -35,7 +35,7 @@ var readTokens = function(opts){
       Object.keys(tokens).map(function(name){
         var token = tokens[name];
         if(token && token.value){
-          var value = Math.round(14*parseFloat(token.value.replace('rem','')));
+          var value = Math.round(16*parseFloat(token.value.replace('rem','')));
           var enamName = 'SLDS'+utilString.camelCase(name);
           spacings[enamName] = value;
           spacingEnum.push(enamName);
