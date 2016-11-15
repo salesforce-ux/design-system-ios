@@ -16,12 +16,20 @@
     return [SLDSFont sldsFontRegularWithSize:fontSize];
 }
 
++(instancetype) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize{
+    return [SLDSFont sldsFontItalicWithSize:fontSize];
+}
+
 +(instancetype) sldsFontLightWithSize:(SLDSFontSizeType)fontSize{
     return [SLDSFont sldsFontLightWithSize:fontSize];
 }
 
 +(instancetype) sldsFontStrongWithSize:(SLDSFontSizeType)fontSize{
     return [SLDSFont sldsFontStrongWithSize:fontSize];
+}
+
++(instancetype) sldsFontThinWithSize:(SLDSFontSizeType)fontSize{
+    return [SLDSFont sldsFontThinWithSize:fontSize];
 }
 
 @end

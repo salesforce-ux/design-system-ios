@@ -15,8 +15,10 @@
 @implementation SLDSFontTemplate
 
 static NSString * bodyFontName = @"SalesforceSans-Regular";
+static NSString * italicFontName = @"SalesforceSans-Italic";
 static NSString * lightFontName = @"SalesforceSans-Light";
 static NSString * strongFontName = @"SalesforceSans-Bold";
+static NSString * thinFontName = @"SalesforceSans-Thin";
 
 +(void) loadFontWithName:(NSString *)fontName {
     if ([UIFont fontWithName:fontName size:10]) {
@@ -56,8 +58,17 @@ static NSString * strongFontName = @"SalesforceSans-Bold";
     switch(fontSize){
 /*FONT_REGULAR_SIZES*/
     }
+}
 
-    
++(UIFont *) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize{
+    static dispatch_once_t predicate = 0;
+    dispatch_once(&predicate, ^{
+        [self loadFontWithName:italicFontName];
+    });
+
+    switch(fontSize){
+/*FONT_ITALIC_SIZES*/
+    }
 }
 
 +(UIFont *) sldsFontLightWithSize:(SLDSFontSizeType)fontSize{
@@ -77,6 +88,16 @@ static NSString * strongFontName = @"SalesforceSans-Bold";
     });
     switch(fontSize){
 /*FONT_STRONG_SIZES*/
+    }
+}
+
++(UIFont *) sldsFontThinWithSize:(SLDSFontSizeType)fontSize{
+    static dispatch_once_t predicate = 0;
+    dispatch_once(&predicate, ^{
+        [self loadFontWithName:thinFontName];
+    });
+    switch(fontSize){
+/*FONT_THIN_SIZES*/
     }
 }
 

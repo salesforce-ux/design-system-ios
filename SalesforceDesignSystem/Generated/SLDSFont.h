@@ -14,9 +14,13 @@
 
 +(UIFont *) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize;
 
++(UIFont *) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize;
+
 +(UIFont *) sldsFontLightWithSize:(SLDSFontSizeType)fontSize;
 
 +(UIFont *) sldsFontStrongWithSize:(SLDSFontSizeType)fontSize;
+
++(UIFont *) sldsFontThinWithSize:(SLDSFontSizeType)fontSize;
 
 +(void) loadFontWithName:(NSString *)fontName;
 

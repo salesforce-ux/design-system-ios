@@ -15,8 +15,10 @@
 @implementation SLDSFont
 
 static NSString * bodyFontName = @"SalesforceSans-Regular";
+static NSString * italicFontName = @"SalesforceSans-Italic";
 static NSString * lightFontName = @"SalesforceSans-Light";
 static NSString * strongFontName = @"SalesforceSans-Bold";
+static NSString * thinFontName = @"SalesforceSans-Thin";
 
 +(void) loadFontWithName:(NSString *)fontName {
     if ([UIFont fontWithName:fontName size:10]) {
@@ -119,8 +121,80 @@ static NSString * strongFontName = @"SalesforceSans-Bold";
 			return font;
 		}
     }
+}
 
-    
++(UIFont *) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize{
+    static dispatch_once_t predicate = 0;
+    dispatch_once(&predicate, ^{
+        [self loadFontWithName:italicFontName];
+    });
+
+    switch(fontSize){
+		case SLDSFontSizeXSmall:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:italicFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeXSmall]];
+			});
+			return font;
+		}
+		case SLDSFontSizeSmall:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:italicFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeSmall]];
+			});
+			return font;
+		}
+		case SLDSFontSizeMedium:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:italicFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeMedium]];
+			});
+			return font;
+		}
+		case SLDSFontSizeMediumA:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:italicFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeMediumA]];
+			});
+			return font;
+		}
+		case SLDSFontSizeLarge:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:italicFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeLarge]];
+			});
+			return font;
+		}
+		case SLDSFontSizeXLarge:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:italicFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeXLarge]];
+			});
+			return font;
+		}
+		case SLDSFontSizeXLargeA:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:italicFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeXLargeA]];
+			});
+			return font;
+		}
+		case SLDSFontSizeXxLarge:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:italicFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeXxLarge]];
+			});
+			return font;
+		}
+    }
 }
 
 +(UIFont *) sldsFontLightWithSize:(SLDSFontSizeType)fontSize{
@@ -263,6 +337,79 @@ static NSString * strongFontName = @"SalesforceSans-Bold";
 			static UIFont* font;
 			dispatch_once(&predicate, ^{
 				font = [UIFont fontWithName:strongFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeXxLarge]];
+			});
+			return font;
+		}
+    }
+}
+
++(UIFont *) sldsFontThinWithSize:(SLDSFontSizeType)fontSize{
+    static dispatch_once_t predicate = 0;
+    dispatch_once(&predicate, ^{
+        [self loadFontWithName:thinFontName];
+    });
+    switch(fontSize){
+		case SLDSFontSizeXSmall:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:thinFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeXSmall]];
+			});
+			return font;
+		}
+		case SLDSFontSizeSmall:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:thinFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeSmall]];
+			});
+			return font;
+		}
+		case SLDSFontSizeMedium:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:thinFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeMedium]];
+			});
+			return font;
+		}
+		case SLDSFontSizeMediumA:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:thinFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeMediumA]];
+			});
+			return font;
+		}
+		case SLDSFontSizeLarge:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:thinFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeLarge]];
+			});
+			return font;
+		}
+		case SLDSFontSizeXLarge:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:thinFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeXLarge]];
+			});
+			return font;
+		}
+		case SLDSFontSizeXLargeA:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:thinFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeXLargeA]];
+			});
+			return font;
+		}
+		case SLDSFontSizeXxLarge:{
+			static dispatch_once_t predicate = 0;
+			static UIFont* font;
+			dispatch_once(&predicate, ^{
+				font = [UIFont fontWithName:thinFontName size:[SLDSFontSz sldsFontSize:SLDSFontSizeXxLarge]];
 			});
 			return font;
 		}

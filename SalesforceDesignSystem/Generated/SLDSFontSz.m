@@ -13,7 +13,7 @@
 + (int)sldsFontSize:(SLDSFontSizeType)fontSize{
     switch (fontSize)
     {
-        	case SLDSFontSizeXSmall:
+		case SLDSFontSizeXSmall:
 			return 10;
 	case SLDSFontSizeSmall:
 			return 14;
@@ -29,8 +29,8 @@
 			return 25.12;
 	case SLDSFontSizeXxLarge:
 			return 32;
-        default:
-            break;
+	    default:
+	    	break;
     }
     return 10;
 }

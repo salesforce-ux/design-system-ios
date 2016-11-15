@@ -13,9 +13,9 @@
 + (int)sldsFontSize:(SLDSFontSizeType)fontSize{
     switch (fontSize)
     {
-        /*SLDS_FONT_SIZE_CASES*/
-        default:
-            break;
+	/*SLDS_FONT_SIZE_CASES*/
+	    default:
+	    	break;
     }
     return 10;
 }

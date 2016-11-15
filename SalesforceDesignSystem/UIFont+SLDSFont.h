@@ -15,8 +15,10 @@
 @interface UIFont (SLDSFont)
 
 +(instancetype) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize;
++(instancetype) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize;
 +(instancetype) sldsFontLightWithSize:(SLDSFontSizeType)fontSize;
 +(instancetype) sldsFontStrongWithSize:(SLDSFontSizeType)fontSize;
++(instancetype) sldsFontThinWithSize:(SLDSFontSizeType)fontSize;
 
 
 @end
