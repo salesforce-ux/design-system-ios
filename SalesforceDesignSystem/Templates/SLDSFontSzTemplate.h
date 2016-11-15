@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, SLDSFontSizeType) {
-    SFDS_FONT_SIZE_NOTFOUND,
-    /*SFDS_FONT_ENUM_VALUES*/
+    SLDS_FONT_SIZE_NOTFOUND,
+    /*SLDS_FONT_ENUM_VALUES*/
 };
 
 @interface SLDSFontSzTemplate : NSObject

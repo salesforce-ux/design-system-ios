@@ -8,11 +8,11 @@
  */
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, SFDS_COLOR_ALS) {
-    SFDS_ALIAS_NOTFOUND,
+typedef NS_ENUM(NSInteger, SLDS_COLOR_ALS) {
+    SLDS_ALIAS_NOTFOUND,
     /*COLOR_ENUM_VALUES*/
 };
 
 @interface SLDSColorAliasTemplate : NSObject
-+ (UIColor *)sldsColor:(SFDS_COLOR_ALS)color;
++ (UIColor *)sldsColor:(SLDS_COLOR_ALS)color;
 @end

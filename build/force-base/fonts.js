@@ -64,8 +64,8 @@ var readFonts = function(opts){
         }
         else if(font.type === 'font' && font.deprecated){
           var fontName = font.value.split(',')[0].replace(/'/g,'');
-          fontNames['SFDS_'+name] = fontName;
-          fontNameEnum.push('SFDS_'+name);
+          fontNames['SLDS_'+name] = fontName;
+          fontNameEnum.push('SLDS_'+name);
         }
       });
 
@@ -166,8 +166,8 @@ var replaceFontSizeHeaderTokens = function(opts){
   }
 
   opts.fontSize.headerSrc = opts.fontSize.template.headerSrc.replace(new RegExp(CONFIG.IOS_FONT_SIZE_TEMPLATE_NAME,"g"), CONFIG.IOS_FONT_SIZE_NAME)
-    .replace('SFDS_FONT_SIZE_NOTFOUND,','')
-    .replace('/*SFDS_FONT_ENUM_VALUES*/',opts.fontSizeEnum.join(',\n\t'));
+    .replace('SLDS_FONT_SIZE_NOTFOUND,','')
+    .replace('/*SLDS_FONT_ENUM_VALUES*/',opts.fontSizeEnum.join(',\n\t'));
 
   deferred.resolve(opts);
   return deferred.promise;
@@ -199,7 +199,7 @@ var replaceFontSizeClassTokens = function(opts){
 
 
   opts.fontSize.classSrc = opts.fontSize.template.classSrc.replace(new RegExp(CONFIG.IOS_FONT_SIZE_TEMPLATE_NAME,"g"), CONFIG.IOS_FONT_SIZE_NAME)
-    .replace('/*SFDS_FONT_SIZE_CASES*/',fontSizeCases.join('\n'));
+    .replace('/*SLDS_FONT_SIZE_CASES*/',fontSizeCases.join('\n'));
   deferred.resolve(opts);
   return deferred.promise;
 };

@@ -56,7 +56,9 @@ typedef NS_ENUM(NSInteger, SLDSColorBorderType) {
 	SLDSColorBorderInput,
 	SLDSColorBorderInputActive,
 	SLDSColorBorderInputDisabled,
-	SLDSColorBorderInputCheckboxSelectedCheckmark
+	SLDSColorBorderInputCheckboxSelectedCheckmark,
+	SLDSColorBorderTabActive,
+	SLDSColorBorderToggleChecked
 };
 
 @interface SLDSColorBrdr : NSObject

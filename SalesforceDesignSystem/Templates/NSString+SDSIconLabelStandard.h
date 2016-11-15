@@ -1,5 +1,5 @@
 //
-//  NSString+SDSIconLabelStandard.h
+//  NSString+SLDSIconLabelStandard.h
 //  SalesforceDesignSystem
 //
 //  Created by Ivan Bogdanov on 7/28/15.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (SDSIconLabelStandard)
+@interface NSString (SLDSIconLabelStandard)
 
 @end
