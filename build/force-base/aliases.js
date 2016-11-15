@@ -75,8 +75,8 @@ var readColorAliases = function(opts){
           rgb = {r:0,g:0,b:0,a:0};
         }
         const safeName = name.replace(/ /g,"_");
-        colors['SFDS_ALIAS_'+safeName] = rgb;
-        colorEnum.push('SFDS_ALIAS_'+safeName);
+        colors['SLDS_ALIAS_'+safeName] = rgb;
+        colorEnum.push('SLDS_ALIAS_'+safeName);
       });
 
       opts.colors = colors;
@@ -137,7 +137,7 @@ var replaceHeaderTokens = function(opts){
 
 
   opts.headerSrc = opts.template.headerSrc.replace(new RegExp(CONFIG.IOS_COLOR_FACTORY_TEMPLATE_NAME,"g"), CONFIG.IOS_COLOR_FACTORY_NAME)
-    .replace('SFDS_ALIAS_NOTFOUND,','')
+    .replace('SLDS_ALIAS_NOTFOUND,','')
     .replace('/*COLOR_ENUM_VALUES*/',opts.colorEnum.join(',\n\t'));
 
   deferred.resolve(opts);

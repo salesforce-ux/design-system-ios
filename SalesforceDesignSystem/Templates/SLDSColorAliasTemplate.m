@@ -14,7 +14,7 @@
 
 
 
-+ (UIColor *)sldsColor:(SFDS_COLOR_ALS)lmColor{
++ (UIColor *)sldsColor:(SLDS_COLOR_ALS)lmColor{
 
     static NSArray* aliasColors;
     static dispatch_once_t predicate = 0;

@@ -30,6 +30,7 @@ typedef NS_ENUM(NSInteger, SLDSColorBgType) {
 	SLDSColorBackgroundSelection,
 	SLDSColorBackgroundActionbarIconUtility,
 	SLDSColorBackgroundIndicatorDot,
+	SLDSColorBackgroundSpinnerDot,
 	SLDSColorBackgroundModal,
 	SLDSColorBackgroundModalBrand,
 	SLDSColorBackgroundNotificationBadge,

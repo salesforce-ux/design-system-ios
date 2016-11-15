@@ -42,11 +42,11 @@ var readColors = function(opts){
           var rgb = {};
           var alias;
           if(color.value.indexOf('{!')===0){
-            alias = 'SFDS_ALIAS_'+color.value.replace('{!','').replace('}','');
+            alias = 'SLDS_ALIAS_'+color.value.replace('{!','').replace('}','');
           }
           else{
             console.log('!!! BTN COLOR FORMAT ISSUE: ',color.value);
-            alias = 'SFDS_ALIAS_NOTFOUND';
+            alias = 'SLDS_ALIAS_NOTFOUND';
           }
           var enamName = utilString.camelCase(name).replace('Color','SLDSColorInput')
           colors[enamName] = alias;

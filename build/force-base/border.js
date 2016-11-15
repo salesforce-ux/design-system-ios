@@ -43,11 +43,11 @@ var readColors = function(opts){
           var rgb = {};
           var alias;
           if(color.value.indexOf('{!')===0){
-            alias = 'SFDS_ALIAS_'+color.value.replace('{!','').replace('}','').replace('}','').replace(/ /g,'_');
+            alias = 'SLDS_ALIAS_'+color.value.replace('{!','').replace('}','').replace('}','').replace(/ /g,'_');
           }
           else{
             console.log('!!! BRDR COLOR FORMAT ISSUE: ',color.value);
-            alias = 'SFDS_ALIAS_NOTFOUND';
+            alias = 'SLDS_ALIAS_NOTFOUND';
           }
           var enumName = 'SLDS'+utilString.camelCase(name);
           colors[enumName] = alias;
