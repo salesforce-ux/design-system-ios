@@ -27,7 +27,6 @@
     
     [self navigationItem].title = @"Landmark Icons";
     
-    
     NSMutableArray *sizes = [[NSMutableArray alloc] init];
     for(int i=SLDSFontSizeXSmall; i<=SLDSFontSizeXxLarge; i++) {
         [sizes addObject:[NSNumber numberWithInt:i]];
@@ -35,14 +34,13 @@
     fontSizes = [sizes copy];
 
     NSMutableArray *weights = [[NSMutableArray alloc] init];
-    for(int i=SLDS_FONT_FAMILY_BODY; i<=SLDS_FONT_FAMILY_THIN; i++) {
+    for(int i=SLDSFontStyleRegular; i<=SLDSFontStyleThinItalic; i++) {
         [weights addObject:[NSNumber numberWithInt:i]];
     }
     fontWeights = [weights copy];
 
     SWRevealViewController *revealController = self.revealViewController;
     [self.view addGestureRecognizer:revealController.panGestureRecognizer];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -152,7 +150,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    [cell.textLabel setFont:[self getFont:[[fontWeights objectAtIndex:indexPath.section] integerValue] withSize:(int)indexPath.item ]];
+    //[cell.textLabel setFont:[self getFont:[[fontWeights objectAtIndex:indexPath.section] integerValue] withSize:(int)indexPath.item ]];
+    //SLDSFontSizeType type = (SLDSFontSizeType)indexPath.row;
+    //type.rawValue
+    
+    [cell.textLabel setFont:[UIFont sldsFont:(SLDSFontStyle)indexPath.section withSize:indexPath.row]];
     cell.textLabel.text = [self getLabel:indexPath];
     
     return cell;

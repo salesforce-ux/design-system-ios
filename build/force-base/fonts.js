@@ -181,7 +181,6 @@ var replaceFontSizeHeaderTokens = function(opts){
 var replaceFontSizeClassTokens = function(opts){
   var deferred = Q.defer();
 
-
   if(!opts.fontSize.template || !opts.fontSize.template.classSrc){
     return deferred.reject(new Error('replaceClassTokens: "opts.originHeader" not found'));
   }
@@ -190,7 +189,6 @@ var replaceFontSizeClassTokens = function(opts){
     return deferred.reject(new Error('replaceClassTokens: "opts.classNames" not found'));
   }
 
-
   var fontSizeCases = opts.fontSizeEnum.map(function(name){
     var body = [];
     var size = opts.fontSizes[name];
@@ -198,10 +196,6 @@ var replaceFontSizeClassTokens = function(opts){
       body.push('\t\t\treturn '+size+';');
     return body.join('\n');
   });
-
-
-
-
 
   opts.fontSize.classSrc = opts.fontSize.template.classSrc.replace(new RegExp(CONFIG.IOS_FONT_SIZE_TEMPLATE_NAME,"g"), CONFIG.IOS_FONT_SIZE_NAME)
     .replace('/*SLDS_FONT_SIZE_CASES*/',fontSizeCases.join('\n'));
@@ -223,8 +217,15 @@ var replaceFontHeaderTokens = function(opts){
     return deferred.reject(new Error('replaceHeaderTokens: "opts.classNames" not found'));
   }
 
-  opts.font.headerSrc = opts.font.template.headerSrc.replace(new RegExp(CONFIG.IOS_FONT_TEMPLATE_NAME,"g"), CONFIG.IOS_FONT_NAME)
-    .replace('/*FONT_FAMILY_ENUM_VALUES*/',opts.fontNameEnum.join(',\n\t'));
+  opts.font.headerSrc = opts.font.template.headerSrc.replace(new RegExp(CONFIG.IOS_FONT_TEMPLATE_NAME,"g"), CONFIG.IOS_FONT_NAME);
+  //  .replace('/*FONT_FAMILY_ENUM_VALUES*/',opts.fontNameEnum.join(',\n\t'));
+
+  //opts.fontSizeEnum = opts.fontSizeEnum.map(function(f) {
+  //  return f.replace('SLDS', '').replace('Xx', 'XX')
+  //})
+
+  //opts.font.headerSrc = opts.font.template.headerSrc.replace(new RegExp(CONFIG.IOS_FONT_SIZE_TEMPLATE_NAME,"g"), CONFIG.IOS_FONT_SIZE_NAME)
+  //  .replace('/*SLDS_FONT_ENUM_VALUES*/',opts.fontSizeEnum.join(',\n\t'));
 
   deferred.resolve(opts);
   return deferred.promise;
@@ -243,78 +244,77 @@ var replaceFontClassTokens = function(opts){
     return deferred.reject(new Error('replaceClassTokens: "opts.classNames" not found'));
   }
 
+  // var regularFontSizeCases = opts.fontSizeEnum.map(function(name){
+  //     var lines = [];
+  //     lines.push('\t\tcase '+name+':{');
+  //     lines.push('\t\t\tstatic dispatch_once_t predicate = 0;');
+  //     lines.push('\t\t\tstatic UIFont* font;');
+  //     lines.push('\t\t\tdispatch_once(&predicate, ^{');
+  //     lines.push('\t\t\t\tfont = [UIFont fontWithName:bodyFontName size:[SLDSFontSz sldsFontSize:'+name+']];');
+  //     lines.push('\t\t\t});');
+  //     lines.push('\t\t\treturn font;');
+  //     lines.push('\t\t}');
+  //     return lines.join('\n');
+  // });
 
-  var regularFontSizeCases = opts.fontSizeEnum.map(function(name){
-      var lines = [];
-      lines.push('\t\tcase '+name+':{');
-      lines.push('\t\t\tstatic dispatch_once_t predicate = 0;');
-      lines.push('\t\t\tstatic UIFont* font;');
-      lines.push('\t\t\tdispatch_once(&predicate, ^{');
-      lines.push('\t\t\t\tfont = [UIFont fontWithName:bodyFontName size:[SLDSFontSz sldsFontSize:'+name+']];');
-      lines.push('\t\t\t});');
-      lines.push('\t\t\treturn font;');
-      lines.push('\t\t}');
-      return lines.join('\n');
-  });
+  // var italicFontSizeCases = opts.fontSizeEnum.map(function(name){
+  //     var lines = [];
+  //     lines.push('\t\tcase '+name+':{');
+  //     lines.push('\t\t\tstatic dispatch_once_t predicate = 0;');
+  //     lines.push('\t\t\tstatic UIFont* font;');
+  //     lines.push('\t\t\tdispatch_once(&predicate, ^{');
+  //     lines.push('\t\t\t\tfont = [UIFont fontWithName:italicFontName size:[SLDSFontSz sldsFontSize:'+name+']];');
+  //     lines.push('\t\t\t});');
+  //     lines.push('\t\t\treturn font;');
+  //     lines.push('\t\t}');
+  //     return lines.join('\n');
+  // });
 
-  var italicFontSizeCases = opts.fontSizeEnum.map(function(name){
-      var lines = [];
-      lines.push('\t\tcase '+name+':{');
-      lines.push('\t\t\tstatic dispatch_once_t predicate = 0;');
-      lines.push('\t\t\tstatic UIFont* font;');
-      lines.push('\t\t\tdispatch_once(&predicate, ^{');
-      lines.push('\t\t\t\tfont = [UIFont fontWithName:italicFontName size:[SLDSFontSz sldsFontSize:'+name+']];');
-      lines.push('\t\t\t});');
-      lines.push('\t\t\treturn font;');
-      lines.push('\t\t}');
-      return lines.join('\n');
-  });
+  // var strongFontSizeCases = opts.fontSizeEnum.map(function(name){
+  //     var lines = [];
+  //     lines.push('\t\tcase '+name+':{');
+  //     lines.push('\t\t\tstatic dispatch_once_t predicate = 0;');
+  //     lines.push('\t\t\tstatic UIFont* font;');
+  //     lines.push('\t\t\tdispatch_once(&predicate, ^{');
+  //     lines.push('\t\t\t\tfont = [UIFont fontWithName:strongFontName size:[SLDSFontSz sldsFontSize:'+name+']];');
+  //     lines.push('\t\t\t});');
+  //     lines.push('\t\t\treturn font;');
+  //     lines.push('\t\t}');
+  //     return lines.join('\n');
+  // });
 
-  var strongFontSizeCases = opts.fontSizeEnum.map(function(name){
-      var lines = [];
-      lines.push('\t\tcase '+name+':{');
-      lines.push('\t\t\tstatic dispatch_once_t predicate = 0;');
-      lines.push('\t\t\tstatic UIFont* font;');
-      lines.push('\t\t\tdispatch_once(&predicate, ^{');
-      lines.push('\t\t\t\tfont = [UIFont fontWithName:strongFontName size:[SLDSFontSz sldsFontSize:'+name+']];');
-      lines.push('\t\t\t});');
-      lines.push('\t\t\treturn font;');
-      lines.push('\t\t}');
-      return lines.join('\n');
-  });
+  // var lightFontSizeCases = opts.fontSizeEnum.map(function(name){
+  //     var lines = [];
+  //     lines.push('\t\tcase '+name+':{');
+  //     lines.push('\t\t\tstatic dispatch_once_t predicate = 0;');
+  //     lines.push('\t\t\tstatic UIFont* font;');
+  //     lines.push('\t\t\tdispatch_once(&predicate, ^{');
+  //     lines.push('\t\t\t\tfont = [UIFont fontWithName:lightFontName size:[SLDSFontSz sldsFontSize:'+name+']];');
+  //     lines.push('\t\t\t});');
+  //     lines.push('\t\t\treturn font;');
+  //     lines.push('\t\t}');
+  //     return lines.join('\n');
+  // });
 
-  var lightFontSizeCases = opts.fontSizeEnum.map(function(name){
-      var lines = [];
-      lines.push('\t\tcase '+name+':{');
-      lines.push('\t\t\tstatic dispatch_once_t predicate = 0;');
-      lines.push('\t\t\tstatic UIFont* font;');
-      lines.push('\t\t\tdispatch_once(&predicate, ^{');
-      lines.push('\t\t\t\tfont = [UIFont fontWithName:lightFontName size:[SLDSFontSz sldsFontSize:'+name+']];');
-      lines.push('\t\t\t});');
-      lines.push('\t\t\treturn font;');
-      lines.push('\t\t}');
-      return lines.join('\n');
-  });
+  // var thinFontSizeCases = opts.fontSizeEnum.map(function(name){
+  //     var lines = [];
+  //     lines.push('\t\tcase '+name+':{');
+  //     lines.push('\t\t\tstatic dispatch_once_t predicate = 0;');
+  //     lines.push('\t\t\tstatic UIFont* font;');
+  //     lines.push('\t\t\tdispatch_once(&predicate, ^{');
+  //     lines.push('\t\t\t\tfont = [UIFont fontWithName:thinFontName size:[SLDSFontSz sldsFontSize:'+name+']];');
+  //     lines.push('\t\t\t});');
+  //     lines.push('\t\t\treturn font;');
+  //     lines.push('\t\t}');
+  //     return lines.join('\n');
+  // });
 
-  var thinFontSizeCases = opts.fontSizeEnum.map(function(name){
-      var lines = [];
-      lines.push('\t\tcase '+name+':{');
-      lines.push('\t\t\tstatic dispatch_once_t predicate = 0;');
-      lines.push('\t\t\tstatic UIFont* font;');
-      lines.push('\t\t\tdispatch_once(&predicate, ^{');
-      lines.push('\t\t\t\tfont = [UIFont fontWithName:thinFontName size:[SLDSFontSz sldsFontSize:'+name+']];');
-      lines.push('\t\t\t});');
-      lines.push('\t\t\treturn font;');
-      lines.push('\t\t}');
-      return lines.join('\n');
-  });
-
-  opts.font.classSrc = opts.font.template.classSrc.replace(new RegExp(CONFIG.IOS_FONT_TEMPLATE_NAME,"g"), CONFIG.IOS_FONT_NAME)
-    .replace('/*FONT_REGULAR_SIZES*/',regularFontSizeCases.join('\n'))
-    .replace('/*FONT_ITALIC_SIZES*/',italicFontSizeCases.join('\n'))
-    .replace('/*FONT_STRONG_SIZES*/',strongFontSizeCases.join('\n'))
-    .replace('/*FONT_LIGHT_SIZES*/',lightFontSizeCases.join('\n'))
-    .replace('/*FONT_THIN_SIZES*/',thinFontSizeCases.join('\n'));
+  opts.font.classSrc = opts.font.template.classSrc.replace(new RegExp(CONFIG.IOS_FONT_TEMPLATE_NAME,"g"), CONFIG.IOS_FONT_NAME);
+    // .replace('/*FONT_REGULAR_SIZES*/',regularFontSizeCases.join('\n'))
+    // .replace('/*FONT_ITALIC_SIZES*/',italicFontSizeCases.join('\n'))
+    // .replace('/*FONT_STRONG_SIZES*/',strongFontSizeCases.join('\n'))
+    // .replace('/*FONT_LIGHT_SIZES*/',lightFontSizeCases.join('\n'))
+    // .replace('/*FONT_THIN_SIZES*/',thinFontSizeCases.join('\n'));
   deferred.resolve(opts);
   return deferred.promise;
 };
