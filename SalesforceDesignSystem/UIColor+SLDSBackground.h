@@ -10,5 +10,5 @@
 #import "SLDSColorBg.h"
 
 @interface UIColor (SLDSBackground)
-+ (instancetype)sldsBackgroundColor:(SLDSColorBgType)color;
++ (instancetype)sldsColorBackground:(SLDSColorBackgroundType)color;
 @end

@@ -67,9 +67,9 @@
         case 0:
             return [NSString sldsColorTextName:self.colorID];
         case 1:
-            return [NSString sldsBackgroundColorName:self.colorID];
+            return [NSString sldsColorBackgroundName:self.colorID];
         case 2:
-            return [NSString sldsBorderColorName:self.colorID];
+            return [NSString sldsColorBorderName:self.colorID];
         default:
             return @"NOT FOUND!";
     }
@@ -80,9 +80,9 @@
         case 0:
             return [UIColor sldsColorText:self.colorID];
         case 1:
-            return [UIColor sldsBackgroundColor:self.colorID];
+            return [UIColor sldsColorBackground:self.colorID];
         case 2:
-            return [UIColor sldsBorderColor:self.colorID];
+            return [UIColor sldsColorBorder:self.colorID];
         default:
             return [UIColor clearColor];
     }
@@ -97,9 +97,9 @@
         case 0:
             return @"sldsColorText";
         case 1:
-            return @"sldsBackgroundColor";
+            return @"sldsColorBackground";
         case 2:
-            return @"sldsBorderColor";
+            return @"sldsColorBorder";
         default:
             return @"";
     }

@@ -229,11 +229,11 @@ SLDS_ALIAS_KOROMIKO,
 SLDS_ALIAS_KASHMIR_BLUE
 };
 
-+ (UIColor *)sldsColor:(SLDSColorBgType)lmColor{
++ (UIColor *)sldsColor:(SLDSColorBackgroundType)lmColor{
     return [SLDSColorAlias sldsColor:colorAls[lmColor]];
 }
 
-+ (NSString *)sldsColorEnumName:(SLDSColorBgType)color{
++ (NSString *)sldsColorEnumName:(SLDSColorBackgroundType)color{
     return colorName(color);
 }
 

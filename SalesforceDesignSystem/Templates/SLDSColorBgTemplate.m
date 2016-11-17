@@ -19,11 +19,11 @@ static int const colorAls[] = {
     /*COLOR_ALIAS_VALUES*/
 };
 
-+ (UIColor *)sldsColor:(SLDSColorBgType)lmColor{
++ (UIColor *)sldsColor:(SLDSColorBackgroundType)lmColor{
     return [SLDSColorAlias sldsColor:colorAls[lmColor]];
 }
 
-+ (NSString *)sldsColorEnumName:(SLDSColorBgType)color{
++ (NSString *)sldsColorEnumName:(SLDSColorBackgroundType)color{
     return colorName(color);
 }
 

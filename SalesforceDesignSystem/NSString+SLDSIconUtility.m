@@ -11,7 +11,7 @@
 #import "SLDSIconLabelUtility.h"
 
 @implementation NSString (SLDSIconUtility)
-+(instancetype)sldsIconUtility:(SLDSIconUtilType)icon{
++(instancetype)sldsIconUtility:(SLDSIconUtilityType)icon{
     return [SLDSIconLabelUtility sldsIconName:icon];
 }
 @end

@@ -8,11 +8,11 @@
  */
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, SLDSIconUtilType) {
+typedef NS_ENUM(NSInteger, SLDSIconUtilityType) {
     SLDS_ICON_NOTFOUND,
     /*ICON_ENUM_VALUES*/
 };
 
 @interface SLDSIconUtilityTemplate : NSObject
-+ (NSString *)sldsIconUniCode:(SLDSIconUtilType)color;
++ (NSString *)sldsIconUniCode:(SLDSIconUtilityType)color;
 @end
