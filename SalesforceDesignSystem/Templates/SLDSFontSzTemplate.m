@@ -10,13 +10,18 @@
 
 @implementation SLDSFontSzTemplate
 
-+ (int)sldsFontSize:(SLDSFontSizeType)fontSize{
-    switch (fontSize)
-    {
++(NSInteger)sldsFontSize:(SLDSFontSizeType)sizeType {
+    NSArray *arr = @[
+/*SLDS_FONT_SIZE_VALUES*/
+                     ];
+    return [[arr objectAtIndex:sizeType] integerValue];
+}
+
++(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType {
+    NSArray *arr = @[
 /*SLDS_FONT_SIZE_CASES*/
-	    default: 
-	    	return 10;
-    }
+                     ];
+    return (NSString *)[arr objectAtIndex:sizeType];
 }
 
 @end

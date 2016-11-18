@@ -33,7 +33,7 @@
     [self.view addSubview:button];
     
     UITextView *codeView = [[UITextView alloc] initWithFrame:CGRectMake(40, 100+40, self.view.frame.size.width, 250)];
-    codeView.text = [self getText];
+    codeView.text = @"Hello";//[self getText];
     [self.view addSubview:codeView];
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
@@ -44,72 +44,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *) getWeightLabel{
-    switch(self.fontWeight){
-        case SLDS_FONT_FAMILY_BODY:
-            return @"REGULAR";
-        case SLDS_FONT_FAMILY_ITALIC:
-            return @"ITALIC";
-        case SLDS_FONT_FAMILY_LIGHT:
-            return @"LIGHT";
-        case SLDS_FONT_FAMILY_STRONG:
-            return @"BOLD";
-        case SLDS_FONT_FAMILY_THIN:
-            return @"THIN";
-        default:
-            return @"";
-    }
-}
-
-- (NSString *) getSizeLabel{
-    switch(self.fontSize){
-        case SLDSFontSizeXSmall:
-            return @"SLDSFontSizeXSmall";
-        case SLDSFontSizeSmall:
-            return @"SLDSFontSizeSmall";
-        case SLDSFontSizeMedium:
-            return @"SLDSFontSizeMedium";
-        case SLDSFontSizeLarge:
-            return @"SLDSFontSizeLarge";
-        case SLDSFontSizeXLarge:
-            return @"SLDSFontSizeXLarge";
-        case SLDSFontSizeXxLarge:
-            return @"SLDSFontSizeXxLarge";
-        default:
-            return @"";
-    }
-}
-
-- (NSString *) getLabel {
-    return [NSString stringWithFormat:@"%@ %@",[self getWeightLabel],[self getSizeLabel] ];
-}
-
 - (NSString *) getImport{
     return @"#import <DesignSystem/DesignSystem.h>";
 }
 
-- (NSString *) getMethodName{
-    switch(self.fontWeight){
-        case SLDS_FONT_FAMILY_BODY:
-            return @"sldsFontRegularWithSize";
-        case SLDS_FONT_FAMILY_ITALIC:
-            return @"sldsFontItalicWithSize";
-        case SLDS_FONT_FAMILY_LIGHT:
-            return @"sldsFontLightWithSize";
-        case SLDS_FONT_FAMILY_STRONG:
-            return @"sldsFontStrongWithSize";
-        case SLDS_FONT_FAMILY_THIN:
-            return @"sldsFontThinWithSize";
-    }
-    return @"sldsFontRegularWithSize";
-}
 
-- (NSString *) getText {
-//    NSString *weightLabel = [self getWeightLabel];
-    NSString *sizeLabel = [self getSizeLabel];
-    NSString *importLine = [self getImport];
-    NSString *methodName = [self getMethodName];
-    return [NSString stringWithFormat:@"%@\n....\n\n[UIFont %@:\n%@];",importLine,methodName,sizeLabel];
-}
+//- (NSString *) getText {
+////    NSString *weightLabel = [self getWeightLabel];
+//    NSString *sizeLabel = [self getSizeLabel];
+//    NSString *importLine = [self getImport];
+//    NSString *methodName = [self getMethodName];
+//    return [NSString stringWithFormat:@"%@\n....\n\n[UIFont %@:\n%@];",importLine,methodName,sizeLabel];
+//}
 
 @end

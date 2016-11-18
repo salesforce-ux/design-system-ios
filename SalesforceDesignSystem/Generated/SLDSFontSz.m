@@ -10,28 +10,32 @@
 
 @implementation SLDSFontSz
 
-+ (int)sldsFontSize:(SLDSFontSizeType)fontSize{
-    switch (fontSize)
-    {
-	case SLDSFontSizeXSmall:
-			return 10;
-	case SLDSFontSizeSmall:
-			return 14;
-	case SLDSFontSizeMedium:
-			return 16;
-	case SLDSFontSizeMediumA:
-			return 18;
-	case SLDSFontSizeLarge:
-			return 20;
-	case SLDSFontSizeXLarge:
-			return 24;
-	case SLDSFontSizeXLargeA:
-			return 25.12;
-	case SLDSFontSizeXxLarge:
-			return 32;
-	    default: 
-	    	return 10;
-    }
++(NSInteger)sldsFontSize:(SLDSFontSizeType)sizeType {
+    NSArray *arr = @[
+			@10,
+			@14,
+			@16,
+			@18,
+			@20,
+			@24,
+			@25.12,
+			@32,
+                     ];
+    return [[arr objectAtIndex:sizeType] integerValue];
+}
+
++(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType {
+    NSArray *arr = @[
+			@"SLDSFontSizeXSmall",
+			@"SLDSFontSizeSmall",
+			@"SLDSFontSizeMedium",
+			@"SLDSFontSizeMediumA",
+			@"SLDSFontSizeLarge",
+			@"SLDSFontSizeXLarge",
+			@"SLDSFontSizeXLargeA",
+			@"SLDSFontSizeXxLarge",
+                     ];
+    return (NSString *)[arr objectAtIndex:sizeType];
 }
 
 @end

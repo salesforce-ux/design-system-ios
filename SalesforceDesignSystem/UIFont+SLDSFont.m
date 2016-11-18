@@ -12,28 +12,28 @@
 
 @implementation UIFont (SLDSFont)
 
-+(instancetype) sldsFont:(SLDSFontStyle)fontStyle withSize:(SLDSFontSizeType)fontSize {
-    return [SLDSFont sldsFont:fontStyle withSize:fontSize];
++(instancetype) sldsFont:(SLDSFontType)fontType withSize:(SLDSFontSizeType)fontSize {
+    return [SLDSFont sldsFont:fontType withSize:fontSize];
 }
 
 +(instancetype) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize{
-    return [SLDSFont sldsFont:SLDSFontStyleRegular withSize:fontSize];
+    return [SLDSFont sldsFont:SLDSFontTypeRegular withSize:fontSize];
 }
 
 +(instancetype) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize{
-    return [SLDSFont sldsFont:SLDSFontStyleItalic withSize:fontSize];
+    return [SLDSFont sldsFont:SLDSFontTypeItalic withSize:fontSize];
 }
 
 +(instancetype) sldsFontLightWithSize:(SLDSFontSizeType)fontSize{
-    return [SLDSFont sldsFont:SLDSFontStyleLight withSize:fontSize];
+    return [SLDSFont sldsFont:SLDSFontTypeLight withSize:fontSize];
 }
 
 +(instancetype) sldsFontStrongWithSize:(SLDSFontSizeType)fontSize{
-    return [SLDSFont sldsFont:SLDSFontStyleBold withSize:fontSize];
+    return [SLDSFont sldsFont:SLDSFontTypeBold withSize:fontSize];
 }
 
 +(instancetype) sldsFontThinWithSize:(SLDSFontSizeType)fontSize{
-    return [SLDSFont sldsFont:SLDSFontStyleThin withSize:fontSize];
+    return [SLDSFont sldsFont:SLDSFontTypeThin withSize:fontSize];
 }
 
 @end

@@ -171,7 +171,6 @@ var replaceFontSizeHeaderTokens = function(opts){
   }
 
   opts.fontSize.headerSrc = opts.fontSize.template.headerSrc.replace(new RegExp(CONFIG.IOS_FONT_SIZE_TEMPLATE_NAME,"g"), CONFIG.IOS_FONT_SIZE_NAME)
-    .replace('SLDS_FONT_SIZE_NOTFOUND,','')
     .replace('/*SLDS_FONT_ENUM_VALUES*/',opts.fontSizeEnum.join(',\n\t'));
 
   deferred.resolve(opts);
@@ -189,15 +188,28 @@ var replaceFontSizeClassTokens = function(opts){
     return deferred.reject(new Error('replaceClassTokens: "opts.classNames" not found'));
   }
 
-  var fontSizeCases = opts.fontSizeEnum.map(function(name){
+  var fontSizeValues = opts.fontSizeEnum.map(function(name){
     var body = [];
     var size = opts.fontSizes[name];
-    body.push('\tcase '+name+':');
-      body.push('\t\t\treturn '+size+';');
+    //body.push('\tcase '+name+':');
+    //  body.push('\t\t\treturn '+size+';');
+
+    body.push('\t\t\t@'+size+',')
+    return body.join('\n');
+  });
+
+  var fontSizeCases = opts.fontSizeEnum.map(function(name){
+    var body = [];
+    //var size = opts.fontSizes[name];
+    //body.push('\tcase '+name+':');
+    //  body.push('\t\t\treturn '+size+';');
+
+    body.push('\t\t\t@"'+name+'",')
     return body.join('\n');
   });
 
   opts.fontSize.classSrc = opts.fontSize.template.classSrc.replace(new RegExp(CONFIG.IOS_FONT_SIZE_TEMPLATE_NAME,"g"), CONFIG.IOS_FONT_SIZE_NAME)
+    .replace('/*SLDS_FONT_SIZE_VALUES*/',fontSizeValues.join('\n'))
     .replace('/*SLDS_FONT_SIZE_CASES*/',fontSizeCases.join('\n'));
   deferred.resolve(opts);
   return deferred.promise;

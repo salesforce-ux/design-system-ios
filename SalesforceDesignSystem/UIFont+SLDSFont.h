@@ -12,7 +12,7 @@
 
 @interface UIFont (SLDSFont)
 
-+(instancetype) sldsFont:(SLDSFontStyle)fontStyle withSize:(SLDSFontSizeType)fontSize;
++(instancetype) sldsFont:(SLDSFontType)fontType withSize:(SLDSFontSizeType)fontSize;
 
 +(instancetype) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
 +(instancetype) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");

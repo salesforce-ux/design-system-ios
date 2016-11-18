@@ -9,26 +9,27 @@
 #import <UIKit/UIKit.h>
 #import "SLDSFontSz.h"
 
-typedef NS_ENUM(NSInteger, SLDSFontStyle) {
-    SLDSFontStyleRegular,
-    SLDSFontStyleItalic,
-    SLDSFontStyleBold,
-    SLDSFontStyleBoldItalic,
-    SLDSFontStyleLight,
-    SLDSFontStyleLightItalic,
-    SLDSFontStyleThin,
-    SLDSFontStyleThinItalic
+typedef NS_ENUM(NSInteger, SLDSFontType) {
+    SLDSFontTypeRegular,
+    SLDSFontTypeItalic,
+    SLDSFontTypeBold,
+    SLDSFontTypeBoldItalic,
+    SLDSFontTypeLight,
+    SLDSFontTypeLightItalic,
+    SLDSFontTypeThin,
+    SLDSFontTypeThinItalic
 };
 
 @interface SLDSFontTemplate : NSObject
 
 +(void) loadFontWithName:(NSString *)fontName;
-+(UIFont *) sldsFont:(SLDSFontStyle)fontStyle withSize:(SLDSFontSizeType)fontSize;
++(UIFont *) sldsFont:(SLDSFontType)fontStyle withSize:(SLDSFontSizeType)fontSize;
++(NSString*)sldsFontTypeName:(SLDSFontType)fontStyle;
 
-+(UIFont *) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
-+(UIFont *) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
-+(UIFont *) sldsFontLightWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
-+(UIFont *) sldsFontStrongWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
-+(UIFont *) sldsFontThinWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
++(UIFont *) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontType) withSize:(SLDSFontSizeType)' instead");
++(UIFont *) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontType) withSize:(SLDSFontSizeType)' instead");
++(UIFont *) sldsFontLightWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontType) withSize:(SLDSFontSizeType)' instead");
++(UIFont *) sldsFontStrongWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontType) withSize:(SLDSFontSizeType)' instead");
++(UIFont *) sldsFontThinWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontType) withSize:(SLDSFontSizeType)' instead");
 
 @end
