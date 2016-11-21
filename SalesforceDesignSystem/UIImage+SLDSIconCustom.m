@@ -19,8 +19,6 @@ static NSString *const iconFontName = @"SalesforceDesignSystemIconsCustom";
 
 static float const iconScale = 1.0f;
 
-
-
 + (NSString *) iconFontNameCustom {
     static dispatch_once_t predicate = 0;
     

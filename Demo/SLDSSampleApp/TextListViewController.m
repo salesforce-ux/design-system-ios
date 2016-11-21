@@ -33,7 +33,7 @@
     // Setting up fontSizes
     do {
         @try {
-            [fontSizes addObject:[NSNumber numberWithInteger:[SLDSFontSz sldsFontSize:(SLDSFontSizeType)i]]];
+            [fontSizes addObject:[NSNumber numberWithInteger:[SLDSFont sldsFontSize:(SLDSFontSizeType)i]]];
             i++;
         }
         @catch (NSException * e) {
@@ -98,7 +98,7 @@
     
     UIFont *font = [UIFont sldsFont:(SLDSFontType)indexPath.section withSize:(SLDSFontSizeType)indexPath.row];
     [cell.textLabel setFont:font];
-    cell.textLabel.text = [SLDSFontSz sldsFontSizeName:(SLDSFontSizeType)indexPath.row];
+    cell.textLabel.text = [SLDSFont sldsFontSizeName:(SLDSFontSizeType)indexPath.row];
     cell.textLabel.text = [cell.textLabel.text stringByReplacingOccurrencesOfString:@"SLDSFontSize" withString:@""];
     
     return cell;

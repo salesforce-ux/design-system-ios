@@ -12,13 +12,9 @@
 
 #import "SLDSFont.h"
 
-
 @implementation UIImage (SLDSIconUtility)
 
 static NSString *const fontName = @"SalesforceDesignSystemIconsUtility";
-
-
-
 
 + (NSString *) fontNameUtility {
     static dispatch_once_t predicate = 0;

@@ -9,13 +9,14 @@
 #import "UIFont+SLDSFont.h"
 #import "SLDSFont.h"
 
-
 @implementation UIFont (SLDSFont)
 
 +(instancetype) sldsFont:(SLDSFontType)fontType withSize:(SLDSFontSizeType)fontSize {
     return [SLDSFont sldsFont:fontType withSize:fontSize];
 }
 
+
+// NOTE : Deprecated --------------------------------------------------------------
 +(instancetype) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize{
     return [SLDSFont sldsFont:SLDSFontTypeRegular withSize:fontSize];
 }

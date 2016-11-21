@@ -11,8 +11,35 @@
 #import <CoreText/CoreText.h>
 #import <UIKit/UIKit.h>
 
-
 @implementation SLDSFont
+
++(NSInteger)sldsFontSize:(SLDSFontSizeType)sizeType {
+    NSArray *arr = @[
+					@10,
+					@14,
+					@16,
+					@18,
+					@20,
+					@24,
+					@25.12,
+					@32,
+                     ];
+    return [[arr objectAtIndex:sizeType] integerValue];
+}
+
++(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType {
+    NSArray *arr = @[
+					@"SLDSFontSizeXSmall",
+					@"SLDSFontSizeSmall",
+					@"SLDSFontSizeMedium",
+					@"SLDSFontSizeMediumA",
+					@"SLDSFontSizeLarge",
+					@"SLDSFontSizeXLarge",
+					@"SLDSFontSizeXLargeA",
+					@"SLDSFontSizeXXLarge",
+                     ];
+    return (NSString *)[arr objectAtIndex:sizeType];
+}
 
 +(NSString*)sldsFontFileName:(SLDSFontType) fontType {
     NSArray *arr = @[
@@ -41,7 +68,6 @@
                      ];
     return (NSString *)[arr objectAtIndex:fontType];
 }
-
 
 +(void) loadFontWithName:(NSString *)fontName {
     if ([UIFont fontWithName:fontName size:10]) {
@@ -73,7 +99,7 @@
 
 +(UIFont*)sldsFont:(SLDSFontType)fontType withSize:(SLDSFontSizeType)fontSize
 {
-    NSInteger fontSizeValue = [SLDSFontSz sldsFontSize:fontSize];
+    NSInteger fontSizeValue = [SLDSFont sldsFontSize:fontSize];
     NSString *fontFileName = [self sldsFontFileName:fontType];
     
     // NOTE : Returns early if the font is already loaded
@@ -82,6 +108,8 @@
     // NOTE : Fonts (even custom) are automatically cached.
     return [UIFont fontWithName:fontFileName size:fontSizeValue];
 }
+
+// NOTE : Deprecated --------------------------------------------------------------
 
 +(UIFont *) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize{
     return [self sldsFont:SLDSFontTypeRegular withSize:fontSize];

@@ -86,8 +86,6 @@
 		05B36E061D808B8D00B1317F /* SLDSColorTxt.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89ADC1D808A3D00516C3C /* SLDSColorTxt.m */; };
 		05B36E071D808B8D00B1317F /* SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89ADD1D808A3D00516C3C /* SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05B36E081D808B8D00B1317F /* SLDSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89ADE1D808A3D00516C3C /* SLDSFont.m */; };
-		05B36E091D808B8D00B1317F /* SLDSFontSz.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89ADF1D808A3D00516C3C /* SLDSFontSz.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E0A1D808B8D00B1317F /* SLDSFontSz.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE01D808A3D00516C3C /* SLDSFontSz.m */; };
 		05B36E0B1D808B8D00B1317F /* SLDSIconAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE11D808A3D00516C3C /* SLDSIconAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05B36E0C1D808B8D00B1317F /* SLDSIconAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE21D808A3D00516C3C /* SLDSIconAction.m */; };
 		05B36E0D1D808B8D00B1317F /* SLDSIconCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE31D808A3D00516C3C /* SLDSIconCustom.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -117,8 +115,6 @@
 		05B36E251D808B8E00B1317F /* SLDSColorTxt.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89ADC1D808A3D00516C3C /* SLDSColorTxt.m */; };
 		05B36E261D808B8E00B1317F /* SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89ADD1D808A3D00516C3C /* SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05B36E271D808B8E00B1317F /* SLDSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89ADE1D808A3D00516C3C /* SLDSFont.m */; };
-		05B36E281D808B8E00B1317F /* SLDSFontSz.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89ADF1D808A3D00516C3C /* SLDSFontSz.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E291D808B8E00B1317F /* SLDSFontSz.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE01D808A3D00516C3C /* SLDSFontSz.m */; };
 		05B36E2A1D808B8E00B1317F /* SLDSIconAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE11D808A3D00516C3C /* SLDSIconAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05B36E2B1D808B8E00B1317F /* SLDSIconAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE21D808A3D00516C3C /* SLDSIconAction.m */; };
 		05B36E2C1D808B8E00B1317F /* SLDSIconCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE31D808A3D00516C3C /* SLDSIconCustom.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -148,8 +144,6 @@
 		05D89AFB1D808A3D00516C3C /* SLDSColorTxt.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89ADC1D808A3D00516C3C /* SLDSColorTxt.m */; };
 		05D89AFC1D808A3D00516C3C /* SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89ADD1D808A3D00516C3C /* SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05D89AFD1D808A3D00516C3C /* SLDSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89ADE1D808A3D00516C3C /* SLDSFont.m */; };
-		05D89AFE1D808A3D00516C3C /* SLDSFontSz.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89ADF1D808A3D00516C3C /* SLDSFontSz.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05D89AFF1D808A3D00516C3C /* SLDSFontSz.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE01D808A3D00516C3C /* SLDSFontSz.m */; };
 		05D89B001D808A3D00516C3C /* SLDSIconAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE11D808A3D00516C3C /* SLDSIconAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05D89B011D808A3D00516C3C /* SLDSIconAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE21D808A3D00516C3C /* SLDSIconAction.m */; };
 		05D89B021D808A3D00516C3C /* SLDSIconCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE31D808A3D00516C3C /* SLDSIconCustom.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -273,8 +267,6 @@
 		05D89ADC1D808A3D00516C3C /* SLDSColorTxt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSColorTxt.m; path = Generated/SLDSColorTxt.m; sourceTree = "<group>"; };
 		05D89ADD1D808A3D00516C3C /* SLDSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSFont.h; path = Generated/SLDSFont.h; sourceTree = "<group>"; };
 		05D89ADE1D808A3D00516C3C /* SLDSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSFont.m; path = Generated/SLDSFont.m; sourceTree = "<group>"; };
-		05D89ADF1D808A3D00516C3C /* SLDSFontSz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSFontSz.h; path = Generated/SLDSFontSz.h; sourceTree = "<group>"; };
-		05D89AE01D808A3D00516C3C /* SLDSFontSz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSFontSz.m; path = Generated/SLDSFontSz.m; sourceTree = "<group>"; };
 		05D89AE11D808A3D00516C3C /* SLDSIconAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIconAction.h; path = Generated/SLDSIconAction.h; sourceTree = "<group>"; };
 		05D89AE21D808A3D00516C3C /* SLDSIconAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSIconAction.m; path = Generated/SLDSIconAction.m; sourceTree = "<group>"; };
 		05D89AE31D808A3D00516C3C /* SLDSIconCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIconCustom.h; path = Generated/SLDSIconCustom.h; sourceTree = "<group>"; };
@@ -455,8 +447,6 @@
 				05D89ADC1D808A3D00516C3C /* SLDSColorTxt.m */,
 				05D89ADD1D808A3D00516C3C /* SLDSFont.h */,
 				05D89ADE1D808A3D00516C3C /* SLDSFont.m */,
-				05D89ADF1D808A3D00516C3C /* SLDSFontSz.h */,
-				05D89AE01D808A3D00516C3C /* SLDSFontSz.m */,
 				05D89AE11D808A3D00516C3C /* SLDSIconAction.h */,
 				05D89AE21D808A3D00516C3C /* SLDSIconAction.m */,
 				05D89AE31D808A3D00516C3C /* SLDSIconCustom.h */,
@@ -502,7 +492,6 @@
 				05D89B101D808A3D00516C3C /* SLDSLineHeight.h in Headers */,
 				05D89B081D808A3D00516C3C /* SLDSIconLabelStandard.h in Headers */,
 				05D89B0E1D808A3D00516C3C /* SLDSIconUtility.h in Headers */,
-				05D89AFE1D808A3D00516C3C /* SLDSFontSz.h in Headers */,
 				05D89B0C1D808A3D00516C3C /* SLDSIconStandard.h in Headers */,
 				05D89AF41D808A3D00516C3C /* SLDSColorAlias.h in Headers */,
 				05D89B0A1D808A3D00516C3C /* SLDSIconLabelUtility.h in Headers */,
@@ -530,7 +519,6 @@
 				05B36E031D808B8D00B1317F /* SLDSColorBrdr.h in Headers */,
 				05B36E1C1D808B8D00B1317F /* SLDSSizing.h in Headers */,
 				05B36E111D808B8D00B1317F /* SLDSIconLabelCustom.h in Headers */,
-				05B36E091D808B8D00B1317F /* SLDSFontSz.h in Headers */,
 				05B36E1D1D808B8D00B1317F /* SLDSSpacing.h in Headers */,
 				05B36E191D808B8D00B1317F /* SLDSIconUtility.h in Headers */,
 				05B36E1B1D808B8D00B1317F /* SLDSLineHeight.h in Headers */,
@@ -574,7 +562,6 @@
 				05B36E361D808B8E00B1317F /* SLDSIconStandard.h in Headers */,
 				05B36E261D808B8E00B1317F /* SLDSFont.h in Headers */,
 				05B36E341D808B8E00B1317F /* SLDSIconLabelUtility.h in Headers */,
-				05B36E281D808B8E00B1317F /* SLDSFontSz.h in Headers */,
 				05B36E3B1D808B8E00B1317F /* SLDSSizing.h in Headers */,
 				05B36E1E1D808B8E00B1317F /* SLDSColorAlias.h in Headers */,
 				05B36E2E1D808B8E00B1317F /* SLDSIconLabelAction.h in Headers */,
@@ -693,7 +680,6 @@
 				05D89AF51D808A3D00516C3C /* SLDSColorAlias.m in Sources */,
 				05A7B0671B2A53F800B5FB86 /* UIFont+SLDSFont.m in Sources */,
 				05D89B031D808A3D00516C3C /* SLDSIconCustom.m in Sources */,
-				05D89AFF1D808A3D00516C3C /* SLDSFontSz.m in Sources */,
 				05D89B0B1D808A3D00516C3C /* SLDSIconLabelUtility.m in Sources */,
 				05D89B051D808A3D00516C3C /* SLDSIconLabelAction.m in Sources */,
 				051032181B29F7140094A6B2 /* UIColor+SLDSText.m in Sources */,
@@ -722,7 +708,6 @@
 				05B36E001D808B8D00B1317F /* SLDSColorAlias.m in Sources */,
 				051C4CEC1B2FD398001CDF18 /* UIFont+SLDSFont.m in Sources */,
 				05B36E0E1D808B8D00B1317F /* SLDSIconCustom.m in Sources */,
-				05B36E0A1D808B8D00B1317F /* SLDSFontSz.m in Sources */,
 				05B36E161D808B8D00B1317F /* SLDSIconLabelUtility.m in Sources */,
 				05B36E101D808B8D00B1317F /* SLDSIconLabelAction.m in Sources */,
 				051C4CEE1B2FD398001CDF18 /* UIColor+SLDSText.m in Sources */,
@@ -770,7 +755,6 @@
 				05B36E391D808B8E00B1317F /* SLDSIconUtility.m in Sources */,
 				05910A1A1B58775900C89AEC /* NSString+SLDSText.m in Sources */,
 				05B36E351D808B8E00B1317F /* SLDSIconLabelUtility.m in Sources */,
-				05B36E291D808B8E00B1317F /* SLDSFontSz.m in Sources */,
 				05B36E331D808B8E00B1317F /* SLDSIconLabelStandard.m in Sources */,
 				05EEF0701B69585A002D5939 /* NSString+SLDSIconUtility.m in Sources */,
 			);
