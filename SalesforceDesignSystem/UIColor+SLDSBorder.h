@@ -10,5 +10,5 @@
 #import "SLDSColorBrdr.h"
 
 @interface UIColor (SLDSBorder)
-+ (instancetype)sldsBorderColor:(SLDSColorBorderType)color;
++ (instancetype)sldsColorBorder:(SLDSColorBorderType)color;
 @end

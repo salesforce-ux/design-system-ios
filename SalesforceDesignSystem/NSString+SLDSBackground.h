@@ -9,6 +9,6 @@
 #import "SLDSColorBg.h"
 
 @interface NSString (SLDSBackground)
-+ (instancetype)sldsBackgroundColorName:(SLDSColorBgType)color;
++ (instancetype)sldsColorBackgroundName:(SLDSColorBackgroundType)color;
 
 @end

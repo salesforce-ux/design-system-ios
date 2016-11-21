@@ -9,5 +9,5 @@
 #import "SLDSColorBrdr.h"
 
 @interface NSString (SLDSBorder)
-+ (instancetype)sldsBorderColorName:(SLDSColorBorderType)color;
++ (instancetype)sldsColorBorderName:(SLDSColorBorderType)color;
 @end

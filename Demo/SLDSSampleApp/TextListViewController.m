@@ -122,7 +122,7 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
 {
-    view.tintColor = [UIColor sldsBackgroundColor:SLDSColorBackgroundShade];
+    view.tintColor = [UIColor sldsColorBackground:SLDSColorBackgroundShade];
     
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
     [header.textLabel setFont:[UIFont sldsFont:SLDSFontTypeRegular withSize:SLDSFontSizeLarge]];

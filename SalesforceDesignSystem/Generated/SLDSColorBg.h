@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SLDSColorAlias.h"
 
-typedef NS_ENUM(NSInteger, SLDSColorBgType) {
+typedef NS_ENUM(NSInteger, SLDSColorBackgroundType) {
     
     SLDSColorBackground,
 	SLDSColorBackgroundAlt,
@@ -120,6 +120,6 @@ typedef NS_ENUM(NSInteger, SLDSColorBgType) {
 };
 
 @interface SLDSColorBg : NSObject
-+ (UIColor *)sldsColor:(SLDSColorBgType)color;
-+ (NSString *)sldsColorEnumName:(SLDSColorBgType)color;
++ (UIColor *)sldsColor:(SLDSColorBackgroundType)color;
++ (NSString *)sldsColorEnumName:(SLDSColorBackgroundType)color;
 @end

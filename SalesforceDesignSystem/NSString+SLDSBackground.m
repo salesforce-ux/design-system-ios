@@ -9,7 +9,7 @@
 #import "NSString+SLDSBackground.h"
 
 @implementation NSString (SLDSBackground)
-+ (instancetype)sldsBackgroundColorName:(SLDSColorBgType)color{
++ (instancetype)sldsColorBackgroundName:(SLDSColorBackgroundType)color{
     return [SLDSColorBg sldsColorEnumName:color];
 }
 @end

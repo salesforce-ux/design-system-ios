@@ -40,7 +40,7 @@ static float const iconScale = 0.65f;
         bgColor = [SLDSIconAction bgColor:iconId];
     }
     if(!bgColor){
-        bgColor = [UIColor sldsBackgroundColor:SLDSColorBackgroundActionbarIconUtility];
+        bgColor = [UIColor sldsColorBackground:SLDSColorBackgroundActionbarIconUtility];
     }
     
     CGSize iconSize = CGSizeMake(size,size);

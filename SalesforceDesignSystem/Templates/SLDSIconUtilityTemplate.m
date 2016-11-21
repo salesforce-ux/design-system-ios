@@ -15,7 +15,7 @@
 
 @implementation SLDSIconUtilityTemplate
 
-+ (NSString *)sldsIconUniCode:(SLDSIconUtilType)icon{
++ (NSString *)sldsIconUniCode:(SLDSIconUtilityType)icon{
     return iconUniCode(icon);
 }
 

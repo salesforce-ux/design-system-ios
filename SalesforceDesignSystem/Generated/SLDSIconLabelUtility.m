@@ -242,7 +242,7 @@
 
 @implementation SLDSIconLabelUtility
 
-+ (NSString *)sldsIconName:(SLDSIconUtilType)icon{
++ (NSString *)sldsIconName:(SLDSIconUtilityType)icon{
     return iconName(icon);
 }
 

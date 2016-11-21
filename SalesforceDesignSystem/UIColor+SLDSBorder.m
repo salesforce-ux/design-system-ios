@@ -10,7 +10,7 @@
 
 @implementation UIColor (SLDSBorder)
 
-+ (instancetype)sldsBorderColor:(SLDSColorBorderType)color{
++ (instancetype)sldsColorBorder:(SLDSColorBorderType)color{
     return [SLDSColorBrdr sldsColor:color];
 }
 
