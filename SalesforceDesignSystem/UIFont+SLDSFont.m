@@ -9,19 +9,31 @@
 #import "UIFont+SLDSFont.h"
 #import "SLDSFont.h"
 
+
 @implementation UIFont (SLDSFont)
 
++(instancetype) sldsFont:(SLDSFontStyle)fontStyle withSize:(SLDSFontSizeType)fontSize {
+    return [SLDSFont sldsFont:fontStyle withSize:fontSize];
+}
 
 +(instancetype) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize{
-    return [SLDSFont sldsFontRegularWithSize:fontSize];
+    return [SLDSFont sldsFont:SLDSFontStyleRegular withSize:fontSize];
+}
+
++(instancetype) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize{
+    return [SLDSFont sldsFont:SLDSFontStyleItalic withSize:fontSize];
 }
 
 +(instancetype) sldsFontLightWithSize:(SLDSFontSizeType)fontSize{
-    return [SLDSFont sldsFontLightWithSize:fontSize];
+    return [SLDSFont sldsFont:SLDSFontStyleLight withSize:fontSize];
 }
 
 +(instancetype) sldsFontStrongWithSize:(SLDSFontSizeType)fontSize{
-    return [SLDSFont sldsFontStrongWithSize:fontSize];
+    return [SLDSFont sldsFont:SLDSFontStyleBold withSize:fontSize];
+}
+
++(instancetype) sldsFontThinWithSize:(SLDSFontSizeType)fontSize{
+    return [SLDSFont sldsFont:SLDSFontStyleThin withSize:fontSize];
 }
 
 @end

@@ -8,15 +8,16 @@
  */
 #import <UIKit/UIKit.h>
 #import "SLDSFontSz.h"
-
-
-
+#import "SLDSFont.h"
 
 @interface UIFont (SLDSFont)
 
-+(instancetype) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize;
-+(instancetype) sldsFontLightWithSize:(SLDSFontSizeType)fontSize;
-+(instancetype) sldsFontStrongWithSize:(SLDSFontSizeType)fontSize;
++(instancetype) sldsFont:(SLDSFontStyle)fontStyle withSize:(SLDSFontSizeType)fontSize;
 
++(instancetype) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
++(instancetype) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
++(instancetype) sldsFontLightWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
++(instancetype) sldsFontStrongWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
++(instancetype) sldsFontThinWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
 
 @end

@@ -19,8 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
     SWRevealViewController *revealController = self.revealViewController;
     
     [self.view addGestureRecognizer:revealController.panGestureRecognizer];
@@ -33,7 +31,6 @@
     button.frame = CGRectMake(20.0, 20.0, 20.0, 20.0);
     
     [self.view addSubview:button];
-    
     
     UITextView *codeView = [[UITextView alloc] initWithFrame:CGRectMake(40, 100+40, self.view.frame.size.width, 250)];
     codeView.text = [self getText];
@@ -51,10 +48,14 @@
     switch(self.fontWeight){
         case SLDS_FONT_FAMILY_BODY:
             return @"REGULAR";
+        case SLDS_FONT_FAMILY_ITALIC:
+            return @"ITALIC";
         case SLDS_FONT_FAMILY_LIGHT:
             return @"LIGHT";
         case SLDS_FONT_FAMILY_STRONG:
             return @"BOLD";
+        case SLDS_FONT_FAMILY_THIN:
+            return @"THIN";
         default:
             return @"";
     }
@@ -91,10 +92,14 @@
     switch(self.fontWeight){
         case SLDS_FONT_FAMILY_BODY:
             return @"sldsFontRegularWithSize";
+        case SLDS_FONT_FAMILY_ITALIC:
+            return @"sldsFontItalicWithSize";
         case SLDS_FONT_FAMILY_LIGHT:
             return @"sldsFontLightWithSize";
         case SLDS_FONT_FAMILY_STRONG:
             return @"sldsFontStrongWithSize";
+        case SLDS_FONT_FAMILY_THIN:
+            return @"sldsFontThinWithSize";
     }
     return @"sldsFontRegularWithSize";
 }
@@ -106,7 +111,5 @@
     NSString *methodName = [self getMethodName];
     return [NSString stringWithFormat:@"%@\n....\n\n[UIFont %@:\n%@];",importLine,methodName,sizeLabel];
 }
-
-
 
 @end

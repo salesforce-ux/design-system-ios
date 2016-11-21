@@ -14,6 +14,7 @@
 
 
 @implementation FrontViewController
+
 -(void) viewDidLoad {
     self.view.backgroundColor = [UIColor whiteColor];
     self.view.clipsToBounds = YES;

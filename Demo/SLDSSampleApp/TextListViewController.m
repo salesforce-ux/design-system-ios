@@ -8,7 +8,6 @@
  */
 
 #import "TextViewController.h"
-
 #import "TextListViewController.h"
 #import <SalesforceDesignSystem/SalesforceDesignSystem.h>
 #import "SWRevealViewController.h"
@@ -28,7 +27,6 @@
     
     [self navigationItem].title = @"Landmark Icons";
     
-    
     NSMutableArray *sizes = [[NSMutableArray alloc] init];
     for(int i=SLDSFontSizeXSmall; i<=SLDSFontSizeXxLarge; i++) {
         [sizes addObject:[NSNumber numberWithInt:i]];
@@ -36,16 +34,13 @@
     fontSizes = [sizes copy];
 
     NSMutableArray *weights = [[NSMutableArray alloc] init];
-    for(int i=SLDS_FONT_FAMILY_BODY; i<=SLDS_FONT_FAMILY_STRONG; i++) {
+    for(int i=SLDSFontStyleRegular; i<=SLDSFontStyleThinItalic; i++) {
         [weights addObject:[NSNumber numberWithInt:i]];
     }
     fontWeights = [weights copy];
 
-    
     SWRevealViewController *revealController = self.revealViewController;
-    
     [self.view addGestureRecognizer:revealController.panGestureRecognizer];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,10 +59,14 @@
     switch(index){
         case SLDS_FONT_FAMILY_BODY:
             return @"REGULAR";
+        case SLDS_FONT_FAMILY_ITALIC:
+            return @"ITALIC";
         case SLDS_FONT_FAMILY_LIGHT:
             return @"LIGHT";
         case SLDS_FONT_FAMILY_STRONG:
             return @"BOLD";
+        case SLDS_FONT_FAMILY_THIN:
+            return @"THIN";
         default:
             return @"";
     }
@@ -97,15 +96,13 @@
     return [NSString stringWithFormat:@"%@ %@",[self getWeightLabel:indexPath],[self getSizeLabel:indexPath] ];
 }
 
-
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return fontWeights.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [fontSizes count];
+    return fontSizes.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -113,11 +110,15 @@
     NSInteger index = [[fontWeights objectAtIndex:section] integerValue];
     switch(index){
         case SLDS_FONT_FAMILY_BODY:
-            return @"SALESFORCE SANS REGULAR";
+            return @"SalesforceSans - Regular";
+        case SLDS_FONT_FAMILY_ITALIC:
+            return @"SalesforceSans - Italic";
         case SLDS_FONT_FAMILY_LIGHT:
-            return @"SALESFORCE SANS LIGHT";
+            return @"SalesforceSans - Light";
         case SLDS_FONT_FAMILY_STRONG:
-            return @"SALESFORCE SANS BOLD";
+            return @"SalesforceSans - Bold";
+        case SLDS_FONT_FAMILY_THIN:
+            return @"SalesforceSans - Thin";
         default:
             return @"";
     }
@@ -127,10 +128,14 @@
     switch(fontFamily){
         case SLDS_FONT_FAMILY_BODY:
             return [UIFont sldsFontRegularWithSize:size];
+        case SLDS_FONT_FAMILY_ITALIC:
+            return [UIFont sldsFontItalicWithSize:size];
         case SLDS_FONT_FAMILY_LIGHT:
             return [UIFont sldsFontLightWithSize:size];
         case SLDS_FONT_FAMILY_STRONG:
             return [UIFont sldsFontStrongWithSize:size];
+        case SLDS_FONT_FAMILY_THIN:
+            return [UIFont sldsFontThinWithSize:size];
         default:
             return [UIFont systemFontOfSize:size];
     }
@@ -145,19 +150,19 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    NSLog(@"Cell: %li",(long)indexPath.item);
+    //[cell.textLabel setFont:[self getFont:[[fontWeights objectAtIndex:indexPath.section] integerValue] withSize:(int)indexPath.item ]];
+    //SLDSFontSizeType type = (SLDSFontSizeType)indexPath.row;
+    //type.rawValue
     
-    
-    [cell.textLabel setFont:[self getFont:[[fontWeights objectAtIndex:indexPath.section] integerValue] withSize:(int)indexPath.item ]];
-
+    [cell.textLabel setFont:[UIFont sldsFont:(SLDSFontStyle)indexPath.section withSize:indexPath.row]];
     cell.textLabel.text = [self getLabel:indexPath];
     
     return cell;
-    
 }
 
-- (CGFloat)tableView:(UITableView *)t heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50;
+- (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 1;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
