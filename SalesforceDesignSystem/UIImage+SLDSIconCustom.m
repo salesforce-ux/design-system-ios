@@ -8,7 +8,7 @@
  */
 #import <CoreText/CoreText.h>
 #import "UIColor+SLDSBackground.h"
-
+#import "UIFont+SLDSFont.h"
 #import "UIImage+SLDSIconCustom.h"
 #import "SLDSFont.h"
 
@@ -20,11 +20,7 @@ static NSString *const iconFontName = @"SalesforceDesignSystemIconsCustom";
 static float const iconScale = 1.0f;
 
 + (NSString *) iconFontNameCustom {
-    static dispatch_once_t predicate = 0;
-    
-    dispatch_once(&predicate, ^{
-        [SLDSFont loadFontWithName:iconFontName];
-    });
+    [UIFont loadFont:iconFontName fromBundle:@"SalesforceDesignSystem"];
     return iconFontName;
 }
 

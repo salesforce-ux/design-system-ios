@@ -6,20 +6,40 @@
  Neither the name of salesforce.com, inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-#import <UIKit/UIKit.h>
-#import <CoreText/CoreText.h>
-#import "SLDSFont.h"
+#import <SalesforceDesignSystem/SalesforceDesignSystemExtended.h>
+#import "UIFont+CustomFont.h"
 
-@interface UIFont (SLDSFont)
+@implementation UIFont (CustomFont)
 
-+(instancetype) sldsFont:(SLDSFontType)fontType withSize:(SLDSFontSizeType)fontSize;
-+(void) loadFont:(NSString *)fontName fromBundle:(NSString *)bundleName;
++(NSInteger)customFontSize:(CustomFontSizeType)sizeType {
+    NSArray *arr = @[
+                     @10,
+                     @14,
+                     @16,
+                     @18,
+                     @20,
+                     @24,
+                     @25,
+                     @32,
+                     ];
+    return [[arr objectAtIndex:sizeType] integerValue];
+}
+
++(NSString*)customFontFileName:(CustomFontType) fontType {
+    NSArray *arr = @[
+                     @"CarolingiaBigfooTNormal",
+                     @"GoodTimesRg-Regular"
+                     ];
+    return (NSString *)[arr objectAtIndex:fontType];
+}
+
++(instancetype)customFont:(CustomFontType)fontType withSize:(CustomFontSizeType)fontSize {
+    NSInteger fontSizeValue = [self customFontSize:fontSize];
+    NSString *fontFileName = [self customFontFileName:fontType];
+    [UIFont loadFont:fontFileName fromBundle:@"CustomFont"];
     
-// NOTE : Deprecated --------------------------------------------------------------
-+(instancetype) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
-+(instancetype) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
-+(instancetype) sldsFontLightWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
-+(instancetype) sldsFontStrongWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
-+(instancetype) sldsFontThinWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
+    // NOTE : Fonts (even custom) are automatically cached.
+    return [UIFont fontWithName:fontFileName size:fontSizeValue];
+}
 
 @end

@@ -11,6 +11,7 @@
 #import "TextListViewController.h"
 #import <SalesforceDesignSystem/SalesforceDesignSystem.h>
 #import "SWRevealViewController.h"
+#import "UIFont+CustomFont.h"
 
 
 @implementation TextListViewController
@@ -42,10 +43,11 @@
     }
     while(loopFlag);
     
-    i = 0;
+    i = 1;
     loopFlag = true;
     
     // Setting up fontNames
+    [fontTypes addObject:@"Custom Font"];
     do {
         @try {
             fontName = [SLDSFont sldsFontTypeName:(SLDSFontType)i];
@@ -96,11 +98,20 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    UIFont *font = [UIFont sldsFont:(SLDSFontType)indexPath.section withSize:(SLDSFontSizeType)indexPath.row];
-    [cell.textLabel setFont:font];
-    cell.textLabel.text = [SLDSFont sldsFontSizeName:(SLDSFontSizeType)indexPath.row];
-    cell.textLabel.text = [cell.textLabel.text stringByReplacingOccurrencesOfString:@"SLDSFontSize" withString:@""];
-    
+    if( indexPath.section == 0 )
+    {
+        UIFont *font = [UIFont customFont:(CustomFontType)indexPath.section withSize:(CustomFontSizeType)indexPath.row];
+        [cell.textLabel setFont:font];
+        cell.textLabel.text = [SLDSFont sldsFontSizeName:(SLDSFontSizeType)indexPath.row];
+        cell.textLabel.text = [cell.textLabel.text stringByReplacingOccurrencesOfString:@"SLDSFontSize" withString:@""];
+    }
+    else
+    {
+        UIFont *font = [UIFont sldsFont:(SLDSFontType)indexPath.section withSize:(SLDSFontSizeType)indexPath.row];
+        [cell.textLabel setFont:font];
+        cell.textLabel.text = [SLDSFont sldsFontSizeName:(SLDSFontSizeType)indexPath.row];
+        cell.textLabel.text = [cell.textLabel.text stringByReplacingOccurrencesOfString:@"SLDSFontSize" withString:@""];
+    }
     return cell;
 }
 

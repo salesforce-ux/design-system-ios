@@ -32,8 +32,6 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
 
 @interface SLDSFont : NSObject
 
-+(void) loadFontWithName:(NSString *)fontName;
-
 +(NSInteger)sldsFontSize:(SLDSFontSizeType)fontSize;
 +(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType;
 

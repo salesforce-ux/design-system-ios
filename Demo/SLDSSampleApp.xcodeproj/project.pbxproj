@@ -26,6 +26,8 @@
 		05C49E291B2EA4A3006B6B28 /* ColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05C49E271B2EA4A3006B6B28 /* ColorViewController.m */; };
 		05DCE66A1B7A702D009C6563 /* libSalesforceDesignSystem-Extended.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DCE6671B7A701B009C6563 /* libSalesforceDesignSystem-Extended.a */; };
 		05DCE66E1B7A74C4009C6563 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 05DCE66B1B7A7046009C6563 /* SalesforceDesignSystem.bundle */; };
+		2024D1381DE4CA8E0000F9B2 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2024D1371DE4CA8E0000F9B2 /* CustomFont.bundle */; };
+		2024D13D1DE4CB8C0000F9B2 /* UIFont+CustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 2024D13C1DE4CB8C0000F9B2 /* UIFont+CustomFont.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,9 @@
 		05C49E271B2EA4A3006B6B28 /* ColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorViewController.m; sourceTree = "<group>"; };
 		05DCE65C1B7A701B009C6563 /* SalesforceDesignSystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SalesforceDesignSystem.xcodeproj; path = ../SalesforceDesignSystem.xcodeproj; sourceTree = "<group>"; };
 		05DCE66B1B7A7046009C6563 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceDesignSystem.bundle; path = ../SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
+		2024D1371DE4CA8E0000F9B2 /* CustomFont.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CustomFont.bundle; sourceTree = "<group>"; };
+		2024D13B1DE4CB8C0000F9B2 /* UIFont+CustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CustomFont.h"; sourceTree = "<group>"; };
+		2024D13C1DE4CB8C0000F9B2 /* UIFont+CustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CustomFont.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,7 @@
 		05A7B0801B2A5EAC00B5FB86 = {
 			isa = PBXGroup;
 			children = (
+				2024D1371DE4CA8E0000F9B2 /* CustomFont.bundle */,
 				05DCE66B1B7A7046009C6563 /* SalesforceDesignSystem.bundle */,
 				05DCE65C1B7A701B009C6563 /* SalesforceDesignSystem.xcodeproj */,
 				051C4D171B3005DA001CDF18 /* SpriteKit.framework */,
@@ -165,6 +171,8 @@
 				051C4D201B30AF29001CDF18 /* TextListViewController.m */,
 				051C4D221B30AFA1001CDF18 /* TextViewController.h */,
 				051C4D231B30AFA1001CDF18 /* TextViewController.m */,
+				2024D13B1DE4CB8C0000F9B2 /* UIFont+CustomFont.h */,
+				2024D13C1DE4CB8C0000F9B2 /* UIFont+CustomFont.m */,
 			);
 			path = SLDSSampleApp;
 			sourceTree = "<group>";
@@ -302,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2024D1381DE4CA8E0000F9B2 /* CustomFont.bundle in Resources */,
 				05DCE66E1B7A74C4009C6563 /* SalesforceDesignSystem.bundle in Resources */,
 				051C4CE41B2F6A00001CDF18 /* bg-landing.png in Resources */,
 				05A7B09D1B2A5EAC00B5FB86 /* LaunchScreen.xib in Resources */,
@@ -318,6 +327,7 @@
 			files = (
 				051C4D211B30AF29001CDF18 /* TextListViewController.m in Sources */,
 				051C4D241B30AFA1001CDF18 /* TextViewController.m in Sources */,
+				2024D13D1DE4CB8C0000F9B2 /* UIFont+CustomFont.m in Sources */,
 				05C49E201B2C741A006B6B28 /* FrontViewController.m in Sources */,
 				0539D1981B684A0000A7DFD2 /* IconListViewController.m in Sources */,
 				05A7B0921B2A5EAC00B5FB86 /* AppDelegate.m in Sources */,

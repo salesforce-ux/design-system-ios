@@ -9,20 +9,16 @@
 #import <CoreText/CoreText.h>
 #import "UIImage+SLDSIconUtility.h"
 #import "UIColor+SLDSBackground.h"
-
+#import "UIFont+SLDSFont.h"
 #import "SLDSFont.h"
 
 @implementation UIImage (SLDSIconUtility)
 
-static NSString *const fontName = @"SalesforceDesignSystemIconsUtility";
+static NSString *const iconFontName = @"SalesforceDesignSystemIconsUtility";
 
 + (NSString *) fontNameUtility {
-    static dispatch_once_t predicate = 0;
-    
-    dispatch_once(&predicate, ^{
-        [SLDSFont loadFontWithName:fontName];
-    });
-    return fontName;
+    [UIFont loadFont:iconFontName fromBundle:@"SalesforceDesignSystem"];
+    return iconFontName;
 }
 
 +(UIImage*)sldsIconUtility:(SLDSIconUtilityType)iconId withColor:(UIColor*)iconColor andSize:(short)size{
