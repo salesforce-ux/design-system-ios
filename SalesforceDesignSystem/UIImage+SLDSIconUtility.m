@@ -12,13 +12,9 @@
 
 #import "SLDSFont.h"
 
-
 @implementation UIImage (SLDSIconUtility)
 
 static NSString *const fontName = @"SalesforceDesignSystemIconsUtility";
-
-
-
 
 + (NSString *) fontNameUtility {
     static dispatch_once_t predicate = 0;
@@ -29,10 +25,10 @@ static NSString *const fontName = @"SalesforceDesignSystemIconsUtility";
     return fontName;
 }
 
-+(UIImage*)sldsIconUtility:(SLDSIconUtilType)iconId withColor:(UIColor*)iconColor andSize:(short)size{
++(UIImage*)sldsIconUtility:(SLDSIconUtilityType)iconId withColor:(UIColor*)iconColor andSize:(short)size{
 
     if (!iconColor) {
-        iconColor = [UIColor sldsBackgroundColor:SLDSColorBackgroundActionbarIconUtility];
+        iconColor = [UIColor sldsColorBackground:SLDSColorBackgroundActionbarIconUtility];
     }
     CGRect textRect = CGRectZero;
     textRect.size = CGSizeMake(size,size);
@@ -67,7 +63,7 @@ static NSString *const fontName = @"SalesforceDesignSystemIconsUtility";
     return icon;
 }
 
-+(UIImage*)sldsIconUtility:(SLDSIconUtilType)iconId withSize:(short)size{
++(UIImage*)sldsIconUtility:(SLDSIconUtilityType)iconId withSize:(short)size{
     return [self sldsIconUtility:iconId withColor:nil andSize:size];
 }
 

@@ -13,91 +13,68 @@
 #import "SWRevealViewController.h"
 
 
-@interface TextListViewController ()
-
-@end
-
-@implementation TextListViewController {
-    NSArray *fontSizes;
-    NSArray *fontWeights;
+@implementation TextListViewController
+{
+    NSMutableArray *fontSizes;
+    NSMutableArray *fontTypes;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self navigationItem].title = @"Landmark Icons";
+    [self navigationItem].title = @"SLDS Fonts";
     
-    NSMutableArray *sizes = [[NSMutableArray alloc] init];
-    for(int i=SLDSFontSizeXSmall; i<=SLDSFontSizeXxLarge; i++) {
-        [sizes addObject:[NSNumber numberWithInt:i]];
+    int i = 0;
+    NSString *fontName;
+    Boolean loopFlag = true;
+    fontSizes = [[NSMutableArray alloc] init];
+    fontTypes = [[NSMutableArray alloc] init];
+    
+    // Setting up fontSizes
+    do {
+        @try {
+            [fontSizes addObject:[NSNumber numberWithInteger:[SLDSFont sldsFontSize:(SLDSFontSizeType)i]]];
+            i++;
+        }
+        @catch (NSException * e) {
+            loopFlag = false;
+        }
     }
-    fontSizes = [sizes copy];
-
-    NSMutableArray *weights = [[NSMutableArray alloc] init];
-    for(int i=SLDSFontStyleRegular; i<=SLDSFontStyleThinItalic; i++) {
-        [weights addObject:[NSNumber numberWithInt:i]];
+    while(loopFlag);
+    
+    i = 0;
+    loopFlag = true;
+    
+    // Setting up fontNames
+    do {
+        @try {
+            fontName = [SLDSFont sldsFontTypeName:(SLDSFontType)i];
+            fontName = [fontName stringByReplacingOccurrencesOfString:@"SLDSFontType" withString:@""];
+            [fontTypes addObject:fontName];
+            i++;
+        }
+        @catch (NSException * e) {
+            loopFlag = false;
+        }
     }
-    fontWeights = [weights copy];
-
+    while(loopFlag);
+    
     SWRevealViewController *revealController = self.revealViewController;
     [self.view addGestureRecognizer:revealController.panGestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
-- (NSArray *) sourceForSection:(NSInteger)section {
+- (NSArray*)sourceForSection:(NSInteger)section {
     return fontSizes;
 }
 
-- (NSString *) getWeightLabel:(NSIndexPath *)indexPath{
-    NSInteger index = [[fontWeights objectAtIndex:indexPath.section] integerValue];
-    switch(index){
-        case SLDS_FONT_FAMILY_BODY:
-            return @"REGULAR";
-        case SLDS_FONT_FAMILY_ITALIC:
-            return @"ITALIC";
-        case SLDS_FONT_FAMILY_LIGHT:
-            return @"LIGHT";
-        case SLDS_FONT_FAMILY_STRONG:
-            return @"BOLD";
-        case SLDS_FONT_FAMILY_THIN:
-            return @"THIN";
-        default:
-            return @"";
-    }
-}
-
-- (NSString *) getSizeLabel:(NSIndexPath *)indexPath{
-    NSInteger index = [[fontSizes objectAtIndex:indexPath.item] integerValue];
-    switch(index){
-        case SLDSFontSizeXSmall:
-            return @"X_SMALL";
-        case SLDSFontSizeSmall:
-            return @"SMALL";
-        case SLDSFontSizeMedium:
-            return @"MEDIUM";
-        case SLDSFontSizeLarge:
-            return @"LARGE";
-        case SLDSFontSizeXLarge:
-            return @"X_LARGE";
-        case SLDSFontSizeXxLarge:
-            return @"XX_LARGE";
-        default:
-            return @"";
-    }
-}
-
-- (NSString *) getLabel:(NSIndexPath *)indexPath{
-    return [NSString stringWithFormat:@"%@ %@",[self getWeightLabel:indexPath],[self getSizeLabel:indexPath] ];
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return fontWeights.count;
+    return fontTypes.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -107,38 +84,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    NSInteger index = [[fontWeights objectAtIndex:section] integerValue];
-    switch(index){
-        case SLDS_FONT_FAMILY_BODY:
-            return @"SalesforceSans - Regular";
-        case SLDS_FONT_FAMILY_ITALIC:
-            return @"SalesforceSans - Italic";
-        case SLDS_FONT_FAMILY_LIGHT:
-            return @"SalesforceSans - Light";
-        case SLDS_FONT_FAMILY_STRONG:
-            return @"SalesforceSans - Bold";
-        case SLDS_FONT_FAMILY_THIN:
-            return @"SalesforceSans - Thin";
-        default:
-            return @"";
-    }
-}
-
-- (UIFont *)getFont:(SLDS_FONT_FAMILY) fontFamily withSize:(NSInteger)size{
-    switch(fontFamily){
-        case SLDS_FONT_FAMILY_BODY:
-            return [UIFont sldsFontRegularWithSize:size];
-        case SLDS_FONT_FAMILY_ITALIC:
-            return [UIFont sldsFontItalicWithSize:size];
-        case SLDS_FONT_FAMILY_LIGHT:
-            return [UIFont sldsFontLightWithSize:size];
-        case SLDS_FONT_FAMILY_STRONG:
-            return [UIFont sldsFontStrongWithSize:size];
-        case SLDS_FONT_FAMILY_THIN:
-            return [UIFont sldsFontThinWithSize:size];
-        default:
-            return [UIFont systemFontOfSize:size];
-    }
+    return [fontTypes objectAtIndex:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -150,12 +96,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    //[cell.textLabel setFont:[self getFont:[[fontWeights objectAtIndex:indexPath.section] integerValue] withSize:(int)indexPath.item ]];
-    //SLDSFontSizeType type = (SLDSFontSizeType)indexPath.row;
-    //type.rawValue
-    
-    [cell.textLabel setFont:[UIFont sldsFont:(SLDSFontStyle)indexPath.section withSize:indexPath.row]];
-    cell.textLabel.text = [self getLabel:indexPath];
+    UIFont *font = [UIFont sldsFont:(SLDSFontType)indexPath.section withSize:(SLDSFontSizeType)indexPath.row];
+    [cell.textLabel setFont:font];
+    cell.textLabel.text = [SLDSFont sldsFontSizeName:(SLDSFontSizeType)indexPath.row];
+    cell.textLabel.text = [cell.textLabel.text stringByReplacingOccurrencesOfString:@"SLDSFontSize" withString:@""];
     
     return cell;
 }
@@ -172,23 +116,16 @@
     TextViewController *dc = [[TextViewController alloc] init];
     
     dc.fontSize = [[fontSizes objectAtIndex:indexPath.item] integerValue];
-
-    dc.fontWeight = [[fontWeights objectAtIndex:indexPath.section] integerValue];
-    
-    
     [revealController setFrontViewController:dc animated:YES];
     [revealController setFrontViewPosition:FrontViewPositionLeftSideMost animated:YES];
-
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
 {
-    view.tintColor = [UIColor sldsBackgroundColor:SLDSColorBackgroundShade];
+    view.tintColor = [UIColor sldsColorBackground:SLDSColorBackgroundShade];
     
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    [header.textLabel setFont:[UIFont sldsFontLightWithSize:SLDSFontSizeLarge]];
-
+    [header.textLabel setFont:[UIFont sldsFont:SLDSFontTypeRegular withSize:SLDSFontSizeLarge]];
 }
-
 
 @end

@@ -12,6 +12,6 @@
 
 @interface SLDSIconLabelUtility : NSObject
 
-+ (NSString *)sldsIconName:(SLDSIconUtilType)icon;
++ (NSString *)sldsIconName:(SLDSIconUtilityType)icon;
 
 @end

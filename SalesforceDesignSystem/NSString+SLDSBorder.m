@@ -9,7 +9,7 @@
 #import "NSString+SLDSBorder.h"
 
 @implementation NSString (SLDSBorder)
-+ (instancetype)sldsBorderColorName:(SLDSColorBorderType)color{
++ (instancetype)sldsColorBorderName:(SLDSColorBorderType)color{
     return [SLDSColorBrdr sldsColorEnumName:color];
 }
 @end

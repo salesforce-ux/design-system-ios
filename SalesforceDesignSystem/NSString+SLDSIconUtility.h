@@ -12,5 +12,5 @@
 
 
 @interface NSString (SLDSIconUtility)
-+(instancetype)sldsIconUtility:(SLDSIconUtilType)icon;
++(instancetype)sldsIconUtility:(SLDSIconUtilityType)icon;
 @end

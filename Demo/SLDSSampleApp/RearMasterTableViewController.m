@@ -25,7 +25,7 @@
 -(void) viewDidLoad {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
-    self.tableView.backgroundColor = [UIColor sldsBackgroundColor:SLDSColorBackgroundInverse];
+    self.tableView.backgroundColor = [UIColor sldsColorBackground:SLDSColorBackgroundInverse];
     self.tableView.separatorColor = [UIColor clearColor];
 
 }

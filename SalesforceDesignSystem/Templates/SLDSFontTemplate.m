@@ -11,32 +11,48 @@
 #import <CoreText/CoreText.h>
 #import <UIKit/UIKit.h>
 
-
 @implementation SLDSFontTemplate
 
-+(NSString*)sldsFontStyleName:(SLDSFontStyle)fontStyle
-{
-    NSMutableString *fontStyleName = [[NSMutableString alloc] initWithString:@"SalesforceSans-"];
-    
-    switch(fontStyle) {
-        case SLDSFontStyleItalic : [fontStyleName appendString:@"Italic"];
-            break;
-        case SLDSFontStyleBold : [fontStyleName appendString:@"Bold"];
-            break;
-        case SLDSFontStyleBoldItalic : [fontStyleName appendString:@"BoldItalic"];
-            break;
-        case SLDSFontStyleLight : [fontStyleName appendString:@"Light"];
-            break;
-        case SLDSFontStyleLightItalic : [fontStyleName appendString:@"LightItalic"];
-            break;
-        case SLDSFontStyleThin : [fontStyleName appendString:@"Thin"];
-            break;
-        case SLDSFontStyleThinItalic : [fontStyleName appendString:@"ThinItalic"];
-            break;
-        default: [fontStyleName appendString:@"Regular"];
-    }
-    
-    return fontStyleName;
++(NSInteger)sldsFontSize:(SLDSFontSizeType)sizeType {
+    NSArray *arr = @[
+/*SLDS_FONT_SIZE_VALUES*/
+                     ];
+    return [[arr objectAtIndex:sizeType] integerValue];
+}
+
++(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType {
+    NSArray *arr = @[
+/*SLDS_FONT_SIZE_CASES*/
+                     ];
+    return (NSString *)[arr objectAtIndex:sizeType];
+}
+
++(NSString*)sldsFontFileName:(SLDSFontType) fontType {
+    NSArray *arr = @[
+                     @"SalesforceSans-Regular",
+                     @"SalesforceSans-Italic",
+                     @"SalesforceSans-Bold",
+                     @"SalesforceSans-BoldItalic",
+                     @"SalesforceSans-Light",
+                     @"SalesforceSans-LightItalic",
+                     @"SalesforceSans-Thin",
+                     @"SalesforceSans-ThinItalic",
+                     ];
+    return (NSString *)[arr objectAtIndex:fontType];
+}
+
++(NSString*)sldsFontTypeName:(SLDSFontType) fontType {
+    NSArray *arr = @[
+                     @"SLDSFontTypeRegular",
+                     @"SLDSFontTypeItalic",
+                     @"SLDSFontTypeBold",
+                     @"SLDSFontTypeBoldItalic",
+                     @"SLDSFontTypeLight",
+                     @"SLDSFontTypeLightItalic",
+                     @"SLDSFontTypeThin",
+                     @"SLDSFontTypeThinItalic",
+                     ];
+    return (NSString *)[arr objectAtIndex:fontType];
 }
 
 +(void) loadFontWithName:(NSString *)fontName {
@@ -67,35 +83,38 @@
     CFRelease(provider);
 }
 
-+(UIFont *) sldsFont:(SLDSFontStyle)fontStyle withSize:(SLDSFontSizeType)fontSize
++(UIFont*)sldsFont:(SLDSFontType)fontType withSize:(SLDSFontSizeType)fontSize
 {
-    NSInteger fontSizeValue = [SLDSFontSz sldsFontSize:fontSize];
-    NSString *fontStyleName = [self sldsFontStyleName:fontStyle];
+    NSInteger fontSizeValue = [SLDSFont sldsFontSize:fontSize];
+    NSString *fontFileName = [self sldsFontFileName:fontType];
     
     // NOTE : Returns early if the font is already loaded
-    [self loadFontWithName:fontStyleName];
+    [self loadFontWithName:fontFileName];
     
-    return [UIFont fontWithName:fontStyleName size:fontSizeValue];
+    // NOTE : Fonts (even custom) are automatically cached.
+    return [UIFont fontWithName:fontFileName size:fontSizeValue];
 }
 
+// NOTE : Deprecated --------------------------------------------------------------
+
 +(UIFont *) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize{
-    return [self sldsFont:SLDSFontStyleRegular withSize:fontSize];
+    return [self sldsFont:SLDSFontTypeRegular withSize:fontSize];
 }
 
 +(UIFont *) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize{
-    return [self sldsFont:SLDSFontStyleItalic withSize:fontSize];
+    return [self sldsFont:SLDSFontTypeItalic withSize:fontSize];
 }
 
 +(UIFont *) sldsFontLightWithSize:(SLDSFontSizeType)fontSize{
-    return [self sldsFont:SLDSFontStyleLight withSize:fontSize];
+    return [self sldsFont:SLDSFontTypeLight withSize:fontSize];
 }
 
 +(UIFont *) sldsFontStrongWithSize:(SLDSFontSizeType)fontSize{
-    return [self sldsFont:SLDSFontStyleBold withSize:fontSize];
+    return [self sldsFont:SLDSFontTypeBold withSize:fontSize];
 }
 
 +(UIFont *) sldsFontThinWithSize:(SLDSFontSizeType)fontSize{
-    return [self sldsFont:SLDSFontStyleThin withSize:fontSize];
+    return [self sldsFont:SLDSFontTypeThin withSize:fontSize];
 }
 
 @end

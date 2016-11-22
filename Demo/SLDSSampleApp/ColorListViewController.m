@@ -80,9 +80,9 @@
         case 0:
             return [NSString sldsColorTextName:[[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] intValue]];
         case 1:
-            return [NSString sldsBackgroundColorName:[[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] intValue]];
+            return [NSString sldsColorBackgroundName:[[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] intValue]];
         case 2:
-            return [NSString sldsBorderColorName:[[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] intValue]];
+            return [NSString sldsColorBorderName:[[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] intValue]];
         default:
             return @"NOT FOUND!";
     }
@@ -93,9 +93,9 @@
         case 0:
             return [UIColor sldsColorText:[[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] intValue]];
         case 1:
-            return [UIColor sldsBackgroundColor:[[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] intValue]];
+            return [UIColor sldsColorBackground:[[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] intValue]];
         case 2:
-            return [UIColor sldsBorderColor:[[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] intValue]];
+            return [UIColor sldsColorBorder:[[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] intValue]];
         default:
             return [UIColor clearColor];
     }

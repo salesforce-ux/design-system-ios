@@ -8,7 +8,7 @@
  */
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, SLDSIconUtilType) {
+typedef NS_ENUM(NSInteger, SLDSIconUtilityType) {
     
     SLDSIconUtilityAdd,
 	SLDSIconUtilityAdduser,
@@ -242,5 +242,5 @@ typedef NS_ENUM(NSInteger, SLDSIconUtilType) {
 };
 
 @interface SLDSIconUtility : NSObject
-+ (NSString *)sldsIconUniCode:(SLDSIconUtilType)color;
++ (NSString *)sldsIconUniCode:(SLDSIconUtilityType)color;
 @end

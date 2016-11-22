@@ -10,7 +10,7 @@
 
 @implementation UIColor (SLDSBackground)
 
-+ (instancetype)sldsBackgroundColor:(SLDSColorBgType)color{
++ (instancetype)sldsColorBackground:(SLDSColorBackgroundType)color{
     return [SLDSColorBg sldsColor:color];
 }
 
