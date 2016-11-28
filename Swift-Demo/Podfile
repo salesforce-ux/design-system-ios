@@ -1,0 +1,17 @@
+target 'slds-sample-app' do
+  use_frameworks!
+
+  # For internal distribution
+  pod 'HockeySDK', '~> 4.1.2'
+
+  target 'slds-sample-appTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'slds-sample-appUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
