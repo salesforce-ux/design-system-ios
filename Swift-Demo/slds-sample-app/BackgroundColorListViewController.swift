@@ -40,7 +40,8 @@ class BackgroundColorListViewController: ColorListViewController {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = ColorViewController()
+        let controller = BackgroundColorViewController()
+        controller.addColor(colors[indexPath.item].color)
         self.navigationController?.show(controller, sender: self)
     }
 }

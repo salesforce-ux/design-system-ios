@@ -40,7 +40,7 @@ class TextColorListViewController: ColorListViewController {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = ColorViewController()
+        let controller = BackgroundColorViewController()
         self.navigationController?.show(controller, sender: self)
     }
 }

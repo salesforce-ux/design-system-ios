@@ -19,7 +19,7 @@
 		FC2AB83F1DECE6560045C837 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FC2AB83C1DECE6560045C837 /* SalesforceDesignSystem.bundle */; };
 		FC4299161DDA3EEC00891FBD /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4299151DDA3EEC00891FBD /* CategoryCell.swift */; };
 		FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4299181DDA4FE100891FBD /* ColorListViewController.swift */; };
-		FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42991E1DDA8FC500891FBD /* ColorViewController.swift */; };
+		FC42991F1DDA8FC500891FBD /* BackgroundColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42991E1DDA8FC500891FBD /* BackgroundColorViewController.swift */; };
 		FC4FF3D71DE4CA03009B3D2E /* BackgroundColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FF3D61DE4CA03009B3D2E /* BackgroundColorCell.swift */; };
 		FC4FF3D91DE4CDFB009B3D2E /* TextColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FF3D81DE4CDFB009B3D2E /* TextColorCell.swift */; };
 		FC4FF3DB1DE4D033009B3D2E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */; };
@@ -98,7 +98,7 @@
 		FC2AB83C1DECE6560045C837 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceDesignSystem.bundle; path = ../SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
 		FC4299151DDA3EEC00891FBD /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		FC4299181DDA4FE100891FBD /* ColorListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorListViewController.swift; sourceTree = "<group>"; };
-		FC42991E1DDA8FC500891FBD /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		FC42991E1DDA8FC500891FBD /* BackgroundColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColorViewController.swift; sourceTree = "<group>"; };
 		FC4FF3D61DE4CA03009B3D2E /* BackgroundColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColorCell.swift; sourceTree = "<group>"; };
 		FC4FF3D81DE4CDFB009B3D2E /* TextColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextColorCell.swift; sourceTree = "<group>"; };
 		FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 		FC4FF3E41DE4FB0E009B3D2E /* Color Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FC42991E1DDA8FC500891FBD /* ColorViewController.swift */,
+				FC42991E1DDA8FC500891FBD /* BackgroundColorViewController.swift */,
 				FC4299181DDA4FE100891FBD /* ColorListViewController.swift */,
 				FC4FF3DE1DE4F74D009B3D2E /* BackgroundColorListViewController.swift */,
 				FC4FF3E01DE4F98E009B3D2E /* TextColorListViewController.swift */,
@@ -620,7 +620,7 @@
 				FC4299161DDA3EEC00891FBD /* CategoryCell.swift in Sources */,
 				FC4FF3DF1DE4F74D009B3D2E /* BackgroundColorListViewController.swift in Sources */,
 				FCB47EDD1DD3D09400BB6C1B /* ConstraintsHelper.swift in Sources */,
-				FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */,
+				FC42991F1DDA8FC500891FBD /* BackgroundColorViewController.swift in Sources */,
 				FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */,
 				FC4FF3E61DE4FB68009B3D2E /* BorderColorListViewController.swift in Sources */,
 				206AA8201DE3B82800375432 /* UserListViewController.swift in Sources */,

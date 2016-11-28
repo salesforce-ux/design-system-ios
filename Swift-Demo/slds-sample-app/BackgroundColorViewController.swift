@@ -8,22 +8,11 @@
 
 import UIKit
 
-class ColorViewController: UIViewController {
-    
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-    
-    var detailItem: NSDate? {
-        didSet {
-            // Update the view.
-            self.configureView()
-        }
-    }
+class BackgroundColorViewController: UIViewController {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func viewDidLoad() {
-        self.configureView()
-        self.view.backgroundColor = UIColor.green
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -35,13 +24,8 @@ class ColorViewController: UIViewController {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }
+    func addColor(_ c:UIColor) {
+        self.view.backgroundColor = c;
     }
 }
 
