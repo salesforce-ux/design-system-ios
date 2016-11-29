@@ -76,7 +76,7 @@
 +(void) loadFont:(NSString *)fontFileName fromBundle:(NSString *)bundleName {
     
     // NOTE : Defaulting to .ttf in case no extension is provided.
-    // NOTE : Used for backward compatibility.
+    // NOTE : Used for backward compatibility of icons.
     if(!contains(fontFileName, @".")) {
         fontFileName = [fontFileName stringByAppendingString:@".ttf"];
     }

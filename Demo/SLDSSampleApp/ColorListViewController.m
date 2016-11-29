@@ -10,12 +10,6 @@
 #import "ColorListViewController.h"
 #import "ColorViewController.h"
 #import <SalesforceDesignSystem/SalesforceDesignSystemExtended.h>
-#import "SWRevealViewController.h"
-
-
-@interface ColorListViewController ()
-
-@end
 
 @implementation ColorListViewController {
     NSArray *textColors;
@@ -24,11 +18,8 @@
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    self.title = @"Colors";
     
-    [self navigationItem].title = @"Landmark Icons";
-    
-
     NSMutableArray *tColors = [[NSMutableArray alloc] init];
     for(int i=SLDSColorTextActionLabel; i<=SLDSColorTextWeak; i++) {
         [tColors addObject:[NSNumber numberWithInt:i]];
@@ -47,12 +38,6 @@
         [brdrColors addObject:[NSNumber numberWithInt:i]];
     }
     borderColors = [brdrColors copy];
-
-    
-    SWRevealViewController *revealController = self.revealViewController;
-    
-    [self.view addGestureRecognizer:revealController.panGestureRecognizer];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -157,15 +142,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-        SWRevealViewController *revealController = self.revealViewController;
-
-        ColorViewController *dc = [[ColorViewController alloc] init];
-        
-        dc.colorID = [[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] integerValue];
-        dc.colorCategoryID = [self categoryId:indexPath];
+    ColorViewController *controller = [[ColorViewController alloc] init];
     
-    [revealController setFrontViewController:dc animated:YES];
-    [revealController setFrontViewPosition:FrontViewPositionLeftSideMost animated:YES];
+    controller.colorID = [[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] integerValue];
+    controller.colorCategoryID = [self categoryId:indexPath];
+    [self.navigationController pushViewController:controller animated:true];
  }
 
 -(LM_COLOR_CATEGORY)categoryId:(NSIndexPath *) indexPath{

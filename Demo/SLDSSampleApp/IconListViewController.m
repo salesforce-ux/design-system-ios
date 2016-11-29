@@ -8,15 +8,8 @@
  */
 
 #import "IconListViewController.h"
-
 #import "IconViewController.h"
 #import <SalesforceDesignSystem/SalesforceDesignSystemExtended.h>
-#import "SWRevealViewController.h"
-
-
-@interface IconListViewController ()
-
-@end
 
 @implementation IconListViewController {
     NSArray *textBtnColors;
@@ -30,13 +23,8 @@
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    self.title = @"Icons";
     
-    [self navigationItem].title = @"Landmark Icons";
-    
-
-    
-
     NSMutableArray *aIcons = [[NSMutableArray alloc] init];
     for(int i=SLDSIconActionAnnouncement; i<=SLDSIconActionWebLink; i++) {
         [aIcons addObject:[NSNumber numberWithInt:i]];
@@ -63,37 +51,6 @@
         [uIcons addObject:[NSNumber numberWithInt:i]];
     }
     utilityIcons = [uIcons copy];
-
-    
-    
-    
-    
-    
-/*
-    NSMutableArray *tColors = [[NSMutableArray alloc] init];
-    for(int i=SLDSColorBtnTextButtonBrand; i<=SLDSColorBtnTextIconInverseHover; i++) {
-        [tColors addObject:[NSNumber numberWithInt:i]];
-    }
-    textBtnColors = [tColors copy];
-    
-    NSMutableArray *bColors = [[NSMutableArray alloc] init];
-    for(int i=SLDSColorBtnBackgroundButtonBrand; i<=SLDSColorBtnBackgroundModalButtonActive; i++) {
-        [bColors addObject:[NSNumber numberWithInt:i]];
-    }
-    backgroundBtnColors = [bColors copy];
-    
-    
-    NSMutableArray *brdrColors = [[NSMutableArray alloc] init];
-    for(int i=SLDSColorBtnBorderButtonBrand; i<=SLDSColorBtnBorderButtonInverseDisabled; i++) {
-        [brdrColors addObject:[NSNumber numberWithInt:i]];
-    }
-    borderBtnColors = [brdrColors copy];
-    
-*/    
-    SWRevealViewController *revealController = self.revealViewController;
-    
-    [self.view addGestureRecognizer:revealController.panGestureRecognizer];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -201,17 +158,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    SWRevealViewController *revealController = self.revealViewController;
+    IconViewController *controller = [[IconViewController alloc] init];
     
-    IconViewController *dc = [[IconViewController alloc] init];
-    
-    dc.iconID = [[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] integerValue];
-    dc.iconCategoryID = indexPath.section;
-    
-    
-    [revealController setFrontViewController:dc animated:YES];
-    [revealController setFrontViewPosition:FrontViewPositionLeftSideMost animated:YES];
-    
+    controller.iconID = [[[self sourceForSection:indexPath.section] objectAtIndex:indexPath.item] integerValue];
+    controller.iconCategoryID = indexPath.section;
+    [self.navigationController pushViewController:controller animated:true];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
