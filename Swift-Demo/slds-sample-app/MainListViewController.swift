@@ -11,26 +11,35 @@ import UIKit
 struct TableData {
     var sectionTitle: String
     var rows: [String]
-    var controllers: [UIViewController.Type]
+    var controllers: [UIViewController]
 }
 
 class MainListViewController: UITableViewController {
+    
+    let backgroundColorListViewController = ColorListViewController()
+    let textColorListViewController = ColorListViewController()
+    let borderColorListViewController = ColorListViewController()
     
     var tableData : [TableData] {
         return [
             TableData(sectionTitle: "Sample App",
                       rows: ["User Records"],
-                      controllers: [UserListViewController.self]),
+                      controllers: [UserListViewController()]),
             
             TableData(sectionTitle: "SLDS Reference",
                       rows: ["Background Colors", "Text Colors", "Border Colors", "Fonts"],
-                      controllers: [BackgroundColorListViewController.self, TextColorListViewController.self, BorderColorListViewController.self, FontListTableViewController.self])
+                      controllers: [ backgroundColorListViewController, textColorListViewController, borderColorListViewController, ColorListViewController()])
         ]
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func viewDidLoad() {
+        
+        backgroundColorListViewController.addContent("Background Colors")
+        textColorListViewController.addContent("Text Colors")
+        borderColorListViewController.addContent("Border Colors")
+        
         self.tableView.register(CategoryCell.self, forCellReuseIdentifier: "Cell")
         navigationController?.navigationBar.barTintColor = UIColor.sldsColorBackground(.brand)
         navigationController?.navigationBar.tintColor = UIColor.white
@@ -41,6 +50,10 @@ class MainListViewController: UITableViewController {
         navigationItem.backBarButtonItem = backButton
         
         self.title = "Lightning Design System"
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 36
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -55,6 +68,12 @@ class MainListViewController: UITableViewController {
         return tableData[section].rows.count
     }
     
+    override func tableView (_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView {
+        let view = SectionHeaderView()
+        view.setText(tableData[section].sectionTitle)
+        return view
+    }
+    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -64,9 +83,10 @@ class MainListViewController: UITableViewController {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CategoryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         cell.textLabel?.text = tableData[indexPath.section].rows[indexPath.row]
+        cell.textLabel?.font = UIFont.sldsFont(.regular, with: .medium)
         return cell
     }
     
@@ -74,7 +94,9 @@ class MainListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = tableData[indexPath.section].controllers[indexPath.row]
-        self.navigationController?.show(controller.init(), sender: self)
+        let colorType = tableData[indexPath.section].rows[indexPath.row]
+        
+        self.navigationController?.show(controller, sender: self)
     }
     
 }

@@ -19,13 +19,8 @@
 		FC2AB83F1DECE6560045C837 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FC2AB83C1DECE6560045C837 /* SalesforceDesignSystem.bundle */; };
 		FC4299161DDA3EEC00891FBD /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4299151DDA3EEC00891FBD /* CategoryCell.swift */; };
 		FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4299181DDA4FE100891FBD /* ColorListViewController.swift */; };
-		FC42991F1DDA8FC500891FBD /* BackgroundColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42991E1DDA8FC500891FBD /* BackgroundColorViewController.swift */; };
-		FC4FF3D71DE4CA03009B3D2E /* BackgroundColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FF3D61DE4CA03009B3D2E /* BackgroundColorCell.swift */; };
-		FC4FF3D91DE4CDFB009B3D2E /* TextColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FF3D81DE4CDFB009B3D2E /* TextColorCell.swift */; };
+		FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42991E1DDA8FC500891FBD /* ColorViewController.swift */; };
 		FC4FF3DB1DE4D033009B3D2E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */; };
-		FC4FF3DF1DE4F74D009B3D2E /* BackgroundColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FF3DE1DE4F74D009B3D2E /* BackgroundColorListViewController.swift */; };
-		FC4FF3E11DE4F98E009B3D2E /* TextColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FF3E01DE4F98E009B3D2E /* TextColorListViewController.swift */; };
-		FC4FF3E61DE4FB68009B3D2E /* BorderColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FF3E51DE4FB68009B3D2E /* BorderColorListViewController.swift */; };
 		FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EA81DD0FCDB00BB6C1B /* AppDelegate.swift */; };
 		FCB47EB01DD0FCDB00BB6C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */; };
 		FCB47EB31DD0FCDB00BB6C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB47EB11DD0FCDB00BB6C1B /* LaunchScreen.storyboard */; };
@@ -98,13 +93,8 @@
 		FC2AB83C1DECE6560045C837 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceDesignSystem.bundle; path = ../SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
 		FC4299151DDA3EEC00891FBD /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		FC4299181DDA4FE100891FBD /* ColorListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorListViewController.swift; sourceTree = "<group>"; };
-		FC42991E1DDA8FC500891FBD /* BackgroundColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColorViewController.swift; sourceTree = "<group>"; };
-		FC4FF3D61DE4CA03009B3D2E /* BackgroundColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColorCell.swift; sourceTree = "<group>"; };
-		FC4FF3D81DE4CDFB009B3D2E /* TextColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextColorCell.swift; sourceTree = "<group>"; };
+		FC42991E1DDA8FC500891FBD /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
-		FC4FF3DE1DE4F74D009B3D2E /* BackgroundColorListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColorListViewController.swift; sourceTree = "<group>"; };
-		FC4FF3E01DE4F98E009B3D2E /* TextColorListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextColorListViewController.swift; sourceTree = "<group>"; };
-		FC4FF3E51DE4FB68009B3D2E /* BorderColorListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderColorListViewController.swift; sourceTree = "<group>"; };
 		FCB47EA51DD0FCDB00BB6C1B /* slds-sample-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "slds-sample-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB47EA81DD0FCDB00BB6C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,31 +180,10 @@
 				206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */,
 				FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */,
 				206AA81F1DE3B82800375432 /* UserListViewController.swift */,
-				FC4FF3E41DE4FB0E009B3D2E /* Color Controllers */,
+				FC42991E1DDA8FC500891FBD /* ColorViewController.swift */,
+				FC4299181DDA4FE100891FBD /* ColorListViewController.swift */,
 			);
 			name = controllers;
-			sourceTree = "<group>";
-		};
-		FC4FF3E41DE4FB0E009B3D2E /* Color Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				FC42991E1DDA8FC500891FBD /* BackgroundColorViewController.swift */,
-				FC4299181DDA4FE100891FBD /* ColorListViewController.swift */,
-				FC4FF3DE1DE4F74D009B3D2E /* BackgroundColorListViewController.swift */,
-				FC4FF3E01DE4F98E009B3D2E /* TextColorListViewController.swift */,
-				FC4FF3E51DE4FB68009B3D2E /* BorderColorListViewController.swift */,
-			);
-			name = "Color Controllers";
-			sourceTree = "<group>";
-		};
-		FC4FF3E71DE4FB9E009B3D2E /* Color Cells */ = {
-			isa = PBXGroup;
-			children = (
-				FC4FF3D61DE4CA03009B3D2E /* BackgroundColorCell.swift */,
-				FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */,
-				FC4FF3D81DE4CDFB009B3D2E /* TextColorCell.swift */,
-			);
-			name = "Color Cells";
 			sourceTree = "<group>";
 		};
 		FCB47E9C1DD0FCDB00BB6C1B = {
@@ -277,7 +246,7 @@
 		FCB47ED91DD2989F00BB6C1B /* views */ = {
 			isa = PBXGroup;
 			children = (
-				FC4FF3E71DE4FB9E009B3D2E /* Color Cells */,
+				FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */,
 				FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */,
 				FC4299151DDA3EEC00891FBD /* CategoryCell.swift */,
 				FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */,
@@ -618,18 +587,13 @@
 			files = (
 				FC1EA4681DDE6F6300304E01 /* MainListViewController.swift in Sources */,
 				FC4299161DDA3EEC00891FBD /* CategoryCell.swift in Sources */,
-				FC4FF3DF1DE4F74D009B3D2E /* BackgroundColorListViewController.swift in Sources */,
 				FCB47EDD1DD3D09400BB6C1B /* ConstraintsHelper.swift in Sources */,
-				FC42991F1DDA8FC500891FBD /* BackgroundColorViewController.swift in Sources */,
+				FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */,
 				FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */,
-				FC4FF3E61DE4FB68009B3D2E /* BorderColorListViewController.swift in Sources */,
 				206AA8201DE3B82800375432 /* UserListViewController.swift in Sources */,
-				FC4FF3E11DE4F98E009B3D2E /* TextColorListViewController.swift in Sources */,
 				FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */,
 				206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */,
-				FC4FF3D71DE4CA03009B3D2E /* BackgroundColorCell.swift in Sources */,
 				FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */,
-				FC4FF3D91DE4CDFB009B3D2E /* TextColorCell.swift in Sources */,
 				FC4FF3DB1DE4D033009B3D2E /* ColorCell.swift in Sources */,
 				FCB47EE01DD4F10E00BB6C1B /* NavButton.swift in Sources */,
 			);

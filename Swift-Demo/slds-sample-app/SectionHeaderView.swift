@@ -36,7 +36,7 @@ class SectionHeaderView: UIView {
 
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func setText(text:String) {
+    func setText(_ text:String) {
         label.text = text
     }
     

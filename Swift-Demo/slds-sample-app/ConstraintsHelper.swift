@@ -10,7 +10,7 @@ import Foundation
 
 class ConstraintsHelper {
     
-    static func stackV(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, invert: Bool, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
+    static func stackV(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, center: Bool, invert: Bool, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
         
         item.translatesAutoresizingMaskIntoConstraints = false
         
@@ -19,13 +19,24 @@ class ConstraintsHelper {
         let yAtt1 = invert ? NSLayoutAttribute.bottom : NSLayoutAttribute.top
         let yAtt2 = invert ? NSLayoutAttribute.top : NSLayoutAttribute.bottom
         
-        constraints.append(NSLayoutConstraint(item: item,
-                                   attribute: NSLayoutAttribute.left,
-                                   relatedBy: NSLayoutRelation.equal,
-                                   toItem: toItem,
-                                   attribute: NSLayoutAttribute.left,
-                                   multiplier: 1.0,
-                                   constant: xOffset))
+        if center {
+            constraints.append(NSLayoutConstraint(item: item,
+                                                  attribute: NSLayoutAttribute.centerX,
+                                                  relatedBy: NSLayoutRelation.equal,
+                                                  toItem: toItem,
+                                                  attribute: NSLayoutAttribute.centerX,
+                                                  multiplier: 1.0,
+                                                  constant: xOffset))
+        } else {
+            constraints.append(NSLayoutConstraint(item: item,
+                                                  attribute: NSLayoutAttribute.left,
+                                                  relatedBy: NSLayoutRelation.equal,
+                                                  toItem: toItem,
+                                                  attribute: NSLayoutAttribute.left,
+                                                  multiplier: 1.0,
+                                                  constant: xOffset))
+        }
+        
         
         constraints.append(NSLayoutConstraint(item: item,
                                    attribute: yAtt1,

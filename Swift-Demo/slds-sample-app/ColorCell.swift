@@ -12,7 +12,7 @@ class ColorCell: UITableViewCell {
     
     var backgroundExample = UIView()
     var checkeredBackground = UIView()
-    var textExample = UILabel()
+    var color = UIColor.white
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -36,27 +36,43 @@ class ColorCell: UITableViewCell {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func updateColor(_ c: UIColor) {
-        var h1:CGFloat = 0.0
-        var s1:CGFloat = 0.0
-        var b1:CGFloat = 0.0
-        var a1:CGFloat = 0.0
-        
-        c.getHue(&h1, saturation: &s1, brightness: &b1, alpha: &a1)
-        
-        if a1 < 1 {
-            checkeredBackground.backgroundColor = UIColor(patternImage: UIImage(named: "checkered.png")!)
-        }
+        checkeredBackground.backgroundColor = UIColor(patternImage: UIImage(named: "checkered.png")!)
+        color = c
+        backgroundExample.backgroundColor = color
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        backgroundExample.backgroundColor = color
+        checkeredBackground.backgroundColor = UIColor(patternImage: UIImage(named: "checkered.png")!)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        backgroundExample.backgroundColor = color
+        checkeredBackground.backgroundColor = UIColor(patternImage: UIImage(named: "checkered.png")!)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func makeLayout() {
-        backgroundExample.layer.cornerRadius = 10
-        checkeredBackground.layer.cornerRadius = 10
+        
+        backgroundExample.layer.cornerRadius = 40
+        checkeredBackground.layer.cornerRadius = 40
         checkeredBackground.layer.shadowColor = UIColor.black.cgColor
         checkeredBackground.layer.shadowOpacity = 0.5
         checkeredBackground.layer.shadowOffset = CGSize.init(width: 0.7, height: 0.7)
         checkeredBackground.layer.shadowRadius = 1
+        
+        self.contentView.addSubview(checkeredBackground)
+        checkeredBackground.addSubview(backgroundExample)
+        self.contentView.addConstraints(ConstraintsHelper.addConstraints(item: checkeredBackground, toItem: self.contentView, width: 80, height:80, xAlignment: "right", yAlignment: "center", xOffset: -10, yOffset: 0))
+        checkeredBackground.addConstraints(ConstraintsHelper.addConstraints(item: backgroundExample, toItem: checkeredBackground, width: 80, height:80, xAlignment: "right", yAlignment: "center", xOffset: 0, yOffset: 0))
+        
     }
     
 }

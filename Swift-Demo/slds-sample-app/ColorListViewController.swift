@@ -20,7 +20,14 @@ class ColorListViewController: UITableViewController {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func addSection(sectionName: String) -> Array<ColorObject> {
+    override func viewDidLoad() {
+        self.tableView.register(ColorCell.self, forCellReuseIdentifier: "Cell")
+        self.title = "Background Colors"
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func addContent(_ colorType: String) {
         
         var c = Array<ColorObject>()
         var max = 1
@@ -28,7 +35,7 @@ class ColorListViewController: UITableViewController {
         var alias = ""
         
         while max != 0 {
-            switch sectionName {
+            switch colorType {
                 case "Background Colors":
                     if (SLDSColorBackgroundType.init(rawValue: max)?.hashValue)! == 0 {
                         max = -1
@@ -44,12 +51,13 @@ class ColorListViewController: UITableViewController {
                     color = UIColor.sldsColorText(SLDSColorTextType.init(rawValue: max)!)
                     alias = NSString.sldsColorTextName(SLDSColorTextType.init(rawValue: max)!) as String
                 case "Border Colors":
-                    if (SLDSColorTextType.init(rawValue: max)?.hashValue)! == 0 {
+                    max += 1
+                    if (SLDSColorBorderType.init(rawValue: max)?.hashValue)! == 0 {
                         max = -1
                         break
                     }
-                    color = UIColor.sldsColorBackground(SLDSColorBackgroundType.init(rawValue: max)!)
-                    alias = NSString.sldsColorBackgroundName(SLDSColorBackgroundType.init(rawValue: max)!) as String
+                    color = UIColor.sldsColorBorder(SLDSColorBorderType.init(rawValue: max)!)
+                    alias = NSString.sldsColorBorderName(SLDSColorBorderType.init(rawValue: max)!) as String
                 default:
                     max = -1
                     break
@@ -61,7 +69,7 @@ class ColorListViewController: UITableViewController {
     
         // sort colors by hue
 
-        return c.sorted { (c1, c2) -> Bool in
+        colors = c.sorted { (c1, c2) -> Bool in
             var h1:CGFloat = 0.0
             var s1:CGFloat = 0.0
             var b1:CGFloat = 0.0
@@ -94,6 +102,24 @@ class ColorListViewController: UITableViewController {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ColorCell {
+        
+        let color = colors[indexPath.item].color
+        let alias = colors[indexPath.item].alias
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ColorCell
+        
+//        cell.selectionStyle = .none
+        cell.backgroundColor = UIColor.clear
+        cell.textLabel?.text = alias?.replacingOccurrences(of: "SLDSColor", with: "")
+        cell.textLabel?.font = UIFont.sldsFont(.regular, with: .small)
+        cell.updateColor(color!)
+        
+        return cell
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
@@ -108,5 +134,14 @@ class ColorListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return colors.count
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = ColorViewController()
+        let alias = colors[indexPath.item].alias
+        controller.addColor(colors[indexPath.item].color, (alias?.replacingOccurrences(of: "SLDSColorB", with: ".b"))!)
+        self.navigationController?.show(controller, sender: self)
     }
 }
