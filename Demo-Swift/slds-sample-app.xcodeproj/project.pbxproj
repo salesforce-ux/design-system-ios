@@ -17,6 +17,7 @@
 		FC2AB83D1DECE6560045C837 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FC2AB83C1DECE6560045C837 /* SalesforceDesignSystem.bundle */; };
 		FC2AB83E1DECE6560045C837 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FC2AB83C1DECE6560045C837 /* SalesforceDesignSystem.bundle */; };
 		FC2AB83F1DECE6560045C837 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FC2AB83C1DECE6560045C837 /* SalesforceDesignSystem.bundle */; };
+		FC2AB8471DEE4A360045C837 /* IconListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2AB8461DEE4A360045C837 /* IconListViewController.swift */; };
 		FC4299161DDA3EEC00891FBD /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4299151DDA3EEC00891FBD /* CategoryCell.swift */; };
 		FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4299181DDA4FE100891FBD /* ColorListViewController.swift */; };
 		FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42991E1DDA8FC500891FBD /* ColorViewController.swift */; };
@@ -91,6 +92,7 @@
 		FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
 		FC2AB8271DECE4610045C837 /* SalesforceDesignSystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SalesforceDesignSystem.xcodeproj; path = ../SalesforceDesignSystem.xcodeproj; sourceTree = "<group>"; };
 		FC2AB83C1DECE6560045C837 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceDesignSystem.bundle; path = ../SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
+		FC2AB8461DEE4A360045C837 /* IconListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconListViewController.swift; sourceTree = "<group>"; };
 		FC4299151DDA3EEC00891FBD /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		FC4299181DDA4FE100891FBD /* ColorListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorListViewController.swift; sourceTree = "<group>"; };
 		FC42991E1DDA8FC500891FBD /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				206AA81F1DE3B82800375432 /* UserListViewController.swift */,
 				FC42991E1DDA8FC500891FBD /* ColorViewController.swift */,
 				FC4299181DDA4FE100891FBD /* ColorListViewController.swift */,
+				FC2AB8461DEE4A360045C837 /* IconListViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				FC1EA4681DDE6F6300304E01 /* MainListViewController.swift in Sources */,
 				FC4299161DDA3EEC00891FBD /* CategoryCell.swift in Sources */,
 				FCB47EDD1DD3D09400BB6C1B /* ConstraintsHelper.swift in Sources */,
+				FC2AB8471DEE4A360045C837 /* IconListViewController.swift in Sources */,
 				FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */,
 				FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */,
 				206AA8201DE3B82800375432 /* UserListViewController.swift in Sources */,

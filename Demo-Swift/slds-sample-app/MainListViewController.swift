@@ -20,6 +20,8 @@ class MainListViewController: UITableViewController {
     let textColorListViewController = ColorListViewController()
     let borderColorListViewController = ColorListViewController()
     
+    let actionIconListViewController = IconListViewController()
+    
     var tableData : [TableData] {
         return [
             TableData(sectionTitle: "Sample App",
@@ -27,8 +29,8 @@ class MainListViewController: UITableViewController {
                       controllers: [UserListViewController()]),
             
             TableData(sectionTitle: "SLDS Reference",
-                      rows: ["Background Colors", "Text Colors", "Border Colors", "Fonts"],
-                      controllers: [ backgroundColorListViewController, textColorListViewController, borderColorListViewController, ColorListViewController()])
+                      rows: ["Background Colors", "Text Colors", "Border Colors", "Fonts", "Action Icons"],
+                      controllers: [ backgroundColorListViewController, textColorListViewController, borderColorListViewController, ColorListViewController(), actionIconListViewController])
         ]
     }
     
@@ -94,7 +96,6 @@ class MainListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = tableData[indexPath.section].controllers[indexPath.row]
-        let colorType = tableData[indexPath.section].rows[indexPath.row]
         
         self.navigationController?.show(controller, sender: self)
     }

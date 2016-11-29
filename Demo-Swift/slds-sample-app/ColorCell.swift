@@ -61,8 +61,8 @@ class ColorCell: UITableViewCell {
     
     func makeLayout() {
         
-        backgroundExample.layer.cornerRadius = 40
-        checkeredBackground.layer.cornerRadius = 40
+        backgroundExample.layer.cornerRadius = 6
+        checkeredBackground.layer.cornerRadius = 6
         checkeredBackground.layer.shadowColor = UIColor.black.cgColor
         checkeredBackground.layer.shadowOpacity = 0.5
         checkeredBackground.layer.shadowOffset = CGSize.init(width: 0.7, height: 0.7)
