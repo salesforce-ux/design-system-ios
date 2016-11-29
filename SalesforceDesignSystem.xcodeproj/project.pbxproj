@@ -229,16 +229,8 @@
 		056AFA031B4DBA8400C14197 /* SLDSColorBgTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSColorBgTemplate.m; path = Templates/SLDSColorBgTemplate.m; sourceTree = "<group>"; };
 		056AFA041B4DBA8400C14197 /* SLDSColorBrdrTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSColorBrdrTemplate.h; path = Templates/SLDSColorBrdrTemplate.h; sourceTree = "<group>"; };
 		056AFA051B4DBA8400C14197 /* SLDSColorBrdrTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSColorBrdrTemplate.m; path = Templates/SLDSColorBrdrTemplate.m; sourceTree = "<group>"; };
-		056AFA061B4DBA8400C14197 /* SLDSColorBtnTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSColorBtnTemplate.h; path = Templates/SLDSColorBtnTemplate.h; sourceTree = "<group>"; };
-		056AFA071B4DBA8400C14197 /* SLDSColorBtnTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSColorBtnTemplate.m; path = Templates/SLDSColorBtnTemplate.m; sourceTree = "<group>"; };
-		056AFA081B4DBA8400C14197 /* SLDSColorInptTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSColorInptTemplate.h; path = Templates/SLDSColorInptTemplate.h; sourceTree = "<group>"; };
-		056AFA091B4DBA8400C14197 /* SLDSColorInptTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSColorInptTemplate.m; path = Templates/SLDSColorInptTemplate.m; sourceTree = "<group>"; };
-		056AFA0A1B4DBA8400C14197 /* SLDSColorMsgTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSColorMsgTemplate.h; path = Templates/SLDSColorMsgTemplate.h; sourceTree = "<group>"; };
-		056AFA0B1B4DBA8400C14197 /* SLDSColorMsgTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSColorMsgTemplate.m; path = Templates/SLDSColorMsgTemplate.m; sourceTree = "<group>"; };
 		056AFA0C1B4DBA8400C14197 /* SLDSColorTxtTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSColorTxtTemplate.h; path = Templates/SLDSColorTxtTemplate.h; sourceTree = "<group>"; };
 		056AFA0D1B4DBA8400C14197 /* SLDSColorTxtTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSColorTxtTemplate.m; path = Templates/SLDSColorTxtTemplate.m; sourceTree = "<group>"; };
-		056AFA121B4DBA8400C14197 /* SLDSFontSzTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSFontSzTemplate.h; path = Templates/SLDSFontSzTemplate.h; sourceTree = "<group>"; };
-		056AFA131B4DBA8400C14197 /* SLDSFontSzTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSFontSzTemplate.m; path = Templates/SLDSFontSzTemplate.m; sourceTree = "<group>"; };
 		0576C3D41B686CBC002A7254 /* NSString+SLDSIconAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SLDSIconAction.h"; sourceTree = "<group>"; };
 		0576C3D51B686CBC002A7254 /* NSString+SLDSIconAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SLDSIconAction.m"; sourceTree = "<group>"; };
 		0576C3DE1B6880EF002A7254 /* SLDSIconLabelStandardTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSIconLabelStandardTemplate.h; path = Templates/SLDSIconLabelStandardTemplate.h; sourceTree = "<group>"; };
@@ -354,41 +346,41 @@
 		051031E81B29F1020094A6B2 /* SalesforceDesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				055D1E5F1B5DCB0400987466 /* UIImage+SLDSIconUtility.h */,
-				055D1E601B5DCB0400987466 /* UIImage+SLDSIconUtility.m */,
-				056AF9FF1B4DBA7200C14197 /* Templates */,
-				05A7B0641B2A53F800B5FB86 /* UIFont+SLDSFont.h */,
-				05A7B0651B2A53F800B5FB86 /* UIFont+SLDSFont.m */,
-				05A7B0601B2A53E900B5FB86 /* UIColor+SLDSBorder.h */,
-				05A7B0611B2A53E900B5FB86 /* UIColor+SLDSBorder.m */,
+				052B1F281B9686A5003CCCCC /* DesignSystem.h */,
 				05A7B03B1B2A4F3F00B5FB86 /* Generated */,
-				051031E91B29F1020094A6B2 /* SalesforceDesignSystem.h */,
-				051032041B29F1A90094A6B2 /* UIColor+SLDSBackground.h */,
-				051032051B29F1A90094A6B2 /* UIColor+SLDSBackground.m */,
-				051032151B29F7140094A6B2 /* UIColor+SLDSText.h */,
-				051032161B29F7140094A6B2 /* UIColor+SLDSText.m */,
-				05910A001B583CF100C89AEC /* SalesforceDesignSystemExtended.h */,
-				05910A171B58775900C89AEC /* NSString+SLDSText.h */,
-				05910A181B58775900C89AEC /* NSString+SLDSText.m */,
-				05910A1B1B587C5300C89AEC /* NSString+SLDSBorder.h */,
-				05910A1C1B587C5300C89AEC /* NSString+SLDSBorder.m */,
 				05910A3F1B588F3C00C89AEC /* NSString+SLDSBackground.h */,
 				05910A401B588F3C00C89AEC /* NSString+SLDSBackground.m */,
+				05910A1B1B587C5300C89AEC /* NSString+SLDSBorder.h */,
+				05910A1C1B587C5300C89AEC /* NSString+SLDSBorder.m */,
+				0576C3D41B686CBC002A7254 /* NSString+SLDSIconAction.h */,
+				0576C3D51B686CBC002A7254 /* NSString+SLDSIconAction.m */,
+				05EEF05B1B6950A5002D5939 /* NSString+SLDSIconCustom.h */,
+				05EEF05C1B6950A5002D5939 /* NSString+SLDSIconCustom.m */,
+				0576C3E41B688278002A7254 /* NSString+SLDSIconStandard.h */,
+				0576C3E51B688278002A7254 /* NSString+SLDSIconStandard.m */,
+				05EEF06D1B69585A002D5939 /* NSString+SLDSIconUtility.h */,
+				05EEF06E1B69585A002D5939 /* NSString+SLDSIconUtility.m */,
+				05910A171B58775900C89AEC /* NSString+SLDSText.h */,
+				05910A181B58775900C89AEC /* NSString+SLDSText.m */,
+				051031E91B29F1020094A6B2 /* SalesforceDesignSystem.h */,
+				05910A001B583CF100C89AEC /* SalesforceDesignSystemExtended.h */,
+				056AF9FF1B4DBA7200C14197 /* Templates */,
+				051032041B29F1A90094A6B2 /* UIColor+SLDSBackground.h */,
+				051032051B29F1A90094A6B2 /* UIColor+SLDSBackground.m */,
+				05A7B0601B2A53E900B5FB86 /* UIColor+SLDSBorder.h */,
+				05A7B0611B2A53E900B5FB86 /* UIColor+SLDSBorder.m */,
+				051032151B29F7140094A6B2 /* UIColor+SLDSText.h */,
+				051032161B29F7140094A6B2 /* UIColor+SLDSText.m */,
+				05A7B0641B2A53F800B5FB86 /* UIFont+SLDSFont.h */,
+				05A7B0651B2A53F800B5FB86 /* UIFont+SLDSFont.m */,
 				055D1E741B5E13E500987466 /* UIImage+SLDSIconAction.h */,
 				055D1E751B5E13E500987466 /* UIImage+SLDSIconAction.m */,
 				0569F8CD1B604B72009FF8FE /* UIImage+SLDSIconCustom.h */,
 				0569F8CE1B604B72009FF8FE /* UIImage+SLDSIconCustom.m */,
 				0569F8E11B605535009FF8FE /* UIImage+SLDSIconStandard.h */,
 				0569F8E21B605535009FF8FE /* UIImage+SLDSIconStandard.m */,
-				0576C3D41B686CBC002A7254 /* NSString+SLDSIconAction.h */,
-				0576C3D51B686CBC002A7254 /* NSString+SLDSIconAction.m */,
-				0576C3E41B688278002A7254 /* NSString+SLDSIconStandard.h */,
-				0576C3E51B688278002A7254 /* NSString+SLDSIconStandard.m */,
-				05EEF05B1B6950A5002D5939 /* NSString+SLDSIconCustom.h */,
-				05EEF05C1B6950A5002D5939 /* NSString+SLDSIconCustom.m */,
-				05EEF06D1B69585A002D5939 /* NSString+SLDSIconUtility.h */,
-				05EEF06E1B69585A002D5939 /* NSString+SLDSIconUtility.m */,
-				052B1F281B9686A5003CCCCC /* DesignSystem.h */,
+				055D1E5F1B5DCB0400987466 /* UIImage+SLDSIconUtility.h */,
+				055D1E601B5DCB0400987466 /* UIImage+SLDSIconUtility.m */,
 			);
 			path = SalesforceDesignSystem;
 			sourceTree = "<group>";
@@ -396,40 +388,32 @@
 		056AF9FF1B4DBA7200C14197 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
-				05EEF0551B694FF2002D5939 /* SLDSIconLabelCustomTemplate.m */,
-				05EEF0561B694FF2002D5939 /* SLDSIconLabelCustomTemplate.h */,
-				055D1E701B5DE52C00987466 /* SLDSIconUtilityTemplate.h */,
-				055D1E711B5DE52C00987466 /* SLDSIconUtilityTemplate.m */,
 				056AFA001B4DBA8400C14197 /* SLDSColorAliasTemplate.h */,
 				056AFA011B4DBA8400C14197 /* SLDSColorAliasTemplate.m */,
 				056AFA021B4DBA8400C14197 /* SLDSColorBgTemplate.h */,
 				056AFA031B4DBA8400C14197 /* SLDSColorBgTemplate.m */,
 				056AFA041B4DBA8400C14197 /* SLDSColorBrdrTemplate.h */,
 				056AFA051B4DBA8400C14197 /* SLDSColorBrdrTemplate.m */,
-				056AFA061B4DBA8400C14197 /* SLDSColorBtnTemplate.h */,
-				056AFA071B4DBA8400C14197 /* SLDSColorBtnTemplate.m */,
-				056AFA081B4DBA8400C14197 /* SLDSColorInptTemplate.h */,
-				056AFA091B4DBA8400C14197 /* SLDSColorInptTemplate.m */,
-				056AFA0A1B4DBA8400C14197 /* SLDSColorMsgTemplate.h */,
-				056AFA0B1B4DBA8400C14197 /* SLDSColorMsgTemplate.m */,
 				056AFA0C1B4DBA8400C14197 /* SLDSColorTxtTemplate.h */,
 				056AFA0D1B4DBA8400C14197 /* SLDSColorTxtTemplate.m */,
-				056AFA121B4DBA8400C14197 /* SLDSFontSzTemplate.h */,
-				056AFA131B4DBA8400C14197 /* SLDSFontSzTemplate.m */,
+				05EEF0851B69FD47002D5939 /* SLDSFontTemplate.h */,
+				05EEF0861B69FD47002D5939 /* SLDSFontTemplate.m */,
 				055D1E7C1B5E159700987466 /* SLDSIconActionTemplate.h */,
 				055D1E7D1B5E159700987466 /* SLDSIconActionTemplate.m */,
 				0569F8C31B6047A6009FF8FE /* SLDSIconCustomTemplate.h */,
 				0569F8C41B6047A6009FF8FE /* SLDSIconCustomTemplate.m */,
-				0569F8D71B605453009FF8FE /* SLDSIconStandardTemplate.h */,
-				0569F8D81B605453009FF8FE /* SLDSIconStandardTemplate.m */,
 				0539D1A51B685CB700A7DFD2 /* SLDSIconLabelActionTemplate.h */,
 				0539D1A61B685CB700A7DFD2 /* SLDSIconLabelActionTemplate.m */,
+				05EEF0561B694FF2002D5939 /* SLDSIconLabelCustomTemplate.h */,
+				05EEF0551B694FF2002D5939 /* SLDSIconLabelCustomTemplate.m */,
 				0576C3DE1B6880EF002A7254 /* SLDSIconLabelStandardTemplate.h */,
 				0576C3DF1B6880EF002A7254 /* SLDSIconLabelStandardTemplate.m */,
 				05EEF05F1B69537E002D5939 /* SLDSIconLabelUtilityTemplate.h */,
 				05EEF0601B69537E002D5939 /* SLDSIconLabelUtilityTemplate.m */,
-				05EEF0851B69FD47002D5939 /* SLDSFontTemplate.h */,
-				05EEF0861B69FD47002D5939 /* SLDSFontTemplate.m */,
+				0569F8D71B605453009FF8FE /* SLDSIconStandardTemplate.h */,
+				0569F8D81B605453009FF8FE /* SLDSIconStandardTemplate.m */,
+				055D1E701B5DE52C00987466 /* SLDSIconUtilityTemplate.h */,
+				055D1E711B5DE52C00987466 /* SLDSIconUtilityTemplate.m */,
 			);
 			name = Templates;
 			sourceTree = "<group>";

@@ -25,19 +25,9 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
 
 @interface SLDSFontTemplate : NSObject
 
-+(void) loadFontWithName:(NSString *)fontName;
-
 +(NSInteger)sldsFontSize:(SLDSFontSizeType)fontSize;
 +(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType;
-
-+(UIFont *)sldsFont:(SLDSFontType)fontStyle withSize:(SLDSFontSizeType)fontSize;
-+(NSString*)sldsFontTypeName:(SLDSFontType)fontStyle;
-
-// NOTE : Deprecated --------------------------------------------------------------
-+(UIFont *) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontType) withSize:(SLDSFontSizeType)' instead");
-+(UIFont *) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontType) withSize:(SLDSFontSizeType)' instead");
-+(UIFont *) sldsFontLightWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontType) withSize:(SLDSFontSizeType)' instead");
-+(UIFont *) sldsFontStrongWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontType) withSize:(SLDSFontSizeType)' instead");
-+(UIFont *) sldsFontThinWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontType) withSize:(SLDSFontSizeType)' instead");
++(NSString*)sldsFontTypeName:(SLDSFontType)fontType;
++(NSString*)sldsFontFileName:(SLDSFontType)fontType;
 
 @end

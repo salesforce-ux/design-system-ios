@@ -8,50 +8,55 @@
  */
 
 #import "AppDelegate.h"
-#import "SWRevealViewController.h"
-#import "RearMasterTableViewController.h"
-#import "FrontViewController.h"
+#import "MainViewController.h"
+#import "NavigationController.h"
+//#import "SWRevealViewController.h"
+//#import "RearMasterTableViewController.h"
+//#import "FrontViewController.h"
 
-@interface AppDelegate () <SWRevealViewControllerDelegate>
-
-@end
+//@interface AppDelegate () <SWRevealViewControllerDelegate>
+//
+//@end
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // Override point for customization after application launch. 
 
-    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window = window;
+//    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window = window;
+//
+//    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+//
+//    
+//    self.window.clipsToBounds =YES;
+////    self.window.frame =  CGRectMake(0,20,self.window.frame.size.width,self.window.frame.size.height-20);
+//    
+//    
+//    RearMasterTableViewController *rearMasterController = [[RearMasterTableViewController alloc] init];
+//
+//
+//    
+//    FrontViewController *frontViewController = [[FrontViewController alloc] init];
+//    
+//    SWRevealViewController *mainRevealController = [[SWRevealViewController alloc] initWithRearViewController:rearMasterController frontViewController:frontViewController];
+//
+//    mainRevealController.rearViewRevealWidth = 60;
+//    mainRevealController.rearViewRevealOverdraw = 120;
+//    mainRevealController.bounceBackOnOverdraw = NO;
+//    mainRevealController.stableDragOnOverdraw = YES;
+//    [mainRevealController setFrontViewPosition:FrontViewPositionRight];
+//
+//    
+//    self.window.rootViewController = mainRevealController;
 
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
-
-    
-    self.window.clipsToBounds =YES;
-//    self.window.frame =  CGRectMake(0,20,self.window.frame.size.width,self.window.frame.size.height-20);
-    
-    
-    RearMasterTableViewController *rearMasterController = [[RearMasterTableViewController alloc] init];
-
-
-    
-    FrontViewController *frontViewController = [[FrontViewController alloc] init];
-    
-    SWRevealViewController *mainRevealController = [[SWRevealViewController alloc] initWithRearViewController:rearMasterController frontViewController:frontViewController];
-
-    mainRevealController.rearViewRevealWidth = 60;
-    mainRevealController.rearViewRevealOverdraw = 120;
-    mainRevealController.bounceBackOnOverdraw = NO;
-    mainRevealController.stableDragOnOverdraw = YES;
-    [mainRevealController setFrontViewPosition:FrontViewPositionRight];
-
-    
-    self.window.rootViewController = mainRevealController;
-
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIViewController *mainController = [[MainViewController alloc] init];
+    UIViewController *navController = [[NavigationController alloc] initWithRootViewController:mainController];
+    self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 

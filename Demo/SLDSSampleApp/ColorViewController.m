@@ -8,35 +8,12 @@
  */
 
 #import "ColorViewController.h"
-#import "SWRevealViewController.h"
 #import <SalesforceDesignSystem/SalesforceDesignSystemExtended.h>
-
-
-@interface ColorViewController ()
-
-@end
 
 @implementation ColorViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-
-    
-    
-    SWRevealViewController *revealController = self.revealViewController;
-    
-    [self.view addGestureRecognizer:revealController.panGestureRecognizer];
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    
-    [button addTarget:revealController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [button setTitle:@"=" forState:UIControlStateNormal];
-    button.frame = CGRectMake(20.0, 20.0, 20.0, 20.0);
-    
-    [self.view addSubview:button];
-    
-    
+    self.title = @"Color";
     
     CGSize size = CGSizeMake((self.view.frame.size.width-80),(self.view.frame.size.width-80));
     UIColor *color = [self getColor];
@@ -47,8 +24,6 @@
     view.layer.borderWidth = 1.0f;
     
     [self.view addSubview:view];
-
-
 
     UITextView *codeView = [[UITextView alloc] initWithFrame:CGRectMake(40, 100+size.height+40, size.width, size.height)];
     codeView.text = [self getText];
@@ -111,16 +86,5 @@
     NSString *methodName = [self getMethodName];
     return [NSString stringWithFormat:@"%@\n....\n\n[UIColor\n %@:\n%@];",importLine,methodName,colorName];
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
