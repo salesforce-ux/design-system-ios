@@ -8,35 +8,20 @@
  */
 
 #import "TextViewController.h"
-#import "SWRevealViewController.h"
-
-@interface TextViewController ()
-
-@end
 
 @implementation TextViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    SWRevealViewController *revealController = self.revealViewController;
-    
-    [self.view addGestureRecognizer:revealController.panGestureRecognizer];
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    
-    [button addTarget:revealController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [button setTitle:@"=" forState:UIControlStateNormal];
-    button.frame = CGRectMake(20.0, 20.0, 20.0, 20.0);
-    
-    [self.view addSubview:button];
-    
-    UITextView *codeView = [[UITextView alloc] initWithFrame:CGRectMake(40, 100+40, self.view.frame.size.width, 250)];
-    codeView.text = @"Hello";//[self getText];
+-(void)viewDidLoad {
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    CGRect frame = CGRectInset(self.view.frame, 10.0, 10.0);
+    UITextView *codeView = [[UITextView alloc] initWithFrame:frame];
+    codeView.text = [self getText];
+    codeView.contentMode = UIViewContentModeCenter;
     [self.view addSubview:codeView];
-    
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,17 +29,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *) getImport{
-    return @"#import <DesignSystem/DesignSystem.h>";
+- (NSString *) getText
+{
+    NSString *sizeLabel = [SLDSFont sldsFontSizeName:self.fontSize];
+    NSString *typeLabel = [SLDSFont sldsFontTypeName:self.fontType];
+    return [NSString stringWithFormat:@"#import <DesignSystem/DesignSystem.h>\n\n...\n[UIFont sldsFont:%@\n withSize:%@];",typeLabel,sizeLabel];
 }
-
-
-//- (NSString *) getText {
-////    NSString *weightLabel = [self getWeightLabel];
-//    NSString *sizeLabel = [self getSizeLabel];
-//    NSString *importLine = [self getImport];
-//    NSString *methodName = [self getMethodName];
-//    return [NSString stringWithFormat:@"%@\n....\n\n[UIFont %@:\n%@];",importLine,methodName,sizeLabel];
-//}
 
 @end

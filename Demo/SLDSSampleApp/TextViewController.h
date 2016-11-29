@@ -10,15 +10,7 @@
 #import <SalesforceDesignSystem/SalesforceDesignSystem.h>
 #import "TextListViewController.h"
 
-typedef NS_ENUM(NSInteger, SLDS_FONT_FAMILY) {
-    SLDS_FONT_FAMILY_BODY,
-    SLDS_FONT_FAMILY_ITALIC,
-    SLDS_FONT_FAMILY_LIGHT,
-    SLDS_FONT_FAMILY_STRONG,
-    SLDS_FONT_FAMILY_THIN
-};
-
 @interface TextViewController : UIViewController
-@property SLDS_FONT_FAMILY fontWeight;
+@property SLDSFontType fontType;
 @property SLDSFontSizeType fontSize;
 @end

@@ -9,32 +9,11 @@
 
 #import "IconViewController.h"
 #import <SalesforceDesignSystem/SalesforceDesignSystemExtended.h>
-#import "SWRevealViewController.h"
-
-@interface IconViewController ()
-
-@end
 
 @implementation IconViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    
-    SWRevealViewController *revealController = self.revealViewController;
-    
-    [self.view addGestureRecognizer:revealController.panGestureRecognizer];
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    
-    [button addTarget:revealController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [button setTitle:@"=" forState:UIControlStateNormal];
-    button.frame = CGRectMake(20.0, 20.0, 20.0, 20.0);
-    
-    [self.view addSubview:button];
-    
+    self.title = @"Icon";
     
     CGSize size = CGSizeMake((self.view.frame.size.width-80),(self.view.frame.size.width-80));
     UIImage *image = [self getIcon:size];
@@ -47,9 +26,6 @@
     codeView.text = [self getText];
     [codeView setFont:[UIFont systemFontOfSize:16]];
     [self.view addSubview:codeView];
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
 }
 
 
@@ -117,16 +93,5 @@
     NSString *methodName = [self getMethodName];
     return [NSString stringWithFormat:@"%@\n....\n\n[UIImage\n%@:\n%@\ntargetSize:\nCGSizeMake(300,300)]",importLine,methodName,iconName];
 }
-
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

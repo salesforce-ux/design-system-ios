@@ -8,10 +8,11 @@
  */
 #import <CoreText/CoreText.h>
 #import "UIColor+SLDSBackground.h"
-
+#import "UIFont+SLDSFont.h"
+#import "UIImage+SLDSIconStandard.h"
 #import "SLDSFont.h"
 
-#import "UIImage+SLDSIconStandard.h"
+
 
 
 @implementation UIImage (SLDSIconStandard)
@@ -22,11 +23,7 @@ static float const iconScale = 1.0f;
 
 
 + (NSString *) iconFontNameStandard {
-    static dispatch_once_t predicate = 0;
-    
-    dispatch_once(&predicate, ^{
-        [SLDSFont loadFontWithName:iconFontName];
-    });
+    [UIFont loadFont:iconFontName fromBundle:@"SalesforceDesignSystem"];
     return iconFontName;
 }
 
