@@ -11,6 +11,10 @@
 
 @implementation TextViewController
 
+-(void)viewDidLoad {
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     CGRect frame = CGRectInset(self.view.frame, 10.0, 10.0);
     UITextView *codeView = [[UITextView alloc] initWithFrame:frame];
