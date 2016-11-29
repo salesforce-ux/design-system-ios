@@ -20,10 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //CarolingiaBigfooTNormal
-    //GoodTimesRg-Regular
-    
     [self navigationItem].title = @"SLDS Fonts";
     
     int i = 0;
@@ -60,6 +56,10 @@
         }
     }
     while(loopFlag);
+    
+    // NOTE : To see a custom font example uncomment the lines below.
+    //[UIFont sldsUseFont:@"CarolingiaBigfooTNormal.ttf" fromBundle:@"CustomFont" forType:SLDSFontTypeThin];
+    //[UIFont sldsUseFont:@"GoodTimesRg-Regular.ttf" fromBundle:@"CustomFont" forType:SLDSFontTypeThinItalic];
     
     SWRevealViewController *revealController = self.revealViewController;
     [self.view addGestureRecognizer:revealController.panGestureRecognizer];

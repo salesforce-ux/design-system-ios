@@ -13,14 +13,7 @@
 
 @implementation SLDSFontTemplate
 
-+(NSInteger)sldsFontSize:(SLDSFontSizeType)sizeType {
-    NSArray *arr = @[
-/*SLDS_FONT_SIZE_VALUES*/
-                     ];
-    return [[arr objectAtIndex:sizeType] integerValue];
-}
-
-// Note : Only needed for the sample app
+// Note : Needed for dynamic enum iteration
 +(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType {
     NSArray *arr = @[
 /*SLDS_FONT_SIZE_CASES*/
@@ -28,21 +21,7 @@
     return (NSString *)[arr objectAtIndex:sizeType];
 }
 
-+(NSString*)sldsFontFileName:(SLDSFontType) fontType {
-    NSArray *arr = @[
-                     @"SalesforceSans-Regular",
-                     @"SalesforceSans-Italic",
-                     @"SalesforceSans-Bold",
-                     @"SalesforceSans-BoldItalic",
-                     @"SalesforceSans-Light",
-                     @"SalesforceSans-LightItalic",
-                     @"SalesforceSans-Thin",
-                     @"SalesforceSans-ThinItalic",
-                     ];
-    return (NSString *)[arr objectAtIndex:fontType];
-}
-
-// Note : Only needed for the sample app
+// Note : Needed for dynamic enum iteration
 +(NSString*)sldsFontTypeName:(SLDSFontType) fontType {
     NSArray *arr = @[
                      @"SLDSFontTypeRegular",
@@ -57,36 +36,25 @@
     return (NSString *)[arr objectAtIndex:fontType];
 }
 
-+(UIFont*)sldsFont:(SLDSFontType)fontType withSize:(SLDSFontSizeType)fontSize
-{
-    NSInteger fontSizeValue = [SLDSFont sldsFontSize:fontSize];
-    NSString *fontFileName = [self sldsFontFileName:fontType];
-    [UIFont loadFont:fontFileName fromBundle:@"SalesforceDesignSystem"];
-    
-    // NOTE : Fonts (even custom) are automatically cached.
-    return [UIFont fontWithName:fontFileName size:fontSizeValue];
++(NSInteger)sldsFontSize:(SLDSFontSizeType)sizeType {
+    NSArray *arr = @[
+/*SLDS_FONT_SIZE_VALUES*/
+                     ];
+    return [[arr objectAtIndex:sizeType] integerValue];
 }
 
-// NOTE : Deprecated --------------------------------------------------------------
-
-+(UIFont *) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize{
-    return [self sldsFont:SLDSFontTypeRegular withSize:fontSize];
-}
-
-+(UIFont *) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize{
-    return [self sldsFont:SLDSFontTypeItalic withSize:fontSize];
-}
-
-+(UIFont *) sldsFontLightWithSize:(SLDSFontSizeType)fontSize{
-    return [self sldsFont:SLDSFontTypeLight withSize:fontSize];
-}
-
-+(UIFont *) sldsFontStrongWithSize:(SLDSFontSizeType)fontSize{
-    return [self sldsFont:SLDSFontTypeBold withSize:fontSize];
-}
-
-+(UIFont *) sldsFontThinWithSize:(SLDSFontSizeType)fontSize{
-    return [self sldsFont:SLDSFontTypeThin withSize:fontSize];
++(NSString*)sldsFontFileName:(SLDSFontType) fontType {
+    NSArray *arr = @[
+                     @"SalesforceSans-Regular.ttf",
+                     @"SalesforceSans-Italic.ttf",
+                     @"SalesforceSans-Bold.ttf",
+                     @"SalesforceSans-BoldItalic.ttf",
+                     @"SalesforceSans-Light.ttf",
+                     @"SalesforceSans-LightItalic.ttf",
+                     @"SalesforceSans-Thin.ttf",
+                     @"SalesforceSans-ThinItalic.ttf",
+                     ];
+    return (NSString *)[arr objectAtIndex:fontType];
 }
 
 @end
