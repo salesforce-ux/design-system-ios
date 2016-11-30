@@ -1,33 +1,53 @@
-class IconListViewController: UICollectionViewController {
+class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+
+    var collectionView: UICollectionView!
     
-    let reuseIdentifier = "cell"
-    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
+    struct IconObject {
+        var icon : UIImage!
+        var name : String!
+    }
     
+    var icons = [IconObject]()
+    
+    func addIcons() {
+        
+        // NOTE: Collecting all the Font Names
+        repeat {
+            let icon = UIImage.sldsIconAction(SLDSIconActionType.init(rawValue: icons.count)!, withSize: 48)
+            let name = NSString.sldsIconAction(SLDSIconActionType.init(rawValue: icons.count)!) as String
+            icons.append(IconObject(icon: icon, name: name))
+        } while SLDSIconActionType.init(rawValue: icons.count)?.hashValue != 0
+    }
+
     override func viewDidLoad() {
-        self.title = "Background Colors"
-        self.collectionView!.register(IconCell.self, forCellWithReuseIdentifier: "Cell")
-        
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: 48, height: 48)
         
-        
-        self.collectionView?.backgroundColor = UIColor.white
-        
+        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.backgroundColor = UIColor.white
+        self.view.addSubview(collectionView)
+        self.addIcons()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return icons.count
     }
     
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! IconCell
-        cell.backgroundColor = UIColor.cyan
+        let icon = icons[indexPath.item].icon
+        
+    
+        let iconContainer = UIImageView(image: icon)
+        cell.addSubview(iconContainer)
         
         return cell
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("You selected cell #\(indexPath.item)!")
     }
 }

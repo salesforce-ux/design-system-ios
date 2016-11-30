@@ -16,11 +16,6 @@ struct TableData {
 
 class MainListViewController: UITableViewController {
     
-    let backgroundColorListViewController = ColorListViewController()
-    let textColorListViewController = ColorListViewController()
-    let borderColorListViewController = ColorListViewController()
-    let actionIconListViewController = IconListViewController(collectionViewLayout: UICollectionViewFlowLayout())
-    
     var tableData : [TableData] {
         return [
             TableData(sectionTitle: "Sample App",
@@ -30,7 +25,8 @@ class MainListViewController: UITableViewController {
                       rows: [("Background Colors", ColorListViewController.self),
                              ("Text Colors", ColorListViewController.self),
                              ("Border Colors", ColorListViewController.self),
-                             ("Fonts", FontListTableViewController.self)])
+                             ("Fonts", FontListTableViewController.self),
+                             ("Icons",IconListViewController.self)])
         ]
     }
     
