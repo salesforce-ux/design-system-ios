@@ -12,6 +12,7 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     }
     
     var icons = [IconObject]()
+    var filteredIcons = [IconObject]()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -23,6 +24,8 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             let name = NSString.sldsIconAction(SLDSIconActionType.init(rawValue: icons.count)!) as String
             icons.append(IconObject(icon: icon, name: name))
         } while SLDSIconActionType.init(rawValue: icons.count)?.hashValue != 0
+        
+        filteredIcons = icons
     }
 
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -58,6 +61,8 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         self.view.addSubview(searchField)
         self.view.addConstraints(ConstraintsHelper.addConstraints(item: searchField, toItem: switchHeader, width: 200, height: 36, xAlignment: "left", yAlignment: "center", xOffset: 30, yOffset: 0))
         
+        searchField.addTarget(self, action: #selector(IconListViewController.filterIcons), for: UIControlEvents.editingChanged)
+        
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 128, width: self.view.frame.width, height: self.view.frame.height - 128), collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -85,7 +90,20 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return icons.count
+        return filteredIcons.count
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func filterIcons(t: UITextField) {
+        filteredIcons = icons.filter {
+            if t.text == "" {
+                return true
+            } else {
+                return ($0 as IconObject).name.range(of: t.text!) != nil
+            }
+        }
+        self.collectionView.reloadData()
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -93,7 +111,7 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
         
-        let icon = icons[indexPath.item].icon
+        let icon = filteredIcons[indexPath.item].icon
         
     
         let iconContainer = UIImageView(image: icon)
