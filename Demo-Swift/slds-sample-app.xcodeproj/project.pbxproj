@@ -183,12 +183,12 @@
 		FC4299171DDA4E7500891FBD /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				209A56281DEF546400327910 /* IconListViewController.swift */,
+				FC4299181DDA4FE100891FBD /* ColorListViewController.swift */,
+				FC42991E1DDA8FC500891FBD /* ColorViewController.swift */,
 				206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */,
+				209A56281DEF546400327910 /* IconListViewController.swift */,
 				FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */,
 				206AA81F1DE3B82800375432 /* UserListViewController.swift */,
-				FC42991E1DDA8FC500891FBD /* ColorViewController.swift */,
-				FC4299181DDA4FE100891FBD /* ColorListViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -254,11 +254,11 @@
 		FCB47ED91DD2989F00BB6C1B /* views */ = {
 			isa = PBXGroup;
 			children = (
-				FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */,
-				FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */,
 				FC4299151DDA3EEC00891FBD /* CategoryCell.swift */,
-				FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */,
+				FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */,
 				FCCEE6461DEE4DE600949840 /* IconCell.swift */,
+				FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */,
+				FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";

@@ -16,13 +16,56 @@ class ColorListViewController: UITableViewController {
         var alias : String!
     }
     
-    var colors = [ColorObject]()
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var colors : [ColorObject] = [ColorObject](){
+        didSet {
+            colors.sort { (c1, c2) -> Bool in
+                var h1:CGFloat = 0.0
+                var s1:CGFloat = 0.0
+                var b1:CGFloat = 0.0
+                var a1:CGFloat = 0.0
+                
+                var h2:CGFloat = 0.0
+                var s2:CGFloat = 0.0
+                var b2:CGFloat = 0.0
+                var a2:CGFloat = 0.0
+                
+                c1.color.getHue(&h1, saturation: &s1, brightness: &b1, alpha: &a1)
+                c2.color.getHue(&h2, saturation: &s2, brightness: &b2, alpha: &a2)
+                
+                if h1 == h2 {
+                    if s1 == s2 {
+                        if b1 == b2 {
+                            return a2 < a1
+                        } else {
+                            return b1 < b2
+                        }
+                    } else {
+                        return s1 < s2
+                    }
+                } else {
+                    return h1 < h2
+                }
+            }
+        }
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override var title: String? {
+        didSet {
+            super.title = self.title
+            if let newTitle = self.title {
+                self.addContent(newTitle)
+            }
+        }
+    }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func viewDidLoad() {
         self.tableView.register(ColorCell.self, forCellReuseIdentifier: "Cell")
-        self.title = "Background Colors"
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -66,37 +109,9 @@ class ColorListViewController: UITableViewController {
             c.append(ColorObject(color: color, alias: alias))
             max += 1
         }
-    
-        // sort colors by hue
-
-        colors = c.sorted { (c1, c2) -> Bool in
-            var h1:CGFloat = 0.0
-            var s1:CGFloat = 0.0
-            var b1:CGFloat = 0.0
-            var a1:CGFloat = 0.0
-    
-            var h2:CGFloat = 0.0
-            var s2:CGFloat = 0.0
-            var b2:CGFloat = 0.0
-            var a2:CGFloat = 0.0
-    
-            c1.color.getHue(&h1, saturation: &s1, brightness: &b1, alpha: &a1)
-            c2.color.getHue(&h2, saturation: &s2, brightness: &b2, alpha: &a2)
-            
-            if h1 == h2 {
-                if s1 == s2 {
-                    if b1 == b2 {
-                        return a2 < a1
-                    } else {
-                        return b1 < b2
-                    }
-                } else {
-                    return s1 < s2
-                }
-
-            } else {
-                return h1 < h2
-            }
+        
+        if c.count > 0 {
+            self.colors = c
         }
     }
     
