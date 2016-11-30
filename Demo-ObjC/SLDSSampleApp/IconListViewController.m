@@ -142,14 +142,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    [cell.textLabel setFont:[UIFont sldsFontRegularWithSize:SLDSFontSizeSmall]];
+    [cell.textLabel setFont:[UIFont sldsFont:SLDSFontTypeRegular withSize:SLDSFontSizeSmall]];
     
     cell.textLabel.text = [self getLabel:indexPath];
     
     cell.imageView.image = [self getIcon:indexPath];
     
     return cell;
-    
 }
 
 - (CGFloat)tableView:(UITableView *)t heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -170,7 +169,7 @@
     view.tintColor = [UIColor whiteColor];
     
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    [header.textLabel setFont:[UIFont sldsFontLightWithSize:SLDSFontSizeLarge]];
+    [header.textLabel setFont:[UIFont sldsFont:SLDSFontTypeRegular withSize:SLDSFontSizeLarge]];
 }
 
 
