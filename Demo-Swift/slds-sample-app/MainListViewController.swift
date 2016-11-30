@@ -20,7 +20,7 @@ class MainListViewController: UITableViewController {
     let textColorListViewController = ColorListViewController()
     let borderColorListViewController = ColorListViewController()
     
-    let actionIconListViewController = IconListViewController()
+    let actionIconListViewController = IconListViewController(collectionViewLayout: UICollectionViewFlowLayout())
     
     var tableData : [TableData] {
         return [

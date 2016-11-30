@@ -1,73 +1,33 @@
-//
-//  ViewController.swift
-//  slds-sample-app
-//
-//  Created by John Earle on 11/7/16.
-//  Copyright © 2016 John Earle. All rights reserved.
-//
-
-import UIKit
-
-
-class IconListViewController: UITableViewController {
+class IconListViewController: UICollectionViewController {
     
-    struct IconObject {
-        var icon : UIImageView!
-    }
-    
-    var icons = [IconObject]()
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    let reuseIdentifier = "cell"
+    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
     
     override func viewDidLoad() {
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         self.title = "Background Colors"
+        self.collectionView!.register(IconCell.self, forCellWithReuseIdentifier: "Cell")
+        
+        super.viewDidLoad()
+        
+        
+        self.collectionView?.backgroundColor = UIColor.white
+        
     }
     
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ColorCell {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.items.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let color = colors[indexPath.item].color
-        let alias = colors[indexPath.item].alias
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ColorCell
-        
-        //        cell.selectionStyle = .none
-        cell.backgroundColor = UIColor.clear
-        cell.textLabel?.text = alias?.replacingOccurrences(of: "SLDSColor", with: "")
-        cell.textLabel?.font = UIFont.sldsFont(.regular, with: .small)
-        cell.updateColor(color!)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! IconCell
+        cell.backgroundColor = UIColor.cyan
         
         return cell
     }
     
-    ovver
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return colors.count
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = ColorViewController()
-        let alias = colors[indexPath.item].alias
-        controller.addColor(colors[indexPath.item].color, (alias?.replacingOccurrences(of: "SLDSColorB", with: ".b"))!)
-        self.navigationController?.show(controller, sender: self)
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("You selected cell #\(indexPath.item)!")
     }
 }

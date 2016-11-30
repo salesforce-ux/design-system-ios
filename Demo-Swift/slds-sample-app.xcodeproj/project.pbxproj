@@ -29,6 +29,7 @@
 		FCB47EC91DD0FCDB00BB6C1B /* slds_sample_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EC81DD0FCDB00BB6C1B /* slds_sample_appUITests.swift */; };
 		FCB47EDD1DD3D09400BB6C1B /* ConstraintsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EDC1DD3D09400BB6C1B /* ConstraintsHelper.swift */; };
 		FCB47EE01DD4F10E00BB6C1B /* NavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */; };
+		FCCEE6471DEE4DE600949840 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEE6461DEE4DE600949840 /* IconCell.swift */; };
 		FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +112,7 @@
 		FCB47ED81DD1421000BB6C1B /* slds-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "slds-bridging-header.h"; path = "../slds-bridging-header.h"; sourceTree = "<group>"; };
 		FCB47EDC1DD3D09400BB6C1B /* ConstraintsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintsHelper.swift; sourceTree = "<group>"; };
 		FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavButton.swift; sourceTree = "<group>"; };
+		FCCEE6461DEE4DE600949840 /* IconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,6 +255,7 @@
 				FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */,
 				FC4299151DDA3EEC00891FBD /* CategoryCell.swift */,
 				FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */,
+				FCCEE6461DEE4DE600949840 /* IconCell.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */,
 				FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */,
 				206AA8201DE3B82800375432 /* UserListViewController.swift in Sources */,
+				FCCEE6471DEE4DE600949840 /* IconCell.swift in Sources */,
 				FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */,
 				206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */,
 				FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */,
