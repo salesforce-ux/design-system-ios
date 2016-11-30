@@ -114,7 +114,7 @@
     view.tintColor = [UIColor whiteColor];
     
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    [header.textLabel setFont:[UIFont sldsFontLightWithSize:SLDSFontSizeLarge]];
+    [header.textLabel setFont:[UIFont sldsFont:SLDSFontTypeLight withSize:SLDSFontSizeLarge]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -126,7 +126,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    [cell.textLabel setFont:[UIFont sldsFontRegularWithSize:SLDSFontSizeSmall]];
+    [cell.textLabel setFont:[UIFont sldsFont:SLDSFontTypeRegular withSize:SLDSFontSizeSmall]];
     
     cell.textLabel.text = [self getLabel:indexPath];
     

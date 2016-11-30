@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.statusBarStyle = .lightContent
         
-        BITHockeyManager.shared().configure(withIdentifier: "6fa3a4f1296830f31a8327bc77e64b4f")
-        BITHockeyManager.shared().start()
-        BITHockeyManager.shared().authenticator.authenticateInstallation()
+        //BITHockeyManager.shared().configure(withIdentifier: "6fa3a4f1296830f31a8327bc77e64b4f")
+        //BITHockeyManager.shared().start()
+        //BITHockeyManager.shared().authenticator.authenticateInstallation()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {

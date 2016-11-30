@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		051C4CE41B2F6A00001CDF18 /* bg-landing.png in Resources */ = {isa = PBXBuildFile; fileRef = 051C4CE31B2F6A00001CDF18 /* bg-landing.png */; };
 		051C4CE71B2F78C9001CDF18 /* LaunchScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 051C4CE61B2F78C9001CDF18 /* LaunchScreenView.m */; };
-		051C4D181B3005DA001CDF18 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051C4D171B3005DA001CDF18 /* SpriteKit.framework */; };
 		051C4D211B30AF29001CDF18 /* TextListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 051C4D201B30AF29001CDF18 /* TextListViewController.m */; };
 		051C4D241B30AFA1001CDF18 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 051C4D231B30AFA1001CDF18 /* TextViewController.m */; };
 		0539D1981B684A0000A7DFD2 /* IconListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0539D1971B684A0000A7DFD2 /* IconListViewController.m */; };
@@ -22,7 +21,7 @@
 		05C49E291B2EA4A3006B6B28 /* ColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05C49E271B2EA4A3006B6B28 /* ColorViewController.m */; };
 		05DCE66A1B7A702D009C6563 /* libSalesforceDesignSystem-Extended.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DCE6671B7A701B009C6563 /* libSalesforceDesignSystem-Extended.a */; };
 		05DCE66E1B7A74C4009C6563 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 05DCE66B1B7A7046009C6563 /* SalesforceDesignSystem.bundle */; };
-		2024D1381DE4CA8E0000F9B2 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2024D1371DE4CA8E0000F9B2 /* CustomFont.bundle */; };
+		20191FD81DEE4CE8007C8BD8 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20191FD71DEE4CE8007C8BD8 /* CustomFont.bundle */; };
 		202DFF0E1DEE1E65004A99CB /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DFF0D1DEE1E65004A99CB /* NavigationController.m */; };
 		202DFF161DEE213F004A99CB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DFF151DEE213F004A99CB /* MainViewController.m */; };
 /* End PBXBuildFile section */
@@ -62,7 +61,6 @@
 		051C4CE31B2F6A00001CDF18 /* bg-landing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-landing.png"; path = "Resources/Images/bg-landing.png"; sourceTree = "<group>"; };
 		051C4CE51B2F78C9001CDF18 /* LaunchScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenView.h; sourceTree = "<group>"; };
 		051C4CE61B2F78C9001CDF18 /* LaunchScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenView.m; sourceTree = "<group>"; };
-		051C4D171B3005DA001CDF18 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		051C4D1F1B30AF29001CDF18 /* TextListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextListViewController.h; sourceTree = "<group>"; };
 		051C4D201B30AF29001CDF18 /* TextListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextListViewController.m; sourceTree = "<group>"; };
 		051C4D221B30AFA1001CDF18 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
@@ -84,7 +82,7 @@
 		05C49E271B2EA4A3006B6B28 /* ColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorViewController.m; sourceTree = "<group>"; };
 		05DCE65C1B7A701B009C6563 /* SalesforceDesignSystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SalesforceDesignSystem.xcodeproj; path = ../SalesforceDesignSystem.xcodeproj; sourceTree = "<group>"; };
 		05DCE66B1B7A7046009C6563 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceDesignSystem.bundle; path = ../SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
-		2024D1371DE4CA8E0000F9B2 /* CustomFont.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CustomFont.bundle; sourceTree = "<group>"; };
+		20191FD71DEE4CE8007C8BD8 /* CustomFont.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CustomFont.bundle; path = ../CustomFont.bundle; sourceTree = "<group>"; };
 		202DFF0C1DEE1E65004A99CB /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		202DFF0D1DEE1E65004A99CB /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		202DFF141DEE213F004A99CB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				05DCE66A1B7A702D009C6563 /* libSalesforceDesignSystem-Extended.a in Frameworks */,
-				051C4D181B3005DA001CDF18 /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,13 +112,10 @@
 		05A7B0801B2A5EAC00B5FB86 = {
 			isa = PBXGroup;
 			children = (
-				2024D1371DE4CA8E0000F9B2 /* CustomFont.bundle */,
 				05A7B08A1B2A5EAC00B5FB86 /* Products */,
 				05A7B0B21B2A5F0300B5FB86 /* Resources */,
-				05DCE66B1B7A7046009C6563 /* SalesforceDesignSystem.bundle */,
 				05DCE65C1B7A701B009C6563 /* SalesforceDesignSystem.xcodeproj */,
 				05A7B08B1B2A5EAC00B5FB86 /* SLDSSampleApp */,
-				051C4D171B3005DA001CDF18 /* SpriteKit.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,6 +169,8 @@
 		05A7B0B21B2A5F0300B5FB86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				20191FD71DEE4CE8007C8BD8 /* CustomFont.bundle */,
+				05DCE66B1B7A7046009C6563 /* SalesforceDesignSystem.bundle */,
 				051C4CE21B2F69E0001CDF18 /* Images */,
 			);
 			name = Resources;
@@ -217,7 +213,7 @@
 		05A7B0811B2A5EAC00B5FB86 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Salesforce UX";
 				TargetAttributes = {
 					05A7B0881B2A5EAC00B5FB86 = {
@@ -279,7 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2024D1381DE4CA8E0000F9B2 /* CustomFont.bundle in Resources */,
+				20191FD81DEE4CE8007C8BD8 /* CustomFont.bundle in Resources */,
 				05DCE66E1B7A74C4009C6563 /* SalesforceDesignSystem.bundle in Resources */,
 				051C4CE41B2F6A00001CDF18 /* bg-landing.png in Resources */,
 				05A7B09D1B2A5EAC00B5FB86 /* LaunchScreen.xib in Resources */,
@@ -343,8 +339,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -388,8 +386,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
