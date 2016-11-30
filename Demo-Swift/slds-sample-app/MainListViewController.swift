@@ -19,7 +19,7 @@ class MainListViewController: UITableViewController {
     let backgroundColorListViewController = ColorListViewController()
     let textColorListViewController = ColorListViewController()
     let borderColorListViewController = ColorListViewController()
-    let actionIconListViewController = IconListViewController(collectionViewLayout: UICollectionViewFlowLayout())
+    let actionIconListViewController = IconListViewController()
     
     var tableData : [TableData] {
         return [
@@ -28,8 +28,8 @@ class MainListViewController: UITableViewController {
                       controllers: [UserListViewController()]),
             
             TableData(sectionTitle: "SLDS Reference",
-                      rows: ["Background Colors", "Text Colors", "Border Colors", "Fonts"],
-                      controllers: [ backgroundColorListViewController, textColorListViewController, borderColorListViewController, FontListTableViewController()])
+                      rows: ["Background Colors", "Text Colors", "Border Colors", "Fonts", "Action Icons"],
+                      controllers: [ backgroundColorListViewController, textColorListViewController, borderColorListViewController, FontListTableViewController(), actionIconListViewController])
         ]
     }
     
