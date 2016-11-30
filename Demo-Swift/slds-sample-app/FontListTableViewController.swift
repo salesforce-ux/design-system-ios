@@ -9,16 +9,28 @@
 import UIKit
 
 class FontListTableViewController: UITableViewController {
-
+    
+    var fontTypes = Array<String>();
+    var fontSizes = Array<String>();
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Fonts"
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "fontCell")
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        repeat {
+            if let fontType = SLDSFontType.init(rawValue: fontTypes.count),
+                let fontName = SLDSFont.sldsFontTypeName(fontType) {
+                fontTypes.append(fontName.replacingOccurrences(of: "SLDSFontType", with: ""))
+            }
+        } while SLDSFontType.init(rawValue: fontTypes.count)?.hashValue != 0
+        
+        repeat {
+            if let fontSize = SLDSFontSizeType.init(rawValue: fontSizes.count),
+                let sizeName = SLDSFont.sldsFontSizeName(fontSize) {
+                fontSizes.append(sizeName.replacingOccurrences(of: "SLDSFontSize", with: ""))
+            }
+        } while SLDSFontSizeType.init(rawValue: fontSizes.count)?.hashValue != 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,24 +41,33 @@ class FontListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return fontTypes.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return fontSizes.count
     }
-
-    /*
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30.0
+    }
+    
+    override func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
+        return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UITableViewHeaderFooterView.init()
+        header.textLabel?.text = fontTypes[section]
+        return header
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "fontCell", for: indexPath)
+        cell.textLabel?.text = fontSizes[indexPath.row]
+        cell.textLabel?.font = UIFont.sldsFont(SLDSFontType.init(rawValue: indexPath.section)!, with:SLDSFontSizeType.init(rawValue:indexPath.row)!)
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
