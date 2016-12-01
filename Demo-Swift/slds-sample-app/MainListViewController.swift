@@ -84,8 +84,15 @@ class MainListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-        cell.textLabel?.text = tableData[indexPath.section].rows[indexPath.row].name
         cell.textLabel?.font = UIFont.sldsFont(.regular, with: .medium)
+        
+        var rowName = tableData[indexPath.section].rows[indexPath.row].name
+        
+        if tableData[indexPath.section].rows[indexPath.row].type == ColorListViewController.self {
+            rowName += " Colors"
+        }
+        
+         cell.textLabel?.text = rowName
         return cell
     }
     

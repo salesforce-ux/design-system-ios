@@ -83,12 +83,13 @@ class FontListTableViewController: UITableViewController {
                 customButton = self.customButtons[section-1]
             }
             else {
-                customButton = UIButton(type: .roundedRect)//frame: CGRect(x: self.view.frame.width - 63, y: 3.0, width: 0.0, height: 0.0))
-                //customButton.setTitle("Default", for: .normal)
-                //customButton.setTitle("Custom", for: .selected)
-                //customButton.tag = section
-                //customButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .medium)
-                //customButton.addTarget(self, action: #selector(FontListTableViewController.handleCutomButton(_:)), for: .touchUpInside)
+                customButton = UIButton(frame: CGRect(x: self.view.frame.width - 70, y: 6.0, width: 60.0, height: 25.0))
+                customButton.tag = section
+                customButton.setTitle("Default", for: .normal)
+                customButton.setTitle("Custom", for: .selected)
+                customButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .small)
+                customButton.setTitleColor(UIColor.sldsColorText(.link), for: .normal)
+                customButton.addTarget(self, action: #selector(FontListTableViewController.handleCutomButton(_:)), for: .touchUpInside)
                 self.customButtons.append(customButton)
             }
             header.addSubview(customButton)
@@ -109,6 +110,14 @@ class FontListTableViewController: UITableViewController {
         cell.textLabel?.text = fontSizes[indexPath.row]
         cell.textLabel?.font = UIFont.sldsFont(SLDSFontType.init(rawValue: indexPath.section)!, with:SLDSFontSizeType.init(rawValue:indexPath.row)!)
         return cell
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller  = FontViewController()
+        controller.indexPath = indexPath
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

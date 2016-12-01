@@ -12,6 +12,7 @@
 		206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */; };
 		206AA8201DE3B82800375432 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81F1DE3B82800375432 /* UserListViewController.swift */; };
 		209A56291DEF546400327910 /* IconListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A56281DEF546400327910 /* IconListViewController.swift */; };
+		209A56301DEFA47E00327910 /* FontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A562F1DEFA47E00327910 /* FontViewController.swift */; };
 		56CB4A64F9F1007FBD34E15A /* Pods_slds_sample_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67FC44511DDD6829711D25F6 /* Pods_slds_sample_appUITests.framework */; };
 		A76A4791338D588F66728996 /* Pods_slds_sample_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EE5BBEECE5EEB8F785A966 /* Pods_slds_sample_app.framework */; };
 		FC1EA4681DDE6F6300304E01 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */; };
@@ -86,6 +87,7 @@
 		206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontListTableViewController.swift; sourceTree = "<group>"; };
 		206AA81F1DE3B82800375432 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		209A56281DEF546400327910 /* IconListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconListViewController.swift; sourceTree = "<group>"; };
+		209A562F1DEFA47E00327910 /* FontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontViewController.swift; sourceTree = "<group>"; };
 		5FB2674A0E6391E56A157B80 /* Pods-slds-sample-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slds-sample-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-slds-sample-app/Pods-slds-sample-app.release.xcconfig"; sourceTree = "<group>"; };
 		65A3E6365E09765B6A728445 /* Pods-slds-sample-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slds-sample-appTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-slds-sample-appTests/Pods-slds-sample-appTests.release.xcconfig"; sourceTree = "<group>"; };
 		67FC44511DDD6829711D25F6 /* Pods_slds_sample_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slds_sample_appUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,9 +187,10 @@
 		FC4299171DDA4E7500891FBD /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FC4299181DDA4FE100891FBD /* ColorListViewController.swift */,
 				FC42991E1DDA8FC500891FBD /* ColorViewController.swift */,
 				206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */,
-				FC4299181DDA4FE100891FBD /* ColorListViewController.swift */,
+				209A562F1DEFA47E00327910 /* FontViewController.swift */,
 				209A56281DEF546400327910 /* IconListViewController.swift */,
 				FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */,
 				206AA81F1DE3B82800375432 /* UserListViewController.swift */,
@@ -611,6 +614,7 @@
 				FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */,
 				209A56291DEF546400327910 /* IconListViewController.swift in Sources */,
 				FC4FF3DB1DE4D033009B3D2E /* ColorCell.swift in Sources */,
+				209A56301DEFA47E00327910 /* FontViewController.swift in Sources */,
 				FCB47EE01DD4F10E00BB6C1B /* NavButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
