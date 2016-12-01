@@ -72,7 +72,6 @@ class ColorCell: UITableViewCell {
         checkeredBackground.addSubview(backgroundExample)
         self.contentView.addConstraints(ConstraintsHelper.addConstraints(item: checkeredBackground, toItem: self.contentView, width: 80, height:80, xAlignment: .right, yAlignment: .center, xOffset: -10, yOffset: 0))
         checkeredBackground.addConstraints(ConstraintsHelper.addConstraints(item: backgroundExample, toItem: checkeredBackground, width: 80, height:80, xAlignment: .right, yAlignment: .center, xOffset: 0, yOffset: 0))
-        
     }
     
 }
