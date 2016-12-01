@@ -115,7 +115,7 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         self.view.addSubview(switchHeader)
         self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchHeader, toItem: self.view, width: self.view.frame.width, height: 64, xAlignment: .center, yAlignment: .top, xOffset: 0, yOffset: 64))
         
-        switchHeader.backgroundColor = UIColor.white
+        switchHeader.backgroundColor = UIColor.sldsColorBackground(.background)
         self.view.backgroundColor = UIColor.white
         
         let hr = UIView()
@@ -124,18 +124,18 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         self.view.addConstraints(ConstraintsHelper.addConstraints(item: hr, toItem: switchHeader, width: self.view.frame.width, height: 1, xAlignment: .center, yAlignment: .bottom, xOffset: 0, yOffset: 0))
         
         switchView = UISwitch()
-        switchView.onTintColor = UIColor.sldsColorBorder(.input)
+        switchView.onTintColor = UIColor.sldsColorBorder(.info)
         switchView.tintColor = UIColor.white
-        switchView.layer.borderColor = UIColor.sldsColorBorder(.input).cgColor
+        switchView.layer.borderColor = UIColor.sldsColorBorder(.info).cgColor
         switchView.layer.borderWidth = 1
         switchView.layer.cornerRadius = 16
         self.view.addSubview(switchView)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchView, toItem: switchHeader, xAlignment: .right, yAlignment: .center, xOffset: -20, yOffset: 0))
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchView, toItem: switchHeader, xAlignment: .right, yAlignment: .center, xOffset: 20, yOffset: 0))
         
         
-        switchIcon = UIImageView(image: UIImage.sldsIconCustom(.custom3, with: UIColor.sldsColorText(.inputIcon), andBGColor: UIColor.white, andSize: 36))
+        switchIcon = UIImageView(image: UIImage.sldsIconCustom(.custom3, with: UIColor.sldsColorText(.weak), andBGColor: UIColor.sldsColorBackground(.background), andSize: 36))
         self.view.addSubview(switchIcon)
-        self.view.addConstraints(ConstraintsHelper.stackH(item: switchIcon, toItem: switchView, yAlignment: .center, direction: .right, xOffset: -5, yOffset: 0))
+        self.view.addConstraints(ConstraintsHelper.stackH(item: switchIcon, toItem: switchView, yAlignment: .center, direction: .right, xOffset: 5, yOffset: 0))
         
         searchField = SearchField()
         self.view.addSubview(searchField)
@@ -155,11 +155,15 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         tap = UITapGestureRecognizer(target: self, action: #selector(IconListViewController.dismissKeyboard))
     }
     
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
     func dismissKeyboard() {
         searchField.focus(false)
         self.view.removeGestureRecognizer(tap)
         self.view.endEditing(true)
     }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == searchField {
@@ -171,13 +175,16 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         return true
     }
     
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == searchField {
-            print("sdfsfddsf")
             self.view.addGestureRecognizer(tap)
             searchField.focus(true)
         }
     }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func updateUtilitycolor() {
         let c = darkMode ? UIColor.sldsColorBackground(.backgroundIconWaffle) : UIColor.white
@@ -198,14 +205,14 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
                 updateUtilitycolor()
             }
             self.collectionView.backgroundColor = UIColor.sldsColorBackground(.backgroundInverse)
-            switchIcon.image = UIImage.sldsIconCustom(.custom10, with: UIColor.sldsColorText(.inputIcon), andBGColor: UIColor.white, andSize: 36)
+            switchIcon.image = UIImage.sldsIconCustom(.custom10, with: UIColor.sldsColorText(.weak), andBGColor: UIColor.sldsColorBackground(.background), andSize: 36)
             darkMode = true
         } else {
             if utility! {
                 updateUtilitycolor()
             }
             self.collectionView.backgroundColor = UIColor.white
-            switchIcon.image = UIImage.sldsIconCustom(.custom3, with: UIColor.sldsColorText(.inputIcon), andBGColor: UIColor.white, andSize: 36)
+            switchIcon.image = UIImage.sldsIconCustom(.custom3, with: UIColor.sldsColorText(.weak), andBGColor: UIColor.sldsColorBackground(.background), andSize: 36)
             darkMode = false
         }
     }
