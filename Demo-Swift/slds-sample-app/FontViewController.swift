@@ -36,7 +36,7 @@ class FontViewController: UIViewController {
         self.sampleText.text = "AaBbCc"
         self.sampleText.textAlignment = .center
         self.sampleText.contentMode = .center
-        self.sampleText.textColor = UIColor.sldsColorText(.brand)
+        self.sampleText.textColor = UIColor.sldsColorText(.default)//UIColor.sldsColorText(.brand)
         self.sampleText.backgroundColor = UIColor.clear
         self.view.addSubview(self.sampleText)
         
