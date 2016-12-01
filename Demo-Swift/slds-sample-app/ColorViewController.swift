@@ -59,15 +59,15 @@ class ColorViewController: UIViewController {
         checkeredBackground.layer.shadowOffset = CGSize.init(width: 0.7, height: 0.7)
         checkeredBackground.layer.shadowRadius = 1
         
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: checkeredBackground, toItem: self.view, width: 150, height:150, xAlignment: "center", yAlignment: "top", xOffset: 0, yOffset: 100))
-        checkeredBackground.addConstraints(ConstraintsHelper.addConstraints(item: backgroundExample, toItem: checkeredBackground, width: 150, height:150, xAlignment: "right", yAlignment: "center", xOffset: 0, yOffset: 0))
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: checkeredBackground, toItem: self.view, width: 150, height:150, xAlignment: .center, yAlignment: .top, xOffset: 0, yOffset: 100))
+        checkeredBackground.addConstraints(ConstraintsHelper.addConstraints(item: backgroundExample, toItem: checkeredBackground, width: 150, height:150, xAlignment: .right, yAlignment: .center, xOffset: 0, yOffset: 0))
         
         // bottom anchor
         
         let parentHeight = self.view.frame.height
         bottomAnchor.backgroundColor = UIColor.sldsColorBackground(.backgroundRowHover)
         self.view.addSubview(bottomAnchor)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: bottomAnchor, toItem: self.view, width: self.view.frame.width, height: parentHeight - 300, xAlignment: "center", yAlignment: "bottom", xOffset: 0, yOffset: 0))
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: bottomAnchor, toItem: self.view, width: self.view.frame.width, height: parentHeight - 300, xAlignment: .center, yAlignment: .bottom, xOffset: 0, yOffset: 0))
         
         self.view.backgroundColor = UIColor.white
         
@@ -93,11 +93,11 @@ class ColorViewController: UIViewController {
         
         //copyButton.setImage(UIImage.sldsIconUtility(.copy, with: UIColor.sldsColorText(.brand), andSize: 40), for: .normal)
         self.view.addSubview(copyButton)
-        self.view.addConstraints(ConstraintsHelper.stackV(item: copyButton, toItem: textExample, xAlignment: "center", direction: "down", xOffset: 0, yOffset: 50))
+        self.view.addConstraints(ConstraintsHelper.stackV(item: copyButton, toItem: textExample, xAlignment: .center, direction: .down, xOffset: 0, yOffset: 50))
         
         
         
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: textExample, toItem: bottomAnchor, xAlignment: "center", yAlignment: "top", xOffset: 0, yOffset: 50))
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: textExample, toItem: bottomAnchor, xAlignment: .center, yAlignment: .top, xOffset: 0, yOffset: 50))
         
         
     }

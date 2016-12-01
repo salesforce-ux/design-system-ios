@@ -19,6 +19,6 @@ class IconCell: UICollectionViewCell {
         aaa.text = "dasdsd"
         aaa.textColor = UIColor.green
         self.contentView.addSubview(aaa)
-        self.contentView.addConstraints(ConstraintsHelper.addConstraints(item: aaa, toItem: self.contentView, xAlignment: "center", yAlignment: "center", xOffset: 0, yOffset: 0))
+        self.contentView.addConstraints(ConstraintsHelper.addConstraints(item: aaa, toItem: self.contentView, xAlignment: .center, yAlignment: .center, xOffset: 0, yOffset: 0))
     }
 }

@@ -10,35 +10,53 @@ import Foundation
 
 class ConstraintsHelper {
     
+    enum XAlignmentType {
+        case left
+        case center
+        case right
+    }
+    
+    enum YAlignmentType {
+        case top
+        case center
+        case bottom
+    }
+    
+    enum VDirectionType {
+        case up
+        case down
+    }
+    
+    enum HDirectionType {
+        case right
+        case left
+    }
+    
     // MARK: helpers
     
-    static func setX (_ alignment: String) -> NSLayoutAttribute {
+    static func setX (_ alignment: XAlignmentType) -> NSLayoutAttribute {
         switch alignment {
-        case "left":
-            return NSLayoutAttribute.left
-        case "right":
-            return NSLayoutAttribute.right
-        case "center":
-            return NSLayoutAttribute.centerX
-        default:
-            return NSLayoutAttribute.left
+            case .left:
+                return NSLayoutAttribute.left
+            case .right:
+                return NSLayoutAttribute.right
+            default:
+                return NSLayoutAttribute.centerX
         }
     }
     
-    static func setY (_ alignment: String) -> NSLayoutAttribute {
+    static func setY (_ alignment: YAlignmentType) -> NSLayoutAttribute {
         switch alignment {
-        case "top":
-            return NSLayoutAttribute.top
-        case "bottom":
-            return NSLayoutAttribute.bottom
-        case "center":
-            return NSLayoutAttribute.centerY
-        default:
-            return NSLayoutAttribute.top
+            case .top:
+                return NSLayoutAttribute.top
+            case .center:
+                return NSLayoutAttribute.centerY
+            default:
+                return NSLayoutAttribute.bottom
         }
     }
     
-    static func stackV(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, xAlignment: String, direction: String, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
+    static func stackV(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, xAlignment: XAlignmentType, direction: VDirectionType, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
         
         item.translatesAutoresizingMaskIntoConstraints = false
         
@@ -47,7 +65,7 @@ class ConstraintsHelper {
         var yAtt1 = NSLayoutAttribute.top
         var yAtt2 = NSLayoutAttribute.bottom
         
-        if direction == "up" {
+        if direction == .up {
             yAtt1 = NSLayoutAttribute.bottom
             yAtt2 = NSLayoutAttribute.top
         }
@@ -93,7 +111,7 @@ class ConstraintsHelper {
         return constraints
     }
     
-    static func stackH(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, yAlignment: String, direction: String, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
+    static func stackH(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, yAlignment: YAlignmentType, direction: HDirectionType, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
         
         item.translatesAutoresizingMaskIntoConstraints = false
         
@@ -102,7 +120,7 @@ class ConstraintsHelper {
         var xAtt1 = NSLayoutAttribute.right
         var xAtt2 = NSLayoutAttribute.left
         
-        if direction == "left" {
+        if direction == .left {
             xAtt1 = NSLayoutAttribute.left
             xAtt2 = NSLayoutAttribute.right
         }
@@ -147,7 +165,7 @@ class ConstraintsHelper {
         return constraints
     }
     
-    static func addConstraints(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, xAlignment: String, yAlignment: String, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
+    static func addConstraints(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, xAlignment: XAlignmentType, yAlignment: YAlignmentType, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
         
         item.translatesAutoresizingMaskIntoConstraints = false
         

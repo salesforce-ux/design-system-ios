@@ -13,14 +13,28 @@ class CodeView: UIView {
     var codeExample = UITextView()
     var copyButton = UIButton()
     
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+   
+    var showSwift : Bool = true {
+        didSet {
+            self.updateCodeExample()
+        }
+    }
+    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    var exampleText : String {
-        get {
-            return self.codeExample.text
+    var objCString : String = "" {
+        didSet {
+            self.updateCodeExample()
         }
-        set {
-            self.codeExample.text = newValue
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var swiftString : String = "" {
+        didSet {
+            self.updateCodeExample()
         }
     }
     
@@ -46,9 +60,14 @@ class CodeView: UIView {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func loadView() {
-        codeExample.font = UIFont.sldsFont(.regular, with: .medium)
+        self.backgroundColor = UIColor.sldsColorBackground(.backgroundStencil)
+            
+        codeExample.isEditable = false
+        codeExample.isSelectable = false
+        codeExample.textAlignment = .center
+        codeExample.font = UIFont.sldsFont(.regular, with: .small)
         codeExample.textColor = UIColor.sldsColorText(.default)
-        codeExample.backgroundColor = UIColor.blue
+        codeExample.backgroundColor = self.backgroundColor
         self.addSubview(codeExample)
         
         copyButton.setTitle("copy", for: .normal)
@@ -58,16 +77,25 @@ class CodeView: UIView {
         
         self.addConstraints(ConstraintsHelper.addConstraints(item: self.codeExample,
                                                              toItem: self,
-                                                             xAlignment: "center",
-                                                             yAlignment: "top",
+                                                             width: 300,
+                                                             height: 150,
+                                                             xAlignment: .center,
+                                                             yAlignment: .top,
                                                              xOffset: 0,
                                                              yOffset: 20))
         
-        self.addConstraints(ConstraintsHelper.stackV(item: self.copyButton,
-                                                     toItem: self.codeExample,
-                                                     center: true,
-                                                     invert: false,
-                                                     xOffset: 0,
-                                                     yOffset: 80))
+        self.addConstraints(ConstraintsHelper.addConstraints(item: self.copyButton,
+                                                             toItem: self,
+                                                             xAlignment: .center,
+                                                             yAlignment: .bottom,
+                                                             xOffset: 0,
+                                                             yOffset: -50))
     }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func updateCodeExample() {
+        self.codeExample.text = self.showSwift ? self.swiftString : self.objCString
+    }
+
 }

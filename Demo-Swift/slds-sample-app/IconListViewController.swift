@@ -41,7 +41,7 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         
         switchHeader = UIView()
         self.view.addSubview(switchHeader)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchHeader, toItem: self.view, width: self.view.frame.width, height: 64, xAlignment: "center", yAlignment: "top", xOffset: 0, yOffset: 64))
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchHeader, toItem: self.view, width: self.view.frame.width, height: 64, xAlignment: .center, yAlignment: .top, xOffset: 0, yOffset: 64))
         
         switchHeader.backgroundColor = UIColor.white
         self.view.backgroundColor = UIColor.white
@@ -49,23 +49,23 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         let hr = UIView()
         hr.backgroundColor = UIColor.sldsColorBorder(.input)
         self.view.addSubview(hr)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: hr, toItem: switchHeader, width: self.view.frame.width, height: 1, xAlignment: "center", yAlignment: "bottom", xOffset: 0, yOffset: 0))
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: hr, toItem: switchHeader, width: self.view.frame.width, height: 1, xAlignment: .center, yAlignment: .bottom, xOffset: 0, yOffset: 0))
         
         switchView = UISwitch()
         switchView.onTintColor = UIColor.sldsColorBackground(.brand)
         switchView.offImage = UIImage.sldsIconUtility(.add, with: UIColor.black, andSize: 32)
         switchView.onImage = UIImage.sldsIconCustom(.custom3, withSize: 20)
         self.view.addSubview(switchView)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchView, toItem: switchHeader, xAlignment: "right", yAlignment: "center", xOffset: -30, yOffset: 0))
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchView, toItem: switchHeader, xAlignment: .right, yAlignment: .center, xOffset: -30, yOffset: 0))
         
         
         switchIcon = UIImageView(image: UIImage.sldsIconCustom(.custom3, with: UIColor.sldsColorText(.inputIcon), andBGColor: UIColor.white, andSize: 36))
         self.view.addSubview(switchIcon)
-        self.view.addConstraints(ConstraintsHelper.stackH(item: switchIcon, toItem: switchView, yAlignment: "center", direction: "right", xOffset: -5, yOffset: 0))
+        self.view.addConstraints(ConstraintsHelper.stackH(item: switchIcon, toItem: switchView, yAlignment: .center, direction: .right, xOffset: -5, yOffset: 0))
         
         searchField = SearchField()
         self.view.addSubview(searchField)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: searchField, toItem: switchHeader, width: 200, height: 36, xAlignment: "left", yAlignment: "center", xOffset: 30, yOffset: 0))
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: searchField, toItem: switchHeader, width: 200, height: 36, xAlignment: .left, yAlignment: .center, xOffset: 30, yOffset: 0))
         searchField.addTarget(self, action: #selector(IconListViewController.filterIcons), for: UIControlEvents.editingChanged)
         searchField.delegate = self;
         searchField.returnKeyType = .done
@@ -143,7 +143,7 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         let iconContainer = UIImageView(image: icon)
         cell.addSubview(iconContainer)
         cell.contentView.addSubview(iconContainer)
-        cell.contentView.addConstraints(ConstraintsHelper.addConstraints(item: iconContainer, toItem: cell.contentView, xAlignment: "center", yAlignment: "center", xOffset: 0, yOffset: 0))
+        cell.contentView.addConstraints(ConstraintsHelper.addConstraints(item: iconContainer, toItem: cell.contentView, xAlignment: .center, yAlignment: .center, xOffset: 0, yOffset: 0))
         
         return cell
     }
