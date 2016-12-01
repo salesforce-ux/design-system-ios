@@ -63,15 +63,13 @@ class ColorCell: UITableViewCell {
         
         backgroundExample.layer.cornerRadius = 6
         checkeredBackground.layer.cornerRadius = 6
-        checkeredBackground.layer.shadowColor = UIColor.black.cgColor
-        checkeredBackground.layer.shadowOpacity = 0.5
-        checkeredBackground.layer.shadowOffset = CGSize.init(width: 0.7, height: 0.7)
-        checkeredBackground.layer.shadowRadius = 1
+        checkeredBackground.layer.borderColor = UIColor.sldsColorBorder(.input).cgColor
+        checkeredBackground.layer.borderWidth = 1
         
         self.contentView.addSubview(checkeredBackground)
         checkeredBackground.addSubview(backgroundExample)
-        self.contentView.addConstraints(ConstraintsHelper.addConstraints(item: checkeredBackground, toItem: self.contentView, width: 80, height:80, xAlignment: .right, yAlignment: .center, xOffset: -10, yOffset: 0))
-        checkeredBackground.addConstraints(ConstraintsHelper.addConstraints(item: backgroundExample, toItem: checkeredBackground, width: 80, height:80, xAlignment: .right, yAlignment: .center, xOffset: 0, yOffset: 0))
+        self.contentView.addConstraints(ConstraintsHelper.addConstraints(item: checkeredBackground, toItem: self.contentView, width: 70, height:70, xAlignment: .right, yAlignment: .center, xOffset: 20, yOffset: 0))
+        checkeredBackground.addConstraints(ConstraintsHelper.addConstraints(item: backgroundExample, toItem: checkeredBackground, width: 70, height:70, xAlignment: .right, yAlignment: .center, xOffset: 0, yOffset: 0))
     }
     
 }
