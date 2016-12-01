@@ -13,6 +13,7 @@ class FontViewController: UIViewController {
     
     var sampleText = UILabel()
     var fontInfo = UITextView()
+    var codeView = CodeView()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -23,6 +24,9 @@ class FontViewController: UIViewController {
             
             fontInfo.text = SLDSFont.sldsFontTypeName(SLDSFontType(rawValue: self.indexPath.section)!) +
                             "\n" + SLDSFont.sldsFontSizeName(SLDSFontSizeType(rawValue: self.indexPath.row)!)
+            
+            self.codeView.exampleText = "UIFont.sldsFont(. " + SLDSFont.sldsFontTypeName(SLDSFontType(rawValue: self.indexPath.section)!) +
+                        ",\n with: " + SLDSFont.sldsFontSizeName(SLDSFontSizeType(rawValue: self.indexPath.row)!)
         }
     }
     
@@ -32,6 +36,7 @@ class FontViewController: UIViewController {
         super.viewDidLoad()
         
         self.edgesForExtendedLayout = []
+        self.view.backgroundColor = UIColor.white
         
         self.sampleText.text = "AaBbCc"
         self.sampleText.textAlignment = .center
@@ -46,28 +51,34 @@ class FontViewController: UIViewController {
         self.fontInfo.textColor = UIColor.sldsColorText(.default)
         self.fontInfo.font = UIFont.sldsFont(.regular, with: .small)
         self.view.addSubview(self.fontInfo)
-   
+        
+        self.view.addSubview(codeView)
+        
         self.view.addConstraints(ConstraintsHelper.addConstraints(item: self.sampleText,
                                                                   toItem: self.view,
-                                                                  width: self.view.frame.width,
-                                                                  height:60,
                                                                   xAlignment: "center",
                                                                   yAlignment: "top",
                                                                   xOffset: 0,
                                                                   yOffset: 20))
         
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: self.fontInfo,
-                                                                  toItem: self.sampleText,
-                                                                  width: 220,
-                                                                  height: 50,
+        self.view.addConstraints(ConstraintsHelper.stackV(item: self.fontInfo,
+                                                          toItem: self.sampleText,
+                                                          center: true,
+                                                          invert: false,
+                                                          xOffset: 0,
+                                                          yOffset: 20))
+        
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: self.codeView,
+                                                                  toItem: self.view,
+                                                                  width: self.view.frame.width,
+                                                                  height: self.view.frame.height/2,
                                                                   xAlignment: "center",
                                                                   yAlignment: "bottom",
                                                                   xOffset: 0,
-                                                                  yOffset: 60))
+                                                                  yOffset: 20))
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

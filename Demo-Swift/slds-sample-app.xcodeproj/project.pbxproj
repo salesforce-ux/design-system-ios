@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A07AEF3446ADE7E8F0775CE /* Pods_slds_sample_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1097391D4C78B8C4CC954287 /* Pods_slds_sample_appTests.framework */; };
 		20191FDB1DEE4F89007C8BD8 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */; };
+		2043E3AB1DF0993F0043A192 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E3AA1DF0993F0043A192 /* CodeView.swift */; };
 		206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */; };
 		206AA8201DE3B82800375432 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81F1DE3B82800375432 /* UserListViewController.swift */; };
 		209A56291DEF546400327910 /* IconListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A56281DEF546400327910 /* IconListViewController.swift */; };
@@ -84,6 +85,7 @@
 /* Begin PBXFileReference section */
 		1097391D4C78B8C4CC954287 /* Pods_slds_sample_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slds_sample_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CustomFont.bundle; path = ../CustomFont.bundle; sourceTree = "<group>"; };
+		2043E3AA1DF0993F0043A192 /* CodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontListTableViewController.swift; sourceTree = "<group>"; };
 		206AA81F1DE3B82800375432 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		209A56281DEF546400327910 /* IconListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconListViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2043E3A71DF098E80043A192 /* controls */ = {
+			isa = PBXGroup;
+			children = (
+				FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */,
+				FCCEE64F1DEF889C00949840 /* SearchField.swift */,
+			);
+			name = controls;
+			sourceTree = "<group>";
+		};
+		2043E3AC1DF09B140043A192 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				FCB47EDC1DD3D09400BB6C1B /* ConstraintsHelper.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
 		F3BAF2CA86947BC0E9DAA512 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,14 +245,15 @@
 		FCB47EA71DD0FCDB00BB6C1B /* slds-sample-app */ = {
 			isa = PBXGroup;
 			children = (
-				FC4299171DDA4E7500891FBD /* controllers */,
-				FCB47ED91DD2989F00BB6C1B /* views */,
-				FCB47ED81DD1421000BB6C1B /* slds-bridging-header.h */,
+				2043E3AC1DF09B140043A192 /* utils */,
 				FCB47EA81DD0FCDB00BB6C1B /* AppDelegate.swift */,
 				FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */,
-				FCB47EB11DD0FCDB00BB6C1B /* LaunchScreen.storyboard */,
+				FC4299171DDA4E7500891FBD /* controllers */,
+				2043E3A71DF098E80043A192 /* controls */,
 				FCB47EB41DD0FCDB00BB6C1B /* Info.plist */,
-				FCB47EDC1DD3D09400BB6C1B /* ConstraintsHelper.swift */,
+				FCB47EB11DD0FCDB00BB6C1B /* LaunchScreen.storyboard */,
+				FCB47ED81DD1421000BB6C1B /* slds-bridging-header.h */,
+				FCB47ED91DD2989F00BB6C1B /* views */,
 			);
 			path = "slds-sample-app";
 			sourceTree = "<group>";
@@ -260,11 +280,10 @@
 			isa = PBXGroup;
 			children = (
 				FC4299151DDA3EEC00891FBD /* CategoryCell.swift */,
+				2043E3AA1DF0993F0043A192 /* CodeView.swift */,
 				FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */,
 				FCCEE6461DEE4DE600949840 /* IconCell.swift */,
-				FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */,
 				FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */,
-				FCCEE64F1DEF889C00949840 /* SearchField.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -603,6 +622,7 @@
 			files = (
 				FC1EA4681DDE6F6300304E01 /* MainListViewController.swift in Sources */,
 				FC4299161DDA3EEC00891FBD /* CategoryCell.swift in Sources */,
+				2043E3AB1DF0993F0043A192 /* CodeView.swift in Sources */,
 				FCB47EDD1DD3D09400BB6C1B /* ConstraintsHelper.swift in Sources */,
 				FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */,
 				FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */,
