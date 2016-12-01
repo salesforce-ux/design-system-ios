@@ -21,12 +21,17 @@ class MainListViewController: UITableViewController {
             TableData(sectionTitle: "Sample App",
                       rows: [("User Records",UserListViewController.self)]),
             
-            TableData(sectionTitle: "SLDS Reference",
+            TableData(sectionTitle: "SLDS Colors",
                       rows: [(ColorListType.background.rawValue, ColorListViewController.self),
                              (ColorListType.border.rawValue, ColorListViewController.self),
-                             (ColorListType.text.rawValue, ColorListViewController.self),
-                             ("Fonts", FontListTableViewController.self),
-                             ("Icons",IconListViewController.self)])
+                             (ColorListType.text.rawValue, ColorListViewController.self)]),
+            
+            TableData(sectionTitle: "SLDS Fonts",
+                      rows: [(FontListType.salesforceSans.rawValue, FontListTableViewController.self),
+                             (FontListType.proximaNova.rawValue, FontListTableViewController.self)]),
+
+            TableData(sectionTitle: "SLDS Icons",
+                      rows: [("Icons",IconListViewController.self)])
         ]
     }
     

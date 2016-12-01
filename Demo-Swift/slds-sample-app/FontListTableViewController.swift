@@ -9,27 +9,61 @@
 
 import UIKit
 
+enum FontListType : String {
+    case salesforceSans = "SalesforceSans"
+    case proximaNova = "ProximaNova"
+}
+
 class FontListTableViewController: UITableViewController {
     
     var fontTypes = [String]()
     var fontSizes = [String]()
-    var customButtons = [UIButton]()
     var customFonts = ["ProximaNovaSoft-Regular.otf", "ProximaNovaSoft-Medium.otf", "ProximaNovaSoft-Semibold.otf", "ProximaNovaSoft-Bold.otf"]
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
+    override var title: String? {
+        didSet {
+            super.title = self.title
+            if let newTitle = self.title {
+                self.fontType = newTitle
+            }
+        }
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var fontType: String? {
+        get {
+            return self.title
+        }
+        set {
+            self.fontTypes.removeAll()
+            
+            if newValue == FontListType.salesforceSans.rawValue {
+                UIFont.sldsUseDefaultFonts()
+                repeat {
+                    if let fontType = SLDSFontType.init(rawValue: fontTypes.count),
+                        let fontName = SLDSFont.sldsFontTypeName(fontType) {
+                        fontTypes.append(fontName.replacingOccurrences(of: "SLDSFontType", with: ""))
+                    }
+                } while SLDSFontType.init(rawValue: fontTypes.count)?.hashValue != 0
+            }
+            else {
+                for var fontName in customFonts {
+                    UIFont.sldsUse(fontName, fromBundle: "CustomFont", for: SLDSFontType.init(rawValue:fontTypes.count)!)
+                    fontName = fontName.replacingOccurrences(of: "ProximaNovaSoft-", with: "")
+                    fontTypes.append(fontName.replacingOccurrences(of: ".otf", with: ""))
+                }
+            }
+        }
+    }
+
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Fonts"
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "fontCell")
-        
-        // NOTE: Collecting all the Font Names
-        repeat {
-            if let fontType = SLDSFontType.init(rawValue: fontTypes.count),
-                let fontName = SLDSFont.sldsFontTypeName(fontType) {
-                fontTypes.append(fontName.replacingOccurrences(of: "SLDSFontType", with: ""))
-            }
-        } while SLDSFontType.init(rawValue: fontTypes.count)?.hashValue != 0
         
         // NOTE: Collecting all the Font Sizes
         repeat {
@@ -39,7 +73,7 @@ class FontListTableViewController: UITableViewController {
             }
         } while SLDSFontSizeType.init(rawValue: fontSizes.count)?.hashValue != 0
     }
-
+    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func didReceiveMemoryWarning() {
@@ -75,26 +109,7 @@ class FontListTableViewController: UITableViewController {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = SectionHeaderView()
-        if section > 0 && section < self.customFonts.count {
-            var customButton : UIButton
-            if(customButtons.count >= section) {
-                // NOTE - Reusing buttons in order to save toggle state.
-                customButton = self.customButtons[section-1]
-            }
-            else {
-                customButton = UIButton(frame: CGRect(x: self.view.frame.width - 70, y: 6.0, width: 60.0, height: 25.0))
-                customButton.tag = section
-                customButton.setTitle("Default", for: .normal)
-                customButton.setTitle("Custom", for: .selected)
-                customButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .small)
-                customButton.setTitleColor(UIColor.sldsColorText(.link), for: .normal)
-                customButton.addTarget(self, action: #selector(FontListTableViewController.handleCutomButton(_:)), for: .touchUpInside)
-                self.customButtons.append(customButton)
-            }
-            header.addSubview(customButton)
-        }
-        return header
+        return SectionHeaderView()
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -118,22 +133,5 @@ class FontListTableViewController: UITableViewController {
         let controller  = FontViewController()
         controller.indexPath = indexPath
         self.navigationController?.pushViewController(controller, animated: true)
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func handleCutomButton(_ button:UIButton) {
-        button.isSelected = !button.isSelected
-        if button.isSelected {
-            let fontName = customFonts[button.tag];
-            UIFont.sldsUse(fontName, fromBundle: "CustomFont", for: SLDSFontType(rawValue: button.tag)!)
-        }
-        else {
-            UIFont.sldsUseDefaultFont(for: SLDSFontType(rawValue: button.tag)!)
-        }
-        
-        self.tableView.beginUpdates()
-        self.tableView.reloadSections(IndexSet(integer: button.tag), with: .fade)
-        self.tableView.endUpdates()
     }
 }
