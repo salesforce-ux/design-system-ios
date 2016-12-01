@@ -93,7 +93,7 @@ class ColorViewController: UIViewController {
         
         //copyButton.setImage(UIImage.sldsIconUtility(.copy, with: UIColor.sldsColorText(.brand), andSize: 40), for: .normal)
         self.view.addSubview(copyButton)
-        self.view.addConstraints(ConstraintsHelper.stackV(item: copyButton, toItem: textExample, center: true, invert: false, xOffset: 0, yOffset: 50))
+        self.view.addConstraints(ConstraintsHelper.stackV(item: copyButton, toItem: textExample, xAlignment: "center", direction: "down", xOffset: 0, yOffset: 50))
         
         
         

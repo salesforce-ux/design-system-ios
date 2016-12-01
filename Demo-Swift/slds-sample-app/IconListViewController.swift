@@ -61,7 +61,7 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         
         switchIcon = UIImageView(image: UIImage.sldsIconCustom(.custom3, with: UIColor.sldsColorText(.inputIcon), andBGColor: UIColor.white, andSize: 36))
         self.view.addSubview(switchIcon)
-        self.view.addConstraints(ConstraintsHelper.stackH(item: switchIcon, toItem: switchView, center: true, invert: true, xOffset: -5, yOffset: 0))
+        self.view.addConstraints(ConstraintsHelper.stackH(item: switchIcon, toItem: switchView, yAlignment: "center", direction: "right", xOffset: -5, yOffset: 0))
         
         searchField = SearchField()
         self.view.addSubview(searchField)
