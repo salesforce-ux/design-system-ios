@@ -10,7 +10,7 @@ import Foundation
 
 class SearchField: UITextField {
     
-    let padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15);
+    let padding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16);
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -24,6 +24,14 @@ class SearchField: UITextField {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    func focus(_ shouldFocus: Bool) {
+        if shouldFocus {
+            self.layer.borderColor = UIColor.sldsColorBorder(.inputDisabled).cgColor
+        } else {
+            self.layer.borderColor = UIColor.sldsColorBorder(.input).cgColor
+        }
+    }
 
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -31,7 +39,7 @@ class SearchField: UITextField {
         self.backgroundColor = UIColor.white
         self.layer.borderColor = UIColor.sldsColorBorder(.input).cgColor
         self.layer.borderWidth = 1
-        self.layer.cornerRadius = 18
+        self.layer.cornerRadius = 16
         self.placeholder = "Search"
         self.font = UIFont.sldsFont(.regular, with: .medium)
     }

@@ -31,7 +31,10 @@ class MainListViewController: UITableViewController {
                              (FontListType.proximaNova.rawValue, FontListTableViewController.self)]),
 
             TableData(sectionTitle: "SLDS Icons",
-                      rows: [("Icons",IconListViewController.self)])
+                      rows: [(IconListType.action.rawValue, IconListViewController.self),
+                             (IconListType.custom.rawValue, IconListViewController.self),
+                             (IconListType.utility.rawValue, IconListViewController.self),
+                             (IconListType.standard.rawValue, IconListViewController.self)])
         ]
     }
     

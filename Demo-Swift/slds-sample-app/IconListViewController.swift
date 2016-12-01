@@ -1,3 +1,12 @@
+
+
+enum IconListType : String {
+    case action = "Action"
+    case custom = "Custom"
+    case standard = "Standard"
+    case utility = "Utility"
+}
+
 class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UITextFieldDelegate {
 
     var collectionView: UICollectionView!
@@ -5,27 +14,90 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     var switchHeader: UIView!
     var switchIcon: UIImageView!
     var searchField: SearchField!
+    var utility: Bool!
+    
+    var tap: UITapGestureRecognizer!
     
     struct IconObject {
         var icon : UIImage!
         var name : String!
+        var index: Int!
     }
+    
+    var darkMode = false
     
     var icons = [IconObject]()
     var filteredIcons = [IconObject]()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func addIcons() {
+    override var title: String? {
+        didSet {
+            super.title = self.title
+            if let newTitle = self.title {
+                self.addContent(newTitle)
+                if self.title == "Utility" {
+                    utility = true
+                } else {
+                    utility = false
+                }
+            }
+        }
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func addContent(_ iconType: String) {
         
-        // NOTE: Collecting all the Icon Names
+        var maxFlag = true
+        var i = Array<IconObject>()
+        
         repeat {
-            let icon = UIImage.sldsIconAction(SLDSIconActionType.init(rawValue: icons.count)!, withSize: 54)
-            let name = NSString.sldsIconAction(SLDSIconActionType.init(rawValue: icons.count)!) as String
-            icons.append(IconObject(icon: icon, name: name))
-        } while SLDSIconActionType.init(rawValue: icons.count)?.hashValue != 0
+            switch iconType {
+                
+            case IconListType.action.rawValue:
+                if let value = SLDSIconActionType.init(rawValue: i.count) {
+                    i.append(IconObject(icon: (UIImage.sldsIconAction(value, withSize: 48)),
+                                        name: NSString.sldsIconAction(value) as String,
+                                        index: i.count ))
+                }
+                
+                maxFlag = SLDSIconActionType.init(rawValue: i.count)?.hashValue != 0
+                
+            case IconListType.custom.rawValue:
+                if let value = SLDSIconCustomType.init(rawValue: i.count) {
+                    i.append(IconObject(icon: (UIImage.sldsIconCustom(value, withSize: 48)),
+                                        name: NSString.sldsIconCustom(value) as String,
+                                        index: i.count ))
+                }
+                maxFlag = SLDSIconCustomType.init(rawValue: i.count)?.hashValue != 0
+                
+            case IconListType.utility.rawValue:
+                if let value = SLDSIconUtilityType.init(rawValue: i.count) {
+                    i.append(IconObject(icon: (UIImage.sldsIconUtility(value, with: UIColor.sldsColorBackground(.backgroundIconWaffle), andSize: 40)),
+                                        name: NSString.sldsIconUtility(value) as String,
+                                        index: i.count ))
+                }
+                maxFlag = SLDSIconUtilityType.init(rawValue: i.count)?.hashValue != 0
+                
+            case IconListType.standard.rawValue:
+                if let value = SLDSIconStandardType.init(rawValue: i.count) {
+                    i.append(IconObject(icon: (UIImage.sldsIconStandard(value, withSize: 48)),
+                                        name: NSString.sldsIconStandard(value) as String,
+                                        index: i.count ))
+                }
+                maxFlag = SLDSIconStandardType.init(rawValue: i.count)?.hashValue != 0
+                
+                
+            default : maxFlag = false
+                
+            }
+            
+        } while maxFlag
         
-        filteredIcons = icons
+        // NOTE : Commit the new values
+        self.icons = i
+        filteredIcons = self.icons
     }
 
 
@@ -37,7 +109,7 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         // Do any additional setup after loading the view, typically from a nib.
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
-        layout.itemSize = CGSize(width: 75, height: 75)
+        layout.itemSize = CGSize(width: 60, height: 60)
         
         switchHeader = UIView()
         self.view.addSubview(switchHeader)
@@ -52,11 +124,13 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         self.view.addConstraints(ConstraintsHelper.addConstraints(item: hr, toItem: switchHeader, width: self.view.frame.width, height: 1, xAlignment: .center, yAlignment: .bottom, xOffset: 0, yOffset: 0))
         
         switchView = UISwitch()
-        switchView.onTintColor = UIColor.sldsColorBackground(.brand)
-        switchView.offImage = UIImage.sldsIconUtility(.add, with: UIColor.black, andSize: 32)
-        switchView.onImage = UIImage.sldsIconCustom(.custom3, withSize: 20)
+        switchView.onTintColor = UIColor.sldsColorBorder(.input)
+        switchView.tintColor = UIColor.white
+        switchView.layer.borderColor = UIColor.sldsColorBorder(.input).cgColor
+        switchView.layer.borderWidth = 1
+        switchView.layer.cornerRadius = 16
         self.view.addSubview(switchView)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchView, toItem: switchHeader, xAlignment: .right, yAlignment: .center, xOffset: -30, yOffset: 0))
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchView, toItem: switchHeader, xAlignment: .right, yAlignment: .center, xOffset: -20, yOffset: 0))
         
         
         switchIcon = UIImageView(image: UIImage.sldsIconCustom(.custom3, with: UIColor.sldsColorText(.inputIcon), andBGColor: UIColor.white, andSize: 36))
@@ -65,7 +139,7 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         
         searchField = SearchField()
         self.view.addSubview(searchField)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: searchField, toItem: switchHeader, width: 200, height: 36, xAlignment: .left, yAlignment: .center, xOffset: 30, yOffset: 0))
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: searchField, toItem: switchHeader, width: self.view.frame.width - 96 - switchView.frame.width, height: 40, xAlignment: .left, yAlignment: .center, xOffset: 20, yOffset: 0))
         searchField.addTarget(self, action: #selector(IconListViewController.filterIcons), for: UIControlEvents.editingChanged)
         searchField.delegate = self;
         searchField.returnKeyType = .done
@@ -78,35 +152,61 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         self.view.addSubview(collectionView)
         
         switchView.addTarget(self, action: #selector(IconListViewController.switchIsChanged), for: UIControlEvents.valueChanged)
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IconListViewController.dismissKeyboard))
-        
-        self.view.addGestureRecognizer(tap)
-        
-        self.addIcons()
+        tap = UITapGestureRecognizer(target: self, action: #selector(IconListViewController.dismissKeyboard))
     }
     
     func dismissKeyboard() {
+        searchField.focus(false)
+        self.view.removeGestureRecognizer(tap)
         self.view.endEditing(true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == searchField {
             textField.resignFirstResponder()
+            searchField.focus(false)
+            self.view.removeGestureRecognizer(tap)
             return false
         }
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == searchField {
+            print("sdfsfddsf")
+            self.view.addGestureRecognizer(tap)
+            searchField.focus(true)
+        }
+    }
+    
+    func updateUtilitycolor() {
+        let c = darkMode ? UIColor.sldsColorBackground(.backgroundIconWaffle) : UIColor.white
+        filteredIcons = filteredIcons.map {
+            let iconObj = $0 as IconObject
+            return IconObject(icon: (UIImage.sldsIconUtility(SLDSIconUtilityType.init(rawValue: iconObj.index)!, with: c, andSize: 40)),
+                              name: iconObj.name,
+                              index: iconObj.index )
+        }
+        self.collectionView.reloadData()
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func switchIsChanged(s: UISwitch) {
         if s.isOn {
-            self.collectionView.backgroundColor = UIColor.sldsColorBackground(.backgroundAltInverse)
+            if utility! {
+                updateUtilitycolor()
+            }
+            self.collectionView.backgroundColor = UIColor.sldsColorBackground(.backgroundInverse)
             switchIcon.image = UIImage.sldsIconCustom(.custom10, with: UIColor.sldsColorText(.inputIcon), andBGColor: UIColor.white, andSize: 36)
+            darkMode = true
         } else {
+            if utility! {
+                updateUtilitycolor()
+            }
             self.collectionView.backgroundColor = UIColor.white
             switchIcon.image = UIImage.sldsIconCustom(.custom3, with: UIColor.sldsColorText(.inputIcon), andBGColor: UIColor.white, andSize: 36)
+            darkMode = false
         }
     }
     
@@ -119,17 +219,21 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func filterIcons(t: UITextField) {
-        let count = filteredIcons.count
         filteredIcons = icons.filter {
             if t.text == "" {
                 return true
             } else {
-                return ($0 as IconObject).name.range(of: t.text!) != nil
+                return ($0 as IconObject).name.lowercased().range(of: (t.text?.lowercased())!) != nil
             }
         }
-        if count != filteredIcons.count {
-            self.collectionView.reloadSections(IndexSet(integer: 0))
-        }
+        self.collectionView.reloadData()
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = IconViewController()
+        self.navigationController?.show(controller, sender: self)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -138,9 +242,12 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
         
         let icon = filteredIcons[indexPath.item].icon
-        
-    
         let iconContainer = UIImageView(image: icon)
+        
+        if utility! {
+            iconContainer.backgroundColor = darkMode ? UIColor.sldsColorBackground(.backgroundInverse) : UIColor.white
+        }
+        
         cell.addSubview(iconContainer)
         cell.contentView.addSubview(iconContainer)
         cell.contentView.addConstraints(ConstraintsHelper.addConstraints(item: iconContainer, toItem: cell.contentView, xAlignment: .center, yAlignment: .center, xOffset: 0, yOffset: 0))
