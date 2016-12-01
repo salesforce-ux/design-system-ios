@@ -22,9 +22,9 @@ class MainListViewController: UITableViewController {
                       rows: [("User Records",UserListViewController.self)]),
             
             TableData(sectionTitle: "SLDS Reference",
-                      rows: [("Background Colors", ColorListViewController.self),
-                             ("Text Colors", ColorListViewController.self),
-                             ("Border Colors", ColorListViewController.self),
+                      rows: [(ColorListType.background.rawValue, ColorListViewController.self),
+                             (ColorListType.border.rawValue, ColorListViewController.self),
+                             (ColorListType.text.rawValue, ColorListViewController.self),
                              ("Fonts", FontListTableViewController.self),
                              ("Icons",IconListViewController.self)])
         ]
