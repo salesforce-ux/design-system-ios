@@ -1,13 +1,23 @@
-//
-//  ViewController.swift
-//  slds-sample-app
-//
-//  Created by John Earle on 11/7/16.
-//  Copyright © 2016 John Earle. All rights reserved.
-//
+/*
+ Copyright (c) 2016, salesforce.com, inc. All rights reserved.
+ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+ Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ Neither the name of salesforce.com, inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
 
 import UIKit
 
+//––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+enum ColorListType : String {
+    case background = "Background"
+    case border = "Border"
+    case text = "Text"
+}
+
+//––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 class ColorListViewController: UITableViewController {
     
@@ -72,47 +82,41 @@ class ColorListViewController: UITableViewController {
     
     func addContent(_ colorType: String) {
         
+        var maxFlag = true
         var c = Array<ColorObject>()
-        var max = 1
-        var color = UIColor.white
-        var alias = ""
         
-        while max != 0 {
+        repeat {
             switch colorType {
-                case "Background Colors":
-                    if (SLDSColorBackgroundType.init(rawValue: max)?.hashValue)! == 0 {
-                        max = -1
-                        break
-                    }
-                    color = UIColor.sldsColorBackground(SLDSColorBackgroundType.init(rawValue: max)!)
-                    alias = NSString.sldsColorBackgroundName(SLDSColorBackgroundType.init(rawValue: max)!) as String
-                case "Text Colors":
-                    if (SLDSColorTextType.init(rawValue: max)?.hashValue)! == 0 {
-                        max = -1
-                        break
-                    }
-                    color = UIColor.sldsColorText(SLDSColorTextType.init(rawValue: max)!)
-                    alias = NSString.sldsColorTextName(SLDSColorTextType.init(rawValue: max)!) as String
-                case "Border Colors":
-                    max += 1
-                    if (SLDSColorBorderType.init(rawValue: max)?.hashValue)! == 0 {
-                        max = -1
-                        break
-                    }
-                    color = UIColor.sldsColorBorder(SLDSColorBorderType.init(rawValue: max)!)
-                    alias = NSString.sldsColorBorderName(SLDSColorBorderType.init(rawValue: max)!) as String
-                default:
-                    max = -1
-                    break
+            
+            case ColorListType.background.rawValue:
+                if let value = SLDSColorBackgroundType.init(rawValue: c.count) {
+                    c.append(ColorObject(color: UIColor.sldsColorBackground(value),
+                                         alias: NSString.sldsColorBackgroundName(value) as String ))
+                }
+                maxFlag = SLDSColorBackgroundType.init(rawValue: c.count)?.hashValue != 0
+            
+            case ColorListType.border.rawValue:
+                if let value = SLDSColorBorderType.init(rawValue: c.count) {
+                    c.append(ColorObject(color: UIColor.sldsColorBorder(value),
+                                         alias: NSString.sldsColorBorderName(value) as String ))
+                }
+                maxFlag = SLDSColorBorderType.init(rawValue: c.count+1)?.hashValue != 0
+            
+            case ColorListType.text.rawValue:
+                if let value = SLDSColorTextType.init(rawValue: c.count) {
+                    c.append(ColorObject(color: UIColor.sldsColorText(value),
+                                         alias: NSString.sldsColorTextName(value) as String ))
+                }
+                maxFlag = SLDSColorTextType.init(rawValue: c.count)?.hashValue != 0
+            
+            default : maxFlag = false
+                
             }
             
-            c.append(ColorObject(color: color, alias: alias))
-            max += 1
-        }
+        } while maxFlag
         
-        if c.count > 0 {
-            self.colors = c
-        }
+        // NOTE : Commit the new values
+        self.colors = c
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

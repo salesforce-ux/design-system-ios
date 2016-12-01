@@ -11,9 +11,11 @@ import UIKit
 
 class FontListTableViewController: UITableViewController {
     
-    var fontTypes = Array<String>();
-    var fontSizes = Array<String>();
-  
+    var fontTypes = [String]()
+    var fontSizes = [String]()
+    var customButtons = [UIButton]()
+    var customFonts = ["ProximaNovaSoft-Regular.otf", "ProximaNovaSoft-Medium.otf", "ProximaNovaSoft-Semibold.otf", "ProximaNovaSoft-Bold.otf"]
+    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func viewDidLoad() {
@@ -73,7 +75,25 @@ class FontListTableViewController: UITableViewController {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return SectionHeaderView()
+        let header = SectionHeaderView()
+        if section > 0 && section < self.customFonts.count {
+            var customButton : UIButton
+            if(customButtons.count >= section) {
+                // NOTE - Reusing buttons in order to save toggle state.
+                customButton = self.customButtons[section-1]
+            }
+            else {
+                customButton = UIButton(type: .roundedRect)//frame: CGRect(x: self.view.frame.width - 63, y: 3.0, width: 0.0, height: 0.0))
+                //customButton.setTitle("Default", for: .normal)
+                //customButton.setTitle("Custom", for: .selected)
+                //customButton.tag = section
+                //customButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .medium)
+                //customButton.addTarget(self, action: #selector(FontListTableViewController.handleCutomButton(_:)), for: .touchUpInside)
+                self.customButtons.append(customButton)
+            }
+            header.addSubview(customButton)
+        }
+        return header
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -90,5 +110,21 @@ class FontListTableViewController: UITableViewController {
         cell.textLabel?.font = UIFont.sldsFont(SLDSFontType.init(rawValue: indexPath.section)!, with:SLDSFontSizeType.init(rawValue:indexPath.row)!)
         return cell
     }
-
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func handleCutomButton(_ button:UIButton) {
+        button.isSelected = !button.isSelected
+        if button.isSelected {
+            let fontName = customFonts[button.tag];
+            UIFont.sldsUse(fontName, fromBundle: "CustomFont", for: SLDSFontType(rawValue: button.tag)!)
+        }
+        else {
+            UIFont.sldsUseDefaultFont(for: SLDSFontType(rawValue: button.tag)!)
+        }
+        
+        self.tableView.beginUpdates()
+        self.tableView.reloadSections(IndexSet(integer: button.tag), with: .fade)
+        self.tableView.endUpdates()
+    }
 }

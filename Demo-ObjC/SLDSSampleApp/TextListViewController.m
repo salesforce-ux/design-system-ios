@@ -111,8 +111,8 @@
         else
         {
             customButton = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width-70, 3, 60, 20)];
+            [customButton setTitle:@"Default" forState:UIControlStateNormal];
             [customButton setTitle:@"Custom" forState:UIControlStateSelected];
-            [customButton setTitle:@"Regular" forState:UIControlStateNormal];
             [customButton setTag:section];
             [customButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [customButton.titleLabel setFont:[UIFont sldsFont:SLDSFontTypeRegular withSize:SLDSFontSizeSmall]];
