@@ -62,12 +62,16 @@ class ConstraintsHelper {
         
         var constraints = Array<NSLayoutConstraint>()
         
+        var yOff = yOffset
         var yAtt1 = NSLayoutAttribute.top
         var yAtt2 = NSLayoutAttribute.bottom
         
         if direction == .up {
             yAtt1 = NSLayoutAttribute.bottom
             yAtt2 = NSLayoutAttribute.top
+        }
+        else {
+            yOff = -yOff
         }
         
         
@@ -86,7 +90,7 @@ class ConstraintsHelper {
                                    toItem: toItem,
                                    attribute: yAtt2,
                                    multiplier: 1.0,
-                                   constant: yOffset))
+                                   constant: yOff))
         
         if width != nil {
             constraints.append(NSLayoutConstraint(item: item,
@@ -117,12 +121,17 @@ class ConstraintsHelper {
         
         var constraints = Array<NSLayoutConstraint>()
         
+        var xOff = xOffset
         var xAtt1 = NSLayoutAttribute.right
         var xAtt2 = NSLayoutAttribute.left
         
         if direction == .left {
             xAtt1 = NSLayoutAttribute.left
             xAtt2 = NSLayoutAttribute.right
+        }
+        else
+        {
+            xOff = -xOff
         }
         
         constraints.append(NSLayoutConstraint(item: item,
@@ -131,7 +140,7 @@ class ConstraintsHelper {
                                    toItem: toItem,
                                    attribute: xAtt2,
                                    multiplier: 1.0,
-                                   constant: xOffset))
+                                   constant: xOff))
     
         constraints.append(NSLayoutConstraint(item: item,
                                    attribute: setY(yAlignment),
@@ -171,13 +180,16 @@ class ConstraintsHelper {
         
         var constraints = Array<NSLayoutConstraint>()
         
+        let xOff = xAlignment == .right ? -xOffset : xOffset
+        let yOff = yAlignment == .bottom ? -yOffset : yOffset
+        
         constraints.append(NSLayoutConstraint(item: item,
                                    attribute: setX(xAlignment),
                                    relatedBy: NSLayoutRelation.equal,
                                    toItem: toItem,
                                    attribute: setX(xAlignment),
                                    multiplier: 1.0,
-                                   constant: xOffset))
+                                   constant: xOff))
         
         constraints.append(NSLayoutConstraint(item: item,
                                    attribute: setY(yAlignment),
@@ -185,7 +197,7 @@ class ConstraintsHelper {
                                    toItem: toItem,
                                    attribute: setY(yAlignment),
                                    multiplier: 1.0,
-                                   constant: yOffset))
+                                   constant: yOff))
         
         if width != nil {
             constraints.append(NSLayoutConstraint(item: item,

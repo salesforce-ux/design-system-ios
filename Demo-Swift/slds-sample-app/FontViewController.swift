@@ -88,7 +88,7 @@ class FontViewController: UIViewController {
                                                                   xAlignment: .center,
                                                                   yAlignment: .bottom,
                                                                   xOffset: 0,
-                                                                  yOffset: 20))
+                                                                  yOffset: 0))
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

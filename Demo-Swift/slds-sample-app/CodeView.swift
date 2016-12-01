@@ -89,7 +89,7 @@ class CodeView: UIView {
                                                              xAlignment: .center,
                                                              yAlignment: .bottom,
                                                              xOffset: 0,
-                                                             yOffset: -50))
+                                                             yOffset: 40))
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
