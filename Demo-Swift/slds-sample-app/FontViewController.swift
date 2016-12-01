@@ -51,8 +51,8 @@ class FontViewController: UIViewController {
                                                                   toItem: self.view,
                                                                   width: self.view.frame.width,
                                                                   height:60,
-                                                                  xAlignment: "center",
-                                                                  yAlignment: "top",
+                                                                  xAlignment: .center,
+                                                                  yAlignment: .top,
                                                                   xOffset: 0,
                                                                   yOffset: 20))
         
@@ -60,8 +60,8 @@ class FontViewController: UIViewController {
                                                                   toItem: self.sampleText,
                                                                   width: 220,
                                                                   height: 50,
-                                                                  xAlignment: "center",
-                                                                  yAlignment: "bottom",
+                                                                  xAlignment: .center,
+                                                                  yAlignment: .bottom,
                                                                   xOffset: 0,
                                                                   yOffset: 60))
     }
