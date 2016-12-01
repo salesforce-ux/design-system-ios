@@ -10,32 +10,56 @@ import Foundation
 
 class ConstraintsHelper {
     
-    static func stackV(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, center: Bool, invert: Bool, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
+    // MARK: helpers
+    
+    static func setX (_ alignment: String) -> NSLayoutAttribute {
+        switch alignment {
+        case "left":
+            return NSLayoutAttribute.left
+        case "right":
+            return NSLayoutAttribute.right
+        case "center":
+            return NSLayoutAttribute.centerX
+        default:
+            return NSLayoutAttribute.left
+        }
+    }
+    
+    static func setY (_ alignment: String) -> NSLayoutAttribute {
+        switch alignment {
+        case "top":
+            return NSLayoutAttribute.top
+        case "bottom":
+            return NSLayoutAttribute.bottom
+        case "center":
+            return NSLayoutAttribute.centerY
+        default:
+            return NSLayoutAttribute.top
+        }
+    }
+    
+    static func stackV(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, xAlignment: String, direction: String, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
         
         item.translatesAutoresizingMaskIntoConstraints = false
         
         var constraints = Array<NSLayoutConstraint>()
         
-        let yAtt1 = invert ? NSLayoutAttribute.bottom : NSLayoutAttribute.top
-        let yAtt2 = invert ? NSLayoutAttribute.top : NSLayoutAttribute.bottom
+        var yAtt1 = NSLayoutAttribute.top
+        var yAtt2 = NSLayoutAttribute.bottom
         
-        if center {
-            constraints.append(NSLayoutConstraint(item: item,
-                                                  attribute: NSLayoutAttribute.centerX,
-                                                  relatedBy: NSLayoutRelation.equal,
-                                                  toItem: toItem,
-                                                  attribute: NSLayoutAttribute.centerX,
-                                                  multiplier: 1.0,
-                                                  constant: xOffset))
-        } else {
-            constraints.append(NSLayoutConstraint(item: item,
-                                                  attribute: NSLayoutAttribute.left,
-                                                  relatedBy: NSLayoutRelation.equal,
-                                                  toItem: toItem,
-                                                  attribute: NSLayoutAttribute.left,
-                                                  multiplier: 1.0,
-                                                  constant: xOffset))
+        if direction == "up" {
+            yAtt1 = NSLayoutAttribute.bottom
+            yAtt2 = NSLayoutAttribute.top
         }
+        
+        
+        constraints.append(NSLayoutConstraint(item: item,
+                                                  attribute: setX(xAlignment),
+                                                  relatedBy: NSLayoutRelation.equal,
+                                                  toItem: toItem,
+                                                  attribute: setX(xAlignment),
+                                                  multiplier: 1.0,
+                                                  constant: xOffset))
         
         
         constraints.append(NSLayoutConstraint(item: item,
@@ -69,14 +93,19 @@ class ConstraintsHelper {
         return constraints
     }
     
-    static func stackH(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, center: Bool, invert: Bool, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
+    static func stackH(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, yAlignment: String, direction: String, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
         
         item.translatesAutoresizingMaskIntoConstraints = false
         
         var constraints = Array<NSLayoutConstraint>()
         
-        let xAtt1 = invert ? NSLayoutAttribute.right : NSLayoutAttribute.left
-        let xAtt2 = invert ? NSLayoutAttribute.left : NSLayoutAttribute.right
+        var xAtt1 = NSLayoutAttribute.right
+        var xAtt2 = NSLayoutAttribute.left
+        
+        if direction == "left" {
+            xAtt1 = NSLayoutAttribute.left
+            xAtt2 = NSLayoutAttribute.right
+        }
         
         constraints.append(NSLayoutConstraint(item: item,
                                    attribute: xAtt1,
@@ -85,24 +114,14 @@ class ConstraintsHelper {
                                    attribute: xAtt2,
                                    multiplier: 1.0,
                                    constant: xOffset))
-        
-        if center {
-            constraints.append(NSLayoutConstraint(item: item,
-                                       attribute: NSLayoutAttribute.centerY,
-                                       relatedBy: NSLayoutRelation.equal,
-                                       toItem: toItem,
-                                       attribute: NSLayoutAttribute.centerY,
-                                       multiplier: 1.0,
-                                       constant: yOffset))
-        } else {
-            constraints.append(NSLayoutConstraint(item: item,
-                                                  attribute: NSLayoutAttribute.top,
-                                                  relatedBy: NSLayoutRelation.equal,
-                                                  toItem: toItem,
-                                                  attribute: NSLayoutAttribute.top,
-                                                  multiplier: 1.0,
-                                                  constant: yOffset))
-        }
+    
+        constraints.append(NSLayoutConstraint(item: item,
+                                   attribute: setY(yAlignment),
+                                   relatedBy: NSLayoutRelation.equal,
+                                   toItem: toItem,
+                                   attribute: setY(yAlignment),
+                                   multiplier: 1.0,
+                                   constant: yOffset))
         
         if width != nil {
             constraints.append(NSLayoutConstraint(item: item,
@@ -133,32 +152,6 @@ class ConstraintsHelper {
         item.translatesAutoresizingMaskIntoConstraints = false
         
         var constraints = Array<NSLayoutConstraint>()
-        
-        func setX (_ alignment: String) -> NSLayoutAttribute {
-            switch alignment {
-                case "left":
-                    return NSLayoutAttribute.left
-                case "right":
-                    return NSLayoutAttribute.right
-                case "center":
-                    return NSLayoutAttribute.centerX
-                default:
-                    return NSLayoutAttribute.left
-            }
-        }
-        
-        func setY (_ alignment: String) -> NSLayoutAttribute {
-            switch alignment {
-                case "top":
-                    return NSLayoutAttribute.top
-                case "bottom":
-                    return NSLayoutAttribute.bottom
-                case "center":
-                    return NSLayoutAttribute.centerY
-                default:
-                    return NSLayoutAttribute.top
-            }
-        }
         
         constraints.append(NSLayoutConstraint(item: item,
                                    attribute: setX(xAlignment),
