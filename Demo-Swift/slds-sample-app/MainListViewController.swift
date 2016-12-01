@@ -28,7 +28,7 @@ class MainListViewController: UITableViewController {
             
             TableData(sectionTitle: "SLDS Fonts",
                       rows: [(FontListType.salesforceSans.rawValue, FontListTableViewController.self),
-                             (FontListType.proximaNova.rawValue, FontListTableViewController.self)]),
+                             (FontListType.lato.rawValue, FontListTableViewController.self)]),
 
             TableData(sectionTitle: "SLDS Icons",
                       rows: [("Icons",IconListViewController.self)])

@@ -11,14 +11,14 @@ import UIKit
 
 enum FontListType : String {
     case salesforceSans = "SalesforceSans"
-    case proximaNova = "ProximaNova"
+    case lato = "Lato"
 }
 
 class FontListTableViewController: UITableViewController {
     
     var fontTypes = [String]()
     var fontSizes = [String]()
-    var customFonts = ["ProximaNovaSoft-Regular.otf", "ProximaNovaSoft-Medium.otf", "ProximaNovaSoft-Semibold.otf", "ProximaNovaSoft-Bold.otf"]
+    var customFonts = ["Lato-Thin.ttf", "Lato-Light.ttf", "Lato-Regular.ttf", "Lato-Semibold.ttf", "Lato-Bold.ttf"]
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -52,8 +52,8 @@ class FontListTableViewController: UITableViewController {
             else {
                 for var fontName in customFonts {
                     UIFont.sldsUse(fontName, fromBundle: "CustomFont", for: SLDSFontType.init(rawValue:fontTypes.count)!)
-                    fontName = fontName.replacingOccurrences(of: "ProximaNovaSoft-", with: "")
-                    fontTypes.append(fontName.replacingOccurrences(of: ".otf", with: ""))
+                    fontName = fontName.replacingOccurrences(of: "Lato-", with: "")
+                    fontTypes.append(fontName.replacingOccurrences(of: ".ttf", with: ""))
                 }
             }
         }
