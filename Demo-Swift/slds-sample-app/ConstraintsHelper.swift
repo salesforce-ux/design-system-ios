@@ -69,7 +69,7 @@ class ConstraintsHelper {
         return constraints
     }
     
-    static func stackH(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, invert: Bool, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
+    static func stackH(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, center: Bool, invert: Bool, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
         
         item.translatesAutoresizingMaskIntoConstraints = false
         
@@ -86,13 +86,23 @@ class ConstraintsHelper {
                                    multiplier: 1.0,
                                    constant: xOffset))
         
-        constraints.append(NSLayoutConstraint(item: item,
-                                   attribute: NSLayoutAttribute.top,
-                                   relatedBy: NSLayoutRelation.equal,
-                                   toItem: toItem,
-                                   attribute: NSLayoutAttribute.top,
-                                   multiplier: 1.0,
-                                   constant: yOffset))
+        if center {
+            constraints.append(NSLayoutConstraint(item: item,
+                                       attribute: NSLayoutAttribute.centerY,
+                                       relatedBy: NSLayoutRelation.equal,
+                                       toItem: toItem,
+                                       attribute: NSLayoutAttribute.centerY,
+                                       multiplier: 1.0,
+                                       constant: yOffset))
+        } else {
+            constraints.append(NSLayoutConstraint(item: item,
+                                                  attribute: NSLayoutAttribute.top,
+                                                  relatedBy: NSLayoutRelation.equal,
+                                                  toItem: toItem,
+                                                  attribute: NSLayoutAttribute.top,
+                                                  multiplier: 1.0,
+                                                  constant: yOffset))
+        }
         
         if width != nil {
             constraints.append(NSLayoutConstraint(item: item,

@@ -31,6 +31,7 @@
 		FCB47EDD1DD3D09400BB6C1B /* ConstraintsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EDC1DD3D09400BB6C1B /* ConstraintsHelper.swift */; };
 		FCB47EE01DD4F10E00BB6C1B /* NavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */; };
 		FCCEE6471DEE4DE600949840 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEE6461DEE4DE600949840 /* IconCell.swift */; };
+		FCCEE6501DEF889C00949840 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEE64F1DEF889C00949840 /* SearchField.swift */; };
 		FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +116,7 @@
 		FCB47EDC1DD3D09400BB6C1B /* ConstraintsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintsHelper.swift; sourceTree = "<group>"; };
 		FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavButton.swift; sourceTree = "<group>"; };
 		FCCEE6461DEE4DE600949840 /* IconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
+		FCCEE64F1DEF889C00949840 /* SearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 		FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,9 +185,9 @@
 		FC4299171DDA4E7500891FBD /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FC4299181DDA4FE100891FBD /* ColorListViewController.swift */,
 				FC42991E1DDA8FC500891FBD /* ColorViewController.swift */,
 				206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */,
+				FC4299181DDA4FE100891FBD /* ColorListViewController.swift */,
 				209A56281DEF546400327910 /* IconListViewController.swift */,
 				FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */,
 				206AA81F1DE3B82800375432 /* UserListViewController.swift */,
@@ -259,6 +261,7 @@
 				FCCEE6461DEE4DE600949840 /* IconCell.swift */,
 				FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */,
 				FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */,
+				FCCEE64F1DEF889C00949840 /* SearchField.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				FCB47EDD1DD3D09400BB6C1B /* ConstraintsHelper.swift in Sources */,
 				FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */,
 				FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */,
+				FCCEE6501DEF889C00949840 /* SearchField.swift in Sources */,
 				206AA8201DE3B82800375432 /* UserListViewController.swift in Sources */,
 				FCCEE6471DEE4DE600949840 /* IconCell.swift in Sources */,
 				FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */,
