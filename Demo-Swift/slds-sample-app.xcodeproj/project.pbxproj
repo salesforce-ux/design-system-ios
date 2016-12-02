@@ -21,6 +21,7 @@
 		FC4AC3841DF0D7D000D3D9BE /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AC3831DF0D7D000D3D9BE /* IconViewController.swift */; };
 		FC4FF3DB1DE4D033009B3D2E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */; };
 		FC7F2E3E1DF2038A0011684A /* libSalesforceDesignSystem-Extended.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7F2E3B1DF2037E0011684A /* libSalesforceDesignSystem-Extended.a */; };
+		FC7F2E411DF2310F0011684A /* AccountContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7F2E401DF2310F0011684A /* AccountContainerViewController.swift */; };
 		FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EA81DD0FCDB00BB6C1B /* AppDelegate.swift */; };
 		FCB47EB01DD0FCDB00BB6C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */; };
 		FCB47EB31DD0FCDB00BB6C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB47EB11DD0FCDB00BB6C1B /* LaunchScreen.storyboard */; };
@@ -77,6 +78,7 @@
 		FC4AC3831DF0D7D000D3D9BE /* IconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconViewController.swift; sourceTree = "<group>"; };
 		FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SalesforceDesignSystem.xcodeproj; path = ../SalesforceDesignSystem.xcodeproj; sourceTree = "<group>"; };
+		FC7F2E401DF2310F0011684A /* AccountContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountContainerViewController.swift; sourceTree = "<group>"; };
 		FCB47EA51DD0FCDB00BB6C1B /* slds-sample-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "slds-sample-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB47EA81DD0FCDB00BB6C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				FC4AC3831DF0D7D000D3D9BE /* IconViewController.swift */,
 				FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */,
 				206AA81F1DE3B82800375432 /* AccountListViewController.swift */,
+				FC7F2E401DF2310F0011684A /* AccountContainerViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */,
 				206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */,
 				FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */,
+				FC7F2E411DF2310F0011684A /* AccountContainerViewController.swift in Sources */,
 				FC4AC3841DF0D7D000D3D9BE /* IconViewController.swift in Sources */,
 				209A56291DEF546400327910 /* IconListViewController.swift in Sources */,
 				FC4FF3DB1DE4D033009B3D2E /* ColorCell.swift in Sources */,

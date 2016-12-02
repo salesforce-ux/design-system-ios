@@ -10,11 +10,6 @@ import UIKit
 
 class AccountListViewController: UITableViewController {
     
-    var header = UIView()
-    var headerIcon = UIImageView()
-    var headerTitle = UILabel()
-    var headerSubText = UILabel()
-    
     enum AccountType : String {
         case direct = "Customer - Direct"
         case channel = "Customer - Channel"
@@ -30,7 +25,7 @@ class AccountListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Users"
+        self.title = "SLDS Sample App"
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,12 +37,12 @@ class AccountListViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 0
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
