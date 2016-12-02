@@ -12,7 +12,7 @@
 
 @interface UIImage (SLDSIconUtility)
 
-+(UIImage*)sldsIconUtility:(SLDSIconUtilityType)iconId withColor:(UIColor*)iconColor andSize:(short)size;
++(UIImage*)sldsIconUtility:(SLDSIconUtilityType)iconId withColor:(UIColor*)iconColor andSize: (CGFloat)size;
 
-+(UIImage*)sldsIconUtility:(SLDSIconUtilityType)iconId withSize:(short)size;
++(UIImage*)sldsIconUtility:(SLDSIconUtilityType)iconId withSize: (CGFloat)size;
 @end

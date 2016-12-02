@@ -119,15 +119,12 @@ class ConstraintsHelper {
         var constraints = Array<NSLayoutConstraint>()
         
         var xOff = xOffset
-        var xAtt1 = NSLayoutAttribute.right
-        var xAtt2 = NSLayoutAttribute.left
+        var xAtt1 = NSLayoutAttribute.left
+        var xAtt2 = NSLayoutAttribute.right
         
         if direction == .left {
-            xAtt1 = NSLayoutAttribute.left
-            xAtt2 = NSLayoutAttribute.right
-        }
-        else
-        {
+            xAtt1 = NSLayoutAttribute.right
+            xAtt2 = NSLayoutAttribute.left
             xOff = -xOff
         }
         

@@ -59,7 +59,7 @@ var saveHeader = function(opts){
   var fileName = path.join(opts.tempDir,CONFIG.OUTPUT_NAME+'.h');
 
   var lines = opts.spacingEnum.map(function(enumName){
-    return 'static const int ' + enumName + ' = ' +opts.spacings[enumName];
+    return 'static const CGFloat ' + enumName + ' = ' +opts.spacings[enumName];
   });
   var src = lines.join(';\n')+';';
   fs.outputFile(fileName, src, function(err){

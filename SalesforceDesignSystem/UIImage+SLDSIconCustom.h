@@ -10,7 +10,7 @@
 #import "SLDSIconCustom.h"
 
 @interface UIImage (SLDSIconCustom)
-+(UIImage*)sldsIconCustom:(SLDSIconCustomType)iconId withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(short)size;
++(UIImage*)sldsIconCustom:(SLDSIconCustomType)iconId withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize: (CGFloat)size;
 
-+(UIImage*)sldsIconCustom:(SLDSIconCustomType)iconId withSize:(short)size;
++(UIImage*)sldsIconCustom:(SLDSIconCustomType)iconId withSize: (CGFloat)size;
 @end

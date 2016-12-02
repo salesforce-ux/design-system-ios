@@ -8,16 +8,29 @@
 
 import UIKit
 
-class UserListViewController: UITableViewController {
+class AccountListViewController: UITableViewController {
+    
+    var header = UIView()
+    var headerIcon = UIImageView()
+    var headerTitle = UILabel()
+    var headerSubText = UILabel()
+    
+    enum AccountType : String {
+        case direct = "Customer - Direct"
+        case channel = "Customer - Channel"
+    }
+    
+    struct AccountObject {
+        var name : String!
+        var state : String!
+        var phone : String!
+        var type : AccountType!
+        var owner : String!
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Users"
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,12 +42,20 @@ class UserListViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller  = FontViewController()
+        controller.indexPath = indexPath
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 
     /*
