@@ -12,7 +12,7 @@
 		206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */; };
 		206AA8201DE3B82800375432 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81F1DE3B82800375432 /* UserListViewController.swift */; };
 		209436A81DF0ED4100D70A60 /* libSalesforceDesignSystem-Extended.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 209436A51DF0ED3500D70A60 /* libSalesforceDesignSystem-Extended.a */; };
-		209436AB1DF1035900D70A60 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */; };
+		209436AE1DF103EF00D70A60 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */; };
 		209A56291DEF546400327910 /* IconListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A56281DEF546400327910 /* IconListViewController.swift */; };
 		209A56301DEFA47E00327910 /* FontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A562F1DEFA47E00327910 /* FontViewController.swift */; };
 		FC1EA4681DDE6F6300304E01 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */; };
@@ -290,10 +290,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				209436AB1DF1035900D70A60 /* SalesforceDesignSystem.bundle in Resources */,
+				209436AE1DF103EF00D70A60 /* SalesforceDesignSystem.bundle in Resources */,
+				20191FDB1DEE4F89007C8BD8 /* CustomFont.bundle in Resources */,
 				FCB47EB31DD0FCDB00BB6C1B /* LaunchScreen.storyboard in Resources */,
 				FCB47EB01DD0FCDB00BB6C1B /* Assets.xcassets in Resources */,
-				20191FDB1DEE4F89007C8BD8 /* CustomFont.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
