@@ -1,18 +1,26 @@
-//
-//  AccountsCell.swift
-//  slds-sample-app
-//
-//  Created by John Earle on 11/14/16.
-//  Copyright © 2016 John Earle. All rights reserved.
-//
+/*
+ Copyright (c) 2016, salesforce.com, inc. All rights reserved.
+ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+ Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ Neither the name of salesforce.com, inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
 
 import UIKit
 
 class ColorCell: UITableViewCell {
     
-    var backgroundExample = UIView()
-    var checkeredBackground = UIView()
     var color = UIColor.white
+    var swatch = SwatchView()
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var dataProvider : UIColor = UIColor.white {
+        didSet {
+            swatch.dataProvider = dataProvider
+        }
+    }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -35,41 +43,30 @@ class ColorCell: UITableViewCell {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func updateColor(_ c: UIColor) {
-        checkeredBackground.backgroundColor = UIColor(patternImage: UIImage(named: "checkered.png")!)
-        color = c
-        backgroundExample.backgroundColor = color
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        backgroundExample.backgroundColor = color
-        checkeredBackground.backgroundColor = UIColor(patternImage: UIImage(named: "checkered.png")!)
+        swatch.dataProvider = dataProvider;
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
-        backgroundExample.backgroundColor = color
-        checkeredBackground.backgroundColor = UIColor(patternImage: UIImage(named: "checkered.png")!)
+        swatch.dataProvider = dataProvider;
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func makeLayout() {
         
-        backgroundExample.layer.cornerRadius = 6
-        checkeredBackground.layer.cornerRadius = 6
-        checkeredBackground.layer.borderColor = UIColor.sldsColorBorder(.input).cgColor
-        checkeredBackground.layer.borderWidth = 1
-        
-        self.contentView.addSubview(checkeredBackground)
-        checkeredBackground.addSubview(backgroundExample)
-        self.contentView.addConstraints(ConstraintsHelper.addConstraints(item: checkeredBackground, toItem: self.contentView, width: 70, height:70, xAlignment: .right, yAlignment: .center, xOffset: 20, yOffset: 0))
-        checkeredBackground.addConstraints(ConstraintsHelper.addConstraints(item: backgroundExample, toItem: checkeredBackground, width: 70, height:70, xAlignment: .right, yAlignment: .center, xOffset: 0, yOffset: 0))
+        self.addSubview(self.swatch)
+        self.addConstraints(ConstraintsHelper.addConstraints(item: self.swatch,
+                                                                         toItem: self,
+                                                                         width: 70,
+                                                                         height:70,
+                                                                         xAlignment: .right,
+                                                                         yAlignment: .center,
+                                                                         xOffset: 20,
+                                                                         yOffset: 0))
     }
-    
 }

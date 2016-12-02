@@ -9,35 +9,58 @@
 
 import UIKit
 
-class CategoryCell: UITableViewCell {
+class SwatchView: UIView {
+    
+    var swatch = UIView()
+    var checks = UIView()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.makeLayout()
+    var dataProvider : UIColor? {
+        get {
+            return self.swatch.backgroundColor
+        }
+        set {
+            self.swatch.backgroundColor = newValue
+            self.backgroundColor = UIColor(patternImage: UIImage(named: "checkered.png")!)
+        }
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override init (frame : CGRect) {
+        super.init(frame : frame)
+        self.loadView()
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    convenience init () {
+        self.init(frame:CGRect.zero)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("This class does not support NSCoding")
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func loadView() {
+        self.layer.borderWidth = 1
+        self.layer.cornerRadius = 6
+        self.layer.borderColor = UIColor.sldsColorBorder(.input).cgColor
+        self.backgroundColor = UIColor(patternImage: UIImage(named: "checkered.png")!)
+        self.clipsToBounds = true
+        
+        self.addSubview(self.swatch)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func layoutSubviews() {
-        super.layoutSubviews()
+        self.swatch.frame = self.bounds.insetBy(dx: 1.0, dy: 1.0)
     }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func makeLayout() {
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func updateColor(_ c:UIColor) {
-    }
-    
+
 }

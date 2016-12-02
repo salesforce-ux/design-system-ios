@@ -1,25 +1,80 @@
-//
-//  AccountViewController.swift
-//  slds-sample-app
-//
-//  Created by John Earle on 11/14/16.
-//  Copyright © 2016 John Earle. All rights reserved.
-//
+/*
+ Copyright (c) 2016, salesforce.com, inc. All rights reserved.
+ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+ Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ Neither the name of salesforce.com, inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
 
 import UIKit
 
 class ColorViewController: UIViewController {
     
-    var backgroundExample = UIView()
-    var checkeredBackground = UIView()
-    var bottomAnchor = UIView()
-    var textExample = UILabel()
-    var copyButton = UIButton()
+    var swatchName = UILabel()
+    var swatch = SwatchView()
+    var codeView = CodeView()
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var dataProvider : ColorObject? {
+        didSet {
+            guard let data = self.dataProvider else {
+                return
+            }
+            
+            self.swatchName.text = data.alias
+            self.swatch.dataProvider = data.color
+            self.codeView.swiftString = "UIColor." + data.method + "(." + data.alias + ")"
+            self.codeView.objCString = "[UIColor " + data.method + " : " + data.alias + " ]"
+        }
+    }
+
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.edgesForExtendedLayout = []
+        self.view.backgroundColor = UIColor.white
+        
+        self.swatchName.textAlignment = .center
+        self.swatchName.textColor = UIColor.sldsColorText(.default)
+        self.swatchName.font = UIFont.sldsFont(.regular, with: .small)
+        
+        self.view.addSubview(self.swatch)
+        self.view.addSubview(self.swatchName)
+        self.view.addSubview(self.codeView)
+        
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: self.swatch,
+                                                                         toItem: self.view,
+                                                                         width: 150,
+                                                                         height: 150,
+                                                                         xAlignment: .center,
+                                                                         yAlignment: .top,
+                                                                         xOffset: 0,
+                                                                         yOffset: 30))
+        
+        self.view.addConstraints(ConstraintsHelper.stackV(item: self.swatchName,
+                                                          toItem: self.swatch,
+                                                          width: self.view.frame.width,
+                                                          height: 50,
+                                                          xAlignment: .center,
+                                                          direction: .down,
+                                                          xOffset: 0,
+                                                          yOffset: 10))
+        
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: self.codeView,
+                                                                  toItem: self.view,
+                                                                  width: self.view.frame.width,
+                                                                  height: self.view.frame.height/2,
+                                                                  xAlignment: .center,
+                                                                  yAlignment: .bottom,
+                                                                  xOffset: 0,
+                                                                  yOffset: 0))
     }
+
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -27,79 +82,5 @@ class ColorViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask { return UIInterfaceOrientationMask.portrait }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func addColor(_ color:UIColor, _ alias:String) {
-        
-        // color swatch
-        
-        self.view.addSubview(checkeredBackground)
-        checkeredBackground.addSubview(backgroundExample)
-        
-        var h1:CGFloat = 0.0
-        var s1:CGFloat = 0.0
-        var b1:CGFloat = 0.0
-        var a1:CGFloat = 0.0
-        
-        color.getHue(&h1, saturation: &s1, brightness: &b1, alpha: &a1)
-        
-        if a1 < 1 {
-            checkeredBackground.backgroundColor = UIColor(patternImage: UIImage(named: "checkered.png")!)
-        }
-        
-        backgroundExample.layer.cornerRadius = 10
-        backgroundExample.backgroundColor = color
-        
-        checkeredBackground.layer.cornerRadius = 10
-        checkeredBackground.layer.shadowColor = UIColor.black.cgColor
-        checkeredBackground.layer.shadowOpacity = 0.5
-        checkeredBackground.layer.shadowOffset = CGSize.init(width: 0.7, height: 0.7)
-        checkeredBackground.layer.shadowRadius = 1
-        
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: checkeredBackground, toItem: self.view, width: 150, height:150, xAlignment: .center, yAlignment: .top, xOffset: 0, yOffset: 100))
-        checkeredBackground.addConstraints(ConstraintsHelper.addConstraints(item: backgroundExample, toItem: checkeredBackground, width: 150, height:150, xAlignment: .right, yAlignment: .center, xOffset: 0, yOffset: 0))
-        
-        // bottom anchor
-        
-        let parentHeight = self.view.frame.height
-        bottomAnchor.backgroundColor = UIColor.sldsColorBackground(.backgroundRowHover)
-        self.view.addSubview(bottomAnchor)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: bottomAnchor, toItem: self.view, width: self.view.frame.width, height: parentHeight - 300, xAlignment: .center, yAlignment: .bottom, xOffset: 0, yOffset: 0))
-        
-        self.view.backgroundColor = UIColor.white
-        
-        // code example
-        
-        textExample.numberOfLines = 0
-        textExample.font = UIFont.sldsFont(.regular, with: .medium)
-        textExample.textColor = UIColor.sldsColorText(.iconDefault)
-        textExample.text = "import DesignSystem\n\n...\n\nUIColor\n.sldsColorBackground\n(" + alias + ")"
-        self.view.addSubview(textExample)
-        
-        // copy button
-        copyButton.setTitle("copy", for: .normal)
-        copyButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .medium)
-        copyButton.setTitleColor(UIColor.sldsColorText(.brand), for: .normal)
-        copyButton.layer.borderWidth = 1
-        copyButton.layer.borderColor = UIColor.sldsColorBorder(.brand).cgColor
-        copyButton.layer.cornerRadius = 10
-        copyButton.contentEdgeInsets.top = 10
-        copyButton.contentEdgeInsets.bottom = 10
-        copyButton.contentEdgeInsets.left = 20
-        copyButton.contentEdgeInsets.right = 20
-        
-        //copyButton.setImage(UIImage.sldsIconUtility(.copy, with: UIColor.sldsColorText(.brand), andSize: 40), for: .normal)
-        self.view.addSubview(copyButton)
-        self.view.addConstraints(ConstraintsHelper.stackV(item: copyButton, toItem: textExample, xAlignment: .center, direction: .down, xOffset: 0, yOffset: 50))
-        
-        
-        
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: textExample, toItem: bottomAnchor, xAlignment: .center, yAlignment: .top, xOffset: 0, yOffset: 50))
-        
-        
-    }
-}
 
+}

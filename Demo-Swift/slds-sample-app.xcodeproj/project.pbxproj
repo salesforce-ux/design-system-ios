@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		20191FDB1DEE4F89007C8BD8 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */; };
 		2043E3AB1DF0993F0043A192 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E3AA1DF0993F0043A192 /* CodeView.swift */; };
+		2062152D1DF22675002B62AC /* SwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2062152C1DF22675002B62AC /* SwatchView.swift */; };
 		206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */; };
 		206AA8201DE3B82800375432 /* AccountListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81F1DE3B82800375432 /* AccountListViewController.swift */; };
 		209436AE1DF103EF00D70A60 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */; };
@@ -66,6 +67,7 @@
 /* Begin PBXFileReference section */
 		20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CustomFont.bundle; path = ../CustomFont.bundle; sourceTree = "<group>"; };
 		2043E3AA1DF0993F0043A192 /* CodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		2062152C1DF22675002B62AC /* SwatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwatchView.swift; sourceTree = "<group>"; };
 		206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontListTableViewController.swift; sourceTree = "<group>"; };
 		206AA81F1DE3B82800375432 /* AccountListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewController.swift; sourceTree = "<group>"; };
 		2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceDesignSystem.bundle; path = ../SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */,
 				FCCEE6461DEE4DE600949840 /* IconCell.swift */,
 				FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */,
+				2062152C1DF22675002B62AC /* SwatchView.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */,
 				FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */,
 				FC7F2E411DF2310F0011684A /* AccountContainerViewController.swift in Sources */,
+				2062152D1DF22675002B62AC /* SwatchView.swift in Sources */,
 				FC4AC3841DF0D7D000D3D9BE /* IconViewController.swift in Sources */,
 				209A56291DEF546400327910 /* IconListViewController.swift in Sources */,
 				FC4FF3DB1DE4D033009B3D2E /* ColorCell.swift in Sources */,

@@ -17,14 +17,15 @@ enum ColorListType : String {
     case text = "Text"
 }
 
+struct ColorObject {
+    var color : UIColor!
+    var alias : String!
+    var method : String!
+}
+
 //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 class ColorListViewController: UITableViewController {
-    
-    struct ColorObject {
-        var color : UIColor!
-        var alias : String!
-    }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -72,6 +73,8 @@ class ColorListViewController: UITableViewController {
         }
     }
     
+    
+    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func viewDidLoad() {
@@ -80,59 +83,15 @@ class ColorListViewController: UITableViewController {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func addContent(_ colorType: String) {
-        
-        var maxFlag = true
-        var c = Array<ColorObject>()
-        
-        repeat {
-            switch colorType {
-            
-            case ColorListType.background.rawValue:
-                if let value = SLDSColorBackgroundType.init(rawValue: c.count) {
-                    c.append(ColorObject(color: UIColor.sldsColorBackground(value),
-                                         alias: NSString.sldsColorBackgroundName(value) as String ))
-                }
-                maxFlag = SLDSColorBackgroundType.init(rawValue: c.count)?.hashValue != 0
-            
-            case ColorListType.border.rawValue:
-                if let value = SLDSColorBorderType.init(rawValue: c.count) {
-                    c.append(ColorObject(color: UIColor.sldsColorBorder(value),
-                                         alias: NSString.sldsColorBorderName(value) as String ))
-                }
-                maxFlag = SLDSColorBorderType.init(rawValue: c.count+1)?.hashValue != 0
-            
-            case ColorListType.text.rawValue:
-                if let value = SLDSColorTextType.init(rawValue: c.count) {
-                    c.append(ColorObject(color: UIColor.sldsColorText(value),
-                                         alias: NSString.sldsColorTextName(value) as String ))
-                }
-                maxFlag = SLDSColorTextType.init(rawValue: c.count)?.hashValue != 0
-            
-            default : maxFlag = false
-                
-            }
-            
-        } while maxFlag
-        
-        // NOTE : Commit the new values
-        self.colors = c
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ColorCell {
         
-        let color = colors[indexPath.item].color
         let alias = colors[indexPath.item].alias
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ColorCell
         
-//        cell.selectionStyle = .none
         cell.backgroundColor = UIColor.clear
         cell.textLabel?.text = alias?.replacingOccurrences(of: "SLDSColor", with: "")
         cell.textLabel?.font = UIFont.sldsFont(.regular, with: .small)
-        cell.updateColor(color!)
+        cell.dataProvider = colors[indexPath.item].color
         
         return cell
     }
@@ -159,8 +118,73 @@ class ColorListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = ColorViewController()
-        let alias = colors[indexPath.item].alias
-        controller.addColor(colors[indexPath.item].color, (alias?.replacingOccurrences(of: "SLDSColorB", with: ".b"))!)
+        controller.dataProvider = self.colors[indexPath.row]
         self.navigationController?.show(controller, sender: self)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func addContent(_ colorType: String) {
+        
+        var colorList = Array<ColorObject>()
+        var indexPath : IndexPath
+        
+        switch colorType {
+        case ColorListType.background.rawValue : indexPath = IndexPath(row: 0, section: 0)
+        case ColorListType.border.rawValue : indexPath = IndexPath(row: 0, section: 1)
+        case ColorListType.text.rawValue : indexPath = IndexPath(row: 0, section: 2)
+        default : return
+        }
+        
+        while let color = self.getColorAt(indexPath) {
+            colorList.append(color)
+            indexPath.row = colorList.count
+        }
+        
+        self.colors = colorList
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func getColorAt(_ indexPath: IndexPath) -> ColorObject? {
+        
+        var retVal : ColorObject?
+        
+        switch indexPath.section {
+            case 0 :
+                if indexPath.row > 0 && (SLDSColorBackgroundType.init(rawValue: indexPath.row)?.hashValue == 0) {
+                    break
+                }
+                
+                if let value = SLDSColorBackgroundType.init(rawValue: indexPath.row) {
+                    retVal = ColorObject(color: UIColor.sldsColorBackground(value),
+                                         alias: NSString.sldsColorBackgroundName(value) as String,
+                                         method: "sldsColorBackground")
+                }
+            
+            case 1 :
+                if indexPath.row > 0 && (SLDSColorBorderType.init(rawValue: indexPath.row+1)?.hashValue == 0) {
+                    break
+                }
+                if let value = SLDSColorBorderType.init(rawValue:  indexPath.row) {
+                    retVal = ColorObject(color: UIColor.sldsColorBorder(value),
+                                         alias: NSString.sldsColorBorderName(value) as String,
+                                         method: "sldsColorBorder")
+                }
+            
+            case 2 :
+                if indexPath.row > 0 && (SLDSColorTextType.init(rawValue: indexPath.row)?.hashValue == 0) {
+                    break
+                }
+                
+                if let value = SLDSColorTextType.init(rawValue:  indexPath.row) {
+                    retVal = ColorObject(color: UIColor.sldsColorText(value),
+                                         alias: NSString.sldsColorTextName(value) as String,
+                                         method: "sldsColorText")
+                }
+            
+            default : break
+        }
+        return retVal
     }
 }

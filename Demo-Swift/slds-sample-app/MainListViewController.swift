@@ -100,7 +100,7 @@ class MainListViewController: UITableViewController {
             rowName += " Colors"
         }
         
-         cell.textLabel?.text = rowName
+        cell.textLabel?.text = rowName
         return cell
     }
     

@@ -131,7 +131,7 @@ class FontListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller  = FontViewController()
-        controller.indexPath = indexPath
+        controller.dataProvider = indexPath
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }
