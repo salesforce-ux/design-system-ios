@@ -116,9 +116,7 @@ UIImage *icon = [UIImage sldsIconUtility:SLDSIconUtility3dots withSize:20.0f];
 
 ### Setup
 
-To use the SLDS library in Swift, create a bridging header.
-
-1. slds-bridging-header.h:
+To use the SLDS library in Swift, create a bridging header:
 
 ```objc
 
@@ -130,12 +128,14 @@ To use the SLDS library in Swift, create a bridging header.
 #endif
 
 ```
+  
+1. Create slds-bridging-header.h.
 
 2. In your build settings find the “Swift Compiler – Code Generation” section.
 
 3. Next to “Objective-C Bridging Header” add the header file (e.g. slds-bridging-header.h).
 
-SLDS extensions and constants are now accessible to all files in your project/workspace.
+SLDS extensions and constants are now accessible to all files in your project/workspace. There is no need to import the Design system to each file.
 
 
 #### Colors
