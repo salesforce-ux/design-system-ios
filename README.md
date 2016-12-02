@@ -26,8 +26,7 @@ pod install
 See [more info](/manual_install_info)
 
 
-## Usage 
-
+## Objective-C Usage
 
 #### Colors
 
@@ -42,8 +41,6 @@ UIColor* c = [UIColor sldsColorText:SLDSColorTextInverse];
 
 
 ```
-
-[![browser support](/readmeAssets/readme-image1.png)](/readme-image1.png)
 
 
 #### Fonts and text sizes
@@ -60,8 +57,6 @@ UIFont* f = [UIFont sldsFontLightWithSize:SLDSFontSizeXLarge];
 
 ```
 
-[![browser support](/readmeAssets/readme-image2.png)](/readme-image2.png)
-
 
 #### Icons
 
@@ -77,7 +72,6 @@ UIImage *icon = [UIImage sldsIconAction:SLDSIconActionNewCustom98 withSize:20.0f
 
 ```
 
-[![browser support](/readmeAssets/readme-icons-action.png)](/readmeAssets/readme-icons-action.png)
 
 ##### Custom Icons
 
@@ -90,8 +84,6 @@ UIImage *icon = [UIImage sldsIconAction:SLDSIconActionNewCustom98 withSize:20.0f
 UIImage *icon = [UIImage sldsIconCustom:SLDSIconCustom1 withSize:20.0f];
 
 ```
-
-[![browser support](/readmeAssets/readme-icons-custom.png)](/readmeAssets/readme-icons-custom.png)
 
 
 ##### Standard Icons
@@ -106,8 +98,6 @@ UIImage *icon = [UIImage sldsIconStandard:SLDSIconStandardAccount withSize:20.0f
 
 ```
 
-[![browser support](/readmeAssets/readme-icons-standard.png)](/readmeAssets/readme-icons-standard.png)
-
 
 ##### Utility Icons
 
@@ -121,15 +111,106 @@ UIImage *icon = [UIImage sldsIconUtility:SLDSIconUtility3dots withSize:20.0f];
 
 ```
 
-[![browser support](/readmeAssets/readme-icons-utility.png)](/readmeAssets/readme-icons-utility.png)
+
+## Swift Usage
+
+### Setup
+
+To use the SLDS library in Swift, create a bridging header.
+
+1. slds-bridging-header.h:
+
+```objc
+
+#ifndef slds_bridging_header_h
+#define slds_bridging_header_h
+
+#import <SalesforceDesignSystem/SalesforceDesignSystemExtended.h>
+
+#endif
+
+```
+
+2. In your build settings find the “Swift Compiler – Code Generation” section.
+
+3. Next to “Objective-C Bridging Header” add the header file (e.g. slds-bridging-header.h).
+
+SLDS extensions and constants are now accessible to all files in your project/workspace.
+
+
+#### Colors
+
+```swift 
+
+let textColor = UIColor.sldsColorText(.default)
+
+let borderColor = UIColor.sldsColorBorder(.brand)
+
+let backgroundColor = UIColor.sldsColorBackground(.brand)
+
+```
+
+
+#### Fonts and text sizes
+
+```swift
+
+label.font = UIFont.sldsFont(.bold, with: .medium)
+
+```
+
+
+#### Icons
+
+##### Action Icons
+
+```swift
+
+let icon = UIImage.sldsIconAction(.addContact, withSize: SLDSSquareIconLarge)
+
+let iconWithColor = UIImage.sldsIconAction(.addContact, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
+
+```
+
+
+##### Custom Icons
+
+```swift
+
+let icon = UIImage.sldsIconAction(.custom1, withSize: SLDSSquareIconLarge)
+
+let iconWithColor = UIImage.sldsIconAction(.custom1, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
+
+```
+
+
+##### Standard Icons
+
+
+```swift
+
+let icon = UIImage.sldsIconAction(.account, withSize: SLDSSquareIconLarge)
+
+let iconWithColor = UIImage.sldsIconAction(.account, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
+
+```
+
+
+##### Utility Icons
+
+
+```swift
+
+let icon = UIImage.sldsIconAction(.addContact, withSize: SLDSSquareIconLarge)
+
+let iconWithColor = UIImage.sldsIconAction(.addContact, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
+
+```
 
 
 ## Sample Code 
 
-See [Demo App](/Demo) for sample code:
-
-
-[![browser support](/readmeAssets/readme-image.png)](/readme-image.png)
+See [Demo App](/Demo) for sample code.
 
 
 
