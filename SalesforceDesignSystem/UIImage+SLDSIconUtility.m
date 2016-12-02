@@ -21,7 +21,7 @@ static NSString *const iconFontName = @"SalesforceDesignSystemIconsUtility";
     return iconFontName;
 }
 
-+(UIImage*)sldsIconUtility:(SLDSIconUtilityType)iconId withColor:(UIColor*)iconColor andSize:(short)size{
++(UIImage*)sldsIconUtility:(SLDSIconUtilityType)iconId withColor:(UIColor*)iconColor andSize: (CGFloat)size{
 
     if (!iconColor) {
         iconColor = [UIColor sldsColorBackground:SLDSColorBackgroundActionbarIconUtility];
@@ -59,7 +59,7 @@ static NSString *const iconFontName = @"SalesforceDesignSystemIconsUtility";
     return icon;
 }
 
-+(UIImage*)sldsIconUtility:(SLDSIconUtilityType)iconId withSize:(short)size{
++(UIImage*)sldsIconUtility:(SLDSIconUtilityType)iconId withSize: (CGFloat)size{
     return [self sldsIconUtility:iconId withColor:nil andSize:size];
 }
 

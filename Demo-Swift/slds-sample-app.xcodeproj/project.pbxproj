@@ -10,8 +10,7 @@
 		20191FDB1DEE4F89007C8BD8 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */; };
 		2043E3AB1DF0993F0043A192 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E3AA1DF0993F0043A192 /* CodeView.swift */; };
 		206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */; };
-		206AA8201DE3B82800375432 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81F1DE3B82800375432 /* UserListViewController.swift */; };
-		209436A81DF0ED4100D70A60 /* libSalesforceDesignSystem-Extended.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 209436A51DF0ED3500D70A60 /* libSalesforceDesignSystem-Extended.a */; };
+		206AA8201DE3B82800375432 /* AccountListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81F1DE3B82800375432 /* AccountListViewController.swift */; };
 		209436AE1DF103EF00D70A60 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */; };
 		209A56291DEF546400327910 /* IconListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A56281DEF546400327910 /* IconListViewController.swift */; };
 		209A56301DEFA47E00327910 /* FontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A562F1DEFA47E00327910 /* FontViewController.swift */; };
@@ -21,6 +20,7 @@
 		FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42991E1DDA8FC500891FBD /* ColorViewController.swift */; };
 		FC4AC3841DF0D7D000D3D9BE /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AC3831DF0D7D000D3D9BE /* IconViewController.swift */; };
 		FC4FF3DB1DE4D033009B3D2E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */; };
+		FC7F2E3E1DF2038A0011684A /* libSalesforceDesignSystem-Extended.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7F2E3B1DF2037E0011684A /* libSalesforceDesignSystem-Extended.a */; };
 		FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EA81DD0FCDB00BB6C1B /* AppDelegate.swift */; };
 		FCB47EB01DD0FCDB00BB6C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */; };
 		FCB47EB31DD0FCDB00BB6C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB47EB11DD0FCDB00BB6C1B /* LaunchScreen.storyboard */; };
@@ -32,30 +32,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		209436A01DF0ED3500D70A60 /* PBXContainerItemProxy */ = {
+		FC7F2E361DF2037E0011684A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2094368F1DF0ED3200D70A60 /* SalesforceDesignSystem.xcodeproj */;
+			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 051031E61B29F1020094A6B2;
 			remoteInfo = SalesforceDesignSystem;
 		};
-		209436A21DF0ED3500D70A60 /* PBXContainerItemProxy */ = {
+		FC7F2E381DF2037E0011684A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2094368F1DF0ED3200D70A60 /* SalesforceDesignSystem.xcodeproj */;
+			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 051C4D151B2FD398001CDF18;
 			remoteInfo = "SalesforceDesignSystem-headers";
 		};
-		209436A41DF0ED3500D70A60 /* PBXContainerItemProxy */ = {
+		FC7F2E3A1DF2037E0011684A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2094368F1DF0ED3200D70A60 /* SalesforceDesignSystem.xcodeproj */;
+			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 059109FB1B583B8900C89AEC;
 			remoteInfo = "SalesforceDesignSystem-Extended";
 		};
-		209436A61DF0ED3C00D70A60 /* PBXContainerItemProxy */ = {
+		FC7F2E3C1DF203850011684A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2094368F1DF0ED3200D70A60 /* SalesforceDesignSystem.xcodeproj */;
+			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 059109B21B583B8900C89AEC;
 			remoteInfo = "SalesforceDesignSystem-Extended";
@@ -66,9 +66,8 @@
 		20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CustomFont.bundle; path = ../CustomFont.bundle; sourceTree = "<group>"; };
 		2043E3AA1DF0993F0043A192 /* CodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontListTableViewController.swift; sourceTree = "<group>"; };
-		206AA81F1DE3B82800375432 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		206AA81F1DE3B82800375432 /* AccountListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewController.swift; sourceTree = "<group>"; };
 		2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceDesignSystem.bundle; path = ../SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
-		2094368F1DF0ED3200D70A60 /* SalesforceDesignSystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SalesforceDesignSystem.xcodeproj; path = ../SalesforceDesignSystem.xcodeproj; sourceTree = "<group>"; };
 		209A56281DEF546400327910 /* IconListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconListViewController.swift; sourceTree = "<group>"; };
 		209A562F1DEFA47E00327910 /* FontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontViewController.swift; sourceTree = "<group>"; };
 		FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		FC42991E1DDA8FC500891FBD /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		FC4AC3831DF0D7D000D3D9BE /* IconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconViewController.swift; sourceTree = "<group>"; };
 		FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SalesforceDesignSystem.xcodeproj; path = ../SalesforceDesignSystem.xcodeproj; sourceTree = "<group>"; };
 		FCB47EA51DD0FCDB00BB6C1B /* slds-sample-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "slds-sample-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB47EA81DD0FCDB00BB6C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				209436A81DF0ED4100D70A60 /* libSalesforceDesignSystem-Extended.a in Frameworks */,
+				FC7F2E3E1DF2038A0011684A /* libSalesforceDesignSystem-Extended.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +105,6 @@
 		080A6909120544E76CEA307C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2094368F1DF0ED3200D70A60 /* SalesforceDesignSystem.xcodeproj */,
 				20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */,
 				2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */,
 			);
@@ -129,16 +128,6 @@
 			name = utils;
 			sourceTree = "<group>";
 		};
-		2094369B1DF0ED3500D70A60 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				209436A11DF0ED3500D70A60 /* libSalesforceDesignSystem.a */,
-				209436A31DF0ED3500D70A60 /* libSalesforceDesignSystem-headers.a */,
-				209436A51DF0ED3500D70A60 /* libSalesforceDesignSystem-Extended.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		FC4299171DDA4E7500891FBD /* controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,14 +138,25 @@
 				209A56281DEF546400327910 /* IconListViewController.swift */,
 				FC4AC3831DF0D7D000D3D9BE /* IconViewController.swift */,
 				FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */,
-				206AA81F1DE3B82800375432 /* UserListViewController.swift */,
+				206AA81F1DE3B82800375432 /* AccountListViewController.swift */,
 			);
 			name = controllers;
+			sourceTree = "<group>";
+		};
+		FC7F2E311DF2037E0011684A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC7F2E371DF2037E0011684A /* libSalesforceDesignSystem.a */,
+				FC7F2E391DF2037E0011684A /* libSalesforceDesignSystem-headers.a */,
+				FC7F2E3B1DF2037E0011684A /* libSalesforceDesignSystem-Extended.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		FCB47E9C1DD0FCDB00BB6C1B = {
 			isa = PBXGroup;
 			children = (
+				FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */,
 				FCB47EA71DD0FCDB00BB6C1B /* slds-sample-app */,
 				FCB47EA61DD0FCDB00BB6C1B /* Products */,
 				080A6909120544E76CEA307C /* Frameworks */,
@@ -213,7 +213,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				209436A71DF0ED3C00D70A60 /* PBXTargetDependency */,
+				FC7F2E3D1DF203850011684A /* PBXTargetDependency */,
 			);
 			name = "slds-sample-app";
 			productName = "slds-sample-app";
@@ -250,8 +250,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 2094369B1DF0ED3500D70A60 /* Products */;
-					ProjectRef = 2094368F1DF0ED3200D70A60 /* SalesforceDesignSystem.xcodeproj */;
+					ProductGroup = FC7F2E311DF2037E0011684A /* Products */;
+					ProjectRef = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -262,25 +262,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		209436A11DF0ED3500D70A60 /* libSalesforceDesignSystem.a */ = {
+		FC7F2E371DF2037E0011684A /* libSalesforceDesignSystem.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libSalesforceDesignSystem.a;
-			remoteRef = 209436A01DF0ED3500D70A60 /* PBXContainerItemProxy */;
+			remoteRef = FC7F2E361DF2037E0011684A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		209436A31DF0ED3500D70A60 /* libSalesforceDesignSystem-headers.a */ = {
+		FC7F2E391DF2037E0011684A /* libSalesforceDesignSystem-headers.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libSalesforceDesignSystem-headers.a";
-			remoteRef = 209436A21DF0ED3500D70A60 /* PBXContainerItemProxy */;
+			remoteRef = FC7F2E381DF2037E0011684A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		209436A51DF0ED3500D70A60 /* libSalesforceDesignSystem-Extended.a */ = {
+		FC7F2E3B1DF2037E0011684A /* libSalesforceDesignSystem-Extended.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libSalesforceDesignSystem-Extended.a";
-			remoteRef = 209436A41DF0ED3500D70A60 /* PBXContainerItemProxy */;
+			remoteRef = FC7F2E3A1DF2037E0011684A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -311,7 +311,7 @@
 				FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */,
 				FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */,
 				FCCEE6501DEF889C00949840 /* SearchField.swift in Sources */,
-				206AA8201DE3B82800375432 /* UserListViewController.swift in Sources */,
+				206AA8201DE3B82800375432 /* AccountListViewController.swift in Sources */,
 				FCCEE6471DEE4DE600949840 /* IconCell.swift in Sources */,
 				FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */,
 				206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */,
@@ -327,10 +327,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		209436A71DF0ED3C00D70A60 /* PBXTargetDependency */ = {
+		FC7F2E3D1DF203850011684A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "SalesforceDesignSystem-Extended";
-			targetProxy = 209436A61DF0ED3C00D70A60 /* PBXContainerItemProxy */;
+			targetProxy = FC7F2E3C1DF203850011684A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

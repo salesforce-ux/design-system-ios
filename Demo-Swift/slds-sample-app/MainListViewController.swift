@@ -19,7 +19,7 @@ class MainListViewController: UITableViewController {
     var tableData : [TableData] {
         return [
             TableData(sectionTitle: "Sample App",
-                      rows: [("User Records",UserListViewController.self)]),
+                      rows: [("User Records",AccountListViewController.self)]),
             
             TableData(sectionTitle: "SLDS Colors",
                       rows: [(ColorListType.background.rawValue, ColorListViewController.self),

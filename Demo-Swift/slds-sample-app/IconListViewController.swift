@@ -16,6 +16,12 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     var searchField: SearchField!
     var utility: Bool!
     
+    let accentBorderColor = UIColor.sldsColorBorder(.input)
+    let accentTextColor = UIColor.sldsColorText(.inputIcon)
+    
+    var lightIcon: UIImage!
+    var darkIcon: UIImage!
+    
     var tap: UITapGestureRecognizer!
     
     struct IconObject {
@@ -99,69 +105,115 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         self.icons = i
         filteredIcons = self.icons
     }
-
+    
+    // MARK: - Styling methods
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func styleCollectionView(_ layout: UICollectionViewFlowLayout) {
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 128, width: self.view.frame.width, height: self.view.frame.height - 128), collectionViewLayout: layout)
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.backgroundColor = UIColor.white
+        self.view.addSubview(collectionView)
+    }
+    
+    func styleSearch() {
+        searchField = SearchField()
+        self.view.addSubview(searchField)
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: searchField,
+                                                                  toItem: switchHeader,
+                                                                  width: self.view.frame.width - 96 - switchView.frame.width,
+                                                                  height: 40,
+                                                                  xAlignment: .left,
+                                                                  yAlignment: .center,
+                                                                  xOffset: 20,
+                                                                  yOffset: 0))
+        
+        searchField.addTarget(self, action: #selector(IconListViewController.filterIcons), for: UIControlEvents.editingChanged)
+        searchField.delegate = self;
+        searchField.returnKeyType = .done
+    }
+    
+    func styleSwitch() {
+        switchView = UISwitch()
+        switchView.onTintColor = accentBorderColor
+        switchView.tintColor = UIColor.white
+        switchView.layer.borderColor = accentBorderColor?.cgColor
+        switchView.layer.borderWidth = 1
+        switchView.layer.cornerRadius = 16
+        self.view.addSubview(switchView)
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchView,
+                                                                  toItem: switchHeader,
+                                                                  xAlignment: .right,
+                                                                  yAlignment: .center,
+                                                                  xOffset: 20,
+                                                                  yOffset: 0))
+        
+        switchIcon = UIImageView(image: lightIcon)
+        self.view.addSubview(switchIcon)
+        self.view.addConstraints(ConstraintsHelper.stackH(item: switchIcon,
+                                                          toItem: switchView,
+                                                          yAlignment: .center,
+                                                          direction: .left,
+                                                          xOffset: 5,
+                                                          yOffset: 0))
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func styleHeader() {
+        switchHeader = UIView()
+        self.view.addSubview(switchHeader)
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchHeader,
+                                                                  toItem: self.view,
+                                                                  width: self.view.frame.width,
+                                                                  height: 64,
+                                                                  xAlignment: .center,
+                                                                  yAlignment: .top,
+                                                                  xOffset: 0,
+                                                                  yOffset: 64))
+        
+        switchHeader.backgroundColor = UIColor.sldsColorBackground(.background)
+        
+        let hr = UIView()
+        hr.backgroundColor = UIColor.sldsColorBorder(.input)
+        self.view.addSubview(hr)
+        self.view.addConstraints(ConstraintsHelper.addConstraints(item: hr,
+                                                                  toItem: switchHeader,
+                                                                  width: self.view.frame.width,
+                                                                  height: 1,
+                                                                  xAlignment: .center,
+                                                                  yAlignment: .bottom,
+                                                                  xOffset: 0,
+                                                                  yOffset: 0))
+    }
 
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = UIColor.white
+        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
         layout.itemSize = CGSize(width: 60, height: 60)
         
-        switchHeader = UIView()
-        self.view.addSubview(switchHeader)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchHeader, toItem: self.view, width: self.view.frame.width, height: 64, xAlignment: .center, yAlignment: .top, xOffset: 0, yOffset: 64))
+        lightIcon = UIImage.sldsIconCustom(.custom3, with: accentTextColor, andBGColor: UIColor.sldsColorBackground(.background), andSize: SLDSSquareIconMedium)
+        darkIcon = UIImage.sldsIconCustom(.custom10, with: accentTextColor, andBGColor: UIColor.sldsColorBackground(.background), andSize: SLDSSquareIconMedium)
         
-        switchHeader.backgroundColor = UIColor.sldsColorBackground(.background)
-        self.view.backgroundColor = UIColor.white
-        
-        let hr = UIView()
-        hr.backgroundColor = UIColor.sldsColorBorder(.input)
-        self.view.addSubview(hr)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: hr, toItem: switchHeader, width: self.view.frame.width, height: 1, xAlignment: .center, yAlignment: .bottom, xOffset: 0, yOffset: 0))
-        
-        switchView = UISwitch()
-        switchView.onTintColor = UIColor.sldsColorBorder(.info)
-        switchView.tintColor = UIColor.white
-        switchView.layer.borderColor = UIColor.sldsColorBorder(.info).cgColor
-        switchView.layer.borderWidth = 1
-        switchView.layer.cornerRadius = 16
-        self.view.addSubview(switchView)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchView, toItem: switchHeader, xAlignment: .right, yAlignment: .center, xOffset: 20, yOffset: 0))
-        
-        
-        switchIcon = UIImageView(image: UIImage.sldsIconCustom(.custom3, with: UIColor.sldsColorText(.weak), andBGColor: UIColor.sldsColorBackground(.background), andSize: 36))
-        self.view.addSubview(switchIcon)
-        self.view.addConstraints(ConstraintsHelper.stackH(item: switchIcon, toItem: switchView, yAlignment: .center, direction: .right, xOffset: 5, yOffset: 0))
-        
-        searchField = SearchField()
-        self.view.addSubview(searchField)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: searchField, toItem: switchHeader, width: self.view.frame.width - 96 - switchView.frame.width, height: 40, xAlignment: .left, yAlignment: .center, xOffset: 20, yOffset: 0))
-        searchField.addTarget(self, action: #selector(IconListViewController.filterIcons), for: UIControlEvents.editingChanged)
-        searchField.delegate = self;
-        searchField.returnKeyType = .done
-        
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 128, width: self.view.frame.width, height: self.view.frame.height - 128), collectionViewLayout: layout)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-        collectionView.backgroundColor = UIColor.white
-        self.view.addSubview(collectionView)
+        styleHeader()
+        styleSwitch()
+        styleSearch()
+        styleCollectionView(layout)
         
         switchView.addTarget(self, action: #selector(IconListViewController.switchIsChanged), for: UIControlEvents.valueChanged)
         tap = UITapGestureRecognizer(target: self, action: #selector(IconListViewController.dismissKeyboard))
     }
     
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func dismissKeyboard() {
-        searchField.focus(false)
-        self.view.removeGestureRecognizer(tap)
-        self.view.endEditing(true)
-    }
+    // MARK: - Textfield delegate
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -186,6 +238,14 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
+    func dismissKeyboard() {
+        searchField.focus(false)
+        self.view.removeGestureRecognizer(tap)
+        self.view.endEditing(true)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
     func updateUtilitycolor() {
         let c = darkMode ? UIColor.sldsColorBackground(.backgroundIconWaffle) : UIColor.white
         filteredIcons = filteredIcons.map {
@@ -205,14 +265,14 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
                 updateUtilitycolor()
             }
             self.collectionView.backgroundColor = UIColor.sldsColorBackground(.backgroundInverse)
-            switchIcon.image = UIImage.sldsIconCustom(.custom10, with: UIColor.sldsColorText(.weak), andBGColor: UIColor.sldsColorBackground(.background), andSize: 36)
+            switchIcon.image = darkIcon
             darkMode = true
         } else {
             if utility! {
                 updateUtilitycolor()
             }
             self.collectionView.backgroundColor = UIColor.white
-            switchIcon.image = UIImage.sldsIconCustom(.custom3, with: UIColor.sldsColorText(.weak), andBGColor: UIColor.sldsColorBackground(.background), andSize: 36)
+            switchIcon.image = lightIcon
             darkMode = false
         }
     }
@@ -257,7 +317,12 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         
         cell.addSubview(iconContainer)
         cell.contentView.addSubview(iconContainer)
-        cell.contentView.addConstraints(ConstraintsHelper.addConstraints(item: iconContainer, toItem: cell.contentView, xAlignment: .center, yAlignment: .center, xOffset: 0, yOffset: 0))
+        cell.contentView.addConstraints(ConstraintsHelper.addConstraints(item: iconContainer,
+                                                                         toItem: cell.contentView,
+                                                                         xAlignment: .center,
+                                                                         yAlignment: .center,
+                                                                         xOffset: 0,
+                                                                         yOffset: 0 ))
         
         return cell
     }

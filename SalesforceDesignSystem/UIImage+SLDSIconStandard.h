@@ -10,7 +10,7 @@
 #import "SLDSIconStandard.h"
 
 @interface UIImage (SLDSIconStandard)
-+(UIImage*)sldsIconStandard:(SLDSIconStandardType)iconId withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(short)size;
++(UIImage*)sldsIconStandard:(SLDSIconStandardType)iconId withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize: (CGFloat)size;
 
-+(UIImage*)sldsIconStandard:(SLDSIconStandardType)iconId withSize:(short)size;
++(UIImage*)sldsIconStandard:(SLDSIconStandardType)iconId withSize: (CGFloat)size;
 @end

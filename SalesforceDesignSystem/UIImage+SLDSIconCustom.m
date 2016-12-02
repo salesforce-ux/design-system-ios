@@ -24,7 +24,7 @@ static float const iconScale = 1.0f;
     return iconFontName;
 }
 
-+(UIImage*)sldsIconCustom:(SLDSIconCustomType)iconId withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(short)size{
++(UIImage*)sldsIconCustom:(SLDSIconCustomType)iconId withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize: (CGFloat)size{
     
     if (!iconColor) {
         iconColor = [UIColor whiteColor];
@@ -77,7 +77,7 @@ static float const iconScale = 1.0f;
     return icon;
 }
 
-+(UIImage*)sldsIconCustom:(SLDSIconCustomType)iconId withSize:(short)size{
++(UIImage*)sldsIconCustom:(SLDSIconCustomType)iconId withSize: (CGFloat)size{
     return [self sldsIconCustom:iconId withColor:nil andBGColor:nil andSize:size];
 }
 
