@@ -44,10 +44,10 @@ class MainListViewController: UITableViewController {
         self.tableView.register(CategoryCell.self, forCellReuseIdentifier: "Cell")
         navigationController?.navigationBar.barTintColor = UIColor.sldsColorBackground(.brand)
         navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)]
+        //navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)]
         
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
-        backButton.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)], for: UIControlState.normal)
+        //backButton.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)], for: UIControlState.normal)
         navigationItem.backBarButtonItem = backButton
         
         self.title = "Lightning Design System"

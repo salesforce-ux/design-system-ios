@@ -9,7 +9,6 @@
 #ifndef slds_bridging_header_h
 #define slds_bridging_header_h
 
-# import <SalesforceDesignSystem/SalesforceDesignSystemExtended.h>
-
+#import <SalesforceDesignSystem/SalesforceDesignSystemExtended.h>
 
 #endif /* slds_bridging_header_h */
