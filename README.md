@@ -55,7 +55,7 @@ UIColor* c = [UIColor sldsColorText:SLDSColorTextInverse];
 
 ...
 
-UIFont* f = [UIFont sldsFontLightWithSize:SLDSFontSizeXLarge];
+UIFont* f = [UIFont sldsFont:SLDSFontRegular withSize:SLDSFontSizeXLarge];
 
 
 
