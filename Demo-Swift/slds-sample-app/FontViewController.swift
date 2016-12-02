@@ -11,30 +11,27 @@ import UIKit
 
 class FontViewController: UIViewController {
     
-    var fontSizeName : String = ""
-    var fontTypeName : String = ""
-    
     var sampleText = UILabel()
     var fontInfo = UITextView()
     var codeView = CodeView()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    var indexPath = IndexPath(row: 0, section: 0) {
+    var dataProvider = IndexPath(row: 0, section: 0) {
         didSet {
-            fontSizeName = self.enumName( name: SLDSFont.sldsFontSizeName(SLDSFontSizeType(rawValue: self.indexPath.row)!))
-            fontTypeName = self.enumName( name: SLDSFont.sldsFontTypeName(SLDSFontType(rawValue: self.indexPath.section)!))
+            let fontSizeName = self.enumName( name: SLDSFont.sldsFontSizeName(SLDSFontSizeType(rawValue: self.dataProvider.row)!))
+            let fontTypeName = self.enumName( name: SLDSFont.sldsFontTypeName(SLDSFontType(rawValue: self.dataProvider.section)!))
             
-            self.sampleText.font = UIFont.sldsFont(SLDSFontType(rawValue: self.indexPath.section)!,
-                                                   with: SLDSFontSizeType(rawValue: self.indexPath.row)!)
+            self.sampleText.font = UIFont.sldsFont(SLDSFontType(rawValue: self.dataProvider.section)!,
+                                                   with: SLDSFontSizeType(rawValue: self.dataProvider.row)!)
             
             fontInfo.text = "SLDSFontType" + fontTypeName + "\n SLDSFontSizeType" + fontSizeName
             
             
             self.codeView.objCString = "[UIFont sldsFont:" +
-                SLDSFont.sldsFontTypeName(SLDSFontType(rawValue: self.indexPath.section)!) +
+                SLDSFont.sldsFontTypeName(SLDSFontType(rawValue: self.dataProvider.section)!) +
                 " withSize:" +
-                SLDSFont.sldsFontSizeName(SLDSFontSizeType(rawValue: self.indexPath.row)!) +
+                SLDSFont.sldsFontSizeName(SLDSFontSizeType(rawValue: self.dataProvider.row)!) +
                 " ]"
             
             self.codeView.swiftString = "UIFont.sldsFont( " + fontTypeName + " with: " + fontSizeName + " )"

@@ -69,11 +69,8 @@ class ConstraintsHelper {
         if direction == .up {
             yAtt1 = NSLayoutAttribute.bottom
             yAtt2 = NSLayoutAttribute.top
-        }
-        else {
             yOff = -yOff
         }
-        
         
         constraints.append(NSLayoutConstraint(item: item,
                                                   attribute: setX(xAlignment),
