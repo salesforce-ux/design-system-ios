@@ -44,14 +44,27 @@ class MainListViewController: UITableViewController {
         self.tableView.register(CategoryCell.self, forCellReuseIdentifier: "Cell")
         navigationController?.navigationBar.barTintColor = UIColor.sldsColorBackground(.brand)
         navigationController?.navigationBar.tintColor = UIColor.white
-        //navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)]
         
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
-        //backButton.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)], for: UIControlState.normal)
         navigationItem.backBarButtonItem = backButton
         
         self.title = "Lightning Design System"
     }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,
+                                                                   NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)]
+        
+        navigationItem.backBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white,
+                                                                  NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)],
+                                                                for: UIControlState.normal)
+        
+        super.viewWillAppear(animated)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 36.0

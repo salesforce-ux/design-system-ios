@@ -81,7 +81,7 @@ class FontViewController: UIViewController {
        self.view.addConstraints(ConstraintsHelper.addConstraints(item: self.codeView,
                                                                   toItem: self.view,
                                                                   width: self.view.frame.width,
-                                                                  height: self.view.frame.height/2,
+                                                                  height: self.view.frame.height/3,
                                                                   xAlignment: .center,
                                                                   yAlignment: .bottom,
                                                                   xOffset: 0,

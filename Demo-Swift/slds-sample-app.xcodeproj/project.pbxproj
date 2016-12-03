@@ -10,6 +10,7 @@
 		20191FDB1DEE4F89007C8BD8 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */; };
 		2043E3AB1DF0993F0043A192 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E3AA1DF0993F0043A192 /* CodeView.swift */; };
 		2062152D1DF22675002B62AC /* SwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2062152C1DF22675002B62AC /* SwatchView.swift */; };
+		206215351DF23C14002B62AC /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206215341DF23C14002B62AC /* TabView.swift */; };
 		206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */; };
 		206AA8201DE3B82800375432 /* AccountListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81F1DE3B82800375432 /* AccountListViewController.swift */; };
 		209436AE1DF103EF00D70A60 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */; };
@@ -68,6 +69,7 @@
 		20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CustomFont.bundle; path = ../CustomFont.bundle; sourceTree = "<group>"; };
 		2043E3AA1DF0993F0043A192 /* CodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		2062152C1DF22675002B62AC /* SwatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwatchView.swift; sourceTree = "<group>"; };
+		206215341DF23C14002B62AC /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontListTableViewController.swift; sourceTree = "<group>"; };
 		206AA81F1DE3B82800375432 /* AccountListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewController.swift; sourceTree = "<group>"; };
 		2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceDesignSystem.bundle; path = ../SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				FCCEE6461DEE4DE600949840 /* IconCell.swift */,
 				FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */,
 				2062152C1DF22675002B62AC /* SwatchView.swift */,
+				206215341DF23C14002B62AC /* TabView.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				206AA8201DE3B82800375432 /* AccountListViewController.swift in Sources */,
 				FCCEE6471DEE4DE600949840 /* IconCell.swift in Sources */,
 				FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */,
+				206215351DF23C14002B62AC /* TabView.swift in Sources */,
 				206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */,
 				FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */,
 				FC7F2E411DF2310F0011684A /* AccountContainerViewController.swift in Sources */,

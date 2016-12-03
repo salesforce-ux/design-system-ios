@@ -11,9 +11,9 @@ import UIKit
 
 class CodeView: UIView {
     
+    var tabView = TabView()
     var codeExample = UITextView()
     var copyButton = UIButton()
-    
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
    
@@ -62,7 +62,11 @@ class CodeView: UIView {
     
     func loadView() {
         self.backgroundColor = UIColor.sldsColorBackground(.backgroundStencil)
-            
+        
+        tabView.addTab(labelString: "Swift")
+        tabView.addTab(labelString: "Obj-C")
+        self.addSubview(tabView)
+        
         codeExample.isEditable = false
         codeExample.isSelectable = false
         codeExample.textAlignment = .center
@@ -75,15 +79,33 @@ class CodeView: UIView {
         copyButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .medium)
         copyButton.setTitleColor(UIColor.sldsColorText(.brand), for: .normal)
         self.addSubview(copyButton)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func layoutSubviews() {
         
-        self.addConstraints(ConstraintsHelper.addConstraints(item: self.codeExample,
+        for constraint in self.constraints {
+            self.removeConstraint(constraint)
+        }
+        
+        self.addConstraints(ConstraintsHelper.addConstraints(item: self.tabView,
                                                              toItem: self,
-                                                             width: 300,
-                                                             height: 150,
+                                                             width: self.frame.width,
+                                                             height: 60,
                                                              xAlignment: .center,
                                                              yAlignment: .top,
                                                              xOffset: 0,
-                                                             yOffset: 20))
+                                                             yOffset: 0))
+        
+        self.addConstraints(ConstraintsHelper.stackV(item: self.codeExample,
+                                                     toItem: self.tabView,
+                                                     width: self.frame.width - 40,
+                                                     height: 60,
+                                                     xAlignment: .center,
+                                                     direction: .down,
+                                                     xOffset: 0,
+                                                     yOffset: 10))
         
         self.addConstraints(ConstraintsHelper.addConstraints(item: self.copyButton,
                                                              toItem: self,
@@ -91,6 +113,7 @@ class CodeView: UIView {
                                                              yAlignment: .bottom,
                                                              xOffset: 0,
                                                              yOffset: 40))
+        
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
