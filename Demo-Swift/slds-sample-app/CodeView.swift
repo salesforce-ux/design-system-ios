@@ -89,30 +89,26 @@ class CodeView: UIView {
             self.removeConstraint(constraint)
         }
         
-        self.addConstraints(ConstraintsHelper.addConstraints(item: self.tabView,
-                                                             toItem: self,
-                                                             width: self.frame.width,
-                                                             height: 60,
-                                                             xAlignment: .center,
-                                                             yAlignment: .top,
-                                                             xOffset: 0,
-                                                             yOffset: 0))
+        self.constrain(self.tabView,
+                       inside: self,
+                       xAlignment: .center,
+                       yAlignment: .top,
+                       width: self.frame.width,
+                       height: 60)
         
-        self.addConstraints(ConstraintsHelper.stackV(item: self.codeExample,
-                                                     toItem: self.tabView,
-                                                     width: self.frame.width - 40,
-                                                     height: 60,
-                                                     xAlignment: .center,
-                                                     direction: .down,
-                                                     xOffset: 0,
-                                                     yOffset: 10))
+        self.constrain(self.codeExample,
+                       verticallyTo: self.tabView,
+                       xAlignment: .center,
+                       direction: .down,
+                       width: self.frame.width - 40,
+                       height: 60,
+                       yOffset: 10)
         
-        self.addConstraints(ConstraintsHelper.addConstraints(item: self.copyButton,
-                                                             toItem: self,
-                                                             xAlignment: .center,
-                                                             yAlignment: .bottom,
-                                                             xOffset: 0,
-                                                             yOffset: 40))
+        self.constrain(self.copyButton,
+                       inside: self,
+                       xAlignment: .center,
+                       yAlignment: .bottom,
+                       yOffset: 40)
         
     }
     

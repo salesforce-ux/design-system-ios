@@ -47,32 +47,28 @@ class ColorViewController: UIViewController {
         self.view.addSubview(self.swatchName)
         self.view.addSubview(self.codeView)
         
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: self.swatch,
-                                                                         toItem: self.view,
-                                                                         width: 150,
-                                                                         height: 150,
-                                                                         xAlignment: .center,
-                                                                         yAlignment: .top,
-                                                                         xOffset: 0,
-                                                                         yOffset: 30))
+        self.view.constrain(self.swatch,
+                            inside: self.view,
+                            xAlignment: .center,
+                            yAlignment: .top,
+                            width: 150,
+                            height: 150,
+                            yOffset: 30)
         
-        self.view.addConstraints(ConstraintsHelper.stackV(item: self.swatchName,
-                                                          toItem: self.swatch,
-                                                          width: self.view.frame.width,
-                                                          height: 50,
-                                                          xAlignment: .center,
-                                                          direction: .down,
-                                                          xOffset: 0,
-                                                          yOffset: 10))
+        self.view.constrain(self.swatchName,
+                            verticallyTo: self.swatch,
+                            xAlignment: .center,
+                            direction: .down,
+                            width: self.view.frame.width,
+                            height: 50,
+                            yOffset: 10)
         
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: self.codeView,
-                                                                  toItem: self.view,
-                                                                  width: self.view.frame.width,
-                                                                  height: self.view.frame.height/3,
-                                                                  xAlignment: .center,
-                                                                  yAlignment: .bottom,
-                                                                  xOffset: 0,
-                                                                  yOffset: 0))
+        self.view.constrain(self.codeView,
+                            inside: self.view,
+                            xAlignment: .center,
+                            yAlignment: .bottom,
+                            width: self.view.frame.width,
+                            height: self.view.frame.height/3)
     }
 
     

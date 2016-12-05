@@ -62,30 +62,26 @@ class FontViewController: UIViewController {
         
         self.view.addSubview(codeView)
         
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: self.sampleText,
-                                                                  toItem: self.view,
-                                                                  xAlignment: .center,
-                                                                  yAlignment: .top,
-                                                                  xOffset: 0,
-                                                                  yOffset: 50))
+        self.view.constrain(self.sampleText,
+                            inside: self.view,
+                            xAlignment: .center,
+                            yAlignment: .top,
+                            yOffset: 50)
         
-        self.view.addConstraints(ConstraintsHelper.stackV(item: self.fontInfo,
-                                                          toItem: self.sampleText,
-                                                          width: 200,
-                                                          height: 50,
-                                                          xAlignment: .center,
-                                                          direction: .down,
-                                                          xOffset: 0,
-                                                          yOffset: 10))
+        self.view.constrain(self.fontInfo,
+                            verticallyTo: self.sampleText,
+                            xAlignment: .center,
+                            direction: .down,
+                            width: 200,
+                            height: 50,
+                            yOffset: 10)
         
-       self.view.addConstraints(ConstraintsHelper.addConstraints(item: self.codeView,
-                                                                  toItem: self.view,
-                                                                  width: self.view.frame.width,
-                                                                  height: self.view.frame.height/3,
-                                                                  xAlignment: .center,
-                                                                  yAlignment: .bottom,
-                                                                  xOffset: 0,
-                                                                  yOffset: 0))
+       self.view.constrain(self.codeView,
+                           inside: self.view,
+                           xAlignment: .center,
+                           yAlignment: .bottom,
+                           width: self.view.frame.width,
+                           height: self.view.frame.height/3)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

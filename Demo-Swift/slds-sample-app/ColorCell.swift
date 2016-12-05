@@ -60,13 +60,12 @@ class ColorCell: UITableViewCell {
     func makeLayout() {
         
         self.addSubview(self.swatch)
-        self.addConstraints(ConstraintsHelper.addConstraints(item: self.swatch,
-                                                                         toItem: self,
-                                                                         width: 70,
-                                                                         height:70,
-                                                                         xAlignment: .right,
-                                                                         yAlignment: .center,
-                                                                         xOffset: 20,
-                                                                         yOffset: 0))
+        self.constrain(self.swatch,
+                       inside: self,
+                       xAlignment: .right,
+                       yAlignment: .center,
+                       width: 70,
+                       height: 70,
+                       xOffset: 20)
     }
 }

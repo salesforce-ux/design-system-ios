@@ -21,10 +21,7 @@ class AccountContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         header = UIView()
-        self.view.addSubview(header)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: header, toItem: self.view, width: self.view.frame.width, height: 80, xAlignment: .left, yAlignment: .center, xOffset: 0, yOffset: 0))
-        header.backgroundColor = UIColor.sldsColorBackground(.background)
-        
+        self.view.addSubview(header)        
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

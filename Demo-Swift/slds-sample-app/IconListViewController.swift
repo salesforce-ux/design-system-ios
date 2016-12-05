@@ -122,14 +122,13 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     func styleSearch() {
         searchField = SearchField()
         self.view.addSubview(searchField)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: searchField,
-                                                                  toItem: switchHeader,
-                                                                  width: self.view.frame.width - 96 - switchView.frame.width,
-                                                                  height: 40,
-                                                                  xAlignment: .left,
-                                                                  yAlignment: .center,
-                                                                  xOffset: 20,
-                                                                  yOffset: 0))
+        self.view.constrain(searchField,
+                            inside: switchHeader,
+                            xAlignment: .left,
+                            yAlignment: .center,
+                            width: self.view.frame.width - 96 - switchView.frame.width,
+                            height: 40,
+                            xOffset: 20)
         
         searchField.addTarget(self, action: #selector(IconListViewController.filterIcons), for: UIControlEvents.editingChanged)
         searchField.delegate = self;
@@ -144,21 +143,20 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         switchView.layer.borderWidth = 1
         switchView.layer.cornerRadius = 16
         self.view.addSubview(switchView)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchView,
-                                                                  toItem: switchHeader,
-                                                                  xAlignment: .right,
-                                                                  yAlignment: .center,
-                                                                  xOffset: 20,
-                                                                  yOffset: 0))
+        
+        self.view.constrain(switchView,
+                            inside: switchHeader,
+                            xAlignment: .right,
+                            yAlignment: .center,
+                            xOffset: 20)
         
         switchIcon = UIImageView(image: lightIcon)
         self.view.addSubview(switchIcon)
-        self.view.addConstraints(ConstraintsHelper.stackH(item: switchIcon,
-                                                          toItem: switchView,
-                                                          yAlignment: .center,
-                                                          direction: .left,
-                                                          xOffset: 5,
-                                                          yOffset: 0))
+        self.view.constrain(switchIcon,
+                            horizontallyTo: switchView,
+                            yAlignment: .center,
+                            direction: .left,
+                            xOffset: 5)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -166,28 +164,25 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     func styleHeader() {
         switchHeader = UIView()
         self.view.addSubview(switchHeader)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: switchHeader,
-                                                                  toItem: self.view,
-                                                                  width: self.view.frame.width,
-                                                                  height: 64,
-                                                                  xAlignment: .center,
-                                                                  yAlignment: .top,
-                                                                  xOffset: 0,
-                                                                  yOffset: 64))
+        self.view.constrain(switchHeader,
+                            inside: self.view,
+                            xAlignment: .center,
+                            yAlignment: .top,
+                            width: self.view.frame.width,
+                            height: 64,
+                            yOffset: 64)
         
         switchHeader.backgroundColor = UIColor.sldsColorBackground(.background)
         
         let hr = UIView()
         hr.backgroundColor = UIColor.sldsColorBorder(.input)
         self.view.addSubview(hr)
-        self.view.addConstraints(ConstraintsHelper.addConstraints(item: hr,
-                                                                  toItem: switchHeader,
-                                                                  width: self.view.frame.width,
-                                                                  height: 1,
-                                                                  xAlignment: .center,
-                                                                  yAlignment: .bottom,
-                                                                  xOffset: 0,
-                                                                  yOffset: 0))
+        self.view.constrain(hr,
+                            inside: switchHeader,
+                            xAlignment: .center,
+                            yAlignment: .bottom,
+                            width: self.view.frame.width,
+                            height: 1)
     }
 
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -317,12 +312,10 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         
         cell.addSubview(iconContainer)
         cell.contentView.addSubview(iconContainer)
-        cell.contentView.addConstraints(ConstraintsHelper.addConstraints(item: iconContainer,
-                                                                         toItem: cell.contentView,
-                                                                         xAlignment: .center,
-                                                                         yAlignment: .center,
-                                                                         xOffset: 0,
-                                                                         yOffset: 0 ))
+        cell.contentView.constrain(iconContainer,
+                                   inside: cell.contentView,
+                                   xAlignment: .center,
+                                   yAlignment: .center)
         
         return cell
     }

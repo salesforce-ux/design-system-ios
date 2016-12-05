@@ -45,25 +45,23 @@ class TabView: UIView {
         let bWidth = self.frame.width / CGFloat(self.tabs.count+1)
         
         for tab : UIButton in self.tabs {
-            self.addConstraints(ConstraintsHelper.addConstraints(item: tab,
-                                                                 toItem: self,
-                                                                 width: bWidth,
-                                                                 height: 30,
-                                                                 xAlignment: .left,
-                                                                 yAlignment: .bottom,
-                                                                 xOffset: xOff,
-                                                                 yOffset: 2.0 ))
+            self.constrain(tab,
+                           inside: self,
+                           xAlignment: .left,
+                           yAlignment: .bottom,
+                           width: bWidth,
+                           height: 30,
+                           xOffset: xOff,
+                           yOffset: 2.0 )
             xOff += bWidth
         }
         
-        self.addConstraints(ConstraintsHelper.addConstraints(item: self.underscore,
-                                                             toItem: self,
-                                                             width: bWidth,
-                                                             height: 3,
-                                                             xAlignment: .left,
-                                                             yAlignment: .bottom,
-                                                             xOffset: 0.0,
-                                                             yOffset: 0.0 ))
+        self.constrain(self.underscore,
+                       inside: self,
+                       xAlignment: .left,
+                       yAlignment: .bottom,
+                       width: bWidth,
+                       height: 3)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

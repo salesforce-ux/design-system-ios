@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ConstraintsHelper {
+extension UIView {
     
     enum XAlignmentType {
         case left
@@ -21,20 +21,17 @@ class ConstraintsHelper {
         case center
         case bottom
     }
-    
-    enum VDirectionType {
-        case up
-        case down
-    }
-    
-    enum HDirectionType {
-        case right
-        case left
+
+    enum DirectionType {
+      case up
+      case down
+      case left
+      case right
     }
     
     // MARK: helpers
     
-    static func setX (_ alignment: XAlignmentType) -> NSLayoutAttribute {
+    func setX (_ alignment: XAlignmentType) -> NSLayoutAttribute {
         switch alignment {
             case .left:
                 return NSLayoutAttribute.left
@@ -45,7 +42,7 @@ class ConstraintsHelper {
         }
     }
     
-    static func setY (_ alignment: YAlignmentType) -> NSLayoutAttribute {
+    func setY (_ alignment: YAlignmentType) -> NSLayoutAttribute {
         switch alignment {
             case .top:
                 return NSLayoutAttribute.top
@@ -56,38 +53,40 @@ class ConstraintsHelper {
         }
     }
     
-    static func stackV(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, xAlignment: XAlignmentType, direction: VDirectionType, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
+    func constrain(_ item: UIView, verticallyTo: UIView, xAlignment: XAlignmentType, direction: DirectionType, width: CGFloat?=nil, height: CGFloat?=nil, xOffset: CGFloat?=nil, yOffset: CGFloat?=nil) {
         
         item.translatesAutoresizingMaskIntoConstraints = false
         
         var constraints = Array<NSLayoutConstraint>()
         
-        var yOff = yOffset
+        let xOff = xOffset == nil ? 0 : xOffset
+        var yOff = yOffset == nil ? 0 : yOffset
+
         var yAtt1 = NSLayoutAttribute.top
         var yAtt2 = NSLayoutAttribute.bottom
         
         if direction == .up {
             yAtt1 = NSLayoutAttribute.bottom
             yAtt2 = NSLayoutAttribute.top
-            yOff = -yOff
+            yOff = yOff?.negated()
         }
         
         constraints.append(NSLayoutConstraint(item: item,
                                                   attribute: setX(xAlignment),
                                                   relatedBy: NSLayoutRelation.equal,
-                                                  toItem: toItem,
+                                                  toItem: verticallyTo,
                                                   attribute: setX(xAlignment),
                                                   multiplier: 1.0,
-                                                  constant: xOffset))
+                                                  constant: xOff!))
         
         
         constraints.append(NSLayoutConstraint(item: item,
                                    attribute: yAtt1,
                                    relatedBy: NSLayoutRelation.equal,
-                                   toItem: toItem,
+                                   toItem: verticallyTo,
                                    attribute: yAtt2,
                                    multiplier: 1.0,
-                                   constant: yOff))
+                                   constant: yOff!))
         
         if width != nil {
             constraints.append(NSLayoutConstraint(item: item,
@@ -109,40 +108,42 @@ class ConstraintsHelper {
                                                   constant: height!))
         }
         
-        return constraints
+        self.addConstraints(constraints)
     }
     
-    static func stackH(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, yAlignment: YAlignmentType, direction: HDirectionType, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
+    func constrain(_ item: UIView, horizontallyTo: UIView, yAlignment: YAlignmentType, direction: DirectionType, width: CGFloat?=nil, height: CGFloat?=nil, xOffset: CGFloat?=nil, yOffset: CGFloat?=nil) {
         
         item.translatesAutoresizingMaskIntoConstraints = false
         
         var constraints = Array<NSLayoutConstraint>()
         
-        var xOff = xOffset
+        var xOff = xOffset == nil ? 0 : xOffset
+        let yOff = yOffset == nil ? 0 : yOffset
+        
         var xAtt1 = NSLayoutAttribute.left
         var xAtt2 = NSLayoutAttribute.right
         
         if direction == .left {
             xAtt1 = NSLayoutAttribute.right
             xAtt2 = NSLayoutAttribute.left
-            xOff = -xOff
+            xOff = xOff?.negated()
         }
         
         constraints.append(NSLayoutConstraint(item: item,
                                    attribute: xAtt1,
                                    relatedBy: NSLayoutRelation.equal,
-                                   toItem: toItem,
+                                   toItem: horizontallyTo,
                                    attribute: xAtt2,
                                    multiplier: 1.0,
-                                   constant: xOff))
+                                   constant: xOff!))
     
         constraints.append(NSLayoutConstraint(item: item,
                                    attribute: setY(yAlignment),
                                    relatedBy: NSLayoutRelation.equal,
-                                   toItem: toItem,
+                                   toItem: horizontallyTo,
                                    attribute: setY(yAlignment),
                                    multiplier: 1.0,
-                                   constant: yOffset))
+                                   constant: yOff!))
         
         if width != nil {
             constraints.append(NSLayoutConstraint(item: item,
@@ -165,33 +166,36 @@ class ConstraintsHelper {
         }
         
         
-        return constraints
+        self.addConstraints(constraints)
     }
     
-    static func addConstraints(item: UIView, toItem: UIView, width: CGFloat?=nil, height: CGFloat?=nil, xAlignment: XAlignmentType, yAlignment: YAlignmentType, xOffset: CGFloat, yOffset: CGFloat) -> Array<NSLayoutConstraint> {
+    func constrain(_ item: UIView, inside: UIView, xAlignment: XAlignmentType, yAlignment: YAlignmentType, width: CGFloat?=nil, height: CGFloat?=nil, xOffset: CGFloat?=nil, yOffset: CGFloat?=nil) {
         
         item.translatesAutoresizingMaskIntoConstraints = false
         
         var constraints = Array<NSLayoutConstraint>()
         
-        let xOff = xAlignment == .right ? -xOffset : xOffset
-        let yOff = yAlignment == .bottom ? -yOffset : yOffset
+        var xOff = xOffset == nil ? 0 : xOffset
+        var yOff = yOffset == nil ? 0 : yOffset
+        
+        xOff = xAlignment == .right ? xOff?.negated() : xOff
+        yOff = yAlignment == .bottom ? yOff?.negated() : yOff
         
         constraints.append(NSLayoutConstraint(item: item,
                                    attribute: setX(xAlignment),
                                    relatedBy: NSLayoutRelation.equal,
-                                   toItem: toItem,
+                                   toItem: inside,
                                    attribute: setX(xAlignment),
                                    multiplier: 1.0,
-                                   constant: xOff))
+                                   constant: xOff!))
         
         constraints.append(NSLayoutConstraint(item: item,
                                    attribute: setY(yAlignment),
                                    relatedBy: NSLayoutRelation.equal,
-                                   toItem: toItem,
+                                   toItem: inside,
                                    attribute: setY(yAlignment),
                                    multiplier: 1.0,
-                                   constant: yOff))
+                                   constant: yOff!))
         
         if width != nil {
             constraints.append(NSLayoutConstraint(item: item,
@@ -213,6 +217,6 @@ class ConstraintsHelper {
                                                   constant: height!))
         }
         
-        return constraints
+        self.addConstraints(constraints)
     }
 }
