@@ -8,24 +8,29 @@
 
 import UIKit
 
+enum AccountType : String {
+    case direct = "Customer - Direct"
+    case channel = "Customer - Channel"
+}
+
+struct AccountObject {
+    var name : String!
+    var state : String!
+    var phone : String!
+    var type : AccountType!
+    var owner : String!
+}
+
 class AccountListViewController: UITableViewController {
     
-    enum AccountType : String {
-        case direct = "Customer - Direct"
-        case channel = "Customer - Channel"
-    }
-    
-    struct AccountObject {
-        var name : String!
-        var state : String!
-        var phone : String!
-        var type : AccountType!
-        var owner : String!
-    }
+    let accounts = [
+        AccountObject(name: "Hello", state: "CA", phone: "415 323-2323", type: .channel, owner: "Joe Green")
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "SLDS Sample App"
+        self.tableView.register(AccountCell.self, forCellReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,12 +42,18 @@ class AccountListViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return accounts.count
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -53,15 +64,14 @@ class AccountListViewController: UITableViewController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> AccountCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AccountCell
+        cell.dataProvider = accounts[indexPath.item]
+        
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

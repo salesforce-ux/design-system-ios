@@ -41,7 +41,7 @@ class MainListViewController: UITableViewController {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func viewDidLoad() {
-        self.tableView.register(CategoryCell.self, forCellReuseIdentifier: "Cell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         navigationController?.navigationBar.barTintColor = UIColor.sldsColorBackground(.brand)
         navigationController?.navigationBar.tintColor = UIColor.white
         

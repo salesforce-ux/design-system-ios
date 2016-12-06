@@ -1,11 +1,3 @@
-//
-//  ConstraintsHelper.swift
-//  slds-sample-app
-//
-//  Created by John Earle on 11/9/16.
-//  Copyright © 2016 John Earle. All rights reserved.
-//
-
 import Foundation
 
 extension UIView {
@@ -21,35 +13,35 @@ extension UIView {
         case center
         case bottom
     }
-
+    
     enum DirectionType {
-      case up
-      case down
-      case left
-      case right
+        case up
+        case down
+        case left
+        case right
     }
     
     // MARK: helpers
     
     func setX (_ alignment: XAlignmentType) -> NSLayoutAttribute {
         switch alignment {
-            case .left:
-                return NSLayoutAttribute.left
-            case .right:
-                return NSLayoutAttribute.right
-            default:
-                return NSLayoutAttribute.centerX
+        case .left:
+            return NSLayoutAttribute.left
+        case .right:
+            return NSLayoutAttribute.right
+        default:
+            return NSLayoutAttribute.centerX
         }
     }
     
     func setY (_ alignment: YAlignmentType) -> NSLayoutAttribute {
         switch alignment {
-            case .top:
-                return NSLayoutAttribute.top
-            case .center:
-                return NSLayoutAttribute.centerY
-            default:
-                return NSLayoutAttribute.bottom
+        case .top:
+            return NSLayoutAttribute.top
+        case .center:
+            return NSLayoutAttribute.centerY
+        default:
+            return NSLayoutAttribute.bottom
         }
     }
     
@@ -61,7 +53,7 @@ extension UIView {
         
         let xOff = xOffset == nil ? 0 : xOffset
         var yOff = yOffset == nil ? 0 : yOffset
-
+        
         var yAtt1 = NSLayoutAttribute.top
         var yAtt2 = NSLayoutAttribute.bottom
         
@@ -72,21 +64,21 @@ extension UIView {
         }
         
         constraints.append(NSLayoutConstraint(item: item,
-                                                  attribute: setX(xAlignment),
-                                                  relatedBy: NSLayoutRelation.equal,
-                                                  toItem: verticallyTo,
-                                                  attribute: setX(xAlignment),
-                                                  multiplier: 1.0,
-                                                  constant: xOff!))
+                                              attribute: setX(xAlignment),
+                                              relatedBy: NSLayoutRelation.equal,
+                                              toItem: verticallyTo,
+                                              attribute: setX(xAlignment),
+                                              multiplier: 1.0,
+                                              constant: xOff!))
         
         
         constraints.append(NSLayoutConstraint(item: item,
-                                   attribute: yAtt1,
-                                   relatedBy: NSLayoutRelation.equal,
-                                   toItem: verticallyTo,
-                                   attribute: yAtt2,
-                                   multiplier: 1.0,
-                                   constant: yOff!))
+                                              attribute: yAtt1,
+                                              relatedBy: NSLayoutRelation.equal,
+                                              toItem: verticallyTo,
+                                              attribute: yAtt2,
+                                              multiplier: 1.0,
+                                              constant: yOff!))
         
         if width != nil {
             constraints.append(NSLayoutConstraint(item: item,
@@ -130,20 +122,20 @@ extension UIView {
         }
         
         constraints.append(NSLayoutConstraint(item: item,
-                                   attribute: xAtt1,
-                                   relatedBy: NSLayoutRelation.equal,
-                                   toItem: horizontallyTo,
-                                   attribute: xAtt2,
-                                   multiplier: 1.0,
-                                   constant: xOff!))
-    
+                                              attribute: xAtt1,
+                                              relatedBy: NSLayoutRelation.equal,
+                                              toItem: horizontallyTo,
+                                              attribute: xAtt2,
+                                              multiplier: 1.0,
+                                              constant: xOff!))
+        
         constraints.append(NSLayoutConstraint(item: item,
-                                   attribute: setY(yAlignment),
-                                   relatedBy: NSLayoutRelation.equal,
-                                   toItem: horizontallyTo,
-                                   attribute: setY(yAlignment),
-                                   multiplier: 1.0,
-                                   constant: yOff!))
+                                              attribute: setY(yAlignment),
+                                              relatedBy: NSLayoutRelation.equal,
+                                              toItem: horizontallyTo,
+                                              attribute: setY(yAlignment),
+                                              multiplier: 1.0,
+                                              constant: yOff!))
         
         if width != nil {
             constraints.append(NSLayoutConstraint(item: item,
@@ -182,20 +174,20 @@ extension UIView {
         yOff = yAlignment == .bottom ? yOff?.negated() : yOff
         
         constraints.append(NSLayoutConstraint(item: item,
-                                   attribute: setX(xAlignment),
-                                   relatedBy: NSLayoutRelation.equal,
-                                   toItem: inside,
-                                   attribute: setX(xAlignment),
-                                   multiplier: 1.0,
-                                   constant: xOff!))
+                                              attribute: setX(xAlignment),
+                                              relatedBy: NSLayoutRelation.equal,
+                                              toItem: inside,
+                                              attribute: setX(xAlignment),
+                                              multiplier: 1.0,
+                                              constant: xOff!))
         
         constraints.append(NSLayoutConstraint(item: item,
-                                   attribute: setY(yAlignment),
-                                   relatedBy: NSLayoutRelation.equal,
-                                   toItem: inside,
-                                   attribute: setY(yAlignment),
-                                   multiplier: 1.0,
-                                   constant: yOff!))
+                                              attribute: setY(yAlignment),
+                                              relatedBy: NSLayoutRelation.equal,
+                                              toItem: inside,
+                                              attribute: setY(yAlignment),
+                                              multiplier: 1.0,
+                                              constant: yOff!))
         
         if width != nil {
             constraints.append(NSLayoutConstraint(item: item,

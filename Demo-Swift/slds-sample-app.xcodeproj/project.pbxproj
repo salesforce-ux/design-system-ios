@@ -17,7 +17,6 @@
 		209A56291DEF546400327910 /* IconListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A56281DEF546400327910 /* IconListViewController.swift */; };
 		209A56301DEFA47E00327910 /* FontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A562F1DEFA47E00327910 /* FontViewController.swift */; };
 		FC1EA4681DDE6F6300304E01 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */; };
-		FC4299161DDA3EEC00891FBD /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4299151DDA3EEC00891FBD /* CategoryCell.swift */; };
 		FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4299181DDA4FE100891FBD /* ColorListViewController.swift */; };
 		FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42991E1DDA8FC500891FBD /* ColorViewController.swift */; };
 		FC4AC3841DF0D7D000D3D9BE /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AC3831DF0D7D000D3D9BE /* IconViewController.swift */; };
@@ -28,8 +27,9 @@
 		FCB47EB01DD0FCDB00BB6C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */; };
 		FCB47EB31DD0FCDB00BB6C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB47EB11DD0FCDB00BB6C1B /* LaunchScreen.storyboard */; };
 		FCB47EDD1DD3D09400BB6C1B /* ConstraintsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EDC1DD3D09400BB6C1B /* ConstraintsHelper.swift */; };
-		FCB47EE01DD4F10E00BB6C1B /* NavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */; };
-		FCCEE6471DEE4DE600949840 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEE6461DEE4DE600949840 /* IconCell.swift */; };
+		FCB47EE01DD4F10E00BB6C1B /* ActionBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EDF1DD4F10E00BB6C1B /* ActionBarButton.swift */; };
+		FCC8BD7F1DF73C070075BEE7 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC8BD7E1DF73C070075BEE7 /* AccountCell.swift */; };
+		FCC8BD831DF76D470075BEE7 /* ActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC8BD821DF76D470075BEE7 /* ActionBar.swift */; };
 		FCCEE6501DEF889C00949840 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEE64F1DEF889C00949840 /* SearchField.swift */; };
 		FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */; };
 /* End PBXBuildFile section */
@@ -76,7 +76,6 @@
 		209A56281DEF546400327910 /* IconListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconListViewController.swift; sourceTree = "<group>"; };
 		209A562F1DEFA47E00327910 /* FontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontViewController.swift; sourceTree = "<group>"; };
 		FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
-		FC4299151DDA3EEC00891FBD /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		FC4299181DDA4FE100891FBD /* ColorListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorListViewController.swift; sourceTree = "<group>"; };
 		FC42991E1DDA8FC500891FBD /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		FC4AC3831DF0D7D000D3D9BE /* IconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconViewController.swift; sourceTree = "<group>"; };
@@ -90,8 +89,9 @@
 		FCB47EB41DD0FCDB00BB6C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCB47ED81DD1421000BB6C1B /* slds-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "slds-bridging-header.h"; path = "../slds-bridging-header.h"; sourceTree = "<group>"; };
 		FCB47EDC1DD3D09400BB6C1B /* ConstraintsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintsHelper.swift; sourceTree = "<group>"; };
-		FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavButton.swift; sourceTree = "<group>"; };
-		FCCEE6461DEE4DE600949840 /* IconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
+		FCB47EDF1DD4F10E00BB6C1B /* ActionBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionBarButton.swift; sourceTree = "<group>"; };
+		FCC8BD7E1DF73C070075BEE7 /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
+		FCC8BD821DF76D470075BEE7 /* ActionBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionBar.swift; sourceTree = "<group>"; };
 		FCCEE64F1DEF889C00949840 /* SearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 		FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,7 +120,7 @@
 		2043E3A71DF098E80043A192 /* controls */ = {
 			isa = PBXGroup;
 			children = (
-				FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */,
+				FCB47EDF1DD4F10E00BB6C1B /* ActionBarButton.swift */,
 				FCCEE64F1DEF889C00949840 /* SearchField.swift */,
 			);
 			name = controls;
@@ -197,13 +197,13 @@
 		FCB47ED91DD2989F00BB6C1B /* views */ = {
 			isa = PBXGroup;
 			children = (
-				FC4299151DDA3EEC00891FBD /* CategoryCell.swift */,
 				2043E3AA1DF0993F0043A192 /* CodeView.swift */,
+				FCC8BD7E1DF73C070075BEE7 /* AccountCell.swift */,
 				FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */,
-				FCCEE6461DEE4DE600949840 /* IconCell.swift */,
 				FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */,
 				2062152C1DF22675002B62AC /* SwatchView.swift */,
 				206215341DF23C14002B62AC /* TabView.swift */,
+				FCC8BD821DF76D470075BEE7 /* ActionBar.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -314,25 +314,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1EA4681DDE6F6300304E01 /* MainListViewController.swift in Sources */,
-				FC4299161DDA3EEC00891FBD /* CategoryCell.swift in Sources */,
 				2043E3AB1DF0993F0043A192 /* CodeView.swift in Sources */,
 				FCB47EDD1DD3D09400BB6C1B /* ConstraintsHelper.swift in Sources */,
 				FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */,
 				FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */,
 				FCCEE6501DEF889C00949840 /* SearchField.swift in Sources */,
 				206AA8201DE3B82800375432 /* AccountListViewController.swift in Sources */,
-				FCCEE6471DEE4DE600949840 /* IconCell.swift in Sources */,
 				FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */,
 				206215351DF23C14002B62AC /* TabView.swift in Sources */,
 				206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */,
 				FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */,
 				FC7F2E411DF2310F0011684A /* AccountContainerViewController.swift in Sources */,
+				FCC8BD7F1DF73C070075BEE7 /* AccountCell.swift in Sources */,
 				2062152D1DF22675002B62AC /* SwatchView.swift in Sources */,
 				FC4AC3841DF0D7D000D3D9BE /* IconViewController.swift in Sources */,
 				209A56291DEF546400327910 /* IconListViewController.swift in Sources */,
 				FC4FF3DB1DE4D033009B3D2E /* ColorCell.swift in Sources */,
+				FCC8BD831DF76D470075BEE7 /* ActionBar.swift in Sources */,
 				209A56301DEFA47E00327910 /* FontViewController.swift in Sources */,
-				FCB47EE01DD4F10E00BB6C1B /* NavButton.swift in Sources */,
+				FCB47EE01DD4F10E00BB6C1B /* ActionBarButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

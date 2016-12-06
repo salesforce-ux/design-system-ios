@@ -13,7 +13,6 @@ class ColorViewController: UIViewController {
     
     var swatchName = UILabel()
     var swatch = SwatchView()
-    var codeView = CodeView()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
