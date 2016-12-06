@@ -10,12 +10,13 @@
 		20191FDB1DEE4F89007C8BD8 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */; };
 		2043E3AB1DF0993F0043A192 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E3AA1DF0993F0043A192 /* CodeView.swift */; };
 		2062152D1DF22675002B62AC /* SwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2062152C1DF22675002B62AC /* SwatchView.swift */; };
-		206215351DF23C14002B62AC /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206215341DF23C14002B62AC /* TabView.swift */; };
+		206215351DF23C14002B62AC /* ItemBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206215341DF23C14002B62AC /* ItemBar.swift */; };
 		206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */; };
 		206AA8201DE3B82800375432 /* AccountListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81F1DE3B82800375432 /* AccountListViewController.swift */; };
 		209436AE1DF103EF00D70A60 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */; };
 		209A56291DEF546400327910 /* IconListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A56281DEF546400327910 /* IconListViewController.swift */; };
 		209A56301DEFA47E00327910 /* FontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A562F1DEFA47E00327910 /* FontViewController.swift */; };
+		20F0D0901DF77AAB0024F339 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0D08F1DF77AAB0024F339 /* TabBar.swift */; };
 		FC1EA4681DDE6F6300304E01 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */; };
 		FC4299161DDA3EEC00891FBD /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4299151DDA3EEC00891FBD /* CategoryCell.swift */; };
 		FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4299181DDA4FE100891FBD /* ColorListViewController.swift */; };
@@ -27,7 +28,7 @@
 		FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EA81DD0FCDB00BB6C1B /* AppDelegate.swift */; };
 		FCB47EB01DD0FCDB00BB6C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */; };
 		FCB47EB31DD0FCDB00BB6C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB47EB11DD0FCDB00BB6C1B /* LaunchScreen.storyboard */; };
-		FCB47EDD1DD3D09400BB6C1B /* ConstraintsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EDC1DD3D09400BB6C1B /* ConstraintsHelper.swift */; };
+		FCB47EDD1DD3D09400BB6C1B /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EDC1DD3D09400BB6C1B /* UIView+Constraints.swift */; };
 		FCB47EE01DD4F10E00BB6C1B /* NavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */; };
 		FCCEE6471DEE4DE600949840 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEE6461DEE4DE600949840 /* IconCell.swift */; };
 		FCCEE6501DEF889C00949840 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEE64F1DEF889C00949840 /* SearchField.swift */; };
@@ -69,12 +70,13 @@
 		20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CustomFont.bundle; path = ../CustomFont.bundle; sourceTree = "<group>"; };
 		2043E3AA1DF0993F0043A192 /* CodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		2062152C1DF22675002B62AC /* SwatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwatchView.swift; sourceTree = "<group>"; };
-		206215341DF23C14002B62AC /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		206215341DF23C14002B62AC /* ItemBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBar.swift; sourceTree = "<group>"; };
 		206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontListTableViewController.swift; sourceTree = "<group>"; };
 		206AA81F1DE3B82800375432 /* AccountListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewController.swift; sourceTree = "<group>"; };
 		2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceDesignSystem.bundle; path = ../SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
 		209A56281DEF546400327910 /* IconListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconListViewController.swift; sourceTree = "<group>"; };
 		209A562F1DEFA47E00327910 /* FontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontViewController.swift; sourceTree = "<group>"; };
+		20F0D08F1DF77AAB0024F339 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
 		FC4299151DDA3EEC00891FBD /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		FC4299181DDA4FE100891FBD /* ColorListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorListViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 		FCB47EB21DD0FCDB00BB6C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCB47EB41DD0FCDB00BB6C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCB47ED81DD1421000BB6C1B /* slds-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "slds-bridging-header.h"; path = "../slds-bridging-header.h"; sourceTree = "<group>"; };
-		FCB47EDC1DD3D09400BB6C1B /* ConstraintsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintsHelper.swift; sourceTree = "<group>"; };
+		FCB47EDC1DD3D09400BB6C1B /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavButton.swift; sourceTree = "<group>"; };
 		FCCEE6461DEE4DE600949840 /* IconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		FCCEE64F1DEF889C00949840 /* SearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
@@ -120,8 +122,10 @@
 		2043E3A71DF098E80043A192 /* controls */ = {
 			isa = PBXGroup;
 			children = (
+				206215341DF23C14002B62AC /* ItemBar.swift */,
 				FCB47EDF1DD4F10E00BB6C1B /* NavButton.swift */,
 				FCCEE64F1DEF889C00949840 /* SearchField.swift */,
+				20F0D08F1DF77AAB0024F339 /* TabBar.swift */,
 			);
 			name = controls;
 			sourceTree = "<group>";
@@ -129,7 +133,7 @@
 		2043E3AC1DF09B140043A192 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				FCB47EDC1DD3D09400BB6C1B /* ConstraintsHelper.swift */,
+				FCB47EDC1DD3D09400BB6C1B /* UIView+Constraints.swift */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -203,7 +207,6 @@
 				FCCEE6461DEE4DE600949840 /* IconCell.swift */,
 				FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */,
 				2062152C1DF22675002B62AC /* SwatchView.swift */,
-				206215341DF23C14002B62AC /* TabView.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -316,14 +319,15 @@
 				FC1EA4681DDE6F6300304E01 /* MainListViewController.swift in Sources */,
 				FC4299161DDA3EEC00891FBD /* CategoryCell.swift in Sources */,
 				2043E3AB1DF0993F0043A192 /* CodeView.swift in Sources */,
-				FCB47EDD1DD3D09400BB6C1B /* ConstraintsHelper.swift in Sources */,
+				FCB47EDD1DD3D09400BB6C1B /* UIView+Constraints.swift in Sources */,
 				FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */,
 				FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */,
+				20F0D0901DF77AAB0024F339 /* TabBar.swift in Sources */,
 				FCCEE6501DEF889C00949840 /* SearchField.swift in Sources */,
 				206AA8201DE3B82800375432 /* AccountListViewController.swift in Sources */,
 				FCCEE6471DEE4DE600949840 /* IconCell.swift in Sources */,
 				FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */,
-				206215351DF23C14002B62AC /* TabView.swift in Sources */,
+				206215351DF23C14002B62AC /* ItemBar.swift in Sources */,
 				206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */,
 				FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */,
 				FC7F2E411DF2310F0011684A /* AccountContainerViewController.swift in Sources */,

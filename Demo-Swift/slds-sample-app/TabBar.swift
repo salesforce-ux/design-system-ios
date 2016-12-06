@@ -9,62 +9,70 @@
 
 import UIKit
 
-class ColorCell: UITableViewCell {
+class TabBar: ItemBar {
     
-    var color = UIColor.white
-    var swatch = SwatchView()
+    var underscore = UIView()
+    var underscoreX : NSLayoutConstraint?
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    var dataProvider : UIColor = UIColor.white {
-        didSet {
-            swatch.dataProvider = dataProvider
-        }
+    override var itemWidth : CGFloat {
+        return self.frame.width / CGFloat(self.items.count+1)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.makeLayout()
+    override func draw(_ rect: CGRect) {
+        let aPath = UIBezierPath()
+        
+        aPath.move(to: CGPoint(x:0, y:self.frame.height))
+        aPath.addLine(to: CGPoint(x:self.frame.width, y:self.frame.height))
+        aPath.close()
+        aPath.lineWidth = 2.0
+        UIColor.sldsColorText(.linkActive).set()
+        aPath.stroke()
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override func loadView() {
+        super.loadView()
+        
+        self.underscore.backgroundColor = UIColor.sldsColorBorder(.selection)
+        self.addSubview(self.underscore)
+        
+        self.constrainChild(self.underscore,
+                            xAlignment: .left,
+                            yAlignment: .bottom,
+                            width:  10,
+                            height: 3)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.underscore.widthConstraint?.constant = self.itemWidth
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        swatch.dataProvider = dataProvider;
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        super.setHighlighted(highlighted, animated: animated)
-        swatch.dataProvider = dataProvider;
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func makeLayout() {
+    func addTab(labelString :String) {
+        let tab = UIButton()
+        tab.setTitle(labelString.uppercased(), for: .normal)
+        tab.backgroundColor = UIColor.cyan
+        tab.titleLabel?.font = UIFont.sldsFont(.regular, with: .small)
+        tab.setTitleColor(UIColor.sldsColorText(.default), for: .normal)
+        self.addSubview(tab)
         
-        self.addSubview(self.swatch)
-        self.constrainChild(self.swatch,
-                            xAlignment: .right,
-                            yAlignment: .center,
-                            width: 70,
-                            height: 70,
-                            xOffset: 20)
+        if items.count > 0 {
+            tab.constrainRightOf(items.last!, yAlignment:.bottom, width:10, height: 30)
+        }
+        else
+        {
+            self.constrainChild(tab, xAlignment: .left, yAlignment: .bottom, width:10, height: 30, yOffset: 2.0)
+        }
+        
+        self.items.append(tab)
     }
 }
