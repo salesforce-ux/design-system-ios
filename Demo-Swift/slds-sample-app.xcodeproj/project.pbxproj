@@ -122,6 +122,8 @@
 		2043E3A71DF098E80043A192 /* controls */ = {
 			isa = PBXGroup;
 			children = (
+				FCC8BD821DF76D470075BEE7 /* ActionBar.swift */,
+				206215341DF23C14002B62AC /* ItemBar.swift */,
 				FCC8BD891DF781D50075BEE7 /* ActionBarButton.swift */,
 				FCCEE64F1DEF889C00949840 /* SearchField.swift */,
 				FCC8BD871DF781610075BEE7 /* TabBar.swift */,
@@ -205,8 +207,6 @@
 				FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */,
 				FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */,
 				2062152C1DF22675002B62AC /* SwatchView.swift */,
-				206215341DF23C14002B62AC /* ItemBar.swift */,
-				FCC8BD821DF76D470075BEE7 /* ActionBar.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";

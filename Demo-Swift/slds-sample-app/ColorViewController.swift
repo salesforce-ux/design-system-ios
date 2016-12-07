@@ -29,7 +29,6 @@ class ColorViewController: UIViewController {
             self.codeView.objCString = "[UIColor " + data.method + " : " + data.alias + " ]"
         }
     }
-
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -66,7 +65,6 @@ class ColorViewController: UIViewController {
                                  height: self.view.frame.height/3)
     }
 
-    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func didReceiveMemoryWarning() {

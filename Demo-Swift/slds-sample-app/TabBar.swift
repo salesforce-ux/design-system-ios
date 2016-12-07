@@ -44,7 +44,6 @@ class TabBar: ItemBar {
         self.constrainChild(self.underscore,
                             xAlignment: .left,
                             yAlignment: .bottom,
-                            width:  10,
                             height: 3)
     }
     
@@ -52,7 +51,7 @@ class TabBar: ItemBar {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.underscore.widthConstraint?.constant = self.itemWidth
+        self.underscore.widthConstraint.constant = self.itemWidth
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -60,19 +59,8 @@ class TabBar: ItemBar {
     func addTab(labelString :String) {
         let tab = UIButton()
         tab.setTitle(labelString.uppercased(), for: .normal)
-        tab.backgroundColor = UIColor.cyan
         tab.titleLabel?.font = UIFont.sldsFont(.regular, with: .small)
         tab.setTitleColor(UIColor.sldsColorText(.default), for: .normal)
-        self.addSubview(tab)
-        
-        if items.count > 0 {
-            tab.constrainRightOf(items.last!, yAlignment:.bottom, width:10, height: 30)
-        }
-        else
-        {
-            self.constrainChild(tab, xAlignment: .left, yAlignment: .bottom, width:10, height: 30, yOffset: 2.0)
-        }
-        
-        self.items.append(tab)
+        super.addItem(item: tab)
     }
 }

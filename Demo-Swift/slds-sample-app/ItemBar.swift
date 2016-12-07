@@ -49,8 +49,7 @@ class ItemBar: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         for item in self.items {
-            item.widthConstraint?.constant = self.itemWidth
-        //    print(item.widthConstraint?.constant)
+            item.widthConstraint.constant = self.itemWidth
         }
     }
     
@@ -60,11 +59,11 @@ class ItemBar: UIView {
         self.addSubview(item)
         
         if items.count > 0 {
-            item.constrainRightOf(items.last!, yAlignment:.bottom, width:30, height: 30)
+            item.constrainRightOf(items.last!, yAlignment:.bottom, height: 30)
         }
         else
         {
-            self.constrainChild(item, xAlignment: .left, yAlignment: .bottom, width:30, height: 30)
+            self.constrainChild(item, xAlignment: .left, yAlignment: .bottom, height: 30)
         }
         
         self.items.append(item)

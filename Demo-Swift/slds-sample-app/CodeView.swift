@@ -11,7 +11,7 @@ import UIKit
 
 class CodeView: UIView {
     
-    var itemBar = ItemBar()
+    var tabBar = TabBar()
     var codeExample = UITextView()
     var copyButton = UIButton()
     
@@ -69,18 +69,9 @@ class CodeView: UIView {
     func loadView() {
         self.backgroundColor = UIColor.sldsColorBackground(.backgroundStencil)
         
-        var button = UIButton()
-        button.setTitle("Swift", for: .normal)
-        button.backgroundColor = UIColor.red
-        itemBar.addItem(item: button)
-        
-        button = UIButton()
-        button.setTitle("ObjC", for: .normal)
-        button.backgroundColor = UIColor.green
-        itemBar.addItem(item: button)
-        self.addSubview(itemBar)
-        
-        itemBar.backgroundColor = UIColor.darkGray
+        tabBar.addTab(labelString: "Swift")
+        tabBar.addTab(labelString: "Obj-C")
+        self.addSubview(tabBar)
         
         codeExample.isEditable = false
         codeExample.isSelectable = false
@@ -95,15 +86,13 @@ class CodeView: UIView {
         copyButton.setTitleColor(UIColor.sldsColorText(.brand), for: .normal)
         self.addSubview(copyButton)
         
-        self.constrainChild(self.itemBar,
+        self.constrainChild(self.tabBar,
                             xAlignment: .center,
                             yAlignment: .top,
-                            width: 10,
                             height: 30)
         
-        self.codeExample.constrainBelow(self.itemBar,
+        self.codeExample.constrainBelow(self.tabBar,
                                         xAlignment: .center,
-                                        width: 10,
                                         height: 60,
                                         yOffset: 10)
         
@@ -116,10 +105,9 @@ class CodeView: UIView {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func layoutSubviews() {
+        self.codeExample.widthConstraint.constant = self.frame.width - 40
+        self.tabBar.widthConstraint.constant = self.frame.width
         super.layoutSubviews()
-        
-        self.codeExample.widthConstraint?.constant = self.frame.width - 40
-        self.itemBar.widthConstraint?.constant = self.frame.width
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
