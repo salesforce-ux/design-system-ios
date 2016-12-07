@@ -79,6 +79,7 @@ class ColorListViewController: UITableViewController {
     
     override func viewDidLoad() {
         self.tableView.register(ColorCell.self, forCellReuseIdentifier: "Cell")
+        self.tableView.register(AccountCell.self, forCellReuseIdentifier: "Cell2")
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

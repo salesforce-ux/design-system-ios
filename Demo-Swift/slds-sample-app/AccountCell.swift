@@ -9,12 +9,48 @@
 
 import UIKit
 
-class CategoryCell: UITableViewCell {
+class AccountCell: UITableViewCell {
+    
+    var accountName = UILabel()
+    var stateLabel = UILabel()
+    var phoneLabel = UILabel()
+    var typeLabel = UILabel()
+    var ownerLabel = UILabel()
+    
+    var stateValue = UILabel()
+    var phoneValue = UILabel()
+    var typeValue = UILabel()
+    var ownerValue = UILabel()
+    
+    var accountObj: AccountObject!
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var dataProvider : AccountObject {
+        get {
+            return accountObj
+        }
+        set {
+            self.accountName.text = newValue.name
+            self.stateValue.text = newValue.state
+            self.phoneValue.text = newValue.phone
+            self.typeValue.text = newValue.type.rawValue
+            self.ownerValue.text = newValue.owner
+            self.accountObj = newValue
+        }
+    }
+    
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        stateLabel.text = "Billing State:"
+        phoneLabel.text = "Phone:"
+        typeLabel.text = "Type:"
+        ownerLabel.text = "Owner:"
+        
         self.makeLayout()
     }
     
@@ -32,12 +68,28 @@ class CategoryCell: UITableViewCell {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func makeLayout() {
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func updateColor(_ c:UIColor) {
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
     }
     
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func makeLayout() {
+        self.addSubview(accountName)
+        self.addSubview(stateLabel)
+        self.addSubview(phoneLabel)
+        self.addSubview(typeLabel)
+        self.addSubview(ownerLabel)
+        
+        self.addSubview(stateValue)
+        self.addSubview(phoneValue)
+        self.addSubview(typeValue)
+        self.addSubview(ownerValue)
+    }
 }
