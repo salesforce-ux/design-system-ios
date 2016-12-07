@@ -23,9 +23,30 @@ class IconViewController: UIViewController {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
+    var dataProvider : IconObject? {
+        didSet {
+            guard let data = self.dataProvider else {
+                return
+            }
+            
+            //self.swatchName.text = data.alias
+            //self.swatch.dataProvider = data.color
+            self.codeView.swiftString = "UIImage.sldsIconAction(." + data.name + ", withSize: SLDSSquareIconMedium )"
+            //self.codeView.objCString = "[UIColor " + data.method + " : " + data.alias + " ]"
+            
+            //data.icon.size = CGSize(width: SLDSSquareIconSmall, height: SLDSSquareIconSmall)
+            iconSmall.image = data.icon
+            iconMedium = UIImageView(image: UIImage.sldsIconAction(.addContact, withSize: SLDSSquareIconMedium))
+            iconLarge = UIImageView(image: UIImage.sldsIconAction(.addContact, withSize: SLDSSquareIconLarge))
+
+            
+        }
+    }
+
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.edgesForExtendedLayout = []
         self.view.backgroundColor = UIColor.white
         
@@ -44,12 +65,11 @@ class IconViewController: UIViewController {
         self.view.addSubview(self.fontInfo)
         
         self.view.addSubview(codeView)
-        
         self.view.constrainChild(self.codeView,
                                  xAlignment: .center,
                                  yAlignment: .bottom,
                                  width: self.view.frame.width,
-                                 height: self.view.frame.height/2)
+                                 height: self.view.frame.height/3)
         
         self.view.addSubview(self.iconContainer)
         self.view.constrainChild(self.iconContainer,

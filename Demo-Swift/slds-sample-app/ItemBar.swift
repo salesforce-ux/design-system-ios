@@ -55,7 +55,7 @@ class ItemBar: UIView {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func addItem(item : UIView) {
+    func addItem(item : UIControl) {
         self.addSubview(item)
         
         if items.count > 0 {

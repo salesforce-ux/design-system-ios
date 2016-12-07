@@ -72,14 +72,11 @@ class ColorListViewController: UITableViewController {
             }
         }
     }
-    
-    
-    
+        
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func viewDidLoad() {
         self.tableView.register(ColorCell.self, forCellReuseIdentifier: "Cell")
-        self.tableView.register(AccountCell.self, forCellReuseIdentifier: "Cell2")
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -137,7 +134,7 @@ class ColorListViewController: UITableViewController {
         default : return
         }
         
-        while let color = self.getColorAt(indexPath) {
+        while let color = self.colorAt(indexPath) {
             colorList.append(color)
             indexPath.row = colorList.count
         }
@@ -147,7 +144,7 @@ class ColorListViewController: UITableViewController {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func getColorAt(_ indexPath: IndexPath) -> ColorObject? {
+    func colorAt(_ indexPath: IndexPath) -> ColorObject? {
         
         var retVal : ColorObject?
         

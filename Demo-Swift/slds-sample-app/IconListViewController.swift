@@ -7,14 +7,21 @@ enum IconListType : String {
     case utility = "Utility"
 }
 
+struct IconObject {
+    var icon : UIImage!
+    var name : String!
+    var method : String!
+    var index: Int!
+}
+
 class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UITextFieldDelegate {
 
     var collectionView: UICollectionView!
     var switchView: UISwitch!
     var switchHeader: UIView!
     var switchIcon: UIImageView!
-    var searchField: SearchField!
-    var utility: Bool!
+    var searchField = SearchField()
+    var utility = false
     
     let accentBorderColor = UIColor.sldsColorBorder(.input)
     let accentTextColor = UIColor.sldsColorText(.inputIcon)
@@ -24,16 +31,24 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     var tap: UITapGestureRecognizer!
     
-    struct IconObject {
-        var icon : UIImage!
-        var name : String!
-        var index: Int!
-    }
-    
     var darkMode = false
     
     var icons = [IconObject]()
-    var filteredIcons = [IconObject]()
+    //var filteredIcons = [IconObject]()
+    
+    var filterString = ""
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var filteredIcons : [IconObject] {
+        return self.icons.filter {
+            if filterString == "" {
+                return true
+            } else {
+                return ($0 as IconObject).name.lowercased().range(of: filterString) != nil
+            }
+        }
+    }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -42,68 +57,8 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             super.title = self.title
             if let newTitle = self.title {
                 self.addContent(newTitle)
-                if self.title == "Utility" {
-                    utility = true
-                } else {
-                    utility = false
-                }
             }
         }
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func addContent(_ iconType: String) {
-        
-        var maxFlag = true
-        var i = Array<IconObject>()
-        
-        repeat {
-            switch iconType {
-                
-            case IconListType.action.rawValue:
-                if let value = SLDSIconActionType.init(rawValue: i.count) {
-                    i.append(IconObject(icon: (UIImage.sldsIconAction(value, withSize: 48)),
-                                        name: NSString.sldsIconAction(value) as String,
-                                        index: i.count ))
-                }
-                
-                maxFlag = SLDSIconActionType.init(rawValue: i.count)?.hashValue != 0
-                
-            case IconListType.custom.rawValue:
-                if let value = SLDSIconCustomType.init(rawValue: i.count) {
-                    i.append(IconObject(icon: (UIImage.sldsIconCustom(value, withSize: 48)),
-                                        name: NSString.sldsIconCustom(value) as String,
-                                        index: i.count ))
-                }
-                maxFlag = SLDSIconCustomType.init(rawValue: i.count)?.hashValue != 0
-                
-            case IconListType.utility.rawValue:
-                if let value = SLDSIconUtilityType.init(rawValue: i.count) {
-                    i.append(IconObject(icon: (UIImage.sldsIconUtility(value, with: UIColor.sldsColorBackground(.backgroundIconWaffle), andSize: 40)),
-                                        name: NSString.sldsIconUtility(value) as String,
-                                        index: i.count ))
-                }
-                maxFlag = SLDSIconUtilityType.init(rawValue: i.count)?.hashValue != 0
-                
-            case IconListType.standard.rawValue:
-                if let value = SLDSIconStandardType.init(rawValue: i.count) {
-                    i.append(IconObject(icon: (UIImage.sldsIconStandard(value, withSize: 48)),
-                                        name: NSString.sldsIconStandard(value) as String,
-                                        index: i.count ))
-                }
-                maxFlag = SLDSIconStandardType.init(rawValue: i.count)?.hashValue != 0
-                
-                
-            default : maxFlag = false
-                
-            }
-            
-        } while maxFlag
-        
-        // NOTE : Commit the new values
-        self.icons = i
-        filteredIcons = self.icons
     }
     
     // MARK: - Styling methods
@@ -119,8 +74,14 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         self.view.addSubview(collectionView)
     }
     
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
     func styleSearch() {
-        searchField = SearchField()
+        searchField.delegate = self;
+        searchField.keyboardType = .alphabet
+        searchField.returnKeyType = .done
+        searchField.autocapitalizationType = .none
+        searchField.autocorrectionType = .no
         switchHeader.addSubview(searchField)
         
         switchHeader.constrainChild(searchField,
@@ -129,12 +90,10 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
                                     width: self.view.frame.width - 96 - switchView.frame.width,
                                     height: 40,
                                     xOffset: 20)
-        
-        searchField.addTarget(self, action: #selector(IconListViewController.filterIcons), for: UIControlEvents.editingChanged)
-        searchField.delegate = self;
-        searchField.returnKeyType = .done
     }
-    
+
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
     func styleSwitch() {
         switchView = UISwitch()
         switchView.onTintColor = accentBorderColor
@@ -232,12 +191,13 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     func updateUtilitycolor() {
         let c = darkMode ? UIColor.sldsColorBackground(.backgroundIconWaffle) : UIColor.white
-        filteredIcons = filteredIcons.map {
-            let iconObj = $0 as IconObject
-            return IconObject(icon: (UIImage.sldsIconUtility(SLDSIconUtilityType.init(rawValue: iconObj.index)!, with: c, andSize: 40)),
-                              name: iconObj.name,
-                              index: iconObj.index )
-        }
+//        filteredIcons = filteredIcons.map {
+//            let iconObj = $0 as IconObject
+//            return IconObject(icon: (UIImage.sldsIconUtility(SLDSIconUtilityType.init(rawValue: iconObj.index)!, with: c, andSize: 40)),
+//                              name: iconObj.name,
+//                              method:"sldsIconUtility",
+//                              index: iconObj.index )
+//        }
         self.collectionView.reloadData()
     }
     
@@ -245,14 +205,14 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     func switchIsChanged(s: UISwitch) {
         if s.isOn {
-            if utility! {
+            if utility {
                 updateUtilitycolor()
             }
             self.collectionView.backgroundColor = UIColor.sldsColorBackground(.backgroundInverse)
             switchIcon.image = darkIcon
             darkMode = true
         } else {
-            if utility! {
+            if utility {
                 updateUtilitycolor()
             }
             self.collectionView.backgroundColor = UIColor.white
@@ -261,32 +221,115 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         }
     }
     
+    // Mark - Data Management
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func addContent(_ iconType: String) {
+        
+        var iconList = Array<IconObject>()
+        var indexPath : IndexPath
+        
+        switch iconType {
+        case IconListType.action.rawValue : indexPath = IndexPath(item: 0, section: 0)
+        case IconListType.custom.rawValue : indexPath = IndexPath(item: 0, section: 1)
+        case IconListType.standard.rawValue : indexPath = IndexPath(item: 0, section: 2)
+        case IconListType.utility.rawValue : indexPath = IndexPath(item: 0, section: 3)
+        default : return
+        }
+        
+        while let icon = self.iconAt(indexPath) {
+            iconList.append(icon)
+            indexPath.item = iconList.count
+        }
+        
+        self.icons.removeAll()
+        self.icons.append(contentsOf: iconList)
+        
+        //self.filteredIcons.removeAll()
+        //self.filteredIcons.append(contentsOf: self.icons)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func iconAt(_ indexPath: IndexPath) -> IconObject? {
+        
+        var retVal : IconObject?
+        
+        switch indexPath.section {
+        case 0 :
+            if indexPath.item > 0 && (SLDSIconActionType.init(rawValue: indexPath.item)?.hashValue == 0) {
+                break
+            }
+            
+            if let value = SLDSIconActionType.init(rawValue: indexPath.item) {
+                retVal = IconObject(icon: (UIImage.sldsIconAction(value, withSize: SLDSSquareIconLarge)),
+                                    name: NSString.sldsIconAction(value) as String,
+                                    method : "sldsIconAction",
+                                    index : indexPath.item )
+            }
+            
+        case 1 :
+            if indexPath.item > 0 && (SLDSIconCustomType.init(rawValue: indexPath.item)?.hashValue == 0) {
+                break
+            }
+            
+            if let value = SLDSIconCustomType.init(rawValue: indexPath.item) {
+                retVal = IconObject(icon: (UIImage.sldsIconCustom(value, withSize: SLDSSquareIconLarge)),
+                                    name: NSString.sldsIconCustom(value) as String,
+                                    method : "sldsIconCustom",
+                                    index : indexPath.item )
+            }
+            
+        case 2 :
+            if indexPath.item > 0 && (SLDSIconStandardType.init(rawValue: indexPath.item)?.hashValue == 0) {
+                break
+            }
+            
+            if let value = SLDSIconStandardType.init(rawValue: indexPath.item) {
+                retVal = IconObject(icon: (UIImage.sldsIconStandard(value, withSize: SLDSSquareIconLarge)),
+                                    name: NSString.sldsIconStandard(value) as String,
+                                    method : "sldsIconStandard",
+                                    index : indexPath.item )
+            }
+            
+        case 3 :
+            if indexPath.item > 0 && (SLDSIconUtilityType.init(rawValue: indexPath.item)?.hashValue == 0) {
+                break
+            }
+            
+            if let value = SLDSIconUtilityType.init(rawValue: indexPath.item) {
+                retVal = IconObject(icon: UIImage.sldsIconUtility(value, with: UIColor.sldsColorBackground(.backgroundIconWaffle), andSize: SLDSSquareIconMedium),
+                                    name: NSString.sldsIconUtility(value) as String,
+                                    method : "sldsIconUtility",
+                                    index : indexPath.item )
+            }
+            
+        default : break
+        }
+        
+        return retVal
+    }
+    
+    // Mark - UITextFieldDelegate
+    //–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let textFieldText: NSString = (textField.text ?? "") as NSString
+        self.filterString = textFieldText.replacingCharacters(in: range, with: string).lowercased()
+        
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+        return true
+    }
 
+    // Mark - UICollectionViewDataSource implementation
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filteredIcons.count
     }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func filterIcons(t: UITextField) {
-        filteredIcons = icons.filter {
-            if t.text == "" {
-                return true
-            } else {
-                return ($0 as IconObject).name.lowercased().range(of: (t.text?.lowercased())!) != nil
-            }
-        }
-        self.collectionView.reloadData()
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = IconViewController()
-        self.navigationController?.show(controller, sender: self)
-    }
-    
+
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -295,7 +338,7 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         let icon = filteredIcons[indexPath.item].icon
         let iconContainer = UIImageView(image: icon)
         
-        if utility! {
+        if utility {
             iconContainer.backgroundColor = darkMode ? UIColor.sldsColorBackground(.backgroundInverse) : UIColor.white
         }
         
@@ -308,4 +351,14 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         
         return cell
     }
+    
+    // Mark - UICollectionViewDelegateFlowLayout implementation
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = IconViewController()
+        controller.dataProvider = filteredIcons[indexPath.item]
+        self.navigationController?.show(controller, sender: self)
+    }
+
 }
