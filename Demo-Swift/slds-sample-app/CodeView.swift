@@ -12,7 +12,6 @@ import UIKit
 class CodeView: UIView {
     
     var itemBar = ItemBar()
-    
     var codeExample = UITextView()
     var copyButton = UIButton()
     
@@ -70,14 +69,18 @@ class CodeView: UIView {
     func loadView() {
         self.backgroundColor = UIColor.sldsColorBackground(.backgroundStencil)
         
-        var label = UILabel()
-        label.text = "Swift"
-        itemBar.addItem(item: label)
+        var button = UIButton()
+        button.setTitle("Swift", for: .normal)
+        button.backgroundColor = UIColor.red
+        itemBar.addItem(item: button)
         
-        label = UILabel()
-        label.text = "Obj-C"
-        itemBar.addItem(item: label)
+        button = UIButton()
+        button.setTitle("ObjC", for: .normal)
+        button.backgroundColor = UIColor.green
+        itemBar.addItem(item: button)
         self.addSubview(itemBar)
+        
+        itemBar.backgroundColor = UIColor.darkGray
         
         codeExample.isEditable = false
         codeExample.isSelectable = false
@@ -96,7 +99,7 @@ class CodeView: UIView {
                             xAlignment: .center,
                             yAlignment: .top,
                             width: 10,
-                            height: 60)
+                            height: 30)
         
         self.codeExample.constrainBelow(self.itemBar,
                                         xAlignment: .center,
@@ -122,7 +125,6 @@ class CodeView: UIView {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func updateExample() {
-        
         self.codeExample.text = self.showSwift ? self.swiftString : self.objCString
     }
     

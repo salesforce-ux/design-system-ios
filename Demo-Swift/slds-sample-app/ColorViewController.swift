@@ -35,8 +35,6 @@ class ColorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.view.translatesAutoresizingMaskIntoConstraints = false
-        
         self.edgesForExtendedLayout = []
         self.view.backgroundColor = UIColor.white
         
