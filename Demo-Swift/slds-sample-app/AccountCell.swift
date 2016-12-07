@@ -91,10 +91,5 @@ class AccountCell: UITableViewCell {
         self.addSubview(phoneValue)
         self.addSubview(typeValue)
         self.addSubview(ownerValue)
-        
-        self.constrain(accountName, inside: self, xAlignment: .left, yAlignment: .top, xOffset: 5, yOffset: 5)
-        self.constrain(stateLabel, inside: self, xAlignment: .left, yAlignment: .top, xOffset: 5, yOffset: 5)
-        self.constrain(accountName, inside: self, xAlignment: .left, yAlignment: .top, xOffset: 5, yOffset: 5)
-        self.constrain(accountName, inside: self, xAlignment: .left, yAlignment: .top, xOffset: 5, yOffset: 5)
     }
 }

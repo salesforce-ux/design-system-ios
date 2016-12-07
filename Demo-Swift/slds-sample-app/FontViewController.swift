@@ -62,26 +62,22 @@ class FontViewController: UIViewController {
         
         self.view.addSubview(codeView)
         
-        self.view.constrain(self.sampleText,
-                            inside: self.view,
-                            xAlignment: .center,
-                            yAlignment: .top,
-                            yOffset: 50)
+        self.view.constrainChild(self.sampleText,
+                                 xAlignment: .center,
+                                 yAlignment: .top,
+                                 yOffset: 50)
         
-        self.view.constrain(self.fontInfo,
-                            verticallyTo: self.sampleText,
-                            xAlignment: .center,
-                            direction: .down,
-                            width: 200,
-                            height: 50,
-                            yOffset: 10)
+        self.fontInfo.constrainBelow(self.sampleText,
+                                     xAlignment: .center,
+                                     width: 200,
+                                     height: 50,
+                                     yOffset: 10)
         
-       self.view.constrain(self.codeView,
-                           inside: self.view,
-                           xAlignment: .center,
-                           yAlignment: .bottom,
-                           width: self.view.frame.width,
-                           height: self.view.frame.height/3)
+       self.view.constrainChild(self.codeView,
+                                xAlignment: .center,
+                                yAlignment: .bottom,
+                                width: self.view.frame.width,
+                                height: self.view.frame.height/3)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

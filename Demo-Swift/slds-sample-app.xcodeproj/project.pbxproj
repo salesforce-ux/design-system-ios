@@ -10,7 +10,7 @@
 		20191FDB1DEE4F89007C8BD8 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */; };
 		2043E3AB1DF0993F0043A192 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E3AA1DF0993F0043A192 /* CodeView.swift */; };
 		2062152D1DF22675002B62AC /* SwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2062152C1DF22675002B62AC /* SwatchView.swift */; };
-		206215351DF23C14002B62AC /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206215341DF23C14002B62AC /* TabView.swift */; };
+		206215351DF23C14002B62AC /* ItemBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206215341DF23C14002B62AC /* ItemBar.swift */; };
 		206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */; };
 		206AA8201DE3B82800375432 /* AccountListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81F1DE3B82800375432 /* AccountListViewController.swift */; };
 		209436AE1DF103EF00D70A60 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */; };
@@ -26,10 +26,11 @@
 		FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EA81DD0FCDB00BB6C1B /* AppDelegate.swift */; };
 		FCB47EB01DD0FCDB00BB6C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */; };
 		FCB47EB31DD0FCDB00BB6C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB47EB11DD0FCDB00BB6C1B /* LaunchScreen.storyboard */; };
-		FCB47EDD1DD3D09400BB6C1B /* ConstraintsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EDC1DD3D09400BB6C1B /* ConstraintsHelper.swift */; };
-		FCB47EE01DD4F10E00BB6C1B /* ActionBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EDF1DD4F10E00BB6C1B /* ActionBarButton.swift */; };
+		FCB47EDD1DD3D09400BB6C1B /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EDC1DD3D09400BB6C1B /* UIView+Constraints.swift */; };
 		FCC8BD7F1DF73C070075BEE7 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC8BD7E1DF73C070075BEE7 /* AccountCell.swift */; };
 		FCC8BD831DF76D470075BEE7 /* ActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC8BD821DF76D470075BEE7 /* ActionBar.swift */; };
+		FCC8BD881DF781610075BEE7 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC8BD871DF781610075BEE7 /* TabBar.swift */; };
+		FCC8BD8A1DF781D50075BEE7 /* ActionBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC8BD891DF781D50075BEE7 /* ActionBarButton.swift */; };
 		FCCEE6501DEF889C00949840 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEE64F1DEF889C00949840 /* SearchField.swift */; };
 		FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */; };
 /* End PBXBuildFile section */
@@ -69,7 +70,7 @@
 		20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CustomFont.bundle; path = ../CustomFont.bundle; sourceTree = "<group>"; };
 		2043E3AA1DF0993F0043A192 /* CodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		2062152C1DF22675002B62AC /* SwatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwatchView.swift; sourceTree = "<group>"; };
-		206215341DF23C14002B62AC /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		206215341DF23C14002B62AC /* ItemBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBar.swift; sourceTree = "<group>"; };
 		206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontListTableViewController.swift; sourceTree = "<group>"; };
 		206AA81F1DE3B82800375432 /* AccountListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewController.swift; sourceTree = "<group>"; };
 		2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceDesignSystem.bundle; path = ../SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
@@ -88,10 +89,11 @@
 		FCB47EB21DD0FCDB00BB6C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCB47EB41DD0FCDB00BB6C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCB47ED81DD1421000BB6C1B /* slds-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "slds-bridging-header.h"; path = "../slds-bridging-header.h"; sourceTree = "<group>"; };
-		FCB47EDC1DD3D09400BB6C1B /* ConstraintsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintsHelper.swift; sourceTree = "<group>"; };
-		FCB47EDF1DD4F10E00BB6C1B /* ActionBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionBarButton.swift; sourceTree = "<group>"; };
+		FCB47EDC1DD3D09400BB6C1B /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		FCC8BD7E1DF73C070075BEE7 /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
 		FCC8BD821DF76D470075BEE7 /* ActionBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionBar.swift; sourceTree = "<group>"; };
+		FCC8BD871DF781610075BEE7 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		FCC8BD891DF781D50075BEE7 /* ActionBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionBarButton.swift; sourceTree = "<group>"; };
 		FCCEE64F1DEF889C00949840 /* SearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 		FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,8 +122,9 @@
 		2043E3A71DF098E80043A192 /* controls */ = {
 			isa = PBXGroup;
 			children = (
-				FCB47EDF1DD4F10E00BB6C1B /* ActionBarButton.swift */,
+				FCC8BD891DF781D50075BEE7 /* ActionBarButton.swift */,
 				FCCEE64F1DEF889C00949840 /* SearchField.swift */,
+				FCC8BD871DF781610075BEE7 /* TabBar.swift */,
 			);
 			name = controls;
 			sourceTree = "<group>";
@@ -129,7 +132,7 @@
 		2043E3AC1DF09B140043A192 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				FCB47EDC1DD3D09400BB6C1B /* ConstraintsHelper.swift */,
+				FCB47EDC1DD3D09400BB6C1B /* UIView+Constraints.swift */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -202,7 +205,7 @@
 				FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */,
 				FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */,
 				2062152C1DF22675002B62AC /* SwatchView.swift */,
-				206215341DF23C14002B62AC /* TabView.swift */,
+				206215341DF23C14002B62AC /* ItemBar.swift */,
 				FCC8BD821DF76D470075BEE7 /* ActionBar.swift */,
 			);
 			name = views;
@@ -315,24 +318,25 @@
 			files = (
 				FC1EA4681DDE6F6300304E01 /* MainListViewController.swift in Sources */,
 				2043E3AB1DF0993F0043A192 /* CodeView.swift in Sources */,
-				FCB47EDD1DD3D09400BB6C1B /* ConstraintsHelper.swift in Sources */,
+				FCB47EDD1DD3D09400BB6C1B /* UIView+Constraints.swift in Sources */,
 				FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */,
 				FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */,
 				FCCEE6501DEF889C00949840 /* SearchField.swift in Sources */,
+				FCC8BD881DF781610075BEE7 /* TabBar.swift in Sources */,
 				206AA8201DE3B82800375432 /* AccountListViewController.swift in Sources */,
 				FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */,
-				206215351DF23C14002B62AC /* TabView.swift in Sources */,
+				206215351DF23C14002B62AC /* ItemBar.swift in Sources */,
 				206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */,
 				FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */,
 				FC7F2E411DF2310F0011684A /* AccountContainerViewController.swift in Sources */,
 				FCC8BD7F1DF73C070075BEE7 /* AccountCell.swift in Sources */,
 				2062152D1DF22675002B62AC /* SwatchView.swift in Sources */,
+				FCC8BD8A1DF781D50075BEE7 /* ActionBarButton.swift in Sources */,
 				FC4AC3841DF0D7D000D3D9BE /* IconViewController.swift in Sources */,
 				209A56291DEF546400327910 /* IconListViewController.swift in Sources */,
 				FC4FF3DB1DE4D033009B3D2E /* ColorCell.swift in Sources */,
 				FCC8BD831DF76D470075BEE7 /* ActionBar.swift in Sources */,
 				209A56301DEFA47E00327910 /* FontViewController.swift in Sources */,
-				FCB47EE01DD4F10E00BB6C1B /* ActionBarButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

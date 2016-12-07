@@ -35,6 +35,7 @@ class ColorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.view.translatesAutoresizingMaskIntoConstraints = false
         
         self.edgesForExtendedLayout = []
         self.view.backgroundColor = UIColor.white
@@ -47,28 +48,24 @@ class ColorViewController: UIViewController {
         self.view.addSubview(self.swatchName)
         self.view.addSubview(self.codeView)
         
-        self.view.constrain(self.swatch,
-                            inside: self.view,
-                            xAlignment: .center,
-                            yAlignment: .top,
-                            width: 150,
-                            height: 150,
-                            yOffset: 30)
+        self.view.constrainChild(self.swatch,
+                                  xAlignment: .center,
+                                  yAlignment: .top,
+                                  width: 150,
+                                  height: 150,
+                                  yOffset: 30)
         
-        self.view.constrain(self.swatchName,
-                            verticallyTo: self.swatch,
-                            xAlignment: .center,
-                            direction: .down,
-                            width: self.view.frame.width,
-                            height: 50,
-                            yOffset: 10)
+        self.swatchName.constrainBelow(self.swatch,
+                                       xAlignment: .center,
+                                       width: self.view.frame.width,
+                                       height: 50,
+                                       yOffset: 10)
         
-        self.view.constrain(self.codeView,
-                            inside: self.view,
-                            xAlignment: .center,
-                            yAlignment: .bottom,
-                            width: self.view.frame.width,
-                            height: self.view.frame.height/3)
+        self.view.constrainChild(self.codeView,
+                                 xAlignment: .center,
+                                 yAlignment: .bottom,
+                                 width: self.view.frame.width,
+                                 height: self.view.frame.height/3)
     }
 
     

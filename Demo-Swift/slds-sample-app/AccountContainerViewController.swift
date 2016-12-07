@@ -33,82 +33,68 @@ class AccountContainerViewController: UIViewController {
         self.view.addSubview(header)
         header.backgroundColor = UIColor.sldsColorBackground(.background)
         self.view.addSubview(header)
-        self.view.constrain(header,
-                       inside: self.view,
-                       xAlignment: .center,
-                       yAlignment: .top,
-                       width: self.view.frame.width,
-                       height: 80,
-                       yOffset: 64)
         
-        let hr = UIView()
-        hr.backgroundColor = UIColor.sldsColorBorder(.input)
-        self.view.addSubview(hr)
-        self.view.constrain(hr,
-                            inside: header,
-                            xAlignment: .center,
-                            yAlignment: .bottom,
-                            width: self.view.frame.width,
-                            height: 1)
+        self.view.constrainChild(header,
+                                 xAlignment: .center,
+                                 yAlignment: .top,
+                                 width: self.view.frame.width,
+                                 height: 80,
+                                 yOffset: 64)
         
         
         headerIcon = UIImageView(image: UIImage.sldsIconStandard(.account, withSize: SLDSSquareIconMedium))
-        self.view.addSubview(headerIcon)
-        self.view.constrain(headerIcon,
-                            inside: header,
-                            xAlignment: .left,
-                            yAlignment: .top,
-                            xOffset: 10,
-                            yOffset: 10)
+        header.addSubview(headerIcon)
+        
+        header.constrainChild(headerIcon,
+                              xAlignment: .left,
+                              yAlignment: .top,
+                              xOffset: 10,
+                              yOffset: 10)
         
         headerTitle = UILabel()
         headerTitle.text = "My Accounts"
         headerTitle.font = UIFont.sldsFont(.regular, with: .large)
         headerSubText.textColor = UIColor.sldsColorText(.default)
-        self.view.addSubview(headerTitle)
-        self.view.constrain(headerTitle,
-                       horizontallyTo: headerIcon,
-                       yAlignment: .top,
-                       direction: .right,
-                       xOffset: 15)
+        header.addSubview(headerTitle)
+        
+        headerTitle.constrainRightOf(headerIcon,
+                                     yAlignment: .top,
+                                     xOffset: 15)
         
         headerDownArrow = UIImageView(image: UIImage.sldsIconUtility(.chevrondown, with: UIColor.sldsColorText(.default), andSize: SLDSSquareIconUtilitySmall))
-        self.view.addSubview(headerDownArrow)
-        self.view.constrain(headerDownArrow,
-                       horizontallyTo: headerTitle,
-                       yAlignment: .center,
-                       direction: .right,
-                       xOffset: 15,
-                       yOffset: 2)
+        header.addSubview(headerDownArrow)
+        
+        headerDownArrow.constrainRightOf(headerTitle,
+                                         yAlignment: .center,
+                                         xOffset: 15,
+                                         yOffset: 2)
         
         headerSubText = UILabel()
         headerSubText.text = "5 items, sorted by Account Name"
         headerSubText.font = UIFont.sldsFont(.regular, with: .small)
         headerSubText.textColor = UIColor.sldsColorText(.default)
-        self.view.addSubview(headerSubText)
-        self.view.constrain(headerSubText,
-                            verticallyTo: headerTitle,
-                            xAlignment: .left,
-                            direction: .down,
-                            yOffset: 2)
+        header.addSubview(headerSubText)
+        
+        headerSubText.constrainBelow(headerTitle,
+                                     xAlignment: .left,
+                                     yOffset: 2)
         
         self.view.addSubview(tableViewController.tableView)
-        self.view.constrain(tableViewController.tableView,
-                            verticallyTo: header,
-                            xAlignment: .left,
-                            direction: .down,
-                            width: self.view.frame.width,
-                            height: self.view.frame.height - 212)
         
-        tabBar = UITabBar()
-        tabBar.backgroundColor = UIColor.sldsColorBackground(.backgroundAlt)
-        self.view.addSubview(tabBar)
-        self.view.constrain(tabBar,
-                            inside: self.view,
-                            xAlignment: .center,
-                            yAlignment: .bottom,
-                            width: self.view.frame.width,
-                            height: 60)
+        tableViewController.tableView.constrainBelow(header,
+                                                     xAlignment: .left,
+                                                     width: self.view.frame.width,
+                                                     height: self.view.frame.height - 212)
+        
+//        tabBar = UITabBar()
+//        tabBar.backgroundColor = UIColor.sldsColorBackground(.backgroundAlt)
+//        self.view.addSubview(tabBar)
+//        self.view.constrain(tabBar,
+//                            inside: self.view,
+//                            xAlignment: .center,
+//                            yAlignment: .bottom,
+//                            width: self.view.frame.width,
+//                            height: 60)
         
 //        let filterButton = UITabBarItem()
 //        filterButton.image = UIImage.sldsIconAction(.filter, withSize: SLDSSquareIconMedium)
