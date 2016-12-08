@@ -22,13 +22,13 @@ class MainListViewController: UITableViewController {
                       rows: [("Accounts", AccountContainerViewController.self)]),
             
             TableData(sectionTitle: "SLDS Colors",
-                      rows: [(ColorListType.background.rawValue, ColorListViewController.self),
-                             (ColorListType.border.rawValue, ColorListViewController.self),
-                             (ColorListType.text.rawValue, ColorListViewController.self)]),
+                      rows: [(ColorObjectType.background.rawValue, ColorListViewController.self),
+                             (ColorObjectType.border.rawValue, ColorListViewController.self),
+                             (ColorObjectType.text.rawValue, ColorListViewController.self)]),
             
             TableData(sectionTitle: "SLDS Fonts",
-                      rows: [(FontListType.salesforceSans.rawValue, FontListTableViewController.self),
-                             (FontListType.lato.rawValue, FontListTableViewController.self)]),
+                      rows: [(FontObjectType.salesforceSans.rawValue, FontListTableViewController.self),
+                             (FontObjectType.lato.rawValue, FontListTableViewController.self)]),
 
             TableData(sectionTitle: "SLDS Icons",
                       rows: [(IconObjectType.action.rawValue, IconListViewController.self),

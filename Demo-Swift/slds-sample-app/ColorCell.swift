@@ -16,9 +16,11 @@ class ColorCell: UITableViewCell {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    var dataProvider : UIColor = UIColor.white {
+    var dataProvider : ColorObject? {
         didSet {
-            swatch.dataProvider = dataProvider
+            self.textLabel?.text = dataProvider?.name.replacingOccurrences(of: "SLDSColor", with: "")
+            self.textLabel?.font = UIFont.sldsFont(.regular, with: .small)
+            swatch.dataProvider = dataProvider?.color
         }
     }
     
@@ -45,20 +47,20 @@ class ColorCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        swatch.dataProvider = dataProvider;
+        swatch.dataProvider = dataProvider?.color;
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
-        swatch.dataProvider = dataProvider;
+        swatch.dataProvider = dataProvider?.color;
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func makeLayout() {
-        
+        self.backgroundColor = UIColor.clear
         self.addSubview(self.swatch)
         self.constrainChild(self.swatch,
                             xAlignment: .right,

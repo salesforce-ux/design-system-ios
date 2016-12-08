@@ -65,7 +65,7 @@ class FontViewController: UIViewController {
         self.view.constrainChild(self.sampleText,
                                  xAlignment: .center,
                                  yAlignment: .top,
-                                 yOffset: 50)
+                                 yOffset: 70)
         
         self.fontInfo.constrainBelow(self.sampleText,
                                      xAlignment: .center,

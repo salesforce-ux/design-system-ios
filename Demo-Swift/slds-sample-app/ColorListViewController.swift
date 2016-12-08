@@ -11,68 +11,29 @@ import UIKit
 
 //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-enum ColorListType : String {
-    case background = "Background"
-    case border = "Border"
-    case text = "Text"
-}
-
-struct ColorObject {
-    var color : UIColor!
-    var alias : String!
-    var method : String!
-}
-
-//––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
 class ColorListViewController: UITableViewController {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    var colors : [ColorObject] = [ColorObject](){
-        didSet {
-            colors.sort { (c1, c2) -> Bool in
-                var h1:CGFloat = 0.0
-                var s1:CGFloat = 0.0
-                var b1:CGFloat = 0.0
-                var a1:CGFloat = 0.0
-                
-                var h2:CGFloat = 0.0
-                var s2:CGFloat = 0.0
-                var b2:CGFloat = 0.0
-                var a2:CGFloat = 0.0
-                
-                c1.color.getHue(&h1, saturation: &s1, brightness: &b1, alpha: &a1)
-                c2.color.getHue(&h2, saturation: &s2, brightness: &b2, alpha: &a2)
-                
-                if h1 == h2 {
-                    if s1 == s2 {
-                        if b1 == b2 {
-                            return a2 < a1
-                        } else {
-                            return b1 < b2
-                        }
-                    } else {
-                        return s1 < s2
-                    }
-                } else {
-                    return h1 < h2
-                }
-            }
-        }
-    }
+    var colors : Array<ColorObject> = Array<ColorObject>()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override var title: String? {
         didSet {
             super.title = self.title
-            if let newTitle = self.title {
-                self.addContent(newTitle)
+            switch self.title! {
+                case ColorObjectType.background.rawValue :
+                    self.colors = ApplicationModel.sharedInstance.backgroundColors
+                case ColorObjectType.border.rawValue :
+                    self.colors = ApplicationModel.sharedInstance.borderColors
+                case ColorObjectType.text.rawValue :
+                    self.colors = ApplicationModel.sharedInstance.textColors
+                default : break
             }
         }
     }
-        
+    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func viewDidLoad() {
@@ -82,15 +43,8 @@ class ColorListViewController: UITableViewController {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ColorCell {
-        
-        let alias = colors[indexPath.item].alias
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ColorCell
-        
-        cell.backgroundColor = UIColor.clear
-        cell.textLabel?.text = alias?.replacingOccurrences(of: "SLDSColor", with: "")
-        cell.textLabel?.font = UIFont.sldsFont(.regular, with: .small)
-        cell.dataProvider = colors[indexPath.item].color
-        
+        cell.dataProvider = colors[indexPath.item]
         return cell
     }
     
@@ -118,71 +72,5 @@ class ColorListViewController: UITableViewController {
         let controller = ColorViewController()
         controller.dataProvider = self.colors[indexPath.row]
         self.navigationController?.show(controller, sender: self)
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func addContent(_ colorType: String) {
-        
-        var colorList = Array<ColorObject>()
-        var indexPath : IndexPath
-        
-        switch colorType {
-        case ColorListType.background.rawValue : indexPath = IndexPath(row: 0, section: 0)
-        case ColorListType.border.rawValue : indexPath = IndexPath(row: 0, section: 1)
-        case ColorListType.text.rawValue : indexPath = IndexPath(row: 0, section: 2)
-        default : return
-        }
-        
-        while let color = self.colorAt(indexPath) {
-            colorList.append(color)
-            indexPath.row = colorList.count
-        }
-        
-        self.colors = colorList
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func colorAt(_ indexPath: IndexPath) -> ColorObject? {
-        
-        var retVal : ColorObject?
-        
-        switch indexPath.section {
-            case 0 :
-                if indexPath.row > 0 && (SLDSColorBackgroundType.init(rawValue: indexPath.row)?.hashValue == 0) {
-                    break
-                }
-                
-                if let value = SLDSColorBackgroundType.init(rawValue: indexPath.row) {
-                    retVal = ColorObject(color: UIColor.sldsColorBackground(value),
-                                         alias: NSString.sldsColorBackgroundName(value) as String,
-                                         method: "sldsColorBackground")
-                }
-            
-            case 1 :
-                if indexPath.row > 0 && (SLDSColorBorderType.init(rawValue: indexPath.row+1)?.hashValue == 0) {
-                    break
-                }
-                if let value = SLDSColorBorderType.init(rawValue:  indexPath.row) {
-                    retVal = ColorObject(color: UIColor.sldsColorBorder(value),
-                                         alias: NSString.sldsColorBorderName(value) as String,
-                                         method: "sldsColorBorder")
-                }
-            
-            case 2 :
-                if indexPath.row > 0 && (SLDSColorTextType.init(rawValue: indexPath.row)?.hashValue == 0) {
-                    break
-                }
-                
-                if let value = SLDSColorTextType.init(rawValue:  indexPath.row) {
-                    retVal = ColorObject(color: UIColor.sldsColorText(value),
-                                         alias: NSString.sldsColorTextName(value) as String,
-                                         method: "sldsColorText")
-                }
-            
-            default : break
-        }
-        return retVal
     }
 }

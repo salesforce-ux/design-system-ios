@@ -9,7 +9,7 @@
 
 import UIKit
 
-enum FontListType : String {
+enum FontObjectType : String {
     case salesforceSans = "SalesforceSans"
     case lato = "Lato"
 }
@@ -40,7 +40,7 @@ class FontListTableViewController: UITableViewController {
         set {
             self.fontTypes.removeAll()
             
-            if newValue == FontListType.salesforceSans.rawValue {
+            if newValue == FontObjectType.salesforceSans.rawValue {
                 UIFont.sldsUseDefaultFonts()
                 repeat {
                     if let fontType = SLDSFontType.init(rawValue: fontTypes.count),

@@ -23,10 +23,10 @@ class ColorViewController: UIViewController {
                 return
             }
             
-            self.swatchName.text = data.alias
+            self.swatchName.text = data.name
             self.swatch.dataProvider = data.color
-            self.codeView.swiftString = "UIColor." + data.method + "(." + data.alias + ")"
-            self.codeView.objCString = "[UIColor " + data.method + " : " + data.alias + " ]"
+            self.codeView.swiftString = "UIColor." + data.method + "(." + data.name + ")"
+            self.codeView.objCString = "[UIColor " + data.method + " : " + data.name + " ]"
         }
     }
     
@@ -50,7 +50,7 @@ class ColorViewController: UIViewController {
                                   yAlignment: .top,
                                   width: 150,
                                   height: 150,
-                                  yOffset: 30)
+                                  yOffset: 60)
         
         self.swatchName.constrainBelow(self.swatch,
                                        xAlignment: .center,

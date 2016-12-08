@@ -9,95 +9,83 @@
 
 import UIKit
 
-enum IconObjectType : String {
-    case action = "Action"
-    case custom = "Custom"
-    case standard = "Standard"
-    case utility = "Utility"
+//––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+enum ColorObjectType : String {
+    case background = "Background"
+    case border = "Border"
+    case text = "Text"
 }
 
-struct IconObject {
-    var type : IconObjectType
-    var index: NSInteger
-    var size : CGFloat = 0.0
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    var method : String {
-        
-        switch self.type {
-        case .action :
-            return "sldsIconAction"
-        
-        case .custom :
-            return "sldsIconCustom"
+//––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-        case .standard :
-            return "sldsIconStandard"
-            
-        case .utility :
-            return "sldsIconUtility"
-        }
-    }
-
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    var name : String {
-        var retVal = ""
-        
-        switch self.type {
-        case .action :
-            if let value = SLDSIconActionType.init(rawValue: self.index) {
-                retVal = NSString.sldsIconAction(value) as String
-            }
-            
-        case .custom :
-            if let value = SLDSIconCustomType.init(rawValue: self.index) {
-                retVal = NSString.sldsIconCustom(value) as String
-            }
-            
-        case .standard :
-            if let value = SLDSIconStandardType.init(rawValue: self.index) {
-                retVal = NSString.sldsIconStandard(value) as String
-            }
-            
-        case .utility :
-            if let value = SLDSIconUtilityType.init(rawValue: self.index) {
-                retVal = NSString.sldsIconUtility(value) as String
-            }
-        }
-        return retVal
-    }
+struct ColorObject {
+    var type : ColorObjectType
+    var index : NSInteger
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func getImage(backgroundColor : UIColor?=nil ) -> UIImage? {
-        if self.type != .utility && backgroundColor != nil {
-            fatalError("In the SLDSSampleApp, only utility icons use backgroundColor, though all slds icon types support the use of backgroundColor.")
-        }
+    var color : UIColor? {
         
         switch self.type {
-        case .action :
-            if let value = SLDSIconActionType.init(rawValue: self.index) {
-                return UIImage.sldsIconAction(value, withSize: self.size)
+        case .background :
+            if let value = SLDSColorBackgroundType.init(rawValue: self.index) {
+                return UIColor.sldsColorBackground(value)
             }
             
-        case .custom :
-            if let value = SLDSIconCustomType.init(rawValue: self.index) {
-                return UIImage.sldsIconCustom(value, withSize: self.size)
+        case .border :
+            if let value = SLDSColorBorderType.init(rawValue: self.index) {
+                return UIColor.sldsColorBorder(value)
             }
             
-        case .standard :
-            if let value = SLDSIconStandardType.init(rawValue: index) {
-                return UIImage.sldsIconStandard(value, withSize: self.size)
-            }
-            
-        case .utility :
-            if let value = SLDSIconUtilityType.init(rawValue: self.index) {
-                return UIImage.sldsIconUtility(value, with: backgroundColor, andSize: self.size)
+        case .text :
+            if let value = SLDSColorTextType.init(rawValue: self.index) {
+                return UIColor.sldsColorText(value)
             }
         }
         
         return nil
     }
+
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var method : String {
+        
+        switch self.type {
+        case .background :
+            return "sldsColorBackground"
+            
+        case .border :
+            return "sldsColorBorder"
+            
+        case .text :
+            return "sldsColorText"
+        }
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    var name : String {
+        var retVal = ""
+     
+        switch self.type {
+        case .background :
+            if let value = SLDSColorBackgroundType.init(rawValue: self.index) {
+                retVal = NSString.sldsColorBackgroundName(value) as String
+            }
+            
+        case .border :
+            if let value = SLDSColorBorderType.init(rawValue: self.index) {
+                retVal = NSString.sldsColorBorderName(value) as String
+            }
+            
+        case .text :
+            if let value = SLDSColorTextType.init(rawValue: self.index) {
+                retVal = NSString.sldsColorTextName(value) as String
+            }
+        }
+        
+        return retVal
+    }
+
 }

@@ -10,6 +10,7 @@
 		20191FDB1DEE4F89007C8BD8 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */; };
 		2043E3AB1DF0993F0043A192 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E3AA1DF0993F0043A192 /* CodeView.swift */; };
 		20489C4A1DF9D25E0090C284 /* ApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20489C491DF9D25E0090C284 /* ApplicationModel.swift */; };
+		20489C4C1DF9ED7A0090C284 /* ColorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20489C4B1DF9ED7A0090C284 /* ColorObject.swift */; };
 		2062152D1DF22675002B62AC /* SwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2062152C1DF22675002B62AC /* SwatchView.swift */; };
 		206215351DF23C14002B62AC /* ItemBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206215341DF23C14002B62AC /* ItemBar.swift */; };
 		206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */; };
@@ -72,6 +73,7 @@
 		20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CustomFont.bundle; path = ../CustomFont.bundle; sourceTree = "<group>"; };
 		2043E3AA1DF0993F0043A192 /* CodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		20489C491DF9D25E0090C284 /* ApplicationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationModel.swift; sourceTree = "<group>"; };
+		20489C4B1DF9ED7A0090C284 /* ColorObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorObject.swift; sourceTree = "<group>"; };
 		2062152C1DF22675002B62AC /* SwatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwatchView.swift; sourceTree = "<group>"; };
 		206215341DF23C14002B62AC /* ItemBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBar.swift; sourceTree = "<group>"; };
 		206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontListTableViewController.swift; sourceTree = "<group>"; };
@@ -146,8 +148,9 @@
 		20489C461DF9D2300090C284 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				207FC2FB1DF93DD800284A98 /* IconObject.swift */,
 				20489C491DF9D25E0090C284 /* ApplicationModel.swift */,
+				20489C4B1DF9ED7A0090C284 /* ColorObject.swift */,
+				207FC2FB1DF93DD800284A98 /* IconObject.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				FCC8BD881DF781610075BEE7 /* TabBar.swift in Sources */,
 				206AA8201DE3B82800375432 /* AccountListViewController.swift in Sources */,
 				FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */,
+				20489C4C1DF9ED7A0090C284 /* ColorObject.swift in Sources */,
 				206215351DF23C14002B62AC /* ItemBar.swift in Sources */,
 				206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */,
 				FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */,
