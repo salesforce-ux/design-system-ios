@@ -14,6 +14,7 @@ class TabBar: ItemBar {
     var underscore = UIView()
     var underscoreX : NSLayoutConstraint?
     
+    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override var itemWidth : CGFloat {
@@ -62,5 +63,22 @@ class TabBar: ItemBar {
         tab.titleLabel?.font = UIFont.sldsFont(.regular, with: .small)
         tab.setTitleColor(UIColor.sldsColorText(.default), for: .normal)
         super.addItem(item: tab)
+    }
+    
+    func moveUnderscore(_ index : Int) {
+        for c in self.constraints {
+            if c.firstItem as! NSObject == underscore,
+                c.firstAttribute == .left {
+                    c.constant = CGFloat(index) * self.itemWidth
+            }
+        }
+        
+        UIView.animate(withDuration: 0.2) {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
     }
 }

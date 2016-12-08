@@ -120,7 +120,9 @@ class CodeView: UIView, ItemBarDelegate {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func itemBar(_ itemBar: ItemBar, didSelectItemAt index: NSInteger) {
-        print("--->", index)
+        if itemBar == tabBar {
+            self.tabBar.moveUnderscore(index)
+        }
         self.showSwift = index == 0
     }
     
