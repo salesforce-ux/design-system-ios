@@ -66,7 +66,7 @@ class IconViewController: UIViewController {
         self.view.constrainChild(iconMedium,
                                  xAlignment: .center,
                                  yAlignment: .top,
-                                 xOffset: -20,
+                                 xOffset: -10,
                                  yOffset: 70)
         
         iconSmall.constrainLeftOf(iconMedium,
