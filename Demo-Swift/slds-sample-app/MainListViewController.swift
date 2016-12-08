@@ -31,10 +31,10 @@ class MainListViewController: UITableViewController {
                              (FontListType.lato.rawValue, FontListTableViewController.self)]),
 
             TableData(sectionTitle: "SLDS Icons",
-                      rows: [(IconListType.action.rawValue, IconListViewController.self),
-                             (IconListType.custom.rawValue, IconListViewController.self),
-                             (IconListType.utility.rawValue, IconListViewController.self),
-                             (IconListType.standard.rawValue, IconListViewController.self)])
+                      rows: [(IconObjectType.action.rawValue, IconListViewController.self),
+                             (IconObjectType.custom.rawValue, IconListViewController.self),
+                             (IconObjectType.standard.rawValue, IconListViewController.self),
+                             (IconObjectType.utility.rawValue, IconListViewController.self)])
         ]
     }
     
