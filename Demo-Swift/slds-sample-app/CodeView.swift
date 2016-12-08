@@ -9,7 +9,7 @@
 
 import UIKit
 
-class CodeView: UIView {
+class CodeView: UIView, ItemBarDelegate {
     
     var tabBar = TabBar()
     var codeExample = UITextView()
@@ -68,6 +68,7 @@ class CodeView: UIView {
     
     func loadView() {
         self.backgroundColor = UIColor.sldsColorBackground(.backgroundStencil)
+        tabBar.delegate = self
         
         tabBar.addTab(labelString: "Swift")
         tabBar.addTab(labelString: "Obj-C")
@@ -114,6 +115,15 @@ class CodeView: UIView {
     
     func updateExample() {
         self.codeExample.text = self.showSwift ? self.swiftString : self.objCString
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func itemBar(_ itemBar: ItemBar, didSelectItemAt index: NSInteger) {
+        if itemBar == tabBar {
+            self.tabBar.moveUnderscore(index)
+        }
+        self.showSwift = index == 0
     }
     
 }
