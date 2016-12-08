@@ -68,6 +68,7 @@ class CodeView: UIView, ItemBarDelegate {
     
     func loadView() {
         self.backgroundColor = UIColor.sldsColorBackground(.backgroundStencil)
+        tabBar.delegate = self
         
         tabBar.addTab(labelString: "Swift")
         tabBar.addTab(labelString: "Obj-C")
