@@ -9,7 +9,7 @@
 
 import UIKit
 
-class CodeView: UIView {
+class CodeView: UIView, ItemBarDelegate {
     
     var tabBar = TabBar()
     var codeExample = UITextView()
@@ -114,6 +114,13 @@ class CodeView: UIView {
     
     func updateExample() {
         self.codeExample.text = self.showSwift ? self.swiftString : self.objCString
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func itemBar(_ itemBar: ItemBar, didSelectItemAt index: NSInteger) {
+        print("--->", index)
+        self.showSwift = index == 0
     }
     
 }

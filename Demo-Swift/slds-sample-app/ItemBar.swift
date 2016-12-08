@@ -9,9 +9,16 @@
 
 import UIKit
 
+protocol ItemBarDelegate {
+    
+    func itemBar(_ itemBar: ItemBar, didSelectItemAt index: NSInteger)
+    
+}
+
 class ItemBar: UIView {
     
-    var items = Array<UIView>()
+    var items = Array<UIControl>()
+    var delegate : ItemBarDelegate?
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -53,9 +60,16 @@ class ItemBar: UIView {
         }
     }
     
+    func didSelectItemAt(sender: UIControl) {
+        if let d = self.delegate,
+            let index = items.index(of: sender) {
+                d.itemBar(self, didSelectItemAt: index)
+        }
+    }
+    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func addItem(item : UIView) {
+    func addItem(item : UIControl) {
         self.addSubview(item)
         
         if items.count > 0 {
@@ -66,6 +80,7 @@ class ItemBar: UIView {
             self.constrainChild(item, xAlignment: .left, yAlignment: .bottom, height: 30)
         }
         
+        item.addTarget(self, action: #selector(ItemBar.didSelectItemAt(sender:)), for: .touchUpInside)
         self.items.append(item)
     }
 }
