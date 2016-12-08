@@ -35,9 +35,9 @@ class IconViewController: UIViewController {
             //self.codeView.objCString = "[UIColor " + data.method + " : " + data.alias + " ]"
             
             //data.icon.size = CGSize(width: SLDSSquareIconSmall, height: SLDSSquareIconSmall)
-            iconSmall.image = data.icon
-            iconMedium = UIImageView(image: UIImage.sldsIconAction(.addContact, withSize: SLDSSquareIconMedium))
-            iconLarge = UIImageView(image: UIImage.sldsIconAction(.addContact, withSize: SLDSSquareIconLarge))
+            //iconSmall.image = data.icon
+            //iconMedium = UIImageView(image: UIImage.sldsIconAction(.addContact, withSize: SLDSSquareIconMedium))
+            //iconLarge = UIImageView(image: UIImage.sldsIconAction(.addContact, withSize: SLDSSquareIconLarge))
 
             
         }
