@@ -114,7 +114,14 @@ class CodeView: UIView, ItemBarDelegate {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func updateExample() {
-        self.codeExample.text = self.showSwift ? self.swiftString : self.objCString
+        UIView.animate(withDuration: 0.3, animations: {
+            self.codeExample.alpha = 0
+        }, completion: { (value: Bool) in
+            self.codeExample.text = self.showSwift ? self.swiftString : self.objCString
+            UIView.animate(withDuration: 0.4, animations: {
+                self.codeExample.alpha = 1.0
+            })
+        })
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
