@@ -35,7 +35,22 @@ class IconViewController: UIViewController {
             
             self.iconInfo.text = data.name
             
-            self.codeView.swiftString = "UIImage." + data.method + "(." + data.name + ",\n withSize: SLDSSquareIconMedium )"
+            var swiftName = data.name
+            switch data.type {
+                case .action :
+                    swiftName = swiftName.trimPrefix("SLDSIconAction")
+                    
+                case .custom :
+                    swiftName = swiftName.trimPrefix("SLDSIcon")
+                    
+                case .standard :
+                    swiftName = swiftName.trimPrefix("SLDSIconStandard")
+                    
+                case .utility :
+                    swiftName = swiftName.trimPrefix("SLDSIconUtility")
+            }
+
+            self.codeView.swiftString = "UIImage." + data.method + "(." + swiftName + ",\n withSize: SLDSSquareIconMedium )"
             self.codeView.objCString = "[UIColor " + data.method + " :" + data.name + "\n withSize: SLDSSquareIconMedium ]"
         }
     }

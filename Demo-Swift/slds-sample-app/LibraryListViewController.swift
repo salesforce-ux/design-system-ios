@@ -9,128 +9,106 @@
 
 import UIKit
 
-class CodeView: UIView, ItemBarDelegate {
-    
-    var tabBar = TabBar()
-    var codeExample = UITextView()
-    var copyButton = UIButton()
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-   
-    var showSwift : Bool = true {
-        didSet {
-            if oldValue != self.showSwift {
-                self.updateExample()
-            }
-        }
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    var objCString : String = "" {
-        didSet {
-            if !self.showSwift {
-                self.updateExample()
-            }
-        }
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    var swiftString : String = "" {
-        didSet {
-            if self.showSwift {
-                self.updateExample()
-            }
-        }
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override init (frame : CGRect) {
-        super.init(frame : frame)
-        self.loadView()
-    }
+struct TableData {
+    var sectionTitle: String
+    var rows: [(name:String,type:UIViewController.Type)]
+}
 
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+class LibraryListViewController: UITableViewController {
     
-    convenience init () {
-        self.init(frame:CGRect.zero)
+    var tableData : [TableData] {
+        return [
+            TableData(sectionTitle: "Colors",
+                      rows: [(ColorObjectType.background.rawValue, ColorListViewController.self),
+                             (ColorObjectType.border.rawValue, ColorListViewController.self),
+                             (ColorObjectType.text.rawValue, ColorListViewController.self)]),
+            
+            TableData(sectionTitle: "Fonts",
+                      rows: [(FontObjectType.salesforceSans.rawValue, FontListTableViewController.self),
+                             (FontObjectType.lato.rawValue, FontListTableViewController.self)]),
+            
+            TableData(sectionTitle: "Icons",
+                      rows: [(IconObjectType.action.rawValue, IconListViewController.self),
+                             (IconObjectType.custom.rawValue, IconListViewController.self),
+                             (IconObjectType.standard.rawValue, IconListViewController.self),
+                             (IconObjectType.utility.rawValue, IconListViewController.self)])
+        ]
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    required init(coder aDecoder: NSCoder) {
-        fatalError("This class does not support NSCoding")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func loadView() {
-        self.backgroundColor = UIColor.sldsColorBackground(.backgroundStencil)
-        tabBar.delegate = self
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,
+                                                                   NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)]
         
-        tabBar.addTab(labelString: "Swift")
-        tabBar.addTab(labelString: "Obj-C")
-        self.addSubview(tabBar)
+        navigationItem.backBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white,
+                                                                  NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)],
+                                                                 for: UIControlState.normal)
         
-        codeExample.isEditable = false
-        codeExample.isSelectable = false
-        codeExample.textAlignment = .center
-        codeExample.font = UIFont.sldsFont(.regular, with: .small)
-        codeExample.textColor = UIColor.sldsColorText(.default)
-        codeExample.backgroundColor = self.backgroundColor
-        self.addSubview(codeExample)
-        
-        copyButton.setTitle("copy", for: .normal)
-        copyButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .medium)
-        copyButton.setTitleColor(UIColor.sldsColorText(.brand), for: .normal)
-        self.addSubview(copyButton)
-        
-        self.constrainChild(self.tabBar,
-                            xAlignment: .center,
-                            yAlignment: .top,
-                            height: 30)
-        
-        self.codeExample.constrainBelow(self.tabBar,
-                                        xAlignment: .center,
-                                        height: 70,
-                                        yOffset: 10)
-        
-        self.constrainChild(self.copyButton,
-                       xAlignment: .center,
-                       yAlignment: .bottom,
-                       yOffset: 40)
+        super.viewWillAppear(animated)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func layoutSubviews() {
-        self.codeExample.widthConstraint.constant = self.frame.width - 40
-        self.tabBar.widthConstraint.constant = self.frame.width
-        super.layoutSubviews()
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 36.0
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func updateExample() {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.codeExample.alpha = 0
-        }, completion: { (value: Bool) in
-            self.codeExample.text = self.showSwift ? self.swiftString : self.objCString
-            UIView.animate(withDuration: 0.4, animations: {
-                self.codeExample.alpha = 1.0
-            })
-        })
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return tableData.count
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func itemBar(_ itemBar: ItemBar, didSelectItemAt index: NSInteger) {
-        if itemBar == tabBar {
-            self.tabBar.moveUnderscore(index)
-        }
-        self.showSwift = index == 0
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableData[section].rows.count
     }
     
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
+        return 2
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func tableView (_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView {
+        return SectionHeaderView()
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return tableData[section].sectionTitle
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+        cell.textLabel?.font = UIFont.sldsFont(.regular, with: .medium)
+        
+        cell.textLabel?.text = tableData[indexPath.section].rows[indexPath.row].name
+        return cell
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controllerClass = tableData[indexPath.section].rows[indexPath.row].type
+        let controller = controllerClass.init()
+        controller.title = tableData[indexPath.section].rows[indexPath.row].name
+        self.navigationController?.show(controller, sender: self)
+    }
 }

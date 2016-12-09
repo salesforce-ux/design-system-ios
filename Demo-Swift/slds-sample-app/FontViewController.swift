@@ -19,22 +19,19 @@ class FontViewController: UIViewController {
     
     var dataProvider = IndexPath(row: 0, section: 0) {
         didSet {
-            let fontSizeName = self.enumName( name: SLDSFont.sldsFontSizeName(SLDSFontSizeType(rawValue: self.dataProvider.row)!))
-            let fontTypeName = self.enumName( name: SLDSFont.sldsFontTypeName(SLDSFontType(rawValue: self.dataProvider.section)!))
+            var fontSizeName = SLDSFont.sldsFontSizeName(SLDSFontSizeType(rawValue: self.dataProvider.row)!)!
+            var fontTypeName = SLDSFont.sldsFontTypeName(SLDSFontType(rawValue: self.dataProvider.section)!)!
             
             self.sampleText.font = UIFont.sldsFont(SLDSFontType(rawValue: self.dataProvider.section)!,
                                                    with: SLDSFontSizeType(rawValue: self.dataProvider.row)!)
             
-            fontInfo.text = "SLDSFontType" + fontTypeName + "\n SLDSFontSizeType" + fontSizeName
+            fontInfo.text = "\(fontTypeName)\n \(fontSizeName)"
             
+            self.codeView.objCString = "[UIFont sldsFont: \(fontTypeName) withSize: \(fontSizeName) ]"
             
-            self.codeView.objCString = "[UIFont sldsFont:" +
-                SLDSFont.sldsFontTypeName(SLDSFontType(rawValue: self.dataProvider.section)!) +
-                " withSize:" +
-                SLDSFont.sldsFontSizeName(SLDSFontSizeType(rawValue: self.dataProvider.row)!) +
-                " ]"
-            
-            self.codeView.swiftString = "UIFont.sldsFont( " + fontTypeName + " with: " + fontSizeName + " )"
+            fontSizeName = fontSizeName.trimPrefix("SLDSFontSize")
+            fontTypeName = fontTypeName.trimPrefix("SLDSFontType")
+            self.codeView.swiftString = "UIFont.sldsFont(.\(fontTypeName) with: \(fontSizeName))"
         }
     }
     
@@ -84,21 +81,6 @@ class FontViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-    func enumName(name :String) -> String {
-        var newName = name.replacingOccurrences(of: "SLDSFontType", with: "")
-        newName = newName.replacingOccurrences(of: "SLDSFontSize", with: "")
-        let first = String(newName.characters.prefix(1)).lowercased()
-        var second = String(newName.characters.prefix(2).dropFirst())
-        
-        if second == "X" {
-            second = second.lowercased()
-        }
-        
-        return "." + first + second + String(newName.characters.dropFirst(2))
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
