@@ -55,10 +55,14 @@ class ItemBar: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         for item in self.items {
+            item.heightConstraint.constant = self.frame.height
             item.widthConstraint.constant = self.itemWidth
         }
     }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func didSelectItemAt(sender: UIControl) {
         if let d = self.delegate,
@@ -73,11 +77,11 @@ class ItemBar: UIView {
         self.addSubview(item)
         
         if items.count > 0 {
-            item.constrainRightOf(items.last!, yAlignment:.bottom, height: 30)
+            item.constrainRightOf(items.last!, yAlignment:.bottom)
         }
         else
         {
-            self.constrainChild(item, xAlignment: .left, yAlignment: .bottom, height: 30)
+            self.constrainChild(item, xAlignment: .left, yAlignment: .bottom)
         }
         
         item.addTarget(self, action: #selector(ItemBar.didSelectItemAt(sender:)), for: .touchUpInside)

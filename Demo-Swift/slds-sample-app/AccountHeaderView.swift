@@ -9,17 +9,12 @@
 
 import UIKit
 
-class TabBar: ItemBar {
+class AccountHeaderView: UIView {
     
-    var underscore = UIView()
-    var underscoreX : NSLayoutConstraint?
-    
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override var itemWidth : CGFloat {
-        return self.frame.width / CGFloat(self.items.count+1)
-    }
+    var headerIcon = UIImageView()
+    var headerTitle = UILabel()
+    var headerSubText = UILabel()
+    var headerDownArrow = UIImageView()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -29,52 +24,74 @@ class TabBar: ItemBar {
         aPath.move(to: CGPoint(x:0, y:self.frame.height))
         aPath.addLine(to: CGPoint(x:self.frame.width, y:self.frame.height))
         aPath.close()
-        aPath.lineWidth = 2.0
-        UIColor.sldsColorText(.linkActive).set()
+        aPath.lineWidth = 1.0
+        UIColor.sldsColorBorder(.separatorAlt2).set()
         aPath.stroke()
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func loadView() {
-        super.loadView()
+    override init (frame : CGRect) {
+        super.init(frame : frame)
+        self.makeLayout()
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    convenience init () {
+        self.init(frame:CGRect.zero)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("This class does not support NSCoding")
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func makeLayout() {
+        self.backgroundColor = UIColor.sldsColorBackground(.background)
         
-        self.underscore.backgroundColor = UIColor.sldsColorBorder(.selection)
-        self.addSubview(self.underscore)
         
-        self.constrainChild(self.underscore,
+        headerIcon = UIImageView(image: UIImage.sldsIconStandard(.account,
+                                                                 withSize: SLDSSquareIconMedium))
+        self.addSubview(headerIcon)
+        
+        self.constrainChild(headerIcon,
                             xAlignment: .left,
-                            yAlignment: .bottom,
-                            height: 3)
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.underscore.widthConstraint.constant = self.itemWidth
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func addTab(labelString :String) {
-        let tab = UIButton()
-        tab.setTitle(labelString.uppercased(), for: .normal)
-        tab.titleLabel?.font = UIFont.sldsFont(.regular, with: .small)
-        tab.setTitleColor(UIColor.sldsColorText(.default), for: .normal)
-        super.addItem(item: tab)
-    }
-    
-    func moveUnderscore(_ index : Int) {
-        for c in self.constraints {
-            if c.firstItem as! NSObject == underscore,
-                c.firstAttribute == .left {
-                    c.constant = CGFloat(index) * self.itemWidth
-            }
-        }
+                            yAlignment: .top,
+                            xOffset: 10,
+                            yOffset: 10)
         
-        UIView.animate(withDuration: 0.2) {
-            self.layoutIfNeeded()
-        }
+        headerTitle = UILabel()
+        headerTitle.text = "My Accounts"
+        headerTitle.font = UIFont.sldsFont(.regular, with: .large)
+        headerSubText.textColor = UIColor.sldsColorText(.default)
+        
+        self.addSubview(headerTitle)
+        headerTitle.constrainRightOf(headerIcon,
+                                     yAlignment: .top,
+                                     xOffset: 15)
+        
+        headerDownArrow = UIImageView(image: UIImage.sldsIconUtility(.chevrondown,
+                                                                     with: UIColor.sldsColorText(.default),
+                                                                     andSize: SLDSSquareIconUtilitySmall))
+        
+        self.addSubview(headerDownArrow)
+        headerDownArrow.constrainRightOf(headerTitle,
+                                         yAlignment: .center,
+                                         xOffset: 15,
+                                         yOffset: 2)
+        
+        headerSubText = UILabel()
+        headerSubText.text = "5 items, sorted by Account Name"
+        headerSubText.font = UIFont.sldsFont(.regular, with: .small)
+        headerSubText.textColor = UIColor.sldsColorText(.default)
+        
+        self.addSubview(headerSubText)
+        headerSubText.constrainBelow(headerTitle,
+                                     xAlignment: .left,
+                                     yOffset: 2)
     }
 }

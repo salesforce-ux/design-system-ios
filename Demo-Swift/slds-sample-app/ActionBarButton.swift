@@ -17,12 +17,15 @@ class ActionBarButton: UIButton {
         super.layoutSubviews()
         
         var frame = self.imageView?.frame;
-        frame = CGRect(x:((self.bounds.size.width - (frame?.size.width)!) / 2), y: 0.0, width: (frame?.size.width)!, height: (frame?.size.height)!);
+        frame = CGRect(x:((self.bounds.size.width - (frame?.size.width)!) / 2), y: 5, width: (frame?.size.width)!, height: (frame?.size.height)!);
         self.imageView?.frame = frame!;
         
+        // round icon
+        imageView?.layer.cornerRadius = (frame?.width)!/2;
+        imageView?.clipsToBounds = true;
         
         frame = self.titleLabel?.frame;
-        frame = CGRect(x: ((self.bounds.size.width - (frame?.size.width)!) / 2), y: self.bounds.size.height - (frame?.size.height)!, width: (frame?.size.width)!, height: (frame?.size.height)!);
+        frame = CGRect(x: ((self.bounds.size.width - (frame?.size.width)!) / 2), y: self.bounds.size.height - (frame?.size.height)! - 5, width: (frame?.size.width)!, height: (frame?.size.height)!);
         self.titleLabel?.frame = frame!;
         
         // styling
