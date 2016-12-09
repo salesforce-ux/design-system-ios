@@ -24,7 +24,31 @@ struct AccountObject {
 class AccountListViewController: UITableViewController {
     
     let accounts = [
-        AccountObject(name: "Hello", state: "CA", phone: "415 323-2323", type: .channel, owner: "Joe Green")
+        AccountObject(name: "Burlington Textiles Corp of America",
+                      state: "NC",
+                      phone: "(336) 222-7000",
+                      type: .direct,
+                      owner: "Joe Green"),
+        AccountObject(name: "Dickenson Plc",
+                      state: "KS",
+                      phone: "(785) 241-6200",
+                      type: .channel,
+                      owner: "Joe Green"),
+        AccountObject(name: "Edge Communications",
+                      state: "TX",
+                      phone: "(512) 757-6000",
+                      type: .direct,
+                      owner: "Joe Green"),
+        AccountObject(name: "Express Logistics and Transport",
+                      state: "OR",
+                      phone: "(503) 421-7800",
+                      type: .channel,
+                      owner: "Joe Green"),
+        AccountObject(name: "GenePoint",
+                      state: "CA",
+                      phone: "(650) 867-3450",
+                      type: .channel,
+                      owner: "Joe Green")
     ]
 
     override func viewDidLoad() {

@@ -22,21 +22,16 @@ class AccountCell: UITableViewCell {
     var typeValue = UILabel()
     var ownerValue = UILabel()
     
-    var accountObj: AccountObject!
-    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    var dataProvider : AccountObject {
-        get {
-            return accountObj
-        }
-        set {
-            self.accountName.text = newValue.name
-            self.stateValue.text = newValue.state
-            self.phoneValue.text = newValue.phone
-            self.typeValue.text = newValue.type.rawValue
-            self.ownerValue.text = newValue.owner
-            self.accountObj = newValue
+    var dataProvider : AccountObject? {
+        
+        didSet {
+            self.accountName.text = dataProvider?.name
+            self.stateValue.text = dataProvider?.state
+            self.phoneValue.text = dataProvider?.phone
+            self.typeValue.text = dataProvider?.type.rawValue
+            self.ownerValue.text = dataProvider?.owner
         }
     }
     
@@ -81,15 +76,76 @@ class AccountCell: UITableViewCell {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func makeLayout() {
+        
+        let font = UIFont.sldsFont(.regular, with: .small)
+        let labelColor = UIColor.sldsColorText(.brand)
+        
         self.addSubview(accountName)
         self.addSubview(stateLabel)
         self.addSubview(phoneLabel)
         self.addSubview(typeLabel)
         self.addSubview(ownerLabel)
         
+        accountName.font = font
+        stateLabel.font = font
+        phoneLabel.font = font
+        typeLabel.font = font
+        ownerLabel.font = font
+        
+        stateLabel.textColor = labelColor
+        phoneLabel.textColor = labelColor
+        typeLabel.textColor = labelColor
+        ownerLabel.textColor = labelColor
+        
+        stateValue.font = font
+        phoneValue.font = font
+        typeValue.font = font
+        ownerValue.font = font
+        
         self.addSubview(stateValue)
         self.addSubview(phoneValue)
         self.addSubview(typeValue)
         self.addSubview(ownerValue)
+        
+        self.constrainChild(accountName,
+                            xAlignment: .left,
+                            yAlignment: .top,
+                            xOffset: 20,
+                            yOffset: 20)
+        
+        self.stateLabel.constrainBelow(accountName,
+                                       xAlignment: .left,
+                                       yOffset: 8)
+        
+        self.phoneLabel.constrainBelow(stateLabel,
+                                       xAlignment: .left,
+                                       yOffset: 5)
+        
+        self.typeLabel.constrainBelow(phoneLabel,
+                                       xAlignment: .left,
+                                       yOffset: 5)
+        
+        self.ownerLabel.constrainBelow(typeLabel,
+                                       xAlignment: .left,
+                                       yOffset: 5)
+        
+        // values
+        
+        self.stateValue.constrainRightOf(stateLabel,
+                                         yAlignment: .center,
+                                         xOffset: 30)
+        
+        self.phoneValue.constrainBelow(stateValue,
+                                       xAlignment: .left,
+                                       yOffset: 5)
+        
+        self.typeValue.constrainBelow(phoneValue,
+                                       xAlignment: .left,
+                                       yOffset: 5)
+        
+        self.ownerValue.constrainBelow(typeValue,
+                                      xAlignment: .left,
+                                      yOffset: 5)
+        
     }
 }
