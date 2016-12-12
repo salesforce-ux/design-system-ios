@@ -40,8 +40,9 @@ class ColorViewController: UIViewController {
             
             self.swatchName.text = data.name
             self.swatch.dataProvider = data.color
-            self.codeView.swiftString = "UIColor." + data.method + "(." + swiftName + ")"
-            self.codeView.objCString = "[UIColor " + data.method + " : " + data.name + " ]"
+            
+            self.codeView.objCParameters = ["UIColor", data.method, data.name]
+            self.codeView.swiftParameters = ["UIColor", data.method, swiftName]
             
             var r:CGFloat = 0
             var g:CGFloat = 0

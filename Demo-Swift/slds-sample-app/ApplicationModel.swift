@@ -12,7 +12,9 @@ import UIKit
 class ApplicationModel: NSObject {
     
     static let sharedInstance = ApplicationModel()
-
+    
+    var showSwift : Bool = true
+    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     var backgroundColors : Array<ColorObject> {

@@ -49,9 +49,9 @@ class IconViewController: UIViewController {
                 case .utility :
                     swiftName = swiftName.trimPrefix("SLDSIconUtility")
             }
-
-            self.codeView.swiftString = "UIImage." + data.method + "(." + swiftName + ",\n withSize: SLDSSquareIconMedium )"
-            self.codeView.objCString = "[UIColor " + data.method + " :" + data.name + "\n withSize: SLDSSquareIconMedium ]"
+            
+            self.codeView.swiftParameters = ["UIImage", data.method, swiftName, "withSize", "SLDSSquareIconMedium"]
+            self.codeView.objCParameters = ["UIColor", data.method, data.name, "withSize", "SLDSSquareIconMedium"]
         }
     }
 
