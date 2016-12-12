@@ -11,10 +11,10 @@ import UIKit
 
 class MainListViewController: UITableViewController {
     
-    var footerHeight : CGFloat = 10.0
+    var footerHeight : CGFloat = 200.0
     
    var tableData : [(name:String,type:UIViewController.Type)] {
-        return [("Salesforce1", AccountContainerViewController.self),
+        return [("Salesforce1", DemoViewController.self),
                 ("Library", LibraryListViewController.self),
                 ("About", AboutViewController.self)]
     }
@@ -23,27 +23,22 @@ class MainListViewController: UITableViewController {
     
     override func viewDidLoad() {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        navigationController?.navigationBar.barTintColor = UIColor.sldsColorBackground(.brand)
-        navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = UIColor.sldsColorBackground(.brand)
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         
-        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
-        navigationItem.backBarButtonItem = backButton
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage.sldsIconUtility(.chevronleft,
+                                                                                              with: UIColor.white,
+                                                                                              andSize: SLDSSquareIconUtilityMedium).withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -1, 0))
+
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage.sldsIconUtility(.chevronleft,
+                                                                                                            with: UIColor.white,
+                                                                                                            andSize: SLDSSquareIconUtilityMedium).withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -1, 0))
         
-        self.title = "Lightning Design System"
-        self.tableView.rowHeight = 44.0
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,
                                                                    NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)]
         
-        navigationItem.backBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white,
-                                                                  NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)],
-                                                                 for: UIControlState.normal)
-        
-        super.viewWillAppear(animated)
+        self.title = "Lightning Design System"
+        //self.tableView.rowHeight = 44.0
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -60,10 +55,10 @@ class MainListViewController: UITableViewController {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        footerHeight = self.view.frame.height - (self.tableView.rowHeight * CGFloat(tableData.count))
-        return footerHeight
-    }
+//    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        footerHeight = self.view.frame.height - (self.tableView.rowHeight * CGFloat(tableData.count))
+//        return footerHeight
+//    }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     

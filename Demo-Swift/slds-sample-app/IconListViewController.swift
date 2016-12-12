@@ -84,6 +84,9 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
+        let backImg = UIImage.sldsIconUtility(.chevronleft, with: UIColor.white, andSize: SLDSSquareIconUtilityLarge)
+        self.navigationItem.backBarButtonItem?.setBackgroundImage(backImg, for: .normal, barMetrics: .default)
+        
         styleHeader()
         styleSwitch()
         styleSearch()
