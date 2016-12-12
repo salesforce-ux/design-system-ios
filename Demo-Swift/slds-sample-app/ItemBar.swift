@@ -22,6 +22,16 @@ class ItemBar: UIView {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
+    var selectedIndex : Int = 0 {
+        didSet {
+            if let d = self.delegate {
+                d.itemBar(self, didSelectItemAt: selectedIndex)
+            }
+        }
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
     var itemWidth : CGFloat {
         return self.frame.width / CGFloat(self.items.count)
     }
@@ -61,13 +71,12 @@ class ItemBar: UIView {
             item.widthConstraint.constant = self.itemWidth
         }
     }
-    
+
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func didSelectItemAt(sender: UIControl) {
-        if let d = self.delegate,
-            let index = items.index(of: sender) {
-                d.itemBar(self, didSelectItemAt: index)
+        if let index = items.index(of: sender) {
+            self.selectedIndex = index
         }
     }
     

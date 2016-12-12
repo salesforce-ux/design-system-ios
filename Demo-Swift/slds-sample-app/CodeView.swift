@@ -9,17 +9,28 @@
 
 import UIKit
 
+
 class CodeView: UIView, ItemBarDelegate {
     
     var tabBar = TabBar()
     var codeExample = UITextView()
     var copyButton = UIButton()
     
+    var colors : Array<UIColor> {
+        return [ UIColor(red: 97/255, green: 42/255, blue: 171/255, alpha: 1.0),
+                 UIColor(red: 42/255, green: 76/255, blue: 80/255, alpha: 1.0),
+                 UIColor.black]
+    }
+    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
    
-    var showSwift : Bool = true {
-        didSet {
-            if oldValue != self.showSwift {
+    var showSwift : Bool {
+        get {
+            return ApplicationModel.sharedInstance.showSwift
+        }
+        set {
+            if newValue != self.showSwift {
+                ApplicationModel.sharedInstance.showSwift = newValue
                 self.updateExample()
             }
         }
@@ -27,7 +38,45 @@ class CodeView: UIView, ItemBarDelegate {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    var objCString : String = "" {
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var objCParameters : Array<String>? {
+        didSet {
+            guard let params = self.objCParameters else {
+                return
+            }
+            
+            let retVal = NSMutableAttributedString(string: "[", attributes: [NSForegroundColorAttributeName:colors[2]])
+            
+            retVal.append( NSMutableAttributedString(string: params[0] + " ", attributes: [NSForegroundColorAttributeName:colors[0]] ))
+            
+            retVal.append( NSMutableAttributedString(string: params[1], attributes: [NSForegroundColorAttributeName:colors[1]]))
+            
+            retVal.append( NSMutableAttributedString(string: ":", attributes: [NSForegroundColorAttributeName:colors[2]] ))
+            
+            retVal.append( NSMutableAttributedString(string: params[2], attributes: [NSForegroundColorAttributeName:colors[1]]))
+            
+            for i in stride(from: 3, to: params.count, by: 2) {
+                retVal.append( NSMutableAttributedString(string: "\n" + params[i], attributes: [NSForegroundColorAttributeName:colors[0]]))
+                
+                retVal.append( NSMutableAttributedString(string: ":", attributes: [NSForegroundColorAttributeName:colors[2]] ))
+                
+                retVal.append( NSMutableAttributedString(string: params[i+1], attributes: [NSForegroundColorAttributeName:colors[1]]))
+            }
+            
+            retVal.append( NSMutableAttributedString(string: "];", attributes: [NSForegroundColorAttributeName:colors[2]] ))
+            
+            let style = NSMutableParagraphStyle()
+            style.alignment = .center
+            retVal.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange.init(location: 0, length: retVal.string.characters.count))
+            
+            self.objCString = retVal
+        }
+    }
+
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    private var objCString : NSAttributedString? {
         didSet {
             if !self.showSwift {
                 self.updateExample()
@@ -37,7 +86,41 @@ class CodeView: UIView, ItemBarDelegate {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    var swiftString : String = "" {
+    var swiftParameters : Array<String>? {
+        didSet {
+            guard let params = self.swiftParameters else {
+                return
+            }
+            
+            let retVal = NSMutableAttributedString(string: params[0], attributes: [NSForegroundColorAttributeName:colors[0]])
+            
+            retVal.append( NSMutableAttributedString(string: ".", attributes: [NSForegroundColorAttributeName:colors[2]] ))
+            
+            retVal.append( NSMutableAttributedString(string: params[1], attributes: [NSForegroundColorAttributeName:colors[1]]))
+            
+            retVal.append( NSMutableAttributedString(string: "( .", attributes: [NSForegroundColorAttributeName:colors[2]] ))
+            
+            retVal.append( NSMutableAttributedString(string: params[2], attributes: [NSForegroundColorAttributeName:colors[1]] ))
+            
+            for i in stride(from: 3, to: params.count, by: 2) {
+                retVal.append( NSMutableAttributedString(string: ", " + params[i] + ": .", attributes: [NSForegroundColorAttributeName:colors[2]]))
+                
+                retVal.append( NSMutableAttributedString(string: params[i+1], attributes: [NSForegroundColorAttributeName:colors[1]] ))
+            }
+            
+            retVal.append( NSMutableAttributedString(string: " )", attributes: [NSForegroundColorAttributeName:colors[2]] ))
+            
+            let style = NSMutableParagraphStyle()
+            style.alignment = .center
+            retVal.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange.init(location: 0, length: retVal.string.characters.count))
+            
+            self.swiftString = retVal
+        }
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    private var swiftString : NSAttributedString? {
         didSet {
             if self.showSwift {
                 self.updateExample()
@@ -68,8 +151,8 @@ class CodeView: UIView, ItemBarDelegate {
     
     func loadView() {
         self.backgroundColor = UIColor.sldsColorBackground(.backgroundStencil)
-        tabBar.delegate = self
         
+        tabBar.delegate = self
         tabBar.addTab(labelString: "Swift")
         tabBar.addTab(labelString: "Obj-C")
         self.addSubview(tabBar)
@@ -95,7 +178,7 @@ class CodeView: UIView, ItemBarDelegate {
         self.codeExample.constrainBelow(self.tabBar,
                                         xAlignment: .center,
                                         height: 70,
-                                        yOffset: 10)
+                                        yOffset: 20)
         
         self.constrainChild(self.copyButton,
                        xAlignment: .center,
@@ -108,7 +191,9 @@ class CodeView: UIView, ItemBarDelegate {
     override func layoutSubviews() {
         self.codeExample.widthConstraint.constant = self.frame.width - 40
         self.tabBar.widthConstraint.constant = self.frame.width
+        
         super.layoutSubviews()
+        self.tabBar.selectedIndex = self.showSwift ? 0 : 1
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -117,7 +202,7 @@ class CodeView: UIView, ItemBarDelegate {
         UIView.animate(withDuration: 0.3, animations: {
             self.codeExample.alpha = 0
         }, completion: { (value: Bool) in
-            self.codeExample.text = self.showSwift ? self.swiftString : self.objCString
+            self.codeExample.attributedText = self.showSwift ? self.swiftString : self.objCString
             UIView.animate(withDuration: 0.4, animations: {
                 self.codeExample.alpha = 1.0
             })

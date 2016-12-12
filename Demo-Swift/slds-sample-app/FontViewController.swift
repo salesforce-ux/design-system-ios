@@ -26,12 +26,11 @@ class FontViewController: UIViewController {
                                                    with: SLDSFontSizeType(rawValue: self.dataProvider.row)!)
             
             fontInfo.text = "\(fontTypeName)\n \(fontSizeName)"
-            
-            self.codeView.objCString = "[UIFont sldsFont: \(fontTypeName) withSize: \(fontSizeName) ]"
+            self.codeView.objCParameters = ["UIFont","sldsFont", fontTypeName,"withSize",fontSizeName]
             
             fontSizeName = fontSizeName.trimPrefix("SLDSFontSize")
             fontTypeName = fontTypeName.trimPrefix("SLDSFontType")
-            self.codeView.swiftString = "UIFont.sldsFont(.\(fontTypeName) with: \(fontSizeName))"
+            self.codeView.swiftParameters = ["UIFont","sldsFont", fontTypeName,"with",fontSizeName]
         }
     }
     

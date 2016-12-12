@@ -25,7 +25,7 @@ class TabBar: ItemBar {
     
     override func draw(_ rect: CGRect) {
         let aPath = UIBezierPath()
-        
+    
         aPath.move(to: CGPoint(x:0, y:self.frame.height))
         aPath.addLine(to: CGPoint(x:self.frame.width, y:self.frame.height))
         aPath.close()
@@ -64,6 +64,8 @@ class TabBar: ItemBar {
         tab.setTitleColor(UIColor.sldsColorText(.default), for: .normal)
         super.addItem(item: tab)
     }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func moveUnderscore(_ index : Int) {
         for c in self.constraints {
