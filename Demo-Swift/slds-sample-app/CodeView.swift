@@ -155,6 +155,7 @@ class CodeView: UIView, ItemBarDelegate {
         tabBar.delegate = self
         tabBar.addTab(labelString: "Swift")
         tabBar.addTab(labelString: "Obj-C")
+        tabBar.selectedIndex = ApplicationModel.sharedInstance.showSwift ? 0 : 1
         self.addSubview(tabBar)
         
         codeExample.isEditable = false
@@ -191,9 +192,7 @@ class CodeView: UIView, ItemBarDelegate {
     override func layoutSubviews() {
         self.codeExample.widthConstraint.constant = self.frame.width - 40
         self.tabBar.widthConstraint.constant = self.frame.width
-        
         super.layoutSubviews()
-        self.tabBar.selectedIndex = self.showSwift ? 0 : 1
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -212,9 +211,6 @@ class CodeView: UIView, ItemBarDelegate {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func itemBar(_ itemBar: ItemBar, didSelectItemAt index: NSInteger) {
-        if itemBar == tabBar {
-            self.tabBar.moveUnderscore(index)
-        }
         self.showSwift = index == 0
     }
     

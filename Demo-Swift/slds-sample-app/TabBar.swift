@@ -12,8 +12,12 @@ import UIKit
 class TabBar: ItemBar {
     
     var underscore = UIView()
-    var underscoreX : NSLayoutConstraint?
     
+    override var selectedIndex: Int {
+        didSet {
+            self.moveUnderscore(self.selectedIndex)
+        }
+    }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -38,7 +42,6 @@ class TabBar: ItemBar {
     
     override func loadView() {
         super.loadView()
-        
         self.underscore.backgroundColor = UIColor.sldsColorBorder(.selection)
         self.addSubview(self.underscore)
         
@@ -49,10 +52,14 @@ class TabBar: ItemBar {
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.underscore.widthConstraint.constant = self.itemWidth
+        
+        if self.underscore.widthConstraint.constant != self.itemWidth {
+            self.underscore.widthConstraint.constant = self.itemWidth
+            self.moveUnderscore(self.selectedIndex, animated: false)
+        }
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -67,7 +74,7 @@ class TabBar: ItemBar {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func moveUnderscore(_ index : Int) {
+    func moveUnderscore(_ index : Int, animated:Bool = true) {
         for c in self.constraints {
             if c.firstItem as! NSObject == underscore,
                 c.firstAttribute == .left {
@@ -75,7 +82,13 @@ class TabBar: ItemBar {
             }
         }
         
-        UIView.animate(withDuration: 0.2) {
+        if animated {
+            UIView.animate(withDuration: 0.2) {
+                self.layoutIfNeeded()
+            }
+        }
+        else
+        {
             self.layoutIfNeeded()
         }
     }
