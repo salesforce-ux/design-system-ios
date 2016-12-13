@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20040AD41DFF739300B03FAC /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20040AD31DFF739300B03FAC /* DemoCell.swift */; };
+		20040AD81DFF73CF00B03FAC /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20040AD71DFF73CF00B03FAC /* LibraryCell.swift */; };
+		20040ADA1DFF73E400B03FAC /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20040AD91DFF73E400B03FAC /* AboutCell.swift */; };
 		20191FDB1DEE4F89007C8BD8 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */; };
 		2028C3661DFB3AD4002F69A8 /* String+TrimPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028C3651DFB3AD4002F69A8 /* String+TrimPrefix.swift */; };
 		2043E3AB1DF0993F0043A192 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2043E3AA1DF0993F0043A192 /* CodeView.swift */; };
 		20489C4A1DF9D25E0090C284 /* ApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20489C491DF9D25E0090C284 /* ApplicationModel.swift */; };
 		20489C4C1DF9ED7A0090C284 /* ColorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20489C4B1DF9ED7A0090C284 /* ColorObject.swift */; };
 		20489C4E1DFA19440090C284 /* LibraryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20489C4D1DFA19440090C284 /* LibraryListViewController.swift */; };
-		20489C501DFA1AB20090C284 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20489C4F1DFA1AB20090C284 /* AboutViewController.swift */; };
 		2062152D1DF22675002B62AC /* SwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2062152C1DF22675002B62AC /* SwatchView.swift */; };
 		206215351DF23C14002B62AC /* ItemBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206215341DF23C14002B62AC /* ItemBar.swift */; };
 		206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */; };
@@ -75,13 +77,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20040AD31DFF739300B03FAC /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
+		20040AD71DFF73CF00B03FAC /* LibraryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
+		20040AD91DFF73E400B03FAC /* AboutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CustomFont.bundle; path = ../CustomFont.bundle; sourceTree = "<group>"; };
 		2028C3651DFB3AD4002F69A8 /* String+TrimPrefix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+TrimPrefix.swift"; sourceTree = "<group>"; };
 		2043E3AA1DF0993F0043A192 /* CodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		20489C491DF9D25E0090C284 /* ApplicationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationModel.swift; sourceTree = "<group>"; };
 		20489C4B1DF9ED7A0090C284 /* ColorObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorObject.swift; sourceTree = "<group>"; };
 		20489C4D1DFA19440090C284 /* LibraryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryListViewController.swift; sourceTree = "<group>"; };
-		20489C4F1DFA1AB20090C284 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		2062152C1DF22675002B62AC /* SwatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwatchView.swift; sourceTree = "<group>"; };
 		206215341DF23C14002B62AC /* ItemBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBar.swift; sourceTree = "<group>"; };
 		206AA81D1DE3B80C00375432 /* FontListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontListTableViewController.swift; sourceTree = "<group>"; };
@@ -173,9 +177,8 @@
 				209A562F1DEFA47E00327910 /* FontViewController.swift */,
 				209A56281DEF546400327910 /* IconListViewController.swift */,
 				FC4AC3831DF0D7D000D3D9BE /* IconViewController.swift */,
-				FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */,
 				20489C4D1DFA19440090C284 /* LibraryListViewController.swift */,
-				20489C4F1DFA1AB20090C284 /* AboutViewController.swift */,
+				FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -228,8 +231,11 @@
 		FCB47ED91DD2989F00BB6C1B /* views */ = {
 			isa = PBXGroup;
 			children = (
+				20040AD91DFF73E400B03FAC /* AboutCell.swift */,
 				2043E3AA1DF0993F0043A192 /* CodeView.swift */,
 				FC4FF3DA1DE4D033009B3D2E /* ColorCell.swift */,
+				20040AD31DFF739300B03FAC /* DemoCell.swift */,
+				20040AD71DFF73CF00B03FAC /* LibraryCell.swift */,
 				FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */,
 				2062152C1DF22675002B62AC /* SwatchView.swift */,
 			);
@@ -396,6 +402,7 @@
 				206AA81E1DE3B80C00375432 /* FontListTableViewController.swift in Sources */,
 				FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */,
 				FC7F2E411DF2310F0011684A /* DemoViewController.swift in Sources */,
+				20040ADA1DFF73E400B03FAC /* AboutCell.swift in Sources */,
 				20489C4E1DFA19440090C284 /* LibraryListViewController.swift in Sources */,
 				FCC8BD7F1DF73C070075BEE7 /* AccountCell.swift in Sources */,
 				2062152D1DF22675002B62AC /* SwatchView.swift in Sources */,
@@ -403,12 +410,13 @@
 				FCC8BD8A1DF781D50075BEE7 /* ActionBarButton.swift in Sources */,
 				FCD342611DFA30C30030B3B8 /* AccountHeaderView.swift in Sources */,
 				FC4AC3841DF0D7D000D3D9BE /* IconViewController.swift in Sources */,
+				20040AD81DFF73CF00B03FAC /* LibraryCell.swift in Sources */,
 				209A56291DEF546400327910 /* IconListViewController.swift in Sources */,
 				FC4FF3DB1DE4D033009B3D2E /* ColorCell.swift in Sources */,
 				FCC8BD831DF76D470075BEE7 /* ActionBar.swift in Sources */,
 				209A56301DEFA47E00327910 /* FontViewController.swift in Sources */,
-				20489C501DFA1AB20090C284 /* AboutViewController.swift in Sources */,
 				207FC2FC1DF93DD800284A98 /* IconObject.swift in Sources */,
+				20040AD41DFF739300B03FAC /* DemoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,6 +39,7 @@ class LibraryListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Library"
         self.view.backgroundColor = UIColor.white
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }

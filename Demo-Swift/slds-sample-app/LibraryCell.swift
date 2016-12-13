@@ -9,58 +9,37 @@
 
 import UIKit
 
-class ColorCell: UITableViewCell {
+class LibraryCell: UITableViewCell {
     
-    var color = UIColor.white
-    var swatch = SwatchView()
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    var dataProvider : ColorObject? {
-        didSet {
-            self.textLabel?.text = dataProvider?.name.replacingOccurrences(of: "SLDSColor", with: "")
-            self.textLabel?.font = UIFont.sldsFont(.regular, with: .small)
-            swatch.dataProvider = dataProvider?.color
-        }
-    }
+    let newTitle = UILabel()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.makeLayout()
+        self.loadView()
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("This class does not support NSCoding")
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        swatch.dataProvider = dataProvider?.color;
+    func loadView() {
+        self.backgroundColor = UIColor.sldsColorBackground(.brand)
+        self.selectedBackgroundView = UIView()
+        self.selectedBackgroundView?.backgroundColor = UIColor.sldsColorBackground(.backgroundInfo)
+        self.accessoryType = .disclosureIndicator
+        
+        newTitle.text = "Library"
+        newTitle.textColor = UIColor.sldsColorText(.inverse)
+        newTitle.font = UIFont.sldsFont(.regular, with: .medium)
+        self.addSubview(newTitle)
+        self.constrainChild(newTitle, xAlignment: .center, yAlignment: .top, yOffset: 15)
     }
     
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        super.setHighlighted(highlighted, animated: animated)
-        swatch.dataProvider = dataProvider?.color;
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func makeLayout() {
-        self.backgroundColor = UIColor.clear
-        self.addSubview(self.swatch)
-        self.constrainChild(self.swatch,
-                            xAlignment: .right,
-                            yAlignment: .center,
-                            width: 70,
-                            height: 70,
-                            xOffset: 20)
-    }
 }

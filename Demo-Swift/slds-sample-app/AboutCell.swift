@@ -9,82 +9,54 @@
 
 import UIKit
 
-class DemoViewController: UIViewController, ItemBarDelegate {
+class AboutCell: UITableViewCell {
     
-    var demoNavigationController : UINavigationController?
+    let sldsButton = UIButton()
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.loadView()
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("This class does not support NSCoding")
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func loadView() {
+        self.accessoryType = .none
+        self.backgroundColor = UIColor.sldsColorBackground(.backgroundSelection)
+        
+        sldsButton.setTitle("lightningdesignsystem.com", for: .normal)
+        sldsButton.addTarget(self, action: #selector(browseToSLDS), for: .touchUpInside)
+        sldsButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .small)
+        sldsButton.setTitleColor(UIColor.sldsColorText(.link), for: .normal)
+        
+        self.addSubview(sldsButton)
+        self.constrainChild(sldsButton, xAlignment: .center, yAlignment: .bottom, yOffset:20)
+        
+        if let label = self.textLabel {
+            label.text = ""
+            label.font = UIFont.sldsFont(.regular, with: .medium)
+            self.constrainChild(label, xAlignment: .center, yAlignment: .top,yOffset: 10)
+        }
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        sldsButton.constrainSize(width: self.contentView.frame.width, height: 20)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    func browseToSLDS() {
+        UIApplication.shared.open(URL(string: "http://lightningdesignsystem.com")!, options: [:], completionHandler: nil)
+    }
 
-    var actionItems : Array<ActionItem>!
-    var actionBar = ActionBar()
-    var actionBarHeight = CGFloat(64.0)
-    
-    var contentViewController = AccountMasterViewController()
-    
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func handleReturnToLibrary() {
-        _ = self.navigationController?.popViewController(animated: true)
-        self.navigationController?.isNavigationBarHidden = false
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(DemoViewController.handleReturnToLibrary),
-                                               name: NSNotification.Name("returnToLibrary"),
-                                               object: nil)
-        
-        demoNavigationController = UINavigationController(rootViewController: contentViewController)
-        
-        if let nav = demoNavigationController?.view {
-            self.view.addSubview(nav)
-        }
-        
-        actionBar.delegate = self
-        
-        actionItems = [
-            ActionItem(label: "Filter", iconId: .filter),
-            ActionItem(label: "Sort", iconId: .sort),
-            ActionItem(label: "New", iconId: .new)
-        ]
-        
-        self.view.addSubview(actionBar)
-        self.view.constrainChild(actionBar,
-                                 xAlignment: .center,
-                                 yAlignment: .bottom,
-                                 width: self.view.frame.width,
-                                 height: actionBarHeight)
-        
-        for a in actionItems {
-            actionBar.addButton(actionItem: a)
-        }
-        
-        self.view.backgroundColor = UIColor.white
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        super.viewWillAppear(animated)
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func itemBar(_ itemBar: ItemBar, didSelectItemAt index: NSInteger) {
-        if itemBar == actionBar {
-            // do something with the selection at index
-        }
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 }
