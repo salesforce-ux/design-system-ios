@@ -22,7 +22,7 @@ class TabBar: ItemBar {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override var itemWidth : CGFloat {
-        return self.frame.width / CGFloat(self.items.count+1)
+        return self.frame.width / CGFloat(self.items.count)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

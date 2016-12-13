@@ -9,34 +9,35 @@
 
 import UIKit
 
-class AccountDetailViewController: UIViewController {
+class AccountMasterHeaderView: AccountHeaderView {
     
-    var header = AccountDetailHeaderView()
+    var headerSubText = UILabel()
+    var headerDownArrow = UIImageView()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    var dataProvider : AccountObject? {
-        didSet {
-            header.dataProvider = self.dataProvider
-        }
+    override func makeLayout() {
+        super.makeLayout()
+        headerTitle.text = "My Accounts"
+        
+        headerDownArrow = UIImageView(image: UIImage.sldsIconUtility(.chevrondown,
+                                                                     with: UIColor.sldsColorText(.default),
+                                                                     andSize: SLDSSquareIconUtilitySmall))
+        
+        self.addSubview(headerDownArrow)
+        headerDownArrow.constrainRightOf(self.headerTitle,
+                                         yAlignment: .center,
+                                         xOffset: 15,
+                                         yOffset: 2)
+        
+        headerSubText = UILabel()
+        headerSubText.text = "5 items, sorted by Account Name"
+        headerSubText.font = UIFont.sldsFont(.regular, with: .small)
+        headerSubText.textColor = UIColor.sldsColorText(.default)
+        
+        self.addSubview(headerSubText)
+        headerSubText.constrainBelow(self.headerTitle,
+                                     xAlignment: .left,
+                                     yOffset: 2)
     }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor.white
-        
-        self.view.addSubview(header)
-        self.view.constrainChild(header,
-                                 xAlignment: .left,
-                                 yAlignment: .top,
-                                 width: self.view.frame.width,
-                                 height: 120,
-                                 yOffset: 64)
-        
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 }

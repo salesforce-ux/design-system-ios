@@ -13,8 +13,6 @@ class AccountHeaderView: UIView {
     
     var headerIcon = UIImageView()
     var headerTitle = UILabel()
-    var headerSubText = UILabel()
-    var headerDownArrow = UIImageView()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -28,6 +26,7 @@ class AccountHeaderView: UIView {
         UIColor.sldsColorBorder(.separatorAlt2).set()
         aPath.stroke()
     }
+    
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -65,33 +64,11 @@ class AccountHeaderView: UIView {
                             yOffset: 10)
         
         headerTitle = UILabel()
-        headerTitle.text = "My Accounts"
         headerTitle.font = UIFont.sldsFont(.regular, with: .large)
-        headerSubText.textColor = UIColor.sldsColorText(.default)
         
         self.addSubview(headerTitle)
         headerTitle.constrainRightOf(headerIcon,
                                      yAlignment: .top,
                                      xOffset: 15)
-        
-        headerDownArrow = UIImageView(image: UIImage.sldsIconUtility(.chevrondown,
-                                                                     with: UIColor.sldsColorText(.default),
-                                                                     andSize: SLDSSquareIconUtilitySmall))
-        
-        self.addSubview(headerDownArrow)
-        headerDownArrow.constrainRightOf(headerTitle,
-                                         yAlignment: .center,
-                                         xOffset: 15,
-                                         yOffset: 2)
-        
-        headerSubText = UILabel()
-        headerSubText.text = "5 items, sorted by Account Name"
-        headerSubText.font = UIFont.sldsFont(.regular, with: .small)
-        headerSubText.textColor = UIColor.sldsColorText(.default)
-        
-        self.addSubview(headerSubText)
-        headerSubText.constrainBelow(headerTitle,
-                                     xAlignment: .left,
-                                     yOffset: 2)
     }
 }

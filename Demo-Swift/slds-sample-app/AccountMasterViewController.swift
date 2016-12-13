@@ -38,7 +38,7 @@ class AccountMasterViewController: UIViewController {
         let toolBarOffset = (self.navigationController?.toolbar)!.frame.height + UIApplication.shared.statusBarFrame.height
         tableHeight = self.view.frame.height - actionBarHeight - headerHeight - toolBarOffset
         
-        header = AccountHeaderView()
+        header = AccountMasterHeaderView()
         
         self.view.addSubview(header)
         

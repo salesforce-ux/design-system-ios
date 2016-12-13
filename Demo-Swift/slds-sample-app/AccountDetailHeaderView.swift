@@ -9,34 +9,80 @@
 
 import UIKit
 
-class AccountDetailViewController: UIViewController {
+class AccountDetailHeaderView: AccountHeaderView, ItemBarDelegate {
     
-    var header = AccountDetailHeaderView()
+    var accountType = UILabel()
+    var phoneNumber = UILabel()
+    var url = UILabel()
+    
+    var tabBar = TabBar()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     var dataProvider : AccountObject? {
         didSet {
-            header.dataProvider = self.dataProvider
+            self.headerTitle.text = dataProvider?.name
+            self.accountType.text = (dataProvider?.type.rawValue)! + " ・ "
+            self.phoneNumber.text = (dataProvider?.phone)!  + " ・"
+            self.url.text = dataProvider?.url
         }
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func makeLayout() {
+        super.makeLayout()
         
-        self.view.backgroundColor = UIColor.white
+        tabBar.delegate = self
         
-        self.view.addSubview(header)
-        self.view.constrainChild(header,
-                                 xAlignment: .left,
-                                 yAlignment: .top,
-                                 width: self.view.frame.width,
-                                 height: 120,
-                                 yOffset: 64)
+        self.headerTitle.font = UIFont.sldsFont(.regular, with: .medium)
         
+        accountType.font = UIFont.sldsFont(.regular, with: .small)
+        accountType.textColor = UIColor.sldsColorText(.default)
+        
+        phoneNumber.font = UIFont.sldsFont(.regular, with: .small)
+        phoneNumber.textColor = UIColor.sldsColorText(.link)
+        
+        url.font = UIFont.sldsFont(.regular, with: .small)
+        url.textColor = UIColor.sldsColorText(.link)
+        
+        self.addSubview(accountType)
+        accountType.constrainBelow(self.headerTitle,
+                                   xAlignment: .left,
+                                   yOffset: 2)
+        
+        self.addSubview(phoneNumber)
+        phoneNumber.constrainRightOf(accountType,
+                                     yAlignment: .center,
+                                     xOffset: 2)
+        
+        self.addSubview(url)
+        url.constrainBelow(self.accountType,
+                                   xAlignment: .left,
+                                   yOffset: 0)
+        
+        tabBar.addTab(labelString: "feed")
+        tabBar.addTab(labelString: "details")
+        tabBar.addTab(labelString: "related")
+        
+        tabBar.backgroundColor = UIColor.sldsColorBackground(.background)
+        
+        self.addSubview(tabBar)
     }
     
+    override func layoutSubviews() {
+        self.constrainChild(tabBar,
+                            xAlignment: .center,
+                            yAlignment: .bottom,
+                            width: self.frame.width,
+                            height: 30)
+    }
+    
+    // MARK - TabBar delegate
+    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func itemBar(_ itemBar: ItemBar, didSelectItemAt index: NSInteger) {
+        
+    }
 }

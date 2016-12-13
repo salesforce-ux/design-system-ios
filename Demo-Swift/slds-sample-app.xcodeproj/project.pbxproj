@@ -37,9 +37,11 @@
 		FCC8BD881DF781610075BEE7 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC8BD871DF781610075BEE7 /* TabBar.swift */; };
 		FCC8BD8A1DF781D50075BEE7 /* ActionBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC8BD891DF781D50075BEE7 /* ActionBarButton.swift */; };
 		FCCEE6501DEF889C00949840 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEE64F1DEF889C00949840 /* SearchField.swift */; };
-		FCD342611DFA30C30030B3B8 /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD342601DFA30C30030B3B8 /* AccountHeaderView.swift */; };
+		FCD342611DFA30C30030B3B8 /* AccountMasterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD342601DFA30C30030B3B8 /* AccountMasterHeaderView.swift */; };
 		FCD342701DFF29440030B3B8 /* AccountMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3426F1DFF29440030B3B8 /* AccountMasterViewController.swift */; };
 		FCD342781DFF67C10030B3B8 /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD342771DFF67C10030B3B8 /* AccountDetailViewController.swift */; };
+		FCD3427A1E006FE80030B3B8 /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD342791E006FE80030B3B8 /* AccountHeaderView.swift */; };
+		FCD3427C1E0073D10030B3B8 /* AccountDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3427B1E0073D10030B3B8 /* AccountDetailHeaderView.swift */; };
 		FCFD3F511DE3671300A2C9B2 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,9 +110,11 @@
 		FCC8BD871DF781610075BEE7 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		FCC8BD891DF781D50075BEE7 /* ActionBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionBarButton.swift; sourceTree = "<group>"; };
 		FCCEE64F1DEF889C00949840 /* SearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
-		FCD342601DFA30C30030B3B8 /* AccountHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
+		FCD342601DFA30C30030B3B8 /* AccountMasterHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMasterHeaderView.swift; sourceTree = "<group>"; };
 		FCD3426F1DFF29440030B3B8 /* AccountMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMasterViewController.swift; sourceTree = "<group>"; };
 		FCD342771DFF67C10030B3B8 /* AccountDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
+		FCD342791E006FE80030B3B8 /* AccountHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
+		FCD3427B1E0073D10030B3B8 /* AccountDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailHeaderView.swift; sourceTree = "<group>"; };
 		FCFD3F501DE3671300A2C9B2 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -270,7 +274,9 @@
 			isa = PBXGroup;
 			children = (
 				FCC8BD7E1DF73C070075BEE7 /* AccountCell.swift */,
-				FCD342601DFA30C30030B3B8 /* AccountHeaderView.swift */,
+				FCD342601DFA30C30030B3B8 /* AccountMasterHeaderView.swift */,
+				FCD342791E006FE80030B3B8 /* AccountHeaderView.swift */,
+				FCD3427B1E0073D10030B3B8 /* AccountDetailHeaderView.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -401,13 +407,15 @@
 				2062152D1DF22675002B62AC /* SwatchView.swift in Sources */,
 				2028C3661DFB3AD4002F69A8 /* String+TrimPrefix.swift in Sources */,
 				FCC8BD8A1DF781D50075BEE7 /* ActionBarButton.swift in Sources */,
-				FCD342611DFA30C30030B3B8 /* AccountHeaderView.swift in Sources */,
+				FCD342611DFA30C30030B3B8 /* AccountMasterHeaderView.swift in Sources */,
 				FC4AC3841DF0D7D000D3D9BE /* IconViewController.swift in Sources */,
 				209A56291DEF546400327910 /* IconListViewController.swift in Sources */,
 				FC4FF3DB1DE4D033009B3D2E /* ColorCell.swift in Sources */,
 				FCC8BD831DF76D470075BEE7 /* ActionBar.swift in Sources */,
 				209A56301DEFA47E00327910 /* FontViewController.swift in Sources */,
+				FCD3427C1E0073D10030B3B8 /* AccountDetailHeaderView.swift in Sources */,
 				20489C501DFA1AB20090C284 /* AboutViewController.swift in Sources */,
+				FCD3427A1E006FE80030B3B8 /* AccountHeaderView.swift in Sources */,
 				207FC2FC1DF93DD800284A98 /* IconObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

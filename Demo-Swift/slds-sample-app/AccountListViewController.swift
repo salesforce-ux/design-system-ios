@@ -20,6 +20,7 @@ struct AccountObject {
     var phone : String!
     var type : AccountType!
     var owner : String!
+    var url : String!
 }
 
 class AccountListViewController: UITableViewController {
@@ -31,27 +32,32 @@ class AccountListViewController: UITableViewController {
                       state: "NC",
                       phone: "(336) 222-7000",
                       type: .direct,
-                      owner: "Joe Green"),
+                      owner: "Joe Green",
+                      url: "www.burlington.com"),
         AccountObject(name: "Dickenson Plc",
                       state: "KS",
                       phone: "(785) 241-6200",
                       type: .channel,
-                      owner: "Joe Green"),
+                      owner: "Joe Green",
+                      url: "dickenson-consulting.com"),
         AccountObject(name: "Edge Communications",
                       state: "TX",
                       phone: "(512) 757-6000",
                       type: .direct,
-                      owner: "Joe Green"),
+                      owner: "Joe Green",
+                      url: "www.edgecomm.com"),
         AccountObject(name: "Express Logistics and Transport",
                       state: "OR",
                       phone: "(503) 421-7800",
                       type: .channel,
-                      owner: "Joe Green"),
+                      owner: "Joe Green",
+                      url: "www.expresslandt.net"),
         AccountObject(name: "GenePoint",
                       state: "CA",
                       phone: "(650) 867-3450",
                       type: .channel,
-                      owner: "Joe Green")
+                      owner: "Joe Green",
+                      url: "www.genepoint.com")
     ]
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -98,7 +104,7 @@ class AccountListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller  = AccountDetailViewController()
-        // controller.dataProvider = indexPath
+        controller.dataProvider = accounts[indexPath.item]
 
         
         self.superNavigationController.pushViewController(controller, animated: true)
