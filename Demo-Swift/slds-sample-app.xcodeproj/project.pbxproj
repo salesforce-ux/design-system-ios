@@ -28,7 +28,6 @@
 		20F03F711E00D980001EE121 /* LibraryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F691E00D980001EE121 /* LibraryListViewController.swift */; };
 		20F03F721E00D980001EE121 /* SoundListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F6A1E00D980001EE121 /* SoundListViewController.swift */; };
 		20F03F761E00D987001EE121 /* ItemBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F731E00D987001EE121 /* ItemBar.swift */; };
-		20F03F771E00D987001EE121 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F741E00D987001EE121 /* SearchField.swift */; };
 		20F03F781E00D987001EE121 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F751E00D987001EE121 /* TabBar.swift */; };
 		20F03F7B1E00D98E001EE121 /* String+TrimPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F791E00D98E001EE121 /* String+TrimPrefix.swift */; };
 		20F03F7C1E00D98E001EE121 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F7A1E00D98E001EE121 /* UIView+Constraints.swift */; };
@@ -101,7 +100,6 @@
 		20F03F691E00D980001EE121 /* LibraryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LibraryListViewController.swift; path = library/controllers/LibraryListViewController.swift; sourceTree = "<group>"; };
 		20F03F6A1E00D980001EE121 /* SoundListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundListViewController.swift; path = library/controllers/SoundListViewController.swift; sourceTree = "<group>"; };
 		20F03F731E00D987001EE121 /* ItemBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemBar.swift; path = library/controls/ItemBar.swift; sourceTree = "<group>"; };
-		20F03F741E00D987001EE121 /* SearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchField.swift; path = library/controls/SearchField.swift; sourceTree = "<group>"; };
 		20F03F751E00D987001EE121 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBar.swift; path = library/controls/TabBar.swift; sourceTree = "<group>"; };
 		20F03F791E00D98E001EE121 /* String+TrimPrefix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+TrimPrefix.swift"; path = "library/extensions/String+TrimPrefix.swift"; sourceTree = "<group>"; };
 		20F03F7A1E00D98E001EE121 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Constraints.swift"; path = "library/extensions/UIView+Constraints.swift"; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				20F03F731E00D987001EE121 /* ItemBar.swift */,
-				20F03F741E00D987001EE121 /* SearchField.swift */,
 				20F03F751E00D987001EE121 /* TabBar.swift */,
 			);
 			name = controls;
@@ -409,7 +406,6 @@
 				20F03F821E00D994001EE121 /* IconObject.swift in Sources */,
 				20F03F8A1E00D99A001EE121 /* AboutCell.swift in Sources */,
 				20F03F601E00D95B001EE121 /* AccountDetailHeaderView.swift in Sources */,
-				20F03F771E00D987001EE121 /* SearchField.swift in Sources */,
 				20F03F711E00D980001EE121 /* LibraryListViewController.swift in Sources */,
 				20F03F7B1E00D98E001EE121 /* String+TrimPrefix.swift in Sources */,
 				20F03F7C1E00D98E001EE121 /* UIView+Constraints.swift in Sources */,

@@ -71,10 +71,7 @@ struct IconObject {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func getImage(backgroundColor : UIColor?=nil ) -> UIImage? {
-        if self.type != .utility && backgroundColor != nil {
-            fatalError("In the SLDSSampleApp, only utility icons use backgroundColor, though all slds icon types support the use of backgroundColor.")
-        }
+    func getImage() -> UIImage? {
         
         switch self.type {
         case .action :
@@ -94,7 +91,7 @@ struct IconObject {
             
         case .utility :
             if let value = SLDSIconUtilityType.init(rawValue: self.index) {
-                return UIImage.sldsIconUtility(value, with: backgroundColor, andSize: self.size)
+                return UIImage.sldsIconUtility(value, withSize: self.size)
             }
         }
         
