@@ -421,12 +421,9 @@
 				FC4FF3DB1DE4D033009B3D2E /* ColorCell.swift in Sources */,
 				FCC8BD831DF76D470075BEE7 /* ActionBar.swift in Sources */,
 				209A56301DEFA47E00327910 /* FontViewController.swift in Sources */,
-<<<<<<< HEAD
 				FCD3427C1E0073D10030B3B8 /* AccountDetailHeaderView.swift in Sources */,
 				20489C501DFA1AB20090C284 /* AboutViewController.swift in Sources */,
 				FCD3427A1E006FE80030B3B8 /* AccountHeaderView.swift in Sources */,
-=======
->>>>>>> 17fea3046cf2f6cc92da0282b8267e0c238ffbd2
 				207FC2FC1DF93DD800284A98 /* IconObject.swift in Sources */,
 				20040AD41DFF739300B03FAC /* DemoCell.swift in Sources */,
 			);
