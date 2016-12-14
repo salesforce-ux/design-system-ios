@@ -31,10 +31,45 @@ class ActionBar: ItemBar {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
+    override func removeItems() {
+        self.items.removeAll()
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
     func addButton(actionItem : ActionItem) {
         let button = ActionBarButton()
+        button.frame = CGRect(x: 0, y: 0, width: button.frame.width, height: 64)
         button.setImage(UIImage.sldsIconAction(actionItem.iconId, withSize: SLDSSquareIconMedium), for: .normal)
         button.setTitle(actionItem.label, for: .normal)
-        super.addItem(item : button)
+        super.addItem(item : button, isVisible: false)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func animateButtonEntry() {
+        for c in self.constraints {
+            if c.firstAttribute == .bottom {
+                c.constant = 0
+                UIView.animate(withDuration: 0.5) {
+                    self.layoutIfNeeded()
+                }
+            }
+        }
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func animateButtonExit() {
+        for c in self.constraints {
+            if c.firstAttribute == .bottom {
+                c.constant = self.frame.height
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.layoutIfNeeded()
+                }, completion: { (Bool) in
+                    c.firstItem.removeFromSuperview()
+                })
+            }
+        }
     }
 }

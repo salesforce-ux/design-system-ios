@@ -82,15 +82,36 @@ class ItemBar: UIView {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func addItem(item : UIControl) {
+    func removeItems() {
+        for item in self.items {
+            item.removeFromSuperview()
+        }
+        self.items.removeAll()
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func addItem(item : UIControl, isVisible: Bool?=nil) {
         self.addSubview(item)
+
+        var initialOffset = CGFloat(0)
+        
+        if let v = isVisible {
+            if !v {
+                initialOffset = -item.frame.height
+            }
+        }
         
         if items.count > 0 {
-            item.constrainRightOf(items.last!, yAlignment:.bottom)
-        }
-        else
-        {
-            self.constrainChild(item, xAlignment: .left, yAlignment: .bottom)
+            item.constrainRightOf(items.last!,
+                                  yAlignment:.bottom,
+                                  yOffset: 0)
+            
+        } else {
+            self.constrainChild(item,
+                                xAlignment: .left,
+                                yAlignment: .bottom,
+                                yOffset: initialOffset)
         }
         
         item.addTarget(self, action: #selector(ItemBar.didSelectItemAt(sender:)), for: .touchUpInside)

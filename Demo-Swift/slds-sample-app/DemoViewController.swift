@@ -9,11 +9,11 @@
 
 import UIKit
 
-class DemoViewController: UIViewController, ItemBarDelegate {
+class DemoViewController: UIViewController, ItemBarDelegate, UINavigationControllerDelegate {
     
     var demoNavigationController : UINavigationController?
 
-    var actionItems : Array<ActionItem>!
+    var actionItems = Array<ActionItem>()
     var actionBar = ActionBar()
     var actionBarHeight = CGFloat(64.0)
     
@@ -39,17 +39,13 @@ class DemoViewController: UIViewController, ItemBarDelegate {
         
         demoNavigationController = UINavigationController(rootViewController: contentViewController)
         
+        
         if let nav = demoNavigationController?.view {
             self.view.addSubview(nav)
         }
         
         actionBar.delegate = self
-        
-        actionItems = [
-            ActionItem(label: "Filter", iconId: .filter),
-            ActionItem(label: "Sort", iconId: .sort),
-            ActionItem(label: "New", iconId: .new)
-        ]
+        demoNavigationController?.delegate = self
         
         self.view.addSubview(actionBar)
         self.view.constrainChild(actionBar,
@@ -58,10 +54,6 @@ class DemoViewController: UIViewController, ItemBarDelegate {
                                  width: self.view.frame.width,
                                  height: actionBarHeight)
         
-        for a in actionItems {
-            actionBar.addButton(actionItem: a)
-        }
-        
         self.view.backgroundColor = UIColor.white
     }
     
@@ -69,6 +61,7 @@ class DemoViewController: UIViewController, ItemBarDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        //actionBar.animateButtonEntry()
         super.viewWillAppear(animated)
     }
     
@@ -78,6 +71,7 @@ class DemoViewController: UIViewController, ItemBarDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK - ItemBar delegate
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func itemBar(_ itemBar: ItemBar, didSelectItemAt index: NSInteger) {
@@ -85,6 +79,39 @@ class DemoViewController: UIViewController, ItemBarDelegate {
             // do something with the selection at index
         }
     }
-    
+   
+    // MARK - UINavigationBar delegate
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        
+        if viewController is AccountDetailViewController {
+            
+            actionItems = [
+                ActionItem(label: "Filter", iconId: .filter),
+                ActionItem(label: "Sort", iconId: .sort),
+                ActionItem(label: "Filter", iconId: .filter),
+                ActionItem(label: "Sort", iconId: .sort),
+                ActionItem(label: "New", iconId: .new)
+            ]
+            
+        } else {
+            actionItems = [
+                ActionItem(label: "Filter", iconId: .call),
+                ActionItem(label: "Sort", iconId: .sort)
+            ]
+        }
+        
+        self.actionBar.animateButtonExit()
+        
+        self.actionBar.removeItems()
+        
+        for a in actionItems {
+            self.actionBar.addButton(actionItem: a)
+        }
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        self.actionBar.animateButtonEntry()
+    }
 }
