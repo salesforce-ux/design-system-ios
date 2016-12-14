@@ -31,7 +31,11 @@ class LibraryListViewController: UITableViewController {
                       rows: [(IconObjectType.action.rawValue, IconListViewController.self),
                              (IconObjectType.custom.rawValue, IconListViewController.self),
                              (IconObjectType.standard.rawValue, IconListViewController.self),
-                             (IconObjectType.utility.rawValue, IconListViewController.self)])
+                             (IconObjectType.utility.rawValue, IconListViewController.self)]),
+            
+            TableData(sectionTitle: "Sounds",
+                      rows: [(IconObjectType.custom.rawValue, IconListViewController.self)])
+            
         ]
     }
     
@@ -40,6 +44,7 @@ class LibraryListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Library"
+        //self.navigationItem.backBarButtonItem
         self.view.backgroundColor = UIColor.white
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
@@ -99,7 +104,6 @@ class LibraryListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         cell.textLabel?.font = UIFont.sldsFont(.regular, with: .medium)
-        
         cell.textLabel?.text = tableData[indexPath.section].rows[indexPath.row].name
         return cell
     }

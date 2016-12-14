@@ -167,6 +167,10 @@
 		05EEF05E1B6950A5002D5939 /* NSString+SLDSIconCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EEF05C1B6950A5002D5939 /* NSString+SLDSIconCustom.m */; };
 		05EEF06F1B69585A002D5939 /* NSString+SLDSIconUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EEF06D1B69585A002D5939 /* NSString+SLDSIconUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05EEF0701B69585A002D5939 /* NSString+SLDSIconUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EEF06E1B69585A002D5939 /* NSString+SLDSIconUtility.m */; };
+		20A30A1C1E00C0C700F4C1E1 /* AVAudioPlayer+SLDSSound.h in Headers */ = {isa = PBXBuildFile; fileRef = 20A30A1A1E00C0C700F4C1E1 /* AVAudioPlayer+SLDSSound.h */; };
+		20A30A1D1E00C0C700F4C1E1 /* AVAudioPlayer+SLDSCound.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A30A1B1E00C0C700F4C1E1 /* AVAudioPlayer+SLDSCound.m */; };
+		20A30A201E00C1B900F4C1E1 /* SLDSSoundTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = 20A30A1E1E00C1B900F4C1E1 /* SLDSSoundTemplate.h */; };
+		20A30A211E00C1B900F4C1E1 /* SLDSSoundTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A30A1F1E00C1B900F4C1E1 /* SLDSSoundTemplate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -288,6 +292,10 @@
 		05EEF06E1B69585A002D5939 /* NSString+SLDSIconUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SLDSIconUtility.m"; sourceTree = "<group>"; };
 		05EEF0851B69FD47002D5939 /* SLDSFontTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSFontTemplate.h; path = Templates/SLDSFontTemplate.h; sourceTree = "<group>"; };
 		05EEF0861B69FD47002D5939 /* SLDSFontTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLDSFontTemplate.m; path = Templates/SLDSFontTemplate.m; sourceTree = "<group>"; };
+		20A30A1A1E00C0C700F4C1E1 /* AVAudioPlayer+SLDSSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVAudioPlayer+SLDSSound.h"; sourceTree = "<group>"; };
+		20A30A1B1E00C0C700F4C1E1 /* AVAudioPlayer+SLDSCound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVAudioPlayer+SLDSCound.m"; sourceTree = "<group>"; };
+		20A30A1E1E00C1B900F4C1E1 /* SLDSSoundTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLDSSoundTemplate.h; sourceTree = "<group>"; };
+		20A30A1F1E00C1B900F4C1E1 /* SLDSSoundTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLDSSoundTemplate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +389,8 @@
 				0569F8E21B605535009FF8FE /* UIImage+SLDSIconStandard.m */,
 				055D1E5F1B5DCB0400987466 /* UIImage+SLDSIconUtility.h */,
 				055D1E601B5DCB0400987466 /* UIImage+SLDSIconUtility.m */,
+				20A30A1A1E00C0C700F4C1E1 /* AVAudioPlayer+SLDSSound.h */,
+				20A30A1B1E00C0C700F4C1E1 /* AVAudioPlayer+SLDSCound.m */,
 			);
 			path = SalesforceDesignSystem;
 			sourceTree = "<group>";
@@ -414,6 +424,8 @@
 				0569F8D81B605453009FF8FE /* SLDSIconStandardTemplate.m */,
 				055D1E701B5DE52C00987466 /* SLDSIconUtilityTemplate.h */,
 				055D1E711B5DE52C00987466 /* SLDSIconUtilityTemplate.m */,
+				20A30A1E1E00C1B900F4C1E1 /* SLDSSoundTemplate.h */,
+				20A30A1F1E00C1B900F4C1E1 /* SLDSSoundTemplate.m */,
 			);
 			name = Templates;
 			sourceTree = "<group>";
@@ -469,6 +481,7 @@
 				05D89B121D808A3D00516C3C /* SLDSSpacing.h in Headers */,
 				05D89AF61D808A3D00516C3C /* SLDSColorBg.h in Headers */,
 				05D89AFA1D808A3D00516C3C /* SLDSColorTxt.h in Headers */,
+				20A30A1C1E00C0C700F4C1E1 /* AVAudioPlayer+SLDSSound.h in Headers */,
 				05D89B111D808A3D00516C3C /* SLDSSizing.h in Headers */,
 				05D89AF81D808A3D00516C3C /* SLDSColorBrdr.h in Headers */,
 				05D89B041D808A3D00516C3C /* SLDSIconLabelAction.h in Headers */,
@@ -480,6 +493,7 @@
 				05D89AF41D808A3D00516C3C /* SLDSColorAlias.h in Headers */,
 				05D89B0A1D808A3D00516C3C /* SLDSIconLabelUtility.h in Headers */,
 				05D89AFC1D808A3D00516C3C /* SLDSFont.h in Headers */,
+				20A30A201E00C1B900F4C1E1 /* SLDSSoundTemplate.h in Headers */,
 				05D89B021D808A3D00516C3C /* SLDSIconCustom.h in Headers */,
 				051032171B29F7140094A6B2 /* UIColor+SLDSText.h in Headers */,
 				055D1E611B5DCB0400987466 /* UIImage+SLDSIconUtility.h in Headers */,
@@ -665,6 +679,7 @@
 				05A7B0671B2A53F800B5FB86 /* UIFont+SLDSFont.m in Sources */,
 				05D89B031D808A3D00516C3C /* SLDSIconCustom.m in Sources */,
 				05D89B0B1D808A3D00516C3C /* SLDSIconLabelUtility.m in Sources */,
+				20A30A1D1E00C0C700F4C1E1 /* AVAudioPlayer+SLDSCound.m in Sources */,
 				05D89B051D808A3D00516C3C /* SLDSIconLabelAction.m in Sources */,
 				051032181B29F7140094A6B2 /* UIColor+SLDSText.m in Sources */,
 				05D89B0F1D808A3D00516C3C /* SLDSIconUtility.m in Sources */,
@@ -674,6 +689,7 @@
 				05D89AF71D808A3D00516C3C /* SLDSColorBg.m in Sources */,
 				055D1E791B5E13E500987466 /* UIImage+SLDSIconAction.m in Sources */,
 				0569F8D21B604B72009FF8FE /* UIImage+SLDSIconCustom.m in Sources */,
+				20A30A211E00C1B900F4C1E1 /* SLDSSoundTemplate.m in Sources */,
 				055D1E621B5DCB0400987466 /* UIImage+SLDSIconUtility.m in Sources */,
 				05D89B071D808A3D00516C3C /* SLDSIconLabelCustom.m in Sources */,
 				05D89AFD1D808A3D00516C3C /* SLDSFont.m in Sources */,

@@ -54,7 +54,6 @@ class ColorCell: UITableViewCell {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func makeLayout() {
-        self.backgroundColor = UIColor.sldsColorBackground(.background)
         self.selectedBackgroundView = UIView()
         self.selectedBackgroundView?.backgroundColor = UIColor.sldsColorBackground(.backgroundRowSelected)
         

@@ -24,6 +24,7 @@
 		209436AE1DF103EF00D70A60 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */; };
 		209A56291DEF546400327910 /* IconListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A56281DEF546400327910 /* IconListViewController.swift */; };
 		209A56301DEFA47E00327910 /* FontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A562F1DEFA47E00327910 /* FontViewController.swift */; };
+		20A30A191E00BFBB00F4C1E1 /* SoundListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A30A181E00BFBB00F4C1E1 /* SoundListViewController.swift */; };
 		FC1EA4681DDE6F6300304E01 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */; };
 		FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4299181DDA4FE100891FBD /* ColorListViewController.swift */; };
 		FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42991E1DDA8FC500891FBD /* ColorViewController.swift */; };
@@ -94,6 +95,7 @@
 		2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceDesignSystem.bundle; path = ../SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
 		209A56281DEF546400327910 /* IconListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconListViewController.swift; sourceTree = "<group>"; };
 		209A562F1DEFA47E00327910 /* FontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontViewController.swift; sourceTree = "<group>"; };
+		20A30A181E00BFBB00F4C1E1 /* SoundListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundListViewController.swift; sourceTree = "<group>"; };
 		FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
 		FC4299181DDA4FE100891FBD /* ColorListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorListViewController.swift; sourceTree = "<group>"; };
 		FC42991E1DDA8FC500891FBD /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				FC4AC3831DF0D7D000D3D9BE /* IconViewController.swift */,
 				20489C4D1DFA19440090C284 /* LibraryListViewController.swift */,
 				FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */,
+				20A30A181E00BFBB00F4C1E1 /* SoundListViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				2043E3AB1DF0993F0043A192 /* CodeView.swift in Sources */,
 				FCD342781DFF67C10030B3B8 /* AccountDetailViewController.swift in Sources */,
 				FCB47EDD1DD3D09400BB6C1B /* UIView+Constraints.swift in Sources */,
+				20A30A191E00BFBB00F4C1E1 /* SoundListViewController.swift in Sources */,
 				FC42991F1DDA8FC500891FBD /* ColorViewController.swift in Sources */,
 				FC4299191DDA4FE100891FBD /* ColorListViewController.swift in Sources */,
 				20489C4A1DF9D25E0090C284 /* ApplicationModel.swift in Sources */,
