@@ -161,14 +161,15 @@ class CodeView: UIView, ItemBarDelegate {
         codeExample.isEditable = false
         codeExample.isSelectable = false
         codeExample.textAlignment = .center
-        codeExample.font = UIFont.sldsFont(.regular, with: .small)
+        codeExample.font = UIFont.sldsFont(.regular, with: .medium)
         codeExample.textColor = UIColor.sldsColorText(.default)
         codeExample.backgroundColor = self.backgroundColor
         self.addSubview(codeExample)
         
-        copyButton.setTitle("copy", for: .normal)
+        copyButton.setTitle("Copy", for: .normal)
         copyButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .medium)
         copyButton.setTitleColor(UIColor.sldsColorText(.brand), for: .normal)
+        copyButton.addTarget(self, action: #selector(copyCodeSample), for: .touchUpInside)
         self.addSubview(copyButton)
         
         self.constrainChild(self.tabBar,
@@ -201,6 +202,7 @@ class CodeView: UIView, ItemBarDelegate {
         UIView.animate(withDuration: 0.3, animations: {
             self.codeExample.alpha = 0
         }, completion: { (value: Bool) in
+            self.copyButton.setTitle("Copy", for: .normal)
             self.codeExample.attributedText = self.showSwift ? self.swiftString : self.objCString
             UIView.animate(withDuration: 0.4, animations: {
                 self.codeExample.alpha = 1.0
@@ -214,4 +216,10 @@ class CodeView: UIView, ItemBarDelegate {
         self.showSwift = index == 0
     }
     
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func copyCodeSample() {
+        copyButton.setTitle("Copied!", for: .normal)
+        UIPasteboard.general.string = self.codeExample.attributedText.string
+    }
 }

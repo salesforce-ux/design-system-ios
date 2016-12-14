@@ -76,6 +76,13 @@ class FontListTableViewController: UITableViewController {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
+    override func viewWillDisappear(_ animated: Bool) {
+        UIFont.sldsUseDefaultFonts()
+        super.viewWillDisappear(animated)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

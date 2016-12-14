@@ -9,61 +9,54 @@
 
 import UIKit
 
-class ColorCell: UITableViewCell {
+class AboutCell: UITableViewCell {
     
-    var color = UIColor.white
-    var swatch = SwatchView()
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    var dataProvider : ColorObject? {
-        didSet {
-            self.textLabel?.text = dataProvider?.name.replacingOccurrences(of: "SLDSColor", with: "")
-            self.textLabel?.font = UIFont.sldsFont(.regular, with: .small)
-            swatch.dataProvider = dataProvider?.color
-        }
-    }
+    let sldsButton = UIButton()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.makeLayout()
+        self.loadView()
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init(coder aDecoder: NSCoder) {
+        fatalError("This class does not support NSCoding")
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        swatch.dataProvider = dataProvider?.color;
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        super.setHighlighted(highlighted, animated: animated)
-        swatch.dataProvider = dataProvider?.color;
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func makeLayout() {
-        self.backgroundColor = UIColor.sldsColorBackground(.background)
-        self.selectedBackgroundView = UIView()
-        self.selectedBackgroundView?.backgroundColor = UIColor.sldsColorBackground(.backgroundRowSelected)
+    func loadView() {
+        self.accessoryType = .none
+        self.backgroundColor = UIColor.sldsColorBackground(.backgroundSelection)
         
-        self.addSubview(self.swatch)
-        self.constrainChild(self.swatch,
-                            xAlignment: .right,
-                            yAlignment: .center,
-                            width: 70,
-                            height: 70,
-                            xOffset: 20)
+        sldsButton.setTitle("lightningdesignsystem.com", for: .normal)
+        sldsButton.addTarget(self, action: #selector(browseToSLDS), for: .touchUpInside)
+        sldsButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .small)
+        sldsButton.setTitleColor(UIColor.sldsColorText(.link), for: .normal)
+        
+        self.addSubview(sldsButton)
+        self.constrainChild(sldsButton, xAlignment: .center, yAlignment: .bottom, yOffset:20)
+        
+        if let label = self.textLabel {
+            label.text = ""
+            label.font = UIFont.sldsFont(.regular, with: .medium)
+            self.constrainChild(label, xAlignment: .center, yAlignment: .top,yOffset: 10)
+        }
     }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        sldsButton.constrainSize(width: self.contentView.frame.width, height: 20)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    func browseToSLDS() {
+        UIApplication.shared.open(URL(string: "http://lightningdesignsystem.com")!, options: [:], completionHandler: nil)
+    }
+
 }

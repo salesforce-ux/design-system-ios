@@ -32,7 +32,7 @@ class AccountMasterViewController: UIViewController {
         
         tableViewController.superNavigationController = self.navigationController
         
-        self.title = "Demo App"
+        self.title = "Example App"
 
         
         let toolBarOffset = (self.navigationController?.toolbar)!.frame.height + UIApplication.shared.statusBarFrame.height

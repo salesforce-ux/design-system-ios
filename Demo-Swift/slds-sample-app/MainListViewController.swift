@@ -13,17 +13,20 @@ class MainListViewController: UITableViewController {
     
     var footerHeight : CGFloat = 200.0
     
-   var tableData : [(name:String,type:UIViewController.Type)] {
-        return [("Salesforce1", DemoViewController.self),
-                ("Library", LibraryListViewController.self),
-                ("About", AboutViewController.self)]
+    var tableData : [(name:String, cell:UITableViewCell.Type, controller:UIViewController.Type)] {
+        return [("DemoCell", DemoCell.self, DemoViewController.self),
+                ("LibraryCell", LibraryCell.self, LibraryListViewController.self),
+                ("AboutCell", AboutCell.self, UIViewController.self)]
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func viewDidLoad() {
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        self.navigationController?.navigationBar.barTintColor = UIColor.sldsColorBackground(.brand)
+        for item in self.tableData {
+            self.tableView.register(item.cell, forCellReuseIdentifier: item.name)
+        }
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.sldsColorBackground(.backgroundButtonBrandActive)
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
         self.navigationController?.navigationBar.backIndicatorImage = UIImage.sldsIconUtility(.chevronleft,
@@ -38,7 +41,17 @@ class MainListViewController: UITableViewController {
                                                                    NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)]
         
         self.title = "Lightning Design System"
-        //self.tableView.rowHeight = 44.0
+        self.tableView.alwaysBounceVertical = false
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let rowHeight = (self.view.frame.height - tableView.contentInset.top) / CGFloat(tableData.count)
+        if indexPath.row < tableData.count - 1 {
+            return rowHeight + 60
+        }
+        return rowHeight - 120
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -55,48 +68,28 @@ class MainListViewController: UITableViewController {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-//    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        footerHeight = self.view.frame.height - (self.tableView.rowHeight * CGFloat(tableData.count))
-//        return footerHeight
-//    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let button = UIButton()
-        button.setTitle("lightningdesignsystem.com", for: .normal)
-        button.addTarget(self, action: #selector(browseToSLDS), for: .touchUpInside)
-        button.titleLabel?.font = UIFont.sldsFont(.regular, with: .small)
-        button.setTitleColor(UIColor.sldsColorText(.link), for: .normal)
-
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: footerHeight))
-        footerView.addSubview(button)
-        footerView.constrainChild(button, xAlignment: .center, yAlignment: .bottom, yOffset: 15)
-        return footerView
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: tableData[indexPath.row].name)
+        //cell?.textLabel?.font = UIFont.sldsFont(.regular, with: .medium)
+        //cell?.textLabel?.text = tableData[indexPath.row].name.replacingOccurrences(of: "Cell", with: "")
+        return cell!
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-        cell.textLabel?.font = UIFont.sldsFont(.regular, with: .medium)
-        cell.textLabel?.text = tableData[indexPath.row].name
-        return cell
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath.row == tableData.count - 1 {
+            return nil
+        }
+        return indexPath
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controllerClass = tableData[indexPath.row].type
+        let controllerClass = tableData[indexPath.row].controller
         let controller = controllerClass.init()
-        controller.title = tableData[indexPath.row].name
         self.navigationController?.show(controller, sender: self)
     }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    func browseToSLDS() {
-        UIApplication.shared.open(URL(string: "http://lightningdesignsystem.com")!, options: [:], completionHandler: nil)
-    }
-    
+
 }

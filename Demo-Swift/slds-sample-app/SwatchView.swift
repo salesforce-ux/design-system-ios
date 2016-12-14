@@ -12,7 +12,6 @@ import UIKit
 class SwatchView: UIView {
     
     var swatch = UIView()
-    var checks = UIView()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -51,6 +50,8 @@ class SwatchView: UIView {
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 6
         self.layer.borderColor = UIColor.sldsColorBorder(.input).cgColor
+        self.layer.backgroundColor = UIColor.white.cgColor
+        
         self.backgroundColor = UIColor(patternImage: UIImage(named: "checkered.png")!)
         self.clipsToBounds = true
         
@@ -62,5 +63,4 @@ class SwatchView: UIView {
     override func layoutSubviews() {
         self.swatch.frame = self.bounds.insetBy(dx: 1.0, dy: 1.0)
     }
-
 }
