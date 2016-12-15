@@ -70,6 +70,7 @@ class MainListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: tableData[indexPath.row].name)
+        
         //cell?.textLabel?.font = UIFont.sldsFont(.regular, with: .medium)
         //cell?.textLabel?.text = tableData[indexPath.row].name.replacingOccurrences(of: "Cell", with: "")
         return cell!

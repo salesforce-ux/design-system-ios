@@ -38,8 +38,6 @@ class CodeView: UIView, ItemBarDelegate {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
     var objCParameters : Array<String>? {
         didSet {
             guard let params = self.objCParameters else {
@@ -66,11 +64,7 @@ class CodeView: UIView, ItemBarDelegate {
             
             retVal.append( NSMutableAttributedString(string: "];", attributes: [NSForegroundColorAttributeName:colors[2]] ))
             
-            let style = NSMutableParagraphStyle()
-            style.alignment = .center
-            retVal.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange.init(location: 0, length: retVal.string.characters.count))
-            
-            self.objCString = retVal
+            self.objCString = self.applyCodeFormat(string: retVal)
         }
     }
 
@@ -110,11 +104,7 @@ class CodeView: UIView, ItemBarDelegate {
             
             retVal.append( NSMutableAttributedString(string: " )", attributes: [NSForegroundColorAttributeName:colors[2]] ))
             
-            let style = NSMutableParagraphStyle()
-            style.alignment = .center
-            retVal.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange.init(location: 0, length: retVal.string.characters.count))
-            
-            self.swiftString = retVal
+            self.swiftString = self.applyCodeFormat(string: retVal)
         }
     }
     
@@ -160,9 +150,7 @@ class CodeView: UIView, ItemBarDelegate {
         
         codeExample.isEditable = false
         codeExample.isSelectable = false
-        codeExample.textAlignment = .center
-        codeExample.font = UIFont.sldsFont(.regular, with: .medium)
-        codeExample.textColor = UIColor.sldsColorText(.default)
+        codeExample.textContainer.lineBreakMode = .byCharWrapping
         codeExample.backgroundColor = self.backgroundColor
         self.addSubview(codeExample)
         
@@ -221,5 +209,17 @@ class CodeView: UIView, ItemBarDelegate {
     func copyCodeSample() {
         copyButton.setTitle("Copied!", for: .normal)
         UIPasteboard.general.string = self.codeExample.attributedText.string
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    private func applyCodeFormat( string : NSMutableAttributedString ) -> NSAttributedString
+    {
+        let fullRange = NSRange.init(location: 0, length: string.string.characters.count)
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        string.addAttribute(NSParagraphStyleAttributeName, value: style, range: fullRange)
+        string.addAttribute(NSFontAttributeName, value: UIFont.sldsFont(.regular, with: .small), range: fullRange)
+        return string
     }
 }
