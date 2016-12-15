@@ -53,16 +53,31 @@ class ColorCell: UITableViewCell {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if let label = textLabel {
+            var rect = label.frame
+            rect.size.width = self.contentView.frame.width - 116
+            label.frame = rect
+        }
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
     func makeLayout() {
+        if let label = textLabel {
+            label.lineBreakMode = .byTruncatingHead
+        }
+        
         self.selectedBackgroundView = UIView()
         self.selectedBackgroundView?.backgroundColor = UIColor.sldsColorBackground(.backgroundRowSelected)
         
-        self.addSubview(self.swatch)
-        self.constrainChild(self.swatch,
-                            xAlignment: .right,
-                            yAlignment: .center,
-                            width: 70,
-                            height: 70,
-                            xOffset: 20)
+        self.contentView.addSubview(self.swatch)
+        self.contentView.constrainChild(self.swatch,
+                                        xAlignment: .right,
+                                        yAlignment: .center,
+                                        width: 70,
+                                        height: 70,
+                                        xOffset: 20)
     }
 }

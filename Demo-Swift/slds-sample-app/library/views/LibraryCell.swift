@@ -11,8 +11,6 @@ import UIKit
 
 class LibraryCell: UITableViewCell {
     
-    let newTitle = UILabel()
-    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -29,17 +27,29 @@ class LibraryCell: UITableViewCell {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if let label = self.textLabel {
+            label.frame = CGRect(x: 0, y: 10, width: self.frame.width, height: 30)
+        }
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
     func loadView() {
         self.backgroundColor = UIColor.sldsColorBackground(.brand)
         self.selectedBackgroundView = UIView()
         self.selectedBackgroundView?.backgroundColor = UIColor.sldsColorBackground(.backgroundInfo)
         self.accessoryType = .disclosureIndicator
         
-        newTitle.text = "Library"
-        newTitle.textColor = UIColor.sldsColorText(.inverse)
-        newTitle.font = UIFont.sldsFont(.regular, with: .medium)
-        self.addSubview(newTitle)
-        self.constrainChild(newTitle, xAlignment: .center, yAlignment: .top, yOffset: 15)
+        if let label = self.textLabel {
+            label.text = "Library"
+            label.textAlignment = .center
+            label.textColor = UIColor.sldsColorText(.inverse)
+            label.font = UIFont.sldsFont(.regular, with: .large)
+        }
+
     }
     
 }
