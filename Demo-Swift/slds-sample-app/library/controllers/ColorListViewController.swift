@@ -11,11 +11,14 @@ import UIKit
 
 //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-class ColorListViewController: UITableViewController {
+class ColorListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
+    var searchHeader = UISearchBar()
     var colors : Array<ColorObject> = Array<ColorObject>()
+    var filteredColors : Array<ColorObject> = Array<ColorObject>()
+    var colorTableView : UITableView!
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -31,46 +34,132 @@ class ColorListViewController: UITableViewController {
                     self.colors = ApplicationModel.sharedInstance.textColors
                 default : break
             }
+            self.filterString = ""
+        }
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var filterString : String = "" {
+        didSet {
+            self.filteredColors = self.colors.filter {
+                if self.filterString == "" {
+                    return true
+                } else {
+                    return ($0 as ColorObject).name.lowercased().range(of: filterString) != nil
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.colorTableView.reloadData()
+            }
         }
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func viewDidLoad() {
-        self.tableView.register(ColorCell.self, forCellReuseIdentifier: "Cell")
+        super.viewDidLoad()
+        styleSearch()
+        styleTableView()
+    }
+    
+    // MARK: Styling methods
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func styleSearch() {
+        searchHeader.delegate = self
+        searchHeader.placeholder = "Search"
+        searchHeader.keyboardType = .alphabet
+        searchHeader.returnKeyType = .done
+        searchHeader.autocapitalizationType = .none
+        searchHeader.autocorrectionType = .no
+        searchHeader.tintColor = UIColor.sldsColorBackground(.brand)
+        searchHeader.barTintColor = UIColor.sldsColorBackground(.background)
+        self.view.addSubview(searchHeader)
+        self.view.constrainChild(searchHeader,
+                                 xAlignment: .center,
+                                 yAlignment: .top,
+                                 width: self.view.frame.width,
+                                 yOffset: 64)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ColorCell {
+    func styleTableView() {
+        
+        colorTableView = UITableView(frame: CGRect(x: 0, y: 120, width: self.view.frame.width, height: self.view.frame.height - 64 - searchHeader.frame.height))
+        colorTableView.delegate = self
+        colorTableView.dataSource = self
+        colorTableView.register(ColorCell.self, forCellReuseIdentifier: "Cell")
+        colorTableView.backgroundColor = UIColor.white
+        self.view.addSubview(colorTableView)
+    }
+    
+    // MARK: UISearchBarDelegate
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchHeader.setShowsCancelButton(true, animated: true)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filterString = searchText.lowercased()
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        self.filterString = ""
+        self.view.endEditing(true)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.view.endEditing(true)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        self.searchHeader.setShowsCancelButton(false, animated: true)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ColorCell
-        cell.dataProvider = colors[indexPath.item]
+        cell.dataProvider = filteredColors[indexPath.item]
         return cell
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return colors.count
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = ColorViewController()
-        controller.dataProvider = self.colors[indexPath.row]
+        controller.dataProvider = self.filteredColors[indexPath.row]
         self.navigationController?.show(controller, sender: self)
     }
 }
