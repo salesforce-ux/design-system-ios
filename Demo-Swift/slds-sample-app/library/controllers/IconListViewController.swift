@@ -7,10 +7,9 @@
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UISearchBarDelegate {
+class IconListViewController: SearchController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
     var collectionView : UICollectionView!
-    var searchHeader = UISearchBar()
     var icons = [IconObject]()
     var filteredIcons = [IconObject]()
     
@@ -22,7 +21,7 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
 
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    var filterString : String = "" {
+    override var filterString : String {
         didSet {
             self.filteredIcons = self.icons.filter {
                 if self.filterString == "" {
@@ -74,25 +73,6 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     // MARK: Styling methods
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func styleSearch() {
-        searchHeader.delegate = self
-        searchHeader.placeholder = "Search"
-        searchHeader.keyboardType = .alphabet
-        searchHeader.returnKeyType = .done
-        searchHeader.autocapitalizationType = .none
-        searchHeader.autocorrectionType = .no
-        searchHeader.tintColor = UIColor.sldsColorBackground(.brand)
-        searchHeader.barTintColor = UIColor.sldsColorBackground(.background)
-        self.view.addSubview(searchHeader)
-        self.view.constrainChild(searchHeader,
-                                 xAlignment: .center,
-                                 yAlignment: .top,
-                                 width: self.view.frame.width,
-                                 yOffset: 64)
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
     func styleCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 15, bottom: 15, right: 15)
@@ -104,39 +84,6 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "iconCell")
         collectionView.backgroundColor = UIColor.white
         self.view.addSubview(collectionView)
-    }
-    
-    // MARK: UISearchBarDelegate
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        self.searchHeader.setShowsCancelButton(true, animated: true)
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.filterString = searchText.lowercased()
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = ""
-        self.filterString = ""
-        self.view.endEditing(true)
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.view.endEditing(true)
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        self.searchHeader.setShowsCancelButton(false, animated: true)
     }
     
     // MARK: UICollectionViewDataSource implementation

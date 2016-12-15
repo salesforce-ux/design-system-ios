@@ -45,6 +45,7 @@
 		FC7F2E3E1DF2038A0011684A /* libSalesforceDesignSystem-Extended.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7F2E3B1DF2037E0011684A /* libSalesforceDesignSystem-Extended.a */; };
 		FC7FB0101E030E07004EB658 /* AccountDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7FB00F1E030E07004EB658 /* AccountDetailListViewController.swift */; };
 		FC7FB0121E030FB5004EB658 /* AccountDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7FB0111E030FB5004EB658 /* AccountDetailCell.swift */; };
+		FC7FB0141E03519B004EB658 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7FB0131E03519B004EB658 /* SearchController.swift */; };
 		FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EA81DD0FCDB00BB6C1B /* AppDelegate.swift */; };
 		FCB47EB01DD0FCDB00BB6C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -119,6 +120,7 @@
 		FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SalesforceDesignSystem.xcodeproj; path = ../SalesforceDesignSystem.xcodeproj; sourceTree = "<group>"; };
 		FC7FB00F1E030E07004EB658 /* AccountDetailListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountDetailListViewController.swift; path = demo/controllers/AccountDetailListViewController.swift; sourceTree = "<group>"; };
 		FC7FB0111E030FB5004EB658 /* AccountDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountDetailCell.swift; path = demo/views/AccountDetailCell.swift; sourceTree = "<group>"; };
+		FC7FB0131E03519B004EB658 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		FCB47EA51DD0FCDB00BB6C1B /* slds-sample-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "slds-sample-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB47EA81DD0FCDB00BB6C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		FC4299171DDA4E7500891FBD /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FC7FB0131E03519B004EB658 /* SearchController.swift */,
 				20F03F631E00D980001EE121 /* ColorListViewController.swift */,
 				20F03F641E00D980001EE121 /* ColorViewController.swift */,
 				20F03F651E00D980001EE121 /* FontListTableViewController.swift */,
@@ -410,6 +413,7 @@
 				20F03F621E00D95B001EE121 /* AccountMasterHeaderView.swift in Sources */,
 				20F03F8B1E00D99A001EE121 /* CodeView.swift in Sources */,
 				20F03F821E00D994001EE121 /* IconObject.swift in Sources */,
+				FC7FB0141E03519B004EB658 /* SearchController.swift in Sources */,
 				20F03F8A1E00D99A001EE121 /* AboutCell.swift in Sources */,
 				20F03F601E00D95B001EE121 /* AccountDetailHeaderView.swift in Sources */,
 				20F03F711E00D980001EE121 /* LibraryListViewController.swift in Sources */,
