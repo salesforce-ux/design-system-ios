@@ -9,7 +9,7 @@
 
 import UIKit
 
-class AccountCell: UITableViewCell {
+class AccountMasterCell: UITableViewCell {
     
     var accountName = UILabel()
     var stateLabel = UILabel()

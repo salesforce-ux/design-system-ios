@@ -88,18 +88,21 @@ class DemoViewController: UIViewController, ItemBarDelegate, UINavigationControl
         if viewController is AccountDetailViewController {
             
             actionItems = [
-                ActionItem(label: "Filter", iconId: .filter),
-                ActionItem(label: "Sort", iconId: .sort),
-                ActionItem(label: "Filter", iconId: .filter),
-                ActionItem(label: "Sort", iconId: .sort),
-                ActionItem(label: "New", iconId: .new)
+                ActionItem(label: "Call",   iconId: .call),
+                ActionItem(label: "Task",   iconId: .newTask),
+                ActionItem(label: "Event",  iconId: .newEvent),
+                ActionItem(label: "Post",   iconId: .sharePost),
+                ActionItem(label: "More",   iconId: .more)
             ]
             
         } else {
+            
             actionItems = [
-                ActionItem(label: "Filter", iconId: .call),
-                ActionItem(label: "Sort", iconId: .sort)
+                ActionItem(label: "Filter", iconId: .filter),
+                ActionItem(label: "Sort",   iconId: .sort),
+                ActionItem(label: "New",    iconId: .new)
             ]
+            
         }
         
         self.actionBar.animateButtonExit()

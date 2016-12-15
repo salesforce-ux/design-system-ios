@@ -9,67 +9,61 @@
 
 import UIKit
 
-struct ActionItem {
-    var label : String!
-    var iconId : SLDSIconActionType!
-}
-
-class ActionBar: ItemBar {
+class AccountDetailCell: UITableViewCell {
+    
+    var label = UILabel()
+    var value = UILabel()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func draw(_ rect: CGRect) {
-        let aPath = UIBezierPath()
+    var dataProvider : (label : String, value : String)? {
         
-        aPath.move(to: CGPoint(x:0, y:0))
-        aPath.addLine(to: CGPoint(x:self.frame.width, y:0))
-        aPath.close()
-        aPath.lineWidth = 1.0
-        UIColor.sldsColorBorder(.separatorAlt2).set()
-        aPath.stroke()
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func removeItems() {
-        self.items.removeAll()
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func addButton(actionItem : ActionItem) {
-        let button = ActionBarButton()
-        button.frame = CGRect(x: 0, y: 0, width: button.frame.width, height: 64)
-        button.setImage(UIImage.sldsIconAction(actionItem.iconId, withSize: SLDSSquareIconMedium), for: .normal)
-        button.setTitle(actionItem.label, for: .normal)
-        super.addItem(item : button, isVisible: false)
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func animateButtonEntry() {
-        for c in self.constraints {
-            if c.firstAttribute == .bottom {
-                c.constant = 0
-                UIView.animate(withDuration: 0.5) {
-                    self.layoutIfNeeded()
-                }
-            }
+        didSet {
+            self.label.text = dataProvider?.label
+            self.value.text = dataProvider?.value
         }
     }
     
+    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func animateButtonExit() {
-        for c in self.constraints {
-            if c.firstAttribute == .bottom {
-                c.constant = self.frame.height
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.layoutIfNeeded()
-                }, completion: { (Bool) in
-                    c.firstItem.removeFromSuperview()
-                })
-            }
-        }
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.makeLayout()
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func makeLayout() {
+        
+        let labelFont = UIFont.sldsFont(.regular, with: .xSmall)
+        let valueFont = UIFont.sldsFont(.regular, with: .small)
+        
+        let labelColor = UIColor.sldsColorText(.default)
+        let valueColor = UIColor.sldsColorText(.brand)
+        
+        self.addSubview(label)
+        self.addSubview(value)
+        
+        label.font = labelFont
+        value.font = valueFont
+        
+        label.textColor = labelColor
+        
+        self.constrainChild(label,
+                            xAlignment: .left,
+                            yAlignment: .top,
+                            xOffset: 15,
+                            yOffset: 15)
+        
+        self.value.constrainBelow(label,
+                                  xAlignment: .left,
+                                  yOffset: 2)
     }
 }

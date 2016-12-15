@@ -9,34 +9,60 @@
 
 import UIKit
 
-class AccountDetailViewController: UIViewController {
+class ColorCell: UITableViewCell {
     
-    var header = AccountDetailHeaderView()
+    var color = UIColor.white
+    var swatch = SwatchView()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    var dataProvider : AccountObject? {
+    var dataProvider : ColorObject? {
         didSet {
-            header.dataProvider = self.dataProvider
+            self.textLabel?.text = dataProvider?.name.replacingOccurrences(of: "SLDSColor", with: "")
+            self.textLabel?.font = UIFont.sldsFont(.regular, with: .small)
+            swatch.dataProvider = dataProvider?.color
         }
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor.white
-        
-        self.view.addSubview(header)
-        self.view.constrainChild(header,
-                                 xAlignment: .left,
-                                 yAlignment: .top,
-                                 width: self.view.frame.width,
-                                 height: 120,
-                                 yOffset: 64)
-        
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.makeLayout()
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        swatch.dataProvider = dataProvider?.color;
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        swatch.dataProvider = dataProvider?.color;
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func makeLayout() {
+        self.selectedBackgroundView = UIView()
+        self.selectedBackgroundView?.backgroundColor = UIColor.sldsColorBackground(.backgroundRowSelected)
+        
+        self.addSubview(self.swatch)
+        self.constrainChild(self.swatch,
+                            xAlignment: .right,
+                            yAlignment: .center,
+                            width: 70,
+                            height: 70,
+                            xOffset: 20)
+    }
 }

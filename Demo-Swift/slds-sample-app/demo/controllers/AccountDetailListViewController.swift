@@ -9,61 +9,67 @@
 
 import UIKit
 
-class ColorCell: UITableViewCell {
+class AccountDetailListViewController: UITableViewController {
     
-    var color = UIColor.white
-    var swatch = SwatchView()
+    var superNavigationController : UINavigationController!
+    
+    var cellValues = Array<(label : String, value : String)>()
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    var dataProvider : ColorObject? {
+    var dataProvider : AccountObject? {
         didSet {
-            self.textLabel?.text = dataProvider?.name.replacingOccurrences(of: "SLDSColor", with: "")
-            self.textLabel?.font = UIFont.sldsFont(.regular, with: .small)
-            swatch.dataProvider = dataProvider?.color
+            cellValues.append((label: "Account Owner",
+                               value: (self.dataProvider?.owner)!))
+            cellValues.append((label: "Account Name",
+                               value: (self.dataProvider?.name)!))
+            cellValues.append((label: "Account Number",
+                               value: (self.dataProvider?.number)!))
+            cellValues.append((label: "Type",
+                               value: (self.dataProvider?.type)!.rawValue))
+            cellValues.append((label: "Industry",
+                               value: (self.dataProvider?.industry)!))
+            cellValues.append((label: "Website",
+                               value: (self.dataProvider?.url)!))
+            cellValues.append((label: "Phone",
+                               value: (self.dataProvider?.phone)!))
         }
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.makeLayout()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.register(AccountDetailCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+    // MARK: - Table view data source
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cellValues.count
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        swatch.dataProvider = dataProvider?.color;
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        super.setHighlighted(highlighted, animated: animated)
-        swatch.dataProvider = dataProvider?.color;
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func makeLayout() {
-        self.backgroundColor = UIColor.sldsColorBackground(.background)
-        self.selectedBackgroundView = UIView()
-        self.selectedBackgroundView?.backgroundColor = UIColor.sldsColorBackground(.backgroundRowSelected)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> AccountDetailCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AccountDetailCell
+        cell.dataProvider = cellValues[indexPath.item]
         
-        self.addSubview(self.swatch)
-        self.constrainChild(self.swatch,
-                            xAlignment: .right,
-                            yAlignment: .center,
-                            width: 70,
-                            height: 70,
-                            xOffset: 20)
+        return cell
     }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 }

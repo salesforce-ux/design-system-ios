@@ -9,107 +9,102 @@
 
 import UIKit
 
-struct TableData {
-    var sectionTitle: String
-    var rows: [(name:String,type:UIViewController.Type)]
+protocol ItemBarDelegate {
+    
+    func itemBar(_ itemBar: ItemBar, didSelectItemAt index: NSInteger)
+    
 }
 
-class LibraryListViewController: UITableViewController {
+class ItemBar: UIView {
     
-    var tableData : [TableData] {
-        return [
-            TableData(sectionTitle: "Colors",
-                      rows: [(ColorObjectType.background.rawValue, ColorListViewController.self),
-                             (ColorObjectType.border.rawValue, ColorListViewController.self),
-                             (ColorObjectType.text.rawValue, ColorListViewController.self)]),
+    var items = Array<UIControl>()
+    var delegate : ItemBarDelegate?
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var selectedIndex : Int = 0 {
+        didSet {
+            if let d = self.delegate {
+                d.itemBar(self, didSelectItemAt: selectedIndex)
+            }
+        }
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var itemWidth : CGFloat {
+        return self.frame.width / CGFloat(self.items.count)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override init (frame : CGRect) {
+        super.init(frame : frame)
+        self.loadView()
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    convenience init () {
+        self.init(frame:CGRect.zero)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("This class does not support NSCoding")
+    }
+
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func loadView() {
+        self.backgroundColor = UIColor.white
+    }
+
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        for item in self.items {
+            item.heightConstraint.constant = self.frame.height
+            item.widthConstraint.constant = self.itemWidth
+        }
+    }
+
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func didSelectItemAt(sender: UIControl) {
+        if let index = items.index(of: sender) {
+            self.selectedIndex = index
+        }
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func removeItems() {
+        for item in self.items {
+            item.removeFromSuperview()
+        }
+        self.items.removeAll()
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func addItem(item : UIControl) {
+        self.addSubview(item)
+        
+        if items.count > 0 {
+            item.constrainRightOf(items.last!,
+                                  yAlignment:.bottom)
             
-            TableData(sectionTitle: "Fonts",
-                      rows: [(FontObjectType.salesforceSans.rawValue, FontListTableViewController.self),
-                             (FontObjectType.lato.rawValue, FontListTableViewController.self)]),
-            
-            TableData(sectionTitle: "Icons",
-                      rows: [(IconObjectType.action.rawValue, IconListViewController.self),
-                             (IconObjectType.custom.rawValue, IconListViewController.self),
-                             (IconObjectType.standard.rawValue, IconListViewController.self),
-                             (IconObjectType.utility.rawValue, IconListViewController.self)])
-        ]
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = "Library"
-        self.view.backgroundColor = UIColor.white
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,
-                                                                   NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)]
+        } else {
+            self.constrainChild(item,
+                                xAlignment: .left,
+                                yAlignment: .bottom)
+        }
         
-        navigationItem.backBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white,
-                                                                  NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)],
-                                                                 for: UIControlState.normal)
-        
-        super.viewWillAppear(animated)
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 36.0
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return tableData.count
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableData[section].rows.count
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
-        return 2
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func tableView (_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView {
-        return SectionHeaderView()
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return tableData[section].sectionTitle
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-        cell.textLabel?.font = UIFont.sldsFont(.regular, with: .medium)
-        
-        cell.textLabel?.text = tableData[indexPath.section].rows[indexPath.row].name
-        return cell
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controllerClass = tableData[indexPath.section].rows[indexPath.row].type
-        let controller = controllerClass.init()
-        controller.title = tableData[indexPath.section].rows[indexPath.row].name
-        self.navigationController?.show(controller, sender: self)
+        item.addTarget(self, action: #selector(ItemBar.didSelectItemAt(sender:)), for: .touchUpInside)
+        self.items.append(item)
     }
 }

@@ -17,7 +17,7 @@ class AccountMasterViewController: UIViewController {
     var headerSubText   = UILabel()
     var headerDownArrow = UIImageView()
     
-    var tableViewController = AccountListViewController()
+    var tableViewController = AccountMasterListViewController()
     
     let actionBarHeight = CGFloat(64.0)
     let headerHeight    = CGFloat(80.0)
