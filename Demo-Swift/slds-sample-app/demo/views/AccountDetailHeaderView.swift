@@ -76,10 +76,11 @@ class AccountDetailHeaderView: AccountHeaderView, ItemBarDelegate {
                             yAlignment: .bottom,
                             width: self.frame.width,
                             height: 30)
+        
+                tabBar.moveUnderscore(1)
     }
     
-    // MARK - TabBar delegate
-    
+    // MARK: - TabBar delegate
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func itemBar(_ itemBar: ItemBar, didSelectItemAt index: NSInteger) {

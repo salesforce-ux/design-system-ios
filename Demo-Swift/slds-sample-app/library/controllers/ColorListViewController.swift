@@ -60,6 +60,8 @@ class ColorListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.white
         styleSearch()
         styleTableView()
     }
@@ -88,7 +90,7 @@ class ColorListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func styleTableView() {
         
-        colorTableView = UITableView(frame: CGRect(x: 0, y: 120, width: self.view.frame.width, height: self.view.frame.height - 64 - searchHeader.frame.height))
+        colorTableView = UITableView(frame: CGRect(x: 0, y: 108, width: self.view.frame.width, height: self.view.frame.height - 108))
         colorTableView.delegate = self
         colorTableView.dataSource = self
         colorTableView.register(ColorCell.self, forCellReuseIdentifier: "Cell")

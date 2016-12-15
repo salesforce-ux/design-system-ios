@@ -98,7 +98,7 @@ class IconListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         layout.sectionInset = UIEdgeInsets(top: 0, left: 15, bottom: 15, right: 15)
         layout.itemSize = CGSize(width: 60, height: 60)
         
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 120, width: self.view.frame.width, height: self.view.frame.height - 120), collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 108, width: self.view.frame.width, height: self.view.frame.height - 108), collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "iconCell")
