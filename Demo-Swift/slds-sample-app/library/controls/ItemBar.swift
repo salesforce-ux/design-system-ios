@@ -93,20 +93,17 @@ class ItemBar: UIControl {
     func addItem(item : UIControl) {
         self.addSubview(item)
         
-        self.items.append(item)
-        
-        if items.count > 1 {
+        if items.count > 0 {
             item.constrainRightOf(items.last!,
-                                  yAlignment:.bottom,
-                                  width: itemWidth)
+                                  yAlignment: .bottom)
             
         } else {
             self.constrainChild(item,
                                 xAlignment: .left,
-                                yAlignment: .bottom,
-                                width: itemWidth)
+                                yAlignment: .bottom)
         }
         
+        self.items.append(item)
         item.addTarget(self, action: #selector(ItemBar.didSelectItemAt(sender:)), for: .touchUpInside)
     }
 }
