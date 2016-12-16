@@ -12,10 +12,9 @@ import UIKit
 protocol ItemBarDelegate {
     
     func itemBar(_ itemBar: ItemBar, didSelectItemAt index: NSInteger)
-    
 }
 
-class ItemBar: UIView {
+class ItemBar: UIControl {
     
     var items = Array<UIControl>()
     var delegate : ItemBarDelegate?
