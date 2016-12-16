@@ -56,18 +56,18 @@ class ActionBar: ItemBar {
     
     func showActionItems(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
         self.actionItemsHidden = false
-        self.animateActionItems(animated, completion: completion)    }
+        animateActionItems(animated, completion: completion)    }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func hideActionItems(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
         self.actionItemsHidden = true
-        self.animateActionItems(animated, completion: completion)
+        animateActionItems(animated, completion: completion)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func animateActionItems(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
+    private func animateActionItems(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
         
         for c in self.constraints {
             if c.firstAttribute == .bottom {
