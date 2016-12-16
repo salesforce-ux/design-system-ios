@@ -25,6 +25,7 @@ class FontViewController: UIViewController {
             self.sampleText.font = UIFont.sldsFont(SLDSFontType(rawValue: self.dataProvider.section)!,
                                                    with: SLDSFontSizeType(rawValue: self.dataProvider.row)!)
             
+            UIFont.sldsUseDefaultFonts()
             fontInfo.text = "\(fontTypeName)\n \(fontSizeName)"
             self.codeView.objCParameters = ["UIFont","sldsFont", fontTypeName,"withSize",fontSizeName]
             
