@@ -101,7 +101,7 @@ class ColorListViewController: SearchController, UITableViewDelegate, UITableVie
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return colors.count
+        return filteredColors.count
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

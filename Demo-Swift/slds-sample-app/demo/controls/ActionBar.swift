@@ -56,6 +56,8 @@ class ActionBar: ItemBar {
                                 yOffset: -64)
         }
         
+        self.layoutIfNeeded()
+        
         button.addTarget(self, action: #selector(ItemBar.didSelectItemAt(sender:)), for: .touchUpInside)
         self.items.append(button)
     }
@@ -66,7 +68,7 @@ class ActionBar: ItemBar {
         for c in self.constraints {
             if c.firstAttribute == .bottom {
                 c.constant = 0
-                UIView.animate(withDuration: 0.2) {
+                UIView.animate(withDuration: 8) {
                     self.layoutIfNeeded()
                 }
             }

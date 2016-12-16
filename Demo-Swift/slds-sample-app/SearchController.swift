@@ -39,6 +39,7 @@ class SearchController: UIViewController, UISearchBarDelegate {
         searchHeader.autocorrectionType = .no
         searchHeader.tintColor = UIColor.sldsColorBackground(.brand)
         searchHeader.barTintColor = UIColor.sldsColorBackground(.background)
+        searchHeader.backgroundColor = UIColor.white
         self.view.addSubview(searchHeader)
         self.view.constrainChild(searchHeader,
                                  xAlignment: .center,
