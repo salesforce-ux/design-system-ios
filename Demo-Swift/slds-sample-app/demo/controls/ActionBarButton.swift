@@ -15,7 +15,6 @@ class ActionBarButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         var frame = self.imageView?.frame;
         frame = CGRect(x:((self.bounds.size.width - (frame?.size.width)!) / 2), y: 5, width: (frame?.size.width)!, height: (frame?.size.height)!);
         self.imageView?.frame = frame!;

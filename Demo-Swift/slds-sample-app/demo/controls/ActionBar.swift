@@ -16,6 +16,8 @@ struct ActionItem {
 
 class ActionBar: ItemBar {
     
+    var actionItemsHidden: Bool = false
+    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func draw(_ rect: CGRect) {
@@ -30,63 +32,64 @@ class ActionBar: ItemBar {
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func removeItems() {
-        self.items.removeAll()
+  
+    override func updateConstraints() {
+        super.updateConstraints()
+        for constraint in self.constraints {
+            if constraint.firstAttribute == .bottom {
+                constraint.constant = self.actionItemsHidden ? 64 : 0
+            }
+        }
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func addButton(actionItem : ActionItem) {
+    func addActionItem(withActionItem actionItem : ActionItem) {
         let button = ActionBarButton()
-        // button.frame = CGRect(x: 0, y: 0, width: button.frame.width, height: 64)
         button.setImage(UIImage.sldsIconAction(actionItem.iconId, withSize: SLDSSquareIconMedium), for: .normal)
         button.setTitle(actionItem.label, for: .normal)
-        
-        self.addSubview(button)
-        
-        if items.count > 0 {
-            button.constrainRightOf(items.last!,
-                                  yAlignment:.bottom)
-            
-        } else {
-            self.constrainChild(button,
-                                xAlignment: .left,
-                                yAlignment: .bottom,
-                                yOffset: -64)
-        }
-        
-        self.layoutIfNeeded()
-        
-        button.addTarget(self, action: #selector(ItemBar.didSelectItemAt(sender:)), for: .touchUpInside)
-        self.items.append(button)
+        super.addItem(item: button)
+        self.setNeedsUpdateConstraints()
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func animateButtonEntry() {
-        for c in self.constraints {
-            if c.firstAttribute == .bottom {
-                c.constant = 0
-                UIView.animate(withDuration: 8) {
-                    self.layoutIfNeeded()
-                }
-            }
-        }
+    func showActionItems(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
+        self.actionItemsHidden = false
+        self.animateActionItems(animated, completion: completion)    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func hideActionItems(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
+        self.actionItemsHidden = true
+        self.animateActionItems(animated, completion: completion)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func animateButtonExit() {
+    func animateActionItems(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
+        
         for c in self.constraints {
             if c.firstAttribute == .bottom {
-                c.constant = 64
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.layoutIfNeeded()
-                }, completion: { (Bool) in
-                    c.firstItem.removeFromSuperview()
-                })
+                c.constant = self.actionItemsHidden ? 64 : 0
             }
         }
+        
+        guard animated else {
+            self.layoutIfNeeded()
+            if completion != nil {
+                completion!()
+            }
+            return
+        }
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.layoutIfNeeded()
+        }, completion: { (Bool) in
+            if completion != nil {
+                completion!()
+            }
+        })
     }
+    
 }

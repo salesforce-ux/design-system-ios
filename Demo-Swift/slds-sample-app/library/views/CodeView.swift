@@ -143,8 +143,8 @@ class CodeView: UIView, ItemBarDelegate {
         self.backgroundColor = UIColor.sldsColorBackground(.backgroundStencil)
         
         tabBar.delegate = self
-        tabBar.addTab(labelString: "Swift")
-        tabBar.addTab(labelString: "Obj-C")
+        tabBar.addTab(withLabelString: "Swift")
+        tabBar.addTab(withLabelString: "Obj-C")
         tabBar.selectedIndex = ApplicationModel.sharedInstance.showSwift ? 0 : 1
         self.addSubview(tabBar)
         

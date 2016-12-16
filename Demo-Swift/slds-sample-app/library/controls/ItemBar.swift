@@ -105,5 +105,6 @@ class ItemBar: UIControl {
         
         self.items.append(item)
         item.addTarget(self, action: #selector(ItemBar.didSelectItemAt(sender:)), for: .touchUpInside)
+        self.layoutIfNeeded()
     }
 }

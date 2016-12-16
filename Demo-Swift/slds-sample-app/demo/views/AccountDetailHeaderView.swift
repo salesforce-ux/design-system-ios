@@ -61,9 +61,9 @@ class AccountDetailHeaderView: AccountHeaderView, ItemBarDelegate {
                                    xAlignment: .left,
                                    yOffset: 0)
         
-        tabBar.addTab(labelString: "feed")
-        tabBar.addTab(labelString: "details")
-        tabBar.addTab(labelString: "related")
+        tabBar.addTab(withLabelString: "feed")
+        tabBar.addTab(withLabelString: "details")
+        tabBar.addTab(withLabelString: "related")
         
         tabBar.backgroundColor = UIColor.sldsColorBackground(.background)
         
