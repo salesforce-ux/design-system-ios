@@ -14,9 +14,28 @@ struct ActionItem {
     var iconId : SLDSIconActionType!
 }
 
+//––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
 class ActionBar: ItemBar {
     
     var actionItemsHidden: Bool = false
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var firstPosition : NSLayoutConstraint? {
+        guard let first = self.items.first else
+        {
+            return nil
+        }
+        
+        for constraint in self.constraints {
+            if first.isEqual(constraint.firstItem) &&
+                constraint.firstAttribute == .bottom {
+                return constraint
+            }
+        }
+        return nil
+    }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -32,48 +51,42 @@ class ActionBar: ItemBar {
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-  
-    override func updateConstraints() {
-        super.updateConstraints()
-        for constraint in self.constraints {
-            if constraint.firstAttribute == .bottom {
-                constraint.constant = self.actionItemsHidden ? 64 : 0
-            }
-        }
-    }
     
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func addActionItem(withActionItem actionItem : ActionItem) {
+    func addActionBarButton(withActionItem actionItem : ActionItem) {
         let button = ActionBarButton()
         button.setImage(UIImage.sldsIconAction(actionItem.iconId, withSize: SLDSSquareIconMedium), for: .normal)
         button.setTitle(actionItem.label, for: .normal)
-        super.addItem(item: button)
-        self.setNeedsUpdateConstraints()
+        self.addActionBarButton(button)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func showActionItems(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
-        self.actionItemsHidden = false
-        animateActionItems(animated, completion: completion)    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    func hideActionItems(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
-        self.actionItemsHidden = true
-        animateActionItems(animated, completion: completion)
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    private func animateActionItems(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
+    func addActionBarButton(_ actionButton : ActionBarButton) {
+        super.addItem(item: actionButton)
         
-        for c in self.constraints {
-            if c.firstAttribute == .bottom {
-                c.constant = self.actionItemsHidden ? 64 : 0
-            }
+        if self.items.count == 1 {
+            self.firstPosition?.constant = self.actionItemsHidden ? self.frame.height : 0
         }
+    }
+
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func showActionBarButtons(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
+        self.actionItemsHidden = false
+        animateActionBarButtons(animated, completion: completion)    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func hideActionBarButtons(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
+        self.actionItemsHidden = true
+        animateActionBarButtons(animated, completion: completion)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    private func animateActionBarButtons(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
+        
+        self.firstPosition?.constant = self.actionItemsHidden ? self.frame.height : 0
         
         guard animated else {
             self.layoutIfNeeded()
@@ -91,5 +104,7 @@ class ActionBar: ItemBar {
             }
         })
     }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
 }

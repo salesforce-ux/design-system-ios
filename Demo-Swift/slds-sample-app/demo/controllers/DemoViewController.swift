@@ -104,26 +104,16 @@ class DemoViewController: UIViewController, ItemBarDelegate, UINavigationControl
             ]
         }
         
-        self.actionBar.hideActionItems() {
+        self.actionBar.hideActionBarButtons() {
             self.actionBar.removeItems()
         
-            for a in self.actionItems {
-                self.actionBar.addActionItem(withActionItem: a)
+            for item in self.actionItems {
+                self.actionBar.addActionBarButton(withActionItem: item)
             }
-            self.actionBar.showActionItems()
+            self.actionBar.showActionBarButtons()
         }
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    
-//    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-//        print("did")
-//        if self.actionBar.items.count == 0 {
-//            for a in self.actionItems {
-//                self.actionBar.addActionItem(withActionItem: a)
-//            }
-//        }
-//        self.actionBar.showActionItems()
-//    }
+
 }
