@@ -31,11 +31,7 @@ class LibraryListViewController: UITableViewController {
                       rows: [(IconObjectType.action.rawValue, IconListViewController.self),
                              (IconObjectType.custom.rawValue, IconListViewController.self),
                              (IconObjectType.standard.rawValue, IconListViewController.self),
-                             (IconObjectType.utility.rawValue, IconListViewController.self)]),
-            
-            TableData(sectionTitle: "Sounds",
-                      rows: [(IconObjectType.custom.rawValue, IconListViewController.self)])
-            
+                             (IconObjectType.utility.rawValue, IconListViewController.self)])
         ]
     }
     
