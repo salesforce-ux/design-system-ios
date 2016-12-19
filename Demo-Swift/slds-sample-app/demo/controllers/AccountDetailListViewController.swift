@@ -40,6 +40,10 @@ class AccountDetailListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.separatorInset = UIEdgeInsets.zero
+        self.tableView.separatorColor = UIColor.sldsColorBorder(.separatorAlt)
+        
         self.tableView.register(AccountDetailCell.self, forCellReuseIdentifier: "cell")
     }
     
@@ -59,7 +63,7 @@ class AccountDetailListViewController: UITableViewController {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 65
+        return 75
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

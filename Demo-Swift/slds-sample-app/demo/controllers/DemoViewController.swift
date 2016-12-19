@@ -15,7 +15,7 @@ class DemoViewController: UIViewController, ItemBarDelegate, UINavigationControl
 
     var actionItems = Array<ActionItem>()
     var actionBar = ActionBar()
-    var actionBarHeight = CGFloat(64.0)
+    var actionBarHeight = CGFloat(55.0)
     
     var contentViewController = AccountMasterViewController()
     
@@ -115,15 +115,5 @@ class DemoViewController: UIViewController, ItemBarDelegate, UINavigationControl
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    
-//    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-//        print("did")
-//        if self.actionBar.items.count == 0 {
-//            for a in self.actionItems {
-//                self.actionBar.addActionItem(withActionItem: a)
-//            }
-//        }
-//        self.actionBar.showActionItems()
-//    }
+
 }

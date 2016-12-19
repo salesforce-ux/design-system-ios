@@ -83,9 +83,9 @@ class TabBar: ItemBar {
         }
         
         if animated {
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
                 self.layoutIfNeeded()
-            }
+            })
         }
         else
         {

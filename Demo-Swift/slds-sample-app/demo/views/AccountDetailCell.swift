@@ -42,28 +42,28 @@ class AccountDetailCell: UITableViewCell {
     
     func makeLayout() {
         
-        let labelFont = UIFont.sldsFont(.regular, with: .xSmall)
-        let valueFont = UIFont.sldsFont(.regular, with: .small)
+        let font = UIFont.sldsFont(.regular, with: .medium)
         
-        let labelColor = UIColor.sldsColorText(.default)
-        let valueColor = UIColor.sldsColorText(.brand)
+        let labelColor = UIColor.sldsColorText(.actionLabel)
+        let valueColor = UIColor.sldsColorText(.default)
         
         self.addSubview(label)
         self.addSubview(value)
         
-        label.font = labelFont
-        value.font = valueFont
+        label.font = font
+        value.font = font
         
         label.textColor = labelColor
+        value.textColor = valueColor
         
         self.constrainChild(label,
                             xAlignment: .left,
                             yAlignment: .top,
-                            xOffset: 15,
-                            yOffset: 15)
+                            xOffset: SLDSSpacingMedium,
+                            yOffset: SLDSSpacingMedium)
         
         self.value.constrainBelow(label,
                                   xAlignment: .left,
-                                  yOffset: 2)
+                                  yOffset: 1)
     }
 }

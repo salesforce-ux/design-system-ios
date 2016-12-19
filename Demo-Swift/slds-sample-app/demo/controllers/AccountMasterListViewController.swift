@@ -76,6 +76,10 @@ class AccountMasterListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.separatorInset = UIEdgeInsets.zero
+        self.tableView.separatorColor = UIColor.sldsColorBorder(.separatorAlt)
+        
         self.tableView.register(AccountMasterCell.self, forCellReuseIdentifier: "cell")
     }
     

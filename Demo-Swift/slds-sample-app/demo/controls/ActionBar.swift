@@ -37,7 +37,7 @@ class ActionBar: ItemBar {
         super.updateConstraints()
         for constraint in self.constraints {
             if constraint.firstAttribute == .bottom {
-                constraint.constant = self.actionItemsHidden ? 64 : 0
+                constraint.constant = self.actionItemsHidden ? 56 : 0
             }
         }
     }
@@ -46,7 +46,7 @@ class ActionBar: ItemBar {
     
     func addActionItem(withActionItem actionItem : ActionItem) {
         let button = ActionBarButton()
-        button.setImage(UIImage.sldsIconAction(actionItem.iconId, withSize: SLDSSquareIconMedium), for: .normal)
+        button.setImage(UIImage.sldsIconAction(actionItem.iconId, withSize: 30), for: .normal)
         button.setTitle(actionItem.label, for: .normal)
         super.addItem(item: button)
         self.setNeedsUpdateConstraints()
@@ -69,9 +69,11 @@ class ActionBar: ItemBar {
     
     private func animateActionItems(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
         
+        let ease = self.actionItemsHidden ? UIViewAnimationOptions.curveEaseIn : UIViewAnimationOptions.curveEaseOut
+        
         for c in self.constraints {
             if c.firstAttribute == .bottom {
-                c.constant = self.actionItemsHidden ? 64 : 0
+                c.constant = self.actionItemsHidden ? 56 : 0
             }
         }
         
@@ -83,7 +85,9 @@ class ActionBar: ItemBar {
             return
         }
         
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       options: ease, animations: {
             self.layoutIfNeeded()
         }, completion: { (Bool) in
             if completion != nil {

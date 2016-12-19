@@ -77,8 +77,10 @@ class AccountMasterCell: UITableViewCell {
     
     func makeLayout() {
         
-        let font = UIFont.sldsFont(.regular, with: .small)
-        let labelColor = UIColor.sldsColorText(.brand)
+        let font = UIFont.sldsFont(.regular, with: .medium)
+        
+        let labelColor = UIColor.sldsColorText(.actionLabel)
+        let valueColor = UIColor.sldsColorText(.default)
         
         self.addSubview(accountName)
         self.addSubview(stateLabel)
@@ -87,6 +89,8 @@ class AccountMasterCell: UITableViewCell {
         self.addSubview(ownerLabel)
         
         accountName.font = font
+        accountName.textColor = valueColor
+        
         stateLabel.font = font
         phoneLabel.font = font
         typeLabel.font = font
@@ -96,6 +100,11 @@ class AccountMasterCell: UITableViewCell {
         phoneLabel.textColor = labelColor
         typeLabel.textColor = labelColor
         ownerLabel.textColor = labelColor
+        
+        stateValue.textColor = valueColor
+        phoneValue.textColor = valueColor
+        typeValue.textColor = valueColor
+        ownerValue.textColor = valueColor
         
         stateValue.font = font
         phoneValue.font = font
@@ -110,8 +119,8 @@ class AccountMasterCell: UITableViewCell {
         self.constrainChild(accountName,
                             xAlignment: .left,
                             yAlignment: .top,
-                            xOffset: 20,
-                            yOffset: 20)
+                            xOffset: SLDSSpacingMedium,
+                            yOffset: SLDSSpacingMedium)
         
         self.stateLabel.constrainBelow(accountName,
                                        xAlignment: .left,
@@ -119,15 +128,15 @@ class AccountMasterCell: UITableViewCell {
         
         self.phoneLabel.constrainBelow(stateLabel,
                                        xAlignment: .left,
-                                       yOffset: 5)
+                                       yOffset: 3)
         
         self.typeLabel.constrainBelow(phoneLabel,
                                        xAlignment: .left,
-                                       yOffset: 5)
+                                       yOffset: 3)
         
         self.ownerLabel.constrainBelow(typeLabel,
                                        xAlignment: .left,
-                                       yOffset: 5)
+                                       yOffset: 3)
         
         // values
         
@@ -137,15 +146,15 @@ class AccountMasterCell: UITableViewCell {
         
         self.phoneValue.constrainBelow(stateValue,
                                        xAlignment: .left,
-                                       yOffset: 5)
+                                       yOffset: 3)
         
         self.typeValue.constrainBelow(phoneValue,
                                        xAlignment: .left,
-                                       yOffset: 5)
+                                       yOffset: 3)
         
         self.ownerValue.constrainBelow(typeValue,
                                       xAlignment: .left,
-                                      yOffset: 5)
+                                      yOffset: 3)
         
     }
 }

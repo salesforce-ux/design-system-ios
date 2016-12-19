@@ -66,6 +66,8 @@ class AccountHeaderView: UIView {
         headerTitle = UILabel()
         headerTitle.font = UIFont.sldsFont(.regular, with: .large)
         
+        headerTitle.textColor = UIColor.sldsColorText(.default)
+        
         self.addSubview(headerTitle)
         headerTitle.constrainRightOf(headerIcon,
                                      yAlignment: .top,

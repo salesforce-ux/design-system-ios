@@ -20,7 +20,7 @@ class AccountMasterViewController: UIViewController {
     var tableViewController = AccountMasterListViewController()
     
     let actionBarHeight = CGFloat(64.0)
-    let headerHeight    = CGFloat(80.0)
+    let headerHeight    = CGFloat(72.0)
     
     var tableHeight :CGFloat!
     
