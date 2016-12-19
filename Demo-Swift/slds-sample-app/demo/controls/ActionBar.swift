@@ -51,17 +51,6 @@ class ActionBar: ItemBar {
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-  
-    override func updateConstraints() {
-        super.updateConstraints()
-        for constraint in self.constraints {
-            if constraint.firstAttribute == .bottom {
-                constraint.constant = self.actionItemsHidden ? 56 : 0
-            }
-        }
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func addActionBarButton(_ actionButton : ActionBarButton) {
         super.addItem(item: actionButton)
@@ -89,11 +78,7 @@ class ActionBar: ItemBar {
     private func animateActionBarButtons(_ animated : Bool=true, completion: ( (Void) -> (Void) )?=nil ) {
         let ease = self.actionItemsHidden ? UIViewAnimationOptions.curveEaseIn : UIViewAnimationOptions.curveEaseOut
         
-        for c in self.constraints {
-            if c.firstAttribute == .bottom {
-                c.constant = self.actionItemsHidden ? 56 : 0
-            }
-        }
+        self.firstPosition?.constant = self.actionItemsHidden ? 56 : 0
         
         guard animated else {
             self.layoutIfNeeded()
