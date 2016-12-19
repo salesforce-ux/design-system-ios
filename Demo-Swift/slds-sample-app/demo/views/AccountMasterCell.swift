@@ -124,19 +124,19 @@ class AccountMasterCell: UITableViewCell {
         
         self.stateLabel.constrainBelow(accountName,
                                        xAlignment: .left,
-                                       yOffset: 8)
+                                       yOffset: 3)
         
         self.phoneLabel.constrainBelow(stateLabel,
                                        xAlignment: .left,
-                                       yOffset: 3)
+                                       yOffset: 1)
         
         self.typeLabel.constrainBelow(phoneLabel,
                                        xAlignment: .left,
-                                       yOffset: 3)
+                                       yOffset: 1)
         
         self.ownerLabel.constrainBelow(typeLabel,
                                        xAlignment: .left,
-                                       yOffset: 3)
+                                       yOffset: 1)
         
         // values
         
@@ -146,15 +146,15 @@ class AccountMasterCell: UITableViewCell {
         
         self.phoneValue.constrainBelow(stateValue,
                                        xAlignment: .left,
-                                       yOffset: 3)
+                                       yOffset: 1)
         
         self.typeValue.constrainBelow(phoneValue,
                                        xAlignment: .left,
-                                       yOffset: 3)
+                                       yOffset: 1)
         
         self.ownerValue.constrainBelow(typeValue,
                                       xAlignment: .left,
-                                      yOffset: 3)
+                                      yOffset: 1)
         
     }
 }

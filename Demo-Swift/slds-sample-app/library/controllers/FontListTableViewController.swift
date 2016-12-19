@@ -55,6 +55,7 @@ class FontListTableViewController: UITableViewController {
                     fontName = fontName.replacingOccurrences(of: "Lato-", with: "")
                     fontTypes.append(fontName.replacingOccurrences(of: ".ttf", with: ""))
                 }
+                UIColor.sldsColorBorder( .success )
             }
         }
     }
