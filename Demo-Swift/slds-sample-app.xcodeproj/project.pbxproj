@@ -26,7 +26,6 @@
 		20F03F6F1E00D980001EE121 /* IconListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F671E00D980001EE121 /* IconListViewController.swift */; };
 		20F03F701E00D980001EE121 /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F681E00D980001EE121 /* IconViewController.swift */; };
 		20F03F711E00D980001EE121 /* LibraryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F691E00D980001EE121 /* LibraryListViewController.swift */; };
-		20F03F721E00D980001EE121 /* SoundListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F6A1E00D980001EE121 /* SoundListViewController.swift */; };
 		20F03F761E00D987001EE121 /* ItemBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F731E00D987001EE121 /* ItemBar.swift */; };
 		20F03F781E00D987001EE121 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F751E00D987001EE121 /* TabBar.swift */; };
 		20F03F7B1E00D98E001EE121 /* String+TrimPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F791E00D98E001EE121 /* String+TrimPrefix.swift */; };
@@ -101,7 +100,6 @@
 		20F03F671E00D980001EE121 /* IconListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconListViewController.swift; path = library/controllers/IconListViewController.swift; sourceTree = "<group>"; };
 		20F03F681E00D980001EE121 /* IconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconViewController.swift; path = library/controllers/IconViewController.swift; sourceTree = "<group>"; };
 		20F03F691E00D980001EE121 /* LibraryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LibraryListViewController.swift; path = library/controllers/LibraryListViewController.swift; sourceTree = "<group>"; };
-		20F03F6A1E00D980001EE121 /* SoundListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundListViewController.swift; path = library/controllers/SoundListViewController.swift; sourceTree = "<group>"; };
 		20F03F731E00D987001EE121 /* ItemBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemBar.swift; path = library/controls/ItemBar.swift; sourceTree = "<group>"; };
 		20F03F751E00D987001EE121 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBar.swift; path = library/controls/TabBar.swift; sourceTree = "<group>"; };
 		20F03F791E00D98E001EE121 /* String+TrimPrefix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+TrimPrefix.swift"; path = "library/extensions/String+TrimPrefix.swift"; sourceTree = "<group>"; };
@@ -200,7 +198,6 @@
 				20F03F671E00D980001EE121 /* IconListViewController.swift */,
 				20F03F681E00D980001EE121 /* IconViewController.swift */,
 				20F03F691E00D980001EE121 /* LibraryListViewController.swift */,
-				20F03F6A1E00D980001EE121 /* SoundListViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -437,7 +434,6 @@
 				20F03F541E00D938001EE121 /* AccountMasterListViewController.swift in Sources */,
 				20F03F801E00D994001EE121 /* ApplicationModel.swift in Sources */,
 				20F03F8F1E00D99A001EE121 /* SectionHeaderView.swift in Sources */,
-				20F03F721E00D980001EE121 /* SoundListViewController.swift in Sources */,
 				20F03F8C1E00D99A001EE121 /* ColorCell.swift in Sources */,
 				FC7FB0121E030FB5004EB658 /* AccountDetailCell.swift in Sources */,
 				20F03F611E00D95B001EE121 /* AccountHeaderView.swift in Sources */,
