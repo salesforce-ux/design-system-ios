@@ -16,7 +16,7 @@ class ActionBarButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         var frame = self.imageView?.frame;
-        frame = CGRect(x:((self.bounds.size.width - (frame?.size.width)!) / 2), y: 5, width: (frame?.size.width)!, height: (frame?.size.height)!);
+        frame = CGRect(x:((self.bounds.size.width - (frame?.size.width)!) / 2), y: 8, width: (frame?.size.width)!, height: (frame?.size.height)!);
         self.imageView?.frame = frame!;
         
         // round icon
@@ -24,7 +24,7 @@ class ActionBarButton: UIButton {
         imageView?.clipsToBounds = true;
         
         frame = self.titleLabel?.frame;
-        frame = CGRect(x: ((self.bounds.size.width - (frame?.size.width)!) / 2), y: self.bounds.size.height - (frame?.size.height)! - 5, width: (frame?.size.width)!, height: (frame?.size.height)!);
+        frame = CGRect(x: ((self.bounds.size.width - (frame?.size.width)!) / 2), y: self.bounds.size.height - (frame?.size.height)! - 4, width: (frame?.size.width)!, height: (frame?.size.height)!);
         self.titleLabel?.frame = frame!;
         
         // styling

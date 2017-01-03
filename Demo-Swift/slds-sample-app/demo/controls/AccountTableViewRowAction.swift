@@ -9,43 +9,26 @@
 
 import UIKit
 
-class AccountDetailViewController: UIViewController {
-    
-    var header = AccountDetailHeaderView()
-    
-    var tableViewController = AccountDetailListViewController()
+class AccountTableViewRowAction: UITableViewRowAction {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    var dataProvider : AccountObject? {
-        didSet {
-            header.dataProvider = self.dataProvider
-            tableViewController.dataProvider = self.dataProvider
-        }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        var frame = self.imageView?.frame;
+        frame = CGRect(x:((self.bounds.size.width - (frame?.size.width)!) / 2), y: 8, width: (frame?.size.width)!, height: (frame?.size.height)!);
+        self.imageView?.frame = frame!;
+        
+        // round icon
+        imageView?.layer.cornerRadius = (frame?.width)!/2;
+        imageView?.clipsToBounds = true;
+        
+        frame = self.titleLabel?.frame;
+        frame = CGRect(x: ((self.bounds.size.width - (frame?.size.width)!) / 2), y: self.bounds.size.height - (frame?.size.height)! - 4, width: (frame?.size.width)!, height: (frame?.size.height)!);
+        self.titleLabel?.frame = frame!;
+        
+        // styling
+        self.titleLabel?.font = UIFont.sldsFont(.regular, with: .xSmall)
+        self.titleLabel?.textColor = UIColor.sldsColorText(SLDSColorTextType.actionLabel)
     }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor.white
-        
-        self.view.addSubview(header)
-        self.view.constrainChild(header,
-                                 xAlignment: .left,
-                                 yAlignment: .top,
-                                 width: self.view.frame.width,
-                                 height: 120,
-                                 yOffset: 64)
-        
-        self.view.addSubview(tableViewController.view)
-        self.tableViewController.view.constrainBelow(self.header,
-                                                     xAlignment: .center,
-                                                     width: self.view.frame.width,
-                                                     height: self.view.frame.height - 240)
-        
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 }

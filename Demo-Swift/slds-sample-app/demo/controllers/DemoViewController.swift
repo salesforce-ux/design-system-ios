@@ -15,7 +15,7 @@ class DemoViewController: UIViewController, ItemBarDelegate, UINavigationControl
 
     var actionItems = Array<ActionItem>()
     var actionBar = ActionBar()
-    var actionBarHeight = CGFloat(55.0)
+    var actionBarHeight = CGFloat(56.0)
     
     var contentViewController = AccountMasterViewController()
     
@@ -110,7 +110,7 @@ class DemoViewController: UIViewController, ItemBarDelegate, UINavigationControl
             for item in self.actionItems {
                 
                 let button = ActionBarButton()
-                button.setImage(UIImage.sldsIconAction(item.iconId, withSize: 30), for: .normal)
+                button.setImage(UIImage.sldsIconAction(item.iconId, withSize: 28), for: .normal)
                 button.setTitle(item.label, for: .normal)
                 self.actionBar.addActionBarButton(button)
             }
