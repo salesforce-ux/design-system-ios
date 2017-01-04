@@ -101,6 +101,7 @@ class IconListViewController: SearchController, UICollectionViewDelegateFlowLayo
         let iconObj = filteredIcons[indexPath.item]
         
         cell.backgroundView = UIImageView(image:iconObj.getImage())
+        cell.accessibilityLabel = iconObj.name
         
         cell.backgroundView?.contentMode = .center
         return cell

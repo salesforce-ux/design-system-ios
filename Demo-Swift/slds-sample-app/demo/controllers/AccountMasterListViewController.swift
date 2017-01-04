@@ -122,7 +122,6 @@ class AccountMasterListViewController: UITableViewController {
         let controller  = AccountDetailViewController()
         controller.dataProvider = accounts[indexPath.item]
 
-        
         self.superNavigationController.pushViewController(controller, animated: true)
     }
     
