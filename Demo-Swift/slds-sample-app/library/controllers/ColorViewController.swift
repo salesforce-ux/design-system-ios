@@ -127,11 +127,13 @@ class ColorViewController: UIViewController {
         self.swatchG.constrainBelow(self.swatchR,
                                     xAlignment: .center,
                                     width: 50,
+                                    xOffset: -1, // The G is a pixel wider than the other letters
                                     yOffset: 3)
 
         self.swatchB.constrainBelow(self.swatchG,
                                     xAlignment: .center,
                                     width: 50,
+                                    xOffset: 1,
                                     yOffset: 3)
 
         self.swatchA.constrainBelow(self.swatchB,
