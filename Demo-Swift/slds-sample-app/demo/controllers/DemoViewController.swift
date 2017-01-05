@@ -61,7 +61,6 @@ class DemoViewController: UIViewController, ItemBarDelegate, UINavigationControl
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        //actionBar.animateButtonEntry()
         super.viewWillAppear(animated)
     }
     

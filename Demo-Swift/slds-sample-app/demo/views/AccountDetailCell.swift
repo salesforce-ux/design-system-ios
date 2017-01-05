@@ -43,18 +43,16 @@ class AccountDetailCell: UITableViewCell {
     func makeLayout() {
         
         let font = UIFont.sldsFont(.regular, with: .medium)
-        
         let labelColor = UIColor.sldsColorText(.actionLabel)
         let valueColor = UIColor.sldsColorText(.default)
         
-        self.addSubview(label)
-        self.addSubview(value)
-        
         label.font = font
-        value.font = font
-        
         label.textColor = labelColor
+        self.addSubview(label)
+        
+        value.font = font
         value.textColor = valueColor
+        self.addSubview(value)
         
         self.constrainChild(label,
                             xAlignment: .left,

@@ -29,9 +29,16 @@ class AccountMasterCell: UITableViewCell {
         didSet {
             self.accountName.text = dataProvider?.name
             self.stateValue.text = dataProvider?.state
+            self.stateValue.accessibilityLabel = "Billing State " + self.stateValue.text!
+            
             self.phoneValue.text = dataProvider?.phone
+            self.phoneValue.accessibilityLabel = "Phone " + self.phoneValue.text!
+            
             self.typeValue.text = dataProvider?.type.rawValue
+            self.typeValue.accessibilityLabel = "Type " + self.typeValue.text!
+            
             self.ownerValue.text = dataProvider?.owner
+            self.ownerValue.accessibilityLabel = "Owner " + self.ownerValue.text!
         }
     }
     
@@ -40,12 +47,6 @@ class AccountMasterCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        stateLabel.text = "Billing State:"
-        phoneLabel.text = "Phone:"
-        typeLabel.text = "Type:"
-        ownerLabel.text = "Owner:"
-        
         self.makeLayout()
     }
     
@@ -78,43 +79,50 @@ class AccountMasterCell: UITableViewCell {
     func makeLayout() {
         
         let font = UIFont.sldsFont(.regular, with: .medium)
-        
         let labelColor = UIColor.sldsColorText(.actionLabel)
         let valueColor = UIColor.sldsColorText(.default)
         
-        self.addSubview(accountName)
-        self.addSubview(stateLabel)
-        self.addSubview(phoneLabel)
-        self.addSubview(typeLabel)
-        self.addSubview(ownerLabel)
-        
         accountName.font = font
         accountName.textColor = valueColor
+        self.addSubview(accountName)
         
         stateLabel.font = font
-        phoneLabel.font = font
-        typeLabel.font = font
-        ownerLabel.font = font
-        
         stateLabel.textColor = labelColor
-        phoneLabel.textColor = labelColor
-        typeLabel.textColor = labelColor
-        ownerLabel.textColor = labelColor
+        stateLabel.text = "Billing State:"
+        self.addSubview(stateLabel)
         
-        stateValue.textColor = valueColor
-        phoneValue.textColor = valueColor
-        typeValue.textColor = valueColor
-        ownerValue.textColor = valueColor
+        phoneLabel.font = font
+        phoneLabel.textColor = labelColor
+        phoneLabel.text = "Phone:"
+        self.addSubview(phoneLabel)
+        
+        typeLabel.font = font
+        typeLabel.textColor = labelColor
+        typeLabel.text = "Type:"
+        self.addSubview(typeLabel)
+        
+        ownerLabel.text = "Owner:"
+        ownerLabel.font = font
+        ownerLabel.textColor = labelColor
+        self.addSubview(ownerLabel)
         
         stateValue.font = font
-        phoneValue.font = font
-        typeValue.font = font
-        ownerValue.font = font
-        
+        stateValue.textColor = valueColor
         self.addSubview(stateValue)
+        
+        phoneValue.font = font
+        phoneValue.textColor = valueColor
         self.addSubview(phoneValue)
+        
+        typeValue.font = font
+        typeValue.textColor = valueColor
         self.addSubview(typeValue)
+        
+        ownerValue.font = font
+        ownerValue.textColor = valueColor
         self.addSubview(ownerValue)
+        
+        self.accessibilityElements = [accountName, stateValue, phoneValue, typeValue, ownerValue]
         
         self.constrainChild(accountName,
                             xAlignment: .left,

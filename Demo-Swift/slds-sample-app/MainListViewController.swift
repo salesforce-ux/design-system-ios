@@ -21,6 +21,12 @@ class MainListViewController: UITableViewController {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
     override func viewDidLoad() {
         for item in self.tableData {
             self.tableView.register(item.cell, forCellReuseIdentifier: item.name)
@@ -70,9 +76,6 @@ class MainListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: tableData[indexPath.row].name)
-        
-        //cell?.textLabel?.font = UIFont.sldsFont(.regular, with: .medium)
-        //cell?.textLabel?.text = tableData[indexPath.row].name.replacingOccurrences(of: "Cell", with: "")
         return cell!
     }
     

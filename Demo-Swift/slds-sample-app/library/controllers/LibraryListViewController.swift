@@ -99,8 +99,11 @@ class LibraryListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-        cell.textLabel?.font = UIFont.sldsFont(.regular, with: .medium)
-        cell.textLabel?.text = tableData[indexPath.section].rows[indexPath.row].name
+        if let label = cell.textLabel {
+            label.font = UIFont.sldsFont(.regular, with: .medium)
+            label.text = tableData[indexPath.section].rows[indexPath.row].name
+            label.accessibilityLabel = label.text! + tableData[indexPath.section].sectionTitle
+        }
         return cell
     }
     

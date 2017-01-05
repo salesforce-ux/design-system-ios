@@ -81,6 +81,7 @@ class IconListViewController: SearchController, UICollectionViewDelegateFlowLayo
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 108, width: self.view.frame.width, height: self.view.frame.height - 108), collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.isAccessibilityElement = false
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "iconCell")
         collectionView.backgroundColor = UIColor.white
         self.view.addSubview(collectionView)
@@ -102,8 +103,9 @@ class IconListViewController: SearchController, UICollectionViewDelegateFlowLayo
         
         cell.backgroundView = UIImageView(image:iconObj.getImage())
         cell.accessibilityLabel = iconObj.name
-        
+        cell.isAccessibilityElement = true
         cell.backgroundView?.contentMode = .center
+        
         return cell
     }
     

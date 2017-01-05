@@ -12,18 +12,16 @@ import UIKit
 class AccountMasterViewController: UIViewController {
     
     var header          = UIView()
-    var headerIcon      = UIImageView()
-    var headerTitle     = UILabel()
-    var headerSubText   = UILabel()
-    var headerDownArrow = UIImageView()
-    
     var tableViewController = AccountMasterListViewController()
     
     let actionBarHeight = CGFloat(56.0)
     let headerHeight    = CGFloat(72.0)
-    
     var tableHeight :CGFloat!
     
+    override func accessibilityPerformEscape() -> Bool {
+        popController()
+        return true
+    }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
@@ -33,7 +31,6 @@ class AccountMasterViewController: UIViewController {
         tableViewController.superNavigationController = self.navigationController
         
         self.title = "Example App"
-
         
         let toolBarOffset = (self.navigationController?.toolbar)!.frame.height + UIApplication.shared.statusBarFrame.height
         tableHeight = self.view.frame.height - actionBarHeight - headerHeight - toolBarOffset
@@ -69,6 +66,8 @@ class AccountMasterViewController: UIViewController {
                                             target: self,
                                             action: #selector(AccountMasterViewController.popController))
         
+        newBackButton.accessibilityTraits = UIAccessibilityTraitButton
+        newBackButton.accessibilityLabel = "back button"
         navigationItem.leftBarButtonItem = newBackButton
         self.navigationController?.navigationBar.barTintColor = UIColor.sldsColorBackground(.brand)
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -91,7 +90,7 @@ class AccountMasterViewController: UIViewController {
     func popController() {
         NotificationCenter.default.post(name: NSNotification.Name("returnToLibrary"), object: self)
     }
-
+    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
 }

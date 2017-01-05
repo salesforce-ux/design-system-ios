@@ -13,8 +13,10 @@ class ColorViewController: UIViewController {
     
     var swatch = SwatchView()
     var swatchName = UILabel()
-    var swatchRGB = UILabel()
-    var swatchRGBValues = UILabel()
+    var swatchR = UILabel()
+    var swatchG = UILabel()
+    var swatchB = UILabel()
+    var swatchA = UILabel()
     var swatchHEX = UILabel()
     var codeView = CodeView()
     
@@ -52,7 +54,10 @@ class ColorViewController: UIViewController {
             
             let hex:Int = Int(r*255)<<16 | Int(g*255)<<8 | Int(b*255)<<0
             swatchHEX.text = "hex: \(NSString(format:"#%06x", hex).uppercased)"
-            swatchRGB.text = "\(Int(r*255)) \n\(Int(g*255)) \n\(Int(b*255)) \n\(Int(a*255))"
+            swatchR.text = "R: \(Int(r*255))"
+            swatchG.text = "G: \(Int(g*255))"
+            swatchB.text = "B: \(Int(b*255))"
+            swatchA.text = "A: \(Int(a*255))"
         }
     }
     
@@ -67,16 +72,21 @@ class ColorViewController: UIViewController {
         self.swatchName.textColor = UIColor.sldsColorText(.default)
         self.swatchName.font = UIFont.sldsFont(.regular, with: .small)
         
-        self.swatchRGBValues.numberOfLines = 4
-        self.swatchRGBValues.textAlignment = .right
-        self.swatchRGBValues.textColor = UIColor.sldsColorText(.default)
-        self.swatchRGBValues.font = UIFont.sldsFont(.regular, with: .small)
-        self.swatchRGBValues.text = "r:\ng:\nb:\na:"
+        self.swatchR.textColor = UIColor.sldsColorText(.default)
+        self.swatchR.font = UIFont.sldsFont(.regular, with: .small)
+        self.swatchR.textAlignment = .left
+    
+        self.swatchG.textColor = UIColor.sldsColorText(.default)
+        self.swatchG.font = UIFont.sldsFont(.regular, with: .small)
+        self.swatchG.textAlignment = .left
         
-        self.swatchRGB.numberOfLines = 4
-        self.swatchRGB.textAlignment = .left
-        self.swatchRGB.textColor = UIColor.sldsColorText(.default)
-        self.swatchRGB.font = UIFont.sldsFont(.regular, with: .small)
+        self.swatchB.textColor = UIColor.sldsColorText(.default)
+        self.swatchB.font = UIFont.sldsFont(.regular, with: .small)
+        self.swatchB.textAlignment = .left
+        
+        self.swatchA.textColor = UIColor.sldsColorText(.default)
+        self.swatchA.font = UIFont.sldsFont(.regular, with: .small)
+        self.swatchA.textAlignment = .left
         
         self.swatchHEX.textAlignment = .center
         self.swatchHEX.textColor = UIColor.sldsColorText(.default)
@@ -84,8 +94,10 @@ class ColorViewController: UIViewController {
         
         self.view.addSubview(self.swatch)
         self.view.addSubview(self.swatchName)
-        self.view.addSubview(self.swatchRGBValues)
-        self.view.addSubview(self.swatchRGB)
+        self.view.addSubview(self.swatchR)
+        self.view.addSubview(self.swatchG)
+        self.view.addSubview(self.swatchB)
+        self.view.addSubview(self.swatchA)
         self.view.addSubview(self.swatchHEX)
         self.view.addSubview(self.codeView)
         
@@ -106,14 +118,26 @@ class ColorViewController: UIViewController {
                                       width: self.view.frame.width,
                                       yOffset: 8)
         
-        self.swatchRGBValues.constrainBelow(self.swatchHEX,
-                                      xAlignment: .center,
-                                      xOffset: -5,
-                                      yOffset: 5)
-        
-        self.swatchRGB.constrainRightOf(self.swatchRGBValues,
-                                        yAlignment: .center,
-                                        xOffset: 5)
+        self.swatchR.constrainBelow(self.swatchHEX,
+                                    xAlignment: .center,
+                                    width: 50,
+                                    xOffset: -5,
+                                    yOffset: 5)
+
+        self.swatchG.constrainBelow(self.swatchR,
+                                    xAlignment: .center,
+                                    width: 50,
+                                    yOffset: 3)
+
+        self.swatchB.constrainBelow(self.swatchG,
+                                    xAlignment: .center,
+                                    width: 50,
+                                    yOffset: 3)
+
+        self.swatchA.constrainBelow(self.swatchB,
+                                    xAlignment: .center,
+                                    width: 50,
+                                    yOffset: 3)
         
         self.view.constrainChild(self.codeView,
                                  xAlignment: .center,

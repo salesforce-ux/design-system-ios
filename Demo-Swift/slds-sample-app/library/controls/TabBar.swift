@@ -46,8 +46,6 @@ class TabBar: ItemBar {
         self.underscore.backgroundColor = UIColor.sldsColorBorder(.selection)
         self.addSubview(self.underscore)
         
-        //self.accessibilityTraits = U
-        
         self.constrainChild(self.underscore,
                             xAlignment: .left,
                             yAlignment: .bottom,
