@@ -43,8 +43,8 @@ class AccountDetailCell: UITableViewCell {
     func makeLayout() {
         
         let font = UIFont.sldsFont(.regular, with: .medium)
-        let labelColor = UIColor.sldsColorText(.actionLabel)
-        let valueColor = UIColor.sldsColorText(.default)
+        let labelColor = UIColor.sldsTextColor(.colorTextActionLabel)
+        let valueColor = UIColor.sldsTextColor(.colorTextDefault)
         
         label.font = font
         label.textColor = labelColor

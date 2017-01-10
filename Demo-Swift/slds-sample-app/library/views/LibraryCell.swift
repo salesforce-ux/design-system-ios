@@ -38,18 +38,20 @@ class LibraryCell: UITableViewCell {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func loadView() {
-        self.backgroundColor = UIColor.sldsColorBackground(.brand)
+        self.backgroundColor = UIColor.sldsBackgroundColor(.colorBrand)
         self.selectedBackgroundView = UIView()
-        self.selectedBackgroundView?.backgroundColor = UIColor.sldsColorBackground(.backgroundInfo)
-        self.accessoryType = .disclosureIndicator
+        self.selectedBackgroundView?.backgroundColor = UIColor.sldsBackgroundColor(.colorBackgroundInfo)
         
         if let label = self.textLabel {
             label.text = "Library"
             label.textAlignment = .center
-            label.textColor = UIColor.sldsColorText(.inverse)
+            label.textColor = UIColor.sldsTextColor(.colorTextInverse)
             label.font = UIFont.sldsFont(.regular, with: .large)
         }
-
+        
+        let image = UIImageView(image: UIImage(named: "tokens"))
+        self.addSubview(image)
+        self.constrainChild(image, xAlignment: .center, yAlignment: .center, width: 222, height: 190, yOffset: -9)
     }
     
 }

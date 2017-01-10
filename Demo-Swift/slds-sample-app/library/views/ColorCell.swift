@@ -72,7 +72,7 @@ class ColorCell: UITableViewCell {
         }
         
         self.selectedBackgroundView = UIView()
-        self.selectedBackgroundView?.backgroundColor = UIColor.sldsColorBackground(.backgroundRowSelected)
+        self.selectedBackgroundView?.backgroundColor = UIColor.sldsBackgroundColor(.colorBackgroundRowSelected)
         
         self.contentView.addSubview(self.swatch)
         self.contentView.constrainChild(self.swatch,

@@ -46,7 +46,7 @@ class ActionBar: ItemBar {
         aPath.addLine(to: CGPoint(x:self.frame.width, y:0))
         aPath.close()
         aPath.lineWidth = 1.0
-        UIColor.sldsColorBorder(.separatorAlt2).set()
+        UIColor.sldsBorderColor(.colorBorderSeparatorAlt2).set()
         aPath.stroke()
     }
     

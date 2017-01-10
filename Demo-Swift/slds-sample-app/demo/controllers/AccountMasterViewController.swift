@@ -69,7 +69,7 @@ class AccountMasterViewController: UIViewController {
         newBackButton.accessibilityTraits = UIAccessibilityTraitButton
         newBackButton.accessibilityLabel = "back button"
         navigationItem.leftBarButtonItem = newBackButton
-        self.navigationController?.navigationBar.barTintColor = UIColor.sldsColorBackground(.brand)
+        self.navigationController?.navigationBar.barTintColor = UIColor.sldsBackgroundColor(.colorBrand)
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
         self.navigationController?.navigationBar.backIndicatorImage = UIImage.sldsIconUtility(.chevronleft,

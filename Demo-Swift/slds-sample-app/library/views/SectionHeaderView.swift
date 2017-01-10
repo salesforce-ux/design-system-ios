@@ -26,7 +26,7 @@ class SectionHeaderView: UITableViewHeaderFooterView {
     
     func applyStyle() {
         self.textLabel?.font = UIFont.sldsFont(.regular, with: .medium)
-        self.contentView.backgroundColor = UIColor.sldsColorBackground(.backgroundRowActive)
+        self.contentView.backgroundColor = UIColor.sldsBackgroundColor(.colorBackgroundRowActive)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

@@ -18,7 +18,6 @@ class DemoCell: UITableViewCell {
         self.loadView()
     }
 
-    
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     required init(coder aDecoder: NSCoder) {
@@ -38,17 +37,20 @@ class DemoCell: UITableViewCell {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func loadView() {
-        self.backgroundColor = UIColor.sldsColorBackground(.brandDarker)
+        self.backgroundColor = UIColor.sldsBackgroundColor(.colorBrandDarker)
         self.selectedBackgroundView = UIView()
-        self.selectedBackgroundView?.backgroundColor = UIColor.sldsColorBackground(.backgroundInfo)
-        self.accessoryType = .disclosureIndicator
+        self.selectedBackgroundView?.backgroundColor = UIColor.sldsBackgroundColor(.colorBackgroundInfo)
         
         if let label = self.textLabel {
             label.text = "Example App"
             label.textAlignment = .center
-            label.textColor = UIColor.sldsColorText(.inverse)
+            label.textColor = UIColor.sldsTextColor(.colorTextInverse)
             label.font = UIFont.sldsFont(.regular, with: .large)
         }
+        
+        let image = UIImageView(image: UIImage(named: "exampleApp"))
+        self.addSubview(image)
+        self.constrainChild(image, xAlignment: .center, yAlignment: .bottom, width: 258, height: 230)
     }
 
 }

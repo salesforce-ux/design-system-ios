@@ -140,7 +140,7 @@ class CodeView: UIView, ItemBarDelegate {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func loadView() {
-        self.backgroundColor = UIColor.sldsColorBackground(.backgroundStencil)
+        self.backgroundColor = UIColor.sldsBackgroundColor(.colorBackgroundStencil)
         
         tabBar.delegate = self
         tabBar.addTab(withLabelString: "Swift")
@@ -156,7 +156,7 @@ class CodeView: UIView, ItemBarDelegate {
         
         copyButton.setTitle("Copy", for: .normal)
         copyButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .medium)
-        copyButton.setTitleColor(UIColor.sldsColorText(.brand), for: .normal)
+        copyButton.setTitleColor(UIColor.sldsTextColor(.colorTextBrand), for: .normal)
         copyButton.addTarget(self, action: #selector(copyCodeSample), for: .touchUpInside)
         self.addSubview(copyButton)
         

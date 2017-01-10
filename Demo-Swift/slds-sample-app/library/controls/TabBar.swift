@@ -34,7 +34,7 @@ class TabBar: ItemBar {
         aPath.addLine(to: CGPoint(x:self.frame.width, y:self.frame.height))
         aPath.close()
         aPath.lineWidth = 2.0
-        UIColor.sldsColorText(.linkActive).set()
+        UIColor.sldsTextColor(.colorTextLinkActive).set()
         aPath.stroke()
     }
     
@@ -43,7 +43,7 @@ class TabBar: ItemBar {
     override func loadView() {
         super.loadView()
         self.accessibilityTraits = UIAccessibilityTraitTabBar
-        self.underscore.backgroundColor = UIColor.sldsColorBorder(.selection)
+        self.underscore.backgroundColor = UIColor.sldsBorderColor(.colorBorderSelection)
         self.addSubview(self.underscore)
         
         self.constrainChild(self.underscore,
@@ -69,7 +69,7 @@ class TabBar: ItemBar {
         let tab = UIButton()
         tab.setTitle(labelString.uppercased(), for: .normal)
         tab.titleLabel?.font = UIFont.sldsFont(.regular, with: .small)
-        tab.setTitleColor(UIColor.sldsColorText(.default), for: .normal)
+        tab.setTitleColor(UIColor.sldsTextColor(.colorTextDefault), for: .normal)
         super.addItem(item: tab)
     }
     

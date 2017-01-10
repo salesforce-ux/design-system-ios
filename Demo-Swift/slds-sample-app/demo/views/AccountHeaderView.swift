@@ -23,7 +23,7 @@ class AccountHeaderView: UIView {
         aPath.addLine(to: CGPoint(x:self.frame.width, y:self.frame.height))
         aPath.close()
         aPath.lineWidth = 1.0
-        UIColor.sldsColorBorder(.separatorAlt2).set()
+        UIColor.sldsBorderColor(.colorBorderSeparatorAlt2).set()
         aPath.stroke()
     }
     
@@ -50,7 +50,7 @@ class AccountHeaderView: UIView {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func makeLayout() {
-        self.backgroundColor = UIColor.sldsColorBackground(.background)
+        self.backgroundColor = UIColor.sldsBackgroundColor(.colorBackground)
         
         
         headerIcon = UIImageView(image: UIImage.sldsIconStandard(.account,
@@ -66,7 +66,7 @@ class AccountHeaderView: UIView {
         headerTitle = UILabel()
         headerTitle.font = UIFont.sldsFont(.regular, with: .large)
         
-        headerTitle.textColor = UIColor.sldsColorText(.default)
+        headerTitle.textColor = UIColor.sldsTextColor(.colorTextDefault)
         
         self.addSubview(headerTitle)
         headerTitle.constrainRightOf(headerIcon,

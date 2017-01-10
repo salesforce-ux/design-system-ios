@@ -78,7 +78,7 @@ class AccountMasterListViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.separatorInset = UIEdgeInsets.zero
-        self.tableView.separatorColor = UIColor.sldsColorBorder(.separatorAlt)
+        self.tableView.separatorColor = UIColor.sldsBorderColor(.colorBorderSeparatorAlt)
         
         self.tableView.register(AccountMasterCell.self, forCellReuseIdentifier: "cell")
     }

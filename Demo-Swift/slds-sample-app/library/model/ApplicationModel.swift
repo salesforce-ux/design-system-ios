@@ -110,17 +110,17 @@ class ApplicationModel: NSObject {
         
         switch type {
         case .background :
-            if index > 0 && (SLDSColorBackgroundType.init(rawValue: index)?.hashValue == 0) {
+            if index > 0 && (SLDSBackgroundColorType.init(rawValue: index)?.hashValue == 0) {
                 return nil
             }
             
         case .border :
-            if index > 0 && (SLDSColorBorderType.init(rawValue: index+1)?.hashValue == 0) {
+            if index > 0 && (SLDSBorderColorType.init(rawValue: index+1)?.hashValue == 0) {
                 return nil
             }
     
         case .text :
-            if index > 0 && (SLDSColorTextType.init(rawValue: index)?.hashValue == 0) {
+            if index > 0 && (SLDSTextColorType.init(rawValue: index)?.hashValue == 0) {
                 return nil
             }
         }

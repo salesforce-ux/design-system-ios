@@ -30,12 +30,12 @@ class AboutCell: UITableViewCell {
     
     func loadView() {
         self.accessoryType = .none
-        self.backgroundColor = UIColor.sldsColorBackground(.backgroundSelection)
+        self.backgroundColor = UIColor.sldsBackgroundColor(.colorBackgroundSelection)
         
         sldsButton.setTitle("lightningdesignsystem.com", for: .normal)
         sldsButton.addTarget(self, action: #selector(browseToSLDS), for: .touchUpInside)
         sldsButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .small)
-        sldsButton.setTitleColor(UIColor.sldsColorText(.link), for: .normal)
+        sldsButton.setTitleColor(UIColor.sldsTextColor(.colorTextLink), for: .normal)
         
         self.addSubview(sldsButton)
         self.constrainChild(sldsButton, xAlignment: .center, yAlignment: .bottom, yOffset:20)

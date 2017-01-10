@@ -37,8 +37,8 @@ class SearchController: UIViewController, UISearchBarDelegate {
         searchHeader.returnKeyType = .done
         searchHeader.autocapitalizationType = .none
         searchHeader.autocorrectionType = .no
-        searchHeader.tintColor = UIColor.sldsColorBackground(.brand)
-        searchHeader.barTintColor = UIColor.sldsColorBackground(.background)
+        searchHeader.tintColor = UIColor.sldsBackgroundColor(.colorBrand)
+        searchHeader.barTintColor = UIColor.sldsBackgroundColor(.colorBackground)
         searchHeader.backgroundColor = UIColor.white
         self.view.addSubview(searchHeader)
         self.view.constrainChild(searchHeader,

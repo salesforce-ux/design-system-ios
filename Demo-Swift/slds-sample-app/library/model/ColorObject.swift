@@ -29,18 +29,18 @@ struct ColorObject {
         
         switch self.type {
         case .background :
-            if let value = SLDSColorBackgroundType.init(rawValue: self.index) {
-                return UIColor.sldsColorBackground(value)
+            if let value = SLDSBackgroundColorType.init(rawValue: self.index) {
+                return UIColor.sldsBackgroundColor(value)
             }
             
         case .border :
-            if let value = SLDSColorBorderType.init(rawValue: self.index) {
-                return UIColor.sldsColorBorder(value)
+            if let value = SLDSBorderColorType.init(rawValue: self.index) {
+                return UIColor.sldsBorderColor(value)
             }
             
         case .text :
-            if let value = SLDSColorTextType.init(rawValue: self.index) {
-                return UIColor.sldsColorText(value)
+            if let value = SLDSTextColorType.init(rawValue: self.index) {
+                return UIColor.sldsTextColor(value)
             }
         }
         
@@ -53,13 +53,13 @@ struct ColorObject {
         
         switch self.type {
         case .background :
-            return "sldsColorBackground"
+            return "sldsBackgroundColor"
             
         case .border :
-            return "sldsColorBorder"
+            return "sldsBorderColor"
             
         case .text :
-            return "sldsColorText"
+            return "sldsTextColor"
         }
     }
     
@@ -70,18 +70,18 @@ struct ColorObject {
      
         switch self.type {
         case .background :
-            if let value = SLDSColorBackgroundType.init(rawValue: self.index) {
-                retVal = NSString.sldsColorBackgroundName(value) as String
+            if let value = SLDSBackgroundColorType.init(rawValue: self.index) {
+            //    retVal = NSString.sldsColorBackgroundName(value) as String
             }
             
         case .border :
-            if let value = SLDSColorBorderType.init(rawValue: self.index) {
-                retVal = NSString.sldsColorBorderName(value) as String
+            if let value = SLDSBorderColorType.init(rawValue: self.index) {
+            //    retVal = NSString.sldsColorBorderName(value) as String
             }
             
         case .text :
-            if let value = SLDSColorTextType.init(rawValue: self.index) {
-                retVal = NSString.sldsColorTextName(value) as String
+            if let value = SLDSTextColorType.init(rawValue: self.index) {
+            //    retVal = NSString.sldsColorTextName(value) as String
             }
         }
         

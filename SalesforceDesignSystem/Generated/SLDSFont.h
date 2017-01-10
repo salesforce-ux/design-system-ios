@@ -8,6 +8,29 @@
  */
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, SLDSTest1Type) {
+    SLDSTest1Type0 = 0,
+    SLDSTest1Type1,
+    SLDSTest1Type2,
+    SLDSTest1Type3,
+    SLDSTest1Type4,
+    SLDSTest1Type5,
+    SLDSTest1Type6,
+    SLDSTest1Type7
+};
+
+typedef NS_ENUM(NSInteger, SLDSTest2Type) {
+    SLDSTest2Type0 = SLDSTest1Type7+1,
+    SLDSTest2Type1,
+    SLDSTest2Type2,
+    SLDSTest2Type3,
+    SLDSTest2Type4,
+    SLDSTest2Type5,
+    SLDSTest2Type6,
+    SLDSTest2Type7
+};
+
+
 typedef NS_ENUM(NSInteger, SLDSFontSizeType) {
 	SLDSFontSizeXSmall,
 	SLDSFontSizeSmall,

@@ -8,7 +8,8 @@
  */
 #import <CoreText/CoreText.h>
 #import "UIImage+SLDSIconUtility.h"
-#import "UIColor+SLDSBackground.h"
+#import "UIColor+SLDSColor.h"
+//#import "UIColor+SLDSBackground.h"
 #import "UIFont+SLDSFont.h"
 #import "SLDSFont.h"
 
@@ -24,7 +25,7 @@ static NSString *const iconFontName = @"SalesforceDesignSystemIconsUtility";
 +(UIImage*)sldsIconUtility:(SLDSIconUtilityType)iconId withColor:(UIColor*)iconColor andSize: (CGFloat)size{
 
     if (!iconColor) {
-        iconColor = [UIColor sldsColorBackground:SLDSColorBackgroundActionbarIconUtility];
+        iconColor = [UIColor sldsBackgroundColor:colorBackgroundActionbarIconUtility];
     }
     CGRect textRect = CGRectZero;
     textRect.size = CGSizeMake(size,size);

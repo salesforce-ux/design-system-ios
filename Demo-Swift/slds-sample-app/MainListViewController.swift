@@ -32,7 +32,8 @@ class MainListViewController: UITableViewController {
             self.tableView.register(item.cell, forCellReuseIdentifier: item.name)
         }
         
-        self.navigationController?.navigationBar.barTintColor = UIColor.sldsColorBackground(.backgroundButtonBrandActive)
+        self.tableView.separatorStyle = .none
+        self.navigationController?.navigationBar.barTintColor = UIColor.sldsBackgroundColor(.colorBackgroundButtonBrandActive)
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
         self.navigationController?.navigationBar.backIndicatorImage = UIImage.sldsIconUtility(.chevronleft,

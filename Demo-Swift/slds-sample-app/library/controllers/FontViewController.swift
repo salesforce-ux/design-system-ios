@@ -46,14 +46,14 @@ class FontViewController: UIViewController {
         self.sampleText.text = "AaBbCc"
         self.sampleText.textAlignment = .center
         self.sampleText.contentMode = .center
-        self.sampleText.textColor = UIColor.sldsColorText(.default)
+        self.sampleText.textColor = UIColor.sldsTextColor(.colorTextDefault)
         self.sampleText.backgroundColor = UIColor.clear
         self.view.addSubview(self.sampleText)
         
         self.fontInfo.textAlignment = .center
         self.fontInfo.isEditable = false
         self.fontInfo.backgroundColor = UIColor.clear
-        self.fontInfo.textColor = UIColor.sldsColorText(.default)
+        self.fontInfo.textColor = UIColor.sldsTextColor(.colorTextDefault)
         self.fontInfo.font = UIFont.sldsFont(.regular, with: .small)
         self.view.addSubview(self.fontInfo)
         

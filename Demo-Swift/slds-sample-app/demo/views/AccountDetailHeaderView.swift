@@ -38,13 +38,13 @@ class AccountDetailHeaderView: AccountHeaderView, ItemBarDelegate {
         self.headerTitle.font = UIFont.sldsFont(.regular, with: .medium)
         
         accountType.font = UIFont.sldsFont(.regular, with: .small)
-        accountType.textColor = UIColor.sldsColorText(.default)
+        accountType.textColor = UIColor.sldsTextColor(.colorTextDefault)
         
         phoneNumber.font = UIFont.sldsFont(.regular, with: .small)
-        phoneNumber.textColor = UIColor.sldsColorText(.link)
+        phoneNumber.textColor = UIColor.sldsTextColor(.colorTextLink)
         
         url.font = UIFont.sldsFont(.regular, with: .small)
-        url.textColor = UIColor.sldsColorText(.link)
+        url.textColor = UIColor.sldsTextColor(.colorTextLink)
         
         self.addSubview(accountType)
         accountType.constrainBelow(self.headerTitle,
@@ -65,7 +65,7 @@ class AccountDetailHeaderView: AccountHeaderView, ItemBarDelegate {
         tabBar.addTab(withLabelString: "details")
         tabBar.addTab(withLabelString: "related")
         
-        tabBar.backgroundColor = UIColor.sldsColorBackground(.background)
+        tabBar.backgroundColor = UIColor.sldsBackgroundColor(.colorBackground)
         
         self.addSubview(tabBar)
     }
