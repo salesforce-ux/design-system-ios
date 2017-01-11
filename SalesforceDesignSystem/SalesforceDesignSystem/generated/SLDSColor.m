@@ -1,14 +1,23 @@
 #import "SLDSColor.h"
 
 @implementation SLDSColor
-
 static float const sldsColors[][4] = {
+
 	
 	{0,0.112,0.21,1},
 	{0,0.095,0.178,1},
 	{0.022,0.05,0.092,1},
 	{0.159,0.17,0.181,1},
-	{0,0.095,0.178,1},
+	{0,0.095,0.178,1}
+};
+
+//#define sldsColorTypeNames(enum) [@[\
+//@"fillBrand",\
+//@"colorBorderSuccessDark"\
+//] objectAtIndex:enum]
+
+
+	
 	{0.216,0.221,0.23,1},
 	{0.021,0.137,0.238,1},
 	{0,0.112,0.21,1},
@@ -67,7 +76,16 @@ static float const sldsColors[][4] = {
 	{0.244,0.246,0.249,1},
 	{0,0.112,0.21,1},
 	{0.021,0.137,0.238,1},
-	{0.044,0.054,0.07,1},
+	{0.044,0.054,0.07,1}
+};
+
+//#define sldsColorTypeNames(enum) [@[\
+//@"fillBrand",\
+//@"colorBorderSuccessDark"\
+//] objectAtIndex:enum]
+
+
+	
 	{0.244,0.246,0.249,1},
 	{0.255,0.255,0.255,1},
 	{0.238,0.241,0.246,1},
@@ -191,7 +209,16 @@ static float const sldsColors[][4] = {
 	{0.216,0.221,0.23,1},
 	{0.094,0.18,0.255,1},
 	{0.051,0.062,0.079,1},
-	{0.065,0.076,0.094,1},
+	{0.065,0.076,0.094,1}
+};
+
+//#define sldsColorTypeNames(enum) [@[\
+//@"fillBrand",\
+//@"colorBorderSuccessDark"\
+//] objectAtIndex:enum]
+
+
+	
 	{0.084,0.105,0.141,1},
 	{0.022,0.05,0.092,1},
 	{0.021,0.137,0.238,1},
@@ -267,43 +294,29 @@ static float const sldsColors[][4] = {
 	{0.255,0.255,0.255,0.4}
 };
 
-#define sldsColorTypeNames(enum) [@[\
-@"fillBrand",\
-@"fillBrandHover",\
-@"fillBrandActive",\
-@"fillHeaderButton",\
-@"fillHeaderButtonHover",\
-@"colorBorder",\
-@"colorBorderBrand",\
-@"colorBorderBrandDark",\
-@"colorBorderCustomer",\
-@"colorBorderDestructive",\
-@"colorBorderDestructiveHover",\
-@"colorBorderDestructiveActive",\
-@"colorBorderInfo",\
-@"colorBorderError",\
-@"colorBorderErrorAlt",\
-@"colorBorderErrorDark",\
-@"colorBorderOffline",\
-@"colorBorderSuccess",\
-@"colorBorderSuccessDark"\
-] objectAtIndex:enum]
+//#define sldsColorTypeNames(enum) [@[\
+//@"fillBrand",\
+//@"colorBorderSuccessDark"\
+//] objectAtIndex:enum]
+
+
 
 +(UIColor *)sldsFill:(SLDSFillType)colorType{
-    return [self colorForIndex:colorType];
+  return [self colorForIndex:colorType];
 }
 
 +(UIColor *)sldsBorderColor:(SLDSBorderColorType)colorType{
-    return [self colorForIndex:colorType];
+  return [self colorForIndex:colorType];
 }
 
 +(UIColor *)sldsBackgroundColor:(SLDSBackgroundColorType)colorType{
-    return [self colorForIndex:colorType];
+  return [self colorForIndex:colorType];
 }
 
 +(UIColor *)sldsTextColor:(SLDSTextColorType)colorType{
-    return [self colorForIndex:colorType];
+  return [self colorForIndex:colorType];
 }
+
 
 +(UIColor*)colorForIndex:(NSInteger)index {
     static NSMutableArray *colorCache = nil;
@@ -312,7 +325,7 @@ static float const sldsColors[][4] = {
         for (NSInteger i = 0; i < colorTextContextBarActionTrigger; ++i)
             [colorCache addObject:[NSNull null]];
     }
-    
+
     UIColor *color = [colorCache objectAtIndex:index];
     if( color && [color isEqual:[NSNull null]] ) {
         color = [UIColor colorWithRed:sldsColors[index][0]
@@ -321,11 +334,12 @@ static float const sldsColors[][4] = {
                                 alpha:sldsColors[index][3]];
         [colorCache setObject:color atIndexedSubscript:index];
     }
-    
+
     return color;
 }
 
 +(NSString *)sldsColorName:(NSInteger)colorType {
     return sldsColorTypeNames(colorType);
 }
+
 @end

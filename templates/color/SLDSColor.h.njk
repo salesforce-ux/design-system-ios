@@ -1,0 +1,15 @@
+#import <UIKit/UIKit.h>
+
+{% for categoryName, category in data %}
+typedef NS_ENUM(NSInteger, SLDS{{categoryName}}Type) {
+	{% for v in category %}
+	{{v.name}}{% if loop.first %}{% if indexName === null %} = 0{% else %} = {{indexName}} + 1{% endif %}{% endif %}{% if not loop.last %},{% endif %}{% endfor %}
+};
+{% set indexName = category[category.length-1].name %}
+{% endfor %}
+
+@interface SLDSColor : NSObject
+{% for categoryName, category in data %}
++(UIColor *)slds{{categoryName}}:(SLDS{{categoryName}}Type)colorType;{% endfor %}
++(NSString *)sldsColorName:(NSInteger)colorType;
+@end

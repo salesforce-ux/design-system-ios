@@ -1,0 +1,46 @@
+#import "SLDSColor.h"
+
+@implementation SLDSColor
+static float const sldsColors[][4] = {
+{% for categoryName, category in data %}
+	{% for v in category %}
+	{% raw %}{{% endraw %}{{v.value.r}},{{v.value.g}},{{v.value.b}},{{v.value.a}}{% raw %}}{% endraw %}{% if not loop.last %},{% endif %}{% endfor %}
+};
+
+//#define sldsColorTypeNames(enum) [@[\
+//@"fillBrand",\
+//@"colorBorderSuccessDark"\
+//] objectAtIndex:enum]
+
+{% endfor %}
+{% for categoryName, category in data %}
++(UIColor *)slds{{categoryName}}:(SLDS{{categoryName}}Type)colorType{
+  return [self colorForIndex:colorType];
+}
+{% endfor %}
+
++(UIColor*)colorForIndex:(NSInteger)index {
+    static NSMutableArray *colorCache = nil;
+    if (colorCache == nil) {
+        colorCache = [[NSMutableArray alloc] initWithCapacity:colorTextContextBarActionTrigger];
+        for (NSInteger i = 0; i < colorTextContextBarActionTrigger; ++i)
+            [colorCache addObject:[NSNull null]];
+    }
+
+    UIColor *color = [colorCache objectAtIndex:index];
+    if( color && [color isEqual:[NSNull null]] ) {
+        color = [UIColor colorWithRed:sldsColors[index][0]
+                                green:sldsColors[index][1]
+                                 blue:sldsColors[index][2]
+                                alpha:sldsColors[index][3]];
+        [colorCache setObject:color atIndexedSubscript:index];
+    }
+
+    return color;
+}
+
++(NSString *)sldsColorName:(NSInteger)colorType {
+    return sldsColorTypeNames(colorType);
+}
+
+@end

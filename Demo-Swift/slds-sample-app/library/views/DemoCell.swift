@@ -37,7 +37,8 @@ class DemoCell: UITableViewCell {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func loadView() {
-        self.backgroundColor = UIColor.sldsBackgroundColor(.colorBrandDarker)
+        self.backgroundColor = UIColor.sldsBackgroundColor(.colorBrand)
+        
         self.selectedBackgroundView = UIView()
         self.selectedBackgroundView?.backgroundColor = UIColor.sldsBackgroundColor(.colorBackgroundInfo)
         

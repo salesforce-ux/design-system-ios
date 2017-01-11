@@ -1,0 +1,13 @@
+#import "UIColor+SLDIcon.h"
+
+@implementation UIImage (SLDIcon)
+
+{% for categoryName, category in data %}
++(instancetype)slds{{categoryName}}:(SLDS{{categoryName}}Type)iconType{
+    return [SLDSIcon slds{{categoryName}}:iconType];
+}{% endfor %}
+
++(NSString*)sldsIconName:(NSInteger)iconType {
+    return [SLDSIcon sldsIconName:iconType];
+}
+@end

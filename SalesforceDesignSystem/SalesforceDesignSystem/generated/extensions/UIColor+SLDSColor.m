@@ -2,6 +2,7 @@
 
 @implementation UIColor (SLDSColor)
 
+
 +(instancetype)sldsFill:(SLDSFillType)colorType{
     return [SLDSColor sldsFill:colorType];
 }
@@ -18,5 +19,4 @@
 +(NSString*)sldsColorName:(NSInteger)colorType {
     return [SLDSColor sldsColorName:colorType];
 }
-
 @end

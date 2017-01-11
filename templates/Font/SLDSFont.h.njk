@@ -1,0 +1,26 @@
+#import <UIKit/UIKit.h>
+
+typedef NS_ENUM(NSInteger, SLDSFontSizeType) {
+	{% for size in data.FontSize %}
+	{{size.name}}{% if not loop.last %},{% endif %}{% endfor %}
+};
+
+typedef NS_ENUM(NSInteger, SLDSFontType) {
+    SLDSFontTypeRegular,
+    SLDSFontTypeItalic,
+    SLDSFontTypeBold,
+    SLDSFontTypeBoldItalic,
+    SLDSFontTypeLight,
+    SLDSFontTypeLightItalic,
+    SLDSFontTypeThin,
+    SLDSFontTypeThinItalic
+};
+
+@interface SLDSFont : NSObject
+
++(NSInteger)sldsFontSize:(SLDSFontSizeType)fontSize;
++(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType;
++(NSString*)sldsFontTypeName:(SLDSFontType)fontType;
++(NSString*)sldsFontFileName:(SLDSFontType)fontType;
+
+@end

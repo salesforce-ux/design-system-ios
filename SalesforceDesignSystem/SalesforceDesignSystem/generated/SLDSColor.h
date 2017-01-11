@@ -281,7 +281,8 @@ typedef NS_ENUM(NSInteger, SLDSTextColorType) {
 	colorTextContextBarActionTrigger
 };
 
- 
+
+
 @interface SLDSColor : NSObject
 
 +(UIColor *)sldsFill:(SLDSFillType)colorType;
@@ -289,5 +290,4 @@ typedef NS_ENUM(NSInteger, SLDSTextColorType) {
 +(UIColor *)sldsBackgroundColor:(SLDSBackgroundColorType)colorType;
 +(UIColor *)sldsTextColor:(SLDSTextColorType)colorType;
 +(NSString *)sldsColorName:(NSInteger)colorType;
-
 @end

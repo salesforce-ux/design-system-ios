@@ -32,6 +32,9 @@ class MainListViewController: UITableViewController {
             self.tableView.register(item.cell, forCellReuseIdentifier: item.name)
         }
         
+        print(UIColor.sldsColorName(SLDSFillType.fillHeaderButton.rawValue));
+        self.view.backgroundColor = UIColor.sldsTextColor(.colorTextActionLabelActive);
+        
         self.tableView.separatorStyle = .none
         self.navigationController?.navigationBar.barTintColor = UIColor.sldsBackgroundColor(.colorBackgroundButtonBrandActive)
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -56,9 +59,9 @@ class MainListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let rowHeight = (self.view.frame.height - tableView.contentInset.top) / CGFloat(tableData.count)
         if indexPath.row < tableData.count - 1 {
-            return rowHeight + 60
+            return rowHeight + 80
         }
-        return rowHeight - 120
+        return rowHeight - 160
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

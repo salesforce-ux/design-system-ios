@@ -1,0 +1,13 @@
+#import "UIColor+SLDSColor.h"
+
+@implementation UIColor (SLDSColor)
+
+{% for categoryName, category in data %}
++(instancetype)slds{{categoryName}}:(SLDS{{categoryName}}Type)colorType{
+    return [SLDSColor slds{{categoryName}}:colorType];
+}{% endfor %}
+
++(NSString*)sldsColorName:(NSInteger)colorType {
+    return [SLDSColor sldsColorName:colorType];
+}
+@end

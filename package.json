@@ -1,36 +1,31 @@
 {
-  "name": "DesignSystem-iOS",
-  "version": "2.0.8",
-  "description": "Salesforce Lightning Design System iOS Static Library",
-  "author": "Salesforce.com",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/salesforce-ux/design-system-ios.git"
-  },
+  "name": "ios-tokenizer",
+  "version": "1.0.0",
+  "description": "Design tokens to objective-C",
+  "main": "index.js",
   "scripts": {
-    "prestart": "gulp",
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "SEE LICENSE IN LICENSE",
+  "author": "Salesforce UX",
+  "license": "ISC",
   "dependencies": {
-    "@salesforce-ux/design-tokens": "3.8.0",
     "@salesforce-ux/icons": "5.1.0",
-    "css-parse": "^2.0.0",
-    "fs-extra": "^0.18.2",
+    "design-system": "salesforce-ux/design-system-internal#v2.2.0-dist",
     "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.1",
-    "gulp-consolidate": "^0.1.2",
-    "gulp-filter": "^3.0.1",
-    "gulp-iconfont": "^3.0.0",
-    "gulp-svgmin": "^1.1.2",
-    "gulp-ttf2woff2": "^1.0.3",
-    "lodash": "^3.9.3",
-    "node-dir": "^0.1.8",
-    "q": "^1.3.0",
-    "sax": "^1.1.1",
-    "svg-path-parser": "^1.0.1",
-    "svg2ttf": "^2.0.0",
-    "svgo": "^0.5.3",
-    "temp": "^0.8.1"
+    "gulp-consolidate": "^0.2.0",
+    "gulp-data": "^1.2.1",
+    "gulp-filter": "^5.0.0",
+    "gulp-iconfont": "^8.0.1",
+    "gulp-json-format": "^1.0.0",
+    "gulp-nunjucks": "^2.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-svgmin": "^1.2.3",
+    "gulp-yaml": "^1.0.1",
+    "gutil": "^1.6.4",
+    "lodash": "^4.17.4",
+    "merge2": "^1.0.2",
+    "run-sequence": "^1.2.2",
+    "theo": "^5.0.0-beta.1",
+    "through2": "^2.0.1"
   }
 }

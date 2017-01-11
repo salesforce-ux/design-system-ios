@@ -1,0 +1,9 @@
+#import <UIKit/UIKit.h>
+#import "SLDSIcon.h"
+
+@interface UIImage (SLDSIcon)
+{% for categoryName, category in data %}
++(instancetype)slds{{categoryName}}:(SLDS{{categoryName}}Type)iconType;{% endfor %}
++(NSString*)sldsIconName:(NSInteger)iconType;
+
+@end
