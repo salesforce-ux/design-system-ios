@@ -166,11 +166,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20F463A11E25779E0049AA6D /* UIFont+SLDSFont.h in Headers */,
+				05D89AFC1D808A3D00516C3C /* SLDSFont.h in Headers */,
 				20F4639D1E2577020049AA6D /* SLDSColor.h in Headers */,
+				20F463A11E25779E0049AA6D /* UIFont+SLDSFont.h in Headers */,
 				20F463991E2576F90049AA6D /* UIColor+SLDSColor.h in Headers */,
 				051032031B29F17C0094A6B2 /* SalesforceDesignSystem.h in Headers */,
-				05D89AFC1D808A3D00516C3C /* SLDSFont.h in Headers */,
 				052B1F2A1B9686A5003CCCCC /* DesignSystem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -116,7 +116,7 @@
     return sldsFontTypeNames(fontType);
 }
 
-// NOTE : Deprecated! --------------------------------------------------------------
+// NOTE : Deprecated --------------------------------------------------------------
 +(instancetype) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize{
     return [self sldsFont:SLDSFontTypeRegular withSize:fontSize];
 }
