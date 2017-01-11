@@ -1,12 +1,4 @@
-/*
- Copyright (c) 2015, salesforce.com, inc. All rights reserved.
- Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
- Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
- Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
- Neither the name of salesforce.com, inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
-#import "SLDSIconCustom.h"
+#import "SLDSIconAction.h"
 
 #define iconUniCode(enum) [@[\
 @"\uEA01",\
@@ -108,14 +100,138 @@
 @"\uEA61",\
 @"\uEA62",\
 @"\uEA63",\
-@"\uEA64" \
+@"\uEA64",\
+@"\uEA65",\
+@"\uEA66",\
+@"\uEA67",\
+@"\uEA68",\
+@"\uEA69",\
+@"\uEA6A",\
+@"\uEA6B",\
+@"\uEA6C",\
+@"\uEA6D",\
+@"\uEA6E",\
+@"\uEA6F",\
+@"\uEA70",\
+@"\uEA71",\
+@"\uEA72",\
+@"\uEA73",\
+@"\uEA74",\
+@"\uEA75",\
+@"\uEA76",\
+@"\uEA77",\
+@"\uEA78",\
+@"\uEA79",\
+@"\uEA7A",\
+@"\uEA7B",\
+@"\uEA7C",\
+@"\uEA7D",\
+@"\uEA7E",\
+@"\uEA7F",\
+@"\uEA80",\
+@"\uEA81",\
+@"\uEA82",\
+@"\uEA83",\
+@"\uEA84",\
+@"\uEA85",\
+@"\uEA86",\
+@"\uEA87",\
+@"\uEA88",\
+@"\uEA89",\
+@"\uEA8A",\
+@"\uEA8B",\
+@"\uEA8C",\
+@"\uEA8D",\
+@"\uEA8E",\
+@"\uEA8F",\
+@"\uEA90",\
+@"\uEA91",\
+@"\uEA92",\
+@"\uEA93",\
+@"\uEA94",\
+@"\uEA95",\
+@"\uEA96",\
+@"\uEA97",\
+@"\uEA98",\
+@"\uEA99",\
+@"\uEA9A",\
+@"\uEA9B",\
+@"\uEA9C",\
+@"\uEA9D",\
+@"\uEA9E",\
+@"\uEA9F",\
+@"\uEAA0",\
+@"\uEAA1",\
+@"\uEAA2",\
+@"\uEAA3",\
+@"\uEAA4",\
+@"\uEAA5",\
+@"\uEAA6",\
+@"\uEAA7",\
+@"\uEAA8",\
+@"\uEAA9",\
+@"\uEAAA",\
+@"\uEAAB",\
+@"\uEAAC",\
+@"\uEAAD",\
+@"\uEAAE",\
+@"\uEAAF",\
+@"\uEAB0",\
+@"\uEAB1",\
+@"\uEAB2",\
+@"\uEAB3" \
 ] objectAtIndex:enum]
 
 
-@implementation SLDSIconCustom
+@implementation SLDSIconAction
 
 static float const colors[][3] = {
-    {1,0.482,0.518},
+{0.627,0.58,0.929},
+{0.384,0.718,0.929},
+{0.996,0.561,0.376},
+{0.412,0.431,0.443},
+{0,0.776,0.718},
+{0.051,0.761,0.851},
+{0.122,0.792,0.627},
+{0.506,0.6,0.686},
+{0.329,0.412,0.553},
+{0.329,0.412,0.553},
+{0.329,0.412,0.553},
+{0.424,0.631,0.914},
+{0.937,0.431,0.392},
+{0.937,0.494,0.678},
+{0.902,0.443,0.486},
+{0.49,0.765,0.49},
+{0.545,0.604,0.89},
+{0.329,0.412,0.553},
+{0.114,0.8,0.749},
+{0.204,0.745,0.804},
+{0.114,0.8,0.749},
+{0.584,0.682,0.773},
+{0.596,0.584,0.933},
+{0.992,0.565,0.71},
+{0,0.475,0.737},
+{0.192,0.725,0.973},
+{0.49,0.812,0.392},
+{0.329,0.412,0.553},
+{0.337,0.667,0.875},
+{0.961,0.404,0.357},
+{0.329,0.412,0.553},
+{0.467,0.62,0.949},
+{0.973,0.537,0.384},
+{0.953,0.62,0.345},
+{0.282,0.765,0.8},
+{0.424,0.631,0.914},
+{0.329,0.412,0.553},
+{0.463,0.776,0.933},
+{0.384,0.718,0.929},
+{0.2,0.737,0.906},
+{0.498,0.553,0.882},
+{0.957,0.592,0.337},
+{0.949,0.812,0.357},
+{0.98,0.592,0.361},
+{0.627,0.58,0.929},
+{1,0.482,0.518},
 {0.392,0.533,0.89},
 {0.882,0.365,0.463},
 {0.529,0.518,0.918},
@@ -214,14 +330,48 @@ static float const colors[][3] = {
 {0.427,0.616,0.89},
 {0.867,0.376,0.522},
 {0.882,0.745,0.361},
-{0.941,0.522,0.431}
+{0.941,0.522,0.431},
+{0.922,0.439,0.573},
+{0.514,0.714,1},
+{0.973,0.537,0.384},
+{0.902,0.831,0.471},
+{0.902,0.831,0.471},
+{0.988,0.725,0.357},
+{0.498,0.553,0.882},
+{0.294,0.753,0.463},
+{0.329,0.412,0.553},
+{0.498,0.553,0.882},
+{0.984,0.706,0.224},
+{0.196,0.686,0.361},
+{0.533,0.776,0.318},
+{0.49,0.765,0.49},
+{0.329,0.412,0.553},
+{0,0.776,0.718},
+{0.329,0.412,0.553},
+{0.937,0.431,0.392},
+{0.329,0.412,0.553},
+{0.329,0.412,0.553},
+{0.729,0.675,0.576},
+{0.478,0.604,0.902},
+{0.412,0.608,0.882},
+{0.396,0.792,0.894},
+{0.914,0.412,0.431},
+{0.98,0.725,0.647},
+{0.314,0.8,0.478},
+{0.506,0.706,0.839},
+{0.118,0.78,0.745},
+{0.329,0.412,0.553},
+{0.396,0.792,0.894},
+{0.329,0.412,0.553},
+{0.235,0.592,0.867},
+{0.337,0.667,0.875}
 };
 
-+ (NSString *)sldsIconUniCode:(SLDSIconCustomType)icon{
++ (NSString *)sldsIconUniCode:(SLDSIconActionType)icon{
     return iconUniCode(icon);
 }
 
-+ (UIColor *)bgColor:(SLDSIconCustomType)icon{
++ (UIColor *)bgColor:(SLDSIconActionType)icon{
     if(colors[icon][0]<0 || colors[icon][1]<0 || colors[icon][2]<0){
         return nil;
     }

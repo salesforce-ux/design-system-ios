@@ -12,8 +12,8 @@ const _ 			= require('lodash');
 
 const __PATHS__ = {
   designTokens: path.join(__dirname,'node_modules','@salesforce-ux','design-system','design-tokens','dist','force-base.ios.json'),
-  iconTokens: path.join(__dirname,'node_modules','@salesforce-ux','design-system','design-tokens','dist'),
-  icons: path.join(__dirname,'node_modules','@salesforce-ux','design-system','assets','icons'),
+  iconTokens: path.join(__dirname,'node_modules','@salesforce-ux','design-system','design-tokens','dist','bg-actions.ios.json'),
+  icons: path.join(__dirname,'node_modules','@salesforce-ux','design-system','assets','icons','action'),
   output: path.join(__dirname, 'SalesforceDesignSystem','generated')
 };
 
@@ -79,30 +79,30 @@ gulp.task('template:design-tokens', () => {
 		for (let type in data) {
 		if (data.hasOwnProperty(type)) {
 			let updatedType = type === 'FontSize' ? 'Font' : type
-			console.log('templates/' + updatedType + '/UI' + updatedType + '.h.njk')
-					streams.push(
-						gulp.src('templates/' + updatedType + '/UI' + updatedType + '.h.njk')
-							.pipe(nunjucks.compile({ 'data': data[type] }))
-							.pipe(rename('extensions/UI' + updatedType + '+SLDS' + updatedType + '.h'))
-					);
+			
+			streams.push(
+				gulp.src('templates/' + updatedType + '/UI' + updatedType + '.h.njk')
+					.pipe(nunjucks.compile({ 'data': data[type] }))
+					.pipe(rename('Extensions/UI' + updatedType + '+SLDS' + updatedType + '.h'))
+			);
 
-					streams.push(
-						gulp.src('templates/' + updatedType + '/UI' + updatedType + '.m.njk')
-							.pipe(nunjucks.compile({ 'data': data[type] }))
-							.pipe(rename('extensions/UI' + updatedType + '+SLDS' + updatedType + '.m'))
-					);
+			streams.push(
+				gulp.src('templates/' + updatedType + '/UI' + updatedType + '.m.njk')
+					.pipe(nunjucks.compile({ 'data': data[type] }))
+					.pipe(rename('Extensions/UI' + updatedType + '+SLDS' + updatedType + '.m'))
+			);
 
-					streams.push(
-						gulp.src('templates/' + updatedType + '/SLDS' + updatedType + '.m.njk')
-							.pipe(nunjucks.compile({ 'data': data[type] }))
-							.pipe(rename('SLDS' + updatedType + '.m'))
-					);
+			streams.push(
+				gulp.src('templates/' + updatedType + '/SLDS' + updatedType + '.m.njk')
+					.pipe(nunjucks.compile({ 'data': data[type] }))
+					.pipe(rename('SLDS' + updatedType + '.m'))
+			);
 
-					streams.push(
-						gulp.src('templates/' + updatedType + '/SLDS' + updatedType + '.h.njk')
-							.pipe(nunjucks.compile({ 'data': data[type] }))
-							.pipe(rename('SLDS' + updatedType + '.h'))
-					);
+			streams.push(
+				gulp.src('templates/' + updatedType + '/SLDS' + updatedType + '.h.njk')
+					.pipe(nunjucks.compile({ 'data': data[type] }))
+					.pipe(rename('SLDS' + updatedType + '.h'))
+			);
 		}
 	}
 
@@ -114,52 +114,17 @@ gulp.task('template:design-tokens', () => {
 
 let icons = [];
 
-// extract categories for a particular property type, add to categories object
-const parseIconTokens = () => {
-	return through.obj((file, enc, next) => {
-		let tokens = JSON.parse(file.contents.toString('utf-8'));
-
-		// push unique categories
-		tokens.properties.forEach(p => {
-
-      let bgColor = parseColor(p.value)
-
-			icons.push({
-				"name" : p.name,
-				"bgColor" : bgColor
-			})
-		});
-
-		console.log(icons)
-
-    file.contents = new Buffer(JSON.stringify(tokens), 'utf-8');
-    next(null, file);
-	});
-}
-
-gulp.task('template:icon-tokens', () => {
-	let streams = [];
-
-
-	icons.forEach(i => {
-
-	})
-
-	// return merge2(streams).pipe(gulp.dest(__PATHS__.output))
-})
-
 gulp.task('parse:design-tokens', () => {
 	return gulp.src([path.resolve(__PATHS__.designTokens)])
 	  .pipe(parseDesignTokens())
 })
 
-gulp.task('parse:icon-tokens', () => {
-	return gulp.src([path.resolve(__PATHS__.iconTokens)])
-	  .pipe(parseIconTokens())
-})
-
 gulp.task('default', () => {
 	runSequence('parse:design-tokens', 'template:design-tokens')
+});
+
+gulp.task('icons', () => {
+	runSequence('create:icon-fonts', 'parse:icon-tokens', 'template:icon-tokens')
 });
 
 
@@ -195,9 +160,11 @@ gulp.task('default', () => {
 
 
 const iconFont 		= require('gulp-iconfont');
-const svgMin 			= require('gulp-svgmin');
+const svgMin 		= require('gulp-svgmin');
 const fontPlugin 	= require('./fontPlugin.js');
 const gulpFilter 	= require('gulp-filter');
+const tap 			= require('gulp-tap');
+const gulpData		= require('gulp-data');
 
 gulp.task('create:icon-fonts', () => {
 	const ttfFilter = gulpFilter('**/*.ttf');
@@ -227,3 +194,66 @@ gulp.task('create:icon-fonts', () => {
     .pipe(ttfFilter)
     .pipe(gulp.dest('SalesforceDesignSystem.bundle/'));
 });
+
+gulp.task('parse:icon-tokens', () => {
+	return gulp.src(path.resolve(__PATHS__.iconTokens))
+	    .pipe(parseIconTokens())
+})
+
+gulp.task('template:icon-tokens', () => {
+	let streams = [];
+
+
+	icons.forEach(i => {
+		streams.push(
+			gulp.src('templates/Icon/UIImage.h.njk')
+				.pipe(nunjucks.compile({ 'data': i }))
+				.pipe(rename('Extensions/UIImage+SLDSIcon.h'))
+		);
+
+		streams.push(
+			gulp.src('templates/Icon/UIImage.m.njk')
+				.pipe(nunjucks.compile({ 'data': i }))
+				.pipe(rename('Extensions/UIImage+SLDSIcon.m'))
+		);
+
+		streams.push(
+			gulp.src('templates/Icon/SLDSIcon.m.njk')
+				.pipe(nunjucks.compile({ 'data': i }))
+				.pipe(rename('SLDSIcon.m'))
+		);
+
+		streams.push(
+			gulp.src('templates/Icon/SLDSIcon.h.njk')
+				.pipe(nunjucks.compile({ 'data': i }))
+				.pipe(rename('SLDSIcon.h'))
+		);
+	})
+
+	return merge2(streams).pipe(gulp.dest(__PATHS__.output))
+})
+
+// extract categories for a particular property type, add to categories object
+const parseIconTokens = () => {
+	return through.obj((file, enc, next) => {
+
+		let iconNames = (fs.readdirSync(path.resolve(__PATHS__.icons))).filter(n => { 
+			return n.indexOf('.svg') !== -1;
+		}).map(i => {
+			return 'action' + format(i.replace('.svg',''));
+		});
+
+		let tokens = JSON.parse(file.contents.toString('utf-8'));
+
+		iconNames.forEach(n => {
+			let icon = _.find(tokens.properties, { 'name': n })
+			let backgroundColor = parseColor(icon.value)
+			icons.push({
+				"name" : icon.name,
+				"backgroundColor" : backgroundColor
+			});
+		});
+
+    next(null, file);
+	});
+}
