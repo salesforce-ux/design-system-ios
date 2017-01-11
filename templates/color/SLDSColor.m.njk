@@ -17,6 +17,10 @@ static float const sldsColors[][4] = { {% for categoryName, category in data %}{
   return [self colorForIndex:colorType];
 }{% endfor %}
 
++(NSString*)sldsColorName:(NSInteger)colorType {
+    return sldsColorTypeNames(colorType);
+}
+
 +(UIColor*)colorForIndex:(NSInteger)index {
     static NSMutableArray *colorCache = nil;
     if (colorCache == nil) {

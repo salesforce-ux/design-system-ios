@@ -17,6 +17,6 @@
 }
 
 +(NSString*)sldsColorName:(NSInteger)colorType {
-    return sldsColorTypeNames(colorType);
+    return  [SLDSColor sldsColorName:colorType];
 }
 @end

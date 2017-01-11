@@ -11,5 +11,5 @@ typedef NS_ENUM(NSInteger, SLDS{{categoryName}}Type) {
 @interface SLDSColor : NSObject
 {% for categoryName, category in data %}
 +(UIColor *)slds{{categoryName}}:(SLDS{{categoryName}}Type)colorType;{% endfor %}
-
++(NSString*) sldsColorName:(NSInteger)colorType;
 @end

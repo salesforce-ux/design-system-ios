@@ -49,7 +49,6 @@
 		056AFA0D1B4DBA8400C14197 /* SLDSColorTxtTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSColorTxtTemplate.m; path = Templates/SLDSColorTxtTemplate.m; sourceTree = "<group>"; };
 		0576C3DE1B6880EF002A7254 /* SLDSIconLabelStandardTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSIconLabelStandardTemplate.h; path = Templates/SLDSIconLabelStandardTemplate.h; sourceTree = "<group>"; };
 		0576C3DF1B6880EF002A7254 /* SLDSIconLabelStandardTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLDSIconLabelStandardTemplate.m; path = Templates/SLDSIconLabelStandardTemplate.m; sourceTree = "<group>"; };
-		05910A001B583CF100C89AEC /* SalesforceDesignSystemExtended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesforceDesignSystemExtended.h; sourceTree = "<group>"; };
 		05D89ADD1D808A3D00516C3C /* SLDSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSFont.h; path = Generated/SLDSFont.h; sourceTree = "<group>"; };
 		05D89ADE1D808A3D00516C3C /* SLDSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSFont.m; path = Generated/SLDSFont.m; sourceTree = "<group>"; };
 		05EEF0551B694FF2002D5939 /* SLDSIconLabelCustomTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLDSIconLabelCustomTemplate.m; path = Templates/SLDSIconLabelCustomTemplate.m; sourceTree = "<group>"; };
@@ -105,7 +104,6 @@
 				052B1F281B9686A5003CCCCC /* DesignSystem.h */,
 				05A7B03B1B2A4F3F00B5FB86 /* Generated */,
 				051031E91B29F1020094A6B2 /* SalesforceDesignSystem.h */,
-				05910A001B583CF100C89AEC /* SalesforceDesignSystemExtended.h */,
 				056AF9FF1B4DBA7200C14197 /* Templates */,
 			);
 			path = SalesforceDesignSystem;

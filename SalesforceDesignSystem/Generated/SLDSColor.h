@@ -289,5 +289,5 @@ typedef NS_ENUM(NSInteger, SLDSTextColorType) {
 +(UIColor *)sldsBorderColor:(SLDSBorderColorType)colorType;
 +(UIColor *)sldsBackgroundColor:(SLDSBackgroundColorType)colorType;
 +(UIColor *)sldsTextColor:(SLDSTextColorType)colorType;
-
++(NSString*) sldsColorName:(NSInteger)colorType;
 @end

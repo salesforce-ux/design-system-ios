@@ -71,4 +71,20 @@
     @32,\
 ] objectAtIndex:enum]
 
++(NSString*)sldsFontFileName:(SLDSFontType)fontType {
+    return sldsFontFileNames(fontType);
+}
+
++(NSString*)sldsFontTypeName:(SLDSFontType)fontType {
+    return sldsFontTypeNames(fontType);
+}
+
++(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType {
+    return sldsFontSizeNames(sizeType);
+}
+
++(CGFloat)sldsFontSize:(SLDSFontSizeType)sizeType {
+    return [sldsFontSizes(sizeType) floatValue];
+}
+
 @end
