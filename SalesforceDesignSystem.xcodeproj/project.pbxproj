@@ -10,7 +10,6 @@
 		051032011B29F15C0094A6B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051032001B29F15C0094A6B2 /* UIKit.framework */; };
 		051032031B29F17C0094A6B2 /* SalesforceDesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 051031E91B29F1020094A6B2 /* SalesforceDesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0516E9561B4D9D2400F8B6B0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0516E9551B4D9D2400F8B6B0 /* CoreText.framework */; };
-		052B1F2A1B9686A5003CCCCC /* DesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 052B1F281B9686A5003CCCCC /* DesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05D89AFC1D808A3D00516C3C /* SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89ADD1D808A3D00516C3C /* SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20F463991E2576F90049AA6D /* UIColor+SLDSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F463971E2576F90049AA6D /* UIColor+SLDSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20F4639A1E2576F90049AA6D /* UIColor+SLDSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F463981E2576F90049AA6D /* UIColor+SLDSColor.m */; };
@@ -25,7 +24,6 @@
 		051032001B29F15C0094A6B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		051032221B29FEA50094A6B2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0516E9551B4D9D2400F8B6B0 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		052B1F281B9686A5003CCCCC /* DesignSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignSystem.h; sourceTree = "<group>"; };
 		0539D1A51B685CB700A7DFD2 /* SLDSIconLabelActionTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSIconLabelActionTemplate.h; path = Templates/SLDSIconLabelActionTemplate.h; sourceTree = "<group>"; };
 		0539D1A61B685CB700A7DFD2 /* SLDSIconLabelActionTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLDSIconLabelActionTemplate.m; path = Templates/SLDSIconLabelActionTemplate.m; sourceTree = "<group>"; };
 		055D1E701B5DE52C00987466 /* SLDSIconUtilityTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSIconUtilityTemplate.h; path = Templates/SLDSIconUtilityTemplate.h; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 		051031E81B29F1020094A6B2 /* SalesforceDesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				052B1F281B9686A5003CCCCC /* DesignSystem.h */,
 				05A7B03B1B2A4F3F00B5FB86 /* Generated */,
 				051031E91B29F1020094A6B2 /* SalesforceDesignSystem.h */,
 				056AF9FF1B4DBA7200C14197 /* Templates */,
@@ -141,10 +138,8 @@
 		05A7B03B1B2A4F3F00B5FB86 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				20F4639F1E25779E0049AA6D /* UIFont+SLDSFont.h */,
-				20F463A01E25779E0049AA6D /* UIFont+SLDSFont.m */,
-				20F4639B1E2577020049AA6D /* SLDSColor.h */,
 				20F463961E2576C00049AA6D /* Extensions */,
+				20F4639B1E2577020049AA6D /* SLDSColor.h */,
 				05D89ADD1D808A3D00516C3C /* SLDSFont.h */,
 			);
 			name = Generated;
@@ -153,6 +148,8 @@
 		20F463961E2576C00049AA6D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				20F4639F1E25779E0049AA6D /* UIFont+SLDSFont.h */,
+				20F463A01E25779E0049AA6D /* UIFont+SLDSFont.m */,
 				20F463971E2576F90049AA6D /* UIColor+SLDSColor.h */,
 				20F463981E2576F90049AA6D /* UIColor+SLDSColor.m */,
 			);
@@ -171,7 +168,6 @@
 				20F463A11E25779E0049AA6D /* UIFont+SLDSFont.h in Headers */,
 				20F463991E2576F90049AA6D /* UIColor+SLDSColor.h in Headers */,
 				051032031B29F17C0094A6B2 /* SalesforceDesignSystem.h in Headers */,
-				052B1F2A1B9686A5003CCCCC /* DesignSystem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
