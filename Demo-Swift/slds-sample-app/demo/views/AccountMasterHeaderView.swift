@@ -32,7 +32,7 @@ class AccountMasterHeaderView: AccountHeaderView {
         
         headerSubText = UILabel()
         headerSubText.text = "5 items, sorted by Account Name"
-        headerSubText.font = UIFont.sldsFont(.regular, with: .small)
+        headerSubText.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
         headerSubText.textColor = UIColor.sldsTextColor(.colorTextDefault)
         
         self.addSubview(headerSubText)

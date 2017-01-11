@@ -3,47 +3,34 @@
 
 @implementation SLDSFont : NSObject
 
-#define sldsFontTypeNames(enum) [@[\
-@"SLDSFontTypeRegular",
-@"SLDSFontTypeItalic",
-@"SLDSFontTypeBold",
-@"SLDSFontTypeBoldItalic",
-@"SLDSFontTypeLight",
-@"SLDSFontTypeLightItalic",
-@"SLDSFontTypeThin",
-@"SLDSFontTypeThinItalic"
-] objectAtIndex:enum]
-
 #define sldsFontFileNames(enum) [@[\
-@"SalesforceSans-Regular.ttf",
-@"SalesforceSans-Italic.ttf",
-@"SalesforceSans-Bold.ttf",
-@"SalesforceSans-BoldItalic.ttf",
-@"SalesforceSans-Light.ttf",
-@"SalesforceSans-LightItalic.ttf",
-@"SalesforceSans-Thin.ttf",
-@"SalesforceSans-ThinItalic.ttf"
+    @"SalesforceSans-Regular.ttf",\
+    @"SalesforceSans-Italic.ttf",\
+    @"SalesforceSans-Bold.ttf",\
+    @"SalesforceSans-BoldItalic.ttf",\
+    @"SalesforceSans-Light.ttf",\
+    @"SalesforceSans-LightItalic.ttf",\
+    @"SalesforceSans-Thin.ttf",\
+    @"SalesforceSans-ThinItalic.ttf"\
 ] objectAtIndex:enum]
 
-// Note : Needed for dynamic enum iteration
-+(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType {
-    NSArray *arr = @[
-                    {% for size in data.FontSize %}
-                    @"{{size.name}}"{% if not loop.last %},{% endif %}{% endfor %}
-                     ];
-    return (NSString *)[arr objectAtIndex:sizeType];
-}
+#define sldsFontTypeNames(enum) [@[\
+    @"SLDSFontTypeRegular",\
+    @"SLDSFontTypeItalic",\
+    @"SLDSFontTypeBold",\
+    @"SLDSFontTypeBoldItalic",\
+    @"SLDSFontTypeLight",\
+    @"SLDSFontTypeLightItalic",\
+    @"SLDSFontTypeThin",\
+    @"SLDSFontTypeThinItalic"\
+] objectAtIndex:enum]
 
+#define sldsFontSizeNames(enum) [@[\{% for size in data.FontSize %}
+    @"{{size.name}}",\{% endfor %}
+] objectAtIndex:enum]
 
-
-+(NSInteger)sldsFontSize:(SLDSFontSizeType)sizeType {
-    NSArray *arr = @[
-                    {% for size in data.FontSize %}
-                    @{{size.value}}{% if not loop.last %},{% endif %}{% endfor %}
-                     ];
-    return [[arr objectAtIndex:sizeType] integerValue];
-}
-
-
+#define sldsFontSizes(enum) [@[\{% for size in data.FontSize %}
+    @{{size.value}},\{% endfor %}
+] objectAtIndex:enum]
 
 @end

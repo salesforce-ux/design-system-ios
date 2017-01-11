@@ -48,7 +48,7 @@ class MainListViewController: UITableViewController {
                                                                                                             andSize: SLDSSquareIconUtilityMedium).withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -1, 0))
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,
-                                                                   NSFontAttributeName: UIFont.sldsFont(.regular, with: .mediumA)]
+                                                                   NSFontAttributeName: UIFont.sldsFont(.regular, with: .fontSizeMedium)]
         
         self.title = "Lightning Design System"
         self.tableView.alwaysBounceVertical = false

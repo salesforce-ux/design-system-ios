@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20191FDB1DEE4F89007C8BD8 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20191FDA1DEE4F89007C8BD8 /* CustomFont.bundle */; };
+		206634CC1E25B6FE005B9381 /* libSalesforceDesignSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7F2E371DF2037E0011684A /* libSalesforceDesignSystem.a */; };
 		209436AE1DF103EF00D70A60 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2094367D1DF0EBF400D70A60 /* SalesforceDesignSystem.bundle */; };
 		20F03F531E00D938001EE121 /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F4F1E00D938001EE121 /* AccountDetailViewController.swift */; };
 		20F03F541E00D938001EE121 /* AccountMasterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F501E00D938001EE121 /* AccountMasterListViewController.swift */; };
@@ -41,7 +42,6 @@
 		20F03F8F1E00D99A001EE121 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F881E00D99A001EE121 /* SectionHeaderView.swift */; };
 		20F03F901E00D99A001EE121 /* SwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F891E00D99A001EE121 /* SwatchView.swift */; };
 		FC1EA4681DDE6F6300304E01 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */; };
-		FC7F2E3E1DF2038A0011684A /* libSalesforceDesignSystem-Extended.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7F2E3B1DF2037E0011684A /* libSalesforceDesignSystem-Extended.a */; };
 		FC7FB0101E030E07004EB658 /* AccountDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7FB00F1E030E07004EB658 /* AccountDetailListViewController.swift */; };
 		FC7FB0121E030FB5004EB658 /* AccountDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7FB0111E030FB5004EB658 /* AccountDetailCell.swift */; };
 		FC7FB0141E03519B004EB658 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7FB0131E03519B004EB658 /* SearchController.swift */; };
@@ -50,33 +50,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		206634CA1E25B6FB005B9381 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 051031E51B29F1020094A6B2;
+			remoteInfo = SalesforceDesignSystem;
+		};
 		FC7F2E361DF2037E0011684A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 051031E61B29F1020094A6B2;
 			remoteInfo = SalesforceDesignSystem;
-		};
-		FC7F2E381DF2037E0011684A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 051C4D151B2FD398001CDF18;
-			remoteInfo = "SalesforceDesignSystem-headers";
-		};
-		FC7F2E3A1DF2037E0011684A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 059109FB1B583B8900C89AEC;
-			remoteInfo = "SalesforceDesignSystem-Extended";
-		};
-		FC7F2E3C1DF203850011684A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 059109B21B583B8900C89AEC;
-			remoteInfo = "SalesforceDesignSystem-Extended";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -131,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC7F2E3E1DF2038A0011684A /* libSalesforceDesignSystem-Extended.a in Frameworks */,
+				206634CC1E25B6FE005B9381 /* libSalesforceDesignSystem.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,8 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				FC7F2E371DF2037E0011684A /* libSalesforceDesignSystem.a */,
-				FC7F2E391DF2037E0011684A /* libSalesforceDesignSystem-headers.a */,
-				FC7F2E3B1DF2037E0011684A /* libSalesforceDesignSystem-Extended.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,7 +299,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				FC7F2E3D1DF203850011684A /* PBXTargetDependency */,
+				206634CB1E25B6FB005B9381 /* PBXTargetDependency */,
 			);
 			name = "slds-sample-app";
 			productName = "slds-sample-app";
@@ -369,20 +353,6 @@
 			fileType = archive.ar;
 			path = libSalesforceDesignSystem.a;
 			remoteRef = FC7F2E361DF2037E0011684A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FC7F2E391DF2037E0011684A /* libSalesforceDesignSystem-headers.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libSalesforceDesignSystem-headers.a";
-			remoteRef = FC7F2E381DF2037E0011684A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FC7F2E3B1DF2037E0011684A /* libSalesforceDesignSystem-Extended.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libSalesforceDesignSystem-Extended.a";
-			remoteRef = FC7F2E3A1DF2037E0011684A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -447,10 +417,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FC7F2E3D1DF203850011684A /* PBXTargetDependency */ = {
+		206634CB1E25B6FB005B9381 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "SalesforceDesignSystem-Extended";
-			targetProxy = FC7F2E3C1DF203850011684A /* PBXContainerItemProxy */;
+			name = SalesforceDesignSystem;
+			targetProxy = 206634CA1E25B6FB005B9381 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

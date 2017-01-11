@@ -6,11 +6,58 @@
  Neither the name of salesforce.com, inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-#import "SLDSIconStandard.h"
+typedef NS_ENUM(NSInteger, SLDSTest1Type) {
+    SLDSTest1Type0 = 0,
+    SLDSTest1Type1,
+    SLDSTest1Type2,
+    SLDSTest1Type3,
+    SLDSTest1Type4,
+    SLDSTest1Type5,
+    SLDSTest1Type6,
+    SLDSTest1Type7
+};
+
+typedef NS_ENUM(NSInteger, SLDSTest2Type) {
+    SLDSTest2Type0 = SLDSTest1Type7+1,
+    SLDSTest2Type1,
+    SLDSTest2Type2,
+    SLDSTest2Type3,
+    SLDSTest2Type4,
+    SLDSTest2Type5,
+    SLDSTest2Type6,
+    SLDSTest2Type7
+};
 
 
-@interface NSString (SLDSIconStandard)
-+(instancetype)sldsIconStandard:(SLDSIconStandardType)icon;
+typedef NS_ENUM(NSInteger, SLDSFontSizeType) {
+	SLDSFontSizeXSmall,
+	SLDSFontSizeSmall,
+	SLDSFontSizeMedium,
+	SLDSFontSizeMediumA,
+	SLDSFontSizeLarge,
+	SLDSFontSizeXLarge,
+	SLDSFontSizeXLargeA,
+	SLDSFontSizeXXLarge
+};
+
+typedef NS_ENUM(NSInteger, SLDSFontType) {
+    SLDSFontTypeRegular,
+    SLDSFontTypeItalic,
+    SLDSFontTypeBold,
+    SLDSFontTypeBoldItalic,
+    SLDSFontTypeLight,
+    SLDSFontTypeLightItalic,
+    SLDSFontTypeThin,
+    SLDSFontTypeThinItalic
+};
+
+@interface SLDSFont : NSObject
+
++(NSInteger)sldsFontSize:(SLDSFontSizeType)fontSize;
++(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType;
++(NSString*)sldsFontTypeName:(SLDSFontType)fontType;
++(NSString*)sldsFontFileName:(SLDSFontType)fontType;
+
 @end

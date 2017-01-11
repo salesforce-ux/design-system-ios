@@ -2,8 +2,9 @@
 
 @implementation SLDSColor
 
-static float const sldsColors[][4] = {
-	
+
+
+static float const sldsColors[][4] = { 
 	{0,0.112,0.21,1},
 	{0,0.095,0.178,1},
 	{0.022,0.05,0.092,1},
@@ -264,45 +265,285 @@ static float const sldsColors[][4] = {
 	{0.075,0.202,0.129,1},
 	{0.084,0.105,0.141,1},
 	{0.255,0.255,0.255,1},
-	{0.255,0.255,0.255,0.4}
+	{0.255,0.255,0.255,0.4},
 };
 
 #define sldsColorTypeNames(enum) [@[\
-@"fillBrand",\
-@"fillBrandHover",\
-@"fillBrandActive",\
-@"fillHeaderButton",\
-@"fillHeaderButtonHover",\
-@"colorBorder",\
-@"colorBorderBrand",\
-@"colorBorderBrandDark",\
-@"colorBorderCustomer",\
-@"colorBorderDestructive",\
-@"colorBorderDestructiveHover",\
-@"colorBorderDestructiveActive",\
-@"colorBorderInfo",\
-@"colorBorderError",\
-@"colorBorderErrorAlt",\
-@"colorBorderErrorDark",\
-@"colorBorderOffline",\
-@"colorBorderSuccess",\
-@"colorBorderSuccessDark"\
+	@"fillBrand",\
+	@"fillBrandHover",\
+	@"fillBrandActive",\
+	@"fillHeaderButton",\
+	@"fillHeaderButtonHover",\
+	@"colorBorder",\
+	@"colorBorderBrand",\
+	@"colorBorderBrandDark",\
+	@"colorBorderCustomer",\
+	@"colorBorderDestructive",\
+	@"colorBorderDestructiveHover",\
+	@"colorBorderDestructiveActive",\
+	@"colorBorderInfo",\
+	@"colorBorderError",\
+	@"colorBorderErrorAlt",\
+	@"colorBorderErrorDark",\
+	@"colorBorderOffline",\
+	@"colorBorderSuccess",\
+	@"colorBorderSuccessDark",\
+	@"colorBorderWarning",\
+	@"colorBorderInverse",\
+	@"colorBorderTabSelected",\
+	@"colorBorderTabActive",\
+	@"colorBorderSeparator",\
+	@"colorBorderSeparatorAlt",\
+	@"colorBorderSeparatorAlt2",\
+	@"colorBorderSeparatorInverse",\
+	@"colorBorderRowSelected",\
+	@"colorBorderRowSelectedHover",\
+	@"colorBorderHint",\
+	@"colorBorderSelection",\
+	@"colorBorderSelectionHover",\
+	@"colorBorderSelectionActive",\
+	@"colorBorderCanvasElementSelection",\
+	@"colorBorderCanvasElementSelectionHover",\
+	@"colorBorderIconInverseHint",\
+	@"colorBorderIconInverseHintHover",\
+	@"colorBorderButtonBrand",\
+	@"colorBorderButtonBrandDisabled",\
+	@"colorBorderButtonDefault",\
+	@"colorBorderButtonInverseDisabled",\
+	@"colorBorderInput",\
+	@"colorBorderInputActive",\
+	@"colorBorderInputDisabled",\
+	@"colorBorderInputCheckboxSelectedCheckmark",\
+	@"colorBorderToggleChecked",\
+	@"colorStrokeBrand",\
+	@"colorStrokeBrandHover",\
+	@"colorStrokeBrandActive",\
+	@"colorStrokeDisabled",\
+	@"colorStrokeHeaderButton",\
+	@"colorBorderContextBarDivider",\
+	@"colorBorderContextBarItem",\
+	@"colorBorderContextBarInverseItem",\
+	@"colorBorderContextBarThemeDefault",\
+	@"colorBorderContextBarThemeDefaultAlt",\
+	@"colorBorderContextBarThemeDefaultHover",\
+	@"colorBorderContextBarThemeDefaultActive",\
+	@"colorBorderPathDivider",\
+	@"progressColorBorder",\
+	@"progressColorBorderShade",\
+	@"progressColorBorderHover",\
+	@"progressColorBorderActive",\
+	@"splitViewColorBorder",\
+	@"colorBackground",\
+	@"colorBackgroundAlt",\
+	@"colorBackgroundAlt2",\
+	@"colorBackgroundAltInverse",\
+	@"colorBackgroundRowHover",\
+	@"colorBackgroundRowActive",\
+	@"colorBackgroundRowSelected",\
+	@"colorBackgroundRowNew",\
+	@"colorBackgroundInverse",\
+	@"colorBackgroundBrowser",\
+	@"colorBackgroundChromeMobile",\
+	@"colorBackgroundChromeDesktop",\
+	@"colorBackgroundCustomer",\
+	@"colorBackgroundHighlight",\
+	@"colorBackgroundHighlightSearch",\
+	@"colorBackgroundSelection",\
+	@"colorBackgroundActionbarIconUtility",\
+	@"colorBackgroundIndicatorDot",\
+	@"colorBackgroundSpinnerDot",\
+	@"colorBackgroundModal",\
+	@"colorBackgroundModalBrand",\
+	@"colorBackgroundNotificationBadge",\
+	@"colorBackgroundNotificationBadgeHover",\
+	@"colorBackgroundNotificationBadgeFocus",\
+	@"colorBackgroundNotificationBadgeActive",\
+	@"colorBackgroundNotification",\
+	@"colorBackgroundNotificationNew",\
+	@"colorBackgroundOrgSwitcherArrow",\
+	@"colorBackgroundPayload",\
+	@"colorBackgroundPost",\
+	@"colorBackgroundUtilityBarHover",\
+	@"colorBackgroundUtilityBarActive",\
+	@"colorBackgroundShade",\
+	@"colorBackgroundShadeDark",\
+	@"colorBackgroundStencil",\
+	@"colorBackgroundStencilAlt",\
+	@"colorBackgroundTempModal",\
+	@"colorBackgroundTempModalTint",\
+	@"colorBackgroundTempModalTintAlt",\
+	@"colorBackgroundBackdrop",\
+	@"colorBackgroundBackdropTint",\
+	@"colorBackgroundScrollbar",\
+	@"colorBackgroundScrollbarTrack",\
+	@"colorBrand",\
+	@"colorBrandDark",\
+	@"colorBrandDarker",\
+	@"colorBackgroundToggle",\
+	@"colorBackgroundToggleDisabled",\
+	@"colorBackgroundToggleHover",\
+	@"colorBackgroundToggleActive",\
+	@"colorBackgroundToggleActiveHover",\
+	@"colorBackgroundModalButton",\
+	@"colorBackgroundModalButtonActive",\
+	@"colorBackgroundInput",\
+	@"colorBackgroundInputActive",\
+	@"colorBackgroundInputCheckbox",\
+	@"colorBackgroundInputCheckboxDisabled",\
+	@"colorBackgroundInputCheckboxSelected",\
+	@"colorBackgroundInputDisabled",\
+	@"colorBackgroundInputError",\
+	@"colorBackgroundInputSearch",\
+	@"colorBackgroundPill",\
+	@"colorBackgroundImageOverlay",\
+	@"colorBackgroundDestructive",\
+	@"colorBackgroundDestructiveHover",\
+	@"colorBackgroundDestructiveActive",\
+	@"colorBackgroundInfo",\
+	@"colorBackgroundError",\
+	@"colorBackgroundErrorDark",\
+	@"colorBackgroundErrorAlt",\
+	@"colorBackgroundOffline",\
+	@"colorBackgroundSuccess",\
+	@"colorBackgroundSuccessDark",\
+	@"colorBackgroundToast",\
+	@"colorBackgroundToastSuccess",\
+	@"colorBackgroundToastError",\
+	@"colorBackgroundWarning",\
+	@"colorBackgroundButtonSuccess",\
+	@"colorBackgroundButtonSuccessHover",\
+	@"colorBackgroundButtonSuccessActive",\
+	@"colorBackgroundButtonBrand",\
+	@"colorBackgroundButtonBrandActive",\
+	@"colorBackgroundButtonBrandHover",\
+	@"colorBackgroundButtonBrandDisabled",\
+	@"colorBackgroundButtonDefault",\
+	@"colorBackgroundButtonDefaultHover",\
+	@"colorBackgroundButtonDefaultFocus",\
+	@"colorBackgroundButtonDefaultActive",\
+	@"colorBackgroundButtonDefaultDisabled",\
+	@"colorBackgroundButtonIcon",\
+	@"colorBackgroundButtonIconHover",\
+	@"colorBackgroundButtonIconFocus",\
+	@"colorBackgroundButtonIconActive",\
+	@"colorBackgroundButtonIconDisabled",\
+	@"colorBackgroundButtonInverse",\
+	@"colorBackgroundButtonInverseActive",\
+	@"colorBackgroundButtonInverseDisabled",\
+	@"cardColorBackground",\
+	@"colorBackgroundDockedPanelHeader",\
+	@"colorBackgroundContextBar",\
+	@"colorBackgroundContextBarBrandAccent",\
+	@"colorBackgroundContextBarItemHover",\
+	@"colorBackgroundContextBarItemActive",\
+	@"colorBackgroundContextTabBarItem",\
+	@"colorBackgroundContextBarInverseItemHover",\
+	@"colorBackgroundContextBarInverseItemActive",\
+	@"colorBackgroundContextBarActionHighlight",\
+	@"colorBackgroundIconWaffle",\
+	@"colorBackgroundAnchor",\
+	@"colorBackgroundPageHeader",\
+	@"colorBackgroundPathComplete",\
+	@"colorBackgroundPathCompleteHover",\
+	@"colorBackgroundPathCurrent",\
+	@"colorBackgroundPathCurrentHover",\
+	@"colorBackgroundPathIncomplete",\
+	@"colorBackgroundPathIncompleteHover",\
+	@"colorBackgroundPathLost",\
+	@"colorBackgroundGuidance",\
+	@"progressColorBackground",\
+	@"progressColorBackgroundShade",\
+	@"progressBarColorBackground",\
+	@"progressBarColorBackgroundFill",\
+	@"splitViewColorBackground",\
+	@"splitViewColorBackgroundRowHover",\
+	@"colorTextActionLabel",\
+	@"colorTextActionLabelActive",\
+	@"colorTextBrand",\
+	@"colorTextBrowser",\
+	@"colorTextBrowserActive",\
+	@"colorTextCustomer",\
+	@"colorTextDefault",\
+	@"colorTextError",\
+	@"colorTextInputDisabled",\
+	@"colorTextInputFocusInverse",\
+	@"colorTextInputIcon",\
+	@"colorTextInverse",\
+	@"colorTextInverseWeak",\
+	@"colorTextInverseActive",\
+	@"colorTextInverseHover",\
+	@"colorTextLink",\
+	@"colorTextLinkActive",\
+	@"colorTextLinkDisabled",\
+	@"colorTextLinkFocus",\
+	@"colorTextLinkHover",\
+	@"colorTextLinkInverse",\
+	@"colorTextLinkInverseHover",\
+	@"colorTextLinkInverseActive",\
+	@"colorTextLinkInverseDisabled",\
+	@"colorTextModal",\
+	@"colorTextModalButton",\
+	@"colorTextStageLeft",\
+	@"colorTextTabLabel",\
+	@"colorTextTabLabelSelected",\
+	@"colorTextTabLabelHover",\
+	@"colorTextTabLabelFocus",\
+	@"colorTextTabLabelActive",\
+	@"colorTextTabLabelDisabled",\
+	@"colorTextToast",\
+	@"colorTextWarning",\
+	@"colorTextWarningAlt",\
+	@"colorTextWeak",\
+	@"colorTextIconBrand",\
+	@"colorTextIconUtility",\
+	@"colorTextToggleDisabled",\
+	@"colorTextButtonBrand",\
+	@"colorTextButtonBrandHover",\
+	@"colorTextButtonBrandActive",\
+	@"colorTextButtonBrandDisabled",\
+	@"colorTextButtonDefault",\
+	@"colorTextButtonDefaultHover",\
+	@"colorTextButtonDefaultActive",\
+	@"colorTextButtonDefaultDisabled",\
+	@"colorTextButtonDefaultHint",\
+	@"colorTextButtonInverse",\
+	@"colorTextButtonInverseDisabled",\
+	@"colorTextIconDefault",\
+	@"colorTextIconDefaultHint",\
+	@"colorTextIconInverseHint",\
+	@"colorTextIconDefaultHintBorderless",\
+	@"colorTextIconDefaultHover",\
+	@"colorTextIconDefaultActive",\
+	@"colorTextIconDefaultDisabled",\
+	@"colorTextIconInverse",\
+	@"colorTextIconInverseHover",\
+	@"colorTextIconInverseActive",\
+	@"colorTextIconInverseDisabled",\
+	@"colorTextIconInverseHintHover",\
+	@"colorTextLabel",\
+	@"colorTextPlaceholder",\
+	@"colorTextPlaceholderInverse",\
+	@"colorTextRequired",\
+	@"colorTextPill",\
+	@"colorTextSuccess",\
+	@"colorTextSuccessInverse",\
+	@"colorTextContextBar",\
+	@"colorTextContextBarInverse",\
+	@"colorTextContextBarActionTrigger",\
 ] objectAtIndex:enum]
 
+
 +(UIColor *)sldsFill:(SLDSFillType)colorType{
-    return [self colorForIndex:colorType];
+  return [self colorForIndex:colorType];
 }
-
 +(UIColor *)sldsBorderColor:(SLDSBorderColorType)colorType{
-    return [self colorForIndex:colorType];
+  return [self colorForIndex:colorType];
 }
-
 +(UIColor *)sldsBackgroundColor:(SLDSBackgroundColorType)colorType{
-    return [self colorForIndex:colorType];
+  return [self colorForIndex:colorType];
 }
-
 +(UIColor *)sldsTextColor:(SLDSTextColorType)colorType{
-    return [self colorForIndex:colorType];
+  return [self colorForIndex:colorType];
 }
 
 +(UIColor*)colorForIndex:(NSInteger)index {
@@ -312,7 +553,7 @@ static float const sldsColors[][4] = {
         for (NSInteger i = 0; i < colorTextContextBarActionTrigger; ++i)
             [colorCache addObject:[NSNull null]];
     }
-    
+
     UIColor *color = [colorCache objectAtIndex:index];
     if( color && [color isEqual:[NSNull null]] ) {
         color = [UIColor colorWithRed:sldsColors[index][0]
@@ -321,11 +562,8 @@ static float const sldsColors[][4] = {
                                 alpha:sldsColors[index][3]];
         [colorCache setObject:color atIndexedSubscript:index];
     }
-    
+
     return color;
 }
 
-+(NSString *)sldsColorName:(NSInteger)colorType {
-    return sldsColorTypeNames(colorType);
-}
 @end

@@ -14,7 +14,7 @@ const __PATHS__ = {
   designTokens: path.join(__dirname,'node_modules','@salesforce-ux','design-system','design-tokens','dist','force-base.ios.json'),
   iconTokens: path.join(__dirname,'node_modules','@salesforce-ux','design-system','design-tokens','dist'),
   icons: path.join(__dirname,'node_modules','@salesforce-ux','design-system','assets','icons'),
-  output: path.join(__dirname, 'SalesforceDesignSystem','SalesforceDesignSystem','generated')
+  output: path.join(__dirname, 'SalesforceDesignSystem','generated')
 };
 
 const prefix = 'SLDS';
@@ -79,6 +79,7 @@ gulp.task('template:design-tokens', () => {
 		for (let type in data) {
 		if (data.hasOwnProperty(type)) {
 			let updatedType = type === 'FontSize' ? 'Font' : type
+			console.log('templates/' + updatedType + '/UI' + updatedType + '.h.njk')
 					streams.push(
 						gulp.src('templates/' + updatedType + '/UI' + updatedType + '.h.njk')
 							.pipe(nunjucks.compile({ 'data': data[type] }))
@@ -120,7 +121,7 @@ const parseIconTokens = () => {
 
 		// push unique categories
 		tokens.properties.forEach(p => {
-			
+
       let bgColor = parseColor(p.value)
 
 			icons.push({
@@ -228,7 +229,7 @@ gulp.task('create:icon-fonts', () => {
       ]
   	}))
    	.pipe(iconFont({
-  		fontName: 'SalesforceDesignSystemIconsAction', 
+  		fontName: 'SalesforceDesignSystemIconsAction',
     }))
     .pipe(ttfFilter)
     .pipe(gulp.dest('SalesforceDesignSystem.bundle/'));

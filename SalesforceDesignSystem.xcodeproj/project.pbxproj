@@ -10,121 +10,15 @@
 		051032011B29F15C0094A6B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051032001B29F15C0094A6B2 /* UIKit.framework */; };
 		051032031B29F17C0094A6B2 /* SalesforceDesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 051031E91B29F1020094A6B2 /* SalesforceDesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0516E9561B4D9D2400F8B6B0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0516E9551B4D9D2400F8B6B0 /* CoreText.framework */; };
-		051C4CFC1B2FD398001CDF18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051032001B29F15C0094A6B2 /* UIKit.framework */; };
-		051C4D111B2FD398001CDF18 /* SalesforceDesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 051031E91B29F1020094A6B2 /* SalesforceDesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		052B1F2A1B9686A5003CCCCC /* DesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 052B1F281B9686A5003CCCCC /* DesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0536207C1B92D8FA002447A7 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0516E9551B4D9D2400F8B6B0 /* CoreText.framework */; };
-		055D1E611B5DCB0400987466 /* UIImage+SLDSIconUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 055D1E5F1B5DCB0400987466 /* UIImage+SLDSIconUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		055D1E621B5DCB0400987466 /* UIImage+SLDSIconUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D1E601B5DCB0400987466 /* UIImage+SLDSIconUtility.m */; };
-		055D1E6B1B5DCD0B00987466 /* UIImage+SLDSIconUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 055D1E5F1B5DCB0400987466 /* UIImage+SLDSIconUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		055D1E6C1B5DCD0B00987466 /* UIImage+SLDSIconUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D1E601B5DCB0400987466 /* UIImage+SLDSIconUtility.m */; };
-		055D1E6D1B5DCD0C00987466 /* UIImage+SLDSIconUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 055D1E5F1B5DCB0400987466 /* UIImage+SLDSIconUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		055D1E6E1B5DCD0C00987466 /* UIImage+SLDSIconUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D1E601B5DCB0400987466 /* UIImage+SLDSIconUtility.m */; };
-		055D1E761B5E13E500987466 /* UIImage+SLDSIconAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 055D1E741B5E13E500987466 /* UIImage+SLDSIconAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		055D1E771B5E13E500987466 /* UIImage+SLDSIconAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 055D1E741B5E13E500987466 /* UIImage+SLDSIconAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		055D1E781B5E13E500987466 /* UIImage+SLDSIconAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 055D1E741B5E13E500987466 /* UIImage+SLDSIconAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		055D1E791B5E13E500987466 /* UIImage+SLDSIconAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D1E751B5E13E500987466 /* UIImage+SLDSIconAction.m */; };
-		055D1E7A1B5E13E500987466 /* UIImage+SLDSIconAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D1E751B5E13E500987466 /* UIImage+SLDSIconAction.m */; };
-		055D1E7B1B5E13E500987466 /* UIImage+SLDSIconAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D1E751B5E13E500987466 /* UIImage+SLDSIconAction.m */; };
-		0569F8CF1B604B72009FF8FE /* UIImage+SLDSIconCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 0569F8CD1B604B72009FF8FE /* UIImage+SLDSIconCustom.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0569F8D01B604B72009FF8FE /* UIImage+SLDSIconCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 0569F8CD1B604B72009FF8FE /* UIImage+SLDSIconCustom.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0569F8D11B604B72009FF8FE /* UIImage+SLDSIconCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 0569F8CD1B604B72009FF8FE /* UIImage+SLDSIconCustom.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0569F8D21B604B72009FF8FE /* UIImage+SLDSIconCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569F8CE1B604B72009FF8FE /* UIImage+SLDSIconCustom.m */; };
-		0569F8D31B604B72009FF8FE /* UIImage+SLDSIconCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569F8CE1B604B72009FF8FE /* UIImage+SLDSIconCustom.m */; };
-		0569F8D41B604B72009FF8FE /* UIImage+SLDSIconCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569F8CE1B604B72009FF8FE /* UIImage+SLDSIconCustom.m */; };
-		0569F8E31B605535009FF8FE /* UIImage+SLDSIconStandard.h in Headers */ = {isa = PBXBuildFile; fileRef = 0569F8E11B605535009FF8FE /* UIImage+SLDSIconStandard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0569F8E41B605535009FF8FE /* UIImage+SLDSIconStandard.h in Headers */ = {isa = PBXBuildFile; fileRef = 0569F8E11B605535009FF8FE /* UIImage+SLDSIconStandard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0569F8E51B605535009FF8FE /* UIImage+SLDSIconStandard.h in Headers */ = {isa = PBXBuildFile; fileRef = 0569F8E11B605535009FF8FE /* UIImage+SLDSIconStandard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0569F8E61B605535009FF8FE /* UIImage+SLDSIconStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569F8E21B605535009FF8FE /* UIImage+SLDSIconStandard.m */; };
-		0569F8E71B605535009FF8FE /* UIImage+SLDSIconStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569F8E21B605535009FF8FE /* UIImage+SLDSIconStandard.m */; };
-		0569F8E81B605535009FF8FE /* UIImage+SLDSIconStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569F8E21B605535009FF8FE /* UIImage+SLDSIconStandard.m */; };
-		0576C3D61B686CBC002A7254 /* NSString+SLDSIconAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 0576C3D41B686CBC002A7254 /* NSString+SLDSIconAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0576C3D71B686CBC002A7254 /* NSString+SLDSIconAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0576C3D51B686CBC002A7254 /* NSString+SLDSIconAction.m */; };
-		0576C3E61B688278002A7254 /* NSString+SLDSIconStandard.h in Headers */ = {isa = PBXBuildFile; fileRef = 0576C3E41B688278002A7254 /* NSString+SLDSIconStandard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0576C3E71B688278002A7254 /* NSString+SLDSIconStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0576C3E51B688278002A7254 /* NSString+SLDSIconStandard.m */; };
-		059109D31B583B8900C89AEC /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0516E9551B4D9D2400F8B6B0 /* CoreText.framework */; };
-		059109D41B583B8900C89AEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051032001B29F15C0094A6B2 /* UIKit.framework */; };
-		059109F71B583B8900C89AEC /* SalesforceDesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 051031E91B29F1020094A6B2 /* SalesforceDesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05910A021B583CF100C89AEC /* SalesforceDesignSystemExtended.h in Headers */ = {isa = PBXBuildFile; fileRef = 05910A001B583CF100C89AEC /* SalesforceDesignSystemExtended.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E071D808B8D00B1317F /* SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89ADD1D808A3D00516C3C /* SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E081D808B8D00B1317F /* SLDSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89ADE1D808A3D00516C3C /* SLDSFont.m */; };
-		05B36E0B1D808B8D00B1317F /* SLDSIconAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE11D808A3D00516C3C /* SLDSIconAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E0C1D808B8D00B1317F /* SLDSIconAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE21D808A3D00516C3C /* SLDSIconAction.m */; };
-		05B36E0D1D808B8D00B1317F /* SLDSIconCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE31D808A3D00516C3C /* SLDSIconCustom.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E0E1D808B8D00B1317F /* SLDSIconCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE41D808A3D00516C3C /* SLDSIconCustom.m */; };
-		05B36E0F1D808B8D00B1317F /* SLDSIconLabelAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE51D808A3D00516C3C /* SLDSIconLabelAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E101D808B8D00B1317F /* SLDSIconLabelAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE61D808A3D00516C3C /* SLDSIconLabelAction.m */; };
-		05B36E111D808B8D00B1317F /* SLDSIconLabelCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE71D808A3D00516C3C /* SLDSIconLabelCustom.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E121D808B8D00B1317F /* SLDSIconLabelCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE81D808A3D00516C3C /* SLDSIconLabelCustom.m */; };
-		05B36E131D808B8D00B1317F /* SLDSIconLabelStandard.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE91D808A3D00516C3C /* SLDSIconLabelStandard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E141D808B8D00B1317F /* SLDSIconLabelStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AEA1D808A3D00516C3C /* SLDSIconLabelStandard.m */; };
-		05B36E151D808B8D00B1317F /* SLDSIconLabelUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AEB1D808A3D00516C3C /* SLDSIconLabelUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E161D808B8D00B1317F /* SLDSIconLabelUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AEC1D808A3D00516C3C /* SLDSIconLabelUtility.m */; };
-		05B36E171D808B8D00B1317F /* SLDSIconStandard.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AED1D808A3D00516C3C /* SLDSIconStandard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E181D808B8D00B1317F /* SLDSIconStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AEE1D808A3D00516C3C /* SLDSIconStandard.m */; };
-		05B36E191D808B8D00B1317F /* SLDSIconUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AEF1D808A3D00516C3C /* SLDSIconUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E1A1D808B8D00B1317F /* SLDSIconUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AF01D808A3D00516C3C /* SLDSIconUtility.m */; };
-		05B36E1B1D808B8D00B1317F /* SLDSLineHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AF11D808A3D00516C3C /* SLDSLineHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E1C1D808B8D00B1317F /* SLDSSizing.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AF21D808A3D00516C3C /* SLDSSizing.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E1D1D808B8D00B1317F /* SLDSSpacing.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AF31D808A3D00516C3C /* SLDSSpacing.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E261D808B8E00B1317F /* SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89ADD1D808A3D00516C3C /* SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E271D808B8E00B1317F /* SLDSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89ADE1D808A3D00516C3C /* SLDSFont.m */; };
-		05B36E2A1D808B8E00B1317F /* SLDSIconAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE11D808A3D00516C3C /* SLDSIconAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E2B1D808B8E00B1317F /* SLDSIconAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE21D808A3D00516C3C /* SLDSIconAction.m */; };
-		05B36E2C1D808B8E00B1317F /* SLDSIconCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE31D808A3D00516C3C /* SLDSIconCustom.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E2D1D808B8E00B1317F /* SLDSIconCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE41D808A3D00516C3C /* SLDSIconCustom.m */; };
-		05B36E2E1D808B8E00B1317F /* SLDSIconLabelAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE51D808A3D00516C3C /* SLDSIconLabelAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E2F1D808B8E00B1317F /* SLDSIconLabelAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE61D808A3D00516C3C /* SLDSIconLabelAction.m */; };
-		05B36E301D808B8E00B1317F /* SLDSIconLabelCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE71D808A3D00516C3C /* SLDSIconLabelCustom.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E311D808B8E00B1317F /* SLDSIconLabelCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE81D808A3D00516C3C /* SLDSIconLabelCustom.m */; };
-		05B36E321D808B8E00B1317F /* SLDSIconLabelStandard.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE91D808A3D00516C3C /* SLDSIconLabelStandard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E331D808B8E00B1317F /* SLDSIconLabelStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AEA1D808A3D00516C3C /* SLDSIconLabelStandard.m */; };
-		05B36E341D808B8E00B1317F /* SLDSIconLabelUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AEB1D808A3D00516C3C /* SLDSIconLabelUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E351D808B8E00B1317F /* SLDSIconLabelUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AEC1D808A3D00516C3C /* SLDSIconLabelUtility.m */; };
-		05B36E361D808B8E00B1317F /* SLDSIconStandard.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AED1D808A3D00516C3C /* SLDSIconStandard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E371D808B8E00B1317F /* SLDSIconStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AEE1D808A3D00516C3C /* SLDSIconStandard.m */; };
-		05B36E381D808B8E00B1317F /* SLDSIconUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AEF1D808A3D00516C3C /* SLDSIconUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E391D808B8E00B1317F /* SLDSIconUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AF01D808A3D00516C3C /* SLDSIconUtility.m */; };
-		05B36E3A1D808B8E00B1317F /* SLDSLineHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AF11D808A3D00516C3C /* SLDSLineHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E3B1D808B8E00B1317F /* SLDSSizing.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AF21D808A3D00516C3C /* SLDSSizing.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B36E3C1D808B8E00B1317F /* SLDSSpacing.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AF31D808A3D00516C3C /* SLDSSpacing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05D89AFC1D808A3D00516C3C /* SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89ADD1D808A3D00516C3C /* SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05D89AFD1D808A3D00516C3C /* SLDSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89ADE1D808A3D00516C3C /* SLDSFont.m */; };
-		05D89B001D808A3D00516C3C /* SLDSIconAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE11D808A3D00516C3C /* SLDSIconAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05D89B011D808A3D00516C3C /* SLDSIconAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE21D808A3D00516C3C /* SLDSIconAction.m */; };
-		05D89B021D808A3D00516C3C /* SLDSIconCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE31D808A3D00516C3C /* SLDSIconCustom.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05D89B031D808A3D00516C3C /* SLDSIconCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE41D808A3D00516C3C /* SLDSIconCustom.m */; };
-		05D89B041D808A3D00516C3C /* SLDSIconLabelAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE51D808A3D00516C3C /* SLDSIconLabelAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05D89B051D808A3D00516C3C /* SLDSIconLabelAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE61D808A3D00516C3C /* SLDSIconLabelAction.m */; };
-		05D89B061D808A3D00516C3C /* SLDSIconLabelCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE71D808A3D00516C3C /* SLDSIconLabelCustom.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05D89B071D808A3D00516C3C /* SLDSIconLabelCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AE81D808A3D00516C3C /* SLDSIconLabelCustom.m */; };
-		05D89B081D808A3D00516C3C /* SLDSIconLabelStandard.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AE91D808A3D00516C3C /* SLDSIconLabelStandard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05D89B091D808A3D00516C3C /* SLDSIconLabelStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AEA1D808A3D00516C3C /* SLDSIconLabelStandard.m */; };
-		05D89B0A1D808A3D00516C3C /* SLDSIconLabelUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AEB1D808A3D00516C3C /* SLDSIconLabelUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05D89B0B1D808A3D00516C3C /* SLDSIconLabelUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AEC1D808A3D00516C3C /* SLDSIconLabelUtility.m */; };
-		05D89B0C1D808A3D00516C3C /* SLDSIconStandard.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AED1D808A3D00516C3C /* SLDSIconStandard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05D89B0D1D808A3D00516C3C /* SLDSIconStandard.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AEE1D808A3D00516C3C /* SLDSIconStandard.m */; };
-		05D89B0E1D808A3D00516C3C /* SLDSIconUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AEF1D808A3D00516C3C /* SLDSIconUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05D89B0F1D808A3D00516C3C /* SLDSIconUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89AF01D808A3D00516C3C /* SLDSIconUtility.m */; };
-		05D89B101D808A3D00516C3C /* SLDSLineHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AF11D808A3D00516C3C /* SLDSLineHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05D89B111D808A3D00516C3C /* SLDSSizing.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AF21D808A3D00516C3C /* SLDSSizing.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05D89B121D808A3D00516C3C /* SLDSSpacing.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89AF31D808A3D00516C3C /* SLDSSpacing.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05EEF05D1B6950A5002D5939 /* NSString+SLDSIconCustom.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EEF05B1B6950A5002D5939 /* NSString+SLDSIconCustom.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05EEF05E1B6950A5002D5939 /* NSString+SLDSIconCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EEF05C1B6950A5002D5939 /* NSString+SLDSIconCustom.m */; };
-		05EEF06F1B69585A002D5939 /* NSString+SLDSIconUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EEF06D1B69585A002D5939 /* NSString+SLDSIconUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05EEF0701B69585A002D5939 /* NSString+SLDSIconUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EEF06E1B69585A002D5939 /* NSString+SLDSIconUtility.m */; };
 		20F463991E2576F90049AA6D /* UIColor+SLDSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F463971E2576F90049AA6D /* UIColor+SLDSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20F4639A1E2576F90049AA6D /* UIColor+SLDSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F463981E2576F90049AA6D /* UIColor+SLDSColor.m */; };
 		20F4639D1E2577020049AA6D /* SLDSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F4639B1E2577020049AA6D /* SLDSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20F4639E1E2577020049AA6D /* SLDSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F4639C1E2577020049AA6D /* SLDSColor.m */; };
 		20F463A11E25779E0049AA6D /* UIFont+SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F4639F1E25779E0049AA6D /* UIFont+SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20F463A21E25779E0049AA6D /* UIFont+SLDSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F463A01E25779E0049AA6D /* UIFont+SLDSFont.m */; };
-		20F463A31E2579BC0049AA6D /* SLDSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F4639C1E2577020049AA6D /* SLDSColor.m */; };
-		20F463A41E2579BC0049AA6D /* UIColor+SLDSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F463981E2576F90049AA6D /* UIColor+SLDSColor.m */; };
-		20F463A51E2579C50049AA6D /* SLDSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F4639B1E2577020049AA6D /* SLDSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20F463A61E2579C50049AA6D /* UIColor+SLDSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F463971E2576F90049AA6D /* UIColor+SLDSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20F463A71E2579E30049AA6D /* UIFont+SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F4639F1E25779E0049AA6D /* UIFont+SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20F463A81E2579EE0049AA6D /* UIFont+SLDSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F463A01E25779E0049AA6D /* UIFont+SLDSFont.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,27 +27,18 @@
 		051032001B29F15C0094A6B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		051032221B29FEA50094A6B2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0516E9551B4D9D2400F8B6B0 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		051C4D151B2FD398001CDF18 /* libSalesforceDesignSystem-headers.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSalesforceDesignSystem-headers.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		052B1F281B9686A5003CCCCC /* DesignSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignSystem.h; sourceTree = "<group>"; };
 		0539D1A51B685CB700A7DFD2 /* SLDSIconLabelActionTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSIconLabelActionTemplate.h; path = Templates/SLDSIconLabelActionTemplate.h; sourceTree = "<group>"; };
 		0539D1A61B685CB700A7DFD2 /* SLDSIconLabelActionTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLDSIconLabelActionTemplate.m; path = Templates/SLDSIconLabelActionTemplate.m; sourceTree = "<group>"; };
-		055D1E5F1B5DCB0400987466 /* UIImage+SLDSIconUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SLDSIconUtility.h"; sourceTree = "<group>"; };
-		055D1E601B5DCB0400987466 /* UIImage+SLDSIconUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SLDSIconUtility.m"; sourceTree = "<group>"; };
 		055D1E701B5DE52C00987466 /* SLDSIconUtilityTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSIconUtilityTemplate.h; path = Templates/SLDSIconUtilityTemplate.h; sourceTree = "<group>"; };
 		055D1E711B5DE52C00987466 /* SLDSIconUtilityTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLDSIconUtilityTemplate.m; path = Templates/SLDSIconUtilityTemplate.m; sourceTree = "<group>"; };
-		055D1E741B5E13E500987466 /* UIImage+SLDSIconAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SLDSIconAction.h"; sourceTree = "<group>"; };
-		055D1E751B5E13E500987466 /* UIImage+SLDSIconAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SLDSIconAction.m"; sourceTree = "<group>"; };
 		055D1E7C1B5E159700987466 /* SLDSIconActionTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIconActionTemplate.h; path = Templates/SLDSIconActionTemplate.h; sourceTree = "<group>"; };
 		055D1E7D1B5E159700987466 /* SLDSIconActionTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSIconActionTemplate.m; path = Templates/SLDSIconActionTemplate.m; sourceTree = "<group>"; };
 		0567E44A1B79552800025C6E /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
 		0569F8C31B6047A6009FF8FE /* SLDSIconCustomTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSIconCustomTemplate.h; path = Templates/SLDSIconCustomTemplate.h; sourceTree = "<group>"; };
 		0569F8C41B6047A6009FF8FE /* SLDSIconCustomTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLDSIconCustomTemplate.m; path = Templates/SLDSIconCustomTemplate.m; sourceTree = "<group>"; };
-		0569F8CD1B604B72009FF8FE /* UIImage+SLDSIconCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SLDSIconCustom.h"; sourceTree = "<group>"; };
-		0569F8CE1B604B72009FF8FE /* UIImage+SLDSIconCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SLDSIconCustom.m"; sourceTree = "<group>"; };
 		0569F8D71B605453009FF8FE /* SLDSIconStandardTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSIconStandardTemplate.h; path = Templates/SLDSIconStandardTemplate.h; sourceTree = "<group>"; };
 		0569F8D81B605453009FF8FE /* SLDSIconStandardTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLDSIconStandardTemplate.m; path = Templates/SLDSIconStandardTemplate.m; sourceTree = "<group>"; };
-		0569F8E11B605535009FF8FE /* UIImage+SLDSIconStandard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SLDSIconStandard.h"; sourceTree = "<group>"; };
-		0569F8E21B605535009FF8FE /* UIImage+SLDSIconStandard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SLDSIconStandard.m"; sourceTree = "<group>"; };
 		056AFA001B4DBA8400C14197 /* SLDSColorAliasTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSColorAliasTemplate.h; path = Templates/SLDSColorAliasTemplate.h; sourceTree = "<group>"; };
 		056AFA011B4DBA8400C14197 /* SLDSColorAliasTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSColorAliasTemplate.m; path = Templates/SLDSColorAliasTemplate.m; sourceTree = "<group>"; };
 		056AFA021B4DBA8400C14197 /* SLDSColorBgTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSColorBgTemplate.h; path = Templates/SLDSColorBgTemplate.h; sourceTree = "<group>"; };
@@ -162,43 +47,15 @@
 		056AFA051B4DBA8400C14197 /* SLDSColorBrdrTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSColorBrdrTemplate.m; path = Templates/SLDSColorBrdrTemplate.m; sourceTree = "<group>"; };
 		056AFA0C1B4DBA8400C14197 /* SLDSColorTxtTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSColorTxtTemplate.h; path = Templates/SLDSColorTxtTemplate.h; sourceTree = "<group>"; };
 		056AFA0D1B4DBA8400C14197 /* SLDSColorTxtTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSColorTxtTemplate.m; path = Templates/SLDSColorTxtTemplate.m; sourceTree = "<group>"; };
-		0576C3D41B686CBC002A7254 /* NSString+SLDSIconAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SLDSIconAction.h"; sourceTree = "<group>"; };
-		0576C3D51B686CBC002A7254 /* NSString+SLDSIconAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SLDSIconAction.m"; sourceTree = "<group>"; };
 		0576C3DE1B6880EF002A7254 /* SLDSIconLabelStandardTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSIconLabelStandardTemplate.h; path = Templates/SLDSIconLabelStandardTemplate.h; sourceTree = "<group>"; };
 		0576C3DF1B6880EF002A7254 /* SLDSIconLabelStandardTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLDSIconLabelStandardTemplate.m; path = Templates/SLDSIconLabelStandardTemplate.m; sourceTree = "<group>"; };
-		0576C3E41B688278002A7254 /* NSString+SLDSIconStandard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SLDSIconStandard.h"; sourceTree = "<group>"; };
-		0576C3E51B688278002A7254 /* NSString+SLDSIconStandard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SLDSIconStandard.m"; sourceTree = "<group>"; };
-		059109FB1B583B8900C89AEC /* libSalesforceDesignSystem-Extended.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSalesforceDesignSystem-Extended.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05910A001B583CF100C89AEC /* SalesforceDesignSystemExtended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesforceDesignSystemExtended.h; sourceTree = "<group>"; };
 		05D89ADD1D808A3D00516C3C /* SLDSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSFont.h; path = Generated/SLDSFont.h; sourceTree = "<group>"; };
 		05D89ADE1D808A3D00516C3C /* SLDSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSFont.m; path = Generated/SLDSFont.m; sourceTree = "<group>"; };
-		05D89AE11D808A3D00516C3C /* SLDSIconAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIconAction.h; path = Generated/SLDSIconAction.h; sourceTree = "<group>"; };
-		05D89AE21D808A3D00516C3C /* SLDSIconAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSIconAction.m; path = Generated/SLDSIconAction.m; sourceTree = "<group>"; };
-		05D89AE31D808A3D00516C3C /* SLDSIconCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIconCustom.h; path = Generated/SLDSIconCustom.h; sourceTree = "<group>"; };
-		05D89AE41D808A3D00516C3C /* SLDSIconCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSIconCustom.m; path = Generated/SLDSIconCustom.m; sourceTree = "<group>"; };
-		05D89AE51D808A3D00516C3C /* SLDSIconLabelAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIconLabelAction.h; path = Generated/SLDSIconLabelAction.h; sourceTree = "<group>"; };
-		05D89AE61D808A3D00516C3C /* SLDSIconLabelAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSIconLabelAction.m; path = Generated/SLDSIconLabelAction.m; sourceTree = "<group>"; };
-		05D89AE71D808A3D00516C3C /* SLDSIconLabelCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIconLabelCustom.h; path = Generated/SLDSIconLabelCustom.h; sourceTree = "<group>"; };
-		05D89AE81D808A3D00516C3C /* SLDSIconLabelCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSIconLabelCustom.m; path = Generated/SLDSIconLabelCustom.m; sourceTree = "<group>"; };
-		05D89AE91D808A3D00516C3C /* SLDSIconLabelStandard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIconLabelStandard.h; path = Generated/SLDSIconLabelStandard.h; sourceTree = "<group>"; };
-		05D89AEA1D808A3D00516C3C /* SLDSIconLabelStandard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSIconLabelStandard.m; path = Generated/SLDSIconLabelStandard.m; sourceTree = "<group>"; };
-		05D89AEB1D808A3D00516C3C /* SLDSIconLabelUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIconLabelUtility.h; path = Generated/SLDSIconLabelUtility.h; sourceTree = "<group>"; };
-		05D89AEC1D808A3D00516C3C /* SLDSIconLabelUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSIconLabelUtility.m; path = Generated/SLDSIconLabelUtility.m; sourceTree = "<group>"; };
-		05D89AED1D808A3D00516C3C /* SLDSIconStandard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIconStandard.h; path = Generated/SLDSIconStandard.h; sourceTree = "<group>"; };
-		05D89AEE1D808A3D00516C3C /* SLDSIconStandard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSIconStandard.m; path = Generated/SLDSIconStandard.m; sourceTree = "<group>"; };
-		05D89AEF1D808A3D00516C3C /* SLDSIconUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIconUtility.h; path = Generated/SLDSIconUtility.h; sourceTree = "<group>"; };
-		05D89AF01D808A3D00516C3C /* SLDSIconUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSIconUtility.m; path = Generated/SLDSIconUtility.m; sourceTree = "<group>"; };
-		05D89AF11D808A3D00516C3C /* SLDSLineHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSLineHeight.h; path = Generated/SLDSLineHeight.h; sourceTree = "<group>"; };
-		05D89AF21D808A3D00516C3C /* SLDSSizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSSizing.h; path = Generated/SLDSSizing.h; sourceTree = "<group>"; };
-		05D89AF31D808A3D00516C3C /* SLDSSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSSpacing.h; path = Generated/SLDSSpacing.h; sourceTree = "<group>"; };
 		05EEF0551B694FF2002D5939 /* SLDSIconLabelCustomTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLDSIconLabelCustomTemplate.m; path = Templates/SLDSIconLabelCustomTemplate.m; sourceTree = "<group>"; };
 		05EEF0561B694FF2002D5939 /* SLDSIconLabelCustomTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSIconLabelCustomTemplate.h; path = Templates/SLDSIconLabelCustomTemplate.h; sourceTree = "<group>"; };
-		05EEF05B1B6950A5002D5939 /* NSString+SLDSIconCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SLDSIconCustom.h"; sourceTree = "<group>"; };
-		05EEF05C1B6950A5002D5939 /* NSString+SLDSIconCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SLDSIconCustom.m"; sourceTree = "<group>"; };
 		05EEF05F1B69537E002D5939 /* SLDSIconLabelUtilityTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSIconLabelUtilityTemplate.h; path = Templates/SLDSIconLabelUtilityTemplate.h; sourceTree = "<group>"; };
 		05EEF0601B69537E002D5939 /* SLDSIconLabelUtilityTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLDSIconLabelUtilityTemplate.m; path = Templates/SLDSIconLabelUtilityTemplate.m; sourceTree = "<group>"; };
-		05EEF06D1B69585A002D5939 /* NSString+SLDSIconUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SLDSIconUtility.h"; sourceTree = "<group>"; };
-		05EEF06E1B69585A002D5939 /* NSString+SLDSIconUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SLDSIconUtility.m"; sourceTree = "<group>"; };
 		05EEF0851B69FD47002D5939 /* SLDSFontTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSFontTemplate.h; path = Templates/SLDSFontTemplate.h; sourceTree = "<group>"; };
 		05EEF0861B69FD47002D5939 /* SLDSFontTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLDSFontTemplate.m; path = Templates/SLDSFontTemplate.m; sourceTree = "<group>"; };
 		20F463971E2576F90049AA6D /* UIColor+SLDSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+SLDSColor.h"; path = "Generated/Extensions/UIColor+SLDSColor.h"; sourceTree = "<group>"; };
@@ -216,24 +73,6 @@
 			files = (
 				0516E9561B4D9D2400F8B6B0 /* CoreText.framework in Frameworks */,
 				051032011B29F15C0094A6B2 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		051C4CFB1B2FD398001CDF18 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0536207C1B92D8FA002447A7 /* CoreText.framework in Frameworks */,
-				051C4CFC1B2FD398001CDF18 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		059109D21B583B8900C89AEC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				059109D31B583B8900C89AEC /* CoreText.framework in Frameworks */,
-				059109D41B583B8900C89AEC /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				051031E61B29F1020094A6B2 /* libSalesforceDesignSystem.a */,
-				051C4D151B2FD398001CDF18 /* libSalesforceDesignSystem-headers.a */,
-				059109FB1B583B8900C89AEC /* libSalesforceDesignSystem-Extended.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,25 +104,9 @@
 			children = (
 				052B1F281B9686A5003CCCCC /* DesignSystem.h */,
 				05A7B03B1B2A4F3F00B5FB86 /* Generated */,
-				0576C3D41B686CBC002A7254 /* NSString+SLDSIconAction.h */,
-				0576C3D51B686CBC002A7254 /* NSString+SLDSIconAction.m */,
-				05EEF05B1B6950A5002D5939 /* NSString+SLDSIconCustom.h */,
-				05EEF05C1B6950A5002D5939 /* NSString+SLDSIconCustom.m */,
-				0576C3E41B688278002A7254 /* NSString+SLDSIconStandard.h */,
-				0576C3E51B688278002A7254 /* NSString+SLDSIconStandard.m */,
-				05EEF06D1B69585A002D5939 /* NSString+SLDSIconUtility.h */,
-				05EEF06E1B69585A002D5939 /* NSString+SLDSIconUtility.m */,
 				051031E91B29F1020094A6B2 /* SalesforceDesignSystem.h */,
 				05910A001B583CF100C89AEC /* SalesforceDesignSystemExtended.h */,
 				056AF9FF1B4DBA7200C14197 /* Templates */,
-				055D1E741B5E13E500987466 /* UIImage+SLDSIconAction.h */,
-				055D1E751B5E13E500987466 /* UIImage+SLDSIconAction.m */,
-				0569F8CD1B604B72009FF8FE /* UIImage+SLDSIconCustom.h */,
-				0569F8CE1B604B72009FF8FE /* UIImage+SLDSIconCustom.m */,
-				0569F8E11B605535009FF8FE /* UIImage+SLDSIconStandard.h */,
-				0569F8E21B605535009FF8FE /* UIImage+SLDSIconStandard.m */,
-				055D1E5F1B5DCB0400987466 /* UIImage+SLDSIconUtility.h */,
-				055D1E601B5DCB0400987466 /* UIImage+SLDSIconUtility.m */,
 			);
 			path = SalesforceDesignSystem;
 			sourceTree = "<group>";
@@ -333,25 +154,6 @@
 				20F463961E2576C00049AA6D /* Extensions */,
 				05D89ADD1D808A3D00516C3C /* SLDSFont.h */,
 				05D89ADE1D808A3D00516C3C /* SLDSFont.m */,
-				05D89AE11D808A3D00516C3C /* SLDSIconAction.h */,
-				05D89AE21D808A3D00516C3C /* SLDSIconAction.m */,
-				05D89AE31D808A3D00516C3C /* SLDSIconCustom.h */,
-				05D89AE41D808A3D00516C3C /* SLDSIconCustom.m */,
-				05D89AE51D808A3D00516C3C /* SLDSIconLabelAction.h */,
-				05D89AE61D808A3D00516C3C /* SLDSIconLabelAction.m */,
-				05D89AE71D808A3D00516C3C /* SLDSIconLabelCustom.h */,
-				05D89AE81D808A3D00516C3C /* SLDSIconLabelCustom.m */,
-				05D89AE91D808A3D00516C3C /* SLDSIconLabelStandard.h */,
-				05D89AEA1D808A3D00516C3C /* SLDSIconLabelStandard.m */,
-				05D89AEB1D808A3D00516C3C /* SLDSIconLabelUtility.h */,
-				05D89AEC1D808A3D00516C3C /* SLDSIconLabelUtility.m */,
-				05D89AED1D808A3D00516C3C /* SLDSIconStandard.h */,
-				05D89AEE1D808A3D00516C3C /* SLDSIconStandard.m */,
-				05D89AEF1D808A3D00516C3C /* SLDSIconUtility.h */,
-				05D89AF01D808A3D00516C3C /* SLDSIconUtility.m */,
-				05D89AF11D808A3D00516C3C /* SLDSLineHeight.h */,
-				05D89AF21D808A3D00516C3C /* SLDSSizing.h */,
-				05D89AF31D808A3D00516C3C /* SLDSSpacing.h */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -376,79 +178,8 @@
 				20F4639D1E2577020049AA6D /* SLDSColor.h in Headers */,
 				20F463991E2576F90049AA6D /* UIColor+SLDSColor.h in Headers */,
 				051032031B29F17C0094A6B2 /* SalesforceDesignSystem.h in Headers */,
-				05D89B061D808A3D00516C3C /* SLDSIconLabelCustom.h in Headers */,
-				05D89B121D808A3D00516C3C /* SLDSSpacing.h in Headers */,
-				05D89B111D808A3D00516C3C /* SLDSSizing.h in Headers */,
-				05D89B041D808A3D00516C3C /* SLDSIconLabelAction.h in Headers */,
-				05D89B001D808A3D00516C3C /* SLDSIconAction.h in Headers */,
-				05D89B101D808A3D00516C3C /* SLDSLineHeight.h in Headers */,
-				05D89B081D808A3D00516C3C /* SLDSIconLabelStandard.h in Headers */,
-				05D89B0E1D808A3D00516C3C /* SLDSIconUtility.h in Headers */,
-				05D89B0C1D808A3D00516C3C /* SLDSIconStandard.h in Headers */,
-				05D89B0A1D808A3D00516C3C /* SLDSIconLabelUtility.h in Headers */,
 				05D89AFC1D808A3D00516C3C /* SLDSFont.h in Headers */,
-				05D89B021D808A3D00516C3C /* SLDSIconCustom.h in Headers */,
-				055D1E611B5DCB0400987466 /* UIImage+SLDSIconUtility.h in Headers */,
-				055D1E761B5E13E500987466 /* UIImage+SLDSIconAction.h in Headers */,
-				0569F8CF1B604B72009FF8FE /* UIImage+SLDSIconCustom.h in Headers */,
-				0569F8E31B605535009FF8FE /* UIImage+SLDSIconStandard.h in Headers */,
 				052B1F2A1B9686A5003CCCCC /* DesignSystem.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		051C4CFF1B2FD398001CDF18 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				05B36E0B1D808B8D00B1317F /* SLDSIconAction.h in Headers */,
-				05B36E1C1D808B8D00B1317F /* SLDSSizing.h in Headers */,
-				05B36E111D808B8D00B1317F /* SLDSIconLabelCustom.h in Headers */,
-				05B36E1D1D808B8D00B1317F /* SLDSSpacing.h in Headers */,
-				05B36E191D808B8D00B1317F /* SLDSIconUtility.h in Headers */,
-				05B36E1B1D808B8D00B1317F /* SLDSLineHeight.h in Headers */,
-				05B36E151D808B8D00B1317F /* SLDSIconLabelUtility.h in Headers */,
-				05B36E171D808B8D00B1317F /* SLDSIconStandard.h in Headers */,
-				05B36E131D808B8D00B1317F /* SLDSIconLabelStandard.h in Headers */,
-				05B36E0D1D808B8D00B1317F /* SLDSIconCustom.h in Headers */,
-				05B36E0F1D808B8D00B1317F /* SLDSIconLabelAction.h in Headers */,
-				05B36E071D808B8D00B1317F /* SLDSFont.h in Headers */,
-				055D1E6B1B5DCD0B00987466 /* UIImage+SLDSIconUtility.h in Headers */,
-				055D1E771B5E13E500987466 /* UIImage+SLDSIconAction.h in Headers */,
-				0569F8D01B604B72009FF8FE /* UIImage+SLDSIconCustom.h in Headers */,
-				0569F8E41B605535009FF8FE /* UIImage+SLDSIconStandard.h in Headers */,
-				051C4D111B2FD398001CDF18 /* SalesforceDesignSystem.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		059109D61B583B8900C89AEC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				20F463A71E2579E30049AA6D /* UIFont+SLDSFont.h in Headers */,
-				20F463A51E2579C50049AA6D /* SLDSColor.h in Headers */,
-				20F463A61E2579C50049AA6D /* UIColor+SLDSColor.h in Headers */,
-				05910A021B583CF100C89AEC /* SalesforceDesignSystemExtended.h in Headers */,
-				055D1E6D1B5DCD0C00987466 /* UIImage+SLDSIconUtility.h in Headers */,
-				055D1E781B5E13E500987466 /* UIImage+SLDSIconAction.h in Headers */,
-				0569F8D11B604B72009FF8FE /* UIImage+SLDSIconCustom.h in Headers */,
-				05B36E2A1D808B8E00B1317F /* SLDSIconAction.h in Headers */,
-				05B36E381D808B8E00B1317F /* SLDSIconUtility.h in Headers */,
-				05B36E3C1D808B8E00B1317F /* SLDSSpacing.h in Headers */,
-				05B36E301D808B8E00B1317F /* SLDSIconLabelCustom.h in Headers */,
-				05B36E321D808B8E00B1317F /* SLDSIconLabelStandard.h in Headers */,
-				05B36E361D808B8E00B1317F /* SLDSIconStandard.h in Headers */,
-				05B36E261D808B8E00B1317F /* SLDSFont.h in Headers */,
-				05B36E341D808B8E00B1317F /* SLDSIconLabelUtility.h in Headers */,
-				05B36E3B1D808B8E00B1317F /* SLDSSizing.h in Headers */,
-				05B36E2E1D808B8E00B1317F /* SLDSIconLabelAction.h in Headers */,
-				05B36E2C1D808B8E00B1317F /* SLDSIconCustom.h in Headers */,
-				05B36E3A1D808B8E00B1317F /* SLDSLineHeight.h in Headers */,
-				0569F8E51B605535009FF8FE /* UIImage+SLDSIconStandard.h in Headers */,
-				0576C3D61B686CBC002A7254 /* NSString+SLDSIconAction.h in Headers */,
-				0576C3E61B688278002A7254 /* NSString+SLDSIconStandard.h in Headers */,
-				05EEF05D1B6950A5002D5939 /* NSString+SLDSIconCustom.h in Headers */,
-				05EEF06F1B69585A002D5939 /* NSString+SLDSIconUtility.h in Headers */,
-				059109F71B583B8900C89AEC /* SalesforceDesignSystem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,40 +201,6 @@
 			name = SalesforceDesignSystem;
 			productName = SalesforceDesignSystem;
 			productReference = 051031E61B29F1020094A6B2 /* libSalesforceDesignSystem.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		051C4CE81B2FD398001CDF18 /* SalesforceDesignSystem-headers */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 051C4D121B2FD398001CDF18 /* Build configuration list for PBXNativeTarget "SalesforceDesignSystem-headers" */;
-			buildPhases = (
-				051C4CE91B2FD398001CDF18 /* Sources */,
-				051C4CFB1B2FD398001CDF18 /* Frameworks */,
-				051C4CFF1B2FD398001CDF18 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "SalesforceDesignSystem-headers";
-			productName = SalesforceDesignSystem;
-			productReference = 051C4D151B2FD398001CDF18 /* libSalesforceDesignSystem-headers.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		059109B21B583B8900C89AEC /* SalesforceDesignSystem-Extended */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 059109F81B583B8900C89AEC /* Build configuration list for PBXNativeTarget "SalesforceDesignSystem-Extended" */;
-			buildPhases = (
-				059109B31B583B8900C89AEC /* Sources */,
-				059109D21B583B8900C89AEC /* Frameworks */,
-				059109D61B583B8900C89AEC /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "SalesforceDesignSystem-Extended";
-			productName = SalesforceDesignSystem;
-			productReference = 059109FB1B583B8900C89AEC /* libSalesforceDesignSystem-Extended.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -534,8 +231,6 @@
 			projectRoot = "";
 			targets = (
 				051031E51B29F1020094A6B2 /* SalesforceDesignSystem */,
-				051C4CE81B2FD398001CDF18 /* SalesforceDesignSystem-headers */,
-				059109B21B583B8900C89AEC /* SalesforceDesignSystem-Extended */,
 			);
 		};
 /* End PBXProject section */
@@ -545,69 +240,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05D89B091D808A3D00516C3C /* SLDSIconLabelStandard.m in Sources */,
-				05D89B031D808A3D00516C3C /* SLDSIconCustom.m in Sources */,
-				05D89B0B1D808A3D00516C3C /* SLDSIconLabelUtility.m in Sources */,
 				20F4639A1E2576F90049AA6D /* UIColor+SLDSColor.m in Sources */,
 				20F4639E1E2577020049AA6D /* SLDSColor.m in Sources */,
-				05D89B051D808A3D00516C3C /* SLDSIconLabelAction.m in Sources */,
-				05D89B0F1D808A3D00516C3C /* SLDSIconUtility.m in Sources */,
-				05D89B011D808A3D00516C3C /* SLDSIconAction.m in Sources */,
-				0569F8E61B605535009FF8FE /* UIImage+SLDSIconStandard.m in Sources */,
 				20F463A21E25779E0049AA6D /* UIFont+SLDSFont.m in Sources */,
-				055D1E791B5E13E500987466 /* UIImage+SLDSIconAction.m in Sources */,
-				0569F8D21B604B72009FF8FE /* UIImage+SLDSIconCustom.m in Sources */,
-				055D1E621B5DCB0400987466 /* UIImage+SLDSIconUtility.m in Sources */,
-				05D89B071D808A3D00516C3C /* SLDSIconLabelCustom.m in Sources */,
 				05D89AFD1D808A3D00516C3C /* SLDSFont.m in Sources */,
-				05D89B0D1D808A3D00516C3C /* SLDSIconStandard.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		051C4CE91B2FD398001CDF18 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				05B36E141D808B8D00B1317F /* SLDSIconLabelStandard.m in Sources */,
-				05B36E0E1D808B8D00B1317F /* SLDSIconCustom.m in Sources */,
-				05B36E161D808B8D00B1317F /* SLDSIconLabelUtility.m in Sources */,
-				05B36E101D808B8D00B1317F /* SLDSIconLabelAction.m in Sources */,
-				05B36E1A1D808B8D00B1317F /* SLDSIconUtility.m in Sources */,
-				05B36E0C1D808B8D00B1317F /* SLDSIconAction.m in Sources */,
-				0569F8E71B605535009FF8FE /* UIImage+SLDSIconStandard.m in Sources */,
-				055D1E6C1B5DCD0B00987466 /* UIImage+SLDSIconUtility.m in Sources */,
-				055D1E7A1B5E13E500987466 /* UIImage+SLDSIconAction.m in Sources */,
-				0569F8D31B604B72009FF8FE /* UIImage+SLDSIconCustom.m in Sources */,
-				05B36E121D808B8D00B1317F /* SLDSIconLabelCustom.m in Sources */,
-				05B36E081D808B8D00B1317F /* SLDSFont.m in Sources */,
-				05B36E181D808B8D00B1317F /* SLDSIconStandard.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		059109B31B583B8900C89AEC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				20F463A81E2579EE0049AA6D /* UIFont+SLDSFont.m in Sources */,
-				20F463A31E2579BC0049AA6D /* SLDSColor.m in Sources */,
-				20F463A41E2579BC0049AA6D /* UIColor+SLDSColor.m in Sources */,
-				0569F8D41B604B72009FF8FE /* UIImage+SLDSIconCustom.m in Sources */,
-				0569F8E81B605535009FF8FE /* UIImage+SLDSIconStandard.m in Sources */,
-				05B36E2D1D808B8E00B1317F /* SLDSIconCustom.m in Sources */,
-				055D1E6E1B5DCD0C00987466 /* UIImage+SLDSIconUtility.m in Sources */,
-				0576C3D71B686CBC002A7254 /* NSString+SLDSIconAction.m in Sources */,
-				0576C3E71B688278002A7254 /* NSString+SLDSIconStandard.m in Sources */,
-				05B36E371D808B8E00B1317F /* SLDSIconStandard.m in Sources */,
-				05B36E2F1D808B8E00B1317F /* SLDSIconLabelAction.m in Sources */,
-				05B36E271D808B8E00B1317F /* SLDSFont.m in Sources */,
-				05B36E2B1D808B8E00B1317F /* SLDSIconAction.m in Sources */,
-				05B36E311D808B8E00B1317F /* SLDSIconLabelCustom.m in Sources */,
-				05EEF05E1B6950A5002D5939 /* NSString+SLDSIconCustom.m in Sources */,
-				055D1E7B1B5E13E500987466 /* UIImage+SLDSIconAction.m in Sources */,
-				05B36E391D808B8E00B1317F /* SLDSIconUtility.m in Sources */,
-				05B36E351D808B8E00B1317F /* SLDSIconLabelUtility.m in Sources */,
-				05B36E331D808B8E00B1317F /* SLDSIconLabelStandard.m in Sources */,
-				05EEF0701B69585A002D5939 /* NSString+SLDSIconUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,68 +364,6 @@
 			};
 			name = Release;
 		};
-		051C4D131B2FD398001CDF18 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEAD_CODE_STRIPPING = NO;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "SalesforceDesignSystem-headers";
-				PUBLIC_HEADERS_FOLDER_PATH = "Headers/$(PROJECT_NAME)";
-				SKIP_INSTALL = YES;
-				STRIP_STYLE = "non-global";
-				SWIFT_OBJC_BRIDGING_HEADER = "SalesforceDesignSystem-headers-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		051C4D141B2FD398001CDF18 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEAD_CODE_STRIPPING = NO;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "SalesforceDesignSystem-headers";
-				PUBLIC_HEADERS_FOLDER_PATH = "Headers/$(PROJECT_NAME)";
-				SKIP_INSTALL = YES;
-				STRIP_STYLE = "non-global";
-				SWIFT_OBJC_BRIDGING_HEADER = "SalesforceDesignSystem-headers-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		059109F91B583B8900C89AEC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEAD_CODE_STRIPPING = NO;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "SalesforceDesignSystem-Extended";
-				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
-				SKIP_INSTALL = YES;
-				STRIP_STYLE = "non-global";
-				SWIFT_OBJC_BRIDGING_HEADER = "SalesforceDesignSystem-Extended-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		059109FA1B583B8900C89AEC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEAD_CODE_STRIPPING = NO;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "SalesforceDesignSystem-Extended";
-				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
-				SKIP_INSTALL = YES;
-				STRIP_STYLE = "non-global";
-				SWIFT_OBJC_BRIDGING_HEADER = "SalesforceDesignSystem-Extended-Bridging-Header.h";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -807,24 +381,6 @@
 			buildConfigurations = (
 				051031FB1B29F1020094A6B2 /* Debug */,
 				051031FC1B29F1020094A6B2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		051C4D121B2FD398001CDF18 /* Build configuration list for PBXNativeTarget "SalesforceDesignSystem-headers" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				051C4D131B2FD398001CDF18 /* Debug */,
-				051C4D141B2FD398001CDF18 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		059109F81B583B8900C89AEC /* Build configuration list for PBXNativeTarget "SalesforceDesignSystem-Extended" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				059109F91B583B8900C89AEC /* Debug */,
-				059109FA1B583B8900C89AEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

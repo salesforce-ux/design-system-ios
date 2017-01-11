@@ -28,7 +28,7 @@ class ActionBarButton: UIButton {
         self.titleLabel?.frame = frame!;
         
         // styling
-        self.titleLabel?.font = UIFont.sldsFont(.regular, with: .xSmall)
+        self.titleLabel?.font = UIFont.sldsFont(.regular, with: .fontSizeXSmall)
         self.titleLabel?.textColor = UIColor.sldsTextColor(.colorTextActionLabel)
     }
 }

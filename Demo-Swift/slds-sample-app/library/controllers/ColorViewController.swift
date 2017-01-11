@@ -70,27 +70,27 @@ class ColorViewController: UIViewController {
         
         self.swatchName.textAlignment = .center
         self.swatchName.textColor = UIColor.sldsTextColor(.colorTextDefault)
-        self.swatchName.font = UIFont.sldsFont(.regular, with: .small)
+        self.swatchName.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
         
         self.swatchR.textColor = UIColor.sldsTextColor(.colorTextDefault)
-        self.swatchR.font = UIFont.sldsFont(.regular, with: .small)
+        self.swatchR.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
         self.swatchR.textAlignment = .left
     
         self.swatchG.textColor = UIColor.sldsTextColor(.colorTextDefault)
-        self.swatchG.font = UIFont.sldsFont(.regular, with: .small)
+        self.swatchG.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
         self.swatchG.textAlignment = .left
         
         self.swatchB.textColor = UIColor.sldsTextColor(.colorTextDefault)
-        self.swatchB.font = UIFont.sldsFont(.regular, with: .small)
+        self.swatchB.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
         self.swatchB.textAlignment = .left
         
         self.swatchA.textColor = UIColor.sldsTextColor(.colorTextDefault)
-        self.swatchA.font = UIFont.sldsFont(.regular, with: .small)
+        self.swatchA.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
         self.swatchA.textAlignment = .left
         
         self.swatchHEX.textAlignment = .center
         self.swatchHEX.textColor = UIColor.sldsTextColor(.colorTextDefault)
-        self.swatchHEX.font = UIFont.sldsFont(.regular, with: .small)
+        self.swatchHEX.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
         
         self.view.addSubview(self.swatch)
         self.view.addSubview(self.swatchName)

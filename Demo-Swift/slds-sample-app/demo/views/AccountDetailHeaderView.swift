@@ -35,15 +35,15 @@ class AccountDetailHeaderView: AccountHeaderView, ItemBarDelegate {
         
         tabBar.delegate = self
         
-        self.headerTitle.font = UIFont.sldsFont(.regular, with: .medium)
+        self.headerTitle.font = UIFont.sldsFont(.regular, with: .fontSizeMedium)
         
-        accountType.font = UIFont.sldsFont(.regular, with: .small)
+        accountType.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
         accountType.textColor = UIColor.sldsTextColor(.colorTextDefault)
         
-        phoneNumber.font = UIFont.sldsFont(.regular, with: .small)
+        phoneNumber.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
         phoneNumber.textColor = UIColor.sldsTextColor(.colorTextLink)
         
-        url.font = UIFont.sldsFont(.regular, with: .small)
+        url.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
         url.textColor = UIColor.sldsTextColor(.colorTextLink)
         
         self.addSubview(accountType)
