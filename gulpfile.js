@@ -1,14 +1,14 @@
-const gulp 					= require('gulp');
-const gutil 				= require('gulp-util');
-const jsonFormat 		= require('gulp-json-format');
-const through 			= require('through2');
-const path 					= require('path');
-const nunjucks 			= require('gulp-nunjucks');
-const fs 						= require('fs');
-const merge2				= require('merge2');
-const rename				= require('gulp-rename');
+const gulp 			= require('gulp');
+const gutil 		= require('gulp-util');
+const jsonFormat 	= require('gulp-json-format');
+const through 		= require('through2');
+const path 			= require('path');
+const nunjucks 		= require('gulp-nunjucks');
+const fs 			= require('fs');
+const merge2		= require('merge2');
+const rename		= require('gulp-rename');
 const runSequence 	= require('run-sequence');
-const _ 						= require('lodash');
+const _ 			= require('lodash');
 
 const __PATHS__ = {
   designTokens: path.join(__dirname,'node_modules','@salesforce-ux','design-system','design-tokens','dist','force-base.ios.json'),
@@ -161,13 +161,6 @@ gulp.task('parse:icon-tokens', () => {
 gulp.task('default', () => {
 	runSequence('parse:design-tokens', 'template:design-tokens')
 });
-
-
-
-
-
-
-
 
 
 

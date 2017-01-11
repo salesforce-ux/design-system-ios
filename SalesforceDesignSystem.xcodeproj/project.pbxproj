@@ -12,11 +12,9 @@
 		0516E9561B4D9D2400F8B6B0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0516E9551B4D9D2400F8B6B0 /* CoreText.framework */; };
 		052B1F2A1B9686A5003CCCCC /* DesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 052B1F281B9686A5003CCCCC /* DesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05D89AFC1D808A3D00516C3C /* SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D89ADD1D808A3D00516C3C /* SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05D89AFD1D808A3D00516C3C /* SLDSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D89ADE1D808A3D00516C3C /* SLDSFont.m */; };
 		20F463991E2576F90049AA6D /* UIColor+SLDSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F463971E2576F90049AA6D /* UIColor+SLDSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20F4639A1E2576F90049AA6D /* UIColor+SLDSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F463981E2576F90049AA6D /* UIColor+SLDSColor.m */; };
 		20F4639D1E2577020049AA6D /* SLDSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F4639B1E2577020049AA6D /* SLDSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20F4639E1E2577020049AA6D /* SLDSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F4639C1E2577020049AA6D /* SLDSColor.m */; };
 		20F463A11E25779E0049AA6D /* UIFont+SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F4639F1E25779E0049AA6D /* UIFont+SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20F463A21E25779E0049AA6D /* UIFont+SLDSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F463A01E25779E0049AA6D /* UIFont+SLDSFont.m */; };
 /* End PBXBuildFile section */
@@ -50,7 +48,6 @@
 		0576C3DE1B6880EF002A7254 /* SLDSIconLabelStandardTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSIconLabelStandardTemplate.h; path = Templates/SLDSIconLabelStandardTemplate.h; sourceTree = "<group>"; };
 		0576C3DF1B6880EF002A7254 /* SLDSIconLabelStandardTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLDSIconLabelStandardTemplate.m; path = Templates/SLDSIconLabelStandardTemplate.m; sourceTree = "<group>"; };
 		05D89ADD1D808A3D00516C3C /* SLDSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSFont.h; path = Generated/SLDSFont.h; sourceTree = "<group>"; };
-		05D89ADE1D808A3D00516C3C /* SLDSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSFont.m; path = Generated/SLDSFont.m; sourceTree = "<group>"; };
 		05EEF0551B694FF2002D5939 /* SLDSIconLabelCustomTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLDSIconLabelCustomTemplate.m; path = Templates/SLDSIconLabelCustomTemplate.m; sourceTree = "<group>"; };
 		05EEF0561B694FF2002D5939 /* SLDSIconLabelCustomTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSIconLabelCustomTemplate.h; path = Templates/SLDSIconLabelCustomTemplate.h; sourceTree = "<group>"; };
 		05EEF05F1B69537E002D5939 /* SLDSIconLabelUtilityTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLDSIconLabelUtilityTemplate.h; path = Templates/SLDSIconLabelUtilityTemplate.h; sourceTree = "<group>"; };
@@ -60,7 +57,6 @@
 		20F463971E2576F90049AA6D /* UIColor+SLDSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+SLDSColor.h"; path = "Generated/Extensions/UIColor+SLDSColor.h"; sourceTree = "<group>"; };
 		20F463981E2576F90049AA6D /* UIColor+SLDSColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SLDSColor.m"; path = "Generated/Extensions/UIColor+SLDSColor.m"; sourceTree = "<group>"; };
 		20F4639B1E2577020049AA6D /* SLDSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSColor.h; path = Generated/SLDSColor.h; sourceTree = "<group>"; };
-		20F4639C1E2577020049AA6D /* SLDSColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSColor.m; path = Generated/SLDSColor.m; sourceTree = "<group>"; };
 		20F4639F1E25779E0049AA6D /* UIFont+SLDSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+SLDSFont.h"; sourceTree = "<group>"; };
 		20F463A01E25779E0049AA6D /* UIFont+SLDSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+SLDSFont.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,10 +144,8 @@
 				20F4639F1E25779E0049AA6D /* UIFont+SLDSFont.h */,
 				20F463A01E25779E0049AA6D /* UIFont+SLDSFont.m */,
 				20F4639B1E2577020049AA6D /* SLDSColor.h */,
-				20F4639C1E2577020049AA6D /* SLDSColor.m */,
 				20F463961E2576C00049AA6D /* Extensions */,
 				05D89ADD1D808A3D00516C3C /* SLDSFont.h */,
-				05D89ADE1D808A3D00516C3C /* SLDSFont.m */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -239,9 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F4639A1E2576F90049AA6D /* UIColor+SLDSColor.m in Sources */,
-				20F4639E1E2577020049AA6D /* SLDSColor.m in Sources */,
 				20F463A21E25779E0049AA6D /* UIFont+SLDSFont.m in Sources */,
-				05D89AFD1D808A3D00516C3C /* SLDSFont.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
