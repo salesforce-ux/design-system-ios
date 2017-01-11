@@ -9,7 +9,8 @@
 +(void)sldsUseDefaultFontFor:(SLDSFontType)fontType;
 +(void)sldsUseFont:(NSString *)fontFileName fromBundle:(NSString*)bundleName forType:(SLDSFontType)fontType;
 +(void)loadFont:(NSString *)fontFileName fromBundle:(NSString *)bundleName;
-    
++(NSString*)sldsFontName:(SLDSFontType)fontType;
+
 // NOTE : Deprecated --------------------------------------------------------------
 +(instancetype)sldsFontRegularWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");
 +(instancetype)sldsFontItalicWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");

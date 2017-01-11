@@ -102,11 +102,3 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
     @24,\
     @32,\
 ] objectAtIndex:enum] integerValue]
-
-@interface SLDSFont : NSObject
-+(NSString*)sldsFontFileName:(SLDSFontType)fontType;
-+(NSString*)sldsFontTypeName:(SLDSFontType)fontType;
-+(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType;
-+(CGFloat)sldsFontSize:(SLDSFontSizeType)sizeType;
-
-@end

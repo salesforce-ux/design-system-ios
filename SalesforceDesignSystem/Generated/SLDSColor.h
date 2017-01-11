@@ -809,12 +809,3 @@ static float const sldsColors[][4] = {
 	@"colorTextContextBarInverse",\
 	@"colorTextContextBarActionTrigger",\
 ] objectAtIndex:enum]
-
-//@interface SLDSColor : NSObject
-//
-//+(UIColor *)sldsFill:(SLDSFillType)colorType;
-//+(UIColor *)sldsBorderColor:(SLDSBorderColorType)colorType;
-//+(UIColor *)sldsBackgroundColor:(SLDSBackgroundColorType)colorType;
-//+(UIColor *)sldsTextColor:(SLDSTextColorType)colorType;
-//+(NSString*) sldsColorName:(NSInteger)colorType;
-//@end

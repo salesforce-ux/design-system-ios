@@ -14,9 +14,3 @@ static float const sldsColors[][4] = { {% for categoryName, category in data %}{
 #define sldsColorTypeNames(enum) [@[\{% for categoryName, category in data %}{% for v in category %}
 	@"{{v.name}}",\{% endfor %}{% endfor %}
 ] objectAtIndex:enum]
-
-//@interface SLDSColor : NSObject
-//{% for categoryName, category in data %}
-//+(UIColor *)slds{{categoryName}}:(SLDS{{categoryName}}Type)colorType;{% endfor %}
-//+(NSString*) sldsColorName:(NSInteger)colorType;
-//@end

@@ -112,7 +112,11 @@
     CFRelease(provider);
 }
 
-// NOTE : Deprecated --------------------------------------------------------------
++(NSString*)sldsFontName:(SLDSFontType)fontType {
+    return sldsFontTypeNames(fontType);
+}
+
+// NOTE : Deprecated! --------------------------------------------------------------
 +(instancetype) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize{
     return [self sldsFont:SLDSFontTypeRegular withSize:fontSize];
 }

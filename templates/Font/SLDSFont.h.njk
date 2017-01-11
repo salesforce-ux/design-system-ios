@@ -45,11 +45,3 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
 #define sldsFontSizes(enum) [[@[\{% for size in data.FontSize %}
     @{{size.value}},\{% endfor %}
 ] objectAtIndex:enum] integerValue]
-
-@interface SLDSFont : NSObject
-+(NSString*)sldsFontFileName:(SLDSFontType)fontType;
-+(NSString*)sldsFontTypeName:(SLDSFontType)fontType;
-+(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType;
-+(CGFloat)sldsFontSize:(SLDSFontSizeType)sizeType;
-
-@end
