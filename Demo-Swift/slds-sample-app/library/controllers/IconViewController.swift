@@ -52,7 +52,7 @@ class IconViewController: UIViewController {
             }
             
             self.codeView.swiftParameters = ["UIImage", data.method, swiftName, "withSize", "SLDSSquareIconMedium"]
-            self.codeView.objCParameters = ["UIColor", data.method, data.name, "withSize", "SLDSSquareIconMedium"]
+            self.codeView.objCParameters = ["UIImage", data.method, data.name, "withSize", "SLDSSquareIconMedium"]
         }
     }
 
