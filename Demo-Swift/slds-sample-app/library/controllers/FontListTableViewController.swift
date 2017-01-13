@@ -44,7 +44,7 @@ class FontListTableViewController: UITableViewController {
                 UIFont.sldsUseDefaultFonts()
                 repeat {
                     if let fontType = SLDSFontType.init(rawValue: fontTypes.count),
-                        let fontName = SLDSFont.sldsFontTypeName(fontType) {
+                        let fontName = UIFont.sldsFontName(fontType) {
                         fontTypes.append(fontName.replacingOccurrences(of: "SLDSFontType", with: ""))
                     }
                 } while SLDSFontType.init(rawValue: fontTypes.count)?.hashValue != 0
@@ -69,7 +69,7 @@ class FontListTableViewController: UITableViewController {
         // NOTE: Collecting all the Font Sizes
         repeat {
             if let fontSize = SLDSFontSizeType.init(rawValue: fontSizes.count),
-                let sizeName = SLDSFont.sldsFontSizeName(fontSize) {
+                let sizeName = UIFont.sldsFontSizeName(fontSize) {
                 fontSizes.append(sizeName.replacingOccurrences(of: "SLDSFontSize", with: ""))
             }
         } while SLDSFontSizeType.init(rawValue: fontSizes.count)?.hashValue != 0

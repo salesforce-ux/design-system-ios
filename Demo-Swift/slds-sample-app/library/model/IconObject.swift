@@ -43,30 +43,7 @@ struct IconObject {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     var name : String {
-        var retVal = ""
-        
-        switch self.type {
-        case .action :
-            if let value = SLDSIconActionType.init(rawValue: self.index) {
-                retVal = NSString.sldsIconAction(value) as String
-            }
-            
-        case .custom :
-            if let value = SLDSIconCustomType.init(rawValue: self.index) {
-                retVal = NSString.sldsIconCustom(value) as String
-            }
-            
-        case .standard :
-            if let value = SLDSIconStandardType.init(rawValue: self.index) {
-                retVal = NSString.sldsIconStandard(value) as String
-            }
-            
-        case .utility :
-            if let value = SLDSIconUtilityType.init(rawValue: self.index) {
-                retVal = NSString.sldsIconUtility(value) as String
-            }
-        }
-        return retVal
+        return UIImage.sldsIconName(index)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -75,23 +52,23 @@ struct IconObject {
         
         switch self.type {
         case .action :
-            if let value = SLDSIconActionType.init(rawValue: self.index) {
-                return UIImage.sldsIconAction(value, withSize: self.size)
+            if let value = SLDSActionIconType.init(rawValue: self.index) {
+                return UIImage.sldsActionIcon(value, withSize: Int16(self.size))
             }
             
         case .custom :
-            if let value = SLDSIconCustomType.init(rawValue: self.index) {
-                return UIImage.sldsIconCustom(value, withSize: self.size)
+            if let value = SLDSCustomIconType.init(rawValue: self.index) {
+                return UIImage.sldsCustomIcon(value, withSize: Int16(self.size))
             }
             
         case .standard :
-            if let value = SLDSIconStandardType.init(rawValue: index) {
-                return UIImage.sldsIconStandard(value, withSize: self.size)
+            if let value = SLDSStandIconType.init(rawValue: index) {
+                return UIImage.sldsStandardIcon(value, withSize: Int16(self.size))
             }
             
         case .utility :
-            if let value = SLDSIconUtilityType.init(rawValue: self.index) {
-                return UIImage.sldsIconUtility(value, withSize: self.size)
+            if let value = SLDSUtilityIconType.init(rawValue: self.index) {
+                return UIImage.sldsUtilityIcon(value, withSize: Int16(self.size))
             }
         }
         

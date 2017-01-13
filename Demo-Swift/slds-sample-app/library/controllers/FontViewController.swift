@@ -19,12 +19,8 @@ class FontViewController: UIViewController {
     
     var dataProvider = IndexPath(row: 0, section: 0) {
         didSet {
-            var fontSizeName = SLDSFont.sldsFontSizeName(SLDSFontSizeType(rawValue: self.dataProvider.row)!)!
-            var fontTypeName = SLDSFont.sldsFontTypeName(SLDSFontType(rawValue: self.dataProvider.section)!)!
-            
-            //var fontSizeName = SLDSFont.sldsFontSizeName(SLDSFontSizeType(rawValue: self.dataProvider.row)!)!
-            //var fontTypeName = SLDSFont.sldsFontTypeName(SLDSFontType(rawValue: self.dataProvider.section)!)!
-            
+            var fontSizeName = UIFont.sldsFontSizeName(SLDSFontSizeType(rawValue: self.dataProvider.row)!)!
+            var fontTypeName = UIFont.sldsFontName(SLDSFontType(rawValue: self.dataProvider.section)!)!
             self.sampleText.font = UIFont.sldsFont(SLDSFontType(rawValue: self.dataProvider.section)!,
                                                    with: SLDSFontSizeType(rawValue: self.dataProvider.row)!)
             

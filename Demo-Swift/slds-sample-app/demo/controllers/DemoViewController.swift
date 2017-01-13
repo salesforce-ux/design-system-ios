@@ -109,7 +109,7 @@ class DemoViewController: UIViewController, ItemBarDelegate, UINavigationControl
             for item in self.actionItems {
                 
                 let button = ActionBarButton()
-                button.setImage(UIImage.sldsIconAction(item.iconId, withSize: 28), for: .normal)
+                button.setImage(UIImage.sldsActionIcon(item.iconId, withSize: 28), for: .normal)
                 button.setTitle(item.label, for: .normal)
                 self.actionBar.addActionBarButton(button)
             }

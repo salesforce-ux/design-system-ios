@@ -151,22 +151,22 @@ class ApplicationModel: NSObject {
         
         switch type {
         case .action :
-            if index > 0 && (SLDSIconActionType.init(rawValue: index)?.hashValue == 0) {
+            if index > 0 && (SLDSActionIconType.init(rawValue: index)?.hashValue == 0) {
                 return nil
             }
         
         case .custom :
-            if index > 0 && (SLDSIconCustomType.init(rawValue: index)?.hashValue == 0) {
+            if index > 0 && (SLDSCustomIconType.init(rawValue: index)?.hashValue == 0) {
                 return nil
             }
         
         case .standard :
-            if index > 0 && (SLDSIconStandardType.init(rawValue: index)?.hashValue == 0) {
+            if index > 0 && (SLDSStandardIconType.init(rawValue: index)?.hashValue == 0) {
                 return nil
             }
         
         case .utility :
-            if index > 0 && (SLDSIconUtilityType.init(rawValue: index)?.hashValue == 0) {
+            if index > 0 && (SLDSUtilityIconType.init(rawValue: index)?.hashValue == 0) {
                 return nil
             }
         }

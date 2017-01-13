@@ -29,6 +29,15 @@ let types = [
 
 let iconTypes = [
 	{
+		'name': 'action',
+		'tokenFilename': 'bg-actions.ios.json'
+	}, {
+		'name': 'standard',
+		'tokenFilename': 'bg-standard.ios.json'
+	}, {
+		'name': 'custom',
+		'tokenFilename': 'bg-custom.ios.json'
+	}, {
 		'name': 'utility'
 	}
 ]
@@ -161,7 +170,13 @@ gulp.task('create:icon-fonts', () => {
 		})
 	})
 
+	// add unique id to filename to avoid duplicate glyphs
+	let id = 1;
 	gulp.src(iconPaths)
+		.pipe(rename((path) => {
+	    path.basename += '-' + id;
+	    id++;
+	  }))
    	.pipe(iconFont({
   		fontName: 'SalesforceDesignSystemIcons',
   		normalize:true
@@ -229,17 +244,17 @@ gulp.task('merge:icon-tokens', () => {
 	.pipe(merge('icons.json', (data) => {
 		data.icons =
 		iconTypes.forEach(t => {
-			data.icons
-			data[t.name] = data[t.tokenFilename.replace('.json', '')]
-			delete data[t.tokenFilename.replace('.json', '')]
+			if(t.name !== 'utility') {
+				data.icons
+				data[t.name] = data[t.tokenFilename.replace('.json', '')]
+				delete data[t.tokenFilename.replace('.json', '')]
+			}
 		})
       return new Buffer(JSON.stringify(data));
     }))
     .pipe(jsonFormat(2))
 	.pipe(gulp.dest('./temp'))
 });
-
-
 
 // extract categories for a particular property type, add to categories object
 const parseIconTokens = () => {
@@ -253,11 +268,9 @@ const parseIconTokens = () => {
 			}).map(i => {
 				return iconType.name === 'action' ? 'action' + format(i.replace('.svg','')) : format(i.replace('.svg','')).charAt(0).toLowerCase() + format(i.replace('.svg','')).slice(1);
 			});
-
 			let tokens = JSON.parse(file.contents.toString('utf-8'));
-
 			iconNames.forEach(n => {
-				let backgroundColor = iconType.name === 'utility' ? {'r':0, 'g':0, 'b':0, 'a':0} : parseColor(_.find(tokens[iconType.name].properties, { 'name': n }).value)
+				let backgroundColor = iconType.name === 'utility' ? 'null' : parseColor(_.find(tokens[iconType.name].properties, { 'name': n }).value)
 				icons[iconType.name].push({
 					"name" : n,
 					"backgroundColor" : backgroundColor,

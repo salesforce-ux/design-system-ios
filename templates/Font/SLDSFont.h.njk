@@ -5,6 +5,8 @@ typedef NS_ENUM(NSInteger, SLDSFontSizeType) {
 	{{size.name}}{% if not loop.last %},{% endif %}{% endfor %}
 };
 
+//-------------------------------------------------------------------
+
 typedef NS_ENUM(NSInteger, SLDSFontType) {
     SLDSFontTypeRegular,
     SLDSFontTypeItalic,
@@ -15,6 +17,8 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
     SLDSFontTypeThin,
     SLDSFontTypeThinItalic
 };
+
+//-------------------------------------------------------------------
 
 #define sldsFontFileNames(enum) [@[\
     @"SalesforceSans-Regular.ttf",\
@@ -27,6 +31,8 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
     @"SalesforceSans-ThinItalic.ttf"\
 ] objectAtIndex:enum]
 
+//-------------------------------------------------------------------
+
 #define sldsFontTypeNames(enum) [@[\
     @"SLDSFontTypeRegular",\
     @"SLDSFontTypeItalic",\
@@ -38,10 +44,16 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
     @"SLDSFontTypeThinItalic"\
 ] objectAtIndex:enum]
 
+//-------------------------------------------------------------------
+
 #define sldsFontSizeNames(enum) [@[\{% for size in data.FontSize %}
     @"{{size.name}}",\{% endfor %}
 ] objectAtIndex:enum]
 
+//-------------------------------------------------------------------
+
 #define sldsFontSizes(enum) [[@[\{% for size in data.FontSize %}
     @{{size.value}},\{% endfor %}
 ] objectAtIndex:enum] integerValue]
+
+//-------------------------------------------------------------------
