@@ -1,14 +1,14 @@
-const gulp 			= require('gulp');
-const gutil 		= require('gulp-util');
+const gulp 				= require('gulp');
+const gutil 			= require('gulp-util');
 const jsonFormat 	= require('gulp-json-format');
 const through 		= require('through2');
-const path 			= require('path');
+const path 				= require('path');
 const nunjucks 		= require('gulp-nunjucks');
-const fs 			= require('fs');
-const merge2		= require('merge2');
-const rename		= require('gulp-rename');
-const runSequence 	= require('run-sequence');
-const _ 			= require('lodash');
+const fs 					= require('fs');
+const merge2			= require('merge2');
+const rename			= require('gulp-rename');
+const runSequence = require('run-sequence');
+const _ 					= require('lodash');
 
 const __PATHS__ = {
   designTokens: path.join(__dirname,'node_modules','@salesforce-ux','design-system','design-tokens','dist','force-base.ios.json'),
@@ -29,11 +29,7 @@ let types = [
 
 let iconTypes = [
 	{
-		'name': 'action',
-		'tokenFilename': 'bg-actions.ios.json'
-	}, {
-		'name': 'custom',
-		'tokenFilename': 'bg-custom.ios.json'
+		'name': 'utility'
 	}
 ]
 
@@ -142,37 +138,16 @@ gulp.task('icons', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Icons
 // ------------------------------------------------------------------------------------------------ //
 
 
 const iconFont 		= require('gulp-iconfont');
-const svgMin 		= require('gulp-svgmin');
+const svgMin 			= require('gulp-svgmin');
 const fontPlugin 	= require('./fontPlugin.js');
 const gulpFilter 	= require('gulp-filter');
-const tap 			= require('gulp-tap');
 const gulpData		= require('gulp-data');
+const consolidate = require('gulp-consolidate');
 
 gulp.task('create:icon-fonts', () => {
 	const ttfFilter = gulpFilter('**/*.ttf');
@@ -187,30 +162,12 @@ gulp.task('create:icon-fonts', () => {
 	})
 
 	gulp.src(iconPaths)
-   	.pipe(svgMin({
-      plugins: [
-        {
-          removeViewBox:true,
-          convertShapeToPath:true
-        },
-        {
-          fontplugin:fontPlugin
-        },
-        {
-          transformsWithOnePath:{}
-        },
-        {
-          cleanupNumericValues: {
-              floatPrecision: 3
-          }
-        }
-      ]
-  	}))
    	.pipe(iconFont({
   		fontName: 'SalesforceDesignSystemIcons',
+  		normalize:true
     }))
     .pipe(ttfFilter)
-	.pipe(gulp.dest('SalesforceDesignSystem.bundle/'))
+		.pipe(gulp.dest('SalesforceDesignSystem.bundle/'))
 });
 
 gulp.task('parse:icon-tokens', () => {
@@ -276,7 +233,7 @@ gulp.task('merge:icon-tokens', () => {
 			data[t.name] = data[t.tokenFilename.replace('.json', '')]
 			delete data[t.tokenFilename.replace('.json', '')]
 		})
-      	return new Buffer(JSON.stringify(data));
+      return new Buffer(JSON.stringify(data));
     }))
     .pipe(jsonFormat(2))
 	.pipe(gulp.dest('./temp'))
@@ -300,18 +257,15 @@ const parseIconTokens = () => {
 			let tokens = JSON.parse(file.contents.toString('utf-8'));
 
 			iconNames.forEach(n => {
-				let icon = _.find(tokens[iconType.name].properties, { 'name': n })
-				let backgroundColor = parseColor(icon.value)
+				let backgroundColor = iconType.name === 'utility' ? {'r':0, 'g':0, 'b':0, 'a':0} : parseColor(_.find(tokens[iconType.name].properties, { 'name': n }).value)
 				icons[iconType.name].push({
-					"name" : icon.name,
+					"name" : n,
 					"backgroundColor" : backgroundColor,
 					"unicode" : unicode.toString(16).toUpperCase()
 				});
 				unicode++;
 			});
 		});
-
-
     next(null, file);
 	});
 }

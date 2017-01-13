@@ -3,20 +3,12 @@
 @implementation UIImage (SLDSIcon)
 
 
-+(instancetype)sldsActionIcon:(SLDSActionIconType)iconType withSize:(short)size {
-    // TODO: Add logic to adjust scale for type
-    return [self sldsIcon:iconType withColor:nil andBGColor:nil andSize:size];
-}
-+(instancetype)sldsCustomIcon:(SLDSCustomIconType)iconType withSize:(short)size {
++(instancetype)sldsUtilityIcon:(SLDSUtilityIconType)iconType withSize:(short)size {
     // TODO: Add logic to adjust scale for type
     return [self sldsIcon:iconType withColor:nil andBGColor:nil andSize:size];
 }
 
-+(instancetype)sldsActionIcon:(SLDSActionIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(short)size {
-	// TODO: Add logic to adjust scale for type
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
-}
-+(instancetype)sldsCustomIcon:(SLDSCustomIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(short)size {
++(instancetype)sldsUtilityIcon:(SLDSUtilityIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(short)size {
 	// TODO: Add logic to adjust scale for type
 	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
 }
@@ -28,8 +20,8 @@
 +(UIColor*)colorForIndex:(NSInteger)index {
     static NSMutableArray *colorCache = nil;
     if (colorCache == nil) {
-        colorCache = [[NSMutableArray alloc] initWithCapacity:custom99];
-        for (NSInteger i = 0; i < custom99; ++i)
+        colorCache = [[NSMutableArray alloc] initWithCapacity:zoomout];
+        for (NSInteger i = 0; i < zoomout; ++i)
             [colorCache addObject:[NSNull null]];
     }
 
