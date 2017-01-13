@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, SLDSactionIconType) {
+typedef NS_ENUM(NSInteger, SLDSActionIconType) {
 	
 	actionAddContact = 0,
 	actionAddRelationship,
@@ -184,7 +184,7 @@ typedef NS_ENUM(NSInteger, SLDSactionIconType) {
 };
 
 
-typedef NS_ENUM(NSInteger, SLDScustomIconType) {
+typedef NS_ENUM(NSInteger, SLDSCustomIconType) {
 	
 	custom1 = actionWebLink + 1,
 	custom10,
@@ -599,7 +599,6 @@ static float const sldsIconBackgroundColors[][3] = {
 };
 
 #define iconUniCode(enum) [@[\
-
 @"\uEA01",\
 @"\uEA02",\
 @"\uEA03",\

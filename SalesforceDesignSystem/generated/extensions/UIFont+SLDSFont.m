@@ -116,11 +116,7 @@
     return sldsFontTypeNames(fontType);
 }
 
-<<<<<<< HEAD
-// NOTE : Deprecatedkjhdfskljhdflsgh --------------------------------------------------------------
-=======
-// NOTE : Deprecated! --------------------------------------------------------------
->>>>>>> 5f94fc3c2f71e70dd32278b8ec0b3137dcffedc3
+// NOTE : Deprecated --------------------------------------------------------------
 +(instancetype) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize{
     return [self sldsFont:SLDSFontTypeRegular withSize:fontSize];
 }

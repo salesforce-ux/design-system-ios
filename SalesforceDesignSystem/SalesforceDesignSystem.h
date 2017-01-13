@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "UIColor+SLDSColor.h"
 #import "UIFont+SLDSFont.h"
+#import "UIImage+SLDSIcon.h"
+
 //#import "SLDSSpacing.h"
 //#import "SLDSSizing.h"
 //#import "SLDSLineHeight.h"

@@ -89,7 +89,7 @@ gulp.task('template:design-tokens', () => {
 		for (let type in data) {
 		if (data.hasOwnProperty(type)) {
 			let updatedType = type === 'FontSize' ? 'Font' : type
-			
+
 			streams.push(
 				gulp.src('templates/' + updatedType + '/UI' + updatedType + '.h.njk')
 					.pipe(nunjucks.compile({ 'data': data[type] }))
@@ -130,7 +130,7 @@ gulp.task('parse:design-tokens', () => {
 })
 
 gulp.task('default', () => {
-	runSequence('parse:design-tokens', 'template:design-tokens')
+	runSequence('parse:design-tokens', 'template:design-tokens', 'icons')
 });
 
 gulp.task('icons', () => {
@@ -225,9 +225,9 @@ gulp.task('template:icon-tokens', () => {
 
 	streams.push(
 		gulp.src('templates/Icon/UIImage.h.njk')
-			.pipe(nunjucks.compile({ 
+			.pipe(nunjucks.compile({
 				'icons': icons,
-				'iconTypes':iconTypes						 
+				'iconTypes':iconTypes
 			}))
 			.pipe(rename('Extensions/UIImage+SLDSIcon.h'))
 	);
@@ -236,7 +236,7 @@ gulp.task('template:icon-tokens', () => {
 		gulp.src('templates/Icon/UIImage.m.njk')
 			.pipe(nunjucks.compile({
 				'icons': icons,
-				'iconTypes':iconTypes	
+				'iconTypes':iconTypes
 			}))
 			.pipe(rename('Extensions/UIImage+SLDSIcon.m'))
 	);
@@ -245,7 +245,7 @@ gulp.task('template:icon-tokens', () => {
 		gulp.src('templates/Icon/SLDSIcon.m.njk')
 			.pipe(nunjucks.compile({
 				'icons': icons,
-				'iconTypes':iconTypes	
+				'iconTypes':iconTypes
 			}))
 			.pipe(rename('SLDSIcon.m'))
 	);
@@ -254,7 +254,7 @@ gulp.task('template:icon-tokens', () => {
 		gulp.src('templates/Icon/SLDSIcon.h.njk')
 			.pipe(nunjucks.compile({
 				'icons': icons,
-				'iconTypes':iconTypes	
+				'iconTypes':iconTypes
 			}))
 			.pipe(rename('SLDSIcon.h'))
 	);
@@ -272,9 +272,9 @@ gulp.task('merge:icon-tokens', () => {
 
 	return gulp.src(source)
 	.pipe(merge('icons.json', (data) => {
-		data.icons = 
+		data.icons =
 		iconTypes.forEach(t => {
-			data.icons 
+			data.icons
 			data[t.name] = data[t.tokenFilename.replace('.json', '')]
 			delete data[t.tokenFilename.replace('.json', '')]
 		})
@@ -293,7 +293,7 @@ const parseIconTokens = () => {
 		iconTypes.forEach(iconType => {
 			icons[iconType.name] = [];
 
-			let iconNames = (fs.readdirSync(path.resolve(__PATHS__.icons + '/' + iconType.name))).filter(n => { 
+			let iconNames = (fs.readdirSync(path.resolve(__PATHS__.icons + '/' + iconType.name))).filter(n => {
 				return n.indexOf('.svg') !== -1;
 			}).map(i => {
 				return iconType.name === 'action' ? 'action' + format(i.replace('.svg','')) : format(i.replace('.svg','')).charAt(0).toLowerCase() + format(i.replace('.svg','')).slice(1);
