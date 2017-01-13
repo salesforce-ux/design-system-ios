@@ -39,11 +39,11 @@ class MainListViewController: UITableViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.sldsBackgroundColor(.colorBackgroundButtonBrandActive)
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
-        self.navigationController?.navigationBar.backIndicatorImage = UIImage.sldsIconUtility(.chevronleft,
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage.sldsUtilityIcon(.chevronleft,
                                                                                               with: UIColor.white,
                                                                                               andSize: SLDSSquareIconUtilityMedium).withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -1, 0))
 
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage.sldsIconUtility(.chevronleft,
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage.sldsUtilityIcon(.chevronleft,
                                                                                                             with: UIColor.white,
                                                                                                             andSize: SLDSSquareIconUtilityMedium).withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -1, 0))
         

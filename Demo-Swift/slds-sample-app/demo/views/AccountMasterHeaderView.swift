@@ -20,7 +20,7 @@ class AccountMasterHeaderView: AccountHeaderView {
         super.makeLayout()
         headerTitle.text = "My Accounts"
         
-        headerDownArrow = UIImageView(image: UIImage.sldsIconUtility(.chevrondown,
+        headerDownArrow = UIImageView(image: UIImage.sldsUtilityIcon(.chevrondown,
                                                                      with: UIColor.sldsTextColor(.colorTextDefault),
                                                                      andSize: SLDSSquareIconUtilitySmall))
         

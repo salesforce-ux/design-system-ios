@@ -10,6 +10,7 @@
 #import "UIColor+SLDSColor.h"
 #import "UIFont+SLDSFont.h"
 #import "UIImage+SLDSIcon.h"
+#import "SLDSSize.h"
 
 //#import "SLDSSpacing.h"
 //#import "SLDSSizing.h"

@@ -1,6 +1,6 @@
 #import "UIImage+SLDSIcon.h"
 
-#define unicodeForIndex(index) ([NSString stringWithFormat:@"\\u%lX", (unsigned long) index + 59905])
+#define UnicodeForIndex(index) ([NSString stringWithFormat:@"\\u%lX", (unsigned long) index + 59905])
 
 @implementation UIImage (SLDSIcon)
 
@@ -36,20 +36,19 @@
 //-------------------------------------------------------------------
 
 +(UIColor*)colorForIndex:(NSInteger)index {
-    static NSMutableArray *colorCache = nil;
+    static NSMutableDictionary *colorCache = nil;
     if (colorCache == nil) {
-        colorCache = [[NSMutableArray alloc] initWithCapacity:custom99];
-        for (NSInteger i = 0; i < custom99; ++i)
-            [colorCache addObject:[NSNull null]];
+        colorCache = [[NSMutableDictionary alloc] init];
     }
 
-    UIColor *color = [colorCache objectAtIndex:index];
+    UIColor *color = [colorCache objectForKey:[NSNumber numberWithInteger:index]];
     if( color && [color isEqual:[NSNull null]] ) {
         color = [UIColor colorWithRed:sldsIconBackgroundColors[index][0]
                                 green:sldsIconBackgroundColors[index][1]
                                  blue:sldsIconBackgroundColors[index][2]
                                 alpha:1];
-        [colorCache setObject:color atIndexedSubscript:index];
+
+        [colorCache setObject:color forKey:[NSNumber numberWithInteger:index]];
     }
 
     return color;
@@ -70,8 +69,26 @@
         bgColor = [UIColor clearColor];
     }
 
-	CGFloat iconScale = 1.0;
-	//CGFloat iconScale = 0.65;
+    static NSMutableDictionary *iconCache = nil;
+    if (iconCache == nil) {
+        iconCache = [[NSMutableDictionary alloc] init];
+    }
+
+    CGFloat const *components = CGColorGetComponents(iconColor.CGColor);
+    NSString * fgColorKey = [NSString stringWithFormat:@"%f%f%f%f", components[0], components[1], components[2], components[3]];
+
+    components = CGColorGetComponents(bgColor.CGColor);
+    NSString * bgColorKey = [NSString stringWithFormat:@"%f%f%f%f", components[0], components[1], components[2], components[3]];
+
+    NSString *iconKey = [NSString stringWithFormat:@"%ld %@ %@ %d", (long)iconType, fgColorKey, bgColorKey, size];
+    UIImage * icon = [iconCache objectForKey:iconKey];
+
+    if ( icon != NULL ) {
+        return icon;
+    }
+
+    CGFloat iconScale = 1.0;
+    //CGFloat iconScale = 0.65;
 
     CGSize iconSize = CGSizeMake(size,size);
     CGRect textRect = CGRectMake(0,(size-size*iconScale)/2,size,size*iconScale);
@@ -83,16 +100,12 @@
     UIBezierPath *bg = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size, size) byRoundingCorners:(UIRectCornerAllCorners) cornerRadii:CGSizeMake(size/10, size/10)];
     [bg fill];
 
-    //NSString *textContent = iconUniCode(iconType);//[SLDSIcon sldsIconUniCode:iconType];
-    //NSString *textContent = [self unicodeForIndex:iconType];
-
     UIFont *font = [UIFont fontWithName:@"SalesforceDesignSystemIcons.ttf" size:textRect.size.height];
-
     [iconColor setFill];
 
     static NSParagraphStyle * paragraphStyle = nil;
-
     static dispatch_once_t predicate_static = 0;
+
     dispatch_once(&predicate_static, ^{
         NSMutableParagraphStyle * pStyle =
         [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
@@ -101,16 +114,18 @@
     });
 
     if(font){
-        [unicodeForIndex(iconType) drawInRect:textRect withAttributes:@{NSFontAttributeName : font,
+        [UnicodeForIndex(iconType) drawInRect:textRect withAttributes:@{NSFontAttributeName : font,
                                                           NSForegroundColorAttributeName : iconColor,
                                                           NSParagraphStyleAttributeName:paragraphStyle
                                                           }];
     }
 
-    UIImage * icon = UIGraphicsGetImageFromCurrentImageContext();
+    icon = UIGraphicsGetImageFromCurrentImageContext();
+    [iconCache setObject:icon forKey:iconKey];
     UIGraphicsEndImageContext();
     return icon;
 }
+
 
 //-------------------------------------------------------------------
 
