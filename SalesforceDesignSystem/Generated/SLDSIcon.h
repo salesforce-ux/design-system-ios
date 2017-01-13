@@ -183,6 +183,7 @@ typedef NS_ENUM(NSInteger, SLDSActionIconType) {
 	actionWebLink
 };
 
+//-------------------------------------------------------------------
 
 typedef NS_ENUM(NSInteger, SLDSCustomIconType) {
 	
@@ -301,6 +302,7 @@ typedef NS_ENUM(NSInteger, SLDSCustomIconType) {
 	custom99
 };
 
+//-------------------------------------------------------------------
 
 
 static float const sldsIconBackgroundColors[][3] = { 
@@ -598,6 +600,8 @@ static float const sldsIconBackgroundColors[][3] = {
 	{0.24,0.133,0.11},
 };
 
+//-------------------------------------------------------------------
+
 #define iconUniCode(enum) [@[\
 @"\uEA01",\
 @"\uEA02",\
@@ -892,6 +896,8 @@ static float const sldsIconBackgroundColors[][3] = {
 @"\uEB23",\
 @"\uEB24",\
 ] objectAtIndex:enum]
+
+//-------------------------------------------------------------------
 
 #define sldsIconTypeNames(enum) [@[\
 	@"actionAddContact",\

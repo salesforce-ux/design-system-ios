@@ -24,6 +24,8 @@
     return fontOverrides;
 }
 
+//-------------------------------------------------------------------
+
 +(instancetype)sldsFont:(SLDSFontType)fontType withSize:(SLDSFontSizeType)fontSize
 {
     NSInteger fontSizeValue = sldsFontSizes(fontSize);//[SLDSFont sldsFontSize:fontSize];
@@ -43,6 +45,8 @@
     NSArray *fontParts = [fontFileName componentsSeparatedByString:@"."];
     return [UIFont fontWithName:fontParts[0] size:fontSizeValue];
 }
+
+//-------------------------------------------------------------------
 
 +(void)sldsUseDefaultFonts {
     bool loopFlag = true;
@@ -64,14 +68,20 @@
     while(loopFlag);
 }
 
+//-------------------------------------------------------------------
+
 +(void)sldsUseDefaultFontFor:(SLDSFontType)fontType {
     NSString *fontFileName = sldsFontFileNames(fontType); //[SLDSFont sldsFontFileName:(SLDSFontType)fontType];
     [self sldsUseFont:fontFileName fromBundle:kSLDSFontBundleName forType:fontType];
 }
 
+//-------------------------------------------------------------------
+
 +(void)sldsUseFont:(NSString *)fontFileName fromBundle:(NSString*)bundleName forType:(SLDSFontType)fontType {
     [[self sldsFontOverrides] replaceObjectAtIndex:(NSUInteger)fontType withObject:@[fontFileName,bundleName]];
 }
+
+//-------------------------------------------------------------------
 
 +(void) loadFont:(NSString *)fontFileName fromBundle:(NSString *)bundleName {
 
@@ -112,29 +122,49 @@
     CFRelease(provider);
 }
 
+//-------------------------------------------------------------------
+
 +(NSString*)sldsFontName:(SLDSFontType)fontType {
     return sldsFontTypeNames(fontType);
 }
 
-// NOTE : Deprecated --------------------------------------------------------------
+//-------------------------------------------------------------------
+
++(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType {
+    return sldsFontSizeNames(sizeType);
+}
+
+// NOTE : Deprecated Below ------------------------------------------
+//-------------------------------------------------------------------
+
 +(instancetype) sldsFontRegularWithSize:(SLDSFontSizeType)fontSize{
     return [self sldsFont:SLDSFontTypeRegular withSize:fontSize];
 }
+
+//-------------------------------------------------------------------
 
 +(instancetype) sldsFontItalicWithSize:(SLDSFontSizeType)fontSize{
     return [self sldsFont:SLDSFontTypeItalic withSize:fontSize];
 }
 
+//-------------------------------------------------------------------
+
 +(instancetype) sldsFontLightWithSize:(SLDSFontSizeType)fontSize{
     return [self sldsFont:SLDSFontTypeLight withSize:fontSize];
 }
+
+//-------------------------------------------------------------------
 
 +(instancetype) sldsFontStrongWithSize:(SLDSFontSizeType)fontSize{
     return [self sldsFont:SLDSFontTypeBold withSize:fontSize];
 }
 
+//-------------------------------------------------------------------
+
 +(instancetype) sldsFontThinWithSize:(SLDSFontSizeType)fontSize{
     return [self sldsFont:SLDSFontTypeThin withSize:fontSize];
 }
+
+//-------------------------------------------------------------------
 
 @end

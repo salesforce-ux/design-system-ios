@@ -11,7 +11,7 @@ import UIKit
 
 struct ActionItem {
     var label : String!
-    var iconId : SLDSIconActionType!
+    var iconId : SLDSActionIconType!
 }
 
 //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

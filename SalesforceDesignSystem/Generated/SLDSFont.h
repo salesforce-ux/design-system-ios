@@ -24,6 +24,8 @@ typedef NS_ENUM(NSInteger, SLDSFontSizeType) {
 	fontSizeHeadingXLarge
 };
 
+//-------------------------------------------------------------------
+
 typedef NS_ENUM(NSInteger, SLDSFontType) {
     SLDSFontTypeRegular,
     SLDSFontTypeItalic,
@@ -34,6 +36,8 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
     SLDSFontTypeThin,
     SLDSFontTypeThinItalic
 };
+
+//-------------------------------------------------------------------
 
 #define sldsFontFileNames(enum) [@[\
     @"SalesforceSans-Regular.ttf",\
@@ -46,6 +50,8 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
     @"SalesforceSans-ThinItalic.ttf"\
 ] objectAtIndex:enum]
 
+//-------------------------------------------------------------------
+
 #define sldsFontTypeNames(enum) [@[\
     @"SLDSFontTypeRegular",\
     @"SLDSFontTypeItalic",\
@@ -56,6 +62,8 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
     @"SLDSFontTypeThin",\
     @"SLDSFontTypeThinItalic"\
 ] objectAtIndex:enum]
+
+//-------------------------------------------------------------------
 
 #define sldsFontSizeNames(enum) [@[\
     @"fontSizeXSmall",\
@@ -80,6 +88,8 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
     @"fontSizeHeadingXLarge",\
 ] objectAtIndex:enum]
 
+//-------------------------------------------------------------------
+
 #define sldsFontSizes(enum) [[@[\
     @10,\
     @14,\
@@ -102,3 +112,5 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
     @24,\
     @32,\
 ] objectAtIndex:enum] integerValue]
+
+//-------------------------------------------------------------------

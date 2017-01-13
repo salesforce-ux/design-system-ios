@@ -10,5 +10,4 @@
 +(instancetype)sldsCustomIcon:(SLDSCustomIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(short)size;
 
 +(NSString*)sldsIconName:(NSInteger)iconType;
-//+(UIColor*)sldsIconBackgroundColor:(NSInteger)iconType;
 @end

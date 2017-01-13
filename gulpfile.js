@@ -284,8 +284,6 @@ gulp.task('merge:icon-tokens', () => {
 	.pipe(gulp.dest('./temp'))
 });
 
-
-
 // extract categories for a particular property type, add to categories object
 const parseIconTokens = () => {
 	return through.obj((file, enc, next) => {

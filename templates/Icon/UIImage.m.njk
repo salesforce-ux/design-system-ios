@@ -1,21 +1,27 @@
 #import "UIImage+SLDSIcon.h"
 
+#define unicodeForIndex(index) ([NSString stringWithFormat:@"\\u%lX", (unsigned long) index + 59905])
+
 @implementation UIImage (SLDSIcon)
 {% set lastValue = 'empty' %}{% for type, iconSet in icons %}{% for i in iconSet %}{% set lastValue = i.name %}{% endfor %}{% endfor %}
 {% for type, iconSet in icons %}
 +(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withSize:(short)size {
-    // TODO: Add logic to adjust scale for type
-    return [self sldsIcon:iconType withColor:nil andBGColor:nil andSize:size];
-}{% endfor %}
-{% for type, iconSet in icons %}
-+(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(short)size {
-	// TODO: Add logic to adjust scale for type
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
-}{% endfor %}
+    return [self slds{{type | capitalize}}Icon:iconType withColor:nil andBGColor:nil andSize:size];
+}
 
+//-------------------------------------------------------------------
+
++(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(short)size {
+    return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+}
+
+//-------------------------------------------------------------------
+{% endfor %}
 +(NSString*)sldsIconName:(NSInteger)iconType {
 	return sldsIconTypeNames(iconType);
 }
+
+//-------------------------------------------------------------------
 
 +(UIColor*)colorForIndex:(NSInteger)index {
     static NSMutableArray *colorCache = nil;
@@ -37,6 +43,8 @@
     return color;
 }
 
+//-------------------------------------------------------------------
+
 +(UIImage*)sldsIcon:(NSInteger)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(short)size{
 
     if (!iconColor) {
@@ -44,7 +52,7 @@
     }
 
     if (!bgColor) {
-        bgColor = [self colorForIndex:iconType]; //[SLDSIconAction bgColor:iconType];
+        bgColor = [self colorForIndex:iconType];
     }
     if(!bgColor){
         bgColor = [UIColor clearColor];
@@ -61,10 +69,10 @@
     CGContextSetFillColorWithColor(ctx, bgColor.CGColor);
 
     UIBezierPath *bg = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size, size) byRoundingCorners:(UIRectCornerAllCorners) cornerRadii:CGSizeMake(size/10, size/10)];
-
     [bg fill];
 
-    NSString *textContent = iconUniCode(iconType);//[SLDSIcon sldsIconUniCode:iconType];
+    //NSString *textContent = iconUniCode(iconType);//[SLDSIcon sldsIconUniCode:iconType];
+    //NSString *textContent = [self unicodeForIndex:iconType];
 
     UIFont *font = [UIFont fontWithName:@"SalesforceDesignSystemIcons.ttf" size:textRect.size.height];
 
@@ -81,7 +89,7 @@
     });
 
     if(font){
-        [textContent drawInRect:textRect withAttributes:@{NSFontAttributeName : font,
+        [unicodeForIndex(iconType) drawInRect:textRect withAttributes:@{NSFontAttributeName : font,
                                                           NSForegroundColorAttributeName : iconColor,
                                                           NSParagraphStyleAttributeName:paragraphStyle
                                                           }];
@@ -91,5 +99,7 @@
     UIGraphicsEndImageContext();
     return icon;
 }
+
+//-------------------------------------------------------------------
 
 @end
