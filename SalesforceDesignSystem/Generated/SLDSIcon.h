@@ -1,190 +1,1190 @@
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, SLDSIconActionType) {
-    
-    SLDSIconActionAddContact,
-	SLDSIconActionAddRelationship,
-	SLDSIconActionAnnouncement,
-	SLDSIconActionApex,
-	SLDSIconActionApproval,
-	SLDSIconActionBack,
-	SLDSIconActionCall,
-	SLDSIconActionCanvas,
-	SLDSIconActionChangeOwner,
-	SLDSIconActionChangeRecordType,
-	SLDSIconActionCheck,
-	SLDSIconActionClone,
-	SLDSIconActionClose,
-	SLDSIconActionDefer,
-	SLDSIconActionDelete,
-	SLDSIconActionDescription,
-	SLDSIconActionDialIn,
-	SLDSIconActionDownload,
-	SLDSIconActionEdit,
-	SLDSIconActionEditGroups,
-	SLDSIconActionEditRelationship,
-	SLDSIconActionEmail,
-	SLDSIconActionFallback,
-	SLDSIconActionFilter,
-	SLDSIconActionFlow,
-	SLDSIconActionFollow,
-	SLDSIconActionFollowing,
-	SLDSIconActionFreezeUser,
-	SLDSIconActionGoal,
-	SLDSIconActionGoogleNews,
-	SLDSIconActionInfo,
-	SLDSIconActionJoinGroup,
-	SLDSIconActionLeadConvert,
-	SLDSIconActionLeaveGroup,
-	SLDSIconActionLogACall,
-	SLDSIconActionLogEvent,
-	SLDSIconActionManagePermSets,
-	SLDSIconActionMap,
-	SLDSIconActionMore,
-	SLDSIconActionNew,
-	SLDSIconActionNewAccount,
-	SLDSIconActionNewCampaign,
-	SLDSIconActionNewCase,
-	SLDSIconActionNewChildCase,
-	SLDSIconActionNewContact,
-	SLDSIconActionNewCustom1,
-	SLDSIconActionNewCustom10,
-	SLDSIconActionNewCustom100,
-	SLDSIconActionNewCustom11,
-	SLDSIconActionNewCustom12,
-	SLDSIconActionNewCustom13,
-	SLDSIconActionNewCustom14,
-	SLDSIconActionNewCustom15,
-	SLDSIconActionNewCustom16,
-	SLDSIconActionNewCustom17,
-	SLDSIconActionNewCustom18,
-	SLDSIconActionNewCustom19,
-	SLDSIconActionNewCustom2,
-	SLDSIconActionNewCustom20,
-	SLDSIconActionNewCustom21,
-	SLDSIconActionNewCustom22,
-	SLDSIconActionNewCustom23,
-	SLDSIconActionNewCustom24,
-	SLDSIconActionNewCustom25,
-	SLDSIconActionNewCustom26,
-	SLDSIconActionNewCustom27,
-	SLDSIconActionNewCustom28,
-	SLDSIconActionNewCustom29,
-	SLDSIconActionNewCustom3,
-	SLDSIconActionNewCustom30,
-	SLDSIconActionNewCustom31,
-	SLDSIconActionNewCustom32,
-	SLDSIconActionNewCustom33,
-	SLDSIconActionNewCustom34,
-	SLDSIconActionNewCustom35,
-	SLDSIconActionNewCustom36,
-	SLDSIconActionNewCustom37,
-	SLDSIconActionNewCustom38,
-	SLDSIconActionNewCustom39,
-	SLDSIconActionNewCustom4,
-	SLDSIconActionNewCustom40,
-	SLDSIconActionNewCustom41,
-	SLDSIconActionNewCustom42,
-	SLDSIconActionNewCustom43,
-	SLDSIconActionNewCustom44,
-	SLDSIconActionNewCustom45,
-	SLDSIconActionNewCustom46,
-	SLDSIconActionNewCustom47,
-	SLDSIconActionNewCustom48,
-	SLDSIconActionNewCustom49,
-	SLDSIconActionNewCustom5,
-	SLDSIconActionNewCustom50,
-	SLDSIconActionNewCustom51,
-	SLDSIconActionNewCustom52,
-	SLDSIconActionNewCustom53,
-	SLDSIconActionNewCustom54,
-	SLDSIconActionNewCustom55,
-	SLDSIconActionNewCustom56,
-	SLDSIconActionNewCustom57,
-	SLDSIconActionNewCustom58,
-	SLDSIconActionNewCustom59,
-	SLDSIconActionNewCustom6,
-	SLDSIconActionNewCustom60,
-	SLDSIconActionNewCustom61,
-	SLDSIconActionNewCustom62,
-	SLDSIconActionNewCustom63,
-	SLDSIconActionNewCustom64,
-	SLDSIconActionNewCustom65,
-	SLDSIconActionNewCustom66,
-	SLDSIconActionNewCustom67,
-	SLDSIconActionNewCustom68,
-	SLDSIconActionNewCustom69,
-	SLDSIconActionNewCustom7,
-	SLDSIconActionNewCustom70,
-	SLDSIconActionNewCustom71,
-	SLDSIconActionNewCustom72,
-	SLDSIconActionNewCustom73,
-	SLDSIconActionNewCustom74,
-	SLDSIconActionNewCustom75,
-	SLDSIconActionNewCustom76,
-	SLDSIconActionNewCustom77,
-	SLDSIconActionNewCustom78,
-	SLDSIconActionNewCustom79,
-	SLDSIconActionNewCustom8,
-	SLDSIconActionNewCustom80,
-	SLDSIconActionNewCustom81,
-	SLDSIconActionNewCustom82,
-	SLDSIconActionNewCustom83,
-	SLDSIconActionNewCustom84,
-	SLDSIconActionNewCustom85,
-	SLDSIconActionNewCustom86,
-	SLDSIconActionNewCustom87,
-	SLDSIconActionNewCustom88,
-	SLDSIconActionNewCustom89,
-	SLDSIconActionNewCustom9,
-	SLDSIconActionNewCustom90,
-	SLDSIconActionNewCustom91,
-	SLDSIconActionNewCustom92,
-	SLDSIconActionNewCustom93,
-	SLDSIconActionNewCustom94,
-	SLDSIconActionNewCustom95,
-	SLDSIconActionNewCustom96,
-	SLDSIconActionNewCustom97,
-	SLDSIconActionNewCustom98,
-	SLDSIconActionNewCustom99,
-	SLDSIconActionNewEvent,
-	SLDSIconActionNewGroup,
-	SLDSIconActionNewLead,
-	SLDSIconActionNewNote,
-	SLDSIconActionNewNotebook,
-	SLDSIconActionNewOpportunity,
-	SLDSIconActionNewPersonAccount,
-	SLDSIconActionNewTask,
-	SLDSIconActionPasswordUnlock,
-	SLDSIconActionPreview,
-	SLDSIconActionPriority,
-	SLDSIconActionQuestionPostAction,
-	SLDSIconActionQuote,
-	SLDSIconActionRecord,
-	SLDSIconActionRefresh,
-	SLDSIconActionReject,
-	SLDSIconActionRemove,
-	SLDSIconActionRemoveRelationship,
-	SLDSIconActionResetPassword,
-	SLDSIconActionShare,
-	SLDSIconActionShareFile,
-	SLDSIconActionShareLink,
-	SLDSIconActionSharePoll,
-	SLDSIconActionSharePost,
-	SLDSIconActionShareThanks,
-	SLDSIconActionSort,
-	SLDSIconActionSubmitForApproval,
-	SLDSIconActionUpdate,
-	SLDSIconActionUpdateStatus,
-	SLDSIconActionUpload,
-	SLDSIconActionUser,
-	SLDSIconActionUserActivation,
-	SLDSIconActionViewRelationship,
-	SLDSIconActionWebLink
+typedef NS_ENUM(NSInteger, SLDSactionIconType) {
+	
+	actionAddContact = 0,
+	actionAddRelationship,
+	actionAnnouncement,
+	actionApex,
+	actionApproval,
+	actionBack,
+	actionCall,
+	actionCanvas,
+	actionChangeOwner,
+	actionChangeRecordType,
+	actionCheck,
+	actionClone,
+	actionClose,
+	actionDefer,
+	actionDelete,
+	actionDescription,
+	actionDialIn,
+	actionDownload,
+	actionEdit,
+	actionEditGroups,
+	actionEditRelationship,
+	actionEmail,
+	actionFallback,
+	actionFilter,
+	actionFlow,
+	actionFollow,
+	actionFollowing,
+	actionFreezeUser,
+	actionGoal,
+	actionGoogleNews,
+	actionInfo,
+	actionJoinGroup,
+	actionLeadConvert,
+	actionLeaveGroup,
+	actionLogACall,
+	actionLogEvent,
+	actionManagePermSets,
+	actionMap,
+	actionMore,
+	actionNew,
+	actionNewAccount,
+	actionNewCampaign,
+	actionNewCase,
+	actionNewChildCase,
+	actionNewContact,
+	actionNewCustom1,
+	actionNewCustom10,
+	actionNewCustom100,
+	actionNewCustom11,
+	actionNewCustom12,
+	actionNewCustom13,
+	actionNewCustom14,
+	actionNewCustom15,
+	actionNewCustom16,
+	actionNewCustom17,
+	actionNewCustom18,
+	actionNewCustom19,
+	actionNewCustom2,
+	actionNewCustom20,
+	actionNewCustom21,
+	actionNewCustom22,
+	actionNewCustom23,
+	actionNewCustom24,
+	actionNewCustom25,
+	actionNewCustom26,
+	actionNewCustom27,
+	actionNewCustom28,
+	actionNewCustom29,
+	actionNewCustom3,
+	actionNewCustom30,
+	actionNewCustom31,
+	actionNewCustom32,
+	actionNewCustom33,
+	actionNewCustom34,
+	actionNewCustom35,
+	actionNewCustom36,
+	actionNewCustom37,
+	actionNewCustom38,
+	actionNewCustom39,
+	actionNewCustom4,
+	actionNewCustom40,
+	actionNewCustom41,
+	actionNewCustom42,
+	actionNewCustom43,
+	actionNewCustom44,
+	actionNewCustom45,
+	actionNewCustom46,
+	actionNewCustom47,
+	actionNewCustom48,
+	actionNewCustom49,
+	actionNewCustom5,
+	actionNewCustom50,
+	actionNewCustom51,
+	actionNewCustom52,
+	actionNewCustom53,
+	actionNewCustom54,
+	actionNewCustom55,
+	actionNewCustom56,
+	actionNewCustom57,
+	actionNewCustom58,
+	actionNewCustom59,
+	actionNewCustom6,
+	actionNewCustom60,
+	actionNewCustom61,
+	actionNewCustom62,
+	actionNewCustom63,
+	actionNewCustom64,
+	actionNewCustom65,
+	actionNewCustom66,
+	actionNewCustom67,
+	actionNewCustom68,
+	actionNewCustom69,
+	actionNewCustom7,
+	actionNewCustom70,
+	actionNewCustom71,
+	actionNewCustom72,
+	actionNewCustom73,
+	actionNewCustom74,
+	actionNewCustom75,
+	actionNewCustom76,
+	actionNewCustom77,
+	actionNewCustom78,
+	actionNewCustom79,
+	actionNewCustom8,
+	actionNewCustom80,
+	actionNewCustom81,
+	actionNewCustom82,
+	actionNewCustom83,
+	actionNewCustom84,
+	actionNewCustom85,
+	actionNewCustom86,
+	actionNewCustom87,
+	actionNewCustom88,
+	actionNewCustom89,
+	actionNewCustom9,
+	actionNewCustom90,
+	actionNewCustom91,
+	actionNewCustom92,
+	actionNewCustom93,
+	actionNewCustom94,
+	actionNewCustom95,
+	actionNewCustom96,
+	actionNewCustom97,
+	actionNewCustom98,
+	actionNewCustom99,
+	actionNewEvent,
+	actionNewGroup,
+	actionNewLead,
+	actionNewNote,
+	actionNewNotebook,
+	actionNewOpportunity,
+	actionNewPersonAccount,
+	actionNewTask,
+	actionPasswordUnlock,
+	actionPreview,
+	actionPriority,
+	actionQuestionPostAction,
+	actionQuote,
+	actionRecord,
+	actionRefresh,
+	actionReject,
+	actionRemove,
+	actionRemoveRelationship,
+	actionResetPassword,
+	actionShare,
+	actionShareFile,
+	actionShareLink,
+	actionSharePoll,
+	actionSharePost,
+	actionShareThanks,
+	actionSort,
+	actionSubmitForApproval,
+	actionUpdate,
+	actionUpdateStatus,
+	actionUpload,
+	actionUser,
+	actionUserActivation,
+	actionViewRelationship,
+	actionWebLink
 };
 
 
-@interface SLDSIconAction : NSObject
-+ (NSString *)sldsIconUniCode:(SLDSIconActionType)color;
-+ (UIColor *)bgColor:(SLDSIconActionType)icon;
-@end
+typedef NS_ENUM(NSInteger, SLDScustomIconType) {
+	
+	custom1 = actionWebLink + 1,
+	custom10,
+	custom100,
+	custom101,
+	custom102,
+	custom103,
+	custom104,
+	custom105,
+	custom106,
+	custom107,
+	custom108,
+	custom109,
+	custom11,
+	custom110,
+	custom111,
+	custom112,
+	custom113,
+	custom12,
+	custom13,
+	custom14,
+	custom15,
+	custom16,
+	custom17,
+	custom18,
+	custom19,
+	custom2,
+	custom20,
+	custom21,
+	custom22,
+	custom23,
+	custom24,
+	custom25,
+	custom26,
+	custom27,
+	custom28,
+	custom29,
+	custom3,
+	custom30,
+	custom31,
+	custom32,
+	custom33,
+	custom34,
+	custom35,
+	custom36,
+	custom37,
+	custom38,
+	custom39,
+	custom4,
+	custom40,
+	custom41,
+	custom42,
+	custom43,
+	custom44,
+	custom45,
+	custom46,
+	custom47,
+	custom48,
+	custom49,
+	custom5,
+	custom50,
+	custom51,
+	custom52,
+	custom53,
+	custom54,
+	custom55,
+	custom56,
+	custom57,
+	custom58,
+	custom59,
+	custom6,
+	custom60,
+	custom61,
+	custom62,
+	custom63,
+	custom64,
+	custom65,
+	custom66,
+	custom67,
+	custom68,
+	custom69,
+	custom7,
+	custom70,
+	custom71,
+	custom72,
+	custom73,
+	custom74,
+	custom75,
+	custom76,
+	custom77,
+	custom78,
+	custom79,
+	custom8,
+	custom80,
+	custom81,
+	custom82,
+	custom83,
+	custom84,
+	custom85,
+	custom86,
+	custom87,
+	custom88,
+	custom89,
+	custom9,
+	custom90,
+	custom91,
+	custom92,
+	custom93,
+	custom94,
+	custom95,
+	custom96,
+	custom97,
+	custom98,
+	custom99
+};
+
+
+
+static float const sldsIconBackgroundColors[][3] = { 
+	{0.16,0.148,0.237},
+	{0.098,0.183,0.237},
+	{0.254,0.143,0.096},
+	{0.105,0.11,0.113},
+	{0,0.198,0.183},
+	{0.013,0.194,0.217},
+	{0.031,0.202,0.16},
+	{0.129,0.153,0.175},
+	{0.084,0.105,0.141},
+	{0.084,0.105,0.141},
+	{0.084,0.105,0.141},
+	{0.108,0.161,0.233},
+	{0.239,0.11,0.1},
+	{0.239,0.126,0.173},
+	{0.23,0.113,0.124},
+	{0.125,0.195,0.125},
+	{0.139,0.154,0.227},
+	{0.084,0.105,0.141},
+	{0.029,0.204,0.191},
+	{0.052,0.19,0.205},
+	{0.029,0.204,0.191},
+	{0.149,0.174,0.197},
+	{0.152,0.149,0.238},
+	{0.253,0.144,0.181},
+	{0,0.121,0.188},
+	{0.049,0.185,0.248},
+	{0.125,0.207,0.1},
+	{0.084,0.105,0.141},
+	{0.086,0.17,0.223},
+	{0.245,0.103,0.091},
+	{0.084,0.105,0.141},
+	{0.119,0.158,0.242},
+	{0.248,0.137,0.098},
+	{0.243,0.158,0.088},
+	{0.072,0.195,0.204},
+	{0.108,0.161,0.233},
+	{0.084,0.105,0.141},
+	{0.118,0.198,0.238},
+	{0.098,0.183,0.237},
+	{0.051,0.188,0.231},
+	{0.127,0.141,0.225},
+	{0.244,0.151,0.086},
+	{0.242,0.207,0.091},
+	{0.25,0.151,0.092},
+	{0.16,0.148,0.237},
+	{0.255,0.123,0.132},
+	{0.1,0.136,0.227},
+	{0.225,0.093,0.118},
+	{0.135,0.132,0.234},
+	{0.22,0.113,0.209},
+	{0.223,0.097,0.132},
+	{0.06,0.194,0.179},
+	{0.247,0.126,0.117},
+	{0.233,0.175,0.103},
+	{0.172,0.211,0.096},
+	{0.077,0.202,0.118},
+	{0.058,0.19,0.177},
+	{0.207,0.208,0.092},
+	{0.072,0.199,0.2},
+	{0.138,0.122,0.237},
+	{0.139,0.133,0.249},
+	{0.176,0.112,0.23},
+	{0.229,0.103,0.152},
+	{0.228,0.111,0.19},
+	{0.118,0.152,0.24},
+	{0.09,0.176,0.21},
+	{0.137,0.192,0.089},
+	{0.189,0.21,0.095},
+	{0.236,0.18,0.108},
+	{0.245,0.159,0.113},
+	{0.235,0.104,0.127},
+	{0.056,0.195,0.147},
+	{0.151,0.207,0.093},
+	{0.213,0.138,0.106},
+	{0.233,0.099,0.126},
+	{0.212,0.114,0.212},
+	{0.14,0.137,0.242},
+	{0.083,0.182,0.215},
+	{0.079,0.19,0.117},
+	{0.225,0.217,0.081},
+	{0.131,0.199,0.094},
+	{0.067,0.181,0.181},
+	{0.207,0.208,0.091},
+	{0.127,0.147,0.249},
+	{0.2,0.202,0.088},
+	{0.217,0.088,0.121},
+	{0.103,0.165,0.231},
+	{0.095,0.204,0.1},
+	{0.239,0.105,0.127},
+	{0.226,0.092,0.128},
+	{0.159,0.219,0.102},
+	{0.073,0.188,0.211},
+	{0.216,0.199,0.096},
+	{0.238,0.142,0.111},
+	{0.243,0.11,0.131},
+	{0.234,0.112,0.177},
+	{0.214,0.11,0.224},
+	{0.113,0.141,0.235},
+	{0.09,0.156,0.221},
+	{0.052,0.181,0.157},
+	{0.227,0.208,0.103},
+	{0.084,0.196,0.115},
+	{0.191,0.09,0.136},
+	{0.245,0.115,0.118},
+	{0.107,0.146,0.22},
+	{0.124,0.207,0.096},
+	{0.097,0.143,0.216},
+	{0.242,0.121,0.171},
+	{0.216,0.19,0.095},
+	{0.248,0.125,0.118},
+	{0.242,0.105,0.121},
+	{0.237,0.099,0.135},
+	{0.106,0.137,0.229},
+	{0.231,0.105,0.18},
+	{0.227,0.11,0.227},
+	{0.141,0.155,0.251},
+	{0.103,0.158,0.24},
+	{0.065,0.2,0.16},
+	{0.205,0.159,0.101},
+	{0.219,0.109,0.122},
+	{0.181,0.093,0.091},
+	{0.09,0.149,0.221},
+	{0.142,0.211,0.099},
+	{0.08,0.206,0.185},
+	{0.101,0.154,0.213},
+	{0.218,0.098,0.127},
+	{0.209,0.091,0.151},
+	{0.231,0.128,0.111},
+	{0.246,0.112,0.123},
+	{0.242,0.104,0.145},
+	{0.226,0.096,0.171},
+	{0.216,0.118,0.229},
+	{0.153,0.111,0.23},
+	{0.062,0.153,0.19},
+	{0.107,0.158,0.226},
+	{0.034,0.164,0.138},
+	{0.191,0.123,0.102},
+	{0.081,0.126,0.13},
+	{0.144,0.077,0.076},
+	{0.067,0.156,0.186},
+	{0.139,0.207,0.106},
+	{0.109,0.157,0.227},
+	{0.221,0.096,0.133},
+	{0.225,0.19,0.092},
+	{0.24,0.133,0.11},
+	{0.235,0.112,0.146},
+	{0.131,0.182,0.255},
+	{0.248,0.137,0.098},
+	{0.23,0.212,0.12},
+	{0.23,0.212,0.12},
+	{0.252,0.185,0.091},
+	{0.127,0.141,0.225},
+	{0.075,0.192,0.118},
+	{0.084,0.105,0.141},
+	{0.127,0.141,0.225},
+	{0.251,0.18,0.057},
+	{0.05,0.175,0.092},
+	{0.136,0.198,0.081},
+	{0.125,0.195,0.125},
+	{0.084,0.105,0.141},
+	{0,0.198,0.183},
+	{0.084,0.105,0.141},
+	{0.239,0.11,0.1},
+	{0.084,0.105,0.141},
+	{0.084,0.105,0.141},
+	{0.186,0.172,0.147},
+	{0.122,0.154,0.23},
+	{0.105,0.155,0.225},
+	{0.101,0.202,0.228},
+	{0.233,0.105,0.11},
+	{0.25,0.185,0.165},
+	{0.08,0.204,0.122},
+	{0.129,0.18,0.214},
+	{0.03,0.199,0.19},
+	{0.084,0.105,0.141},
+	{0.101,0.202,0.228},
+	{0.084,0.105,0.141},
+	{0.06,0.151,0.221},
+	{0.086,0.17,0.223},
+	{0.255,0.123,0.132},
+	{0.1,0.136,0.227},
+	{0.225,0.093,0.118},
+	{0.242,0.139,0},
+	{0.242,0.139,0},
+	{0.242,0.139,0},
+	{0.242,0.139,0},
+	{0.242,0.139,0},
+	{0.242,0.139,0},
+	{0.242,0.139,0},
+	{0.242,0.139,0},
+	{0.242,0.139,0},
+	{0.135,0.132,0.234},
+	{0.242,0.139,0},
+	{0.242,0.139,0},
+	{0.242,0.139,0},
+	{0.242,0.139,0},
+	{0.22,0.113,0.209},
+	{0.223,0.097,0.132},
+	{0.06,0.194,0.179},
+	{0.247,0.126,0.117},
+	{0.233,0.175,0.103},
+	{0.172,0.211,0.096},
+	{0.077,0.202,0.118},
+	{0.058,0.19,0.177},
+	{0.207,0.208,0.092},
+	{0.072,0.199,0.2},
+	{0.138,0.122,0.237},
+	{0.139,0.133,0.249},
+	{0.176,0.112,0.23},
+	{0.229,0.103,0.152},
+	{0.228,0.111,0.19},
+	{0.118,0.152,0.24},
+	{0.09,0.176,0.21},
+	{0.137,0.192,0.089},
+	{0.189,0.21,0.095},
+	{0.236,0.18,0.108},
+	{0.245,0.159,0.113},
+	{0.235,0.104,0.127},
+	{0.056,0.195,0.147},
+	{0.151,0.207,0.093},
+	{0.213,0.138,0.106},
+	{0.233,0.099,0.126},
+	{0.212,0.114,0.212},
+	{0.14,0.137,0.242},
+	{0.083,0.182,0.215},
+	{0.079,0.19,0.117},
+	{0.225,0.217,0.081},
+	{0.131,0.199,0.094},
+	{0.067,0.181,0.181},
+	{0.207,0.208,0.091},
+	{0.127,0.147,0.249},
+	{0.2,0.202,0.088},
+	{0.217,0.088,0.121},
+	{0.103,0.165,0.231},
+	{0.095,0.204,0.1},
+	{0.239,0.105,0.127},
+	{0.226,0.092,0.128},
+	{0.159,0.219,0.102},
+	{0.073,0.188,0.211},
+	{0.216,0.199,0.096},
+	{0.238,0.142,0.111},
+	{0.243,0.11,0.131},
+	{0.234,0.112,0.177},
+	{0.214,0.11,0.224},
+	{0.113,0.141,0.235},
+	{0.09,0.156,0.221},
+	{0.052,0.181,0.157},
+	{0.227,0.208,0.103},
+	{0.084,0.196,0.115},
+	{0.191,0.09,0.136},
+	{0.245,0.115,0.118},
+	{0.107,0.146,0.22},
+	{0.124,0.207,0.096},
+	{0.097,0.143,0.216},
+	{0.242,0.121,0.171},
+	{0.216,0.19,0.095},
+	{0.248,0.125,0.118},
+	{0.242,0.105,0.121},
+	{0.237,0.099,0.135},
+	{0.106,0.137,0.229},
+	{0.231,0.105,0.18},
+	{0.227,0.11,0.227},
+	{0.141,0.155,0.251},
+	{0.103,0.158,0.24},
+	{0.065,0.2,0.16},
+	{0.205,0.159,0.101},
+	{0.219,0.109,0.122},
+	{0.181,0.093,0.091},
+	{0.09,0.149,0.221},
+	{0.142,0.211,0.099},
+	{0.08,0.206,0.185},
+	{0.101,0.154,0.213},
+	{0.218,0.098,0.127},
+	{0.209,0.091,0.151},
+	{0.231,0.128,0.111},
+	{0.246,0.112,0.123},
+	{0.242,0.104,0.145},
+	{0.226,0.096,0.171},
+	{0.216,0.118,0.229},
+	{0.153,0.111,0.23},
+	{0.062,0.153,0.19},
+	{0.107,0.158,0.226},
+	{0.034,0.164,0.138},
+	{0.191,0.123,0.102},
+	{0.081,0.126,0.13},
+	{0.144,0.077,0.076},
+	{0.067,0.156,0.186},
+	{0.139,0.207,0.106},
+	{0.109,0.157,0.227},
+	{0.221,0.096,0.133},
+	{0.225,0.19,0.092},
+	{0.24,0.133,0.11},
+};
+
+#define iconUniCode(enum) [@[\
+
+@"\uEA01",\
+@"\uEA02",\
+@"\uEA03",\
+@"\uEA04",\
+@"\uEA05",\
+@"\uEA06",\
+@"\uEA07",\
+@"\uEA08",\
+@"\uEA09",\
+@"\uEA0A",\
+@"\uEA0B",\
+@"\uEA0C",\
+@"\uEA0D",\
+@"\uEA0E",\
+@"\uEA0F",\
+@"\uEA10",\
+@"\uEA11",\
+@"\uEA12",\
+@"\uEA13",\
+@"\uEA14",\
+@"\uEA15",\
+@"\uEA16",\
+@"\uEA17",\
+@"\uEA18",\
+@"\uEA19",\
+@"\uEA1A",\
+@"\uEA1B",\
+@"\uEA1C",\
+@"\uEA1D",\
+@"\uEA1E",\
+@"\uEA1F",\
+@"\uEA20",\
+@"\uEA21",\
+@"\uEA22",\
+@"\uEA23",\
+@"\uEA24",\
+@"\uEA25",\
+@"\uEA26",\
+@"\uEA27",\
+@"\uEA28",\
+@"\uEA29",\
+@"\uEA2A",\
+@"\uEA2B",\
+@"\uEA2C",\
+@"\uEA2D",\
+@"\uEA2E",\
+@"\uEA2F",\
+@"\uEA30",\
+@"\uEA31",\
+@"\uEA32",\
+@"\uEA33",\
+@"\uEA34",\
+@"\uEA35",\
+@"\uEA36",\
+@"\uEA37",\
+@"\uEA38",\
+@"\uEA39",\
+@"\uEA3A",\
+@"\uEA3B",\
+@"\uEA3C",\
+@"\uEA3D",\
+@"\uEA3E",\
+@"\uEA3F",\
+@"\uEA40",\
+@"\uEA41",\
+@"\uEA42",\
+@"\uEA43",\
+@"\uEA44",\
+@"\uEA45",\
+@"\uEA46",\
+@"\uEA47",\
+@"\uEA48",\
+@"\uEA49",\
+@"\uEA4A",\
+@"\uEA4B",\
+@"\uEA4C",\
+@"\uEA4D",\
+@"\uEA4E",\
+@"\uEA4F",\
+@"\uEA50",\
+@"\uEA51",\
+@"\uEA52",\
+@"\uEA53",\
+@"\uEA54",\
+@"\uEA55",\
+@"\uEA56",\
+@"\uEA57",\
+@"\uEA58",\
+@"\uEA59",\
+@"\uEA5A",\
+@"\uEA5B",\
+@"\uEA5C",\
+@"\uEA5D",\
+@"\uEA5E",\
+@"\uEA5F",\
+@"\uEA60",\
+@"\uEA61",\
+@"\uEA62",\
+@"\uEA63",\
+@"\uEA64",\
+@"\uEA65",\
+@"\uEA66",\
+@"\uEA67",\
+@"\uEA68",\
+@"\uEA69",\
+@"\uEA6A",\
+@"\uEA6B",\
+@"\uEA6C",\
+@"\uEA6D",\
+@"\uEA6E",\
+@"\uEA6F",\
+@"\uEA70",\
+@"\uEA71",\
+@"\uEA72",\
+@"\uEA73",\
+@"\uEA74",\
+@"\uEA75",\
+@"\uEA76",\
+@"\uEA77",\
+@"\uEA78",\
+@"\uEA79",\
+@"\uEA7A",\
+@"\uEA7B",\
+@"\uEA7C",\
+@"\uEA7D",\
+@"\uEA7E",\
+@"\uEA7F",\
+@"\uEA80",\
+@"\uEA81",\
+@"\uEA82",\
+@"\uEA83",\
+@"\uEA84",\
+@"\uEA85",\
+@"\uEA86",\
+@"\uEA87",\
+@"\uEA88",\
+@"\uEA89",\
+@"\uEA8A",\
+@"\uEA8B",\
+@"\uEA8C",\
+@"\uEA8D",\
+@"\uEA8E",\
+@"\uEA8F",\
+@"\uEA90",\
+@"\uEA91",\
+@"\uEA92",\
+@"\uEA93",\
+@"\uEA94",\
+@"\uEA95",\
+@"\uEA96",\
+@"\uEA97",\
+@"\uEA98",\
+@"\uEA99",\
+@"\uEA9A",\
+@"\uEA9B",\
+@"\uEA9C",\
+@"\uEA9D",\
+@"\uEA9E",\
+@"\uEA9F",\
+@"\uEAA0",\
+@"\uEAA1",\
+@"\uEAA2",\
+@"\uEAA3",\
+@"\uEAA4",\
+@"\uEAA5",\
+@"\uEAA6",\
+@"\uEAA7",\
+@"\uEAA8",\
+@"\uEAA9",\
+@"\uEAAA",\
+@"\uEAAB",\
+@"\uEAAC",\
+@"\uEAAD",\
+@"\uEAAE",\
+@"\uEAAF",\
+@"\uEAB0",\
+@"\uEAB1",\
+@"\uEAB2",\
+@"\uEAB3",\
+@"\uEAB4",\
+@"\uEAB5",\
+@"\uEAB6",\
+@"\uEAB7",\
+@"\uEAB8",\
+@"\uEAB9",\
+@"\uEABA",\
+@"\uEABB",\
+@"\uEABC",\
+@"\uEABD",\
+@"\uEABE",\
+@"\uEABF",\
+@"\uEAC0",\
+@"\uEAC1",\
+@"\uEAC2",\
+@"\uEAC3",\
+@"\uEAC4",\
+@"\uEAC5",\
+@"\uEAC6",\
+@"\uEAC7",\
+@"\uEAC8",\
+@"\uEAC9",\
+@"\uEACA",\
+@"\uEACB",\
+@"\uEACC",\
+@"\uEACD",\
+@"\uEACE",\
+@"\uEACF",\
+@"\uEAD0",\
+@"\uEAD1",\
+@"\uEAD2",\
+@"\uEAD3",\
+@"\uEAD4",\
+@"\uEAD5",\
+@"\uEAD6",\
+@"\uEAD7",\
+@"\uEAD8",\
+@"\uEAD9",\
+@"\uEADA",\
+@"\uEADB",\
+@"\uEADC",\
+@"\uEADD",\
+@"\uEADE",\
+@"\uEADF",\
+@"\uEAE0",\
+@"\uEAE1",\
+@"\uEAE2",\
+@"\uEAE3",\
+@"\uEAE4",\
+@"\uEAE5",\
+@"\uEAE6",\
+@"\uEAE7",\
+@"\uEAE8",\
+@"\uEAE9",\
+@"\uEAEA",\
+@"\uEAEB",\
+@"\uEAEC",\
+@"\uEAED",\
+@"\uEAEE",\
+@"\uEAEF",\
+@"\uEAF0",\
+@"\uEAF1",\
+@"\uEAF2",\
+@"\uEAF3",\
+@"\uEAF4",\
+@"\uEAF5",\
+@"\uEAF6",\
+@"\uEAF7",\
+@"\uEAF8",\
+@"\uEAF9",\
+@"\uEAFA",\
+@"\uEAFB",\
+@"\uEAFC",\
+@"\uEAFD",\
+@"\uEAFE",\
+@"\uEAFF",\
+@"\uEB00",\
+@"\uEB01",\
+@"\uEB02",\
+@"\uEB03",\
+@"\uEB04",\
+@"\uEB05",\
+@"\uEB06",\
+@"\uEB07",\
+@"\uEB08",\
+@"\uEB09",\
+@"\uEB0A",\
+@"\uEB0B",\
+@"\uEB0C",\
+@"\uEB0D",\
+@"\uEB0E",\
+@"\uEB0F",\
+@"\uEB10",\
+@"\uEB11",\
+@"\uEB12",\
+@"\uEB13",\
+@"\uEB14",\
+@"\uEB15",\
+@"\uEB16",\
+@"\uEB17",\
+@"\uEB18",\
+@"\uEB19",\
+@"\uEB1A",\
+@"\uEB1B",\
+@"\uEB1C",\
+@"\uEB1D",\
+@"\uEB1E",\
+@"\uEB1F",\
+@"\uEB20",\
+@"\uEB21",\
+@"\uEB22",\
+@"\uEB23",\
+@"\uEB24",\
+] objectAtIndex:enum]
+
+#define sldsIconTypeNames(enum) [@[\
+	@"actionAddContact",\
+	@"actionAddRelationship",\
+	@"actionAnnouncement",\
+	@"actionApex",\
+	@"actionApproval",\
+	@"actionBack",\
+	@"actionCall",\
+	@"actionCanvas",\
+	@"actionChangeOwner",\
+	@"actionChangeRecordType",\
+	@"actionCheck",\
+	@"actionClone",\
+	@"actionClose",\
+	@"actionDefer",\
+	@"actionDelete",\
+	@"actionDescription",\
+	@"actionDialIn",\
+	@"actionDownload",\
+	@"actionEdit",\
+	@"actionEditGroups",\
+	@"actionEditRelationship",\
+	@"actionEmail",\
+	@"actionFallback",\
+	@"actionFilter",\
+	@"actionFlow",\
+	@"actionFollow",\
+	@"actionFollowing",\
+	@"actionFreezeUser",\
+	@"actionGoal",\
+	@"actionGoogleNews",\
+	@"actionInfo",\
+	@"actionJoinGroup",\
+	@"actionLeadConvert",\
+	@"actionLeaveGroup",\
+	@"actionLogACall",\
+	@"actionLogEvent",\
+	@"actionManagePermSets",\
+	@"actionMap",\
+	@"actionMore",\
+	@"actionNew",\
+	@"actionNewAccount",\
+	@"actionNewCampaign",\
+	@"actionNewCase",\
+	@"actionNewChildCase",\
+	@"actionNewContact",\
+	@"actionNewCustom1",\
+	@"actionNewCustom10",\
+	@"actionNewCustom100",\
+	@"actionNewCustom11",\
+	@"actionNewCustom12",\
+	@"actionNewCustom13",\
+	@"actionNewCustom14",\
+	@"actionNewCustom15",\
+	@"actionNewCustom16",\
+	@"actionNewCustom17",\
+	@"actionNewCustom18",\
+	@"actionNewCustom19",\
+	@"actionNewCustom2",\
+	@"actionNewCustom20",\
+	@"actionNewCustom21",\
+	@"actionNewCustom22",\
+	@"actionNewCustom23",\
+	@"actionNewCustom24",\
+	@"actionNewCustom25",\
+	@"actionNewCustom26",\
+	@"actionNewCustom27",\
+	@"actionNewCustom28",\
+	@"actionNewCustom29",\
+	@"actionNewCustom3",\
+	@"actionNewCustom30",\
+	@"actionNewCustom31",\
+	@"actionNewCustom32",\
+	@"actionNewCustom33",\
+	@"actionNewCustom34",\
+	@"actionNewCustom35",\
+	@"actionNewCustom36",\
+	@"actionNewCustom37",\
+	@"actionNewCustom38",\
+	@"actionNewCustom39",\
+	@"actionNewCustom4",\
+	@"actionNewCustom40",\
+	@"actionNewCustom41",\
+	@"actionNewCustom42",\
+	@"actionNewCustom43",\
+	@"actionNewCustom44",\
+	@"actionNewCustom45",\
+	@"actionNewCustom46",\
+	@"actionNewCustom47",\
+	@"actionNewCustom48",\
+	@"actionNewCustom49",\
+	@"actionNewCustom5",\
+	@"actionNewCustom50",\
+	@"actionNewCustom51",\
+	@"actionNewCustom52",\
+	@"actionNewCustom53",\
+	@"actionNewCustom54",\
+	@"actionNewCustom55",\
+	@"actionNewCustom56",\
+	@"actionNewCustom57",\
+	@"actionNewCustom58",\
+	@"actionNewCustom59",\
+	@"actionNewCustom6",\
+	@"actionNewCustom60",\
+	@"actionNewCustom61",\
+	@"actionNewCustom62",\
+	@"actionNewCustom63",\
+	@"actionNewCustom64",\
+	@"actionNewCustom65",\
+	@"actionNewCustom66",\
+	@"actionNewCustom67",\
+	@"actionNewCustom68",\
+	@"actionNewCustom69",\
+	@"actionNewCustom7",\
+	@"actionNewCustom70",\
+	@"actionNewCustom71",\
+	@"actionNewCustom72",\
+	@"actionNewCustom73",\
+	@"actionNewCustom74",\
+	@"actionNewCustom75",\
+	@"actionNewCustom76",\
+	@"actionNewCustom77",\
+	@"actionNewCustom78",\
+	@"actionNewCustom79",\
+	@"actionNewCustom8",\
+	@"actionNewCustom80",\
+	@"actionNewCustom81",\
+	@"actionNewCustom82",\
+	@"actionNewCustom83",\
+	@"actionNewCustom84",\
+	@"actionNewCustom85",\
+	@"actionNewCustom86",\
+	@"actionNewCustom87",\
+	@"actionNewCustom88",\
+	@"actionNewCustom89",\
+	@"actionNewCustom9",\
+	@"actionNewCustom90",\
+	@"actionNewCustom91",\
+	@"actionNewCustom92",\
+	@"actionNewCustom93",\
+	@"actionNewCustom94",\
+	@"actionNewCustom95",\
+	@"actionNewCustom96",\
+	@"actionNewCustom97",\
+	@"actionNewCustom98",\
+	@"actionNewCustom99",\
+	@"actionNewEvent",\
+	@"actionNewGroup",\
+	@"actionNewLead",\
+	@"actionNewNote",\
+	@"actionNewNotebook",\
+	@"actionNewOpportunity",\
+	@"actionNewPersonAccount",\
+	@"actionNewTask",\
+	@"actionPasswordUnlock",\
+	@"actionPreview",\
+	@"actionPriority",\
+	@"actionQuestionPostAction",\
+	@"actionQuote",\
+	@"actionRecord",\
+	@"actionRefresh",\
+	@"actionReject",\
+	@"actionRemove",\
+	@"actionRemoveRelationship",\
+	@"actionResetPassword",\
+	@"actionShare",\
+	@"actionShareFile",\
+	@"actionShareLink",\
+	@"actionSharePoll",\
+	@"actionSharePost",\
+	@"actionShareThanks",\
+	@"actionSort",\
+	@"actionSubmitForApproval",\
+	@"actionUpdate",\
+	@"actionUpdateStatus",\
+	@"actionUpload",\
+	@"actionUser",\
+	@"actionUserActivation",\
+	@"actionViewRelationship",\
+	@"actionWebLink",\
+	@"custom1",\
+	@"custom10",\
+	@"custom100",\
+	@"custom101",\
+	@"custom102",\
+	@"custom103",\
+	@"custom104",\
+	@"custom105",\
+	@"custom106",\
+	@"custom107",\
+	@"custom108",\
+	@"custom109",\
+	@"custom11",\
+	@"custom110",\
+	@"custom111",\
+	@"custom112",\
+	@"custom113",\
+	@"custom12",\
+	@"custom13",\
+	@"custom14",\
+	@"custom15",\
+	@"custom16",\
+	@"custom17",\
+	@"custom18",\
+	@"custom19",\
+	@"custom2",\
+	@"custom20",\
+	@"custom21",\
+	@"custom22",\
+	@"custom23",\
+	@"custom24",\
+	@"custom25",\
+	@"custom26",\
+	@"custom27",\
+	@"custom28",\
+	@"custom29",\
+	@"custom3",\
+	@"custom30",\
+	@"custom31",\
+	@"custom32",\
+	@"custom33",\
+	@"custom34",\
+	@"custom35",\
+	@"custom36",\
+	@"custom37",\
+	@"custom38",\
+	@"custom39",\
+	@"custom4",\
+	@"custom40",\
+	@"custom41",\
+	@"custom42",\
+	@"custom43",\
+	@"custom44",\
+	@"custom45",\
+	@"custom46",\
+	@"custom47",\
+	@"custom48",\
+	@"custom49",\
+	@"custom5",\
+	@"custom50",\
+	@"custom51",\
+	@"custom52",\
+	@"custom53",\
+	@"custom54",\
+	@"custom55",\
+	@"custom56",\
+	@"custom57",\
+	@"custom58",\
+	@"custom59",\
+	@"custom6",\
+	@"custom60",\
+	@"custom61",\
+	@"custom62",\
+	@"custom63",\
+	@"custom64",\
+	@"custom65",\
+	@"custom66",\
+	@"custom67",\
+	@"custom68",\
+	@"custom69",\
+	@"custom7",\
+	@"custom70",\
+	@"custom71",\
+	@"custom72",\
+	@"custom73",\
+	@"custom74",\
+	@"custom75",\
+	@"custom76",\
+	@"custom77",\
+	@"custom78",\
+	@"custom79",\
+	@"custom8",\
+	@"custom80",\
+	@"custom81",\
+	@"custom82",\
+	@"custom83",\
+	@"custom84",\
+	@"custom85",\
+	@"custom86",\
+	@"custom87",\
+	@"custom88",\
+	@"custom89",\
+	@"custom9",\
+	@"custom90",\
+	@"custom91",\
+	@"custom92",\
+	@"custom93",\
+	@"custom94",\
+	@"custom95",\
+	@"custom96",\
+	@"custom97",\
+	@"custom98",\
+	@"custom99",\
+] objectAtIndex:enum]

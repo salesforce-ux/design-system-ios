@@ -2,8 +2,10 @@
 #import "SLDSIcon.h"
 
 @interface UIImage (SLDSIcon)
-{% for categoryName, category in data %}
-+(instancetype)slds{{categoryName}}:(SLDS{{categoryName}}Type)iconType;{% endfor %}
+{% for type, iconSet in icons %}
++(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withSize:(short)size;
++(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(short)size;
+{% endfor %}
 +(NSString*)sldsIconName:(NSInteger)iconType;
-
+//+(UIColor*)sldsIconBackgroundColor:(NSInteger)iconType;
 @end
