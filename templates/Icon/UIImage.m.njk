@@ -62,19 +62,19 @@
         iconCache = [[NSMutableDictionary alloc] init];
     }
 
-    CGFloat const *components = CGColorGetComponents(iconColor.CGColor);
-    NSString * fgColorKey = [NSString stringWithFormat:@"%f%f%f%f", components[0], components[1], components[2], components[3]];
+    CGFloat const *fgCcomps = CGColorGetComponents(iconColor.CGColor);
+    CGFloat const *bgCcomps = CGColorGetComponents(bgColor.CGColor);
+    NSString *iconKey = [NSString stringWithFormat:@"%ld%f%f%f%f%f%f%f%f%d", (long)iconType,
+        fgCcomps[0], fgCcomps[1], fgCcomps[2], fgCcomps[3], bgCcomps[0],
+        bgCcomps[1], bgCcomps[2], bgCcomps[3], size];
 
-    components = CGColorGetComponents(bgColor.CGColor);
-    NSString * bgColorKey = [NSString stringWithFormat:@"%f%f%f%f", components[0], components[1], components[2], components[3]];
-
-    NSString *iconKey = [NSString stringWithFormat:@"%ld %@ %@ %d", (long)iconType, fgColorKey, bgColorKey, size];
     UIImage * icon = [iconCache objectForKey:iconKey];
 
     if ( icon != NULL ) {
         return icon;
     }
 
+    // TODO: Factor in scale per type
     CGFloat iconScale = 1.0;
     //CGFloat iconScale = 0.65;
 
@@ -113,7 +113,6 @@
     UIGraphicsEndImageContext();
     return icon;
 }
-
 
 //-------------------------------------------------------------------
 
