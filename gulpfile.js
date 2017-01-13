@@ -61,15 +61,13 @@ const parseDesignTokens = () => {
 
 		tokens.properties.forEach(p => {
 			if (types.indexOf(p.type) !== -1) {
-				let value = p.value
 				let t = format(p.type)
 
 				if (!data[t].hasOwnProperty(format(p.category))) data[t][format(p.category)] = []
-				if (p.type === 'color') value = parseColor(p.value)
 
 				data[t][format(p.category)].push({
-					'name' : p.name,
-					'value' : value
+					'name' : p.type === 'size' ? format(p.name) : p.name,
+					'value' : p.type === 'color' ? parseColor(p.value) : p.value
 				})
 			}
 		});
@@ -300,7 +298,6 @@ const parseIconTokens = () => {
 			let tokens = JSON.parse(file.contents.toString('utf-8'));
 
 			iconNames.forEach(n => {
-				console.log('name:' + n)
 				let icon = _.find(tokens[iconType.name].properties, { 'name': n })
 				let backgroundColor = parseColor(icon.value)
 				icons[iconType.name].push({
