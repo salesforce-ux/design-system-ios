@@ -21,10 +21,6 @@
     return [self colorForIndex:colorType];
 }
 
-+(NSString*)sldsColorName:(NSInteger)colorType {
-	return sldsColorTypeNames(colorType);
-}
-
 +(UIColor*)colorForIndex:(NSInteger)index {
     static NSMutableArray *colorCache = nil;
     if (colorCache == nil) {
@@ -43,6 +39,10 @@
     }
 
     return color;
+}
+
++(NSString*)sldsColorName:(NSInteger)colorType {
+    return sldsColorTypeNames(colorType);
 }
 
 @end
