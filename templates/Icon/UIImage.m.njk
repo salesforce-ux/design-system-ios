@@ -1,43 +1,52 @@
 #import "UIImage+SLDSIcon.h"
 
-@implementation UIImage (SLDSIcon)
+#define UnicodeForIndex(index) ([NSString stringWithFormat:@"\\u%lX", (unsigned long) index + 59905])
 
+@implementation UIImage (SLDSIcon)
 {% set lastValue = 'empty' %}{% for type, iconSet in icons %}{% for i in icons %}{% set lastValue = i.name %}{% endfor %}{% endfor %}
 
 {% for type, iconSet in icons %}
-+(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}Type)iconType withSize:(short)size {
++(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withSize:(short)size {
     // TODO: Add logic to adjust scale for type
-    return [self sldsIconAction:iconType withColor:nil andBGColor:nil andSize:size];
-}{% endfor %}
-{% for type, iconSet in icons %}
-+(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*) withSize:(short)size {
+    return [self slds{{type | capitalize}}Icon:iconType withColor:nil andBGColor:nil andSize:size];
+}
+
+//-------------------------------------------------------------------
+
++(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(short)size {
 	// TODO: Add logic to adjust scale for type
-	return [self sldsIconAction:iconType withColor:iconColor andBGColor:andBGColor andSize:size];
+	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
 }{% endfor %}
+
+//-------------------------------------------------------------------
 
 +(NSString*)sldsIconName:(NSInteger)iconType {
 	return sldsIconTypeNames(iconType);
 }
 
+//-------------------------------------------------------------------
+
 +(UIColor*)colorForIndex:(NSInteger)index {
-    static NSMutableArray *colorCache = nil;
+    static NSMutableDictionary *colorCache = nil;
     if (colorCache == nil) {
-        colorCache = [[NSMutableArray alloc] initWithCapacity:{{lastValue}}];
-        for (NSInteger i = 0; i < {{lastValue}}; ++i)
-            [colorCache addObject:[NSNull null]];
+        colorCache = [[NSMutableDictionary alloc] init];
     }
 
-    UIColor *color = [colorCache objectAtIndex:index];
+    UIColor *color = [colorCache objectForKey:[NSNumber numberWithInteger:index]];
+
     if( color && [color isEqual:[NSNull null]] ) {
         color = [UIColor colorWithRed:sldsIconBackgroundColors[index][0]
                                 green:sldsIconBackgroundColors[index][1]
                                  blue:sldsIconBackgroundColors[index][2]
                                 alpha:1];
-        [colorCache setObject:color atIndexedSubscript:index];
+
+        [colorCache setObject:color forKey:[NSNumber numberWithInteger:index]];
     }
 
     return color;
 }
+
+//-------------------------------------------------------------------
 
 +(UIImage*)sldsIcon:(NSInteger)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(short)size{
 
@@ -50,6 +59,22 @@
     }
     if(!bgColor){
         bgColor = [UIColor clearColor];
+    }
+
+    static NSMutableDictionary *iconCache = nil;
+    if (iconCache == nil) {
+        iconCache = [[NSMutableDictionary alloc] init];
+    }
+
+    CGFloat const *fgComps = CGColorGetComponents(iconColor.CGColor);
+    CGFloat const * bgComps = CGColorGetComponents(bgColor.CGColor);
+    NSString *iconKey = [NSString stringWithFormat:@"%ld%f%f%f%f%f%f%f%f%d", (long)iconType,
+        fgComps[0], fgComps[1], fgComps[2], fgComps[3],
+        bgComps[0], bgComps[1], bgComps[2], bgComps[3], size];
+    UIImage * icon = [iconCache objectForKey:iconKey];
+
+    if ( icon != NULL ) {
+        return icon;
     }
 
 	CGFloat iconScale = 1.0;
@@ -66,9 +91,8 @@
 
     [bg fill];
 
-    NSString *textContent = iconUniCode(iconType);//[SLDSIcon sldsIconUniCode:iconType];
-
-    UIFont *font = [UIFont fontWithName:[self iconFontNameAction] size:textRect.size.height];
+    //NSString *textContent = iconUniCode(iconType);//[SLDSIcon sldsIconUniCode:iconType];
+    UIFont *font = [UIFont fontWithName:@"SalesforceDesignSystemIcons.ttf"  size:textRect.size.height];
 
     [iconColor setFill];
 
@@ -83,13 +107,15 @@
     });
 
     if(font){
-        [textContent drawInRect:textRect withAttributes:@{NSFontAttributeName : font,
+        [UnicodeForIndex(iconType) drawInRect:textRect withAttributes:@{NSFontAttributeName : font,
                                                           NSForegroundColorAttributeName : iconColor,
                                                           NSParagraphStyleAttributeName:paragraphStyle
                                                           }];
     }
 
-    UIImage * icon = UIGraphicsGetImageFromCurrentImageContext();
+    icon = UIGraphicsGetImageFromCurrentImageContext();
+    [iconCache setObject:icon forKey:iconKey];
+
     UIGraphicsEndImageContext();
     return icon;
 }
