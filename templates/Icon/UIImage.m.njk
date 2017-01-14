@@ -1,6 +1,6 @@
-#import "UIImage+SLDIcon.h"
+#import "UIImage+SLDSIcon.h"
 
-@implementation UIImage (SLDIcon)
+@implementation UIImage (SLDSIcon)
 
 {% set lastValue = 'empty' %}{% for type, iconSet in icons %}{% for i in icons %}{% set lastValue = i.name %}{% endfor %}{% endfor %}
 
@@ -40,7 +40,7 @@
 }
 
 +(UIImage*)sldsIcon:(NSInteger)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(short)size{
-    
+
     if (!iconColor) {
         iconColor = [UIColor whiteColor];
     }
@@ -51,29 +51,29 @@
     if(!bgColor){
         bgColor = [UIColor clearColor];
     }
-    
+
 	CGFloat iconScale = 1.0;
 	//CGFloat iconScale = 0.65;
-	
+
     CGSize iconSize = CGSizeMake(size,size);
     CGRect textRect = CGRectMake(0,(size-size*iconScale)/2,size,size*iconScale);
     UIGraphicsBeginImageContextWithOptions(iconSize, NO, 0.0f);
 
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(ctx, bgColor.CGColor);
-    
+
     UIBezierPath *bg = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size, size) byRoundingCorners:(UIRectCornerAllCorners) cornerRadii:CGSizeMake(size/10, size/10)];
-    
+
     [bg fill];
-    
+
     NSString *textContent = iconUniCode(iconType);//[SLDSIcon sldsIconUniCode:iconType];
-    
+
     UIFont *font = [UIFont fontWithName:[self iconFontNameAction] size:textRect.size.height];
-    
+
     [iconColor setFill];
-    
+
     static NSParagraphStyle * paragraphStyle = nil;
-    
+
     static dispatch_once_t predicate_static = 0;
     dispatch_once(&predicate_static, ^{
         NSMutableParagraphStyle * pStyle =
@@ -81,14 +81,14 @@
         [pStyle setAlignment:NSTextAlignmentCenter];
         paragraphStyle = [pStyle copy];
     });
-    
+
     if(font){
         [textContent drawInRect:textRect withAttributes:@{NSFontAttributeName : font,
                                                           NSForegroundColorAttributeName : iconColor,
                                                           NSParagraphStyleAttributeName:paragraphStyle
                                                           }];
     }
-    
+
     UIImage * icon = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return icon;
