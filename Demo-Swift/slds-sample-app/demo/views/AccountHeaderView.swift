@@ -53,7 +53,7 @@ class AccountHeaderView: UIView {
         self.backgroundColor = UIColor.sldsBackgroundColor(.colorBackground)
         
         
-        headerIcon = UIImageView(image: UIImage.sldsIconStandard(.account,
+        headerIcon = UIImageView(image: UIImage.sldsStandardIcon(.account,
                                                                  withSize: SLDSSquareIconMedium))
         self.addSubview(headerIcon)
         
