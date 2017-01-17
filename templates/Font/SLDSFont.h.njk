@@ -47,7 +47,7 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
 //-------------------------------------------------------------------
 
 #define sldsFontSizeNames(enum) [@[\{% for size in data.FontSize %}
-    @"{{size.name}}",\{% endfor %}
+    @"SLDS{{size.name}}",\{% endfor %}
 ] objectAtIndex:enum]
 
 //-------------------------------------------------------------------

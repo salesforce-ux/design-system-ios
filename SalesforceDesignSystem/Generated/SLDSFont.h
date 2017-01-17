@@ -2,26 +2,26 @@
 
 typedef NS_ENUM(NSInteger, SLDSFontSizeType) {
 	
-	fontSizeXSmall,
-	fontSizeSmall,
-	fontSizeMedium,
-	fontSizeMediumA,
-	fontSizeLarge,
-	fontSizeXLarge,
-	fontSizeXLargeA,
-	fontSizeXxLarge,
-	fontSizeTextXxSmall,
-	fontSizeTextXSmall,
-	fontSizeTextSmall,
-	fontSizeTextMedium,
-	fontSizeTextLarge,
-	fontSizeTextXLarge,
-	fontSizeHeadingXxSmall,
-	fontSizeHeadingXSmall,
-	fontSizeHeadingSmall,
-	fontSizeHeadingMedium,
-	fontSizeHeadingLarge,
-	fontSizeHeadingXLarge
+	FontSizeXSmall,
+	FontSizeSmall,
+	FontSizeMedium,
+	FontSizeMediumA,
+	FontSizeLarge,
+	FontSizeXLarge,
+	FontSizeXLargeA,
+	FontSizeXxLarge,
+	FontSizeTextXxSmall,
+	FontSizeTextXSmall,
+	FontSizeTextSmall,
+	FontSizeTextMedium,
+	FontSizeTextLarge,
+	FontSizeTextXLarge,
+	FontSizeHeadingXxSmall,
+	FontSizeHeadingXSmall,
+	FontSizeHeadingSmall,
+	FontSizeHeadingMedium,
+	FontSizeHeadingLarge,
+	FontSizeHeadingXLarge
 };
 
 //-------------------------------------------------------------------
@@ -66,26 +66,26 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
 //-------------------------------------------------------------------
 
 #define sldsFontSizeNames(enum) [@[\
-    @"fontSizeXSmall",\
-    @"fontSizeSmall",\
-    @"fontSizeMedium",\
-    @"fontSizeMediumA",\
-    @"fontSizeLarge",\
-    @"fontSizeXLarge",\
-    @"fontSizeXLargeA",\
-    @"fontSizeXxLarge",\
-    @"fontSizeTextXxSmall",\
-    @"fontSizeTextXSmall",\
-    @"fontSizeTextSmall",\
-    @"fontSizeTextMedium",\
-    @"fontSizeTextLarge",\
-    @"fontSizeTextXLarge",\
-    @"fontSizeHeadingXxSmall",\
-    @"fontSizeHeadingXSmall",\
-    @"fontSizeHeadingSmall",\
-    @"fontSizeHeadingMedium",\
-    @"fontSizeHeadingLarge",\
-    @"fontSizeHeadingXLarge",\
+    @"SLDSFontSizeXSmall",\
+    @"SLDSFontSizeSmall",\
+    @"SLDSFontSizeMedium",\
+    @"SLDSFontSizeMediumA",\
+    @"SLDSFontSizeLarge",\
+    @"SLDSFontSizeXLarge",\
+    @"SLDSFontSizeXLargeA",\
+    @"SLDSFontSizeXxLarge",\
+    @"SLDSFontSizeTextXxSmall",\
+    @"SLDSFontSizeTextXSmall",\
+    @"SLDSFontSizeTextSmall",\
+    @"SLDSFontSizeTextMedium",\
+    @"SLDSFontSizeTextLarge",\
+    @"SLDSFontSizeTextXLarge",\
+    @"SLDSFontSizeHeadingXxSmall",\
+    @"SLDSFontSizeHeadingXSmall",\
+    @"SLDSFontSizeHeadingSmall",\
+    @"SLDSFontSizeHeadingMedium",\
+    @"SLDSFontSizeHeadingLarge",\
+    @"SLDSFontSizeHeadingXLarge",\
 ] objectAtIndex:enum]
 
 //-------------------------------------------------------------------
