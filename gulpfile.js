@@ -169,7 +169,7 @@ const parseIcons = () => {
 			iconNames.forEach(n => {
 				let backgroundColor = iconType.name === 'utility' ? 'null' : parseColor(_.find(tokens[iconType.name].properties, { 'name': n }).value)
 				icons[iconType.name].push({
-					"name" : format(n),
+					"name" : (iconType.name === 'action' || iconType.name === 'custom') ?  'SLDS' + format(n) : 'SLDS' + format(iconType.name) + format(n) ,
 					"backgroundColor" : backgroundColor,
 					"unicode" : unicode.toString(16).toUpperCase()
 				});

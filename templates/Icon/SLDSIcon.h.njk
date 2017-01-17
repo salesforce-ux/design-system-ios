@@ -2,7 +2,7 @@
 {% for type, iconSet in icons %}
 typedef NS_ENUM(NSInteger, SLDS{{type | capitalize}}IconType) {
 	{% for i in iconSet %}
-	SLDS{{i.name}}{% if loop.first %}{% if indexName === null %} = 0{% else %} = SLDS{{indexName}} + 1{% endif %}{% endif %}{% if not loop.last %},{% endif %}{% endfor %}
+	{{i.name}}{% if loop.first %}{% if indexName === null %} = 0{% else %} = {{indexName}} + 1{% endif %}{% endif %}{% if not loop.last %},{% endif %}{% endfor %}
 };
 
 //-------------------------------------------------------------------
@@ -21,5 +21,5 @@ static float const sldsIconBackgroundColors[][3] = { {% for type, iconSet in ico
 //-------------------------------------------------------------------
 
 #define sldsIconTypeNames(enum) [@[\{% for type, iconSet in icons %}{% for i in iconSet %}
-	@"SLDS{{i.name}}",\{% endfor %}{% endfor %}
+	@"{{i.name}}",\{% endfor %}{% endfor %}
 ] objectAtIndex:enum]
