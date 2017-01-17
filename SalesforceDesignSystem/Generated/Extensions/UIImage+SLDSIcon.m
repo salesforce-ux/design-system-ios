@@ -1,4 +1,5 @@
 #import "UIImage+SLDSIcon.h"
+#import "UIFont+SLDSFont.h"
 
 #define UnicodeForIndex(index) ([NSString stringWithFormat:@"\\u%lX", (unsigned long) index + 59905])
 
