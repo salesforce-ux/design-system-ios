@@ -53,7 +53,7 @@ class FontViewController: UIViewController {
         self.fontInfo.isEditable = false
         self.fontInfo.backgroundColor = UIColor.clear
         self.fontInfo.textColor = UIColor.sldsTextColor(.colorTextDefault)
-        self.fontInfo.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
+        self.fontInfo.font = UIFont.sldsFont(.regular, with: .small)
         self.view.addSubview(self.fontInfo)
         
         self.view.addSubview(codeView)

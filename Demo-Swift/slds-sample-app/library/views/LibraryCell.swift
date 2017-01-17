@@ -46,7 +46,7 @@ class LibraryCell: UITableViewCell {
             label.text = "Library"
             label.textAlignment = .center
             label.textColor = UIColor.sldsTextColor(.colorTextInverse)
-            label.font = UIFont.sldsFont(.regular, with: .fontSizeLarge)
+            label.font = UIFont.sldsFont(.regular, with: .large)
         }
         
         let image = UIImageView(image: UIImage(named: "tokens"))

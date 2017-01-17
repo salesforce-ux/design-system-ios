@@ -64,7 +64,7 @@ class AccountHeaderView: UIView {
                             yOffset: 10)
         
         headerTitle = UILabel()
-        headerTitle.font = UIFont.sldsFont(.regular, with: .fontSizeLarge)
+        headerTitle.font = UIFont.sldsFont(.regular, with: .large)
         
         headerTitle.textColor = UIColor.sldsTextColor(.colorTextDefault)
         

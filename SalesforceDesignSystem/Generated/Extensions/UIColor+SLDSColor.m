@@ -39,11 +39,11 @@
 
     UIColor *color = [colorCache objectForKey:[NSNumber numberWithInteger:index]];
 
-    if( color && [color isEqual:[NSNull null]] ) {
+    if( color == nil ) {
         color = [UIColor colorWithRed:sldsColors[index][0]
                                 green:sldsColors[index][1]
                                  blue:sldsColors[index][2]
-                                alpha:1];
+                                alpha:sldsColors[index][3]];
 
         [colorCache setObject:color forKey:[NSNumber numberWithInteger:index]];
     }

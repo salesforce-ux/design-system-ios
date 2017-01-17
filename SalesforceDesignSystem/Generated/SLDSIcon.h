@@ -1103,7 +1103,6 @@ static float const sldsIconBackgroundColors[][3] = {
 	{0.24,0.133,0.11},
 };
 
-//-------------------------------------------------------------------
 
 #define iconUniCode(enum) [@[\
 @"\uEA01",\

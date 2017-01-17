@@ -46,7 +46,7 @@ class DemoCell: UITableViewCell {
             label.text = "Example App"
             label.textAlignment = .center
             label.textColor = UIColor.sldsTextColor(.colorTextInverse)
-            label.font = UIFont.sldsFont(.regular, with: .fontSizeLarge)
+            label.font = UIFont.sldsFont(.regular, with: .large)
         }
         
         let image = UIImageView(image: UIImage(named: "exampleApp"))

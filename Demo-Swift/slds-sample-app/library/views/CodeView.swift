@@ -155,7 +155,7 @@ class CodeView: UIView, ItemBarDelegate {
         self.addSubview(codeExample)
         
         copyButton.setTitle("Copy", for: .normal)
-        copyButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .fontSizeMedium)
+        copyButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .medium)
         copyButton.setTitleColor(UIColor.sldsTextColor(.colorTextBrand), for: .normal)
         copyButton.addTarget(self, action: #selector(copyCodeSample), for: .touchUpInside)
         self.addSubview(copyButton)
@@ -219,7 +219,7 @@ class CodeView: UIView, ItemBarDelegate {
         let style = NSMutableParagraphStyle()
         style.alignment = .center
         string.addAttribute(NSParagraphStyleAttributeName, value: style, range: fullRange)
-        string.addAttribute(NSFontAttributeName, value: UIFont.sldsFont(.regular, with: .fontSizeSmall), range: fullRange)
+        string.addAttribute(NSFontAttributeName, value: UIFont.sldsFont(.regular, with: .small), range: fullRange)
         return string
     }
 }

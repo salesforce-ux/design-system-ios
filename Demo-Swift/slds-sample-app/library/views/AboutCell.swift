@@ -34,7 +34,7 @@ class AboutCell: UITableViewCell {
         
         sldsButton.setTitle("lightningdesignsystem.com", for: .normal)
         sldsButton.addTarget(self, action: #selector(browseToSLDS), for: .touchUpInside)
-        sldsButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
+        sldsButton.titleLabel?.font = UIFont.sldsFont(.regular, with: .small)
         sldsButton.setTitleColor(UIColor.sldsTextColor(.colorTextLink), for: .normal)
         
         self.addSubview(sldsButton)
@@ -42,7 +42,7 @@ class AboutCell: UITableViewCell {
         
         if let label = self.textLabel {
             label.text = ""
-            label.font = UIFont.sldsFont(.regular, with: .fontSizeMedium)
+            label.font = UIFont.sldsFont(.regular, with: .medium)
             self.constrainChild(label, xAlignment: .center, yAlignment: .top,yOffset: 10)
         }
     }

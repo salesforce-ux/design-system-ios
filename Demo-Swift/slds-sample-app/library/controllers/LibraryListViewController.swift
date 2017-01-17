@@ -49,10 +49,10 @@ class LibraryListViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,
-                                                                   NSFontAttributeName: UIFont.sldsFont(.regular, with: .fontSizeMedium)]
+                                                                   NSFontAttributeName: UIFont.sldsFont(.regular, with: .medium)]
         
         navigationItem.backBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white,
-                                                                  NSFontAttributeName: UIFont.sldsFont(.regular, with: .fontSizeMedium)],
+                                                                  NSFontAttributeName: UIFont.sldsFont(.regular, with: .medium)],
                                                                  for: UIControlState.normal)
         
         super.viewWillAppear(animated)
@@ -100,7 +100,7 @@ class LibraryListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         if let label = cell.textLabel {
-            label.font = UIFont.sldsFont(.regular, with: .fontSizeMedium)
+            label.font = UIFont.sldsFont(.regular, with: .medium)
             label.text = tableData[indexPath.section].rows[indexPath.row].name
             label.accessibilityLabel = label.text! + tableData[indexPath.section].sectionTitle
         }

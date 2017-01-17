@@ -28,8 +28,8 @@
 
 +(instancetype)sldsFont:(SLDSFontType)fontType withSize:(SLDSFontSizeType)fontSize
 {
-    NSInteger fontSizeValue = sldsFontSizes(fontSize);//[SLDSFont sldsFontSize:fontSize];
-    NSString *fontFileName = sldsFontFileNames(fontType);//[SLDSFont sldsFontFileName:fontType];
+    NSInteger fontSizeValue = sldsFontSizes(fontSize);
+    NSString *fontFileName = sldsFontFileNames(fontType);
     NSString *bundleName = kSLDSFontBundleName;
     NSArray *override = [[self sldsFontOverrides] objectAtIndex:(NSUInteger)fontType];
 
@@ -57,7 +57,7 @@
 
     do {
         @try {
-            fontFileName = sldsFontFileNames(fontType); //[SLDSFont sldsFontFileName:(SLDSFontType)fontType];
+            fontFileName = sldsFontFileNames(fontType);
             [overrides insertObject:@[fontFileName,kSLDSFontBundleName] atIndex:(NSUInteger)fontType];
             fontType++;
         }
@@ -71,7 +71,7 @@
 //-------------------------------------------------------------------
 
 +(void)sldsUseDefaultFontFor:(SLDSFontType)fontType {
-    NSString *fontFileName = sldsFontFileNames(fontType); //[SLDSFont sldsFontFileName:(SLDSFontType)fontType];
+    NSString *fontFileName = sldsFontFileNames(fontType);
     [self sldsUseFont:fontFileName fromBundle:kSLDSFontBundleName forType:fontType];
 }
 

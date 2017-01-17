@@ -68,7 +68,7 @@ class TabBar: ItemBar {
     func addTab(withLabelString labelString :String) {
         let tab = UIButton()
         tab.setTitle(labelString.uppercased(), for: .normal)
-        tab.titleLabel?.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
+        tab.titleLabel?.font = UIFont.sldsFont(.regular, with: .small)
         tab.setTitleColor(UIColor.sldsTextColor(.colorTextDefault), for: .normal)
         super.addItem(item: tab)
     }

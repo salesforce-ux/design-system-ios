@@ -2,26 +2,26 @@
 
 typedef NS_ENUM(NSInteger, SLDSFontSizeType) {
 	
-	FontSizeXSmall,
-	FontSizeSmall,
-	FontSizeMedium,
-	FontSizeMediumA,
-	FontSizeLarge,
-	FontSizeXLarge,
-	FontSizeXLargeA,
-	FontSizeXxLarge,
-	FontSizeTextXxSmall,
-	FontSizeTextXSmall,
-	FontSizeTextSmall,
-	FontSizeTextMedium,
-	FontSizeTextLarge,
-	FontSizeTextXLarge,
-	FontSizeHeadingXxSmall,
-	FontSizeHeadingXSmall,
-	FontSizeHeadingSmall,
-	FontSizeHeadingMedium,
-	FontSizeHeadingLarge,
-	FontSizeHeadingXLarge
+	SLDSFontSizeXSmall,
+	SLDSFontSizeSmall,
+	SLDSFontSizeMedium,
+	SLDSFontSizeMediumA,
+	SLDSFontSizeLarge,
+	SLDSFontSizeXLarge,
+	SLDSFontSizeXLargeA,
+	SLDSFontSizeXxLarge,
+	SLDSFontSizeTextXxSmall,
+	SLDSFontSizeTextXSmall,
+	SLDSFontSizeTextSmall,
+	SLDSFontSizeTextMedium,
+	SLDSFontSizeTextLarge,
+	SLDSFontSizeTextXLarge,
+	SLDSFontSizeHeadingXxSmall,
+	SLDSFontSizeHeadingXSmall,
+	SLDSFontSizeHeadingSmall,
+	SLDSFontSizeHeadingMedium,
+	SLDSFontSizeHeadingLarge,
+	SLDSFontSizeHeadingXLarge
 };
 
 //-------------------------------------------------------------------

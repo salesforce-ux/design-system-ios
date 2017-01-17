@@ -65,7 +65,7 @@ class IconViewController: UIViewController {
         
         self.iconInfo.textAlignment = .center
         self.iconInfo.textColor = UIColor.sldsTextColor(.colorTextDefault)
-        self.iconInfo.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
+        self.iconInfo.font = UIFont.sldsFont(.regular, with: .small)
         self.view.addSubview(self.iconInfo)
         
         self.view.addSubview(codeView)

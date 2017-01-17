@@ -32,23 +32,19 @@ class MainListViewController: UITableViewController {
             self.tableView.register(item.cell, forCellReuseIdentifier: item.name)
         }
         
-        print(UIColor.sldsColorName(SLDSFillType.fillHeaderButton.rawValue));
         self.view.backgroundColor = UIColor.sldsTextColor(.colorTextActionLabelActive);
         
         self.tableView.separatorStyle = .none
         self.navigationController?.navigationBar.barTintColor = UIColor.sldsBackgroundColor(.colorBackgroundButtonBrandActive)
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
-        self.navigationController?.navigationBar.backIndicatorImage = UIImage.sldsUtilityIcon(.chevronleft,
-                                                                                              with: UIColor.white,
-                                                                                              andSize: SLDSSquareIconUtilityMedium).withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -1, 0))
-
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage.sldsUtilityIcon(.chevronleft, withSize:SLDSSquareIconUtilityMedium)
+        
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage.sldsUtilityIcon(.chevronleft,
-                                                                                                            with: UIColor.white,
-                                                                                                            andSize: SLDSSquareIconUtilityMedium).withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -1, 0))
+                                                                                                            withSize: SLDSSquareIconUtilityMedium).withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -1, 0))
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,
-                                                                   NSFontAttributeName: UIFont.sldsFont(.regular, with: .fontSizeMedium)]
+                                                                        NSFontAttributeName: UIFont.sldsFont(.regular, with: .medium)]
         
         self.title = "Lightning Design System"
         self.tableView.alwaysBounceVertical = false

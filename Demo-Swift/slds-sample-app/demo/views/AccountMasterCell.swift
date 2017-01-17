@@ -78,7 +78,7 @@ class AccountMasterCell: UITableViewCell {
     
     func makeLayout() {
         
-        let font = UIFont.sldsFont(.regular, with: .fontSizeMedium)
+        let font = UIFont.sldsFont(.regular, with: .medium)
         let labelColor = UIColor.sldsTextColor(.colorTextActionLabel)
         let valueColor = UIColor.sldsTextColor(.colorTextDefault)
         

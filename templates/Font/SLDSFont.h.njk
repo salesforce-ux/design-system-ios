@@ -2,7 +2,7 @@
 
 typedef NS_ENUM(NSInteger, SLDSFontSizeType) {
 	{% for size in data.FontSize %}
-	{{size.name}}{% if not loop.last %},{% endif %}{% endfor %}
+	SLDS{{size.name}}{% if not loop.last %},{% endif %}{% endfor %}
 };
 
 //-------------------------------------------------------------------

@@ -20,7 +20,7 @@ class ColorCell: UITableViewCell {
         didSet {
             if let label = self.textLabel {
                 label.text = dataProvider?.name.replacingOccurrences(of: "SLDSColor", with: "")
-                label.font = UIFont.sldsFont(.regular, with: .fontSizeSmall)
+                label.font = UIFont.sldsFont(.regular, with: .small)
             }
             swatch.dataProvider = dataProvider?.color
         }

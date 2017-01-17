@@ -12,7 +12,6 @@ static float const sldsIconBackgroundColors[][3] = { {% for type, iconSet in ico
 	{% raw %}{{% endraw %}{{i.backgroundColor.r}},{{i.backgroundColor.g}},{{i.backgroundColor.b}}{% raw %}}{% endraw %},{% endif %}{% endfor %}{% endfor %}
 };
 
-//-------------------------------------------------------------------
 
 #define iconUniCode(enum) [@[\{% for type, iconSet in icons %}{% for i in iconSet %}
 @"\u{{i.unicode}}",\{% endfor %}{% endfor %}

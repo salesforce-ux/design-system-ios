@@ -63,7 +63,7 @@ class IconListViewController: SearchController, UICollectionViewDelegateFlowLayo
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
-        let backImg = UIImage.sldsUtilityIcon(.chevronleft, with: UIColor.white, andSize: SLDSSquareIconUtilityLarge)
+        let backImg = UIImage.sldsUtilityIcon(.chevronleft, withSize: SLDSSquareIconUtilityLarge)
         self.navigationItem.backBarButtonItem?.setBackgroundImage(backImg, for: .normal, barMetrics: .default)
         
         styleSearch()

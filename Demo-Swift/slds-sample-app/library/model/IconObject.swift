@@ -53,22 +53,22 @@ struct IconObject {
         switch self.type {
         case .action :
             if let value = SLDSActionIconType.init(rawValue: self.index) {
-                return UIImage.sldsActionIcon(value, withSize: Int16(self.size))
+                return UIImage.sldsActionIcon(value, withSize: self.size)
             }
             
         case .custom :
             if let value = SLDSCustomIconType.init(rawValue: self.index) {
-                return UIImage.sldsCustomIcon(value, withSize: Int16(self.size))
+                return UIImage.sldsCustomIcon(value, withSize: self.size)
             }
             
         case .standard :
-            if let value = SLDSStandIconType.init(rawValue: index) {
-                return UIImage.sldsStandardIcon(value, withSize: Int16(self.size))
+            if let value = SLDSStandardIconType.init(rawValue: index) {
+                return UIImage.sldsStandardIcon(value, withSize: self.size)
             }
             
         case .utility :
             if let value = SLDSUtilityIconType.init(rawValue: self.index) {
-                return UIImage.sldsUtilityIcon(value, withSize: Int16(self.size))
+                return UIImage.sldsUtilityIcon(value, withSize: self.size)
             }
         }
         

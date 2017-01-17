@@ -59,9 +59,8 @@ class AccountMasterViewController: UIViewController {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func styleNavigationBar() {
-        let newBackButton = UIBarButtonItem(image: UIImage.sldsIconUtility(.chevronleft,
-                                                                           with: UIColor.white,
-                                                                           andSize: SLDSSquareIconUtilityMedium).withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -1, 0)),
+        let newBackButton = UIBarButtonItem(image: UIImage.sldsUtilityIcon(.chevronleft,
+                                                                           withSize: SLDSSquareIconUtilityMedium).withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -1, 0)),
                                             style: UIBarButtonItemStyle.done,
                                             target: self,
                                             action: #selector(AccountMasterViewController.popController))
@@ -72,16 +71,14 @@ class AccountMasterViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.sldsBackgroundColor(.colorBrand)
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
-        self.navigationController?.navigationBar.backIndicatorImage = UIImage.sldsIconUtility(.chevronleft,
-                                                                                              with: UIColor.white,
-                                                                                              andSize: SLDSSquareIconUtilityMedium).withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -1, 0))
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage.sldsUtilityIcon(.chevronleft,
+                                                                                              withSize: SLDSSquareIconUtilityMedium).withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -1, 0))
         
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage.sldsIconUtility(.chevronleft,
-                                                                                                            with: UIColor.white,
-                                                                                                            andSize: SLDSSquareIconUtilityMedium).withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -1, 0))
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage.sldsUtilityIcon(.chevronleft,
+                                                                                                            withSize: SLDSSquareIconUtilityMedium).withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, -1, 0))
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,
-                                                                        NSFontAttributeName: UIFont.sldsFont(.regular, with: .fontSizeMedium)]
+                                                                        NSFontAttributeName: UIFont.sldsFont(.regular, with: .medium)]
         self.navigationItem.hidesBackButton = false
     }
     
