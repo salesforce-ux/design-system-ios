@@ -5,57 +5,74 @@
 
 @implementation UIImage (SLDSIcon)
 
+
 +(instancetype)sldsActionIcon:(SLDSActionIconType)iconType withSize:(CGFloat)size {
-    // TODO: Add logic to adjust scale for type
     return [self sldsActionIcon:iconType withColor:nil andBGColor:nil andSize:size];
 }
 
 //-------------------------------------------------------------------
 
++(instancetype)sldsActionIcon:(SLDSActionIconType)iconType withColor:(UIColor*)iconColor andSize:(CGFloat)size {
+    return [self sldsActionIcon:iconType withColor:iconColor andBGColor:nil andSize:size];
+}
+
+//-------------------------------------------------------------------
+
 +(instancetype)sldsActionIcon:(SLDSActionIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	// TODO: Add logic to adjust scale for type
 	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:0.6];
 }
 
 //-------------------------------------------------------------------
 
 +(instancetype)sldsStandardIcon:(SLDSStandardIconType)iconType withSize:(CGFloat)size {
-    // TODO: Add logic to adjust scale for type
     return [self sldsStandardIcon:iconType withColor:nil andBGColor:nil andSize:size];
 }
 
 //-------------------------------------------------------------------
 
++(instancetype)sldsStandardIcon:(SLDSStandardIconType)iconType withColor:(UIColor*)iconColor andSize:(CGFloat)size {
+    return [self sldsStandardIcon:iconType withColor:iconColor andBGColor:nil andSize:size];
+}
+
+//-------------------------------------------------------------------
+
 +(instancetype)sldsStandardIcon:(SLDSStandardIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	// TODO: Add logic to adjust scale for type
 	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:1.0];
 }
 
 //-------------------------------------------------------------------
 
 +(instancetype)sldsCustomIcon:(SLDSCustomIconType)iconType withSize:(CGFloat)size {
-    // TODO: Add logic to adjust scale for type
     return [self sldsCustomIcon:iconType withColor:nil andBGColor:nil andSize:size];
 }
 
 //-------------------------------------------------------------------
 
++(instancetype)sldsCustomIcon:(SLDSCustomIconType)iconType withColor:(UIColor*)iconColor andSize:(CGFloat)size {
+    return [self sldsCustomIcon:iconType withColor:iconColor andBGColor:nil andSize:size];
+}
+
+//-------------------------------------------------------------------
+
 +(instancetype)sldsCustomIcon:(SLDSCustomIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	// TODO: Add logic to adjust scale for type
 	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:1.0];
 }
 
 //-------------------------------------------------------------------
 
 +(instancetype)sldsUtilityIcon:(SLDSUtilityIconType)iconType withSize:(CGFloat)size {
-    // TODO: Add logic to adjust scale for type
     return [self sldsUtilityIcon:iconType withColor:nil andBGColor:nil andSize:size];
 }
 
 //-------------------------------------------------------------------
 
++(instancetype)sldsUtilityIcon:(SLDSUtilityIconType)iconType withColor:(UIColor*)iconColor andSize:(CGFloat)size {
+    return [self sldsUtilityIcon:iconType withColor:iconColor andBGColor:nil andSize:size];
+}
+
+//-------------------------------------------------------------------
+
 +(instancetype)sldsUtilityIcon:(SLDSUtilityIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	// TODO: Add logic to adjust scale for type
 	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:1.0];
 }
 
@@ -72,22 +89,22 @@
     if (colorCache == nil) {
         colorCache = [[NSMutableDictionary alloc] init];
     }
-    
+
     UIColor *color = nil;
-    
+
     if (index < sldsIconBackgroundColorsLength ) {
         color = [colorCache objectForKey:[NSNumber numberWithInteger:index]];
-        
+
         if( color == nil ) {
             color = [UIColor colorWithRed:sldsIconBackgroundColors[index][0]
                                     green:sldsIconBackgroundColors[index][1]
                                      blue:sldsIconBackgroundColors[index][2]
                                     alpha:1];
-            
+
             [colorCache setObject:color forKey:[NSNumber numberWithInteger:index]];
         }
     }
-    
+
     return color;
 }
 
@@ -98,7 +115,6 @@
     if (!iconColor) {
         iconColor = [UIColor whiteColor];
     }
-
     if (!bgColor) {
         bgColor = [self colorForIndex:iconType];
     }
@@ -154,7 +170,7 @@
 
     if(font != nil){
         NSString *s = [NSString stringWithFormat:@"%C", (unichar)((unsigned short)iconType + 59905)];
-        
+
         [s drawInRect:textRect withAttributes:@{NSFontAttributeName : font,
                                                           NSForegroundColorAttributeName : iconColor,
                                                           NSParagraphStyleAttributeName:paragraphStyle

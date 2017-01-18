@@ -12,6 +12,12 @@
 
 //-------------------------------------------------------------------
 
++(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withColor:(UIColor*)iconColor andSize:(CGFloat)size {
+    return [self slds{{type | capitalize}}Icon:iconType withColor:iconColor andBGColor:nil andSize:size];
+}
+
+//-------------------------------------------------------------------
+
 +(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
 	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:{% if type === 'action' %}0.6{% else %}1.0{% endif %}];
 }
