@@ -1,8 +1,9 @@
 #import "UIImage+SLDSIcon.h"
 #import "UIFont+SLDSFont.h"
 
-@implementation UIImage (SLDSIcon)
+#define sldsIconBackgroundColorsLength (sizeof sldsIconBackgroundColors) / (sizeof sldsIconBackgroundColors[0])
 
+@implementation UIImage (SLDSIcon)
 
 +(instancetype)sldsActionIcon:(SLDSActionIconType)iconType withSize:(CGFloat)size {
     // TODO: Add logic to adjust scale for type
@@ -71,18 +72,22 @@
     if (colorCache == nil) {
         colorCache = [[NSMutableDictionary alloc] init];
     }
-
-    UIColor *color = [colorCache objectForKey:[NSNumber numberWithInteger:index]];
-
-    if( color == nil ) {
-        color = [UIColor colorWithRed:sldsIconBackgroundColors[index][0]
-                                green:sldsIconBackgroundColors[index][1]
-                                 blue:sldsIconBackgroundColors[index][2]
-                                alpha:1];
-
-        [colorCache setObject:color forKey:[NSNumber numberWithInteger:index]];
+    
+    UIColor *color = nil;
+    
+    if (index < sldsIconBackgroundColorsLength ) {
+        color = [colorCache objectForKey:[NSNumber numberWithInteger:index]];
+        
+        if( color == nil ) {
+            color = [UIColor colorWithRed:sldsIconBackgroundColors[index][0]
+                                    green:sldsIconBackgroundColors[index][1]
+                                     blue:sldsIconBackgroundColors[index][2]
+                                    alpha:1];
+            
+            [colorCache setObject:color forKey:[NSNumber numberWithInteger:index]];
+        }
     }
-
+    
     return color;
 }
 

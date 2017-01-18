@@ -1,18 +1,18 @@
 #import "UIImage+SLDSIcon.h"
 #import "UIFont+SLDSFont.h"
 
+#define sldsIconBackgroundColorsLength (sizeof sldsIconBackgroundColors) / (sizeof sldsIconBackgroundColors[0])
+
 @implementation UIImage (SLDSIcon)
 {% set lastValue = 'empty' %}{% for type, iconSet in icons %}{% for i in icons %}{% set lastValue = i.name %}{% endfor %}{% endfor %}
 {% for type, iconSet in icons %}
 +(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withSize:(CGFloat)size {
-    // TODO: Add logic to adjust scale for type
     return [self slds{{type | capitalize}}Icon:iconType withColor:nil andBGColor:nil andSize:size];
 }
 
 //-------------------------------------------------------------------
 
 +(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	// TODO: Add logic to adjust scale for type
 	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:{% if type === 'action' %}0.6{% else %}1.0{% endif %}];
 }
 
@@ -30,15 +30,19 @@
         colorCache = [[NSMutableDictionary alloc] init];
     }
 
-    UIColor *color = [colorCache objectForKey:[NSNumber numberWithInteger:index]];
+    UIColor *color = nil;
 
-    if( color == nil ) {
-        color = [UIColor colorWithRed:sldsIconBackgroundColors[index][0]
-                                green:sldsIconBackgroundColors[index][1]
-                                 blue:sldsIconBackgroundColors[index][2]
-                                alpha:1];
+    if (index < sldsIconBackgroundColorsLength ) {
+        color = [colorCache objectForKey:[NSNumber numberWithInteger:index]];
 
-        [colorCache setObject:color forKey:[NSNumber numberWithInteger:index]];
+        if( color == nil ) {
+            color = [UIColor colorWithRed:sldsIconBackgroundColors[index][0]
+                                    green:sldsIconBackgroundColors[index][1]
+                                     blue:sldsIconBackgroundColors[index][2]
+                                    alpha:1];
+
+            [colorCache setObject:color forKey:[NSNumber numberWithInteger:index]];
+        }
     }
 
     return color;
@@ -106,7 +110,7 @@
 
     if(font != nil){
         NSString *s = [NSString stringWithFormat:@"%C", (unichar)((unsigned short)iconType + 59905)];
-        
+
         [s drawInRect:textRect withAttributes:@{NSFontAttributeName : font,
                                                           NSForegroundColorAttributeName : iconColor,
                                                           NSParagraphStyleAttributeName:paragraphStyle
