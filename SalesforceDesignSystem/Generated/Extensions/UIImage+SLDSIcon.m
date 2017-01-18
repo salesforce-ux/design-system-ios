@@ -1,8 +1,6 @@
 #import "UIImage+SLDSIcon.h"
 #import "UIFont+SLDSFont.h"
 
-#define UnicodeForIndex(index) ([NSString stringWithFormat:@"\\u%lX", (unsigned long) index + 59905])
-
 @implementation UIImage (SLDSIcon)
 
 
@@ -133,8 +131,12 @@
 
     [bg fill];
 
-    //NSString *textContent = iconUniCode(iconType);//[SLDSIcon sldsIconUniCode:iconType];
-    UIFont *font = [UIFont fontWithName:@"SalesforceDesignSystemIcons.ttf" size:textRect.size.height];
+    UIFont *font = [UIFont fontWithName:@"SalesforceDesignSystemIcons" size:textRect.size.height];
+
+    if (font == nil) {
+    	[UIFont loadFont:@"SalesforceDesignSystemIcons" fromBundle:@"SalesforceDesignSystem"];
+    	font = [UIFont fontWithName:@"SalesforceDesignSystemIcons" size:textRect.size.height];
+    }
 
     [iconColor setFill];
 
@@ -148,8 +150,10 @@
         paragraphStyle = [pStyle copy];
     });
 
-    if(font){
-        [UnicodeForIndex(iconType) drawInRect:textRect withAttributes:@{NSFontAttributeName : font,
+    if(font != nil){
+        NSString *s = [NSString stringWithFormat:@"%C", (unichar)((unsigned short)iconType + 59905)];
+        
+        [s drawInRect:textRect withAttributes:@{NSFontAttributeName : font,
                                                           NSForegroundColorAttributeName : iconColor,
                                                           NSParagraphStyleAttributeName:paragraphStyle
                                                           }];

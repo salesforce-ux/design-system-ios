@@ -49,9 +49,9 @@ let iconTypes = [
 
 const parseColor = (c) => {
 	let splits = c.replace('rgba(','').replace('rgb(','').replace(')','').split(',');
-  let r = parseFloat(splits[0]/1000);
-  let g = parseFloat(splits[1]/1000);
-  let b = parseFloat(splits[2]/1000);
+  let r = parseFloat(splits[0]/255);
+  let g = parseFloat(splits[1]/255);
+  let b = parseFloat(splits[2]/255);
 
   if(!splits[3]) splits.push(1)
   let a = parseFloat(splits[3]);
@@ -155,7 +155,6 @@ gulp.task('create:icon-fonts', () => {
 
 const parseIcons = () => {
 	return through.obj((file, enc, next) => {
-		let unicode = 59905;
 		iconTypes.forEach(iconType => {
 			icons[iconType.name] = [];
 
@@ -170,10 +169,8 @@ const parseIcons = () => {
 				let backgroundColor = iconType.name === 'utility' ? 'null' : parseColor(_.find(tokens[iconType.name].properties, { 'name': n }).value)
 				icons[iconType.name].push({
 					"name" : (iconType.name === 'action' || iconType.name === 'custom') ?  'SLDS' + format(n) : 'SLDS' + format(iconType.name) + format(n) ,
-					"backgroundColor" : backgroundColor,
-					"unicode" : unicode.toString(16).toUpperCase()
+					"backgroundColor" : backgroundColor
 				});
-				unicode++;
 			});
 		});
     next(null, file);

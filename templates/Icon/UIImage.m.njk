@@ -1,6 +1,5 @@
 #import "UIImage+SLDSIcon.h"
-
-#define UnicodeForIndex(index) ([NSString stringWithFormat:@"\\u%lX", (unsigned long) index + 59905])
+#import "UIFont+SLDSFont.h"
 
 @implementation UIImage (SLDSIcon)
 {% set lastValue = 'empty' %}{% for type, iconSet in icons %}{% for i in icons %}{% set lastValue = i.name %}{% endfor %}{% endfor %}
@@ -90,8 +89,12 @@
 
     [bg fill];
 
-    //NSString *textContent = iconUniCode(iconType);//[SLDSIcon sldsIconUniCode:iconType];
-    UIFont *font = [UIFont fontWithName:@"SalesforceDesignSystemIcons.ttf" size:textRect.size.height];
+    UIFont *font = [UIFont fontWithName:@"SalesforceDesignSystemIcons" size:textRect.size.height];
+
+    if (font == nil) {
+    	[UIFont loadFont:@"SalesforceDesignSystemIcons" fromBundle:@"SalesforceDesignSystem"];
+    	font = [UIFont fontWithName:@"SalesforceDesignSystemIcons" size:textRect.size.height];
+    }
 
     [iconColor setFill];
 
@@ -105,8 +108,10 @@
         paragraphStyle = [pStyle copy];
     });
 
-    if(font){
-        [UnicodeForIndex(iconType) drawInRect:textRect withAttributes:@{NSFontAttributeName : font,
+    if(font != nil){
+        NSString *s = [NSString stringWithFormat:@"%C", (unichar)((unsigned short)iconType + 59905)];
+        
+        [s drawInRect:textRect withAttributes:@{NSFontAttributeName : font,
                                                           NSForegroundColorAttributeName : iconColor,
                                                           NSParagraphStyleAttributeName:paragraphStyle
                                                           }];
