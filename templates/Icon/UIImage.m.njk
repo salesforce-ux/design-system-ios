@@ -13,7 +13,7 @@
 
 +(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
 	// TODO: Add logic to adjust scale for type
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:{% if type === 'action' %}0.6{% else %}1.0{% endif %}];
 }
 
 //-------------------------------------------------------------------
@@ -46,12 +46,11 @@
 
 //-------------------------------------------------------------------
 
-+(UIImage*)sldsIcon:(NSInteger)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size{
++(UIImage*)sldsIcon:(NSInteger)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size andIconScale:(CGFloat)iconScale{
 
     if (!iconColor) {
         iconColor = [UIColor whiteColor];
     }
-
     if (!bgColor) {
         bgColor = [self colorForIndex:iconType];
     }
@@ -74,9 +73,6 @@
     if ( icon != nil ) {
         return icon;
     }
-
-	CGFloat iconScale = 1.0;
-	//CGFloat iconScale = 0.65;
 
     CGSize iconSize = CGSizeMake(size,size);
     CGRect textRect = CGRectMake(0,(size-size*iconScale)/2,size,size*iconScale);

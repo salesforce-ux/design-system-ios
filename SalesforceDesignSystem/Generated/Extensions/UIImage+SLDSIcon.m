@@ -13,7 +13,7 @@
 
 +(instancetype)sldsActionIcon:(SLDSActionIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
 	// TODO: Add logic to adjust scale for type
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:0.6];
 }
 
 //-------------------------------------------------------------------
@@ -27,7 +27,7 @@
 
 +(instancetype)sldsStandardIcon:(SLDSStandardIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
 	// TODO: Add logic to adjust scale for type
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:1.0];
 }
 
 //-------------------------------------------------------------------
@@ -41,7 +41,7 @@
 
 +(instancetype)sldsCustomIcon:(SLDSCustomIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
 	// TODO: Add logic to adjust scale for type
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:1.0];
 }
 
 //-------------------------------------------------------------------
@@ -55,7 +55,7 @@
 
 +(instancetype)sldsUtilityIcon:(SLDSUtilityIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
 	// TODO: Add logic to adjust scale for type
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:1.0];
 }
 
 //-------------------------------------------------------------------
@@ -88,7 +88,7 @@
 
 //-------------------------------------------------------------------
 
-+(UIImage*)sldsIcon:(NSInteger)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size{
++(UIImage*)sldsIcon:(NSInteger)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size andIconScale:(CGFloat)iconScale{
 
     if (!iconColor) {
         iconColor = [UIColor whiteColor];
@@ -116,9 +116,6 @@
     if ( icon != nil ) {
         return icon;
     }
-
-	CGFloat iconScale = 1.0;
-	//CGFloat iconScale = 0.65;
 
     CGSize iconSize = CGSizeMake(size,size);
     CGRect textRect = CGRectMake(0,(size-size*iconScale)/2,size,size*iconScale);
