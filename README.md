@@ -1,6 +1,6 @@
 # Lightning Design System Tokens + iOS
 
-Winter ’17 tokens
+Spring ’17 tokens
 
 iOS static library for [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/) [Tokens](https://www.lightningdesignsystem.com/design-tokens/)
 
@@ -26,7 +26,108 @@ pod install
 See [more info](/manual_install_info)
 
 
-## Usage 
+## Swift Usage
+
+### Setup
+
+To use the SLDS library in Swift, create a bridging header:
+
+```objc
+
+#ifndef slds_bridging_header_h
+#define slds_bridging_header_h
+
+#import <SalesforceDesignSystem/SalesforceDesignSystemExtended.h>
+
+#endif
+
+```
+  
+1. Create slds-bridging-header.h.
+
+2. In your build settings find the “Swift Compiler – Code Generation” section.
+
+3. Next to “Objective-C Bridging Header” add the header file (e.g. slds-bridging-header.h).
+
+SLDS extensions and constants are now accessible to all files in your project/workspace. There is no need to import the Design system to each file.
+
+
+### Examples
+
+
+#### Colors
+
+```swift 
+
+let textColor = UIColor.sldsTextColor(.colorTextDefault)
+
+let borderColor = UIColor.sldsColorBorder(.colorBorderBrand)
+
+let backgroundColor = UIColor.sldsColorBackground(.colorBackgroundBrand)
+
+```
+
+
+#### Fonts and text sizes
+
+```swift
+
+label.font = UIFont.sldsFont(.bold, with: .medium)
+
+```
+
+
+#### Icons
+
+##### Action Icons
+
+```swift
+
+let icon = UIImage.sldsActionIcon(.addContact, withSize: SLDSSquareIconLarge)
+
+let iconWithColor = UIImage.sldsActionIcon(.addContact, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
+
+```
+
+
+##### Custom Icons
+
+```swift
+
+let icon = UIImage.sldsActionIcon(.custom1, withSize: SLDSSquareIconLarge)
+
+let iconWithColor = UIImage.sldsActionIcon(.custom1, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
+
+```
+
+
+##### Standard Icons
+
+
+```swift
+
+let icon = UIImage.sldsStandardIcon(.account, withSize: SLDSSquareIconLarge)
+
+let iconWithColor = UIImage.sldsStandardIcon(.account, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
+
+```
+
+
+##### Utility Icons
+
+
+```swift
+
+let icon = UIImage.sldsUtilityIcon(.addContact, withSize: SLDSSquareIconLarge)
+
+let iconWithColor = UIImage.sldsUtilityIcon(.addContact, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
+
+```
+
+## Objective-C Usage
+
+
+### Examples
 
 
 #### Colors
@@ -37,13 +138,11 @@ See [more info](/manual_install_info)
 
 ...
 
-UIColor* c = [UIColor sldsColorText:SLDSColorTextInverse];
+UIColor* c = [UIColor sldsTextColor:SLDSColorTextInverse];
 
 
 
 ```
-
-[![browser support](/readmeAssets/readme-image1.png)](/readme-image1.png)
 
 
 #### Fonts and text sizes
@@ -54,13 +153,11 @@ UIColor* c = [UIColor sldsColorText:SLDSColorTextInverse];
 
 ...
 
-UIFont* f = [UIFont sldsFontLightWithSize:SLDSFontSizeXLarge];
+UIFont* f = [UIFont sldsFont:SLDSFontRegular withSize:SLDSFontSizeXLarge];
 
 
 
 ```
-
-[![browser support](/readmeAssets/readme-image2.png)](/readme-image2.png)
 
 
 #### Icons
@@ -73,11 +170,10 @@ UIFont* f = [UIFont sldsFontLightWithSize:SLDSFontSizeXLarge];
 
 ...
 
-UIImage *icon = [UIImage sldsIconAction:SLDSIconActionNewCustom98 withSize:20.0f];
+UIImage *icon = [UIImage sldsActionIcon:SLDSIconActionNewCustom98 withSize:20.0f];
 
 ```
 
-[![browser support](/readmeAssets/readme-icons-action.png)](/readmeAssets/readme-icons-action.png)
 
 ##### Custom Icons
 
@@ -87,11 +183,9 @@ UIImage *icon = [UIImage sldsIconAction:SLDSIconActionNewCustom98 withSize:20.0f
 
 ...
 
-UIImage *icon = [UIImage sldsIconCustom:SLDSIconCustom1 withSize:20.0f];
+UIImage *icon = [UIImage sldsCustomIcon:SLDSIconCustom1 withSize:20.0f];
 
 ```
-
-[![browser support](/readmeAssets/readme-icons-custom.png)](/readmeAssets/readme-icons-custom.png)
 
 
 ##### Standard Icons
@@ -102,11 +196,9 @@ UIImage *icon = [UIImage sldsIconCustom:SLDSIconCustom1 withSize:20.0f];
 
 ...
 
-UIImage *icon = [UIImage sldsIconStandard:SLDSIconStandardAccount withSize:20.0f];
+UIImage *icon = [UIImage sldsStandardIcon:SLDSIconStandardAccount withSize:20.0f];
 
 ```
-
-[![browser support](/readmeAssets/readme-icons-standard.png)](/readmeAssets/readme-icons-standard.png)
 
 
 ##### Utility Icons
@@ -117,19 +209,14 @@ UIImage *icon = [UIImage sldsIconStandard:SLDSIconStandardAccount withSize:20.0f
 
 ...
 
-UIImage *icon = [UIImage sldsIconUtility:SLDSIconUtility3dots withSize:20.0f];
+UIImage *icon = [UIImage sldsUtilityIcon:SLDSIconUtility3dots withSize:20.0f];
 
 ```
-
-[![browser support](/readmeAssets/readme-icons-utility.png)](/readmeAssets/readme-icons-utility.png)
 
 
 ## Sample Code 
 
-See [Demo App](/Demo) for sample code:
-
-
-[![browser support](/readmeAssets/readme-image.png)](/readme-image.png)
+See [Demo App](/Demo) for sample code.
 
 
 
