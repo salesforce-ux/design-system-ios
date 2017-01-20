@@ -8,7 +8,9 @@ typedef NS_ENUM(NSInteger, SLDSFillType) {
 	SLDSFillHeaderButton,
 	SLDSFillHeaderButtonHover
 };
-
+static const NSInteger SLDSFillTypeFirst = SLDSFillBrand;
+static const NSInteger SLDSFillTypeLast  = SLDSFillHeaderButtonHover;
+static const NSInteger SLDSFillTypeCount = SLDSFillTypeLast - SLDSFillTypeFirst;
 
 typedef NS_ENUM(NSInteger, SLDSBorderColorType) {
 	
@@ -72,7 +74,9 @@ typedef NS_ENUM(NSInteger, SLDSBorderColorType) {
 	SLDSProgressColorBorderActive,
 	SLDSSplitViewColorBorder
 };
-
+static const NSInteger SLDSBorderColorTypeFirst = SLDSColorBorder;
+static const NSInteger SLDSBorderColorTypeLast  = SLDSSplitViewColorBorder;
+static const NSInteger SLDSBorderColorTypeCount = SLDSBorderColorTypeLast - SLDSBorderColorTypeFirst;
 
 typedef NS_ENUM(NSInteger, SLDSBackgroundColorType) {
 	
@@ -201,7 +205,9 @@ typedef NS_ENUM(NSInteger, SLDSBackgroundColorType) {
 	SLDSSplitViewColorBackground,
 	SLDSSplitViewColorBackgroundRowHover
 };
-
+static const NSInteger SLDSBackgroundColorTypeFirst = SLDSColorBackground;
+static const NSInteger SLDSBackgroundColorTypeLast  = SLDSSplitViewColorBackgroundRowHover;
+static const NSInteger SLDSBackgroundColorTypeCount = SLDSBackgroundColorTypeLast - SLDSBackgroundColorTypeFirst;
 
 typedef NS_ENUM(NSInteger, SLDSTextColorType) {
 	
@@ -279,7 +285,9 @@ typedef NS_ENUM(NSInteger, SLDSTextColorType) {
 	SLDSColorTextContextBarInverse,
 	SLDSColorTextContextBarActionTrigger
 };
-
+static const NSInteger SLDSTextColorTypeFirst = SLDSColorTextActionLabel;
+static const NSInteger SLDSTextColorTypeLast  = SLDSColorTextContextBarActionTrigger;
+static const NSInteger SLDSTextColorTypeCount = SLDSTextColorTypeLast - SLDSTextColorTypeFirst;
 
 
 static float const sldsColors[][4] = { 

@@ -14,6 +14,7 @@ import UIKit
 enum ColorObjectType : String {
     case background = "Background"
     case border = "Border"
+    case fill = "Fill"
     case text = "Text"
 }
 
@@ -38,6 +39,11 @@ struct ColorObject {
                 return UIColor.sldsBorderColor(value)
             }
             
+        case .fill :
+            if let value = SLDSFillType.init(rawValue: self.index) {
+                return UIColor.sldsFill(value)
+            }
+            
         case .text :
             if let value = SLDSTextColorType.init(rawValue: self.index) {
                 return UIColor.sldsTextColor(value)
@@ -58,6 +64,9 @@ struct ColorObject {
         case .border :
             return "sldsBorderColor"
             
+        case .fill :
+            return "sldsFill"
+            
         case .text :
             return "sldsTextColor"
         }
@@ -66,26 +75,7 @@ struct ColorObject {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
     var name : String {
-        var retVal = ""
-     
-        switch self.type {
-        case .background :
-            if let value = SLDSBackgroundColorType.init(rawValue: self.index) {
-            //    retVal = NSString.sldsColorBackgroundName(value) as String
-            }
-            
-        case .border :
-            if let value = SLDSBorderColorType.init(rawValue: self.index) {
-            //    retVal = NSString.sldsColorBorderName(value) as String
-            }
-            
-        case .text :
-            if let value = SLDSTextColorType.init(rawValue: self.index) {
-            //    retVal = NSString.sldsColorTextName(value) as String
-            }
-        }
-        
-        return retVal
+        return UIColor.sldsColorName(self.index)
     }
 
 }

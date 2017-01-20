@@ -29,6 +29,8 @@ class ColorListViewController: SearchController, UITableViewDelegate, UITableVie
                     self.colors = ApplicationModel.sharedInstance.backgroundColors
                 case ColorObjectType.border.rawValue :
                     self.colors = ApplicationModel.sharedInstance.borderColors
+                case ColorObjectType.fill.rawValue :
+                    self.colors = ApplicationModel.sharedInstance.fillColors
                 case ColorObjectType.text.rawValue :
                     self.colors = ApplicationModel.sharedInstance.textColors
                 default : break

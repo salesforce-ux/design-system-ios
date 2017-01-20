@@ -68,7 +68,7 @@ struct IconObject {
             
         case .utility :
             if let value = SLDSUtilityIconType.init(rawValue: self.index) {
-                return UIImage.sldsUtilityIcon(value, withSize: self.size)
+                return UIImage.sldsUtilityIcon(value, with: UIColor.sldsFill(.brandActive), andSize: self.size)
             }
         }
         

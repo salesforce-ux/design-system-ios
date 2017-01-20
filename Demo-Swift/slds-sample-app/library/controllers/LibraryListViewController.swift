@@ -21,6 +21,7 @@ class LibraryListViewController: UITableViewController {
             TableData(sectionTitle: "Colors",
                       rows: [(ColorObjectType.background.rawValue, ColorListViewController.self),
                              (ColorObjectType.border.rawValue, ColorListViewController.self),
+                             (ColorObjectType.fill.rawValue, ColorListViewController.self),
                              (ColorObjectType.text.rawValue, ColorListViewController.self)]),
             
             TableData(sectionTitle: "Fonts",
@@ -40,7 +41,6 @@ class LibraryListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Library"
-        //self.navigationItem.backBarButtonItem
         self.view.backgroundColor = UIColor.white
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }

@@ -36,6 +36,9 @@ class ColorViewController: UIViewController {
             case .border :
                 swiftName = swiftName.trimPrefix("SLDSColorBorder")
                 
+            case .fill :
+                swiftName = swiftName.trimPrefix("SLDSFill")
+                
             case .text :
                 swiftName = swiftName.trimPrefix("SLDSColorText")
             }

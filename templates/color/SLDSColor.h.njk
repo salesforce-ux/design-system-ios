@@ -3,8 +3,10 @@
 typedef NS_ENUM(NSInteger, SLDS{{categoryName}}Type) {
 	{% for v in category %}
 	SLDS{{v.name}}{% if loop.first %}{% if indexName === null %} = 0{% else %} = SLDS{{indexName}} + 1{% endif %}{% endif %}{% if not loop.last %},{% endif %}{% endfor %}
-};
-{% set indexName = category[category.length-1].name %}
+};{% set indexName = category[category.length-1].name %}
+static const NSInteger SLDS{{categoryName}}TypeFirst = SLDS{{category[0].name}};
+static const NSInteger SLDS{{categoryName}}TypeLast  = SLDS{{category[category.length-1].name}};
+static const NSInteger SLDS{{categoryName}}TypeCount = SLDS{{categoryName}}TypeLast - SLDS{{categoryName}}TypeFirst;
 {% endfor %}
 
 static float const sldsColors[][4] = { {% for categoryName, category in data %}{% for v in category %}

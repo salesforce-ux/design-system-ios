@@ -182,6 +182,8 @@ typedef NS_ENUM(NSInteger, SLDSActionIconType) {
 	SLDSActionViewRelationship,
 	SLDSActionWebLink
 };
+static const NSInteger SLDSActionIconTypeFirst = SLDSActionAddContact;
+static const NSInteger SLDSActionIconTypeLast  = SLDSActionWebLink;
 
 //-------------------------------------------------------------------
 
@@ -315,6 +317,8 @@ typedef NS_ENUM(NSInteger, SLDSStandardIconType) {
 	SLDSStandardWorkOrderItem,
 	SLDSStandardWorkType
 };
+static const NSInteger SLDSStandardIconTypeFirst = SLDSStandardAccount;
+static const NSInteger SLDSStandardIconTypeLast  = SLDSStandardWorkType;
 
 //-------------------------------------------------------------------
 
@@ -434,6 +438,8 @@ typedef NS_ENUM(NSInteger, SLDSCustomIconType) {
 	SLDSCustom98,
 	SLDSCustom99
 };
+static const NSInteger SLDSCustomIconTypeFirst = SLDSCustom1;
+static const NSInteger SLDSCustomIconTypeLast  = SLDSCustom99;
 
 //-------------------------------------------------------------------
 
@@ -677,11 +683,12 @@ typedef NS_ENUM(NSInteger, SLDSUtilityIconType) {
 	SLDSUtilityZoomin,
 	SLDSUtilityZoomout
 };
+static const NSInteger SLDSUtilityIconTypeFirst = SLDSUtilityAdd;
+static const NSInteger SLDSUtilityIconTypeLast  = SLDSUtilityZoomout;
 
 //-------------------------------------------------------------------
 
-
-static float const sldsIconBackgroundColors[][4] = { 
+static float const sldsIconBackgroundColors[][3] = { 
 	{0.6274509803921569,0.5803921568627451,0.9294117647058824},
 	{0.3843137254901961,0.7176470588235294,0.9294117647058824},
 	{0.996078431372549,0.5607843137254902,0.3764705882352941},

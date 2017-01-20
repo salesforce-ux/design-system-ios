@@ -4,28 +4,24 @@
 
 
 +(instancetype)sldsFill:(SLDSFillType)colorType{
-    //return [SLDSColor sldsFill:colorType];
     return [self colorForIndex:colorType];
 }
 
 //-------------------------------------------------------------------
 
 +(instancetype)sldsBorderColor:(SLDSBorderColorType)colorType{
-    //return [SLDSColor sldsBorderColor:colorType];
     return [self colorForIndex:colorType];
 }
 
 //-------------------------------------------------------------------
 
 +(instancetype)sldsBackgroundColor:(SLDSBackgroundColorType)colorType{
-    //return [SLDSColor sldsBackgroundColor:colorType];
     return [self colorForIndex:colorType];
 }
 
 //-------------------------------------------------------------------
 
 +(instancetype)sldsTextColor:(SLDSTextColorType)colorType{
-    //return [SLDSColor sldsTextColor:colorType];
     return [self colorForIndex:colorType];
 }
 

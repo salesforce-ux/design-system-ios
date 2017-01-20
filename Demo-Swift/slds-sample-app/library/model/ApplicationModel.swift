@@ -15,49 +15,31 @@ class ApplicationModel: NSObject {
     
     var showSwift : Bool = true
     
+    // MARK: Color data management
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     var backgroundColors : Array<ColorObject> {
-        return self.colorsFor(.background)
+        return self.colorsFor(.background, first: SLDSBackgroundColorTypeFirst, last: SLDSBackgroundColorTypeLast)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     var borderColors : Array<ColorObject> {
-        return self.colorsFor(.border)
+        return self.colorsFor(.border, first: SLDSBorderColorTypeFirst, last:SLDSBorderColorTypeLast)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var fillColors : Array<ColorObject> {
+        return self.colorsFor(.fill, first: SLDSFillTypeFirst, last:SLDSFillTypeLast)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     var textColors : Array<ColorObject> {
-        return self.colorsFor(.text)
+        return self.colorsFor(.text, first: SLDSTextColorTypeFirst, last: SLDSTextColorTypeLast)
     }
     
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    var actionIcons : Array<IconObject> {
-        return self.iconsFor( .action )
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    var customIcons : Array<IconObject> {
-        return self.iconsFor( .custom )
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    var standardIcons : Array<IconObject> {
-        return self.iconsFor( .standard )
-    }
-    
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    var utilityIcons : Array<IconObject> {
-        return self.iconsFor( .utility )
-    }
-    
-    // MARK: Color data management
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     private func sortHue ( c1: ColorObject, c2: ColorObject ) -> Bool {
@@ -91,88 +73,57 @@ class ApplicationModel: NSObject {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    private func colorsFor(_ type: ColorObjectType ) -> Array<ColorObject> {
-        
-        var index = 0
+    private func colorsFor(_ type: ColorObjectType, first:NSInteger, last:NSInteger ) -> Array<ColorObject> {
+
         var colorList = Array<ColorObject>()
         
-        while let icon = self.colorFor( type, index: index) {
-            colorList.append(icon)
-            index = colorList.count
+        for index in first...last {
+            let color = ColorObject(type: type, index: index)
+            colorList.append(color)
         }
-        
+
         return colorList.sorted(by: self.sortHue)
     }
-
-    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-    
-    private func colorFor( _ type: ColorObjectType, index: NSInteger) -> ColorObject? {
-        
-        switch type {
-        case .background :
-            if index > 0 && (SLDSBackgroundColorType.init(rawValue: index)?.hashValue == 0) {
-                return nil
-            }
-            
-        case .border :
-            if index > 0 && (SLDSBorderColorType.init(rawValue: index+1)?.hashValue == 0) {
-                return nil
-            }
-    
-        case .text :
-            if index > 0 && (SLDSTextColorType.init(rawValue: index)?.hashValue == 0) {
-                return nil
-            }
-        }
-        
-        return ColorObject(type: type, index: index)
-    }
-
     
     // MARK: Icon data management
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    private func iconsFor(_ type : IconObjectType ) -> Array<IconObject> {
-        
-        var index = 0
-        var iconList = Array<IconObject>()
-        
-        while let icon = self.iconFor( type, index: index) {
-            iconList.append(icon)
-            index = iconList.count
-        }
-        
-        return iconList
+    var actionIcons : Array<IconObject> {
+        return self.iconsFor( .action, first: SLDSActionIconTypeFirst, last: SLDSActionIconTypeLast )
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var customIcons : Array<IconObject> {
+        return self.iconsFor( .custom, first: SLDSCustomIconTypeFirst, last: SLDSCustomIconTypeLast )
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var standardIcons : Array<IconObject> {
+        return self.iconsFor( .standard, first: SLDSStandardIconTypeFirst, last: SLDSStandardIconTypeLast )
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    var utilityIcons : Array<IconObject> {
+        return self.iconsFor( .utility, first: SLDSUtilityIconTypeFirst, last: SLDSUtilityIconTypeLast )
     }
 
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    private func iconFor(_ type : IconObjectType, index:NSInteger) -> IconObject? {
+    private func iconsFor(_ type : IconObjectType, first:NSInteger, last:NSInteger ) -> Array<IconObject> {
         
-        switch type {
-        case .action :
-            if index > 0 && (SLDSActionIconType.init(rawValue: index)?.hashValue == 0) {
-                return nil
-            }
+        var iconList = Array<IconObject>()
         
-        case .custom :
-            if index > 0 && (SLDSCustomIconType.init(rawValue: index)?.hashValue == 0) {
-                return nil
-            }
-        
-        case .standard :
-            if index > 0 && (SLDSStandardIconType.init(rawValue: index)?.hashValue == 0) {
-                return nil
-            }
-        
-        case .utility :
-            if index > 0 && (SLDSUtilityIconType.init(rawValue: index)?.hashValue == 0) {
-                return nil
-            }
+        for index in first...last {
+            let size = type == .utility ? SLDSSquareIconUtilityLarge : SLDSSquareIconMedium
+            let icon = IconObject(type: type, index: index, size: size)
+
+            iconList.append(icon)
         }
         
-        let size = type == .utility ? SLDSSquareIconUtilityLarge : SLDSSquareIconMedium
-        return IconObject(type: type, index: index, size: size)
+        return iconList
     }
     
 }
