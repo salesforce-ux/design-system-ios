@@ -14,6 +14,7 @@ const fontPlugin 	= require('./fontPlugin.js');
 const gulpFilter 	= require('gulp-filter');
 const gulpData		= require('gulp-data');
 const consolidate = require('gulp-consolidate');
+const del 				= require('del');
 const _ 					= require('lodash');
 
 const __PATHS__ = {
@@ -21,7 +22,8 @@ const __PATHS__ = {
   designTokens: path.join(__dirname,'node_modules','@salesforce-ux','design-system','design-tokens','dist','force-base.ios.json'),
   iconTokens: path.join(__dirname,'node_modules','@salesforce-ux','design-system','design-tokens','dist'),
   icons: path.join(__dirname,'node_modules','@salesforce-ux','design-system','assets','icons'),
-  output: path.join(__dirname, 'SalesforceDesignSystem','generated')
+  output: path.join(__dirname, 'SalesforceDesignSystem','generated'),
+  temp: path.join(__dirname, 'temp')
 };
 
 let data = {};
@@ -238,6 +240,14 @@ gulp.task('default', () => {
 	runSequence('parse:design-tokens', 'template:design-tokens', 'icons')
 });
 
+gulp.task('remove:temp', () => {
+	return del(__PATHS__.temp, {force:true});
+});
+
+gulp.task('clean', () => {
+	return del([__PATHS__.output, __PATHS__.temp], {force:true});
+});
+
 gulp.task('icons', () => {
-	runSequence('create:icon-fonts', 'merge:icon-tokens', 'parse:icons', 'template:icons')
+	runSequence('create:icon-fonts', 'merge:icon-tokens', 'parse:icons', 'template:icons', 'remove:temp')
 });
