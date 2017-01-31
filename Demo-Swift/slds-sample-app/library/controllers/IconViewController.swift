@@ -39,20 +39,20 @@ class IconViewController: UIViewController {
             var swiftName = data.name
             switch data.type {
                 case .action :
-                    swiftName = swiftName.trimPrefix("SLDSIconAction")
+                    swiftName = swiftName.trimPrefix("SLDSAction")
                     
                 case .custom :
-                    swiftName = swiftName.trimPrefix("SLDSIcon")
+                    swiftName = swiftName.trimPrefix("SLDS")
                     
                 case .standard :
-                    swiftName = swiftName.trimPrefix("SLDSIconStandard")
+                    swiftName = swiftName.trimPrefix("SLDSStandard")
                     
                 case .utility :
-                    swiftName = swiftName.trimPrefix("SLDSIconUtility")
+                    swiftName = swiftName.trimPrefix("SLDSUtility")
             }
             
-            self.codeView.swiftParameters = ["UIImage", data.method, swiftName, "withSize", "SLDSSquareIconMedium"]
             self.codeView.objCParameters = ["UIImage", data.method, data.name, "withSize", "SLDSSquareIconMedium"]
+            self.codeView.swiftParameters = ["UIImage", data.method, swiftName, "withSize", "SLDSSquareIconMedium"]
         }
     }
 

@@ -37,10 +37,10 @@ class DemoCell: UITableViewCell {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func loadView() {
-        self.backgroundColor = UIColor.sldsBackgroundColor(.colorBrand)
+        self.backgroundColor = UIColor.sldsFill(.brand)
         
         self.selectedBackgroundView = UIView()
-        self.selectedBackgroundView?.backgroundColor = UIColor.sldsBackgroundColor(.colorBackgroundInfo)
+        self.selectedBackgroundView?.backgroundColor = UIColor.sldsFill(.brand)
         
         if let label = self.textLabel {
             label.text = "Example App"

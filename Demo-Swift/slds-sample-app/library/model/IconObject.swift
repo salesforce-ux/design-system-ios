@@ -27,16 +27,16 @@ struct IconObject {
         
         switch self.type {
         case .action :
-            return "sldsIconAction"
+            return "sldsActionIcon"
         
         case .custom :
-            return "sldsIconCustom"
+            return "sldsCustomIcon"
 
         case .standard :
-            return "sldsIconStandard"
+            return "sldsStandardIcon"
             
         case .utility :
-            return "sldsIconUtility"
+            return "sldsUtilityIcon"
         }
     }
 

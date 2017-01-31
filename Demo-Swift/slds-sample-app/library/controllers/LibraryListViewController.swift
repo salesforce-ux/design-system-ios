@@ -25,8 +25,8 @@ class LibraryListViewController: UITableViewController {
                              (ColorObjectType.text.rawValue, ColorListViewController.self)]),
             
             TableData(sectionTitle: "Fonts",
-                      rows: [(FontObjectType.salesforceSans.rawValue, FontListTableViewController.self),
-                             (FontObjectType.lato.rawValue, FontListTableViewController.self)]),
+                      rows: [(FontObjectType.salesforceSans.rawValue, FontListViewController.self),
+                             (FontObjectType.lato.rawValue, FontListViewController.self)]),
             
             TableData(sectionTitle: "Icons",
                       rows: [(IconObjectType.action.rawValue, IconListViewController.self),

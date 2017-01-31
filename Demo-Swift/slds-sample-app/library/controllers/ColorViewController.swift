@@ -31,16 +31,16 @@ class ColorViewController: UIViewController {
             var swiftName = data.name
             switch data.type {
             case .background :
-                swiftName = swiftName.trimPrefix("SLDSColor")
+                swiftName = swiftName.trimPrefix("SLDS")
                 
             case .border :
-                swiftName = swiftName.trimPrefix("SLDSColorBorder")
+                swiftName = swiftName.trimPrefix("SLDS")
                 
             case .fill :
                 swiftName = swiftName.trimPrefix("SLDSFill")
                 
             case .text :
-                swiftName = swiftName.trimPrefix("SLDSColorText")
+                swiftName = swiftName.trimPrefix("SLDS")
             }
             
             self.swatchName.text = data.name
@@ -48,6 +48,8 @@ class ColorViewController: UIViewController {
             
             self.codeView.objCParameters = ["UIColor", data.method, data.name]
             self.codeView.swiftParameters = ["UIColor", data.method, swiftName]
+            
+            UIColor.sldsBackgroundColor(.cardColorBackground)
             
             var r:CGFloat = 0
             var g:CGFloat = 0

@@ -71,7 +71,7 @@ class ColorListViewController: SearchController, UITableViewDelegate, UITableVie
     
     func styleTableView() {
         
-        colorTableView = UITableView(frame: CGRect(x: 0, y: 108, width: self.view.frame.width, height: self.view.frame.height - 108))
+        colorTableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 60 ))
         colorTableView.delegate = self
         colorTableView.dataSource = self
         colorTableView.register(ColorCell.self, forCellReuseIdentifier: "Cell")

@@ -22,7 +22,7 @@
 		20F03F621E00D95B001EE121 /* AccountMasterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F5E1E00D95B001EE121 /* AccountMasterHeaderView.swift */; };
 		20F03F6B1E00D980001EE121 /* ColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F631E00D980001EE121 /* ColorListViewController.swift */; };
 		20F03F6C1E00D980001EE121 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F641E00D980001EE121 /* ColorViewController.swift */; };
-		20F03F6D1E00D980001EE121 /* FontListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F651E00D980001EE121 /* FontListTableViewController.swift */; };
+		20F03F6D1E00D980001EE121 /* FontListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F651E00D980001EE121 /* FontListViewController.swift */; };
 		20F03F6E1E00D980001EE121 /* FontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F661E00D980001EE121 /* FontViewController.swift */; };
 		20F03F6F1E00D980001EE121 /* IconListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F671E00D980001EE121 /* IconListViewController.swift */; };
 		20F03F701E00D980001EE121 /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F681E00D980001EE121 /* IconViewController.swift */; };
@@ -81,7 +81,7 @@
 		20F03F5E1E00D95B001EE121 /* AccountMasterHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountMasterHeaderView.swift; path = demo/views/AccountMasterHeaderView.swift; sourceTree = "<group>"; };
 		20F03F631E00D980001EE121 /* ColorListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorListViewController.swift; path = library/controllers/ColorListViewController.swift; sourceTree = "<group>"; };
 		20F03F641E00D980001EE121 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorViewController.swift; path = library/controllers/ColorViewController.swift; sourceTree = "<group>"; };
-		20F03F651E00D980001EE121 /* FontListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontListTableViewController.swift; path = library/controllers/FontListTableViewController.swift; sourceTree = "<group>"; };
+		20F03F651E00D980001EE121 /* FontListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontListViewController.swift; path = library/controllers/FontListViewController.swift; sourceTree = "<group>"; };
 		20F03F661E00D980001EE121 /* FontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontViewController.swift; path = library/controllers/FontViewController.swift; sourceTree = "<group>"; };
 		20F03F671E00D980001EE121 /* IconListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconListViewController.swift; path = library/controllers/IconListViewController.swift; sourceTree = "<group>"; };
 		20F03F681E00D980001EE121 /* IconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconViewController.swift; path = library/controllers/IconViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 				FC7FB0131E03519B004EB658 /* SearchController.swift */,
 				20F03F631E00D980001EE121 /* ColorListViewController.swift */,
 				20F03F641E00D980001EE121 /* ColorViewController.swift */,
-				20F03F651E00D980001EE121 /* FontListTableViewController.swift */,
+				20F03F651E00D980001EE121 /* FontListViewController.swift */,
 				20F03F661E00D980001EE121 /* FontViewController.swift */,
 				20F03F671E00D980001EE121 /* IconListViewController.swift */,
 				20F03F681E00D980001EE121 /* IconViewController.swift */,
@@ -400,7 +400,7 @@
 				20F03F6E1E00D980001EE121 /* FontViewController.swift in Sources */,
 				20F03F701E00D980001EE121 /* IconViewController.swift in Sources */,
 				FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */,
-				20F03F6D1E00D980001EE121 /* FontListTableViewController.swift in Sources */,
+				20F03F6D1E00D980001EE121 /* FontListViewController.swift in Sources */,
 				20F03F541E00D938001EE121 /* AccountMasterListViewController.swift in Sources */,
 				20F03F801E00D994001EE121 /* ApplicationModel.swift in Sources */,
 				20F03F8F1E00D99A001EE121 /* SectionHeaderView.swift in Sources */,

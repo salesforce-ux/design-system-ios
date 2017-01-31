@@ -32,11 +32,13 @@ class MainListViewController: UITableViewController {
             self.tableView.register(item.cell, forCellReuseIdentifier: item.name)
         }
         
-        self.view.backgroundColor = UIColor.sldsTextColor(.colorTextActionLabelActive);
+        self.view.backgroundColor = UIColor.sldsBackgroundColor(.colorBackgroundRowSelected)
         
         self.tableView.separatorStyle = .none
-        self.navigationController?.navigationBar.barTintColor = UIColor.sldsBackgroundColor(.colorBackgroundButtonBrandActive)
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.tintColor = UIColor.sldsTextColor(.colorTextButtonBrand)
+        self.navigationController?.navigationBar.barTintColor = UIColor.sldsFill(.brandActive)
         
         self.navigationController?.navigationBar.backIndicatorImage = UIImage.sldsUtilityIcon(.chevronleft, withSize:SLDSSquareIconUtilityMedium)
         
@@ -55,9 +57,9 @@ class MainListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let rowHeight = (self.view.frame.height - tableView.contentInset.top) / CGFloat(tableData.count)
         if indexPath.row < tableData.count - 1 {
-            return rowHeight + 80
+            return rowHeight + 70
         }
-        return rowHeight - 160
+        return rowHeight - 140
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

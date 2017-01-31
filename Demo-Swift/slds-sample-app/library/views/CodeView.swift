@@ -97,12 +97,15 @@ class CodeView: UIView, ItemBarDelegate {
             retVal.append( NSMutableAttributedString(string: params[2], attributes: [NSForegroundColorAttributeName:colors[1]] ))
             
             for i in stride(from: 3, to: params.count, by: 2) {
-                retVal.append( NSMutableAttributedString(string: ", " + params[i] + ": .", attributes: [NSForegroundColorAttributeName:colors[2]]))
+                
+                let connector = params[0] == "UIImage" ? ": " : ": ."
+                retVal.append( NSMutableAttributedString(string: ", " + params[i] + connector, attributes: [NSForegroundColorAttributeName:colors[2]]))
                 
                 retVal.append( NSMutableAttributedString(string: params[i+1], attributes: [NSForegroundColorAttributeName:colors[1]] ))
             }
             
             retVal.append( NSMutableAttributedString(string: " )", attributes: [NSForegroundColorAttributeName:colors[2]] ))
+            
             
             self.swiftString = self.applyCodeFormat(string: retVal)
         }

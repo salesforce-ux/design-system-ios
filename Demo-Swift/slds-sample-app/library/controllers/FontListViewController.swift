@@ -14,7 +14,7 @@ enum FontObjectType : String {
     case lato = "Lato"
 }
 
-class FontListTableViewController: UITableViewController {
+class FontListViewController: UITableViewController {
     
     var fontTypes = [String]()
     var fontSizes = [String]()
