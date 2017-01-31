@@ -22,7 +22,6 @@ class SearchController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = UIColor.white
         styleSearch()
     }
@@ -44,8 +43,7 @@ class SearchController: UIViewController, UISearchBarDelegate {
         self.view.constrainChild(searchHeader,
                                  xAlignment: .center,
                                  yAlignment: .top,
-                                 width: self.view.frame.width,
-                                 yOffset: 64)
+                                 width: self.view.frame.width)
     }
     
     // MARK: UISearchBarDelegate

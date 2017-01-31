@@ -66,7 +66,6 @@ class IconListViewController: SearchController, UICollectionViewDelegateFlowLayo
         let backImg = UIImage.sldsUtilityIcon(.chevronleft, withSize: SLDSSquareIconUtilityLarge)
         self.navigationItem.backBarButtonItem?.setBackgroundImage(backImg, for: .normal, barMetrics: .default)
         
-        styleSearch()
         styleCollectionView()
     }
 
@@ -78,7 +77,7 @@ class IconListViewController: SearchController, UICollectionViewDelegateFlowLayo
         layout.sectionInset = UIEdgeInsets(top: 0, left: 15, bottom: 15, right: 15)
         layout.itemSize = CGSize(width: 60, height: 60)
         
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 60), collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 40, width: self.view.frame.width, height: self.view.frame.height - 90), collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.isAccessibilityElement = false
