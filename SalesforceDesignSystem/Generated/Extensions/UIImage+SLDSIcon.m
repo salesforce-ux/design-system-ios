@@ -145,10 +145,8 @@
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(ctx, bgColor.CGColor);
 
-    // NOTE: Rounding ActionIcon Backgrounds
-    CGFloat ratio = iconType >= SLDSActionIconTypeFirst && iconType <= SLDSActionIconTypeLast ? 2 : 10;
-    
-    UIBezierPath *bg = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size, size) byRoundingCorners:(UIRectCornerAllCorners) cornerRadii:CGSizeMake(size/ratio, size/ratio)];
+    UIBezierPath *bg = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size, size) byRoundingCorners:(UIRectCornerAllCorners) cornerRadii:CGSizeMake(size/10, size/10)];
+
     [bg fill];
 
     UIFont *font = [UIFont fontWithName:@"SalesforceDesignSystemIcons" size:textRect.size.height];

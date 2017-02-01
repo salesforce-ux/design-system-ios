@@ -9,16 +9,13 @@ const merge2			= require('merge2');
 const rename			= require('gulp-rename');
 const runSequence = require('run-sequence');
 const iconFont 		= require('gulp-iconfont');
-const fontPlugin 	= require('./fontPlugin.js');
 const gulpFilter 	= require('gulp-filter');
 const gulpData		= require('gulp-data');
 const consolidate = require('gulp-consolidate');
 const del 				= require('del');
 const _ 					= require('lodash');
 const xmlEdit			= require('gulp-edit-xml');
-
-var svgo = require('gulp-svgo');
-var fontplugin = require('./fontplugin');
+var svgo 					= require('gulp-svgo');
 
 const __PATHS__ = {
 	templates: path.join(__dirname,'templates'),
@@ -93,7 +90,10 @@ const parseDesignTokens = () => {
 
 gulp.task('minify:svgs', () => {
 	let index = 0.999
-	return iconTypes.forEach(t => {
+	let streams = [];
+
+	iconTypes.forEach(t => {
+		streams.push(
 			gulp.src(__PATHS__.icons +  '/' + t.name + '/*.svg')
 				.pipe(svgo())
 				.pipe(xmlEdit((xml) => {
@@ -111,8 +111,11 @@ gulp.task('minify:svgs', () => {
 					index -= 0.001;
         	return xml;
     		}))
-				.pipe(gulp.dest('./minified/' + t.name))
+				.pipe(gulp.dest(__PATHS__.temp + '/minified/' + t.name))
+			)
 	})
+
+	return merge2(streams)
 });
 
 gulp.task('template:design-tokens', () => {
@@ -159,14 +162,14 @@ gulp.task('create:icon-fonts', () => {
 	let iconPaths = []
 
 	iconTypes.forEach(t => {
-		fs.readdirSync(path.resolve('./minified/' + t.name)).forEach(p => {
-			iconPaths.push('./minified/' + t.name + '/' + p)
+		fs.readdirSync(path.resolve(__PATHS__.temp + '/minified/' + t.name)).forEach(p => {
+			iconPaths.push(__PATHS__.temp + '/minified/' + t.name + '/' + p)
 		})
 	})
 
 	// add unique id to filename to avoid duplicate glyphs
 	let id = 0;
-	gulp.src(iconPaths)
+	return gulp.src(iconPaths)
 		.pipe(rename((path) => {
 	    path.basename += '-' + id++;
 	  }))
@@ -271,5 +274,5 @@ gulp.task('clean', () => {
 });
 
 gulp.task('icons', () => {
-	runSequence('create:icon-fonts', 'merge:icon-tokens', 'parse:icons', 'template:icons', 'remove:temp')
+	runSequence('minify:svgs', 'create:icon-fonts', 'merge:icon-tokens', 'parse:icons', 'template:icons', 'remove:temp')
 });
