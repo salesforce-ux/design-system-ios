@@ -19,10 +19,6 @@ class ActionBarButton: UIButton {
         frame = CGRect(x:((self.bounds.size.width - (frame?.size.width)!) / 2), y: 8, width: (frame?.size.width)!, height: (frame?.size.height)!);
         self.imageView?.frame = frame!;
         
-        // round icon
-        imageView?.layer.cornerRadius = (frame?.width)!/2;
-        imageView?.clipsToBounds = true;
-        
         frame = self.titleLabel?.frame;
         frame = CGRect(x: ((self.bounds.size.width - (frame?.size.width)!) / 2), y: self.bounds.size.height - (frame?.size.height)! - 4, width: (frame?.size.width)!, height: (frame?.size.height)!);
         self.titleLabel?.frame = frame!;

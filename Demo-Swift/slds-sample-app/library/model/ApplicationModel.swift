@@ -117,9 +117,7 @@ class ApplicationModel: NSObject {
         var iconList = Array<IconObject>()
         
         for index in first...last {
-            let size = type == .utility ? SLDSSquareIconUtilityLarge : SLDSSquareIconMedium
-            let icon = IconObject(type: type, index: index, size: size)
-
+            let icon = IconObject(type: type, index: index, size: SLDSSquareIconMedium)
             iconList.append(icon)
         }
         
