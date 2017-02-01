@@ -19,7 +19,7 @@
 //-------------------------------------------------------------------
 
 +(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:{% if type === 'action' %}0.6{% else %}1.0{% endif %}];
+	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
 }
 
 //-------------------------------------------------------------------
@@ -56,7 +56,7 @@
 
 //-------------------------------------------------------------------
 
-+(UIImage*)sldsIcon:(NSInteger)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size andIconScale:(CGFloat)iconScale{
++(UIImage*)sldsIcon:(NSInteger)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size{
 
     if (!iconColor) {
         iconColor = [UIColor whiteColor];
@@ -85,7 +85,7 @@
     }
 
     CGSize iconSize = CGSizeMake(size,size);
-    CGRect textRect = CGRectMake(0,(size-size*iconScale)/2,size,size*iconScale);
+    CGRect textRect = CGRectMake(0,(size-size)/2,size,size);
     UIGraphicsBeginImageContextWithOptions(iconSize, NO, 0.0f);
 
     CGContextRef ctx = UIGraphicsGetCurrentContext();

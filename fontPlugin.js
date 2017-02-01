@@ -79,7 +79,6 @@ var convertCircleToPath = function(item){
 };
 
 exports.fn = function(item, params) {
-
     if (
         item.isElem('svg') &&
         item.hasAttr('width') &&

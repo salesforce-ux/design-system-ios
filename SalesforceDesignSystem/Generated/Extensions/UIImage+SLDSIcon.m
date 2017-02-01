@@ -19,25 +19,7 @@
 //-------------------------------------------------------------------
 
 +(instancetype)sldsActionIcon:(SLDSActionIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:0.6];
-}
-
-//-------------------------------------------------------------------
-
-+(instancetype)sldsStandardIcon:(SLDSStandardIconType)iconType withSize:(CGFloat)size {
-    return [self sldsStandardIcon:iconType withColor:nil andBGColor:nil andSize:size];
-}
-
-//-------------------------------------------------------------------
-
-+(instancetype)sldsStandardIcon:(SLDSStandardIconType)iconType withColor:(UIColor*)iconColor andSize:(CGFloat)size {
-    return [self sldsStandardIcon:iconType withColor:iconColor andBGColor:nil andSize:size];
-}
-
-//-------------------------------------------------------------------
-
-+(instancetype)sldsStandardIcon:(SLDSStandardIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:1.0];
+	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
 }
 
 //-------------------------------------------------------------------
@@ -55,7 +37,25 @@
 //-------------------------------------------------------------------
 
 +(instancetype)sldsCustomIcon:(SLDSCustomIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:1.0];
+	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+}
+
+//-------------------------------------------------------------------
+
++(instancetype)sldsStandardIcon:(SLDSStandardIconType)iconType withSize:(CGFloat)size {
+    return [self sldsStandardIcon:iconType withColor:nil andBGColor:nil andSize:size];
+}
+
+//-------------------------------------------------------------------
+
++(instancetype)sldsStandardIcon:(SLDSStandardIconType)iconType withColor:(UIColor*)iconColor andSize:(CGFloat)size {
+    return [self sldsStandardIcon:iconType withColor:iconColor andBGColor:nil andSize:size];
+}
+
+//-------------------------------------------------------------------
+
++(instancetype)sldsStandardIcon:(SLDSStandardIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
+	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
 }
 
 //-------------------------------------------------------------------
@@ -73,7 +73,7 @@
 //-------------------------------------------------------------------
 
 +(instancetype)sldsUtilityIcon:(SLDSUtilityIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size andIconScale:1.0];
+	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
 }
 
 //-------------------------------------------------------------------
@@ -110,7 +110,7 @@
 
 //-------------------------------------------------------------------
 
-+(UIImage*)sldsIcon:(NSInteger)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size andIconScale:(CGFloat)iconScale{
++(UIImage*)sldsIcon:(NSInteger)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size{
 
     if (!iconColor) {
         iconColor = [UIColor whiteColor];
@@ -139,7 +139,7 @@
     }
 
     CGSize iconSize = CGSizeMake(size,size);
-    CGRect textRect = CGRectMake(0,(size-size*iconScale)/2,size,size*iconScale);
+    CGRect textRect = CGRectMake(0,(size-size)/2,size,size);
     UIGraphicsBeginImageContextWithOptions(iconSize, NO, 0.0f);
 
     CGContextRef ctx = UIGraphicsGetCurrentContext();

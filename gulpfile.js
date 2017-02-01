@@ -9,13 +9,16 @@ const merge2			= require('merge2');
 const rename			= require('gulp-rename');
 const runSequence = require('run-sequence');
 const iconFont 		= require('gulp-iconfont');
-const svgMin 			= require('gulp-svgmin');
 const fontPlugin 	= require('./fontPlugin.js');
 const gulpFilter 	= require('gulp-filter');
 const gulpData		= require('gulp-data');
 const consolidate = require('gulp-consolidate');
 const del 				= require('del');
 const _ 					= require('lodash');
+const xmlEdit			= require('gulp-edit-xml');
+
+var svgo = require('gulp-svgo');
+var fontplugin = require('./fontplugin');
 
 const __PATHS__ = {
 	templates: path.join(__dirname,'templates'),
@@ -38,13 +41,13 @@ let iconTypes = [
 	{
 		'name': 'action',
 		'tokenFilename': 'bg-actions.ios.json'
-	}, {
-		'name': 'standard',
-		'tokenFilename': 'bg-standard.ios.json'
-	}, {
+	},{
 		'name': 'custom',
 		'tokenFilename': 'bg-custom.ios.json'
-	}, {
+	},{
+		'name': 'standard',
+		'tokenFilename': 'bg-standard.ios.json'
+	},{
 		'name': 'utility'
 	}
 ]
@@ -88,6 +91,30 @@ const parseDesignTokens = () => {
 	});
 }
 
+gulp.task('minify:svgs', () => {
+	let index = 0.999
+	return iconTypes.forEach(t => {
+			gulp.src(__PATHS__.icons +  '/' + t.name + '/*.svg')
+				.pipe(svgo())
+				.pipe(xmlEdit((xml) => {
+					if (t.name === 'action' || t.name === 'utility') {
+						xml.svg.$.height = 100;
+						xml.svg.$.weight = 100;
+						xml.svg.$.viewBox = '0 -24 100 100';
+					}
+					if (xml.svg.g) {
+						if(xml.svg.g[0].path) {
+							xml.svg.g[0].path[0].$.d = xml.svg.g[0].path[0].$.d + ' M' + index + ' ' + index
+						}
+					}
+					else if (xml.svg.path) xml.svg.path[0].$.d =  xml.svg.path[0].$.d + ' M' + index + ' ' + index
+					index -= 0.001;
+        	return xml;
+    		}))
+				.pipe(gulp.dest('./minified/' + t.name))
+	})
+});
+
 gulp.task('template:design-tokens', () => {
 	let streams = [];
 	for (let type in data) {
@@ -129,30 +156,25 @@ gulp.task('template:design-tokens', () => {
 let icons = {};
 
 gulp.task('create:icon-fonts', () => {
-	const ttfFilter = gulpFilter('**/*.ttf');
 	let iconPaths = []
 
 	iconTypes.forEach(t => {
-		fs.readdirSync(path.resolve(__PATHS__.icons + '/'+ t.name)).filter(p => {
-			return p.indexOf('.svg') !== -1
-		}).forEach(p => {
-			iconPaths.push(__PATHS__.icons + '/' + t.name + '/' + p)
+		fs.readdirSync(path.resolve('./minified/' + t.name)).forEach(p => {
+			iconPaths.push('./minified/' + t.name + '/' + p)
 		})
 	})
 
 	// add unique id to filename to avoid duplicate glyphs
-	let id = 1;
+	let id = 0;
 	gulp.src(iconPaths)
 		.pipe(rename((path) => {
-	    path.basename += '-' + id;
-	    id++;
+	    path.basename += '-' + id++;
 	  }))
    	.pipe(iconFont({
   		fontName: 'SalesforceDesignSystemIcons',
-  		normalize:true
+  		normalize: true
     }))
-    .pipe(ttfFilter)
-		.pipe(gulp.dest('SalesforceDesignSystem.bundle/'))
+		.pipe(gulp.dest('SalesforceDesignSystem.bundle'))
 });
 
 const parseIcons = () => {
