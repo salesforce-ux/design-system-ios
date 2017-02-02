@@ -19,7 +19,12 @@
 //-------------------------------------------------------------------
 
 +(instancetype)sldsActionIcon:(SLDSActionIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+	 if(iconType < SLDSActionIconTypeFirst && iconType > SLDSActionIconTypeLast) {
+        // NOTE: Index out of bounds
+        return [[UIImage alloc] init];
+    }
+
+    return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
 }
 
 //-------------------------------------------------------------------
@@ -37,7 +42,12 @@
 //-------------------------------------------------------------------
 
 +(instancetype)sldsCustomIcon:(SLDSCustomIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+	 if(iconType < SLDSCustomIconTypeFirst && iconType > SLDSCustomIconTypeLast) {
+        // NOTE: Index out of bounds
+        return [[UIImage alloc] init];
+    }
+
+    return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
 }
 
 //-------------------------------------------------------------------
@@ -55,7 +65,12 @@
 //-------------------------------------------------------------------
 
 +(instancetype)sldsStandardIcon:(SLDSStandardIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+	 if(iconType < SLDSStandardIconTypeFirst && iconType > SLDSStandardIconTypeLast) {
+        // NOTE: Index out of bounds
+        return [[UIImage alloc] init];
+    }
+
+    return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
 }
 
 //-------------------------------------------------------------------
@@ -73,7 +88,12 @@
 //-------------------------------------------------------------------
 
 +(instancetype)sldsUtilityIcon:(SLDSUtilityIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+	 if(iconType < SLDSUtilityIconTypeFirst && iconType > SLDSUtilityIconTypeLast) {
+        // NOTE: Index out of bounds
+        return [[UIImage alloc] init];
+    }
+
+    return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
 }
 
 //-------------------------------------------------------------------
@@ -150,7 +170,6 @@
 
     UIBezierPath *bg = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size, size) byRoundingCorners:(UIRectCornerAllCorners) cornerRadii:CGSizeMake(size/ratio, size/ratio)];
     [bg fill];
-
 
     UIFont *font = [UIFont fontWithName:@"SalesforceDesignSystemIcons" size:textRect.size.height];
 
