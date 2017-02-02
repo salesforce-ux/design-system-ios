@@ -151,7 +151,6 @@
     UIBezierPath *bg = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size, size) byRoundingCorners:(UIRectCornerAllCorners) cornerRadii:CGSizeMake(size/ratio, size/ratio)];
     [bg fill];
 
-
     UIFont *font = [UIFont fontWithName:@"SalesforceDesignSystemIcons" size:textRect.size.height];
 
     if (font == nil) {
