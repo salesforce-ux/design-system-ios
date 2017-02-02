@@ -1,10 +1,11 @@
 {
-  "name": "ios-tokenizer",
+  "name": "design-system-ios",
   "version": "1.0.0",
   "description": "Design tokens to objective-C",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest" : "gulp",
+    "test" : "mocha"
   },
   "author": "Salesforce UX",
   "license": "ISC",
@@ -28,6 +29,7 @@
     "gutil": "^1.6.4",
     "lodash": "^4.17.4",
     "merge2": "^1.0.2",
+    "mocha": "^3.2.0",
     "run-sequence": "^1.2.2",
     "theo": "^5.0.0-beta.1",
     "through2": "^2.0.1"
