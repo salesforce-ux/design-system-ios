@@ -26,7 +26,6 @@
 		051031E61B29F1020094A6B2 /* libSalesforceDesignSystem.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSalesforceDesignSystem.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		051031E91B29F1020094A6B2 /* SalesforceDesignSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SalesforceDesignSystem.h; sourceTree = "<group>"; };
 		051032001B29F15C0094A6B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		051032221B29FEA50094A6B2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0516E9551B4D9D2400F8B6B0 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		0567E44A1B79552800025C6E /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
 		05D89ADD1D808A3D00516C3C /* SLDSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSFont.h; path = Generated/SLDSFont.h; sourceTree = "<group>"; };
@@ -59,7 +58,6 @@
 			children = (
 				0567E44A1B79552800025C6E /* SalesforceDesignSystem.bundle */,
 				0516E9551B4D9D2400F8B6B0 /* CoreText.framework */,
-				051032221B29FEA50094A6B2 /* .gitignore */,
 				051032001B29F15C0094A6B2 /* UIKit.framework */,
 				051031E81B29F1020094A6B2 /* SalesforceDesignSystem */,
 				051031E71B29F1020094A6B2 /* Products */,
