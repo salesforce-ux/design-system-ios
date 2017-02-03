@@ -19,7 +19,12 @@
 //-------------------------------------------------------------------
 
 +(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+	if(iconType < SLDS{{type | capitalize}}IconTypeFirst && iconType > SLDS{{type | capitalize}}IconTypeLast) {
+        // NOTE: Index out of bounds
+        return [[UIImage alloc] init];
+    }
+
+    return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
 }
 
 //-------------------------------------------------------------------
