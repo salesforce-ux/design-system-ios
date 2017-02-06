@@ -122,18 +122,6 @@
     CFRelease(provider);
 }
 
-//-------------------------------------------------------------------
-
-+(NSString*)sldsFontName:(SLDSFontType)fontType {
-    return sldsFontTypeNames(fontType);
-}
-
-//-------------------------------------------------------------------
-
-+(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType {
-    return sldsFontSizeNames(sizeType);
-}
-
 // NOTE : Deprecated Below ------------------------------------------
 //-------------------------------------------------------------------
 

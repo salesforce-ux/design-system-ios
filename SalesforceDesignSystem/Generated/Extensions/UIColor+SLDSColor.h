@@ -7,6 +7,5 @@
 +(instancetype)sldsBorderColor:(SLDSBorderColorType)colorType;
 +(instancetype)sldsBackgroundColor:(SLDSBackgroundColorType)colorType;
 +(instancetype)sldsTextColor:(SLDSTextColorType)colorType;
-+(NSString*)sldsColorName:(NSInteger)colorType;
 
 @end

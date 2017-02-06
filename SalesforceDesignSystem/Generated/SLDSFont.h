@@ -52,44 +52,6 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
 
 //-------------------------------------------------------------------
 
-#define sldsFontTypeNames(enum) [@[\
-    @"SLDSFontTypeRegular",\
-    @"SLDSFontTypeItalic",\
-    @"SLDSFontTypeBold",\
-    @"SLDSFontTypeBoldItalic",\
-    @"SLDSFontTypeLight",\
-    @"SLDSFontTypeLightItalic",\
-    @"SLDSFontTypeThin",\
-    @"SLDSFontTypeThinItalic"\
-] objectAtIndex:enum]
-
-//-------------------------------------------------------------------
-
-#define sldsFontSizeNames(enum) [@[\
-    @"SLDSFontSizeXSmall",\
-    @"SLDSFontSizeSmall",\
-    @"SLDSFontSizeMedium",\
-    @"SLDSFontSizeMediumA",\
-    @"SLDSFontSizeLarge",\
-    @"SLDSFontSizeXLarge",\
-    @"SLDSFontSizeXLargeA",\
-    @"SLDSFontSizeXxLarge",\
-    @"SLDSFontSizeTextXxSmall",\
-    @"SLDSFontSizeTextXSmall",\
-    @"SLDSFontSizeTextSmall",\
-    @"SLDSFontSizeTextMedium",\
-    @"SLDSFontSizeTextLarge",\
-    @"SLDSFontSizeTextXLarge",\
-    @"SLDSFontSizeHeadingXxSmall",\
-    @"SLDSFontSizeHeadingXSmall",\
-    @"SLDSFontSizeHeadingSmall",\
-    @"SLDSFontSizeHeadingMedium",\
-    @"SLDSFontSizeHeadingLarge",\
-    @"SLDSFontSizeHeadingXLarge",\
-] objectAtIndex:enum]
-
-//-------------------------------------------------------------------
-
 #define sldsFontSizes(enum) [[@[\
     @10,\
     @14,\
