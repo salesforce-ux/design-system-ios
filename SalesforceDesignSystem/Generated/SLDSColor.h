@@ -1,4 +1,7 @@
 #import <UIKit/UIKit.h>
+#ifndef SLDSColor_h
+#define SLDSColor_h
+
 
 typedef NS_ENUM(NSInteger, SLDSFillType) {
 	
@@ -553,3 +556,5 @@ static float const sldsColors[][4] = {
 	{1,1,1,1},
 	{1,1,1,0.4},
 };
+
+#endif /* SLDSColor_h */

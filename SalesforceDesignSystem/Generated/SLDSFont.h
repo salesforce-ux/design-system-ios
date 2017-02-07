@@ -1,4 +1,6 @@
 #import <UIKit/UIKit.h>
+#ifndef SLDSFont_h
+#define SLDSFont_h
 
 typedef NS_ENUM(NSInteger, SLDSFontSizeType) {
 	
@@ -75,4 +77,4 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
     @32,\
 ] objectAtIndex:enum] integerValue]
 
-//-------------------------------------------------------------------
+#endif /* SLDSFont_h */

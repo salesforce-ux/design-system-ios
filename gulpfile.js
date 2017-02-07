@@ -28,6 +28,8 @@ const __PATHS__ = {
 
 let data = {};
 
+let iconNames = [];
+
 let types = [
 	'color',
 	'size',
@@ -75,13 +77,14 @@ const parseDesignTokens = () => {
 		});
 
 		tokens.properties.forEach(p => {
+			let t = format(p.type)
 			if (types.indexOf(p.type) !== -1) {
-				let t = format(p.type)
+
 				if (!data[t].hasOwnProperty(format(p.category))) data[t][format(p.category)] = []
 				data[t][format(p.category)].push({
 					'name' : format(p.name),
 					'value' : p.type === 'color' ? parseColor(p.value) : p.value
-				})
+				});
 			}
 		});
     next(null, file);
@@ -137,12 +140,6 @@ gulp.task('template:design-tokens', () => {
 			);
 
 			streams.push(
-				gulp.src('templates/' + updatedType + '/SLDS' + updatedType + '.m.njk')
-					.pipe(nunjucks.compile({ 'data': data[type] }))
-					.pipe(rename('SLDS' + updatedType + '.m'))
-			);
-
-			streams.push(
 				gulp.src('templates/' + updatedType + '/SLDS' + updatedType + '.h.njk')
 					.pipe(nunjucks.compile({ 'data': data[type] }))
 					.pipe(rename('SLDS' + updatedType + '.h'))
@@ -185,22 +182,24 @@ const parseIcons = () => {
 		iconTypes.forEach(iconType => {
 			icons[iconType.name] = [];
 
-			let iconNames = (fs.readdirSync(path.resolve(__PATHS__.icons + '/' + iconType.name))).filter(n => {
+			let names = (fs.readdirSync(path.resolve(__PATHS__.icons + '/' + iconType.name))).filter(n => {
 				return n.indexOf('.svg') !== -1;
 			}).map(i => {
 				return iconType.name === 'action' ? 'action' + format(i.replace('.svg','')) : format(i.replace('.svg','')).charAt(0).toLowerCase() + format(i.replace('.svg','')).slice(1);
 			});
 
 			let tokens = JSON.parse(file.contents.toString('utf-8'));
-			iconNames.forEach(n => {
+			names.forEach(n => {
 				let backgroundColor = iconType.name === 'utility' ? 'null' : parseColor(_.find(tokens[iconType.name].properties, { 'name': n }).value)
+				let name = (iconType.name === 'action' || iconType.name === 'custom') ?  format(n) : format(iconType.name) + format(n)
+				iconNames.push(name);
 				icons[iconType.name].push({
-					"name" : (iconType.name === 'action' || iconType.name === 'custom') ?  'SLDS' + format(n) : 'SLDS' + format(iconType.name) + format(n) ,
+					"name" : name ,
 					"backgroundColor" : backgroundColor
 				});
 			});
 		});
-    next(null, file);
+    	next(null, file);
 	});
 }
 
@@ -256,6 +255,35 @@ gulp.task('merge:icon-tokens', () => {
 
 // ------------------------------------------------------------------------------------------------ //
 
+gulp.task('template:names', () => {
+
+	let streams = [];
+
+	console.log(data.FontSize)
+
+	streams.push(
+		gulp.src('templates/Name/NSString.h.njk')
+			.pipe(nunjucks.compile())
+			.pipe(rename('Extensions/NSString+SLDSName.h'))
+	);
+
+	streams.push(
+		gulp.src('templates/Name/NSString.m.njk')
+			.pipe(nunjucks.compile())
+			.pipe(rename('Extensions/NSString+SLDSName.m'))
+	);
+
+	streams.push(
+		gulp.src('templates/Name/SLDSName.h.njk')
+			.pipe(nunjucks.compile({
+				'tokenNames': data,
+				'iconNames': iconNames}))
+			.pipe(rename('SLDSName.h'))
+	);
+
+	return merge2(streams).pipe(gulp.dest(__PATHS__.output))
+});
+
 gulp.task('parse:design-tokens', () => {
 	return gulp.src([path.resolve(__PATHS__.designTokens)])
 	  .pipe(parseDesignTokens())
@@ -274,5 +302,5 @@ gulp.task('clean', () => {
 });
 
 gulp.task('icons', () => {
-	runSequence('minify:svgs', 'create:icon-fonts', 'merge:icon-tokens', 'parse:icons', 'template:icons', 'remove:temp')
+	runSequence('minify:svgs', 'create:icon-fonts', 'merge:icon-tokens', 'parse:icons', 'template:icons', 'template:names', 'remove:temp')
 });

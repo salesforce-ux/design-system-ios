@@ -98,6 +98,7 @@
 
 //-------------------------------------------------------------------
 
+
 +(UIColor*)colorForIndex:(NSInteger)index {
     static NSMutableDictionary *colorCache = nil;
     if (colorCache == nil) {

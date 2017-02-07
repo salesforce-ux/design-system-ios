@@ -1,4 +1,7 @@
 #import <UIKit/UIKit.h>
+#ifndef SLDSIcon_h
+#define SLDSIcon_h
+
 
 typedef NS_ENUM(NSInteger, SLDSActionIconType) {
 	
@@ -1109,3 +1112,5 @@ static float const sldsIconBackgroundColors[][3] = {
 	{0.2,0.6588235294117647,0.8627450980392157},
 	{0.32941176470588235,0.4117647058823529,0.5529411764705883},
 };
+
+#endif /* SLDSIcon_h */
