@@ -259,8 +259,6 @@ gulp.task('template:names', () => {
 
 	let streams = [];
 
-	console.log(data.FontSize)
-
 	streams.push(
 		gulp.src('templates/Name/NSString.h.njk')
 			.pipe(nunjucks.compile())
