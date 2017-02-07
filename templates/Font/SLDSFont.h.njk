@@ -1,4 +1,6 @@
 #import <UIKit/UIKit.h>
+#ifndef SLDSFont_h
+#define SLDSFont_h
 
 typedef NS_ENUM(NSInteger, SLDSFontSizeType) {
 	{% for size in data.FontSize %}
@@ -33,27 +35,8 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
 
 //-------------------------------------------------------------------
 
-#define sldsFontTypeNames(enum) [@[\
-    @"SLDSFontTypeRegular",\
-    @"SLDSFontTypeItalic",\
-    @"SLDSFontTypeBold",\
-    @"SLDSFontTypeBoldItalic",\
-    @"SLDSFontTypeLight",\
-    @"SLDSFontTypeLightItalic",\
-    @"SLDSFontTypeThin",\
-    @"SLDSFontTypeThinItalic"\
-] objectAtIndex:enum]
-
-//-------------------------------------------------------------------
-
-#define sldsFontSizeNames(enum) [@[\{% for size in data.FontSize %}
-    @"SLDS{{size.name}}",\{% endfor %}
-] objectAtIndex:enum]
-
-//-------------------------------------------------------------------
-
 #define sldsFontSizes(enum) [[@[\{% for size in data.FontSize %}
     @{{size.value}},\{% endfor %}
 ] objectAtIndex:enum] integerValue]
 
-//-------------------------------------------------------------------
+#endif /* SLDSFont_h */

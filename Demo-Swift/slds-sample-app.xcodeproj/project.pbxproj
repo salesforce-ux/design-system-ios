@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200B16A31E49310B00BA11A0 /* libSalesforceDesignSystemNames.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 200B169E1E49301500BA11A0 /* libSalesforceDesignSystemNames.a */; };
 		202532461E2EB2E4009F32A7 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 202532451E2EB2E4009F32A7 /* CustomFont.bundle */; };
 		202532481E2EB3DB009F32A7 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 202532471E2EB3DB009F32A7 /* SalesforceDesignSystem.bundle */; };
 		206634CC1E25B6FE005B9381 /* libSalesforceDesignSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7F2E371DF2037E0011684A /* libSalesforceDesignSystem.a */; };
@@ -50,6 +51,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		200B169A1E49301500BA11A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 200B16811E49257500BA11A0;
+			remoteInfo = "SalesforceDesignSystem-WithNames";
+		};
+		200B169D1E49301500BA11A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 200B16821E49257500BA11A0;
+			remoteInfo = "SalesforceDesignSystem-WithNames";
+		};
 		206634CA1E25B6FB005B9381 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
@@ -118,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				206634CC1E25B6FE005B9381 /* libSalesforceDesignSystem.a in Frameworks */,
+				200B16A31E49310B00BA11A0 /* libSalesforceDesignSystemNames.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				FC7F2E371DF2037E0011684A /* libSalesforceDesignSystem.a */,
+				200B169E1E49301500BA11A0 /* libSalesforceDesignSystemNames.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -300,6 +317,7 @@
 			);
 			dependencies = (
 				206634CB1E25B6FB005B9381 /* PBXTargetDependency */,
+				200B169B1E49301500BA11A0 /* PBXTargetDependency */,
 			);
 			name = "slds-sample-app";
 			productName = "slds-sample-app";
@@ -348,6 +366,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		200B169E1E49301500BA11A0 /* libSalesforceDesignSystemNames.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSalesforceDesignSystemNames.a;
+			remoteRef = 200B169D1E49301500BA11A0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		FC7F2E371DF2037E0011684A /* libSalesforceDesignSystem.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -362,8 +387,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				202532481E2EB3DB009F32A7 /* SalesforceDesignSystem.bundle in Resources */,
 				202532461E2EB2E4009F32A7 /* CustomFont.bundle in Resources */,
+				202532481E2EB3DB009F32A7 /* SalesforceDesignSystem.bundle in Resources */,
 				FCB47EB01DD0FCDB00BB6C1B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +442,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		200B169B1E49301500BA11A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SalesforceDesignSystem-WithNames";
+			targetProxy = 200B169A1E49301500BA11A0 /* PBXContainerItemProxy */;
+		};
 		206634CB1E25B6FB005B9381 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SalesforceDesignSystem;
@@ -467,7 +497,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -512,7 +542,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

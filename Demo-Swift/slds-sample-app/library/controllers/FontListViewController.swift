@@ -43,8 +43,8 @@ class FontListViewController: UITableViewController {
             if newValue == FontObjectType.salesforceSans.rawValue {
                 UIFont.sldsUseDefaultFonts()
                 repeat {
-                    if let fontType = SLDSFontType.init(rawValue: fontTypes.count),
-                        let fontName = UIFont.sldsFontName(fontType) {
+                    if let _ = SLDSFontType.init(rawValue: fontTypes.count),
+                        let fontName = NSString.sldsFontName(fontTypes.count) {
                         fontTypes.append(fontName.replacingOccurrences(of: "SLDSFontType", with: ""))
                     }
                 } while SLDSFontType.init(rawValue: fontTypes.count)?.hashValue != 0
@@ -68,8 +68,8 @@ class FontListViewController: UITableViewController {
         
         // NOTE: Collecting all the Font Sizes
         repeat {
-            if let fontSize = SLDSFontSizeType.init(rawValue: fontSizes.count),
-                let sizeName = UIFont.sldsFontSizeName(fontSize) {
+            if let _ = SLDSFontSizeType.init(rawValue: fontSizes.count),
+                let sizeName = NSString.sldsFontSizeName(fontSizes.count) {
                 fontSizes.append(sizeName.replacingOccurrences(of: "SLDSFontSize", with: ""))
             }
         } while SLDSFontSizeType.init(rawValue: fontSizes.count)?.hashValue != 0
