@@ -1,11 +1,14 @@
 #import <UIKit/UIKit.h>
+#ifndef SLDSIcon_h
+#define SLDSIcon_h
+
 {% for type, iconSet in icons %}
 typedef NS_ENUM(NSInteger, SLDS{{type | capitalize}}IconType) {
 	{% for i in iconSet %}
-	{{i.name}}{% if loop.first %}{% if indexName === null %} = 0{% else %} = {{indexName}} + 1{% endif %}{% endif %}{% if not loop.last %},{% endif %}{% endfor %}
+	SLDS{{i.name}}{% if loop.first %}{% if indexName === null %} = 0{% else %} = SLDS{{indexName}} + 1{% endif %}{% endif %}{% if not loop.last %},{% endif %}{% endfor %}
 };{% set indexName = iconSet[iconSet.length-1].name %}
-static const NSInteger SLDS{{type | capitalize}}IconTypeFirst = {{iconSet[0].name}};
-static const NSInteger SLDS{{type | capitalize}}IconTypeLast  = {{iconSet[iconSet.length-1].name}};
+static const NSInteger SLDS{{type | capitalize}}IconTypeFirst = SLDS{{iconSet[0].name}};
+static const NSInteger SLDS{{type | capitalize}}IconTypeLast  = SLDS{{iconSet[iconSet.length-1].name}};
 
 //-------------------------------------------------------------------
 {% endfor %}
@@ -13,8 +16,4 @@ static float const sldsIconBackgroundColors[][3] = { {% for type, iconSet in ico
 	{% raw %}{{% endraw %}{{i.backgroundColor.r}},{{i.backgroundColor.g}},{{i.backgroundColor.b}}{% raw %}}{% endraw %},{% endif %}{% endfor %}{% endfor %}
 };
 
-//-------------------------------------------------------------------
-
-#define sldsIconTypeNames(enum) [@[\{% for type, iconSet in icons %}{% for i in iconSet %}
-	@"{{i.name}}",\{% endfor %}{% endfor %}
-] objectAtIndex:enum]
+#endif /* SLDSIcon_h */

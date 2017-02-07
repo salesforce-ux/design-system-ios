@@ -4,6 +4,5 @@
 @interface UIColor (SLDSColor)
 {% for categoryName, category in data %}
 +(instancetype)slds{{categoryName}}:(SLDS{{categoryName}}Type)colorType;{% endfor %}
-+(NSString*)sldsColorName:(NSInteger)colorType;
 
 @end

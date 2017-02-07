@@ -43,7 +43,7 @@ struct IconObject {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     var name : String {
-        return UIImage.sldsIconName(index)
+        return NSString.sldsIconName(index)
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

@@ -19,5 +19,4 @@
 +(instancetype)sldsUtilityIcon:(SLDSUtilityIconType)iconType withColor:(UIColor*)iconColor andSize:(CGFloat)size;
 +(instancetype)sldsUtilityIcon:(SLDSUtilityIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size;
 
-+(NSString*)sldsIconName:(NSInteger)iconType;
 @end

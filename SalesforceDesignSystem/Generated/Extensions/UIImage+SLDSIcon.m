@@ -98,11 +98,6 @@
 
 //-------------------------------------------------------------------
 
-+(NSString*)sldsIconName:(NSInteger)iconType {
-	return sldsIconTypeNames(iconType);
-}
-
-//-------------------------------------------------------------------
 
 +(UIColor*)colorForIndex:(NSInteger)index {
     static NSMutableDictionary *colorCache = nil;

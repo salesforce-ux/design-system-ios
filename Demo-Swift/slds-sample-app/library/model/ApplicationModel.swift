@@ -56,18 +56,18 @@ class ApplicationModel: NSObject {
         c1.color?.getHue(&h1, saturation: &s1, brightness: &b1, alpha: &a1)
         c2.color?.getHue(&h2, saturation: &s2, brightness: &b2, alpha: &a2)
         
-        if h1 == h2 {
-            if s1 == s2 {
-                if b1 == b2 {
-                    return a2 < a1
+        if a1 >= a2 - 0.05 || a1 < a2 + 0.05 {
+            if h1 == h2 {
+                if s1 >= s2 - 0.05 || s1 < s2 + 0.05 {
+                    return b2 < b1
                 } else {
-                    return b1 < b2
+                    return s1 < s2
                 }
             } else {
-                return s1 < s2
+                return h1 < h2
             }
         } else {
-            return h1 < h2
+            return a1 < a2
         }
     }
     

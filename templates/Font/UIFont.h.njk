@@ -9,8 +9,6 @@
 +(void)sldsUseDefaultFontFor:(SLDSFontType)fontType;
 +(void)sldsUseFont:(NSString *)fontFileName fromBundle:(NSString*)bundleName forType:(SLDSFontType)fontType;
 +(void)loadFont:(NSString *)fontFileName fromBundle:(NSString *)bundleName;
-+(NSString*)sldsFontName:(SLDSFontType)fontType;
-+(NSString*)sldsFontSizeName:(SLDSFontSizeType)sizeType;
 
 // NOTE : Deprecated --------------------------------------------------------------
 +(instancetype)sldsFontRegularWithSize:(SLDSFontSizeType)fontSize __deprecated_msg("use method 'sldsFont:(SLDSFontStyle) withSize:(SLDSFontSize)' instead");

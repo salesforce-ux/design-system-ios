@@ -75,7 +75,7 @@ struct ColorObject {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
     var name : String {
-        return UIColor.sldsColorName(self.index)
+        return NSString.sldsColorName(self.index)
     }
 
 }

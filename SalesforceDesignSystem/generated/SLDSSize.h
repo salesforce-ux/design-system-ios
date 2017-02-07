@@ -1,3 +1,6 @@
+#ifndef SLDSSize_h
+#define SLDSSize_h
+
 static const CGFloat SLDSBorderWidthThin = 1;
 static const CGFloat SLDSBorderWidthThick = 2;
 static const CGFloat SLDSBorderStrokeWidthThin = 1;
@@ -55,3 +58,6 @@ static const CGFloat SLDSBorderRadiusMedium = 4;
 static const CGFloat SLDSBorderRadiusLarge = 8;
 static const CGFloat SLDSBorderRadiusPill = 240;
 static const CGFloat SLDSBorderRadiusCircle = 0.5;
+
+
+#endif /* SLDSSize_h */
