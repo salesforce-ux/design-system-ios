@@ -3,10 +3,10 @@
 
 #define roundFloat(input) round(input*100)/100
 
-@interface ColorTests : XCTestCase
+@interface SLDSTests : XCTestCase
 @end
 
-@implementation ColorTests
+@implementation SLDSTests
 
 - (void)testFillColorAccuracy {
     CGFloat red, green, blue, alpha;
