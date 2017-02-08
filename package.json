@@ -1,6 +1,8 @@
 {
   "name": "design-system-ios",
   "version": "1.0.0",
+  "repository": "https://github.com/salesforce-ux/design-system-ios.git",
+  "license": "SEE LICENSE IN README.md",
   "description": "Design tokens to objective-C",
   "main": "index.js",
   "scripts": {
@@ -10,9 +12,8 @@
   "author": "Salesforce UX",
   "license": "ISC",
   "dependencies": {
-    "@salesforce-ux/icons": "5.1.0",
+    "@salesforce-ux/design-system": "^2.2.1",
     "del": "^2.2.2",
-    "design-system": "salesforce-ux/design-system-internal#v2.2.0-dist",
     "gulp": "^3.9.1",
     "gulp-consolidate": "^0.2.0",
     "gulp-data": "^1.2.1",
