@@ -52,7 +52,7 @@ class LibraryCell: UITableViewCell {
         
         let image = UIImageView(image: UIImage(named: "tokens"))
         self.addSubview(image)
-        self.constrainChild(image, xAlignment: .center, yAlignment: .center, width: 222, height: 190)
+        self.constrainChild(image, xAlignment: .center, yAlignment: .center, width: 222, height: 175)
     }
     
 }
