@@ -22,7 +22,7 @@ const __PATHS__ = {
   designTokens: path.join(__dirname,'node_modules','@salesforce-ux','design-system','design-tokens','dist','force-base.ios.json'),
   iconTokens: path.join(__dirname,'node_modules','@salesforce-ux','design-system','design-tokens','dist'),
   icons: path.join(__dirname,'node_modules','@salesforce-ux','design-system','assets','icons'),
-  output: path.join(__dirname, 'SalesforceDesignSystem','generated'),
+  output: path.join(__dirname, 'SalesforceDesignSystem','Generated'),
   temp: path.join(__dirname, 'temp')
 };
 
