@@ -8,7 +8,10 @@
 
 @implementation SLDSTests
 
-- (void)testFillColorAccuracy {
+// COLORS
+//-------------------------------------------------------------------
+
+- (void)testFillAccuracy {
     CGFloat red, green, blue, alpha;
     [[UIColor sldsFill:SLDSFillBrand] getRed:&red green:&green blue:&blue alpha:&alpha];
     
@@ -17,6 +20,8 @@
     XCTAssertEqual(roundFloat(blue), 0.82, @"Blue equal");
     XCTAssertEqual(roundFloat(alpha), 1, @"Alpha equal");
 }
+
+//-------------------------------------------------------------------
 
 - (void)testBackgroundColorAccuracy {
     CGFloat red, green, blue, alpha;
@@ -28,6 +33,8 @@
     XCTAssertEqual(roundFloat(alpha), 1, @"Alpha equal");
 }
 
+//-------------------------------------------------------------------
+
 - (void)testBorderColorAccuracy {
     CGFloat red, green, blue, alpha;
     [[UIColor sldsBorderColor:SLDSColorBorderButtonInverseDisabled] getRed:&red green:&green blue:&blue alpha:&alpha];
@@ -37,6 +44,8 @@
     XCTAssertEqual(roundFloat(blue), 1, @"Blue equal");
     XCTAssertEqual(roundFloat(alpha), 0.15, @"Alpha equal");
 }
+
+//-------------------------------------------------------------------
 
 - (void)testTextColorAccuracy {
     CGFloat red, green, blue, alpha;
@@ -48,21 +57,85 @@
     XCTAssertEqual(roundFloat(alpha), 1, @"Alpha equal");
 }
 
-- (void)testColorRange {
-    CGFloat red, green, blue, alpha;
-    [[UIColor sldsTextColor:SLDSTextColorTypeLast+1] getRed:&red green:&green blue:&blue alpha:&alpha];
+//-------------------------------------------------------------------
+
+- (void)testFillRange {
+    UIColor *color = [UIColor sldsFill:SLDSFillTypeLast+1];
+    XCTAssertEqual(color, nil, @"Fill range max + 1");
     
-    XCTAssertEqual(roundFloat(red), 0, @"Red equal");
-    XCTAssertEqual(roundFloat(green), 0, @"Green equal");
-    XCTAssertEqual(roundFloat(blue), 0, @"Blue equal");
-    XCTAssertEqual(roundFloat(alpha), 0, @"Alpha equal");
+    color = [UIColor sldsFill:SLDSFillTypeLast+1];
+    XCTAssertEqual(color, nil, @"Fill range min - 1");
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+//-------------------------------------------------------------------
+
+- (void)testBackgroundColorRange {
+    UIColor *color = [UIColor sldsBackgroundColor:SLDSBackgroundColorTypeLast+1];
+    XCTAssertEqual(color, nil, @"Background color range max + 1");
+    
+    color = [UIColor sldsBackgroundColor:SLDSBackgroundColorTypeLast+1];
+    XCTAssertEqual(color, nil, @"Background color range min - 1");
+}
+
+//-------------------------------------------------------------------
+
+- (void)testBorderColorRange {
+    UIColor *color = [UIColor sldsBorderColor:SLDSBorderColorTypeLast+1];
+    XCTAssertEqual(color, nil, @"Border color range max + 1");
+    
+    color = [UIColor sldsBorderColor:SLDSBorderColorTypeLast+1];
+    XCTAssertEqual(color, nil, @"Border color range min - 1");
+}
+
+//-------------------------------------------------------------------
+
+- (void)testTextColorRange {
+    UIColor *color = [UIColor sldsTextColor:SLDSTextColorTypeLast+1];
+    XCTAssertEqual(color, nil, @"Text color range max + 1");
+    
+    color = [UIColor sldsTextColor:SLDSTextColorTypeLast+1];
+    XCTAssertEqual(color, nil, @"Text color range min - 1");
+}
+
+// ICONS
+//-------------------------------------------------------------------
+
+- (void)testActionIconRange {
+    UIImage *icon = [UIImage sldsActionIcon:SLDSActionIconTypeLast+1 withSize:SLDSSizeLarge];
+    XCTAssertEqual(icon, nil, @"Fill range max + 1");
+    
+    icon = [UIImage sldsActionIcon:SLDSActionIconTypeFirst-1 withSize:SLDSSizeLarge];
+    XCTAssertEqual(icon, nil, @"Fill range min - 1");
+}
+
+//-------------------------------------------------------------------
+
+- (void)testCustomIconRange {
+    UIImage *icon = [UIImage sldsCustomIcon:SLDSCustomIconTypeLast+1 withSize:SLDSSizeLarge];
+    XCTAssertEqual(icon, nil, @"Fill range max + 1");
+    
+    icon = [UIImage sldsCustomIcon:SLDSCustomIconTypeFirst-1 withSize:SLDSSizeLarge];
+    XCTAssertEqual(icon, nil, @"Fill range min - 1");
+}
+
+//-------------------------------------------------------------------
+
+- (void)testStandardIconRange {
+    UIImage *icon = [UIImage sldsStandardIcon:SLDSStandardIconTypeLast+1 withSize:SLDSSizeLarge];
+    XCTAssertEqual(icon, nil, @"Fill range max + 1");
+    
+    icon = [UIImage sldsStandardIcon:SLDSStandardIconTypeFirst-1 withSize:SLDSSizeLarge];
+    XCTAssertEqual(icon, nil, @"Fill range min - 1");
+}
+
+//-------------------------------------------------------------------
+
+- (void)testUtilityIconRange {
+    UIImage *icon = [UIImage sldsUtilityIcon:SLDSUtilityIconTypeLast+1 withSize:SLDSSizeLarge];
+    XCTAssertEqual(icon, nil, @"Fill range max + 1");
+    
+    icon = [UIImage sldsUtilityIcon:SLDSUtilityIconTypeFirst-1 withSize:SLDSSizeLarge];
+    XCTAssertEqual(icon, nil, @"Fill range min - 1");
 }
 
 @end
