@@ -138,4 +138,14 @@
     XCTAssertEqual(icon, nil, @"Fill range min - 1");
 }
 
+// SIZING
+//-------------------------------------------------------------------
+
+- (void)testSizingAccuracy {
+    XCTAssertEqual(SLDSSpacingMedium, 16, "Spacing accuracy");
+    XCTAssertEqual(SLDSSizeXSmall, 192, "Size accuracy");
+    XCTAssertEqual(SLDSSquareIconMedium, 38, "Icon size accuracy");
+    XCTAssertEqual(SLDSBorderRadiusMedium, 4, "Border radius accuracy");
+}
+
 @end
