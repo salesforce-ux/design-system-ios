@@ -8,6 +8,10 @@
 
 @implementation UIImage (SLDSIcon)
 
+static NSMutableDictionary *colorCache = nil;
+static NSMutableDictionary *iconCache = nil;
+
+
 
 +(instancetype)sldsActionIcon:(SLDSActionIconType)iconType withSize:(CGFloat)size {
     return [self sldsActionIcon:iconType withColor:nil andBGColor:nil andSize:size];
@@ -27,7 +31,9 @@
         return nil;
     }
 
-    return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+    @synchronized(iconCache) {
+        return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+    }
 }
 
 //-------------------------------------------------------------------
@@ -50,7 +56,9 @@
         return nil;
     }
 
-    return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+    @synchronized(iconCache) {
+        return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+    }
 }
 
 //-------------------------------------------------------------------
@@ -73,7 +81,9 @@
         return nil;
     }
 
-    return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+    @synchronized(iconCache) {
+        return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+    }
 }
 
 //-------------------------------------------------------------------
@@ -96,7 +106,9 @@
         return nil;
     }
 
-    return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+    @synchronized(iconCache) {
+        return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+    }
 }
 
 //-------------------------------------------------------------------
@@ -134,7 +146,9 @@
         iconColor = [UIColor whiteColor];
     }
     if (!bgColor) {
-        bgColor = [self colorForIndex:iconType];
+        @synchronized(colorCache){
+            bgColor = [self colorForIndex:iconType];
+        }
     }
     if(!bgColor){
         bgColor = [UIColor clearColor];

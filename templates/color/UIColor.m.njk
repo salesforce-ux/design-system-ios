@@ -4,6 +4,9 @@
 #import "UIColor+SLDSColor.h"
 
 @implementation UIColor (SLDSColor)
+
+static NSMutableDictionary *colorCache = nil;
+
 {% set lastValue = 'empty' %}{% for categoryName, category in data %}{% for v in category %}{% set lastValue = v.name %}{% endfor %}{% endfor %}
 {% for categoryName, category in data %}
 +(instancetype)slds{{categoryName}}:(SLDS{{categoryName}}Type)colorType{
@@ -12,13 +15,15 @@
         return nil;
     }
 
-    return [self colorForIndex:colorType];
+    @synchronized(colorCache) {
+        return [self colorForIndex:colorType];
+    }
 }
 
 //-------------------------------------------------------------------
 {% endfor %}
 +(UIColor*)colorForIndex:(NSInteger)index {
-    static NSMutableDictionary *colorCache = nil;
+
     if (colorCache == nil) {
         colorCache = [[NSMutableDictionary alloc] init];
     }

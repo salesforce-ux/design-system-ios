@@ -5,6 +5,9 @@
 
 @implementation UIColor (SLDSColor)
 
+static NSMutableDictionary *colorCache = nil;
+
+
 
 +(instancetype)sldsFill:(SLDSFillType)colorType{
     if(colorType < SLDSFillTypeFirst || colorType > SLDSFillTypeLast) {
@@ -12,7 +15,9 @@
         return nil;
     }
 
-    return [self colorForIndex:colorType];
+    @synchronized(colorCache) {
+        return [self colorForIndex:colorType];
+    }
 }
 
 //-------------------------------------------------------------------
@@ -23,7 +28,9 @@
         return nil;
     }
 
-    return [self colorForIndex:colorType];
+    @synchronized(colorCache) {
+        return [self colorForIndex:colorType];
+    }
 }
 
 //-------------------------------------------------------------------
@@ -34,7 +41,9 @@
         return nil;
     }
 
-    return [self colorForIndex:colorType];
+    @synchronized(colorCache) {
+        return [self colorForIndex:colorType];
+    }
 }
 
 //-------------------------------------------------------------------
@@ -45,13 +54,15 @@
         return nil;
     }
 
-    return [self colorForIndex:colorType];
+    @synchronized(colorCache) {
+        return [self colorForIndex:colorType];
+    }
 }
 
 //-------------------------------------------------------------------
 
 +(UIColor*)colorForIndex:(NSInteger)index {
-    static NSMutableDictionary *colorCache = nil;
+
     if (colorCache == nil) {
         colorCache = [[NSMutableDictionary alloc] init];
     }

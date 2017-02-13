@@ -7,6 +7,10 @@
 #define sldsIconBackgroundColorsLength (sizeof sldsIconBackgroundColors) / (sizeof sldsIconBackgroundColors[0])
 
 @implementation UIImage (SLDSIcon)
+
+static NSMutableDictionary *colorCache = nil;
+static NSMutableDictionary *iconCache = nil;
+
 {% set lastValue = 'empty' %}{% for type, iconSet in icons %}{% for i in icons %}{% set lastValue = i.name %}{% endfor %}{% endfor %}
 {% for type, iconSet in icons %}
 +(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withSize:(CGFloat)size {
@@ -27,7 +31,9 @@
         return nil;
     }
 
-    return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+    @synchronized(iconCache) {
+        return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
+    }
 }
 
 //-------------------------------------------------------------------
@@ -65,7 +71,9 @@
         iconColor = [UIColor whiteColor];
     }
     if (!bgColor) {
-        bgColor = [self colorForIndex:iconType];
+        @synchronized(colorCache){
+            bgColor = [self colorForIndex:iconType];
+        }
     }
     if(!bgColor){
         bgColor = [UIColor clearColor];
