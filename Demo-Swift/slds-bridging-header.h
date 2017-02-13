@@ -1,18 +1,10 @@
-//
-//  slds-bridging-header.h
-//  slds-sample-app
-//
-//  Created by John Earle on 11/7/16.
-//  Copyright © 2016 John Earle. All rights reserved.
-//
+// Copyright (c) 2017, salesforce.com, inc. All rights reserved
+// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
 #ifndef slds_bridging_header_h
 #define slds_bridging_header_h
 
 #import <SalesforceDesignSystem/SalesforceDesignSystem.h>
 #import <SalesforceDesignSystem/SalesforceDesignSystemNames.h>
-
-//#import <SalesforceDesignSystem/SalesforceDesignSystem.h>
-//#import <SalesforceDesignSystem/SalesforceDesignSystemNames.h>
 
 #endif /* slds_bridging_header_h */

@@ -226,3 +226,8 @@ See [Demo App](/Demo) for sample code.
   $ npm start
 ```
 
+## Licenses
+
+* Source code is licensed under [BSD 3-Clause](https://git.io/sfdc-license)
+* All icons and images are licensed under [Creative Commons Attribution-NoDerivatives 4.0](https://github.com/salesforce-ux/licenses/blob/master/LICENSE-icons-images.txt)
+* The Salesforce Sans font is licensed under our [font license](https://github.com/salesforce-ux/licenses/blob/master/LICENSE-font.txt)
