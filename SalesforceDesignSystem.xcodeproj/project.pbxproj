@@ -11,20 +11,29 @@
 		051032031B29F17C0094A6B2 /* SalesforceDesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 051031E91B29F1020094A6B2 /* SalesforceDesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0516E9561B4D9D2400F8B6B0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0516E9551B4D9D2400F8B6B0 /* CoreText.framework */; };
 		200B16A21E4930D800BA11A0 /* SalesforceDesignSystemNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 200B168B1E4925D700BA11A0 /* SalesforceDesignSystemNames.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		206475331E4AAF6E00DD9CFB /* UIColor+SLDSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2064752B1E4AAF6E00DD9CFB /* UIColor+SLDSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		206475341E4AAF6E00DD9CFB /* UIColor+SLDSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2064752C1E4AAF6E00DD9CFB /* UIColor+SLDSColor.m */; };
-		206475351E4AAF6E00DD9CFB /* UIFont+SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 2064752D1E4AAF6E00DD9CFB /* UIFont+SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		206475361E4AAF6E00DD9CFB /* UIFont+SLDSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 2064752E1E4AAF6E00DD9CFB /* UIFont+SLDSFont.m */; };
-		206475371E4AAF6E00DD9CFB /* UIImage+SLDSIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 2064752F1E4AAF6E00DD9CFB /* UIImage+SLDSIcon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		206475381E4AAF6E00DD9CFB /* UIImage+SLDSIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 206475301E4AAF6E00DD9CFB /* UIImage+SLDSIcon.m */; };
-		2064753E1E4AAF7600DD9CFB /* SLDSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 206475391E4AAF7600DD9CFB /* SLDSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2064753F1E4AAF7600DD9CFB /* SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 2064753A1E4AAF7600DD9CFB /* SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		206475401E4AAF7600DD9CFB /* SLDSIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 2064753B1E4AAF7600DD9CFB /* SLDSIcon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		206475421E4AAF7600DD9CFB /* SLDSSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 2064753D1E4AAF7600DD9CFB /* SLDSSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		206475431E4AAF8100DD9CFB /* SLDSName.h in Headers */ = {isa = PBXBuildFile; fileRef = 2064753C1E4AAF7600DD9CFB /* SLDSName.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		206475441E4AAFA600DD9CFB /* NSString+SLDSName.h in Headers */ = {isa = PBXBuildFile; fileRef = 206475291E4AAF6E00DD9CFB /* NSString+SLDSName.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		206475471E4AAFBC00DD9CFB /* NSString+SLDSName.m in Sources */ = {isa = PBXBuildFile; fileRef = 2064752A1E4AAF6E00DD9CFB /* NSString+SLDSName.m */; };
+		2064751B1E4A73FD00DD9CFB /* libSalesforceDesignSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 051031E61B29F1020094A6B2 /* libSalesforceDesignSystem.a */; };
+		206475251E4A75D300DD9CFB /* SLDSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 206475231E4A748B00DD9CFB /* SLDSTests.m */; };
+		206475261E4A75E000DD9CFB /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0567E44A1B79552800025C6E /* SalesforceDesignSystem.bundle */; };
+		20AEF47C1E28596C00D9591C /* SLDSIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 20AEF4791E28596C00D9591C /* SLDSIcon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20AEF47E1E28596C00D9591C /* SLDSSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 20AEF47B1E28596C00D9591C /* SLDSSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20AEF4831E28597600D9591C /* UIFont+SLDSFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 20AEF47F1E28597600D9591C /* UIFont+SLDSFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20AEF4841E28597600D9591C /* UIFont+SLDSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AEF4801E28597600D9591C /* UIFont+SLDSFont.m */; };
+		20AEF4851E28597600D9591C /* UIImage+SLDSIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 20AEF4811E28597600D9591C /* UIImage+SLDSIcon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20AEF4861E28597600D9591C /* UIImage+SLDSIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AEF4821E28597600D9591C /* UIImage+SLDSIcon.m */; };
+		20F463991E2576F90049AA6D /* UIColor+SLDSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F463971E2576F90049AA6D /* UIColor+SLDSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20F4639A1E2576F90049AA6D /* UIColor+SLDSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F463981E2576F90049AA6D /* UIColor+SLDSColor.m */; };
+		20F4639D1E2577020049AA6D /* SLDSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F4639B1E2577020049AA6D /* SLDSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2064751C1E4A73FD00DD9CFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 051031DE1B29F1020094A6B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 051031E51B29F1020094A6B2;
+			remoteInfo = SalesforceDesignSystem;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		051031E61B29F1020094A6B2 /* libSalesforceDesignSystem.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSalesforceDesignSystem.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,19 +43,21 @@
 		0567E44A1B79552800025C6E /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
 		200B16821E49257500BA11A0 /* libSalesforceDesignSystemNames.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSalesforceDesignSystemNames.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		200B168B1E4925D700BA11A0 /* SalesforceDesignSystemNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesforceDesignSystemNames.h; sourceTree = "<group>"; };
-		206475291E4AAF6E00DD9CFB /* NSString+SLDSName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SLDSName.h"; path = "Generated/Extensions/NSString+SLDSName.h"; sourceTree = "<group>"; };
-		2064752A1E4AAF6E00DD9CFB /* NSString+SLDSName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SLDSName.m"; path = "Generated/Extensions/NSString+SLDSName.m"; sourceTree = "<group>"; };
-		2064752B1E4AAF6E00DD9CFB /* UIColor+SLDSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+SLDSColor.h"; path = "Generated/Extensions/UIColor+SLDSColor.h"; sourceTree = "<group>"; };
-		2064752C1E4AAF6E00DD9CFB /* UIColor+SLDSColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SLDSColor.m"; path = "Generated/Extensions/UIColor+SLDSColor.m"; sourceTree = "<group>"; };
-		2064752D1E4AAF6E00DD9CFB /* UIFont+SLDSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+SLDSFont.h"; path = "Generated/Extensions/UIFont+SLDSFont.h"; sourceTree = "<group>"; };
-		2064752E1E4AAF6E00DD9CFB /* UIFont+SLDSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+SLDSFont.m"; path = "Generated/Extensions/UIFont+SLDSFont.m"; sourceTree = "<group>"; };
-		2064752F1E4AAF6E00DD9CFB /* UIImage+SLDSIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+SLDSIcon.h"; path = "Generated/Extensions/UIImage+SLDSIcon.h"; sourceTree = "<group>"; };
-		206475301E4AAF6E00DD9CFB /* UIImage+SLDSIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SLDSIcon.m"; path = "Generated/Extensions/UIImage+SLDSIcon.m"; sourceTree = "<group>"; };
-		206475391E4AAF7600DD9CFB /* SLDSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSColor.h; path = Generated/SLDSColor.h; sourceTree = "<group>"; };
-		2064753A1E4AAF7600DD9CFB /* SLDSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSFont.h; path = Generated/SLDSFont.h; sourceTree = "<group>"; };
-		2064753B1E4AAF7600DD9CFB /* SLDSIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIcon.h; path = Generated/SLDSIcon.h; sourceTree = "<group>"; };
-		2064753C1E4AAF7600DD9CFB /* SLDSName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSName.h; path = Generated/SLDSName.h; sourceTree = "<group>"; };
-		2064753D1E4AAF7600DD9CFB /* SLDSSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSSize.h; path = Generated/SLDSSize.h; sourceTree = "<group>"; };
+		200B168D1E49260800BA11A0 /* SLDSName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSName.h; path = generated/SLDSName.h; sourceTree = "<group>"; };
+		200B16901E49267400BA11A0 /* NSString+SLDSName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SLDSName.h"; path = "generated/Extensions/NSString+SLDSName.h"; sourceTree = "<group>"; };
+		200B16911E49267400BA11A0 /* NSString+SLDSName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SLDSName.m"; path = "generated/Extensions/NSString+SLDSName.m"; sourceTree = "<group>"; };
+		206475161E4A73FD00DD9CFB /* SalesforceDesignSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalesforceDesignSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		206475221E4A748B00DD9CFB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DesignSystemTests/Info.plist; sourceTree = "<group>"; };
+		206475231E4A748B00DD9CFB /* SLDSTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSTests.m; path = DesignSystemTests/SLDSTests.m; sourceTree = "<group>"; };
+		20AEF4791E28596C00D9591C /* SLDSIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSIcon.h; path = generated/SLDSIcon.h; sourceTree = "<group>"; };
+		20AEF47B1E28596C00D9591C /* SLDSSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSSize.h; path = generated/SLDSSize.h; sourceTree = "<group>"; };
+		20AEF47F1E28597600D9591C /* UIFont+SLDSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+SLDSFont.h"; path = "generated/Extensions/UIFont+SLDSFont.h"; sourceTree = "<group>"; };
+		20AEF4801E28597600D9591C /* UIFont+SLDSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+SLDSFont.m"; path = "generated/Extensions/UIFont+SLDSFont.m"; sourceTree = "<group>"; };
+		20AEF4811E28597600D9591C /* UIImage+SLDSIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+SLDSIcon.h"; path = "generated/Extensions/UIImage+SLDSIcon.h"; sourceTree = "<group>"; };
+		20AEF4821E28597600D9591C /* UIImage+SLDSIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SLDSIcon.m"; path = "generated/Extensions/UIImage+SLDSIcon.m"; sourceTree = "<group>"; };
+		20F463971E2576F90049AA6D /* UIColor+SLDSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+SLDSColor.h"; path = "Generated/Extensions/UIColor+SLDSColor.h"; sourceTree = "<group>"; };
+		20F463981E2576F90049AA6D /* UIColor+SLDSColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SLDSColor.m"; path = "Generated/Extensions/UIColor+SLDSColor.m"; sourceTree = "<group>"; };
+		20F4639B1E2577020049AA6D /* SLDSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLDSColor.h; path = Generated/SLDSColor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +74,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		206475131E4A73FD00DD9CFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2064751B1E4A73FD00DD9CFB /* libSalesforceDesignSystem.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +104,7 @@
 			children = (
 				051031E61B29F1020094A6B2 /* libSalesforceDesignSystem.a */,
 				200B16821E49257500BA11A0 /* libSalesforceDesignSystemNames.a */,
+				206475161E4A73FD00DD9CFB /* SalesforceDesignSystemTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +112,7 @@
 		051031E81B29F1020094A6B2 /* SalesforceDesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				206475211E4A747C00DD9CFB /* DesignSystemTests */,
 				206475271E4AAF5800DD9CFB /* Generated */,
 				200B168B1E4925D700BA11A0 /* SalesforceDesignSystemNames.h */,
 				051031E91B29F1020094A6B2 /* SalesforceDesignSystem.h */,
@@ -110,6 +131,15 @@
 				206475281E4AAF6300DD9CFB /* Extensions */,
 			);
 			name = Generated;
+			sourceTree = "<group>";
+		};
+		206475211E4A747C00DD9CFB /* DesignSystemTests */ = {
+			isa = PBXGroup;
+			children = (
+				206475221E4A748B00DD9CFB /* Info.plist */,
+				206475231E4A748B00DD9CFB /* SLDSTests.m */,
+			);
+			name = DesignSystemTests;
 			sourceTree = "<group>";
 		};
 		206475281E4AAF6300DD9CFB /* Extensions */ = {
@@ -192,6 +222,24 @@
 			productReference = 200B16821E49257500BA11A0 /* libSalesforceDesignSystemNames.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		206475151E4A73FD00DD9CFB /* SalesforceDesignSystemTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2064751E1E4A73FD00DD9CFB /* Build configuration list for PBXNativeTarget "SalesforceDesignSystemTests" */;
+			buildPhases = (
+				206475121E4A73FD00DD9CFB /* Sources */,
+				206475131E4A73FD00DD9CFB /* Frameworks */,
+				206475141E4A73FD00DD9CFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2064751D1E4A73FD00DD9CFB /* PBXTargetDependency */,
+			);
+			name = SalesforceDesignSystemTests;
+			productName = Tests;
+			productReference = 206475161E4A73FD00DD9CFB /* SalesforceDesignSystemTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -206,6 +254,11 @@
 						CreatedOnToolsVersion = 6.3.2;
 					};
 					200B16811E49257500BA11A0 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4WQ2T93P22;
+						ProvisioningStyle = Automatic;
+					};
+					206475151E4A73FD00DD9CFB = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 4WQ2T93P22;
 						ProvisioningStyle = Automatic;
@@ -226,9 +279,21 @@
 			targets = (
 				051031E51B29F1020094A6B2 /* SalesforceDesignSystem */,
 				200B16811E49257500BA11A0 /* SalesforceDesignSystemNames */,
+				206475151E4A73FD00DD9CFB /* SalesforceDesignSystemTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		206475141E4A73FD00DD9CFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				206475261E4A75E000DD9CFB /* SalesforceDesignSystem.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		051031E21B29F1020094A6B2 /* Sources */ = {
@@ -249,7 +314,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		206475121E4A73FD00DD9CFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				206475251E4A75D300DD9CFB /* SLDSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2064751D1E4A73FD00DD9CFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 051031E51B29F1020094A6B2 /* SalesforceDesignSystem */;
+			targetProxy = 2064751C1E4A73FD00DD9CFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		051031F81B29F1020094A6B2 /* Debug */ = {
@@ -402,6 +483,37 @@
 			};
 			name = Release;
 		};
+		2064751F1E4A73FD00DD9CFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4WQ2T93P22;
+				INFOPLIST_FILE = SalesforceDesignSystem/DesignSystemTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = salesforce.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		206475201E4A73FD00DD9CFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4WQ2T93P22;
+				INFOPLIST_FILE = SalesforceDesignSystem/DesignSystemTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = salesforce.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -431,6 +543,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		2064751E1E4A73FD00DD9CFB /* Build configuration list for PBXNativeTarget "SalesforceDesignSystemTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2064751F1E4A73FD00DD9CFB /* Debug */,
+				206475201E4A73FD00DD9CFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

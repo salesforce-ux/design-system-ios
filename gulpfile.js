@@ -53,9 +53,9 @@ let iconTypes = [
 
 const parseColor = (c) => {
 	let splits = c.replace('rgba(','').replace('rgb(','').replace(')','').split(',');
-  let r = parseFloat(splits[0]/255);
-  let g = parseFloat(splits[1]/255);
-  let b = parseFloat(splits[2]/255);
+  let r = Math.round(parseFloat(splits[0]/255)*100)/100;
+  let g = Math.round(parseFloat(splits[1]/255)*100)/100;
+  let b = Math.round(parseFloat(splits[2]/255)*100)/100;
 
   if(!splits[3]) splits.push(1)
   let a = parseFloat(splits[3]);

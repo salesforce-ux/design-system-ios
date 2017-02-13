@@ -22,9 +22,9 @@
 //-------------------------------------------------------------------
 
 +(instancetype)sldsActionIcon:(SLDSActionIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	if(iconType < SLDSActionIconTypeFirst && iconType > SLDSActionIconTypeLast) {
+	if(iconType < SLDSActionIconTypeFirst || iconType > SLDSActionIconTypeLast) {
         // NOTE: Index out of bounds
-        return [[UIImage alloc] init];
+        return nil;
     }
 
     return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
@@ -45,9 +45,9 @@
 //-------------------------------------------------------------------
 
 +(instancetype)sldsCustomIcon:(SLDSCustomIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	if(iconType < SLDSCustomIconTypeFirst && iconType > SLDSCustomIconTypeLast) {
+	if(iconType < SLDSCustomIconTypeFirst || iconType > SLDSCustomIconTypeLast) {
         // NOTE: Index out of bounds
-        return [[UIImage alloc] init];
+        return nil;
     }
 
     return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
@@ -68,9 +68,9 @@
 //-------------------------------------------------------------------
 
 +(instancetype)sldsStandardIcon:(SLDSStandardIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	if(iconType < SLDSStandardIconTypeFirst && iconType > SLDSStandardIconTypeLast) {
+	if(iconType < SLDSStandardIconTypeFirst || iconType > SLDSStandardIconTypeLast) {
         // NOTE: Index out of bounds
-        return [[UIImage alloc] init];
+        return nil;
     }
 
     return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];
@@ -91,9 +91,9 @@
 //-------------------------------------------------------------------
 
 +(instancetype)sldsUtilityIcon:(SLDSUtilityIconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size {
-	if(iconType < SLDSUtilityIconTypeFirst && iconType > SLDSUtilityIconTypeLast) {
+	if(iconType < SLDSUtilityIconTypeFirst || iconType > SLDSUtilityIconTypeLast) {
         // NOTE: Index out of bounds
-        return [[UIImage alloc] init];
+        return nil;
     }
 
     return [self sldsIcon:iconType withColor:iconColor andBGColor:bgColor andSize:size];

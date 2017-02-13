@@ -7,9 +7,9 @@
 
 
 +(instancetype)sldsFill:(SLDSFillType)colorType{
-    if(colorType < SLDSFillTypeFirst && colorType > SLDSFillTypeLast) {
+    if(colorType < SLDSFillTypeFirst || colorType > SLDSFillTypeLast) {
         // NOTE: Index out of bounds
-        return [[UIColor alloc] init];
+        return nil;
     }
 
     return [self colorForIndex:colorType];
@@ -18,9 +18,9 @@
 //-------------------------------------------------------------------
 
 +(instancetype)sldsBorderColor:(SLDSBorderColorType)colorType{
-    if(colorType < SLDSBorderColorTypeFirst && colorType > SLDSBorderColorTypeLast) {
+    if(colorType < SLDSBorderColorTypeFirst || colorType > SLDSBorderColorTypeLast) {
         // NOTE: Index out of bounds
-        return [[UIColor alloc] init];
+        return nil;
     }
 
     return [self colorForIndex:colorType];
@@ -29,9 +29,9 @@
 //-------------------------------------------------------------------
 
 +(instancetype)sldsBackgroundColor:(SLDSBackgroundColorType)colorType{
-    if(colorType < SLDSBackgroundColorTypeFirst && colorType > SLDSBackgroundColorTypeLast) {
+    if(colorType < SLDSBackgroundColorTypeFirst || colorType > SLDSBackgroundColorTypeLast) {
         // NOTE: Index out of bounds
-        return [[UIColor alloc] init];
+        return nil;
     }
 
     return [self colorForIndex:colorType];
@@ -40,9 +40,9 @@
 //-------------------------------------------------------------------
 
 +(instancetype)sldsTextColor:(SLDSTextColorType)colorType{
-    if(colorType < SLDSTextColorTypeFirst && colorType > SLDSTextColorTypeLast) {
+    if(colorType < SLDSTextColorTypeFirst || colorType > SLDSTextColorTypeLast) {
         // NOTE: Index out of bounds
-        return [[UIColor alloc] init];
+        return nil;
     }
 
     return [self colorForIndex:colorType];
