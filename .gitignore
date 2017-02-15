@@ -29,7 +29,6 @@ Pods/
 .DS_Store
 
 node_modules/
-git_modules/
 npm-debug.log
 
 _dist_css/
