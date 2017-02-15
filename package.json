@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "repository": "https://github.com/salesforce-ux/design-system-ios.git",
   "license": "SEE LICENSE IN README.md",
-  "description": "Design tokens to objective-C",
+  "description": "Lightning Design System tokens, icons and fonts for iOS",
   "main": "index.js",
   "scripts": {
     "pretest": "gulp",
     "test": "mocha"
   },
   "author": "Salesforce UX",
-  "license": "ISC",
   "dependencies": {
     "@salesforce-ux/design-system": "^2.2.1",
     "del": "^2.2.2",
