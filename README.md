@@ -1,18 +1,15 @@
-# Lightning Design System Tokens + iOS
+# Lightning Design System tokens, icons and fonts for iOS
 
-Spring ’17 tokens
+iOS static library for [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/) [Tokens](https://www.lightningdesignsystem.com/design-tokens/).
 
-iOS static library for [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/) [Tokens](https://www.lightningdesignsystem.com/design-tokens/)
-
+Current release: Spring ’17
 
 ## Simple Install
 
 Add to your Podfile:
 
 ```ruby
-
 pod 'DesignSystem'
-
 ```
 
 run
@@ -221,9 +218,10 @@ See [Demo App](/Demo) for sample code.
 
 
 ## Library Build (not required)
+
 ```
-  $ npm install
-  $ npm start
+$ npm install
+$ npm start
 ```
 
 ## Licenses
