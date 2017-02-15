@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 3.0.0
 
+Spring ’17 release.
+
 TODO: release notes.
 
 ## Pre 3.0.0
