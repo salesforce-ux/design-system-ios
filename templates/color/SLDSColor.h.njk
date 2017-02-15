@@ -1,0 +1,22 @@
+// Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+#import <UIKit/UIKit.h>
+#ifndef SLDSColor_h
+#define SLDSColor_h
+
+{% for categoryName, category in data %}
+typedef NS_ENUM(NSInteger, SLDS{{categoryName}}Type) {
+	{% for v in category %}
+	SLDS{{v.name}}{% if loop.first %}{% if indexName === null %} = 0{% else %} = SLDS{{indexName}} + 1{% endif %}{% endif %}{% if not loop.last %},{% endif %}{% endfor %}
+};{% set indexName = category[category.length-1].name %}
+static const NSInteger SLDS{{categoryName}}TypeFirst = SLDS{{category[0].name}};
+static const NSInteger SLDS{{categoryName}}TypeLast  = SLDS{{category[category.length-1].name}};
+static const NSInteger SLDS{{categoryName}}TypeCount = SLDS{{categoryName}}TypeLast - SLDS{{categoryName}}TypeFirst;
+{% endfor %}
+
+static float const sldsColors[][4] = { {% for categoryName, category in data %}{% for v in category %}
+	{% raw %}{{% endraw %}{{v.value.r}},{{v.value.g}},{{v.value.b}},{{v.value.a}}{% raw %}}{% endraw %},{% endfor %}{% endfor %}
+};
+
+#endif /* SLDSColor_h */

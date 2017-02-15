@@ -1,0 +1,22 @@
+// Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+#import <UIKit/UIKit.h>
+#ifndef SLDSIcon_h
+#define SLDSIcon_h
+
+{% for type, iconSet in icons %}
+typedef NS_ENUM(NSInteger, SLDS{{type | capitalize}}IconType) {
+	{% for i in iconSet %}
+	SLDS{{i.name}}{% if loop.first %}{% if indexName === null %} = 0{% else %} = SLDS{{indexName}} + 1{% endif %}{% endif %}{% if not loop.last %},{% endif %}{% endfor %}
+};{% set indexName = iconSet[iconSet.length-1].name %}
+static const NSInteger SLDS{{type | capitalize}}IconTypeFirst = SLDS{{iconSet[0].name}};
+static const NSInteger SLDS{{type | capitalize}}IconTypeLast  = SLDS{{iconSet[iconSet.length-1].name}};
+
+//-------------------------------------------------------------------
+{% endfor %}
+static float const sldsIconBackgroundColors[][3] = { {% for type, iconSet in icons %}{% for i in iconSet %}{% if i.backgroundColor !== 'null' %}
+	{% raw %}{{% endraw %}{{i.backgroundColor.r}},{{i.backgroundColor.g}},{{i.backgroundColor.b}}{% raw %}}{% endraw %},{% endif %}{% endfor %}{% endfor %}
+};
+
+#endif /* SLDSIcon_h */

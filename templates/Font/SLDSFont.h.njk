@@ -1,0 +1,45 @@
+// Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+#import <UIKit/UIKit.h>
+#ifndef SLDSFont_h
+#define SLDSFont_h
+
+typedef NS_ENUM(NSInteger, SLDSFontSizeType) {
+	{% for size in data.FontSize %}
+	SLDS{{size.name}}{% if not loop.last %},{% endif %}{% endfor %}
+};
+
+//-------------------------------------------------------------------
+
+typedef NS_ENUM(NSInteger, SLDSFontType) {
+    SLDSFontTypeRegular,
+    SLDSFontTypeItalic,
+    SLDSFontTypeBold,
+    SLDSFontTypeBoldItalic,
+    SLDSFontTypeLight,
+    SLDSFontTypeLightItalic,
+    SLDSFontTypeThin,
+    SLDSFontTypeThinItalic
+};
+
+//-------------------------------------------------------------------
+
+#define sldsFontFileNames(enum) [@[\
+    @"SalesforceSans-Regular.ttf",\
+    @"SalesforceSans-Italic.ttf",\
+    @"SalesforceSans-Bold.ttf",\
+    @"SalesforceSans-BoldItalic.ttf",\
+    @"SalesforceSans-Light.ttf",\
+    @"SalesforceSans-LightItalic.ttf",\
+    @"SalesforceSans-Thin.ttf",\
+    @"SalesforceSans-ThinItalic.ttf"\
+] objectAtIndex:enum]
+
+//-------------------------------------------------------------------
+
+#define sldsFontSizes(enum) [[@[\{% for size in data.FontSize %}
+    @{{size.value}},\{% endfor %}
+] objectAtIndex:enum] integerValue]
+
+#endif /* SLDSFont_h */

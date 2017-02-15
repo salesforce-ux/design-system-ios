@@ -1,18 +1,15 @@
-# Lightning Design System Tokens + iOS
+# Lightning Design System tokens, icons and fonts for iOS
 
-Winter ’17 tokens
+iOS static library for [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/) [Tokens](https://www.lightningdesignsystem.com/design-tokens/).
 
-iOS static library for [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/) [Tokens](https://www.lightningdesignsystem.com/design-tokens/)
-
+Current release: Spring ’17
 
 ## Simple Install
 
 Add to your Podfile:
 
 ```ruby
-
 pod 'DesignSystem'
-
 ```
 
 run
@@ -24,96 +21,6 @@ pod install
 ## Manual Submodule/Subproject Setup
 
 See [more info](/manual_install_info)
-
-
-## Objective-C Usage
-
-
-### Examples
-
-
-#### Colors
-
-```objc
-
-#import <DesignSystem/DesignSystem.h> 
-
-...
-
-UIColor* c = [UIColor sldsColorText:SLDSColorTextInverse];
-
-
-
-```
-
-
-#### Fonts and text sizes
-
-```objc
-
-#import <DesignSystem/DesignSystem.h> 
-
-...
-
-UIFont* f = [UIFont sldsFont:SLDSFontRegular withSize:SLDSFontSizeXLarge];
-
-
-
-```
-
-
-#### Icons
-
-##### Action Icons
-
-```objc
-
-#import <DesignSystem/DesignSystem.h> 
-
-...
-
-UIImage *icon = [UIImage sldsIconAction:SLDSIconActionNewCustom98 withSize:20.0f];
-
-```
-
-
-##### Custom Icons
-
-```objc
-
-#import <DesignSystem/DesignSystem.h> 
-
-...
-
-UIImage *icon = [UIImage sldsIconCustom:SLDSIconCustom1 withSize:20.0f];
-
-```
-
-
-##### Standard Icons
-
-```objc
-
-#import <DesignSystem/DesignSystem.h> 
-
-...
-
-UIImage *icon = [UIImage sldsIconStandard:SLDSIconStandardAccount withSize:20.0f];
-
-```
-
-
-##### Utility Icons
-
-```objc
-
-#import <DesignSystem/DesignSystem.h> 
-
-...
-
-UIImage *icon = [UIImage sldsIconUtility:SLDSIconUtility3dots withSize:20.0f];
-
-```
 
 
 ## Swift Usage
@@ -149,11 +56,11 @@ SLDS extensions and constants are now accessible to all files in your project/wo
 
 ```swift 
 
-let textColor = UIColor.sldsColorText(.default)
+let textColor = UIColor.sldsTextColor(.colorTextDefault)
 
-let borderColor = UIColor.sldsColorBorder(.brand)
+let borderColor = UIColor.sldsColorBorder(.colorBorderBrand)
 
-let backgroundColor = UIColor.sldsColorBackground(.brand)
+let backgroundColor = UIColor.sldsColorBackground(.colorBackgroundBrand)
 
 ```
 
@@ -173,9 +80,9 @@ label.font = UIFont.sldsFont(.bold, with: .medium)
 
 ```swift
 
-let icon = UIImage.sldsIconAction(.addContact, withSize: SLDSSquareIconLarge)
+let icon = UIImage.sldsActionIcon(.addContact, withSize: SLDSSquareIconLarge)
 
-let iconWithColor = UIImage.sldsIconAction(.addContact, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
+let iconWithColor = UIImage.sldsActionIcon(.addContact, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
 
 ```
 
@@ -184,9 +91,9 @@ let iconWithColor = UIImage.sldsIconAction(.addContact, with: UIColor.black, and
 
 ```swift
 
-let icon = UIImage.sldsIconAction(.custom1, withSize: SLDSSquareIconLarge)
+let icon = UIImage.sldsActionIcon(.custom1, withSize: SLDSSquareIconLarge)
 
-let iconWithColor = UIImage.sldsIconAction(.custom1, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
+let iconWithColor = UIImage.sldsActionIcon(.custom1, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
 
 ```
 
@@ -196,9 +103,9 @@ let iconWithColor = UIImage.sldsIconAction(.custom1, with: UIColor.black, andBGC
 
 ```swift
 
-let icon = UIImage.sldsIconAction(.account, withSize: SLDSSquareIconLarge)
+let icon = UIImage.sldsStandardIcon(.account, withSize: SLDSSquareIconLarge)
 
-let iconWithColor = UIImage.sldsIconAction(.account, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
+let iconWithColor = UIImage.sldsStandardIcon(.account, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
 
 ```
 
@@ -208,9 +115,98 @@ let iconWithColor = UIImage.sldsIconAction(.account, with: UIColor.black, andBGC
 
 ```swift
 
-let icon = UIImage.sldsIconAction(.addContact, withSize: SLDSSquareIconLarge)
+let icon = UIImage.sldsUtilityIcon(.addContact, withSize: SLDSSquareIconLarge)
 
-let iconWithColor = UIImage.sldsIconAction(.addContact, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
+let iconWithColor = UIImage.sldsUtilityIcon(.addContact, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
+
+```
+
+## Objective-C Usage
+
+
+### Examples
+
+
+#### Colors
+
+```objc
+
+#import <DesignSystem/DesignSystem.h> 
+
+...
+
+UIColor* c = [UIColor sldsTextColor:SLDSColorTextInverse];
+
+
+
+```
+
+
+#### Fonts and text sizes
+
+```objc
+
+#import <DesignSystem/DesignSystem.h> 
+
+...
+
+UIFont* f = [UIFont sldsFont:SLDSFontRegular withSize:SLDSFontSizeXLarge];
+
+
+
+```
+
+
+#### Icons
+
+##### Action Icons
+
+```objc
+
+#import <DesignSystem/DesignSystem.h> 
+
+...
+
+UIImage *icon = [UIImage sldsActionIcon:SLDSIconActionNewCustom98 withSize:20.0f];
+
+```
+
+
+##### Custom Icons
+
+```objc
+
+#import <DesignSystem/DesignSystem.h> 
+
+...
+
+UIImage *icon = [UIImage sldsCustomIcon:SLDSIconCustom1 withSize:20.0f];
+
+```
+
+
+##### Standard Icons
+
+```objc
+
+#import <DesignSystem/DesignSystem.h> 
+
+...
+
+UIImage *icon = [UIImage sldsStandardIcon:SLDSIconStandardAccount withSize:20.0f];
+
+```
+
+
+##### Utility Icons
+
+```objc
+
+#import <DesignSystem/DesignSystem.h> 
+
+...
+
+UIImage *icon = [UIImage sldsUtilityIcon:SLDSIconUtility3dots withSize:20.0f];
 
 ```
 
@@ -222,8 +218,14 @@ See [Demo App](/Demo) for sample code.
 
 
 ## Library Build (not required)
+
 ```
-  $ npm install
-  $ npm start
+$ npm install
+$ npm start
 ```
 
+## Licenses
+
+* Source code is licensed under [BSD 3-Clause](https://git.io/sfdc-license)
+* All icons and images are licensed under [Creative Commons Attribution-NoDerivatives 4.0](https://github.com/salesforce-ux/licenses/blob/master/LICENSE-icons-images.txt)
+* The Salesforce Sans font is licensed under our [font license](https://github.com/salesforce-ux/licenses/blob/master/LICENSE-font.txt)

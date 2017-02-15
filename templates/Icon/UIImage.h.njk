@@ -1,0 +1,13 @@
+// Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+#import <UIKit/UIKit.h>
+#import "SLDSIcon.h"
+
+@interface UIImage (SLDSIcon)
+{% for type, iconSet in icons %}
++(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withSize:(CGFloat)size;
++(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withColor:(UIColor*)iconColor andSize:(CGFloat)size;
++(instancetype)slds{{type | capitalize}}Icon:(SLDS{{type | capitalize}}IconType)iconType withColor:(UIColor*)iconColor andBGColor:(UIColor*)bgColor andSize:(CGFloat)size;
+{% endfor %}
+@end

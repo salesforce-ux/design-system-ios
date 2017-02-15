@@ -1,0 +1,38 @@
+// Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+#ifndef SLDSName_h
+#define SLDSName_h
+
+//-------------------------------------------------------------------
+
+#define sldsColorTypeNames(enum) [@[\{% for i, cat in tokenNames.Color %}{% for token in cat %}
+	@"SLDS{{token.name}}",\{% endfor %}{% endfor %}
+] objectAtIndex:enum]
+
+//-------------------------------------------------------------------
+
+#define sldsFontTypeNames(enum) [@[\
+    @"SLDSFontTypeRegular",\
+    @"SLDSFontTypeItalic",\
+    @"SLDSFontTypeBold",\
+    @"SLDSFontTypeBoldItalic",\
+    @"SLDSFontTypeLight",\
+    @"SLDSFontTypeLightItalic",\
+    @"SLDSFontTypeThin",\
+    @"SLDSFontTypeThinItalic"\
+] objectAtIndex:enum]
+
+//-------------------------------------------------------------------
+
+#define sldsFontSizeNames(enum) [@[\{% for size in tokenNames.FontSize.FontSize %}
+    @"SLDS{{size.name}}",\{% endfor %}
+] objectAtIndex:enum]
+
+//-------------------------------------------------------------------
+
+#define sldsIconTypeNames(enum) [@[\{% for name in iconNames %}
+	@"SLDS{{name}}",\{% endfor %}
+] objectAtIndex:enum]
+
+#endif /* SLDSName_h */

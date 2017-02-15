@@ -1,0 +1,10 @@
+// Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+#ifndef SLDSSize_h
+#define SLDSSize_h
+
+{% for categoryName, category in data %}{% for v in category %}static const CGFloat SLDS{{ v.name }} = {{ v.value | replace("px", "") }};
+{% endfor %}{% endfor %}
+
+#endif /* SLDSSize_h */

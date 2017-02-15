@@ -1,0 +1,613 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		200B16A31E49310B00BA11A0 /* libSalesforceDesignSystemNames.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 200B169E1E49301500BA11A0 /* libSalesforceDesignSystemNames.a */; };
+		202532461E2EB2E4009F32A7 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 202532451E2EB2E4009F32A7 /* CustomFont.bundle */; };
+		202532481E2EB3DB009F32A7 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 202532471E2EB3DB009F32A7 /* SalesforceDesignSystem.bundle */; };
+		206634CC1E25B6FE005B9381 /* libSalesforceDesignSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7F2E371DF2037E0011684A /* libSalesforceDesignSystem.a */; };
+		20F03F531E00D938001EE121 /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F4F1E00D938001EE121 /* AccountDetailViewController.swift */; };
+		20F03F541E00D938001EE121 /* AccountMasterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F501E00D938001EE121 /* AccountMasterListViewController.swift */; };
+		20F03F551E00D938001EE121 /* AccountMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F511E00D938001EE121 /* AccountMasterViewController.swift */; };
+		20F03F561E00D938001EE121 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F521E00D938001EE121 /* DemoViewController.swift */; };
+		20F03F591E00D952001EE121 /* ActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F571E00D952001EE121 /* ActionBar.swift */; };
+		20F03F5A1E00D952001EE121 /* ActionBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F581E00D952001EE121 /* ActionBarButton.swift */; };
+		20F03F5F1E00D95B001EE121 /* AccountMasterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F5B1E00D95B001EE121 /* AccountMasterCell.swift */; };
+		20F03F601E00D95B001EE121 /* AccountDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F5C1E00D95B001EE121 /* AccountDetailHeaderView.swift */; };
+		20F03F611E00D95B001EE121 /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F5D1E00D95B001EE121 /* AccountHeaderView.swift */; };
+		20F03F621E00D95B001EE121 /* AccountMasterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F5E1E00D95B001EE121 /* AccountMasterHeaderView.swift */; };
+		20F03F6B1E00D980001EE121 /* ColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F631E00D980001EE121 /* ColorListViewController.swift */; };
+		20F03F6C1E00D980001EE121 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F641E00D980001EE121 /* ColorViewController.swift */; };
+		20F03F6D1E00D980001EE121 /* FontListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F651E00D980001EE121 /* FontListViewController.swift */; };
+		20F03F6E1E00D980001EE121 /* FontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F661E00D980001EE121 /* FontViewController.swift */; };
+		20F03F6F1E00D980001EE121 /* IconListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F671E00D980001EE121 /* IconListViewController.swift */; };
+		20F03F701E00D980001EE121 /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F681E00D980001EE121 /* IconViewController.swift */; };
+		20F03F711E00D980001EE121 /* LibraryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F691E00D980001EE121 /* LibraryListViewController.swift */; };
+		20F03F761E00D987001EE121 /* ItemBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F731E00D987001EE121 /* ItemBar.swift */; };
+		20F03F781E00D987001EE121 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F751E00D987001EE121 /* TabBar.swift */; };
+		20F03F7B1E00D98E001EE121 /* String+TrimPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F791E00D98E001EE121 /* String+TrimPrefix.swift */; };
+		20F03F7C1E00D98E001EE121 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F7A1E00D98E001EE121 /* UIView+Constraints.swift */; };
+		20F03F801E00D994001EE121 /* ApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F7D1E00D994001EE121 /* ApplicationModel.swift */; };
+		20F03F811E00D994001EE121 /* ColorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F7E1E00D994001EE121 /* ColorObject.swift */; };
+		20F03F821E00D994001EE121 /* IconObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F7F1E00D994001EE121 /* IconObject.swift */; };
+		20F03F8A1E00D99A001EE121 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F831E00D99A001EE121 /* AboutCell.swift */; };
+		20F03F8B1E00D99A001EE121 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F841E00D99A001EE121 /* CodeView.swift */; };
+		20F03F8C1E00D99A001EE121 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F851E00D99A001EE121 /* ColorCell.swift */; };
+		20F03F8D1E00D99A001EE121 /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F861E00D99A001EE121 /* DemoCell.swift */; };
+		20F03F8E1E00D99A001EE121 /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F871E00D99A001EE121 /* LibraryCell.swift */; };
+		20F03F8F1E00D99A001EE121 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F881E00D99A001EE121 /* SectionHeaderView.swift */; };
+		20F03F901E00D99A001EE121 /* SwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F891E00D99A001EE121 /* SwatchView.swift */; };
+		FC1EA4681DDE6F6300304E01 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */; };
+		FC7FB0101E030E07004EB658 /* AccountDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7FB00F1E030E07004EB658 /* AccountDetailListViewController.swift */; };
+		FC7FB0121E030FB5004EB658 /* AccountDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7FB0111E030FB5004EB658 /* AccountDetailCell.swift */; };
+		FC7FB0141E03519B004EB658 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7FB0131E03519B004EB658 /* SearchController.swift */; };
+		FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB47EA81DD0FCDB00BB6C1B /* AppDelegate.swift */; };
+		FCB47EB01DD0FCDB00BB6C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		200B169A1E49301500BA11A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 200B16811E49257500BA11A0;
+			remoteInfo = "SalesforceDesignSystem-WithNames";
+		};
+		200B169D1E49301500BA11A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 200B16821E49257500BA11A0;
+			remoteInfo = "SalesforceDesignSystem-WithNames";
+		};
+		206634CA1E25B6FB005B9381 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 051031E51B29F1020094A6B2;
+			remoteInfo = SalesforceDesignSystem;
+		};
+		FC7F2E361DF2037E0011684A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 051031E61B29F1020094A6B2;
+			remoteInfo = SalesforceDesignSystem;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		202532451E2EB2E4009F32A7 /* CustomFont.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CustomFont.bundle; sourceTree = "<group>"; };
+		202532471E2EB3DB009F32A7 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceDesignSystem.bundle; path = ../SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
+		20F03F4F1E00D938001EE121 /* AccountDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountDetailViewController.swift; path = demo/controllers/AccountDetailViewController.swift; sourceTree = "<group>"; };
+		20F03F501E00D938001EE121 /* AccountMasterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountMasterListViewController.swift; path = demo/controllers/AccountMasterListViewController.swift; sourceTree = "<group>"; };
+		20F03F511E00D938001EE121 /* AccountMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountMasterViewController.swift; path = demo/controllers/AccountMasterViewController.swift; sourceTree = "<group>"; };
+		20F03F521E00D938001EE121 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoViewController.swift; path = demo/controllers/DemoViewController.swift; sourceTree = "<group>"; };
+		20F03F571E00D952001EE121 /* ActionBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionBar.swift; path = demo/controls/ActionBar.swift; sourceTree = "<group>"; };
+		20F03F581E00D952001EE121 /* ActionBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionBarButton.swift; path = demo/controls/ActionBarButton.swift; sourceTree = "<group>"; };
+		20F03F5B1E00D95B001EE121 /* AccountMasterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountMasterCell.swift; path = demo/views/AccountMasterCell.swift; sourceTree = "<group>"; };
+		20F03F5C1E00D95B001EE121 /* AccountDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountDetailHeaderView.swift; path = demo/views/AccountDetailHeaderView.swift; sourceTree = "<group>"; };
+		20F03F5D1E00D95B001EE121 /* AccountHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountHeaderView.swift; path = demo/views/AccountHeaderView.swift; sourceTree = "<group>"; };
+		20F03F5E1E00D95B001EE121 /* AccountMasterHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountMasterHeaderView.swift; path = demo/views/AccountMasterHeaderView.swift; sourceTree = "<group>"; };
+		20F03F631E00D980001EE121 /* ColorListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorListViewController.swift; path = library/controllers/ColorListViewController.swift; sourceTree = "<group>"; };
+		20F03F641E00D980001EE121 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorViewController.swift; path = library/controllers/ColorViewController.swift; sourceTree = "<group>"; };
+		20F03F651E00D980001EE121 /* FontListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontListViewController.swift; path = library/controllers/FontListViewController.swift; sourceTree = "<group>"; };
+		20F03F661E00D980001EE121 /* FontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontViewController.swift; path = library/controllers/FontViewController.swift; sourceTree = "<group>"; };
+		20F03F671E00D980001EE121 /* IconListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconListViewController.swift; path = library/controllers/IconListViewController.swift; sourceTree = "<group>"; };
+		20F03F681E00D980001EE121 /* IconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconViewController.swift; path = library/controllers/IconViewController.swift; sourceTree = "<group>"; };
+		20F03F691E00D980001EE121 /* LibraryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LibraryListViewController.swift; path = library/controllers/LibraryListViewController.swift; sourceTree = "<group>"; };
+		20F03F731E00D987001EE121 /* ItemBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemBar.swift; path = library/controls/ItemBar.swift; sourceTree = "<group>"; };
+		20F03F751E00D987001EE121 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBar.swift; path = library/controls/TabBar.swift; sourceTree = "<group>"; };
+		20F03F791E00D98E001EE121 /* String+TrimPrefix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+TrimPrefix.swift"; path = "library/extensions/String+TrimPrefix.swift"; sourceTree = "<group>"; };
+		20F03F7A1E00D98E001EE121 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Constraints.swift"; path = "library/extensions/UIView+Constraints.swift"; sourceTree = "<group>"; };
+		20F03F7D1E00D994001EE121 /* ApplicationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationModel.swift; path = library/model/ApplicationModel.swift; sourceTree = "<group>"; };
+		20F03F7E1E00D994001EE121 /* ColorObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorObject.swift; path = library/model/ColorObject.swift; sourceTree = "<group>"; };
+		20F03F7F1E00D994001EE121 /* IconObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconObject.swift; path = library/model/IconObject.swift; sourceTree = "<group>"; };
+		20F03F831E00D99A001EE121 /* AboutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutCell.swift; path = library/views/AboutCell.swift; sourceTree = "<group>"; };
+		20F03F841E00D99A001EE121 /* CodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeView.swift; path = library/views/CodeView.swift; sourceTree = "<group>"; };
+		20F03F851E00D99A001EE121 /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorCell.swift; path = library/views/ColorCell.swift; sourceTree = "<group>"; };
+		20F03F861E00D99A001EE121 /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoCell.swift; path = library/views/DemoCell.swift; sourceTree = "<group>"; };
+		20F03F871E00D99A001EE121 /* LibraryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LibraryCell.swift; path = library/views/LibraryCell.swift; sourceTree = "<group>"; };
+		20F03F881E00D99A001EE121 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SectionHeaderView.swift; path = library/views/SectionHeaderView.swift; sourceTree = "<group>"; };
+		20F03F891E00D99A001EE121 /* SwatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwatchView.swift; path = library/views/SwatchView.swift; sourceTree = "<group>"; };
+		FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
+		FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SalesforceDesignSystem.xcodeproj; path = ../SalesforceDesignSystem.xcodeproj; sourceTree = "<group>"; };
+		FC7FB00F1E030E07004EB658 /* AccountDetailListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountDetailListViewController.swift; path = demo/controllers/AccountDetailListViewController.swift; sourceTree = "<group>"; };
+		FC7FB0111E030FB5004EB658 /* AccountDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountDetailCell.swift; path = demo/views/AccountDetailCell.swift; sourceTree = "<group>"; };
+		FC7FB0131E03519B004EB658 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		FCB47EA51DD0FCDB00BB6C1B /* slds-sample-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "slds-sample-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCB47EA81DD0FCDB00BB6C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCB47EB41DD0FCDB00BB6C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCB47ED81DD1421000BB6C1B /* slds-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "slds-bridging-header.h"; path = "../slds-bridging-header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCB47EA21DD0FCDB00BB6C1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				206634CC1E25B6FE005B9381 /* libSalesforceDesignSystem.a in Frameworks */,
+				200B16A31E49310B00BA11A0 /* libSalesforceDesignSystemNames.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080A6909120544E76CEA307C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				202532471E2EB3DB009F32A7 /* SalesforceDesignSystem.bundle */,
+				202532451E2EB2E4009F32A7 /* CustomFont.bundle */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2043E3A71DF098E80043A192 /* controls */ = {
+			isa = PBXGroup;
+			children = (
+				20F03F731E00D987001EE121 /* ItemBar.swift */,
+				20F03F751E00D987001EE121 /* TabBar.swift */,
+			);
+			name = controls;
+			sourceTree = "<group>";
+		};
+		2043E3AC1DF09B140043A192 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				20F03F791E00D98E001EE121 /* String+TrimPrefix.swift */,
+				20F03F7A1E00D98E001EE121 /* UIView+Constraints.swift */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
+		20489C461DF9D2300090C284 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				20F03F7D1E00D994001EE121 /* ApplicationModel.swift */,
+				20F03F7E1E00D994001EE121 /* ColorObject.swift */,
+				20F03F7F1E00D994001EE121 /* IconObject.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		20F03F4C1E00D7CB001EE121 /* library */ = {
+			isa = PBXGroup;
+			children = (
+				FC4299171DDA4E7500891FBD /* controllers */,
+				2043E3A71DF098E80043A192 /* controls */,
+				2043E3AC1DF09B140043A192 /* extensions */,
+				20489C461DF9D2300090C284 /* model */,
+				FCB47ED91DD2989F00BB6C1B /* views */,
+			);
+			name = library;
+			sourceTree = "<group>";
+		};
+		FC4299171DDA4E7500891FBD /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC7FB0131E03519B004EB658 /* SearchController.swift */,
+				20F03F631E00D980001EE121 /* ColorListViewController.swift */,
+				20F03F641E00D980001EE121 /* ColorViewController.swift */,
+				20F03F651E00D980001EE121 /* FontListViewController.swift */,
+				20F03F661E00D980001EE121 /* FontViewController.swift */,
+				20F03F671E00D980001EE121 /* IconListViewController.swift */,
+				20F03F681E00D980001EE121 /* IconViewController.swift */,
+				20F03F691E00D980001EE121 /* LibraryListViewController.swift */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		FC7F2E311DF2037E0011684A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC7F2E371DF2037E0011684A /* libSalesforceDesignSystem.a */,
+				200B169E1E49301500BA11A0 /* libSalesforceDesignSystemNames.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCB47E9C1DD0FCDB00BB6C1B = {
+			isa = PBXGroup;
+			children = (
+				FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */,
+				FCB47EA71DD0FCDB00BB6C1B /* slds-sample-app */,
+				FCB47EA61DD0FCDB00BB6C1B /* Products */,
+				080A6909120544E76CEA307C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FCB47EA61DD0FCDB00BB6C1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCB47EA51DD0FCDB00BB6C1B /* slds-sample-app.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCB47EA71DD0FCDB00BB6C1B /* slds-sample-app */ = {
+			isa = PBXGroup;
+			children = (
+				FCB47EA81DD0FCDB00BB6C1B /* AppDelegate.swift */,
+				FCB47EAF1DD0FCDB00BB6C1B /* Assets.xcassets */,
+				FCD342731DFF5DE00030B3B8 /* demo */,
+				FCB47EB41DD0FCDB00BB6C1B /* Info.plist */,
+				20F03F4C1E00D7CB001EE121 /* library */,
+				FC1EA4671DDE6F6300304E01 /* MainListViewController.swift */,
+				FCB47ED81DD1421000BB6C1B /* slds-bridging-header.h */,
+			);
+			path = "slds-sample-app";
+			sourceTree = "<group>";
+		};
+		FCB47ED91DD2989F00BB6C1B /* views */ = {
+			isa = PBXGroup;
+			children = (
+				20F03F831E00D99A001EE121 /* AboutCell.swift */,
+				20F03F841E00D99A001EE121 /* CodeView.swift */,
+				20F03F851E00D99A001EE121 /* ColorCell.swift */,
+				20F03F861E00D99A001EE121 /* DemoCell.swift */,
+				20F03F871E00D99A001EE121 /* LibraryCell.swift */,
+				20F03F881E00D99A001EE121 /* SectionHeaderView.swift */,
+				20F03F891E00D99A001EE121 /* SwatchView.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		FCD342731DFF5DE00030B3B8 /* demo */ = {
+			isa = PBXGroup;
+			children = (
+				FCD342741DFF5E0D0030B3B8 /* controllers */,
+				FCD342751DFF5E1F0030B3B8 /* controls */,
+				FCD342761DFF5E690030B3B8 /* views */,
+			);
+			name = demo;
+			sourceTree = "<group>";
+		};
+		FCD342741DFF5E0D0030B3B8 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				20F03F4F1E00D938001EE121 /* AccountDetailViewController.swift */,
+				FC7FB00F1E030E07004EB658 /* AccountDetailListViewController.swift */,
+				20F03F511E00D938001EE121 /* AccountMasterViewController.swift */,
+				20F03F501E00D938001EE121 /* AccountMasterListViewController.swift */,
+				20F03F521E00D938001EE121 /* DemoViewController.swift */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		FCD342751DFF5E1F0030B3B8 /* controls */ = {
+			isa = PBXGroup;
+			children = (
+				20F03F571E00D952001EE121 /* ActionBar.swift */,
+				20F03F581E00D952001EE121 /* ActionBarButton.swift */,
+			);
+			name = controls;
+			sourceTree = "<group>";
+		};
+		FCD342761DFF5E690030B3B8 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				20F03F5B1E00D95B001EE121 /* AccountMasterCell.swift */,
+				FC7FB0111E030FB5004EB658 /* AccountDetailCell.swift */,
+				20F03F5C1E00D95B001EE121 /* AccountDetailHeaderView.swift */,
+				20F03F5D1E00D95B001EE121 /* AccountHeaderView.swift */,
+				20F03F5E1E00D95B001EE121 /* AccountMasterHeaderView.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCB47EA41DD0FCDB00BB6C1B /* slds-sample-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCB47ECD1DD0FCDB00BB6C1B /* Build configuration list for PBXNativeTarget "slds-sample-app" */;
+			buildPhases = (
+				FCB47EA11DD0FCDB00BB6C1B /* Sources */,
+				FCB47EA21DD0FCDB00BB6C1B /* Frameworks */,
+				FCB47EA31DD0FCDB00BB6C1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				206634CB1E25B6FB005B9381 /* PBXTargetDependency */,
+				200B169B1E49301500BA11A0 /* PBXTargetDependency */,
+			);
+			name = "slds-sample-app";
+			productName = "slds-sample-app";
+			productReference = FCB47EA51DD0FCDB00BB6C1B /* slds-sample-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCB47E9D1DD0FCDB00BB6C1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Salesforce.com";
+				TargetAttributes = {
+					FCB47EA41DD0FCDB00BB6C1B = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4WQ2T93P22;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FCB47EA01DD0FCDB00BB6C1B /* Build configuration list for PBXProject "slds-sample-app" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCB47E9C1DD0FCDB00BB6C1B;
+			productRefGroup = FCB47EA61DD0FCDB00BB6C1B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FC7F2E311DF2037E0011684A /* Products */;
+					ProjectRef = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				FCB47EA41DD0FCDB00BB6C1B /* slds-sample-app */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		200B169E1E49301500BA11A0 /* libSalesforceDesignSystemNames.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSalesforceDesignSystemNames.a;
+			remoteRef = 200B169D1E49301500BA11A0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC7F2E371DF2037E0011684A /* libSalesforceDesignSystem.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSalesforceDesignSystem.a;
+			remoteRef = FC7F2E361DF2037E0011684A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCB47EA31DD0FCDB00BB6C1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				202532461E2EB2E4009F32A7 /* CustomFont.bundle in Resources */,
+				202532481E2EB3DB009F32A7 /* SalesforceDesignSystem.bundle in Resources */,
+				FCB47EB01DD0FCDB00BB6C1B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCB47EA11DD0FCDB00BB6C1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20F03F761E00D987001EE121 /* ItemBar.swift in Sources */,
+				FC1EA4681DDE6F6300304E01 /* MainListViewController.swift in Sources */,
+				20F03F621E00D95B001EE121 /* AccountMasterHeaderView.swift in Sources */,
+				20F03F8B1E00D99A001EE121 /* CodeView.swift in Sources */,
+				20F03F821E00D994001EE121 /* IconObject.swift in Sources */,
+				FC7FB0141E03519B004EB658 /* SearchController.swift in Sources */,
+				20F03F8A1E00D99A001EE121 /* AboutCell.swift in Sources */,
+				20F03F601E00D95B001EE121 /* AccountDetailHeaderView.swift in Sources */,
+				20F03F711E00D980001EE121 /* LibraryListViewController.swift in Sources */,
+				20F03F7B1E00D98E001EE121 /* String+TrimPrefix.swift in Sources */,
+				20F03F7C1E00D98E001EE121 /* UIView+Constraints.swift in Sources */,
+				20F03F5F1E00D95B001EE121 /* AccountMasterCell.swift in Sources */,
+				20F03F901E00D99A001EE121 /* SwatchView.swift in Sources */,
+				20F03F8E1E00D99A001EE121 /* LibraryCell.swift in Sources */,
+				20F03F6C1E00D980001EE121 /* ColorViewController.swift in Sources */,
+				20F03F591E00D952001EE121 /* ActionBar.swift in Sources */,
+				20F03F8D1E00D99A001EE121 /* DemoCell.swift in Sources */,
+				20F03F561E00D938001EE121 /* DemoViewController.swift in Sources */,
+				20F03F6B1E00D980001EE121 /* ColorListViewController.swift in Sources */,
+				20F03F811E00D994001EE121 /* ColorObject.swift in Sources */,
+				20F03F6F1E00D980001EE121 /* IconListViewController.swift in Sources */,
+				20F03F531E00D938001EE121 /* AccountDetailViewController.swift in Sources */,
+				20F03F6E1E00D980001EE121 /* FontViewController.swift in Sources */,
+				20F03F701E00D980001EE121 /* IconViewController.swift in Sources */,
+				FCB47EA91DD0FCDB00BB6C1B /* AppDelegate.swift in Sources */,
+				20F03F6D1E00D980001EE121 /* FontListViewController.swift in Sources */,
+				20F03F541E00D938001EE121 /* AccountMasterListViewController.swift in Sources */,
+				20F03F801E00D994001EE121 /* ApplicationModel.swift in Sources */,
+				20F03F8F1E00D99A001EE121 /* SectionHeaderView.swift in Sources */,
+				20F03F8C1E00D99A001EE121 /* ColorCell.swift in Sources */,
+				FC7FB0121E030FB5004EB658 /* AccountDetailCell.swift in Sources */,
+				20F03F611E00D95B001EE121 /* AccountHeaderView.swift in Sources */,
+				20F03F551E00D938001EE121 /* AccountMasterViewController.swift in Sources */,
+				20F03F5A1E00D952001EE121 /* ActionBarButton.swift in Sources */,
+				FC7FB0101E030E07004EB658 /* AccountDetailListViewController.swift in Sources */,
+				20F03F781E00D987001EE121 /* TabBar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		200B169B1E49301500BA11A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SalesforceDesignSystem-WithNames";
+			targetProxy = 200B169A1E49301500BA11A0 /* PBXContainerItemProxy */;
+		};
+		206634CB1E25B6FB005B9381 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SalesforceDesignSystem;
+			targetProxy = 206634CA1E25B6FB005B9381 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FCB47ECB1DD0FCDB00BB6C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FCB47ECC1DD0FCDB00BB6C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCB47ECE1DD0FCDB00BB6C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4WQ2T93P22;
+				INFOPLIST_FILE = "slds-sample-app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = salesforce.com;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "slds-bridging-header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FCB47ECF1DD0FCDB00BB6C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4WQ2T93P22;
+				INFOPLIST_FILE = "slds-sample-app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = salesforce.com;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "slds-bridging-header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCB47EA01DD0FCDB00BB6C1B /* Build configuration list for PBXProject "slds-sample-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCB47ECB1DD0FCDB00BB6C1B /* Debug */,
+				FCB47ECC1DD0FCDB00BB6C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCB47ECD1DD0FCDB00BB6C1B /* Build configuration list for PBXNativeTarget "slds-sample-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCB47ECE1DD0FCDB00BB6C1B /* Debug */,
+				FCB47ECF1DD0FCDB00BB6C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FCB47E9D1DD0FCDB00BB6C1B /* Project object */;
+}
