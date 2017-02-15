@@ -332,7 +332,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = "John Earle";
+				ORGANIZATIONNAME = "Salesforce.com";
 				TargetAttributes = {
 					FCB47EA41DD0FCDB00BB6C1B = {
 						CreatedOnToolsVersion = 8.0;
