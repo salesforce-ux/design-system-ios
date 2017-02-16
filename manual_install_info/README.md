@@ -22,6 +22,6 @@ add SalesforceDesignSystem.a to 'Link Binary with Libraries'
 
 Step 4. drag SalesforceDesignSystem.bundle from SalesforceDesignSystem.xcodeproj folder in the left panel to 'Copy Bundle Resources' section in Build Phases. Choose 'Create folder references' in the dialog window:
 
-[![browser support](/manual_install_info/bundleResourcepng)](/manual_install_info/bundleResource.png)
+[![browser support](/manual_install_info/bundleResource.png)](/manual_install_info/bundleResource.png)
 
 
