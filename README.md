@@ -23,6 +23,10 @@ pod install
 See [more info](/manual_install_info)
 
 
+## Sample Application 
+
+See [Demo App](/Demo-Swift) for a library browser and sample code.
+
 ## Swift Usage
 
 ### Setup
@@ -209,13 +213,6 @@ UIImage *icon = [UIImage sldsStandardIcon:SLDSIconStandardAccount withSize:20.0f
 UIImage *icon = [UIImage sldsUtilityIcon:SLDSIconUtility3dots withSize:20.0f];
 
 ```
-
-
-## Sample Code 
-
-See [Demo App](/Demo) for sample code.
-
-
 
 ## Library Build (not required)
 
