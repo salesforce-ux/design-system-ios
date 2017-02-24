@@ -1,6 +1,6 @@
 {
   "name": "design-system-ios",
-  "version": "1.0.0",
+  "version": "3.0.1",
   "repository": "https://github.com/salesforce-ux/design-system-ios.git",
   "license": "SEE LICENSE IN README.md",
   "description": "Lightning Design System tokens, icons and fonts for iOS",
