@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 <!-- ## [Unreleased] -->
 
+## 3.0.1 - 2/23/2017
+Added CHANGELOG.md to Pod release.
+
 ## 3.0.0 - 2/15/2017
 With the introduction of the 3.0.0 release of the SLDS iOS library, there were a fair amount of API changes. Where possible functions were marked as deprecated but not everywhere. The new library aimed to add simplicity wherever possible.
 
