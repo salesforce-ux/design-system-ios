@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 <!-- ## [Unreleased] -->
 
+## 3.0.3 - 2/27/2017
+Instructions updated to reflect detailed pod installation.
+
 ## 3.0.1 - 2/23/2017
 Added CHANGELOG.md to Pod release.
 
