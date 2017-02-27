@@ -32,7 +32,7 @@ run:
 $ pod install
 ```
 
-A workspace for you project will be created (ending in .xcworkspace)
+**A workspace for you project will be created (ending in .xcworkspace)**
 
 Open this workspace file in xcode. Use this workspace for future builds.
 
