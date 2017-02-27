@@ -6,17 +6,35 @@ Current release: Spring ’17
 
 ## Simple Install
 
-Add to your Podfile:
+Install CocoaPods:
+
+```ruby
+$ sudo gem install cocoapods
+```
+
+Navigate to your iOS project directory and run:
+
+```ruby
+$ pod init
+```
+
+A `Podfile` will be created at the root of your project directory.
+
+Add the following to your Podfile under `use_frameworks!`:
 
 ```ruby
 pod 'DesignSystem'
 ```
 
-run
+run:
 
 ```
-pod install
+$ pod install
 ```
+
+A workspace for you project will be created (ending in .xcworkspace)
+
+Open this workspace file in xcode. Use this workspace for future builds.
 
 ## Manual Submodule/Subproject Setup
 
@@ -38,7 +56,7 @@ To use the SLDS library in Swift, create a bridging header:
 #ifndef slds_bridging_header_h
 #define slds_bridging_header_h
 
-#import <SalesforceDesignSystem/SalesforceDesignSystemExtended.h>
+#import <DesignSystem/SalesforceDesignSystem.h>
 
 #endif
 
