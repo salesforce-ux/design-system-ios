@@ -45,7 +45,7 @@ To use the SLDS library in Swift, create a bridging header:
 ```
   
 1. Create `slds-bridging-header.h`.
-2. In your build settings find the “Swift Compiler – Code Generation” section.
+2. In your build settings find the “Swift Compiler – General” section.
 3. Next to “Objective-C Bridging Header” add the header file (e.g. `slds-bridging-header.h`).
 
 SLDS extensions and constants are now accessible to all files in your project/workspace. There is no need to import the Design system to each file.
