@@ -151,7 +151,7 @@ let iconWithColor = UIImage.sldsUtilityIcon(.addContact, with: UIColor.black, an
 
 ```objc
 
-#import <DesignSystem/DesignSystem.h> 
+#import <DesignSystem/SalesforceDesignSystem.h> 
 
 ...
 
@@ -166,7 +166,7 @@ UIColor* c = [UIColor sldsTextColor:SLDSColorTextInverse];
 
 ```objc
 
-#import <DesignSystem/DesignSystem.h> 
+#import <DesignSystem/SalesforceDesignSystem.h> 
 
 ...
 
@@ -183,7 +183,7 @@ UIFont* f = [UIFont sldsFont:SLDSFontRegular withSize:SLDSFontSizeXLarge];
 
 ```objc
 
-#import <DesignSystem/DesignSystem.h> 
+#import <DesignSystem/SalesforceDesignSystem.h> 
 
 ...
 
@@ -196,7 +196,7 @@ UIImage *icon = [UIImage sldsActionIcon:SLDSIconActionNewCustom98 withSize:20.0f
 
 ```objc
 
-#import <DesignSystem/DesignSystem.h> 
+#import <DesignSystem/SalesforceDesignSystem.h> 
 
 ...
 
@@ -209,7 +209,7 @@ UIImage *icon = [UIImage sldsCustomIcon:SLDSIconCustom1 withSize:20.0f];
 
 ```objc
 
-#import <DesignSystem/DesignSystem.h> 
+#import <DesignSystem/SalesforceDesignSystem.h> 
 
 ...
 
@@ -222,7 +222,7 @@ UIImage *icon = [UIImage sldsStandardIcon:SLDSIconStandardAccount withSize:20.0f
 
 ```objc
 
-#import <DesignSystem/DesignSystem.h> 
+#import <DesignSystem/SalesforceDesignSystem.h> 
 
 ...
 
