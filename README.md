@@ -38,12 +38,12 @@ Open this workspace file in xcode. Use this workspace for future builds.
 
 ## Manual Submodule/Subproject Setup
 
-See [more info](/manual_install_info)
+See [more info](https://github.com/salesforce-ux/design-system-ios/tree/master/manual_install_info)
 
 
 ## Sample Application 
 
-See [Demo App](/Demo-Swift) for a library browser and sample code.
+See [Demo App](https://github.com/salesforce-ux/design-system-ios/tree/master/Demo-Swift) for a library browser and sample code.
 
 ## Swift Usage
 
