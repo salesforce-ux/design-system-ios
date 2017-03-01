@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 <!-- ## [Unreleased] -->
 
+## 3.0.4 - 3/1/2017
+Updated links in README.md to absolute paths (for CocoaPods site documentation).
+
 ## 3.0.3 - 2/27/2017
 Instructions updated to reflect detailed pod installation.
 
