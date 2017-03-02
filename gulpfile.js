@@ -146,6 +146,12 @@ gulp.task('template:design-tokens', () => {
           .pipe(nunjucks.compile({ 'data': data[type] }))
           .pipe(rename('SLDS' + updatedType + '.h'))
       );
+
+      streams.push(
+        gulp.src('templates/' + updatedType + '/SLDS' + updatedType + '.m.njk')
+          .pipe(nunjucks.compile({ 'data': data[type] }))
+          .pipe(rename('SLDS' + updatedType + '.m'))
+      );
     }
   }
 

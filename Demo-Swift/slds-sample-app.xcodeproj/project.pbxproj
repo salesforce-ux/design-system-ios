@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		200B16A31E49310B00BA11A0 /* libSalesforceDesignSystemNames.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 200B169E1E49301500BA11A0 /* libSalesforceDesignSystemNames.a */; };
 		202532461E2EB2E4009F32A7 /* CustomFont.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 202532451E2EB2E4009F32A7 /* CustomFont.bundle */; };
-		202532481E2EB3DB009F32A7 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 202532471E2EB3DB009F32A7 /* SalesforceDesignSystem.bundle */; };
 		206634CC1E25B6FE005B9381 /* libSalesforceDesignSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7F2E371DF2037E0011684A /* libSalesforceDesignSystem.a */; };
+		208C0C6A1E689D0100E12085 /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 208C0C691E689D0100E12085 /* SalesforceDesignSystem.bundle */; };
 		20F03F531E00D938001EE121 /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F4F1E00D938001EE121 /* AccountDetailViewController.swift */; };
 		20F03F541E00D938001EE121 /* AccountMasterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F501E00D938001EE121 /* AccountMasterListViewController.swift */; };
 		20F03F551E00D938001EE121 /* AccountMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F03F511E00D938001EE121 /* AccountMasterViewController.swift */; };
@@ -72,6 +72,13 @@
 			remoteGlobalIDString = 051031E51B29F1020094A6B2;
 			remoteInfo = SalesforceDesignSystem;
 		};
+		208C0C5E1E688BB000E12085 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 206475161E4A73FD00DD9CFB;
+			remoteInfo = SalesforceDesignSystemTests;
+		};
 		FC7F2E361DF2037E0011684A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */;
@@ -83,7 +90,7 @@
 
 /* Begin PBXFileReference section */
 		202532451E2EB2E4009F32A7 /* CustomFont.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CustomFont.bundle; sourceTree = "<group>"; };
-		202532471E2EB3DB009F32A7 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceDesignSystem.bundle; path = ../SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
+		208C0C691E689D0100E12085 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
 		20F03F4F1E00D938001EE121 /* AccountDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountDetailViewController.swift; path = demo/controllers/AccountDetailViewController.swift; sourceTree = "<group>"; };
 		20F03F501E00D938001EE121 /* AccountMasterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountMasterListViewController.swift; path = demo/controllers/AccountMasterListViewController.swift; sourceTree = "<group>"; };
 		20F03F511E00D938001EE121 /* AccountMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountMasterViewController.swift; path = demo/controllers/AccountMasterViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +150,6 @@
 		080A6909120544E76CEA307C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				202532471E2EB3DB009F32A7 /* SalesforceDesignSystem.bundle */,
 				202532451E2EB2E4009F32A7 /* CustomFont.bundle */,
 			);
 			name = Frameworks;
@@ -209,6 +215,7 @@
 			children = (
 				FC7F2E371DF2037E0011684A /* libSalesforceDesignSystem.a */,
 				200B169E1E49301500BA11A0 /* libSalesforceDesignSystemNames.a */,
+				208C0C5F1E688BB000E12085 /* SalesforceDesignSystemTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,6 +223,7 @@
 		FCB47E9C1DD0FCDB00BB6C1B = {
 			isa = PBXGroup;
 			children = (
+				208C0C691E689D0100E12085 /* SalesforceDesignSystem.bundle */,
 				FC7F2E301DF2037E0011684A /* SalesforceDesignSystem.xcodeproj */,
 				FCB47EA71DD0FCDB00BB6C1B /* slds-sample-app */,
 				FCB47EA61DD0FCDB00BB6C1B /* Products */,
@@ -332,7 +340,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = "Salesforce.com";
+				ORGANIZATIONNAME = Salesforce.com;
 				TargetAttributes = {
 					FCB47EA41DD0FCDB00BB6C1B = {
 						CreatedOnToolsVersion = 8.0;
@@ -373,6 +381,13 @@
 			remoteRef = 200B169D1E49301500BA11A0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		208C0C5F1E688BB000E12085 /* SalesforceDesignSystemTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SalesforceDesignSystemTests.xctest;
+			remoteRef = 208C0C5E1E688BB000E12085 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		FC7F2E371DF2037E0011684A /* libSalesforceDesignSystem.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -387,8 +402,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				208C0C6A1E689D0100E12085 /* SalesforceDesignSystem.bundle in Resources */,
 				202532461E2EB2E4009F32A7 /* CustomFont.bundle in Resources */,
-				202532481E2EB3DB009F32A7 /* SalesforceDesignSystem.bundle in Resources */,
 				FCB47EB01DD0FCDB00BB6C1B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,7 +2,7 @@
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
 #import <UIKit/UIKit.h>
+#import "SLDSSize.h"
 #import "UIColor+SLDSColor.h"
 #import "UIFont+SLDSFont.h"
 #import "UIImage+SLDSIcon.h"
-#import "SLDSSize.h"

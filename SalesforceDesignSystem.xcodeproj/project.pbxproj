@@ -26,7 +26,8 @@
 		2018A4C71E5269C000ECD37D /* NSString+SLDSName.m in Sources */ = {isa = PBXBuildFile; fileRef = 2018A4A71E52696400ECD37D /* NSString+SLDSName.m */; };
 		2064751B1E4A73FD00DD9CFB /* libSalesforceDesignSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 051031E61B29F1020094A6B2 /* libSalesforceDesignSystem.a */; };
 		206475251E4A75D300DD9CFB /* SLDSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 206475231E4A748B00DD9CFB /* SLDSTests.m */; };
-		206475261E4A75E000DD9CFB /* SalesforceDesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0567E44A1B79552800025C6E /* SalesforceDesignSystem.bundle */; };
+		208C0C631E688BF200E12085 /* SLDSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C0C611E688BF200E12085 /* SLDSFont.m */; };
+		208C0C671E68900D00E12085 /* SalesforceDesignSystem.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 208C0C641E688D7200E12085 /* SalesforceDesignSystem.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +40,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		208C0C661E68900800E12085 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				208C0C671E68900D00E12085 /* SalesforceDesignSystem.bundle in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		051031E61B29F1020094A6B2 /* libSalesforceDesignSystem.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSalesforceDesignSystem.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		051031E91B29F1020094A6B2 /* SalesforceDesignSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SalesforceDesignSystem.h; sourceTree = "<group>"; };
 		051032001B29F15C0094A6B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0516E9551B4D9D2400F8B6B0 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		0567E44A1B79552800025C6E /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
 		200B16821E49257500BA11A0 /* libSalesforceDesignSystemNames.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSalesforceDesignSystemNames.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		200B168B1E4925D700BA11A0 /* SalesforceDesignSystemNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesforceDesignSystemNames.h; sourceTree = "<group>"; };
 		2018A4A61E52696400ECD37D /* NSString+SLDSName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SLDSName.h"; path = "Generated/Extensions/NSString+SLDSName.h"; sourceTree = "<group>"; };
@@ -63,6 +76,8 @@
 		206475161E4A73FD00DD9CFB /* SalesforceDesignSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalesforceDesignSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		206475221E4A748B00DD9CFB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DesignSystemTests/Info.plist; sourceTree = "<group>"; };
 		206475231E4A748B00DD9CFB /* SLDSTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSTests.m; path = DesignSystemTests/SLDSTests.m; sourceTree = "<group>"; };
+		208C0C611E688BF200E12085 /* SLDSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLDSFont.m; path = Generated/SLDSFont.m; sourceTree = "<group>"; };
+		208C0C641E688D7200E12085 /* SalesforceDesignSystem.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SalesforceDesignSystem.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +111,7 @@
 		051031DD1B29F1020094A6B2 = {
 			isa = PBXGroup;
 			children = (
-				0567E44A1B79552800025C6E /* SalesforceDesignSystem.bundle */,
+				208C0C641E688D7200E12085 /* SalesforceDesignSystem.bundle */,
 				0516E9551B4D9D2400F8B6B0 /* CoreText.framework */,
 				051032001B29F15C0094A6B2 /* UIKit.framework */,
 				051031E81B29F1020094A6B2 /* SalesforceDesignSystem */,
@@ -119,8 +134,8 @@
 			children = (
 				206475211E4A747C00DD9CFB /* DesignSystemTests */,
 				206475271E4AAF5800DD9CFB /* Generated */,
-				200B168B1E4925D700BA11A0 /* SalesforceDesignSystemNames.h */,
 				051031E91B29F1020094A6B2 /* SalesforceDesignSystem.h */,
+				200B168B1E4925D700BA11A0 /* SalesforceDesignSystemNames.h */,
 			);
 			path = SalesforceDesignSystem;
 			sourceTree = "<group>";
@@ -137,12 +152,13 @@
 		206475271E4AAF5800DD9CFB /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				206475281E4AAF6300DD9CFB /* Extensions */,
 				2018A4B61E52697C00ECD37D /* SLDSColor.h */,
 				2018A4B71E52697C00ECD37D /* SLDSFont.h */,
+				208C0C611E688BF200E12085 /* SLDSFont.m */,
 				2018A4B81E52697C00ECD37D /* SLDSIcon.h */,
 				2018A4B91E52697C00ECD37D /* SLDSName.h */,
 				2018A4BA1E52697C00ECD37D /* SLDSSize.h */,
-				206475281E4AAF6300DD9CFB /* Extensions */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -169,14 +185,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2018A4B21E52696400ECD37D /* UIFont+SLDSFont.h in Headers */,
-				2018A4B01E52696400ECD37D /* UIColor+SLDSColor.h in Headers */,
-				2018A4B41E52696400ECD37D /* UIImage+SLDSIcon.h in Headers */,
-				051032031B29F17C0094A6B2 /* SalesforceDesignSystem.h in Headers */,
 				2018A4C01E5269A600ECD37D /* SLDSColor.h in Headers */,
 				2018A4C11E5269A600ECD37D /* SLDSFont.h in Headers */,
 				2018A4C21E5269A600ECD37D /* SLDSIcon.h in Headers */,
 				2018A4C41E5269A600ECD37D /* SLDSSize.h in Headers */,
+				2018A4B01E52696400ECD37D /* UIColor+SLDSColor.h in Headers */,
+				2018A4B21E52696400ECD37D /* UIFont+SLDSFont.h in Headers */,
+				2018A4B41E52696400ECD37D /* UIImage+SLDSIcon.h in Headers */,
+				051032031B29F17C0094A6B2 /* SalesforceDesignSystem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +216,7 @@
 				051031E21B29F1020094A6B2 /* Sources */,
 				051031E31B29F1020094A6B2 /* Frameworks */,
 				051032021B29F1730094A6B2 /* Headers */,
+				208C0C661E68900800E12085 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -294,7 +311,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				206475261E4A75E000DD9CFB /* SalesforceDesignSystem.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,9 +321,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2018A4B51E52696400ECD37D /* UIImage+SLDSIcon.m in Sources */,
-				2018A4B31E52696400ECD37D /* UIFont+SLDSFont.m in Sources */,
 				2018A4B11E52696400ECD37D /* UIColor+SLDSColor.m in Sources */,
+				2018A4B31E52696400ECD37D /* UIFont+SLDSFont.m in Sources */,
+				2018A4B51E52696400ECD37D /* UIImage+SLDSIcon.m in Sources */,
+				208C0C631E688BF200E12085 /* SLDSFont.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +443,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
@@ -443,6 +461,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";

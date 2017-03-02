@@ -8,14 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 <!-- ## [Unreleased] -->
 
+## 3.0.5 - 3/2/2017
+Fixed an issue with locating the framework bundle.
+
 ## 3.0.4 - 3/1/2017
 Updated links in README.md to absolute paths (for CocoaPods site documentation).
 
 ## 3.0.3 - 2/27/2017
 Instructions updated to reflect detailed pod installation.
-
-## 3.0.1 - 2/23/2017
-Added CHANGELOG.md to Pod release.
 
 ## 3.0.0 - 2/15/2017
 With the introduction of the 3.0.0 release of the SLDS iOS library, there were a fair amount of API changes. Where possible functions were marked as deprecated but not everywhere. The new library aimed to add simplicity wherever possible.

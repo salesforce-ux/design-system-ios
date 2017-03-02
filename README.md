@@ -36,6 +36,10 @@ $ pod install
 
 Open this workspace file in xcode. Use this workspace for future builds.
 
+**Update your search paths**
+
+After opening the workspace go to YourProject->YourProjectTarget->Build Settings-> Header Search Paths, and remove everything but $(inherited) non-recursive.
+
 ## Manual Submodule/Subproject Setup
 
 See [more info](https://github.com/salesforce-ux/design-system-ios/tree/master/manual_install_info)

@@ -92,12 +92,15 @@
         return;
     }
 
+    NSBundle *bundle;
+    
     NSURL *bundleURL = [[NSBundle mainBundle] URLForResource:bundleName withExtension:@"bundle"];
-    if(!bundleURL){
-        return;
+    if(bundleURL){
+        bundle = [NSBundle bundleWithURL:bundleURL];
+    } else {
+        bundle = [SLDSFont frameworkBundle];
     }
 
-    NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
     NSURL *fontURL = [bundle URLForResource:fontParts[0] withExtension:fontParts[1]];
     NSData *fontData = [NSData dataWithContentsOfURL:fontURL];
 

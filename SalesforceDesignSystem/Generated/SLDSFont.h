@@ -80,4 +80,12 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
     @32,\
 ] objectAtIndex:enum] integerValue]
 
+//-------------------------------------------------------------------
+
+@interface SLDSFont : NSObject
+
++(NSBundle*)frameworkBundle;
+
+@end
+
 #endif /* SLDSFont_h */
