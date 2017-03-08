@@ -53,25 +53,12 @@ See [Demo App](https://github.com/salesforce-ux/design-system-ios/tree/master/De
 
 ### Setup
 
-To use the SLDS library in Swift, create a bridging header:
-
-```objc
-
-#ifndef slds_bridging_header_h
-#define slds_bridging_header_h
-
-#import <DesignSystem/SalesforceDesignSystem.h>
-
-#endif
+To use the SLDS library in Swift, import the library:
 
 ```
-  
-1. Create `slds-bridging-header.h`.
-2. In your build settings find the “Swift Compiler – General” section.
-3. Next to “Objective-C Bridging Header” add the header file (e.g. `slds-bridging-header.h`).
-
-SLDS extensions and constants are now accessible to all files in your project/workspace. There is no need to import the Design system to each file.
-
+import DesignSystem
+```
+SLDS extensions and constants are now accessible within your file.
 
 ### Examples
 
