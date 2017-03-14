@@ -180,6 +180,7 @@ gulp.task('create:icon-fonts', () => {
     }))
      .pipe(iconFont({
       fontName: 'SalesforceDesignSystemIcons',
+      formats: ['ttf'],
       normalize: true
     }))
     .pipe(gulp.dest('SalesforceDesignSystem.bundle'))
