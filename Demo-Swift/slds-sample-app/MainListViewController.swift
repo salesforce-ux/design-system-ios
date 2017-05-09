@@ -31,6 +31,10 @@ class MainListViewController: UITableViewController {
         self.tableView.separatorStyle = .none
         
         self.navigationController?.navigationBar.isTranslucent = false
+        
+        UIColor.sldsOverrideFill(.brandActive, with: UIColor.cyan )
+        UIColor.sldsOverrideTextColor(.colorTextButtonBrand, with: UIColor.yellow)
+        
         self.navigationController?.navigationBar.tintColor = UIColor.sldsTextColor(.colorTextButtonBrand)
         self.navigationController?.navigationBar.barTintColor = UIColor.sldsFill(.brandActive)
         
