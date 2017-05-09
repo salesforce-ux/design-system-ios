@@ -102,9 +102,9 @@ let iconWithColor = UIImage.sldsActionIcon(.addContact, with: UIColor.black, and
 
 ```swift
 
-let icon = UIImage.sldsActionIcon(.custom1, withSize: SLDSSquareIconLarge)
+let icon = UIImage.sldsCustomIcon(.custom1, withSize: SLDSSquareIconLarge)
 
-let iconWithColor = UIImage.sldsActionIcon(.custom1, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
+let iconWithColor = UIImage.sldCustomIcon(.custom1, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
 
 ```
 
