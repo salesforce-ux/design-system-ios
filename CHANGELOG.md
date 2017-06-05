@@ -15,8 +15,6 @@ Updated the usage docs.
 
 ## 3.0.6 - 3/8/2017
 Updated the usage docs.
-## 3.0.6 - 3/8/2017
-Updated the usage docs.
 
 ## 3.0.5 - 3/2/2017
 Fixed an issue with locating the framework bundle.
