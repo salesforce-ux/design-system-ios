@@ -12,6 +12,12 @@ class LibraryListViewController: UITableViewController {
     
     var tableData : [TableData] {
         return [
+            TableData(sectionTitle: "Icons",
+                      rows: [(IconObjectType.action.rawValue, IconListViewController.self),
+                             (IconObjectType.custom.rawValue, IconListViewController.self),
+                             (IconObjectType.standard.rawValue, IconListViewController.self),
+                             (IconObjectType.utility.rawValue, IconListViewController.self)]),
+            
             TableData(sectionTitle: "Colors",
                       rows: [(ColorObjectType.background.rawValue, ColorListViewController.self),
                              (ColorObjectType.border.rawValue, ColorListViewController.self),
@@ -20,13 +26,7 @@ class LibraryListViewController: UITableViewController {
             
             TableData(sectionTitle: "Fonts",
                       rows: [(FontObjectType.salesforceSans.rawValue, FontListViewController.self),
-                             (FontObjectType.lato.rawValue, FontListViewController.self)]),
-            
-            TableData(sectionTitle: "Icons",
-                      rows: [(IconObjectType.action.rawValue, IconListViewController.self),
-                             (IconObjectType.custom.rawValue, IconListViewController.self),
-                             (IconObjectType.standard.rawValue, IconListViewController.self),
-                             (IconObjectType.utility.rawValue, IconListViewController.self)])
+                             (FontObjectType.lato.rawValue, FontListViewController.self)])
         ]
     }
     

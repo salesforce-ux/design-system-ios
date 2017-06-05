@@ -66,12 +66,31 @@ SLDS extensions and constants are now accessible within your file.
 #### Colors
 
 ```swift 
+let backgroundColor = UIColor.sldsBackgroundColor(.colorBackground)
+
+let borderColor = UIColor.sldsBorderColor(.colorBorderBrand)
+
+let fillColor = UIColor.sldsFill(.brand)
 
 let textColor = UIColor.sldsTextColor(.colorTextDefault)
 
-let borderColor = UIColor.sldsColorBorder(.colorBorderBrand)
+```
 
-let backgroundColor = UIColor.sldsColorBackground(.colorBackgroundBrand)
+##### Colors Overrides
+Set up an override then use colors as you normally would throughout your application.
+
+```swift 
+UIColor.sldsOverrideBackgroundColor(.colorBackground, with: UIColor.cyan)
+let backgroundColor = UIColor.sldsBackgroundColor(.colorBackground)
+
+UIColor.sldsOverrideBorderColor(.colorBorderBrand, with: UIColor.cyan)
+let borderColor = UIColor.sldsBorderColor(.colorBorderBrand)
+
+UIColor.sldsOverrideFill(.brand, with: UIColor.cyan)
+let fillColor = UIColor.sldsFill(.brand)
+
+UIColor.sldsOverrideTextColor(.colorTextBrand, with: UIColor.cyan)
+let textColor = UIColor.sldsTextColor(.colorTextDefault)
 
 ```
 
@@ -79,7 +98,6 @@ let backgroundColor = UIColor.sldsColorBackground(.colorBackgroundBrand)
 #### Fonts and text sizes
 
 ```swift
-
 label.font = UIFont.sldsFont(.bold, with: .medium)
 
 ```
@@ -90,7 +108,6 @@ label.font = UIFont.sldsFont(.bold, with: .medium)
 ##### Action Icons
 
 ```swift
-
 let icon = UIImage.sldsActionIcon(.addContact, withSize: SLDSSquareIconLarge)
 
 let iconWithColor = UIImage.sldsActionIcon(.addContact, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
@@ -101,7 +118,6 @@ let iconWithColor = UIImage.sldsActionIcon(.addContact, with: UIColor.black, and
 ##### Custom Icons
 
 ```swift
-
 let icon = UIImage.sldsCustomIcon(.custom1, withSize: SLDSSquareIconLarge)
 
 let iconWithColor = UIImage.sldCustomIcon(.custom1, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
@@ -113,7 +129,6 @@ let iconWithColor = UIImage.sldCustomIcon(.custom1, with: UIColor.black, andBGCo
 
 
 ```swift
-
 let icon = UIImage.sldsStandardIcon(.account, withSize: SLDSSquareIconLarge)
 
 let iconWithColor = UIImage.sldsStandardIcon(.account, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
@@ -125,11 +140,9 @@ let iconWithColor = UIImage.sldsStandardIcon(.account, with: UIColor.black, andB
 
 
 ```swift
-
 let icon = UIImage.sldsUtilityIcon(.addContact, withSize: SLDSSquareIconLarge)
 
 let iconWithColor = UIImage.sldsUtilityIcon(.addContact, with: UIColor.black, andBGColor: UIColor.white, andSize: SLDSSquareIconLarge)
-
 ```
 
 ## Objective-C Usage
@@ -141,30 +154,48 @@ let iconWithColor = UIImage.sldsUtilityIcon(.addContact, with: UIColor.black, an
 #### Colors
 
 ```objc
-
 #import <DesignSystem/SalesforceDesignSystem.h> 
 
 ...
 
-UIColor* c = [UIColor sldsTextColor:SLDSColorTextInverse];
-
-
-
+UIColor* backgroundColor = [UIColor sldsBackgroundColor:SLDSCardColorBackground];
+    
+UIColor* borderColor = [UIColor sldsBorderColor:SLDSColorBorderBrand];
+    
+UIColor* fillColor = [UIColor sldsFill:SLDSFillBrand];
+    
+UIColor* textColor = [UIColor sldsTextColor:SLDSColorTextBrand];
 ```
 
+#### Color Overrides
+Set up an override then use colors as you normally would throughout your application.
+
+```objc
+#import <DesignSystem/SalesforceDesignSystem.h> 
+
+...
+
+UIColor sldsOverrideBackgroundColor:SLDSCardColorBackground with:UIColor.cyanColor];
+UIColor* backgroundColor = [UIColor sldsBackgroundColor:SLDSCardColorBackground];
+    
+[UIColor sldsOverrideBorderColor:SLDSColorBorderBrand with:UIColor.cyanColor];
+UIColor* borderColor = [UIColor sldsBorderColor:SLDSColorBorderBrand];
+    
+[UIColor sldsOverrideFill:SLDSFillBrand with:UIColor.cyanColor];
+UIColor* fillColor = [UIColor sldsFill:SLDSFillBrand];
+    
+[UIColor sldsOverrideTextColor:SLDSColorTextBrand with:UIColor.cyanColor];
+UIColor* textColor = [UIColor sldsTextColor:SLDSColorTextBrand];
+```
 
 #### Fonts and text sizes
 
 ```objc
-
 #import <DesignSystem/SalesforceDesignSystem.h> 
 
 ...
 
 UIFont* f = [UIFont sldsFont:SLDSFontRegular withSize:SLDSFontSizeXLarge];
-
-
-
 ```
 
 
@@ -173,55 +204,48 @@ UIFont* f = [UIFont sldsFont:SLDSFontRegular withSize:SLDSFontSizeXLarge];
 ##### Action Icons
 
 ```objc
-
 #import <DesignSystem/SalesforceDesignSystem.h> 
 
 ...
 
 UIImage *icon = [UIImage sldsActionIcon:SLDSIconActionNewCustom98 withSize:20.0f];
-
 ```
 
 
 ##### Custom Icons
 
 ```objc
-
 #import <DesignSystem/SalesforceDesignSystem.h> 
 
 ...
 
 UIImage *icon = [UIImage sldsCustomIcon:SLDSIconCustom1 withSize:20.0f];
-
 ```
 
 
 ##### Standard Icons
 
 ```objc
-
 #import <DesignSystem/SalesforceDesignSystem.h> 
 
 ...
 
 UIImage *icon = [UIImage sldsStandardIcon:SLDSIconStandardAccount withSize:20.0f];
-
 ```
 
 
 ##### Utility Icons
 
 ```objc
-
 #import <DesignSystem/SalesforceDesignSystem.h> 
 
 ...
 
 UIImage *icon = [UIImage sldsUtilityIcon:SLDSIconUtility3dots withSize:20.0f];
-
 ```
 
 ## Library Build (not required)
+In case you want to use your own custom design tokens or extend the SLDS library, you will need to rebuild the Generated folder. After making edits to the gulp scripts, run the following commands.  
 
 ```
 $ npm install
