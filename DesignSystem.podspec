@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'DesignSystem'
-  s.version  = '3.0.6'
+  s.version  = '3.0.7'
   s.summary  = 'Salesforce Lightning Design System iOS Integration'
   s.authors  = 'Salesforce.com and contributors'
   s.source   = { :git => 'https://github.com/salesforce-ux/design-system-ios.git', :tag => 'v3.0.6' }

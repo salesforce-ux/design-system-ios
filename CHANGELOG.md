@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 <!-- ## [Unreleased] -->
 
+## 3.0.7 - 6/5/2017
+Added color overrides.
+Reordered the sample app library listing.
+Updated the usage docs.
+
 ## 3.0.6 - 3/8/2017
 Updated the usage docs.
 
