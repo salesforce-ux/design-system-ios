@@ -61,6 +61,72 @@ static NSMutableDictionary *colorCache = nil;
 
 //-------------------------------------------------------------------
 
+
+
++(void)sldsOverrideFill:(SLDSFillType)colorType with:(UIColor*)color{
+    
+    if (colorCache == nil) {
+        colorCache = [[NSMutableDictionary alloc] init];
+    }
+    
+    @synchronized(colorCache) {
+        [self overrideIndexWithColor:colorType with:color];
+    }
+}
+
+//-------------------------------------------------------------------
+
++(void)sldsOverrideBorderColor:(SLDSBorderColorType)colorType with:(UIColor*)color{
+    
+    if (colorCache == nil) {
+        colorCache = [[NSMutableDictionary alloc] init];
+    }
+    
+    @synchronized(colorCache) {
+        [self overrideIndexWithColor:colorType with:color];
+    }
+}
+
+//-------------------------------------------------------------------
+
++(void)sldsOverrideBackgroundColor:(SLDSBackgroundColorType)colorType with:(UIColor*)color{
+    
+    if (colorCache == nil) {
+        colorCache = [[NSMutableDictionary alloc] init];
+    }
+    
+    @synchronized(colorCache) {
+        [self overrideIndexWithColor:colorType with:color];
+    }
+}
+
+//-------------------------------------------------------------------
+
++(void)sldsOverrideTextColor:(SLDSTextColorType)colorType with:(UIColor*)color{
+    
+    if (colorCache == nil) {
+        colorCache = [[NSMutableDictionary alloc] init];
+    }
+    
+    @synchronized(colorCache) {
+        [self overrideIndexWithColor:colorType with:color];
+    }
+}
+
+//-------------------------------------------------------------------
+
+
++(void)overrideIndexWithColor:(NSInteger)index with:(UIColor*)color {
+    
+    if (colorCache == nil) {
+        colorCache = [[NSMutableDictionary alloc] init];
+    }
+    
+    [colorCache setObject:color forKey:[NSNumber numberWithInteger:index]];
+}
+
+//-------------------------------------------------------------------
+
 +(UIColor*)colorForIndex:(NSInteger)index {
 
     if (colorCache == nil) {

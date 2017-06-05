@@ -8,4 +8,6 @@
 {% for categoryName, category in data %}
 +(instancetype)slds{{categoryName}}:(SLDS{{categoryName}}Type)colorType;{% endfor %}
 
+{% for categoryName, category in data %}
++(void)sldsOverride{{categoryName}}:(SLDS{{categoryName}}Type)colorType with:(UIColor*)color;{% endfor %}
 @end
