@@ -50,6 +50,8 @@ class ActionBar: ItemBar {
     func addActionBarButton(item actionItem : ActionItem) {
         // Styling
         let button = ActionBarButton(type: .system)
+        //let button = ActionBarButton()
+        
         button.dataProvider = actionItem
         self.addActionBarButton(button: button)
     }
