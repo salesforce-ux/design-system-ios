@@ -40,13 +40,24 @@ class ActionBar: ItemBar {
         aPath.addLine(to: CGPoint(x:self.frame.width, y:0))
         aPath.close()
         aPath.lineWidth = 1.0
-        UIColor.sldsBorderColor(.colorBorderSeparatorAlt2).set()
+        
+        // Styling
+        //UIColor.sldsBorderColor(.colorBorderSeparatorAlt2).set()
         aPath.stroke()
     }
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
-    func addActionBarButton(_ actionButton : ActionBarButton) {
+    func addActionBarButton(item actionItem : ActionItem) {
+        // Styling
+        let button = ActionBarButton(type: .system)
+        button.dataProvider = actionItem
+        self.addActionBarButton(button: button)
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
+    func addActionBarButton(button actionButton : ActionBarButton) {
         super.addItem(item: actionButton)
         
         if self.items.count == 1 {

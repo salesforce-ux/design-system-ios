@@ -5,6 +5,10 @@ import UIKit
 
 class AccountMasterCell: UITableViewCell {
     
+    let labelFont = UIFont.sldsFont(.regular, with: .medium)
+    let labelColor = UIColor.sldsTextColor(.colorTextActionLabel)!
+    let valueColor = UIColor.sldsTextColor(.colorTextDefault)!
+    
     var accountName = UILabel()
     var stateLabel = UILabel()
     var phoneLabel = UILabel()
@@ -70,50 +74,44 @@ class AccountMasterCell: UITableViewCell {
     
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
+    func applyStyle( target : UILabel, color : UIColor ) {
+        //target.font = self.labelFont
+        //target.textColor = color
+    }
+    
+    //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    
     func makeLayout() {
         
-        let font = UIFont.sldsFont(.regular, with: .medium)
-        let labelColor = UIColor.sldsTextColor(.colorTextActionLabel)
-        let valueColor = UIColor.sldsTextColor(.colorTextDefault)
-        
-        accountName.font = font
-        accountName.textColor = valueColor
+        self.applyStyle(target: accountName, color: self.valueColor)
         self.addSubview(accountName)
         
-        stateLabel.font = font
-        stateLabel.textColor = labelColor
         stateLabel.text = "Billing State:"
+        self.applyStyle(target: stateLabel, color: self.labelColor)
         self.addSubview(stateLabel)
         
-        phoneLabel.font = font
-        phoneLabel.textColor = labelColor
         phoneLabel.text = "Phone:"
+        self.applyStyle(target: phoneLabel, color: self.labelColor)
         self.addSubview(phoneLabel)
         
-        typeLabel.font = font
-        typeLabel.textColor = labelColor
         typeLabel.text = "Type:"
+        self.applyStyle(target: typeLabel, color: self.labelColor)
         self.addSubview(typeLabel)
         
-        ownerLabel.text = "Owner:"
-        ownerLabel.font = font
         ownerLabel.textColor = labelColor
+        self.applyStyle(target: ownerLabel, color: self.labelColor)
         self.addSubview(ownerLabel)
         
-        stateValue.font = font
-        stateValue.textColor = valueColor
+        self.applyStyle(target: stateValue, color: self.valueColor)
         self.addSubview(stateValue)
         
-        phoneValue.font = font
-        phoneValue.textColor = valueColor
+        self.applyStyle(target: phoneValue, color: self.valueColor)
         self.addSubview(phoneValue)
         
-        typeValue.font = font
-        typeValue.textColor = valueColor
+        self.applyStyle(target: typeValue, color: self.valueColor)
         self.addSubview(typeValue)
         
-        ownerValue.font = font
-        ownerValue.textColor = valueColor
+        self.applyStyle(target: ownerValue, color: self.valueColor)
         self.addSubview(ownerValue)
         
         self.accessibilityElements = [accountName, stateValue, phoneValue, typeValue, ownerValue]

@@ -101,12 +101,9 @@ class DemoViewController: UIViewController, ItemBarDelegate, UINavigationControl
             self.actionBar.removeItems()
         
             for item in self.actionItems {
-                
-                let button = ActionBarButton()
-                button.setImage(UIImage.sldsActionIcon(item.iconId, withSize: 28), for: .normal)
-                button.setTitle(item.label, for: .normal)
-                self.actionBar.addActionBarButton(button)
+                self.actionBar.addActionBarButton(item:item)
             }
+            
             self.actionBar.showActionBarButtons()
         }
     }

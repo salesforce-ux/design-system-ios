@@ -44,11 +44,15 @@ class AccountHeaderView: UIView {
     //––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     
     func makeLayout() {
-        self.backgroundColor = UIColor.sldsBackgroundColor(.colorBackground)
+        // Styling
+        //self.backgroundColor = UIColor.sldsBackgroundColor(.colorBackground)
+        self.backgroundColor = UIColor.lightGray
         
+        //headerIcon = UIImageView(image: UIImage.sldsStandardIcon(.account,
+        //                                                         withSize: SLDSSquareIconMedium))
+        headerIcon = UIImageView.init(image: #imageLiteral(resourceName: "squareIcon"))
+        //headerIcon.frame = CGRect.init(x: 0, y: 0, width: 37, height: 37)
         
-        headerIcon = UIImageView(image: UIImage.sldsStandardIcon(.account,
-                                                                 withSize: SLDSSquareIconMedium))
         self.addSubview(headerIcon)
         
         self.constrainChild(headerIcon,
@@ -58,9 +62,9 @@ class AccountHeaderView: UIView {
                             yOffset: 10)
         
         headerTitle = UILabel()
-        headerTitle.font = UIFont.sldsFont(.regular, with: .large)
         
-        headerTitle.textColor = UIColor.sldsTextColor(.colorTextDefault)
+        //headerTitle.font = UIFont.sldsFont(.regular, with: .large)
+        //headerTitle.textColor = UIColor.sldsTextColor(.colorTextDefault)
         
         self.addSubview(headerTitle)
         headerTitle.constrainRightOf(headerIcon,
