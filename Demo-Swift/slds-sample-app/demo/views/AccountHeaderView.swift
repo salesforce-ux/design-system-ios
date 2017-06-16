@@ -45,12 +45,12 @@ class AccountHeaderView: UIView {
     
     func makeLayout() {
         // Styling
-        //self.backgroundColor = UIColor.sldsBackgroundColor(.colorBackground)
         self.backgroundColor = UIColor.white
+        //self.backgroundColor = UIColor.sldsBackgroundColor(.colorBackground)
+        //self.backgroundColor =
         
         headerIcon = UIImageView.init(image: #imageLiteral(resourceName: "squareIcon"))
-        //headerIcon = UIImageView(image: UIImage.sldsStandardIcon(.account,
-        //                                                         withSize: SLDSSquareIconMedium))
+        //headerIcon = UIImageView(image: UIImage.sldsStandardIcon(.account,  withSize: SLDSSquareIconMedium))
         //headerIcon =
         
         self.addSubview(headerIcon)
@@ -63,7 +63,10 @@ class AccountHeaderView: UIView {
         headerTitle = UILabel()
         
         //headerTitle.font = UIFont.sldsFont(.regular, with: .large)
+        //headerTitle.font =
+            
         //headerTitle.textColor = UIColor.sldsTextColor(.colorTextDefault)
+        //headerTitle.textColor =
         
         self.addSubview(headerTitle)
         headerTitle.constrainRightOf(headerIcon,
