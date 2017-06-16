@@ -11,10 +11,11 @@ class ActionBarButton: UIButton {
         didSet {
             guard let data = self.dataProvider else { return }
             self.setTitle(data.label, for: .normal)
+            self.setImage(#imageLiteral(resourceName: "diamondIcon"), for: .normal)
             
             // Styling
             //self.setImage(UIImage.sldsActionIcon(data.iconId, withSize: 28), for: .normal)
-            self.setImage(#imageLiteral(resourceName: "diamondIcon"), for: .normal)
+            //self.setImage(
         }
     }
     
@@ -29,10 +30,13 @@ class ActionBarButton: UIButton {
         frame = self.titleLabel?.frame;
         frame = CGRect(x: ((self.bounds.size.width - (frame?.size.width)!) / 2), y: self.bounds.size.height - (frame?.size.height)! - 4, width: (frame?.size.width)!, height: (frame?.size.height)!);
         
+        self.titleLabel?.frame = frame!;
         
         // Styling
-        self.titleLabel?.frame = frame!;
         //self.titleLabel?.font = UIFont.sldsFont(.regular, with: .xSmall)
+        //self.titleLabel?.font = 
+        
         //self.titleLabel?.textColor = UIColor.sldsTextColor(.colorTextActionLabel)
+        //self.titleLabel?.textColor =
     }
 }

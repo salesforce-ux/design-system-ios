@@ -46,15 +46,14 @@ class AccountHeaderView: UIView {
     func makeLayout() {
         // Styling
         //self.backgroundColor = UIColor.sldsBackgroundColor(.colorBackground)
-        self.backgroundColor = UIColor.lightGray
+        self.backgroundColor = UIColor.white
         
+        headerIcon = UIImageView.init(image: #imageLiteral(resourceName: "squareIcon"))
         //headerIcon = UIImageView(image: UIImage.sldsStandardIcon(.account,
         //                                                         withSize: SLDSSquareIconMedium))
-        headerIcon = UIImageView.init(image: #imageLiteral(resourceName: "squareIcon"))
-        //headerIcon.frame = CGRect.init(x: 0, y: 0, width: 37, height: 37)
+        //headerIcon =
         
         self.addSubview(headerIcon)
-        
         self.constrainChild(headerIcon,
                             xAlignment: .left,
                             yAlignment: .top,

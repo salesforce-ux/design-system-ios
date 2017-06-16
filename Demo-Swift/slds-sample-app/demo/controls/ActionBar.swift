@@ -41,8 +41,7 @@ class ActionBar: ItemBar {
         aPath.close()
         aPath.lineWidth = 1.0
         
-        // Styling
-        //UIColor.sldsBorderColor(.colorBorderSeparatorAlt2).set()
+        UIColor.sldsBorderColor(.colorBorderSeparatorAlt2).set()
         aPath.stroke()
     }
     

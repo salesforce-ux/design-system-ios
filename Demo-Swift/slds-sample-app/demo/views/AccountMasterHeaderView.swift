@@ -13,7 +13,6 @@ class AccountMasterHeaderView: AccountHeaderView {
     override func makeLayout() {
         super.makeLayout()
         headerTitle.text = "My Accounts"
-        
         headerDownArrow = UIImageView(image: UIImage.sldsUtilityIcon(.chevrondown, withSize: SLDSSquareIconUtilitySmall))
         
         self.addSubview(headerDownArrow)
@@ -24,8 +23,13 @@ class AccountMasterHeaderView: AccountHeaderView {
         
         headerSubText = UILabel()
         headerSubText.text = "5 items, sorted by Account Name"
-        headerSubText.font = UIFont.sldsFont(.regular, with: .small)
-        headerSubText.textColor = UIColor.sldsTextColor(.colorTextDefault)
+        
+        // Styling
+        //headerSubText.font = UIFont.sldsFont(.regular, with: .small)
+        //headerSubText.font =
+        
+        //headerSubText.textColor = UIColor.sldsTextColor(.colorTextDefault)
+        //headerSubText.textColor =
         
         self.addSubview(headerSubText)
         headerSubText.constrainBelow(self.headerTitle,
