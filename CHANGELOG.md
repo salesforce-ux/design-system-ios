@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 <!-- ## [Unreleased] -->
+## 3.1.0 - 10/2/2017
+Library updated with Winter '18 tokens
 
 ## 3.0.7 - 6/5/2017
 Added color overrides.

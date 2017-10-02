@@ -26,7 +26,10 @@ typedef NS_ENUM(NSInteger, SLDSFontSizeType) {
 	SLDSFontSizeHeadingSmall,
 	SLDSFontSizeHeadingMedium,
 	SLDSFontSizeHeadingLarge,
-	SLDSFontSizeHeadingXLarge
+	SLDSFontSizeHeadingXLarge,
+	SLDSColorPickerInputCustomHexFontSize,
+	SLDSInputStaticFontSize,
+	SLDSPageHeaderTitleFontSize
 };
 
 //-------------------------------------------------------------------
@@ -78,6 +81,9 @@ typedef NS_ENUM(NSInteger, SLDSFontType) {
     @18,\
     @24,\
     @32,\
+    @12,\
+    @13,\
+    @18,\
 ] objectAtIndex:enum] integerValue]
 
 //-------------------------------------------------------------------

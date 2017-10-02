@@ -61,6 +61,19 @@ static NSMutableDictionary *colorCache = nil;
 
 //-------------------------------------------------------------------
 
++(instancetype)sldsColor:(SLDSColorType)colorType{
+    if(colorType < SLDSColorTypeFirst || colorType > SLDSColorTypeLast) {
+        // NOTE: Index out of bounds
+        return nil;
+    }
+
+    @synchronized(colorCache) {
+        return [self colorForIndex:colorType];
+    }
+}
+
+//-------------------------------------------------------------------
+
 
 
 +(void)sldsOverrideFill:(SLDSFillType)colorType with:(UIColor*)color{
@@ -103,6 +116,19 @@ static NSMutableDictionary *colorCache = nil;
 //-------------------------------------------------------------------
 
 +(void)sldsOverrideTextColor:(SLDSTextColorType)colorType with:(UIColor*)color{
+    
+    if (colorCache == nil) {
+        colorCache = [[NSMutableDictionary alloc] init];
+    }
+    
+    @synchronized(colorCache) {
+        [self overrideIndexWithColor:colorType with:color];
+    }
+}
+
+//-------------------------------------------------------------------
+
++(void)sldsOverrideColor:(SLDSColorType)colorType with:(UIColor*)color{
     
     if (colorCache == nil) {
         colorCache = [[NSMutableDictionary alloc] init];
