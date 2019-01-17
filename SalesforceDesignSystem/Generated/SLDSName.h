@@ -12,58 +12,60 @@
 	@"SLDSFillBrandActive",\
 	@"SLDSFillHeaderButton",\
 	@"SLDSFillHeaderButtonHover",\
-	@"SLDSColorBorderPrimary",\
-	@"SLDSColorBorderBrandPrimary",\
-	@"SLDSColorBorderBrandPrimaryHover",\
-	@"SLDSColorBorderBrandPrimaryFocus",\
-	@"SLDSColorBorderBrandPrimaryActive",\
-	@"SLDSColorBorder",\
-	@"SLDSColorBorderBrand",\
-	@"SLDSColorBorderBrandDark",\
-	@"SLDSColorBorderCustomer",\
-	@"SLDSColorBorderDestructive",\
-	@"SLDSColorBorderDestructiveHover",\
-	@"SLDSColorBorderDestructiveActive",\
-	@"SLDSColorBorderInfo",\
-	@"SLDSColorBorderError",\
-	@"SLDSColorBorderErrorAlt",\
-	@"SLDSColorBorderErrorDark",\
-	@"SLDSColorBorderOffline",\
-	@"SLDSColorBorderSuccess",\
-	@"SLDSColorBorderSuccessDark",\
-	@"SLDSColorBorderWarning",\
-	@"SLDSColorBorderInverse",\
-	@"SLDSColorBorderTabSelected",\
-	@"SLDSColorBorderTabActive",\
-	@"SLDSColorBorderSeparator",\
-	@"SLDSColorBorderSeparatorAlt",\
-	@"SLDSColorBorderSeparatorAlt2",\
-	@"SLDSColorBorderSeparatorInverse",\
-	@"SLDSColorBorderRowSelected",\
-	@"SLDSColorBorderRowSelectedHover",\
-	@"SLDSColorBorderHint",\
-	@"SLDSColorBorderSelection",\
-	@"SLDSColorBorderSelectionHover",\
-	@"SLDSColorBorderSelectionActive",\
-	@"SLDSColorBorderCanvasElementSelection",\
-	@"SLDSColorBorderCanvasElementSelectionHover",\
-	@"SLDSColorBorderIconInverseHint",\
-	@"SLDSColorBorderIconInverseHintHover",\
-	@"SLDSColorBorderButtonBrand",\
-	@"SLDSColorBorderButtonBrandDisabled",\
-	@"SLDSColorBorderButtonDefault",\
-	@"SLDSColorBorderButtonInverseDisabled",\
-	@"SLDSColorBorderInput",\
-	@"SLDSColorBorderInputActive",\
-	@"SLDSColorBorderInputDisabled",\
+	@"SLDSFillHeaderButtonFocus",\
+	@"SLDSGlobalActionFillHover",\
 	@"SLDSColorBorderInputCheckboxSelectedCheckmark",\
-	@"SLDSColorBorderToggleChecked",\
-	@"SLDSColorBorderReminder",\
-	@"SLDSColorStrokeBrand",\
-	@"SLDSColorStrokeBrandHover",\
-	@"SLDSColorStrokeBrandActive",\
+	@"SLDSColorBorderButtonInverseDisabled",\
+	@"SLDSColorBorderIconInverseHintHover",\
+	@"SLDSColorBorderErrorDark",\
+	@"SLDSColorBorderIconInverseHint",\
+	@"SLDSColorBorderBrandDark",\
+	@"SLDSColorBorderInfo",\
+	@"SLDSColorBorderWarning",\
+	@"SLDSColorBorderTabActive",\
 	@"SLDSColorStrokeDisabled",\
+	@"SLDSColorBorderDestructiveHover",\
+	@"SLDSColorBorder",\
+	@"SLDSColorBorderInputDisabled",\
+	@"SLDSColorBorderSuccessDark",\
+	@"SLDSColorBorderReminder",\
+	@"SLDSColorBorderButtonBrandDisabled",\
+	@"SLDSColorBorderDestructive",\
+	@"SLDSColorBorderPrimary",\
+	@"SLDSColorBorderButtonDefault",\
+	@"SLDSColorBorderSeparatorAlt2",\
+	@"SLDSColorBorderOffline",\
+	@"SLDSColorBorderBrandPrimaryFocus",\
+	@"SLDSColorBorderSuccess",\
+	@"SLDSColorBorderSeparator",\
+	@"SLDSColorBorderBrand",\
+	@"SLDSColorBorderBrandPrimaryHover",\
+	@"SLDSColorBorderSelectionActive",\
+	@"SLDSColorBorderButtonBrand",\
+	@"SLDSColorBorderError",\
+	@"SLDSColorBorderSelectionHover",\
+	@"SLDSColorBorderBrandPrimaryActive",\
+	@"SLDSColorBorderInputActive",\
+	@"SLDSColorBorderInput",\
+	@"SLDSColorBorderBrandPrimary",\
+	@"SLDSColorBorderToggleChecked",\
+	@"SLDSColorBorderButtonFocusInverse",\
+	@"SLDSColorBorderRowSelectedHover",\
+	@"SLDSColorBorderCustomer",\
+	@"SLDSColorBorderSelection",\
+	@"SLDSColorBorderCanvasElementSelectionHover",\
+	@"SLDSColorBorderRowSelected",\
+	@"SLDSColorBorderSeparatorAlt",\
+	@"SLDSColorBorderCanvasElementSelection",\
+	@"SLDSColorBorderInverse",\
 	@"SLDSColorStrokeHeaderButton",\
+	@"SLDSColorBorderDestructiveActive",\
+	@"SLDSColorBorderErrorAlt",\
+	@"SLDSColorBorderLinkFocusInverse",\
+	@"SLDSColorBorderTabSelected",\
+	@"SLDSColorBorderHint",\
+	@"SLDSColorBorderSeparatorInverse",\
+	@"SLDSButtonIconColorBorderPrimary",\
 	@"SLDSButtonColorBorderPrimary",\
 	@"SLDSButtonColorBorderBrandPrimary",\
 	@"SLDSButtonColorBorderSecondary",\
@@ -80,128 +82,143 @@
 	@"SLDSPageHeaderColorBorder",\
 	@"SLDSPageHeaderJoinedColorBorder",\
 	@"SLDSColorBorderPathDivider",\
+	@"SLDSColorBorderPathCurrent",\
+	@"SLDSColorBorderPathCurrentHover",\
 	@"SLDSProgressColorBorder",\
 	@"SLDSProgressColorBorderShade",\
 	@"SLDSProgressColorBorderHover",\
 	@"SLDSProgressColorBorderActive",\
 	@"SLDSSplitViewColorBorder",\
-	@"SLDSColorBackgroundPrimary",\
-	@"SLDSColorBackgroundSecondary",\
-	@"SLDSColorForegroundPrimary",\
-	@"SLDSColorContrastPrimary",\
-	@"SLDSColorContrastSecondary",\
-	@"SLDSColorBackgroundBrandPrimary",\
-	@"SLDSColorBackgroundBrandPrimaryHover",\
-	@"SLDSColorBackgroundBrandPrimaryFocus",\
-	@"SLDSColorBackgroundBrandPrimaryActive",\
-	@"SLDSPageColorBackgroundPrimary",\
-	@"SLDSColorBackground",\
-	@"SLDSColorBackgroundAlt",\
-	@"SLDSColorBackgroundAlt2",\
-	@"SLDSColorBackgroundAltInverse",\
-	@"SLDSColorBackgroundRowHover",\
 	@"SLDSColorBackgroundRowActive",\
-	@"SLDSColorBackgroundRowSelected",\
-	@"SLDSColorBackgroundRowNew",\
-	@"SLDSColorBackgroundInverse",\
-	@"SLDSColorBackgroundBrowser",\
-	@"SLDSColorBackgroundChromeMobile",\
-	@"SLDSColorBackgroundChromeDesktop",\
-	@"SLDSColorBackgroundCustomer",\
-	@"SLDSColorBackgroundHighlight",\
-	@"SLDSColorBackgroundHighlightSearch",\
-	@"SLDSColorBackgroundSelection",\
-	@"SLDSColorBackgroundActionbarIconUtility",\
-	@"SLDSColorBackgroundIndicatorDot",\
-	@"SLDSColorBackgroundSpinnerDot",\
-	@"SLDSColorBackgroundModal",\
 	@"SLDSColorBackgroundModalBrand",\
-	@"SLDSColorBackgroundNotificationBadge",\
-	@"SLDSColorBackgroundNotificationBadgeHover",\
-	@"SLDSColorBackgroundNotificationBadgeFocus",\
-	@"SLDSColorBackgroundNotificationBadgeActive",\
 	@"SLDSColorBackgroundNotification",\
 	@"SLDSColorBackgroundNotificationNew",\
-	@"SLDSColorBackgroundOrgSwitcherArrow",\
-	@"SLDSColorBackgroundPayload",\
-	@"SLDSColorBackgroundPost",\
-	@"SLDSColorBackgroundUtilityBarHover",\
-	@"SLDSColorBackgroundUtilityBarActive",\
-	@"SLDSColorBackgroundShade",\
-	@"SLDSColorBackgroundShadeDark",\
-	@"SLDSColorBackgroundStencil",\
-	@"SLDSColorBackgroundStencilAlt",\
-	@"SLDSColorBackgroundTempModal",\
-	@"SLDSColorBackgroundTempModalTint",\
-	@"SLDSColorBackgroundTempModalTintAlt",\
-	@"SLDSColorBackgroundBackdrop",\
-	@"SLDSColorBackgroundBackdropTint",\
-	@"SLDSColorBackgroundScrollbar",\
-	@"SLDSColorBackgroundScrollbarTrack",\
-	@"SLDSColorBrand",\
-	@"SLDSColorBrandDark",\
-	@"SLDSColorBrandDarker",\
-	@"SLDSColorBackgroundToggle",\
-	@"SLDSColorBackgroundToggleDisabled",\
-	@"SLDSColorBackgroundToggleHover",\
-	@"SLDSColorBackgroundToggleActive",\
-	@"SLDSColorBackgroundToggleActiveHover",\
-	@"SLDSColorBackgroundModalButton",\
-	@"SLDSColorBackgroundModalButtonActive",\
-	@"SLDSColorBackgroundInput",\
-	@"SLDSColorBackgroundInputActive",\
-	@"SLDSColorBackgroundInputCheckbox",\
-	@"SLDSColorBackgroundInputCheckboxDisabled",\
-	@"SLDSColorBackgroundInputCheckboxSelected",\
-	@"SLDSColorBackgroundInputDisabled",\
-	@"SLDSColorBackgroundInputError",\
-	@"SLDSColorBackgroundInputSearch",\
-	@"SLDSColorBackgroundPill",\
-	@"SLDSColorBackgroundImageOverlay",\
-	@"SLDSColorBackgroundDestructive",\
-	@"SLDSColorBackgroundDestructiveHover",\
-	@"SLDSColorBackgroundDestructiveActive",\
-	@"SLDSColorBackgroundInfo",\
-	@"SLDSColorBackgroundError",\
+	@"SLDSColorBackgroundNotificationBadgeActive",\
+	@"SLDSColorBackgroundNotificationBadgeHover",\
+	@"SLDSColorContrastPrimary",\
+	@"SLDSColorBackgroundRowHover",\
+	@"SLDSColorForegroundPrimary",\
 	@"SLDSColorBackgroundErrorDark",\
-	@"SLDSColorBackgroundErrorAlt",\
-	@"SLDSColorBackgroundOffline",\
-	@"SLDSColorBackgroundSuccess",\
+	@"SLDSColorBackgroundInfo",\
+	@"SLDSColorBackgroundTempModalTint",\
+	@"SLDSColorBackgroundReminderHover",\
+	@"SLDSColorBackgroundNotificationBadge",\
+	@"SLDSColorBackgroundIndicatorDot",\
+	@"SLDSColorBackgroundAltInverse",\
+	@"SLDSColorBackgroundInputDisabled",\
+	@"SLDSColorBackgroundRowNew",\
+	@"SLDSColorBackgroundToggleHover",\
 	@"SLDSColorBackgroundSuccessDark",\
-	@"SLDSColorBackgroundToast",\
-	@"SLDSColorBackgroundToastSuccess",\
-	@"SLDSColorBackgroundToastError",\
+	@"SLDSColorBackgroundReminder",\
+	@"SLDSColorBackgroundStencil",\
+	@"SLDSColorBackgroundAlt2",\
 	@"SLDSColorBackgroundWarning",\
-	@"SLDSColorBackgroundButtonSuccess",\
 	@"SLDSColorBackgroundButtonSuccessHover",\
+	@"SLDSColorBackgroundUtilityBarHover",\
+	@"SLDSColorBackgroundHighlightSearch",\
+	@"SLDSColorBackgroundToggle",\
+	@"SLDSColorBackgroundDestructiveHover",\
+	@"SLDSColorBackground",\
+	@"SLDSColorBrandDark",\
+	@"SLDSColorBackgroundButtonSuccess",\
+	@"SLDSColorBackgroundBackdrop",\
+	@"SLDSColorBrand",\
+	@"SLDSColorBackgroundChromeDesktop",\
+	@"SLDSColorBackgroundModalButtonActive",\
+	@"SLDSColorBackgroundDestructive",\
+	@"SLDSColorBackgroundInputCheckboxSelected",\
+	@"SLDSColorBackgroundInputCheckbox",\
+	@"SLDSColorBackgroundPrimary",\
+	@"SLDSColorBackgroundTempModalTintAlt",\
+	@"SLDSColorBackgroundSuccess",\
+	@"SLDSColorBackgroundInputCheckboxDisabled",\
+	@"SLDSColorBackgroundPill",\
+	@"SLDSColorBackgroundSpinnerDot",\
+	@"SLDSColorBackgroundBrandPrimaryFocus",\
+	@"SLDSColorBackgroundOffline",\
+	@"SLDSColorBackgroundBackdropTint",\
+	@"SLDSColorBackgroundBrandPrimaryActive",\
+	@"SLDSColorBackgroundInputActive",\
+	@"SLDSColorBackgroundStencilAlt",\
+	@"SLDSColorBackgroundScrollbar",\
+	@"SLDSColorBackgroundToggleDisabled",\
+	@"SLDSColorBackgroundToast",\
+	@"SLDSColorBackgroundBrandPrimaryHover",\
+	@"SLDSColorBackgroundChromeMobile",\
+	@"SLDSColorBackgroundInputSearch",\
+	@"SLDSColorBackgroundCustomer",\
+	@"SLDSColorBackgroundError",\
+	@"SLDSColorContrastSecondary",\
+	@"SLDSColorBackgroundBrowser",\
+	@"SLDSColorBackgroundAlt",\
+	@"SLDSColorBackgroundPost",\
+	@"SLDSColorBackgroundBrandPrimary",\
+	@"SLDSColorBackgroundRowSelected",\
+	@"SLDSColorBackgroundInput",\
+	@"SLDSColorBackgroundToastSuccess",\
+	@"SLDSColorBackgroundImageOverlay",\
+	@"SLDSColorBrandDarker",\
+	@"SLDSColorBackgroundTempModal",\
+	@"SLDSColorBackgroundSelection",\
+	@"SLDSColorBackgroundShade",\
+	@"SLDSColorBackgroundModal",\
+	@"SLDSColorBackgroundDestructiveActive",\
+	@"SLDSColorBackgroundToggleActiveHover",\
+	@"SLDSColorBackgroundPayload",\
+	@"SLDSColorBackgroundModalButton",\
+	@"SLDSColorBackgroundUtilityBarActive",\
 	@"SLDSColorBackgroundButtonSuccessActive",\
+	@"SLDSColorBackgroundToastError",\
+	@"SLDSColorBackgroundOrgSwitcherArrow",\
+	@"SLDSColorBackgroundInverse",\
+	@"SLDSColorBackgroundToggleActive",\
+	@"SLDSColorBackgroundErrorAlt",\
+	@"SLDSPageColorBackgroundPrimary",\
+	@"SLDSColorBackgroundShadeDark",\
+	@"SLDSColorBackgroundNotificationBadgeFocus",\
+	@"SLDSColorBackgroundActionbarIconUtility",\
+	@"SLDSColorBackgroundScrollbarTrack",\
+	@"SLDSColorBackgroundInputError",\
+	@"SLDSColorBackgroundHighlight",\
+	@"SLDSColorBackgroundSecondary",\
+	@"SLDSAvatarGroupColorBackgroundLightest",\
+	@"SLDSAvatarGroupColorBackgroundInverse",\
 	@"SLDSBadgeColorBackgroundLightest",\
 	@"SLDSBadgeColorBackgroundInverse",\
 	@"SLDSBrandBandColorBackgroundPrimary",\
 	@"SLDSBrandBandColorBackgroundPrimaryTransparent",\
 	@"SLDSBrandBandColorBackgroundSecondary",\
 	@"SLDSBrandBandColorBackgroundSecondaryTransparent",\
-	@"SLDSButtonColorBackgroundPrimary",\
-	@"SLDSButtonColorBackgroundBrandPrimary",\
-	@"SLDSButtonColorBackgroundSecondary",\
-	@"SLDSColorBackgroundButtonBrand",\
-	@"SLDSColorBackgroundButtonBrandActive",\
-	@"SLDSColorBackgroundButtonBrandHover",\
-	@"SLDSColorBackgroundButtonBrandDisabled",\
-	@"SLDSColorBackgroundButtonDefault",\
-	@"SLDSColorBackgroundButtonDefaultHover",\
 	@"SLDSColorBackgroundButtonDefaultFocus",\
-	@"SLDSColorBackgroundButtonDefaultActive",\
-	@"SLDSColorBackgroundButtonDefaultDisabled",\
-	@"SLDSColorBackgroundButtonIcon",\
-	@"SLDSColorBackgroundButtonIconHover",\
-	@"SLDSColorBackgroundButtonIconFocus",\
-	@"SLDSColorBackgroundButtonIconActive",\
-	@"SLDSColorBackgroundButtonIconDisabled",\
-	@"SLDSColorBackgroundButtonInverse",\
-	@"SLDSColorBackgroundButtonInverseActive",\
+	@"SLDSButtonColorBackgroundBrandPrimary",\
 	@"SLDSColorBackgroundButtonInverseDisabled",\
+	@"SLDSColorBackgroundButtonDefaultHover",\
+	@"SLDSColorBackgroundButtonDefault",\
+	@"SLDSColorBackgroundButtonIconDisabled",\
+	@"SLDSColorBackgroundButtonIconFocus",\
+	@"SLDSButtonColorBackgroundSecondary",\
+	@"SLDSColorBackgroundButtonBrandDisabled",\
+	@"SLDSColorBackgroundButtonBrandHover",\
+	@"SLDSColorBackgroundButtonInverseActive",\
+	@"SLDSColorBackgroundButtonIconHover",\
+	@"SLDSColorBackgroundButtonBrand",\
+	@"SLDSColorBackgroundButtonIcon",\
+	@"SLDSColorBackgroundButtonDefaultDisabled",\
+	@"SLDSColorBackgroundButtonIconActive",\
+	@"SLDSColorBackgroundButtonBrandActive",\
+	@"SLDSColorBackgroundButtonInverse",\
+	@"SLDSButtonColorBackgroundPrimary",\
+	@"SLDSColorBackgroundButtonDefaultActive",\
 	@"SLDSCardColorBackground",\
+	@"SLDSCarouselColorBackground",\
+	@"SLDSCarouselIndicatorColorBackground",\
+	@"SLDSCarouselIndicatorColorBackgroundHover",\
+	@"SLDSCarouselIndicatorColorBackgroundFocus",\
+	@"SLDSCarouselIndicatorColorBackgroundActive",\
+	@"SLDSChatMessageColorBackgroundInbound",\
+	@"SLDSChatMessageColorBackgroundOutbound",\
+	@"SLDSChatMessageColorBackgroundOutboundAgent",\
+	@"SLDSChatMessageColorBackgroundStatus",\
 	@"SLDSColorPickerSliderThumbColorBackground",\
 	@"SLDSTableColorBackgroundStripes",\
 	@"SLDSTableColorBackgroundHeader",\
@@ -212,28 +229,40 @@
 	@"SLDSUtilityBarColorBackgroundNotificationBadge",\
 	@"SLDSUtilityBarColorBackgroundNotificationFocus",\
 	@"SLDSColorBackgroundIconWaffle",\
+	@"SLDSTypingIconDotColorBackgroundGray",\
+	@"SLDSTypingIconDotColorBackgroundGrayDark",\
+	@"SLDSEinsteinHeaderBackgroundColor",\
 	@"SLDSGlobalHeaderColorBackground",\
-	@"SLDSColorBackgroundContextBar",\
-	@"SLDSColorBackgroundContextBarBrandAccent",\
-	@"SLDSColorBackgroundContextTabBarItem",\
 	@"SLDSColorBackgroundContextBarItemHover",\
 	@"SLDSColorBackgroundContextBarItemActive",\
+	@"SLDSColorBackgroundContextBar",\
+	@"SLDSColorBackgroundContextTabBarItem",\
 	@"SLDSColorBackgroundContextBarInverseItemHover",\
 	@"SLDSColorBackgroundContextBarInverseItemActive",\
+	@"SLDSColorBackgroundContextBarBrandAccent",\
 	@"SLDSColorBackgroundContextBarActionHighlight",\
 	@"SLDSPageHeaderColorBackground",\
 	@"SLDSPageHeaderColorBackgroundAlt",\
 	@"SLDSColorBackgroundAnchor",\
 	@"SLDSColorBackgroundPageHeader",\
-	@"SLDSColorBackgroundPathComplete",\
-	@"SLDSColorBackgroundPathCompleteHover",\
-	@"SLDSColorBackgroundPathCurrent",\
-	@"SLDSColorBackgroundPathCurrentHover",\
-	@"SLDSColorBackgroundPathIncomplete",\
 	@"SLDSColorBackgroundPathIncompleteHover",\
+	@"SLDSColorBackgroundPathStepActionActive",\
+	@"SLDSColorBackgroundPathIncomplete",\
+	@"SLDSColorBackgroundPathActiveHover",\
 	@"SLDSColorBackgroundPathLost",\
+	@"SLDSColorBackgroundPathActive",\
 	@"SLDSColorBackgroundGuidance",\
+	@"SLDSColorBackgroundPathWon",\
+	@"SLDSColorBackgroundPathCurrentHover",\
+	@"SLDSColorBackgroundPathCurrent",\
+	@"SLDSColorBackgroundPathCompleteHover",\
+	@"SLDSColorBackgroundPathComplete",\
+	@"SLDSColorBackgroundPathStepActionCurrent",\
 	@"SLDSColorBackgroundPathExpanded",\
+	@"SLDSPopoverWalkthroughColorBackground",\
+	@"SLDSPopoverWalkthroughHeaderColorBackground",\
+	@"SLDSPopoverWalkthroughColorBackgroundAlt",\
+	@"SLDSPopoverWalkthroughAltNubbinColorBackground",\
 	@"SLDSProgressColorBackground",\
 	@"SLDSProgressColorBackgroundShade",\
 	@"SLDSProgressBarColorBackground",\
@@ -252,102 +281,150 @@
 	@"SLDSSplitViewColorBackgroundRowHover",\
 	@"SLDSVerticalNavigationColorBackgroundShadeRowHover",\
 	@"SLDSVerticalNavigationColorBackgroundShadeRowActive",\
-	@"SLDSColorTextPrimary",\
-	@"SLDSColorTextSecondary",\
-	@"SLDSColorTextTertiary",\
-	@"SLDSColorTextBrandPrimary",\
-	@"SLDSColorTextLinkPrimary",\
-	@"SLDSColorTextLinkPrimaryHover",\
-	@"SLDSColorTextLinkPrimaryActive",\
-	@"SLDSColorTextLinkPrimaryFocus",\
-	@"SLDSColorTextActionLabel",\
-	@"SLDSColorTextActionLabelActive",\
-	@"SLDSColorTextBrand",\
-	@"SLDSColorTextBrowser",\
-	@"SLDSColorTextBrowserActive",\
-	@"SLDSColorTextCustomer",\
-	@"SLDSColorTextDefault",\
-	@"SLDSColorTextError",\
-	@"SLDSColorTextInputDisabled",\
-	@"SLDSColorTextInputFocusInverse",\
-	@"SLDSColorTextInputIcon",\
-	@"SLDSColorTextInverse",\
-	@"SLDSColorTextInverseWeak",\
-	@"SLDSColorTextInverseActive",\
-	@"SLDSColorTextInverseHover",\
-	@"SLDSColorTextLink",\
-	@"SLDSColorTextLinkActive",\
-	@"SLDSColorTextLinkDisabled",\
-	@"SLDSColorTextLinkFocus",\
-	@"SLDSColorTextLinkHover",\
-	@"SLDSColorTextLinkInverse",\
-	@"SLDSColorTextLinkInverseHover",\
-	@"SLDSColorTextLinkInverseActive",\
-	@"SLDSColorTextLinkInverseDisabled",\
-	@"SLDSColorTextModal",\
-	@"SLDSColorTextModalButton",\
-	@"SLDSColorTextStageLeft",\
-	@"SLDSColorTextTabLabel",\
-	@"SLDSColorTextTabLabelSelected",\
-	@"SLDSColorTextTabLabelHover",\
-	@"SLDSColorTextTabLabelFocus",\
-	@"SLDSColorTextTabLabelActive",\
-	@"SLDSColorTextTabLabelDisabled",\
-	@"SLDSColorTextToast",\
-	@"SLDSColorTextWarning",\
-	@"SLDSColorTextWarningAlt",\
-	@"SLDSColorTextWeak",\
-	@"SLDSColorTextIconBrand",\
-	@"SLDSColorTextIconUtility",\
-	@"SLDSColorTextToggleDisabled",\
-	@"SLDSColorTextButtonBrand",\
-	@"SLDSColorTextButtonBrandHover",\
-	@"SLDSColorTextButtonBrandActive",\
-	@"SLDSColorTextButtonBrandDisabled",\
-	@"SLDSColorTextButtonDefault",\
-	@"SLDSColorTextButtonDefaultHover",\
-	@"SLDSColorTextButtonDefaultActive",\
-	@"SLDSColorTextButtonDefaultDisabled",\
-	@"SLDSColorTextButtonDefaultHint",\
-	@"SLDSColorTextButtonInverse",\
-	@"SLDSColorTextButtonInverseDisabled",\
-	@"SLDSColorTextIconDefault",\
-	@"SLDSColorTextIconDefaultHint",\
-	@"SLDSColorTextIconInverseHint",\
-	@"SLDSColorTextIconDefaultHintBorderless",\
-	@"SLDSColorTextIconDefaultHover",\
-	@"SLDSColorTextIconDefaultActive",\
-	@"SLDSColorTextIconDefaultDisabled",\
 	@"SLDSColorTextIconInverse",\
-	@"SLDSColorTextIconInverseHover",\
-	@"SLDSColorTextIconInverseActive",\
-	@"SLDSColorTextIconInverseDisabled",\
+	@"SLDSColorTextActionLabel",\
+	@"SLDSColorTextLinkInverse",\
+	@"SLDSColorTextButtonInverseDisabled",\
 	@"SLDSColorTextIconInverseHintHover",\
-	@"SLDSColorTextLabel",\
-	@"SLDSColorTextPlaceholder",\
-	@"SLDSColorTextPlaceholderInverse",\
-	@"SLDSColorTextRequired",\
-	@"SLDSColorTextPill",\
+	@"SLDSColorTextInputIcon",\
+	@"SLDSColorTextLinkInverseActive",\
+	@"SLDSColorTextActionLabelActive",\
+	@"SLDSColorTextIconInverseActive",\
+	@"SLDSColorTextTabLabelSelected",\
+	@"SLDSColorTextWarning",\
+	@"SLDSColorTextIconInverseHint",\
+	@"SLDSColorTextTabLabelDisabled",\
+	@"SLDSColorTextButtonDefaultHover",\
+	@"SLDSColorTextInputDisabled",\
+	@"SLDSColorTextTertiary",\
+	@"SLDSColorTextLinkFocus",\
+	@"SLDSColorTextDestructiveHover",\
+	@"SLDSColorTextButtonDefault",\
+	@"SLDSColorTextIconDefaultDisabled",\
+	@"SLDSColorTextLinkDisabled",\
+	@"SLDSColorTextDefault",\
+	@"SLDSColorTextInverseActive",\
+	@"SLDSColorTextButtonBrandDisabled",\
+	@"SLDSColorTextPrimary",\
+	@"SLDSColorTextDestructive",\
+	@"SLDSColorTextLinkPrimaryFocus",\
+	@"SLDSColorTextButtonBrandHover",\
+	@"SLDSColorTextLinkHover",\
+	@"SLDSColorTextTabLabelFocus",\
 	@"SLDSColorTextSuccess",\
+	@"SLDSColorTextWeak",\
+	@"SLDSColorTextPlaceholderInverse",\
+	@"SLDSColorTextIconDefaultHover",\
+	@"SLDSColorTextIconDefaultHintBorderless",\
+	@"SLDSColorTextPill",\
+	@"SLDSColorTextLinkPrimaryHover",\
+	@"SLDSColorTextLink",\
+	@"SLDSColorTextWarningAlt",\
+	@"SLDSColorTextButtonBrand",\
+	@"SLDSColorTextTabLabelActive",\
+	@"SLDSColorTextIconDefault",\
+	@"SLDSColorTextBrand",\
+	@"SLDSColorTextTabLabelHover",\
+	@"SLDSColorTextButtonDefaultDisabled",\
+	@"SLDSColorTextToast",\
+	@"SLDSColorTextToggleDisabled",\
+	@"SLDSColorTextBrowser",\
+	@"SLDSColorTextLinkPrimaryActive",\
+	@"SLDSColorTextError",\
+	@"SLDSColorTextLinkPrimary",\
+	@"SLDSColorTextBrowserActive",\
+	@"SLDSColorTextTabLabel",\
+	@"SLDSColorTextCustomer",\
+	@"SLDSColorTextIconDefaultActive",\
+	@"SLDSColorTextBrandPrimary",\
+	@"SLDSColorTextLinkActive",\
+	@"SLDSColorTextIconDefaultHint",\
+	@"SLDSColorTextButtonBrandActive",\
+	@"SLDSColorTextRequired",\
+	@"SLDSColorTextIconBrand",\
+	@"SLDSColorTextInverseHover",\
+	@"SLDSColorTextModal",\
+	@"SLDSColorTextButtonInverse",\
+	@"SLDSColorTextModalButton",\
+	@"SLDSColorTextLinkInverseDisabled",\
+	@"SLDSColorTextInverse",\
+	@"SLDSColorTextButtonDefaultActive",\
+	@"SLDSColorTextIconInverseDisabled",\
+	@"SLDSColorTextButtonDefaultHint",\
+	@"SLDSColorTextIconUtility",\
+	@"SLDSColorTextIconInverseHover",\
+	@"SLDSColorTextPlaceholder",\
+	@"SLDSColorTextInverseWeak",\
+	@"SLDSColorTextSecondary",\
+	@"SLDSColorTextInputFocusInverse",\
+	@"SLDSColorTextStageLeft",\
+	@"SLDSColorTextLinkInverseHover",\
 	@"SLDSColorTextSuccessInverse",\
+	@"SLDSColorTextLabel",\
 	@"SLDSButtonColorTextPrimary",\
 	@"SLDSTableColorTextHeader",\
 	@"SLDSColorTextContextBar",\
 	@"SLDSColorTextContextBarInverse",\
 	@"SLDSColorTextContextBarActionTrigger",\
 	@"SLDSInputStaticColor",\
+	@"SLDSColorTextPathCurrent",\
+	@"SLDSColorTextPathCurrentHover",\
+	@"SLDSPopoverColorText",\
+	@"SLDSBrandHeaderContrastWeakDisabled",\
+	@"SLDSColorGray11",\
+	@"SLDSBrandPrimaryTransparent10",\
+	@"SLDSColorGray12",\
+	@"SLDSBrandBackgroundDarkTransparent",\
+	@"SLDSColorGray13",\
+	@"SLDSBrandHeader",\
+	@"SLDSBrandLightActive",\
+	@"SLDSBrandHeaderContrastWarm",\
+	@"SLDSBrandHeaderIconDisabled",\
+	@"SLDSBrandHeaderContrastActive",\
+	@"SLDSBrandBackgroundPrimary",\
+	@"SLDSBrandPrimary",\
+	@"SLDSBrandHeaderContrastWeakActive",\
+	@"SLDSBrandContrastActive",\
+	@"SLDSBrandHeaderContrastCool",\
+	@"SLDSBrandHeaderContrastInverse",\
+	@"SLDSBrandDark",\
+	@"SLDSBrandAccessible",\
+	@"SLDSBrandBackgroundDark",\
+	@"SLDSBrandTextLinkActive",\
 	@"SLDSColorGray1",\
 	@"SLDSColorGray2",\
+	@"SLDSBrandHeaderIconActive",\
 	@"SLDSColorGray3",\
+	@"SLDSBrandHeaderIcon",\
+	@"SLDSBrandDisabled",\
+	@"SLDSBrandTextLink",\
 	@"SLDSColorGray4",\
 	@"SLDSColorGray5",\
 	@"SLDSColorGray6",\
+	@"SLDSBrandAccessibleActive",\
 	@"SLDSColorGray7",\
+	@"SLDSBrandDarkActive",\
 	@"SLDSColorGray8",\
+	@"SLDSBrandHeaderContrastInverseActive",\
+	@"SLDSBrandHeaderContrastCoolActive",\
 	@"SLDSColorGray9",\
+	@"SLDSBrandContrast",\
+	@"SLDSBrandHeaderContrastWeak",\
+	@"SLDSBrandPrimaryActive",\
+	@"SLDSBrandBackgroundPrimaryTransparent",\
+	@"SLDSBrandHeaderContrast",\
+	@"SLDSBrandPrimaryTransparent",\
+	@"SLDSBrandHeaderContrastWarmActive",\
+	@"SLDSBrandPrimaryTransparent40",\
+	@"SLDSBrandLight",\
 	@"SLDSColorGray10",\
-	@"SLDSColorGray11",\
-	@"SLDSColorGray12",\
+	@"SLDSWelcomeMatTextColorInfo",\
+	@"SLDSWelcomeMatBackgroundColorInfo",\
+	@"SLDSWelcomeMatColorBackgroundProgressBar",\
+	@"SLDSWelcomeMatColorActionShadow",\
+	@"SLDSWelcomeMatColorIconComplete",\
+	@"SLDSIllustrationColorPrimary",\
+	@"SLDSIllustrationColorSecondary",\
 ] objectAtIndex:enum]
 
 //-------------------------------------------------------------------
@@ -366,29 +443,52 @@
 //-------------------------------------------------------------------
 
 #define sldsFontSizeNames(enum) [@[\
-    @"SLDSFontSizeXSmall",\
-    @"SLDSFontSizeSmall",\
+    @"SLDSFontSize1",\
+    @"SLDSFontSize2",\
+    @"SLDSFontSize3",\
+    @"SLDSVarFontSize10",\
+    @"SLDSFontSize4",\
+    @"SLDSVarFontSize11",\
+    @"SLDSFontSize5",\
+    @"SLDSFontSize6",\
+    @"SLDSFontSize7",\
+    @"SLDSFontSize8",\
+    @"SLDSVarFontSize1",\
+    @"SLDSFontSize9",\
+    @"SLDSVarFontSize2",\
+    @"SLDSVarFontSize3",\
+    @"SLDSFontSize10",\
+    @"SLDSVarFontSize4",\
+    @"SLDSFontSize11",\
+    @"SLDSVarFontSize5",\
+    @"SLDSVarFontSize6",\
+    @"SLDSVarFontSize7",\
+    @"SLDSVarFontSize8",\
+    @"SLDSVarFontSize9",\
+    @"SLDSFontSizeHeadingMedium",\
     @"SLDSFontSizeMedium",\
+    @"SLDSFontSizeTextSmall",\
     @"SLDSFontSizeMediumA",\
-    @"SLDSFontSizeLarge",\
     @"SLDSFontSizeXLarge",\
     @"SLDSFontSizeXLargeA",\
+    @"SLDSFontSizeHeadingXLarge",\
     @"SLDSFontSizeXxLarge",\
     @"SLDSFontSizeTextXxSmall",\
-    @"SLDSFontSizeTextXSmall",\
-    @"SLDSFontSizeTextSmall",\
-    @"SLDSFontSizeTextMedium",\
-    @"SLDSFontSizeTextLarge",\
+    @"SLDSFontSizeLarge",\
+    @"SLDSFontSizeHeadingLarge",\
     @"SLDSFontSizeTextXLarge",\
+    @"SLDSFontSizeXSmall",\
     @"SLDSFontSizeHeadingXxSmall",\
     @"SLDSFontSizeHeadingXSmall",\
+    @"SLDSFontSizeTextLarge",\
+    @"SLDSFontSizeSmall",\
+    @"SLDSFontSizeTextMedium",\
+    @"SLDSFontSizeTextXSmall",\
     @"SLDSFontSizeHeadingSmall",\
-    @"SLDSFontSizeHeadingMedium",\
-    @"SLDSFontSizeHeadingLarge",\
-    @"SLDSFontSizeHeadingXLarge",\
     @"SLDSColorPickerInputCustomHexFontSize",\
     @"SLDSInputStaticFontSize",\
     @"SLDSPageHeaderTitleFontSize",\
+    @"SLDSWelcomeMatFontSizeInfoTitle",\
 ] objectAtIndex:enum]
 
 //-------------------------------------------------------------------
@@ -561,6 +661,7 @@
 	@"SLDSActionRemove",\
 	@"SLDSActionRemoveRelationship",\
 	@"SLDSActionResetPassword",\
+	@"SLDSActionScript",\
 	@"SLDSActionShare",\
 	@"SLDSActionShareFile",\
 	@"SLDSActionShareLink",\
@@ -690,20 +791,29 @@
 	@"SLDSCustom98",\
 	@"SLDSCustom99",\
 	@"SLDSStandardAccount",\
+	@"SLDSStandardActionListComponent",\
 	@"SLDSStandardAddress",\
+	@"SLDSStandardAgentSession",\
+	@"SLDSStandardAll",\
 	@"SLDSStandardAnnouncement",\
 	@"SLDSStandardAnswerBest",\
 	@"SLDSStandardAnswerPrivate",\
 	@"SLDSStandardAnswerPublic",\
+	@"SLDSStandardApex",\
+	@"SLDSStandardApexPlugin",\
 	@"SLDSStandardApproval",\
 	@"SLDSStandardApps",\
 	@"SLDSStandardAppsAdmin",\
 	@"SLDSStandardArticle",\
 	@"SLDSStandardAssetRelationship",\
 	@"SLDSStandardAssignedResource",\
+	@"SLDSStandardAssignment",\
 	@"SLDSStandardAvatar",\
 	@"SLDSStandardAvatarLoading",\
 	@"SLDSStandardBot",\
+	@"SLDSStandardBotTraining",\
+	@"SLDSStandardBranchMerge",\
+	@"SLDSStandardBrand",\
 	@"SLDSStandardBusinessHours",\
 	@"SLDSStandardCalibration",\
 	@"SLDSStandardCall",\
@@ -719,21 +829,41 @@
 	@"SLDSStandardCaseLogACall",\
 	@"SLDSStandardCaseMilestone",\
 	@"SLDSStandardCaseTranscript",\
+	@"SLDSStandardChannelProgramHistory",\
+	@"SLDSStandardChannelProgramLevels",\
+	@"SLDSStandardChannelProgramMembers",\
+	@"SLDSStandardChannelPrograms",\
+	@"SLDSStandardChoice",\
 	@"SLDSStandardClient",\
 	@"SLDSStandardCms",\
 	@"SLDSStandardCoaching",\
+	@"SLDSStandardCodePlayground",\
+	@"SLDSStandardCollectionVariable",\
 	@"SLDSStandardConnectedApps",\
+	@"SLDSStandardConstant",\
 	@"SLDSStandardContact",\
 	@"SLDSStandardContactList",\
+	@"SLDSStandardContactRequest",\
 	@"SLDSStandardContract",\
 	@"SLDSStandardContractLineItem",\
+	@"SLDSStandardCurrency",\
+	@"SLDSStandardCurrencyInput",\
 	@"SLDSStandardCustom",\
 	@"SLDSStandardCustomNotification",\
+	@"SLDSStandardCustomerPortalUsers",\
+	@"SLDSStandardCustomers",\
 	@"SLDSStandardDashboard",\
+	@"SLDSStandardDataIntegrationHub",\
 	@"SLDSStandardDatadotcom",\
+	@"SLDSStandardDateInput",\
+	@"SLDSStandardDateTime",\
+	@"SLDSStandardDecision",\
 	@"SLDSStandardDefault",\
+	@"SLDSStandardDisplayRichText",\
+	@"SLDSStandardDisplayText",\
 	@"SLDSStandardDocument",\
 	@"SLDSStandardDrafts",\
+	@"SLDSStandardDynamicRecordChoice",\
 	@"SLDSStandardEmail",\
 	@"SLDSStandardEmailChatter",\
 	@"SLDSStandardEmpty",\
@@ -748,45 +878,79 @@
 	@"SLDSStandardFeed",\
 	@"SLDSStandardFeedback",\
 	@"SLDSStandardFile",\
+	@"SLDSStandardFilter",\
+	@"SLDSStandardFirstNonEmpty",\
 	@"SLDSStandardFlow",\
 	@"SLDSStandardFolder",\
 	@"SLDSStandardForecasts",\
+	@"SLDSStandardFormula",\
 	@"SLDSStandardGenericLoading",\
+	@"SLDSStandardGlobalConstant",\
 	@"SLDSStandardGoals",\
 	@"SLDSStandardGroupLoading",\
 	@"SLDSStandardGroups",\
 	@"SLDSStandardHierarchy",\
 	@"SLDSStandardHome",\
 	@"SLDSStandardHousehold",\
+	@"SLDSStandardIndividual",\
 	@"SLDSStandardInsights",\
 	@"SLDSStandardInvestmentAccount",\
+	@"SLDSStandardIotContext",\
+	@"SLDSStandardIotOrchestrations",\
+	@"SLDSStandardKanban",\
+	@"SLDSStandardKnowledge",\
 	@"SLDSStandardLead",\
 	@"SLDSStandardLeadInsights",\
 	@"SLDSStandardLeadList",\
+	@"SLDSStandardLightningComponent",\
+	@"SLDSStandardLightningUsage",\
 	@"SLDSStandardLink",\
 	@"SLDSStandardListEmail",\
 	@"SLDSStandardLiveChat",\
+	@"SLDSStandardLiveChatVisitor",\
 	@"SLDSStandardLocation",\
 	@"SLDSStandardLogACall",\
+	@"SLDSStandardLogging",\
+	@"SLDSStandardLoop",\
 	@"SLDSStandardMacros",\
 	@"SLDSStandardMaintenanceAsset",\
 	@"SLDSStandardMaintenancePlan",\
 	@"SLDSStandardMarketingActions",\
 	@"SLDSStandardMerge",\
+	@"SLDSStandardMessagingConversation",\
+	@"SLDSStandardMessagingSession",\
+	@"SLDSStandardMessagingUser",\
 	@"SLDSStandardMetrics",\
+	@"SLDSStandardMultiPicklist",\
+	@"SLDSStandardMultiSelectCheckbox",\
 	@"SLDSStandardNews",\
 	@"SLDSStandardNote",\
+	@"SLDSStandardNumberInput",\
 	@"SLDSStandardOmniSupervisor",\
 	@"SLDSStandardOperatingHours",\
 	@"SLDSStandardOpportunity",\
 	@"SLDSStandardOpportunitySplits",\
 	@"SLDSStandardOrders",\
+	@"SLDSStandardOutcome",\
+	@"SLDSStandardOutput",\
+	@"SLDSStandardPartnerFundAllocation",\
+	@"SLDSStandardPartnerFundClaim",\
+	@"SLDSStandardPartnerFundRequest",\
+	@"SLDSStandardPartnerMarketingBudget",\
+	@"SLDSStandardPartners",\
+	@"SLDSStandardPassword",\
+	@"SLDSStandardPastChat",\
 	@"SLDSStandardPeople",\
 	@"SLDSStandardPerformance",\
 	@"SLDSStandardPersonAccount",\
 	@"SLDSStandardPhoto",\
+	@"SLDSStandardPicklistChoice",\
+	@"SLDSStandardPicklistType",\
+	@"SLDSStandardPlanogram",\
 	@"SLDSStandardPoll",\
 	@"SLDSStandardPortal",\
+	@"SLDSStandardPortalRoles",\
+	@"SLDSStandardPortalRolesAndSubordinates",\
 	@"SLDSStandardPost",\
 	@"SLDSStandardPricebook",\
 	@"SLDSStandardProcess",\
@@ -798,14 +962,22 @@
 	@"SLDSStandardProductRequestLineItem",\
 	@"SLDSStandardProductRequired",\
 	@"SLDSStandardProductTransfer",\
+	@"SLDSStandardProposition",\
 	@"SLDSStandardQuestionBest",\
 	@"SLDSStandardQuestionFeed",\
+	@"SLDSStandardQueue",\
 	@"SLDSStandardQuickText",\
 	@"SLDSStandardQuip",\
 	@"SLDSStandardQuipSheet",\
 	@"SLDSStandardQuotes",\
+	@"SLDSStandardRadioButton",\
+	@"SLDSStandardReadReceipts",\
 	@"SLDSStandardRecent",\
 	@"SLDSStandardRecord",\
+	@"SLDSStandardRecordCreate",\
+	@"SLDSStandardRecordDelete",\
+	@"SLDSStandardRecordLookup",\
+	@"SLDSStandardRecordUpdate",\
 	@"SLDSStandardRelatedList",\
 	@"SLDSStandardRelationship",\
 	@"SLDSStandardReport",\
@@ -813,11 +985,17 @@
 	@"SLDSStandardResourceCapacity",\
 	@"SLDSStandardResourcePreference",\
 	@"SLDSStandardResourceSkill",\
+	@"SLDSStandardReturnOrder",\
+	@"SLDSStandardReturnOrderLineItem",\
 	@"SLDSStandardReward",\
 	@"SLDSStandardRtcPresence",\
+	@"SLDSStandardSalesCadence",\
 	@"SLDSStandardSalesPath",\
 	@"SLDSStandardScanCard",\
+	@"SLDSStandardScreen",\
+	@"SLDSStandardSearch",\
 	@"SLDSStandardServiceAppointment",\
+	@"SLDSStandardServiceAppointmentCapacityUsage",\
 	@"SLDSStandardServiceContract",\
 	@"SLDSStandardServiceCrew",\
 	@"SLDSStandardServiceCrewMember",\
@@ -830,13 +1008,28 @@
 	@"SLDSStandardSkill",\
 	@"SLDSStandardSkillEntity",\
 	@"SLDSStandardSkillRequirement",\
+	@"SLDSStandardSms",\
+	@"SLDSStandardSnippet",\
+	@"SLDSStandardSobject",\
+	@"SLDSStandardSobjectCollection",\
 	@"SLDSStandardSocial",\
 	@"SLDSStandardSolution",\
+	@"SLDSStandardSort",\
 	@"SLDSStandardSossession",\
+	@"SLDSStandardStage",\
+	@"SLDSStandardStageCollection",\
+	@"SLDSStandardSteps",\
+	@"SLDSStandardStrategy",\
+	@"SLDSStandardSurvey",\
+	@"SLDSStandardSystemAndGlobalVariable",\
 	@"SLDSStandardTask",\
 	@"SLDSStandardTask2",\
 	@"SLDSStandardTeamMember",\
 	@"SLDSStandardTemplate",\
+	@"SLDSStandardText",\
+	@"SLDSStandardTextTemplate",\
+	@"SLDSStandardTextarea",\
+	@"SLDSStandardTextbox",\
 	@"SLDSStandardThanks",\
 	@"SLDSStandardThanksLoading",\
 	@"SLDSStandardTimesheet",\
@@ -845,27 +1038,45 @@
 	@"SLDSStandardToday",\
 	@"SLDSStandardTopic",\
 	@"SLDSStandardTopic2",\
+	@"SLDSStandardTrailhead",\
 	@"SLDSStandardUnmatched",\
 	@"SLDSStandardUser",\
+	@"SLDSStandardUserRole",\
+	@"SLDSStandardVariable",\
+	@"SLDSStandardVisits",\
+	@"SLDSStandardWaits",\
+	@"SLDSStandardWorkCapacityLimit",\
+	@"SLDSStandardWorkCapacityUsage",\
 	@"SLDSStandardWorkOrder",\
 	@"SLDSStandardWorkOrderItem",\
+	@"SLDSStandardWorkQueue",\
 	@"SLDSStandardWorkType",\
+	@"SLDSStandardWorkTypeGroup",\
 	@"SLDSUtilityActivity",\
 	@"SLDSUtilityAdSet",\
 	@"SLDSUtilityAdd",\
 	@"SLDSUtilityAdduser",\
+	@"SLDSUtilityAdvancedFunction",\
+	@"SLDSUtilityAdvertising",\
+	@"SLDSUtilityAgentSession",\
+	@"SLDSUtilityAlert",\
+	@"SLDSUtilityAll",\
 	@"SLDSUtilityAnchor",\
 	@"SLDSUtilityAnimalAndNature",\
 	@"SLDSUtilityAnnouncement",\
 	@"SLDSUtilityAnswer",\
 	@"SLDSUtilityAnsweredTwice",\
 	@"SLDSUtilityApex",\
+	@"SLDSUtilityApexPlugin",\
 	@"SLDSUtilityApproval",\
 	@"SLDSUtilityApps",\
+	@"SLDSUtilityArchive",\
 	@"SLDSUtilityArrowdown",\
 	@"SLDSUtilityArrowup",\
+	@"SLDSUtilityAssignment",\
 	@"SLDSUtilityAttach",\
 	@"SLDSUtilityAutomate",\
+	@"SLDSUtilityAway",\
 	@"SLDSUtilityBack",\
 	@"SLDSUtilityBan",\
 	@"SLDSUtilityBlockVisitor",\
@@ -881,6 +1092,7 @@
 	@"SLDSUtilityCancelFileRequest",\
 	@"SLDSUtilityCancelTransfer",\
 	@"SLDSUtilityCapslock",\
+	@"SLDSUtilityCart",\
 	@"SLDSUtilityCase",\
 	@"SLDSUtilityCases",\
 	@"SLDSUtilityCenterAlignText",\
@@ -894,42 +1106,62 @@
 	@"SLDSUtilityChevronleft",\
 	@"SLDSUtilityChevronright",\
 	@"SLDSUtilityChevronup",\
+	@"SLDSUtilityChoice",\
 	@"SLDSUtilityClassicInterface",\
 	@"SLDSUtilityClear",\
 	@"SLDSUtilityClock",\
 	@"SLDSUtilityClose",\
 	@"SLDSUtilityCollapseAll",\
+	@"SLDSUtilityCollectionVariable",\
+	@"SLDSUtilityColorSwatch",\
 	@"SLDSUtilityComments",\
 	@"SLDSUtilityCompany",\
 	@"SLDSUtilityConnectedApps",\
+	@"SLDSUtilityConstant",\
+	@"SLDSUtilityContactRequest",\
 	@"SLDSUtilityContract",\
 	@"SLDSUtilityContractAlt",\
 	@"SLDSUtilityCopy",\
 	@"SLDSUtilityCopyToClipboard",\
 	@"SLDSUtilityCrossfilter",\
+	@"SLDSUtilityCurrency",\
+	@"SLDSUtilityCurrencyInput",\
 	@"SLDSUtilityCustomApps",\
 	@"SLDSUtilityCut",\
 	@"SLDSUtilityDash",\
 	@"SLDSUtilityDatabase",\
 	@"SLDSUtilityDatadotcom",\
+	@"SLDSUtilityDateInput",\
+	@"SLDSUtilityDateTime",\
 	@"SLDSUtilityDayview",\
 	@"SLDSUtilityDelete",\
 	@"SLDSUtilityDeprecate",\
 	@"SLDSUtilityDescription",\
 	@"SLDSUtilityDesktop",\
+	@"SLDSUtilityDesktopConsole",\
+	@"SLDSUtilityDialing",\
 	@"SLDSUtilityDislike",\
+	@"SLDSUtilityDisplayRichText",\
+	@"SLDSUtilityDisplayText",\
 	@"SLDSUtilityDockPanel",\
 	@"SLDSUtilityDown",\
 	@"SLDSUtilityDownload",\
+	@"SLDSUtilityDrag",\
+	@"SLDSUtilityDragAndDrop",\
+	@"SLDSUtilityDynamicRecordChoice",\
 	@"SLDSUtilityEdit",\
 	@"SLDSUtilityEditForm",\
+	@"SLDSUtilityEinstein",\
 	@"SLDSUtilityEmail",\
+	@"SLDSUtilityEmailOpen",\
 	@"SLDSUtilityEmoji",\
 	@"SLDSUtilityEndCall",\
 	@"SLDSUtilityEndChat",\
+	@"SLDSUtilityEndMessagingSession",\
 	@"SLDSUtilityErectWindow",\
 	@"SLDSUtilityError",\
 	@"SLDSUtilityEvent",\
+	@"SLDSUtilityEvents",\
 	@"SLDSUtilityExpand",\
 	@"SLDSUtilityExpandAll",\
 	@"SLDSUtilityExpandAlt",\
@@ -941,21 +1173,31 @@
 	@"SLDSUtilityFilterList",\
 	@"SLDSUtilityFlow",\
 	@"SLDSUtilityFoodAndDrink",\
+	@"SLDSUtilityFormula",\
 	@"SLDSUtilityForward",\
+	@"SLDSUtilityForwardUp",\
 	@"SLDSUtilityFrozen",\
+	@"SLDSUtilityFulfillmentOrder",\
 	@"SLDSUtilityFullWidthView",\
+	@"SLDSUtilityGlobalConstant",\
 	@"SLDSUtilityGraph",\
 	@"SLDSUtilityGroups",\
 	@"SLDSUtilityHelp",\
+	@"SLDSUtilityHelpCenter",\
 	@"SLDSUtilityHide",\
+	@"SLDSUtilityHideMobile",\
+	@"SLDSUtilityHierarchy",\
 	@"SLDSUtilityHome",\
 	@"SLDSUtilityIdentity",\
 	@"SLDSUtilityImage",\
+	@"SLDSUtilityInAppAssistant",\
 	@"SLDSUtilityInbox",\
+	@"SLDSUtilityIncomingCall",\
 	@"SLDSUtilityInfo",\
 	@"SLDSUtilityInfoAlt",\
 	@"SLDSUtilityInsertTagField",\
 	@"SLDSUtilityInsertTemplate",\
+	@"SLDSUtilityInspectorPanel",\
 	@"SLDSUtilityInternalShare",\
 	@"SLDSUtilityItalic",\
 	@"SLDSUtilityJumpToBottom",\
@@ -966,17 +1208,26 @@
 	@"SLDSUtilityKnowledgeBase",\
 	@"SLDSUtilityLayers",\
 	@"SLDSUtilityLayout",\
+	@"SLDSUtilityLeaveConference",\
 	@"SLDSUtilityLeft",\
 	@"SLDSUtilityLeftAlignText",\
+	@"SLDSUtilityLevelDown",\
 	@"SLDSUtilityLevelUp",\
 	@"SLDSUtilityLightBulb",\
+	@"SLDSUtilityLightningInspector",\
 	@"SLDSUtilityLike",\
 	@"SLDSUtilityLink",\
+	@"SLDSUtilityLinked",\
 	@"SLDSUtilityList",\
+	@"SLDSUtilityListen",\
+	@"SLDSUtilityLiveMessage",\
 	@"SLDSUtilityLocation",\
 	@"SLDSUtilityLock",\
+	@"SLDSUtilityLockerServiceApiViewer",\
+	@"SLDSUtilityLockerServiceConsole",\
 	@"SLDSUtilityLogACall",\
 	@"SLDSUtilityLogout",\
+	@"SLDSUtilityLoop",\
 	@"SLDSUtilityLowerFlag",\
 	@"SLDSUtilityMacros",\
 	@"SLDSUtilityMagicwand",\
@@ -986,9 +1237,13 @@
 	@"SLDSUtilityMergeField",\
 	@"SLDSUtilityMetrics",\
 	@"SLDSUtilityMinimizeWindow",\
+	@"SLDSUtilityMissedCall",\
+	@"SLDSUtilityMoney",\
 	@"SLDSUtilityMoneybag",\
 	@"SLDSUtilityMonthlyview",\
 	@"SLDSUtilityMove",\
+	@"SLDSUtilityMultiPicklist",\
+	@"SLDSUtilityMultiSelectCheckbox",\
 	@"SLDSUtilityMuted",\
 	@"SLDSUtilityNew",\
 	@"SLDSUtilityNewDirectMessage",\
@@ -997,6 +1252,7 @@
 	@"SLDSUtilityNote",\
 	@"SLDSUtilityNotebook",\
 	@"SLDSUtilityNotification",\
+	@"SLDSUtilityNumberInput",\
 	@"SLDSUtilityOffice365",\
 	@"SLDSUtilityOffline",\
 	@"SLDSUtilityOfflineCached",\
@@ -1004,12 +1260,15 @@
 	@"SLDSUtilityOpen",\
 	@"SLDSUtilityOpenFolder",\
 	@"SLDSUtilityOpenedFolder",\
+	@"SLDSUtilityOutboundCall",\
+	@"SLDSUtilityOutcome",\
 	@"SLDSUtilityOverflow",\
 	@"SLDSUtilityPackage",\
 	@"SLDSUtilityPackageOrg",\
 	@"SLDSUtilityPackageOrgBeta",\
 	@"SLDSUtilityPage",\
 	@"SLDSUtilityPalette",\
+	@"SLDSUtilityPassword",\
 	@"SLDSUtilityPaste",\
 	@"SLDSUtilityPause",\
 	@"SLDSUtilityPeople",\
@@ -1017,10 +1276,16 @@
 	@"SLDSUtilityPhonePortrait",\
 	@"SLDSUtilityPhoto",\
 	@"SLDSUtilityPicklist",\
+	@"SLDSUtilityPicklistChoice",\
+	@"SLDSUtilityPicklistType",\
 	@"SLDSUtilityPin",\
 	@"SLDSUtilityPinned",\
+	@"SLDSUtilityPlay",\
+	@"SLDSUtilityPodcastWebinar",\
+	@"SLDSUtilityPopIn",\
 	@"SLDSUtilityPower",\
 	@"SLDSUtilityPreview",\
+	@"SLDSUtilityPrint",\
 	@"SLDSUtilityPriority",\
 	@"SLDSUtilityPrivatelyShared",\
 	@"SLDSUtilityProcess",\
@@ -1031,9 +1296,16 @@
 	@"SLDSUtilityQuestionsAndAnswers",\
 	@"SLDSUtilityQuickText",\
 	@"SLDSUtilityQuotationMarks",\
+	@"SLDSUtilityQuote",\
+	@"SLDSUtilityRadioButton",\
 	@"SLDSUtilityRating",\
+	@"SLDSUtilityReassign",\
 	@"SLDSUtilityRecord",\
 	@"SLDSUtilityRecordCreate",\
+	@"SLDSUtilityRecordDelete",\
+	@"SLDSUtilityRecordLookup",\
+	@"SLDSUtilityRecordUpdate",\
+	@"SLDSUtilityRecurringException",\
 	@"SLDSUtilityRedo",\
 	@"SLDSUtilityRefresh",\
 	@"SLDSUtilityRelate",\
@@ -1048,6 +1320,7 @@
 	@"SLDSUtilityResourceCapacity",\
 	@"SLDSUtilityResourceTerritory",\
 	@"SLDSUtilityRetweet",\
+	@"SLDSUtilityRibbon",\
 	@"SLDSUtilityRichtextbulletedlist",\
 	@"SLDSUtilityRichtextindent",\
 	@"SLDSUtilityRichtextnumberedlist",\
@@ -1055,11 +1328,16 @@
 	@"SLDSUtilityRight",\
 	@"SLDSUtilityRightAlignText",\
 	@"SLDSUtilityRotate",\
+	@"SLDSUtilityRoutingOffline",\
 	@"SLDSUtilityRows",\
 	@"SLDSUtilityRules",\
 	@"SLDSUtilitySalesforce1",\
 	@"SLDSUtilitySave",\
+	@"SLDSUtilityScreen",\
 	@"SLDSUtilitySearch",\
+	@"SLDSUtilitySend",\
+	@"SLDSUtilitySentimentNegative",\
+	@"SLDSUtilitySentimentNeutral",\
 	@"SLDSUtilitySettings",\
 	@"SLDSUtilitySetup",\
 	@"SLDSUtilitySetupAssistantGuide",\
@@ -1069,56 +1347,81 @@
 	@"SLDSUtilitySharePost",\
 	@"SLDSUtilityShield",\
 	@"SLDSUtilityShoppingBag",\
+	@"SLDSUtilityShortcuts",\
 	@"SLDSUtilitySideList",\
 	@"SLDSUtilitySignpost",\
+	@"SLDSUtilitySkip",\
 	@"SLDSUtilitySmileyAndPeople",\
 	@"SLDSUtilitySms",\
 	@"SLDSUtilitySnippet",\
+	@"SLDSUtilitySobject",\
+	@"SLDSUtilitySobjectCollection",\
 	@"SLDSUtilitySocialshare",\
 	@"SLDSUtilitySort",\
 	@"SLDSUtilitySpinner",\
+	@"SLDSUtilityStage",\
+	@"SLDSUtilityStageCollection",\
 	@"SLDSUtilityStandardObjects",\
+	@"SLDSUtilitySteps",\
 	@"SLDSUtilityStop",\
+	@"SLDSUtilityStrategy",\
 	@"SLDSUtilityStrikethrough",\
 	@"SLDSUtilitySuccess",\
 	@"SLDSUtilitySummary",\
 	@"SLDSUtilitySummarydetail",\
+	@"SLDSUtilitySurvey",\
 	@"SLDSUtilitySwitch",\
 	@"SLDSUtilitySymbols",\
 	@"SLDSUtilitySync",\
+	@"SLDSUtilitySystemAndGlobalVariable",\
 	@"SLDSUtilityTable",\
 	@"SLDSUtilityTabletLandscape",\
 	@"SLDSUtilityTabletPortrait",\
 	@"SLDSUtilityTabset",\
 	@"SLDSUtilityTask",\
+	@"SLDSUtilityText",\
 	@"SLDSUtilityTextBackgroundColor",\
 	@"SLDSUtilityTextColor",\
+	@"SLDSUtilityTextTemplate",\
+	@"SLDSUtilityTextarea",\
+	@"SLDSUtilityTextbox",\
 	@"SLDSUtilityThreedots",\
 	@"SLDSUtilityThreedotsVertical",\
 	@"SLDSUtilityThunder",\
 	@"SLDSUtilityTileCardList",\
+	@"SLDSUtilityTogglePanelBottom",\
+	@"SLDSUtilityTogglePanelLeft",\
+	@"SLDSUtilityTogglePanelRight",\
+	@"SLDSUtilityTogglePanelTop",\
 	@"SLDSUtilityTopic",\
+	@"SLDSUtilityTopic2",\
 	@"SLDSUtilityTouchAction",\
+	@"SLDSUtilityTracker",\
 	@"SLDSUtilityTrail",\
+	@"SLDSUtilityTrailhead",\
 	@"SLDSUtilityTravelAndPlaces",\
 	@"SLDSUtilityTrending",\
 	@"SLDSUtilityTurnOffNotifications",\
+	@"SLDSUtilityType",\
 	@"SLDSUtilityTypeTool",\
 	@"SLDSUtilityUndelete",\
 	@"SLDSUtilityUndeprecate",\
 	@"SLDSUtilityUnderline",\
 	@"SLDSUtilityUndo",\
+	@"SLDSUtilityUnlinked",\
 	@"SLDSUtilityUnlock",\
 	@"SLDSUtilityUnmuted",\
 	@"SLDSUtilityUp",\
 	@"SLDSUtilityUpload",\
 	@"SLDSUtilityUser",\
 	@"SLDSUtilityUserRole",\
+	@"SLDSUtilityVariable",\
 	@"SLDSUtilityVideo",\
 	@"SLDSUtilityVoicemailDrop",\
 	@"SLDSUtilityVolumeHigh",\
 	@"SLDSUtilityVolumeLow",\
 	@"SLDSUtilityVolumeOff",\
+	@"SLDSUtilityWaits",\
 	@"SLDSUtilityWarning",\
 	@"SLDSUtilityWeeklyview",\
 	@"SLDSUtilityWifi",\

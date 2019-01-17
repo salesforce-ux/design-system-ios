@@ -11,6 +11,7 @@
 +(instancetype)sldsBackgroundColor:(SLDSBackgroundColorType)colorType;
 +(instancetype)sldsTextColor:(SLDSTextColorType)colorType;
 +(instancetype)sldsColor:(SLDSColorType)colorType;
++(instancetype)sldsStrokeColor:(SLDSStrokeColorType)colorType;
 
 
 +(void)sldsOverrideFill:(SLDSFillType)colorType with:(UIColor*)color;
@@ -18,4 +19,5 @@
 +(void)sldsOverrideBackgroundColor:(SLDSBackgroundColorType)colorType with:(UIColor*)color;
 +(void)sldsOverrideTextColor:(SLDSTextColorType)colorType with:(UIColor*)color;
 +(void)sldsOverrideColor:(SLDSColorType)colorType with:(UIColor*)color;
++(void)sldsOverrideStrokeColor:(SLDSStrokeColorType)colorType with:(UIColor*)color;
 @end
