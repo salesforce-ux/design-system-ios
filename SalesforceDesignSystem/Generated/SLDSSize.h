@@ -48,7 +48,6 @@ static const CGFloat SLDSTemplateProfileGutters = 0;
 static const CGFloat SLDSCardFooterMargin = 12;
 static const CGFloat SLDSCardBodyPadding = 0;
 static const CGFloat SLDSCardWrapperSpacing = 16;
-static const CGFloat SLDSCardHeaderPadding = 0.75rem 1rem 0;
 static const CGFloat SLDSCardSpacingLarge = 24;
 static const CGFloat SLDSCardHeaderMargin = 0;
 static const CGFloat SLDSCardSpacingMargin = 16;
