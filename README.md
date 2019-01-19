@@ -2,9 +2,7 @@
 
 iOS static library for [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/) [Tokens](https://www.lightningdesignsystem.com/design-tokens/).
 
-**_IMPORTANT: This package is not currently being updated with new tokens._**
-
-Current release: Spring ’17
+Current release: Spring ’19
 
 ## Simple Install
 
