@@ -4,6 +4,8 @@ iOS static library for [Salesforce Lightning Design System](https://www.lightnin
 
 Current release: Spring ’19
 
+⚠️ **This POD is no longer being updated.**
+
 ## Simple Install
 
 Install CocoaPods:
