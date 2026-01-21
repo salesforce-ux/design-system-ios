@@ -20,7 +20,7 @@
     "gulp-iconfont": "^8.0.1",
     "gulp-json-concat": "0.0.5",
     "gulp-json-format": "^1.0.0",
-    "gulp-nunjucks": "^2.3.0",
+    "gulp-nunjucks": "^5.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-svgmin": "^1.2.3",
     "gulp-svgo": "^1.0.3",
