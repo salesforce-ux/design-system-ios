@@ -12,7 +12,7 @@
   "dependencies": {
     "@salesforce-ux/design-system": "^2.4.3",
     "del": "^2.2.2",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-consolidate": "^0.2.0",
     "gulp-data": "^1.2.1",
     "gulp-edit-xml": "^2.0.0",
